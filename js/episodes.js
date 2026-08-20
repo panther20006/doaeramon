@@ -2443,5 +2443,923 @@ const episodes = [
     japanese: "落とし物つりぼり / ありがたみわかり機"
 },
 
+{
+    no: 251,
+    year: 2011,
+    date: "2011-05-20",
+    series: "new",
+    title: "The Troublesome Gulliver / Nobita of Rumor",
+    japanese: "めいわくガリバー / ウワサののび太"
+},
+
+{
+    no: 252,
+    year: 2011,
+    date: "2011-05-27",
+    series: "new",
+    title: "Nobita the Otter's Great Adventure",
+    japanese: "カワウソのび太の大冒険"
+},
+
+{
+    no: 253,
+    year: 2011,
+    date: "2011-06-03",
+    series: "new",
+    title: "The Wishing Star / The Popularity Operation",
+    japanese: "ねがい星 / モテモテール大作戦"
+},
+
+{
+    no: 254,
+    year: 2011,
+    date: "2011-06-10",
+    series: "new",
+    title: "New Song Premiere! Gian's Boebo",
+    japanese: "新曲発表！ジャイアンにボエボエ？"
+},
+
+{
+    no: 255,
+    year: 2011,
+    date: "2011-06-17",
+    series: "new",
+    title: "Shizuka Becomes Oppekepe!? / Nobita Who Stops Me",
+    japanese: "しずかちゃんがオッペケペー？ / ぼくを止めるのび太"
+},
+
+{
+    no: 256,
+    year: 2011,
+    date: "2011-06-24",
+    series: "new",
+    title: "Memories of Grandma",
+    japanese: "おばあちゃんのおもいで"
+},
+
+{
+    no: 257,
+    year: 2011,
+    date: "2011-07-01",
+    series: "new",
+    title: "The Tanabata Sky Has Fallen",
+    japanese: "七夕の空が落ちてきた"
+},
+
+{
+    no: 258,
+    year: 2011,
+    date: "2011-07-08",
+    series: "new",
+    title: "The Nobi Family's Giant Tuna / There Was a Spare in the 4D Pocket",
+    japanese: "野比家の巨大マグロ / 四次元ポケットにスペアがあったのだ"
+},
+
+{
+    no: 259,
+    year: 2011,
+    date: "2011-07-15",
+    series: "new",
+    title: "Going to School on a Cloud / The Night Train is My House",
+    japanese: "雲に乗って学校へ / 夜行列車はぼくの家"
+},
+
+{
+    no: 260,
+    year: 2011,
+    date: "2011-07-22",
+    series: "new",
+    title: "Ultra Ring / Solving the Dekisugi Incident",
+    japanese: "ウルトラリング / 解決！出木杉事件"
+},
+
+{
+    no: 261,
+    year: 2011,
+    date: "2011-08-05",
+    series: "new",
+    title: "Nobita Becomes a Ghost / The Pirarucu in the Puddle",
+    japanese: "のび太 ユーレイになる / 水たまりのピラルク"
+},
+
+{
+    no: 262,
+    year: 2011,
+    date: "2011-08-12",
+    series: "new",
+    title: "Gian Battery is Infinite / The Story of the Cute Pebble",
+    japanese: "ジャイアン電池は無限大 / かわいい石ころの話"
+},
+
+{
+    no: 263,
+    year: 2011,
+    date: "2011-08-19",
+    series: "new",
+    title: "Gian Appears on TV! / Story Badge for Hot Summer",
+    japanese: "ジャイアンテレビにでる！ / 暑い夏にはおはなしバッジ"
+},
+
+{
+    no: 264,
+    year: 2011,
+    date: "2011-08-26",
+    series: "new",
+    title: "Sono Uso Honto / I Want to Give You Everything About Me",
+    japanese: "ソノウソホント / ぼくのすべてをアゲタイ"
+},
+
+{
+    no: 265,
+    year: 2011,
+    date: "2011-09-02",
+    series: "new",
+    title: "Doraemon's One-Day Romance",
+    japanese: "ドラえもんのたった一日の恋"
+},
+
+{
+    no: 266,
+    year: 2011,
+    date: "2011-09-09",
+    series: "special",
+    title: "Run, Doraemon! Galaxy Grand Prix",
+    japanese: "走れドラえもん！銀河グランプリ"
+},
+
+{
+    no: 267,
+    year: 2011,
+    date: "2011-10-07",
+    series: "new",
+    title: "Nobita the King Can't Be Defied / I'll Take Your Good Points",
+    japanese: "のび太王にはさからえない / あなたの良い所もらいます"
+},
+
+{
+    no: 268,
+    year: 2011,
+    date: "2011-10-21",
+    series: "new",
+    title: "Run, Umatake! / Moonlight and Insect Voices",
+    japanese: "走れ！ウマタケ / 月の光と虫の声"
+},
+
+{
+    no: 269,
+    year: 2011,
+    date: "2011-10-28",
+    series: "new",
+    title: "The Magic Lamp Without a Genie / Nobita's Ninja Training",
+    japanese: "まじんのいない魔法のランプ / のび太の忍者修行"
+},
+
+{
+    no: 270,
+    year: 2011,
+    date: "2011-11-04",
+    series: "new",
+    title: "The Shell That Makes Things Come True / The Best! The Worst Hospitality",
+    japanese: "そうなる貝セット / 最高！最悪なおもてなし"
+},
+
+{
+    no: 271,
+    year: 2011,
+    date: "2011-11-11",
+    series: "new",
+    title: "Super Mobile Bathtub 1010 / Nobita Becomes Company President",
+    japanese: "スーパー移動風呂1010 / のび太社長になる"
+},
+
+{
+    no: 272,
+    year: 2011,
+    date: "2011-11-18",
+    series: "new",
+    title: "The Mechanizing Machine / Stuff Only for You Gas",
+    japanese: "機械化機 / あなただけのものガス"
+},
+
+{
+    no: 273,
+    year: 2011,
+    date: "2011-11-25",
+    series: "new",
+    title: "I'm Nobiko-chan / The Mecha Maker",
+    japanese: "ボクのび子ちゃん / メカ・メーカー"
+},
+
+{
+    no: 274,
+    year: 2011,
+    date: "2011-12-02",
+    series: "new",
+    title: "The Rich Kid Mambo / The Lying Mirror",
+    japanese: "おぼっちゃマンボ / うそつきかがみ"
+},
+
+{
+    no: 275,
+    year: 2011,
+    date: "2011-12-09",
+    series: "new",
+    title: "Giant Suneo Appears! / The King of Napping Championship",
+    japanese: "巨大スネ夫あらわる！ / ひるね王選手権"
+},
+
+{
+    no: 276,
+    year: 2011,
+    date: "2011-12-16",
+    series: "new",
+    title: "The Anywhere Cannon / Gravity Paint",
+    japanese: "どこでも大ほう / 重力ペンキ"
+},
+
+{
+    no: 277,
+    year: 2011,
+    date: "2011-12-30",
+    series: "new",
+    title: "Night of the Milky Way Railroad / Dramatic Gas",
+    japanese: "天の川鉄道の夜 / ドラマチックガス"
+},
+
+/* =====================================================
+   2012 ENTRIES
+===================================================== */
+
+{
+    no: 278,
+    year: 2012,
+    date: "2012-01-06",
+    series: "special",
+    title: "New Year's Special",
+    japanese: "お正月スペシャル"
+},
+
+{
+    no: 279,
+    year: 2012,
+    date: "2012-01-13",
+    series: "new",
+    title: "The Nobi Family's New Year's Eve / Nobita's Snowman",
+    japanese: "野比家のお正月 / のび太の雪だるま"
+},
+
+{
+    no: 280,
+    year: 2012,
+    date: "2012-01-20",
+    series: "new",
+    title: "The Dreaming Alarm Clock / The Strongest Robot",
+    japanese: "夢みる目覚まし時計 / 最強ロボット"
+},
+
+{
+    no: 280,
+    year: 2012,
+    date: "2012-01-20",
+    series: "new",
+    title: "Ultra Mixer / Hakushon Busters",
+    japanese: "ウルトラミキサー / 突撃！ハクションバスターズ"
+},
+
+{
+    no: 281,
+    year: 2012,
+    date: "2012-01-27",
+    series: "new",
+    title: "Ultra Mixer / Hakushon Busters",
+    japanese: "ウルトラミキサー / 突撃！ハクションバスターズ"
+},
+
+{
+    no: 282,
+    year: 2012,
+    date: "2012-02-03",
+    series: "new",
+    title: "Beans for Driving Away Demons / Goodbye, Shizuka",
+    japanese: "鬼は外ビーンズ / しずかちゃんさようなら"
+},
+
+{
+    no: 283,
+    year: 2012,
+    date: "2012-02-10",
+    series: "new",
+    title: "Gian Stew / Animal Training Shop Opens",
+    japanese: "ジャイアンシチュー / 開店！動物くんれん屋"
+},
+
+{
+    no: 284,
+    year: 2012,
+    date: "2012-02-17",
+    series: "new",
+    title: "Warm Snowball Fight / Suneo Works at Goda Store",
+    japanese: "あったか～い雪合戦 / スネ夫が剛田商店でアルバイト"
+},
+
+{
+    no: 285,
+    year: 2012,
+    date: "2012-02-24",
+    series: "new",
+    title: "I Started a TV Station / Freeze Him!",
+    japanese: "テレビ局をはじめたよ / あいつを固めちゃえ"
+},
+
+{
+    no: 286,
+    year: 2012,
+    date: "2012-03-02",
+    series: "new",
+    title: "The Masked Queen Nobita Met",
+    japanese: "のび太が出会った仮面の女王"
+},
+
+{
+    no: 287,
+    year: 2012,
+    date: "2012-03-09",
+    series: "new",
+    title: "I'll Do Anything for You / Delay Candy",
+    japanese: "あなたにつくしん坊 / おそだアメ"
+},
+
+{
+    no: 288,
+    year: 2012,
+    date: "2012-03-16",
+    series: "special",
+    title: "Doraemon: Nobita and the New Steel Troops",
+    japanese: "映画ドラえもん 新・のび太と鉄人兵団 ～はばたけ天使たち～"
+},
+
+{
+    no: 289,
+    year: 2012,
+    date: "2012-03-23",
+    series: "new",
+    title: "Let's Live Laughing / Nobita's Son Ran Away From Home",
+    japanese: "わらってくらそう / のび太の息子が家出した"
+},
+
+{
+    no: 290,
+    year: 2012,
+    date: "2012-03-30",
+    series: "new",
+    title: "Let's Take a Bath in a Delicious Hot Spring / Treasure Hunt Set",
+    japanese: "おいしい温泉に入ろう！ / 宝さがしごっこセット"
+},
+
+{
+    no: 291,
+    year: 2012,
+    date: "2012-04-27",
+    series: "special",
+    title: "Doraemon's 100-Year Time Capsule",
+    japanese: "ドラえもんの１００年タイムカプセル"
+},
+
+{
+    no: 292,
+    year: 2012,
+    date: "2012-05-04",
+    series: "new",
+    title: "Golden Week Repellent / The Apartment Tree",
+    japanese: "人よけゴールデンウィーク / アパートの木"
+},
+
+{
+    no: 293,
+    year: 2012,
+    date: "2012-05-11",
+    series: "new",
+    title: "Fake Alien / Leaf of Donron",
+    japanese: "ニセ宇宙人 / ドロン葉"
+},
+
+{
+    no: 294,
+    year: 2012,
+    date: "2012-05-18",
+    series: "new",
+    title: "Let's Watch the Solar Eclipse / Manga Artist Jaiko",
+    japanese: "日食を見よう / まんが家ジャイ子先生"
+},
+
+{
+    no: 295,
+    year: 2012,
+    date: "2012-05-25",
+    series: "new",
+    title: "This Road, That Road, Easy Road / Shizuka in the Pocket",
+    japanese: "あの道この道楽な道 / ポケットの中のしずかちゃん"
+},
+
+{
+    no: 296,
+    year: 2012,
+    date: "2012-06-01",
+    series: "new",
+    title: "Let's Enter Jaiko's Manga / Weather Box",
+    japanese: "ジャイ子の漫画にお邪魔します / お天気ボックス"
+},
+
+{
+    no: 297,
+    year: 2012,
+    date: "2012-06-15",
+    series: "new",
+    title: "Become a Singer by Sucking Candy / Return Light",
+    japanese: "キャンディーなめて歌手になろう / もどりライト"
+},
+
+{
+    no: 298,
+    year: 2012,
+    date: "2012-06-22",
+    series: "new",
+    title: "Chance Maker / Happiness Walks Along",
+    japanese: "チャンスメーカー / しあわせは歩いていこう！"
+},
+
+{
+    no: 299,
+    year: 2012,
+    date: "2012-06-29",
+    series: "new",
+    title: "Copycat Yokan / Lost Item Delivery Machine",
+    japanese: "そっクリようかん / 忘れ物おくりとどけ機"
+},
+
+{
+    no: 300,
+    year: 2012,
+    date: "2012-07-06",
+    series: "new",
+    title: "The Insect Hero Appears! / Issun-Boshi",
+    japanese: "参上！ムシムシヒーロー！！ / いっすんぼうし"
+},
+
+{
+    no: 301,
+    year: 2012,
+    date: "2012-07-13",
+    series: "new",
+    title: "No Entry to Nobita's Room / Safe Gian Insurance",
+    japanese: "のび太の部屋は進入禁止 / あんしん！ジャイアン保険"
+},
+
+{
+    no: 302,
+    year: 2012,
+    date: "2012-07-27",
+    series: "new",
+    title: "Final Battle! Gian vs. the Ghost Army / World Record Rock",
+    japanese: "決戦！ジャイアンｖｓオバケ軍団 / 世界記ロック"
+},
+
+{
+    no: 303,
+    year: 2012,
+    date: "2012-08-10",
+    series: "new",
+    title: "Sortie! Submarine Nobita / Looking for a Fun Job",
+    japanese: "出撃！潜水艦のび太号 / 楽しいお仕事さがし"
+},
+
+{
+    no: 304,
+    year: 2012,
+    date: "2012-08-17",
+    series: "new",
+    title: "Can't Stop Living with Ghosts / How to Receive a Reply to an Undelivered Letter",
+    japanese: "ユーレイ暮らしはやめられない / 出さない手紙の返事をもらう方法"
+},
+
+{
+    no: 305,
+    year: 2012,
+    date: "2012-08-24",
+    series: "new",
+    title: "Run! Flowing Somen / Ten-Minute-Late Esper",
+    japanese: "走れ！流しそうめん / １０分おくれのエスパー"
+},
+
+{
+    no: 306,
+    year: 2012,
+    date: "2012-08-31",
+    series: "new",
+    title: "Incident Bomb / Great Adventure Game Book",
+    japanese: "ジケン爆弾 / 大冒険ゲームブック"
+},
+
+{
+    no: 307,
+    year: 2012,
+    date: "2012-09-07",
+    series: "new",
+    title: "Great Escape from Arigatodes",
+    japanese: "アリガトデスからの大脱走"
+},
+
+{
+    no: 308,
+    year: 2012,
+    date: "2012-09-14",
+    series: "new",
+    title: "Flying Fish / Favoritism Tree",
+    japanese: "空とぶさかな / ひい木でひいき"
+},
+
+{
+    no: 309,
+    year: 2012,
+    date: "2012-10-19",
+    series: "new",
+    title: "Werewolf Cream / Human Time Switch",
+    japanese: "おおかみ男クリーム / 人間用タイムスイッチ"
+},
+
+{
+    no: 310,
+    year: 2012,
+    date: "2012-10-26",
+    series: "new",
+    title: "Nobita Wins First Prize with a Cucumber? / Continuation Spray",
+    japanese: "のび太がキュウリで一等賞？ / つづきスプレー"
+},
+
+{
+    no: 311,
+    year: 2012,
+    date: "2012-11-02",
+    series: "new",
+    title: "Miracle Duet! Gian & Suneo / The Terror of the Happy Trump",
+    japanese: "奇跡のデュエット！ジャイ＆スネ / しあわせトランプの恐怖"
+},
+
+{
+    no: 312,
+    year: 2012,
+    date: "2012-11-09",
+    series: "new",
+    title: "The Dramatic Clapperboard / Lazy Suit",
+    japanese: "熱演カチンコ！！ / ナマケモノスーツ"
+},
+
+{
+    no: 313,
+    year: 2012,
+    date: "2012-11-16",
+    series: "new",
+    title: "Discipline Candy / Hameln Charumera",
+    japanese: "しつけキャンディー / ハメルンチャルメラ"
+},
+
+{
+    no: 314,
+    year: 2012,
+    date: "2012-11-23",
+    series: "new",
+    title: "Papa, Nobita and the River Where Sake Swims / Revenge Missile Has Come",
+    japanese: "パパとのび太と酒の泳ぐ川 / しかえしミサイルが飛んできた"
+},
+
+{
+    no: 315,
+    year: 2012,
+    date: "2012-11-30",
+    series: "new",
+    title: "Dance or Lose Shoes / The Tanuki Who Fell in Love with Doraemon",
+    japanese: "踊らにゃソンソンシューズ / ドラえもんに恋したタヌキ"
+},
+
+{
+    no: 316,
+    year: 2012,
+    date: "2012-12-07",
+    series: "new",
+    title: "The Terrifying Gian Pizza / Formation! Nobi-Beatles",
+    japanese: "恐怖のジャイアンピザ / 結成！のびーとるず"
+},
+
+{
+    no: 317,
+    year: 2012,
+    date: "2012-12-31",
+    series: "special",
+    title: "Doraemon: Nobita and the Island of Miracles / Three Billion Yen Lottery Win / Dorami and the Story Badge / Unlucky Point Card / I Found a Tsuchinoko!",
+    japanese: "映画ドラえもん のび太と奇跡の島～アニマルアドベンチャー～ / 宝くじ３億円大当たり！ / ドラミとおはなしバッジ / アンラッキーポイントカード / ツチノコ見つけた！"
+},
+
+/* =====================================================
+   2013
+===================================================== */
+
+{
+    no: 318,
+    year: 2013,
+    date: "2013-01-11",
+    series: "new",
+    title: "Human Piggy Bank / The Birth of Detective Nobita",
+    japanese: "人間貯金箱 / 誕生！名探偵のび太"
+},
+
+{
+    no: 319,
+    year: 2013,
+    date: "2013-01-18",
+    series: "new",
+    title: "I Want to Eat Crab! / Shopping Across Time",
+    japanese: "カニ食べたい！ / 時代を超えてお買い物"
+},
+
+{
+    no: 320,
+    year: 2013,
+    date: "2013-01-25",
+    series: "new",
+    title: "Ultra Ehomaki / Hot Snow",
+    japanese: "ウルトラ恵方巻き / 雪でアッチッチ"
+},
+
+{
+    no: 321,
+    year: 2013,
+    date: "2013-02-01",
+    series: "new",
+    title: "Suneo Falls in Love at First Sight / Shizuka's Space Open-Air Bath",
+    japanese: "スネ夫がひとめぼれ / しずかの宇宙ろてん風呂"
+},
+
+{
+    no: 322,
+    year: 2013,
+    date: "2013-02-15",
+    series: "new",
+    title: "Phantom Thief Nobita Appears! / Bird Cap to the Sky",
+    japanese: "怪盗のび太参上！ / バードキャップで大空へ"
+},
+
+{
+    no: 323,
+    year: 2013,
+    date: "2013-02-22",
+    series: "new",
+    title: "Papa and Mama's Big Battle at Home / Palm Reading Set That Always Hits",
+    japanese: "パパママおうちで大バトル / かならず当たる？手相セット"
+},
+
+{
+    no: 324,
+    year: 2013,
+    date: "2013-03-01",
+    series: "new",
+    title: "The Strongest Rolling Killer Z",
+    japanese: "最強！ころばし屋Ｚ"
+},
+
+{
+    no: 325,
+    year: 2013,
+    date: "2013-03-15",
+    series: "special",
+    title: "Doraemon: Nobita's New Great Adventure into the Underworld",
+    japanese: "映画ドラえもん のび太の新魔界大冒険～７人の魔法使い～"
+},
+
+{
+    no: 326,
+    year: 2013,
+    date: "2013-04-12",
+    series: "new",
+    title: "Explosive Pepper / We Must Have a Cherry-Blossom Viewing Party",
+    japanese: "ばくはつコショウ / 何が何でもお花見を"
+},
+
+{
+    no: 327,
+    year: 2013,
+    date: "2013-04-26",
+    series: "new",
+    title: "Save Money and Travel to Hawaii / Shizuka's Hagoromo",
+    japanese: "やりクリしてハワイ旅行 / しずかちゃんのはごろも"
+},
+
+{
+    no: 328,
+    year: 2013,
+    date: "2013-05-03",
+    series: "new",
+    title: "Napping in Heaven / The Dictator Switch",
+    japanese: "ひるねは天国で / どくさいスイッチ"
+},
+
+{
+    no: 329,
+    year: 2013,
+    date: "2013-05-10",
+    series: "new",
+    title: "Instant Mama / Gian is Targeted",
+    japanese: "インスタントママ / 狙われたジャイアン"
+},
+
+{
+    no: 330,
+    year: 2013,
+    date: "2013-05-17",
+    series: "new",
+    title: "Escape! The Terrifying Honekawa House / Satori Helmet",
+    japanese: "脱出！恐怖の骨川ハウス / さとりヘルメット"
+},
+
+{
+    no: 331,
+    year: 2013,
+    date: "2013-05-24",
+    series: "new",
+    title: "Iekopter / Shizuka's Worst Birthday",
+    japanese: "イエコプター / しずかちゃんの最悪な誕生日"
+},
+
+{
+    no: 332,
+    year: 2013,
+    date: "2013-05-31",
+    series: "new",
+    title: "Mix-With-Red Stick / Gian Becomes a Panda",
+    japanese: "朱にまじわれ棒 / ジャイアンがパンダ"
+},
+
+{
+    no: 333,
+    year: 2013,
+    date: "2013-06-07",
+    series: "new",
+    title: "Souvenir Furoshiki / The Strongest Black-Belt Nobita",
+    japanese: "おみやげフロシキ / 最強！黒おびのび太"
+},
+
+{
+    no: 334,
+    year: 2013,
+    date: "2013-06-14",
+    series: "new",
+    title: "Gian's Retirement Concert / Dream Director Chair",
+    japanese: "ジャイアンの引退コンサート / ユメかんとくいす"
+},
+
+{
+    no: 335,
+    year: 2013,
+    date: "2013-06-21",
+    series: "new",
+    title: "Opposite World Mirror / Nobita's Secret Tunnel",
+    japanese: "あべこべ世界ミラー / のび太の秘密トンネル"
+},
+
+{
+    no: 336,
+    year: 2013,
+    date: "2013-07-05",
+    series: "new",
+    title: "Moving with the Moving Map / Advertising with a Mirror",
+    japanese: "ひっこし地図でおひっこし / かがみでコマーシャル"
+},
+
+{
+    no: 337,
+    year: 2013,
+    date: "2013-07-12",
+    series: "new",
+    title: "Anything Ice Stick / Determination Concrete",
+    japanese: "なんでもアイス棒 / 決心コンクリート"
+},
+
+{
+    no: 338,
+    year: 2013,
+    date: "2013-07-26",
+    series: "special",
+    title: "Goodbye, My Vacuum Cleaner / Great Voyage on a Midsummer Night / Daisukind Drink",
+    japanese: "さよならボクのそうじ機 / 真夏の夜の大航海 / ダイスキンドリンク"
+},
+
+{
+    no: 339,
+    year: 2013,
+    date: "2013-08-09",
+    series: "new",
+    title: "Deep-Sea Cycling / Nobita's Surprise Video",
+    japanese: "深海サイクリング / のび太のドッキリビデオ"
+},
+
+{
+    no: 340,
+    year: 2013,
+    date: "2013-08-16",
+    series: "new",
+    title: "Let's Grow Fireworks! / Clone Hammer",
+    japanese: "花火を育てよう！ / 分身ハンマー"
+},
+
+{
+    no: 341,
+    year: 2013,
+    date: "2013-08-23",
+    series: "new",
+    title: "Summer Vacation Living with a Ghost / Kachin-Kachin Light",
+    japanese: "オバケと暮らした夏休み / カチンカチンライト"
+},
+
+{
+    no: 342,
+    year: 2013,
+    date: "2013-08-30",
+    series: "new",
+    title: "Nobita's Summer Festival Operation / Studying in the Sahara Desert",
+    japanese: "のび太の夏祭り大作戦！ / サハラ砂漠で勉強はできない"
+},
+
+{
+    no: 343,
+    year: 2013,
+    date: "2013-09-06",
+    series: "new",
+    title: "How Nobita Uses Energy / Balloon in the Sky",
+    japanese: "のび太エネルギーの使い方 / はなバルーンで大空に"
+},
+
+{
+    no: 344,
+    year: 2013,
+    date: "2013-09-13",
+    series: "special",
+    title: "Doraemon Birthday 1-Hour Special",
+    japanese: "ドラえもん誕生日１時間スペシャル"
+},
+
+{
+    no: 345,
+    year: 2013,
+    date: "2013-10-18",
+    series: "new",
+    title: "Human Locomotive / Matsutake Mushroom Hunting in a Miniature Garden",
+    japanese: "にんげん機関車 / 箱庭で松たけがり"
+},
+
+{
+    no: 346,
+    year: 2013,
+    date: "2013-10-25",
+    series: "new",
+    title: "What Day Is Halloween? / Tasting Spoon",
+    japanese: "ハロウィンって何の日？ / 味見スプーン"
+},
+
+{
+    no: 347,
+    year: 2013,
+    date: "2013-11-01",
+    series: "new",
+    title: "Do Whatever You Want with the Magic Hand / Gorgon's Head",
+    japanese: "マジックハンドでやりたい放題 / ゴルゴンの首"
+},
+
+{
+    no: 348,
+    year: 2013,
+    date: "2013-11-08",
+    series: "new",
+    title: "The Feelings of Roasted Sweet Potatoes / The Comet Goes Glittering",
+    japanese: "ヤキイモの気持ち / すい星がギンギラギン"
+},
+
+{
+    no: 349,
+    year: 2013,
+    date: "2013-11-15",
+    series: "new",
+    title: "Nobita vs. Musashi: The Battle Just Before Ganryujima",
+    japanese: "のび太ｖｓ武蔵　巌流島ちょっと前の戦い"
+},
+
+{
+    no: 350,
+    year: 2013,
+    date: "2013-12-06",
+    series: "special",
+    title: "Doraemon Winter 1-Hour Special",
+    japanese: "ドラえもん冬の１時間スペシャル"
+},
+
+
 
 ];
