@@ -1,0 +1,1202 @@
+/* =====================================================
+   DORAEMON WORLD
+   MAIN RESPONSIVE STYLE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2fbff;
+    color: #073b70;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.topbar {
+    width: 100%;
+    min-height: 68px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(4, 76, 132, 0.96);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 5px 25px rgba(0, 60, 100, 0.15);
+}
+
+
+/* LOGO */
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+#nav {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+#nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    transition: 0.25s ease;
+}
+
+#nav a:hover {
+    background: #20a8f5;
+
+    transform: translateY(-2px);
+}
+
+#nav a.active {
+    background: #20a8f5;
+
+    box-shadow:
+        0 0 15px rgba(32, 168, 245, 0.45);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-btn {
+    display: none;
+
+    margin-left: auto;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #168fd1;
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.menu-btn:hover {
+    background: #20a8f5;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    width: 90%;
+    max-width: 1450px;
+
+    min-height: 500px;
+
+    margin: 30px auto;
+
+    padding: 55px;
+
+    display: grid;
+
+    /*
+       Text ko thoda kam aur Doraemon ko
+       proper space diya gaya hai.
+    */
+    grid-template-columns: 44% 56%;
+
+    align-items: center;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,0.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #058ed8,
+            #23b8f4,
+            #b7efff
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0, 100, 160, 0.20);
+}
+
+
+/* =====================================================
+   HERO BACKGROUND CIRCLES
+===================================================== */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    right: -80px;
+    bottom: -100px;
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.10);
+
+    left: 45%;
+    top: -80px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 650px;
+
+    min-width: 0;
+}
+
+
+/* BADGE */
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.30);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-size: clamp(
+        42px,
+        6vw,
+        76px
+    );
+
+    line-height: 1.05;
+
+    color: white;
+
+    text-shadow:
+        3px 4px 0 rgba(0, 80, 130, 0.35);
+}
+
+.hero h1 strong {
+    color: #ffe02e;
+}
+
+
+/* =====================================================
+   HERO PARAGRAPH
+===================================================== */
+
+.hero p {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: white;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 20px;
+
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    transition: 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.primary {
+    background: #ffd52b;
+
+    color: #063b67;
+
+    box-shadow:
+        0 10px 25px rgba(255, 210, 30, 0.30);
+}
+
+.btn.secondary {
+    background: rgba(255,255,255,0.25);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   HERO ART
+===================================================== */
+
+.hero-art {
+    position: relative;
+    z-index: 2;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DORAEMON CHARACTER ORB
+===================================================== */
+
+.character-orb {
+    width: min(520px, 100%);
+    height: 520px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #66d7ff,
+            #078ed4
+        );
+
+    border: 8px solid white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 15px rgba(255,255,255,0.10),
+        0 25px 60px rgba(0,50,100,0.25);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* DORAEMON IMAGE */
+
+.doraemon-face {
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   FLOATING ANIMATION
+===================================================== */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.explore,
+.gadget-section,
+.favorite-section {
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: 70px auto;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: #0797dd;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    margin-top: 8px;
+
+    font-size: clamp(
+        30px,
+        4vw,
+        48px
+    );
+
+    color: #073b70;
+}
+
+.section-title p {
+    margin-top: 8px;
+
+    color: #658397;
+}
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* FEATURE CARD */
+
+.feature-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.85);
+
+    border: 1px solid #c9eafa;
+
+    text-decoration: none;
+
+    color: #073b70;
+
+    box-shadow:
+        0 15px 40px rgba(0,80,130,0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #e3f8ff;
+
+    right: -35px;
+    bottom: -35px;
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 50px rgba(0,100,160,0.14);
+}
+
+.feature-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+/* FEATURE ICON */
+
+.feature-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #e6f8ff;
+
+    font-size: 28px;
+}
+
+
+/* FEATURE TITLE */
+
+.feature-card h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 20px;
+
+    font-size: 22px;
+}
+
+
+/* FEATURE TEXT */
+
+.feature-card p {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 8px;
+
+    color: #668093;
+
+    line-height: 1.6;
+}
+
+
+/* ARROW */
+
+.card-arrow {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    font-size: 25px;
+
+    color: #0797dd;
+}
+
+
+/* =====================================================
+   GADGET SECTION
+===================================================== */
+
+.gadget-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* GADGET CARD */
+
+.gadget-card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #c9eafa;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 12px 35px rgba(0,70,120,0.06);
+}
+
+.gadget-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #35baf3;
+
+    box-shadow:
+        0 20px 40px rgba(0,100,160,0.12);
+}
+
+
+/* GADGET ICON */
+
+.gadget-card > div {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+
+/* GADGET TITLE */
+
+.gadget-card h3 {
+    font-size: 19px;
+}
+
+
+/* GADGET TEXT */
+
+.gadget-card p {
+    margin-top: 8px;
+
+    color: #6a8292;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FAVORITE SECTION
+===================================================== */
+
+.favorite-section {
+    margin-top: 90px;
+}
+
+
+/* FAVORITE GRID */
+
+.favorite-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* FAVORITE CARD */
+
+.favorite-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 140px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #c9eafa;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: #073b70;
+
+    box-shadow:
+        0 12px 35px rgba(0,70,120,0.06);
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #35baf3;
+
+    box-shadow:
+        0 20px 45px rgba(0,100,160,0.12);
+}
+
+
+/* FAVORITE NUMBER */
+
+.favorite-number {
+    font-size: 32px;
+
+    font-weight: 900;
+
+    color: #20a8f5;
+
+    opacity: 0.35;
+}
+
+
+/* FAVORITE TITLE */
+
+.favorite-card h3 {
+    font-size: 20px;
+}
+
+
+/* FAVORITE TEXT */
+
+.favorite-card p {
+    margin-top: 7px;
+
+    color: #6a8292;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* FAVORITE ARROW */
+
+.favorite-card .card-arrow {
+    right: 18px;
+    bottom: 18px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    margin-top: 80px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #064d87;
+
+    color: white;
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin-top: 8px;
+
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .hero {
+        grid-template-columns: 45% 55%;
+
+        padding: 45px;
+    }
+
+    .character-orb {
+        width: 440px;
+        height: 440px;
+    }
+
+    #nav a {
+        padding: 9px 8px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALLER TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .hero {
+        grid-template-columns: 45% 55%;
+
+        padding: 40px;
+    }
+
+    .character-orb {
+        width: 390px;
+        height: 390px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gadget-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .favorite-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    .topbar {
+        min-height: 62px;
+
+        padding:
+            9px 4%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    /* MENU BUTTON */
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* MOBILE NAV */
+
+    #nav {
+        display: none;
+
+        position: absolute;
+
+        top: 62px;
+
+        left: 10px;
+        right: 10px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        background: #064d87;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    #nav.show {
+        display: flex;
+    }
+
+    #nav a {
+        width: 100%;
+
+        padding: 13px;
+
+        font-size: 14px;
+    }
+
+
+    /* =================================================
+       HERO
+    ================================================= */
+
+    .hero {
+        width: 94%;
+
+        margin:
+            14px auto;
+
+        padding:
+            30px 20px;
+
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        border-radius: 24px;
+    }
+
+
+    /* HERO IMAGE FIRST */
+
+    .hero-art {
+        order: -1;
+
+        margin-bottom: 25px;
+
+        overflow: visible;
+    }
+
+
+    /* DORAEMON */
+
+    .character-orb {
+        width: 280px;
+        height: 280px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                #66d7ff,
+                #078ed4
+            );
+
+        border: 8px solid white;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 0 0 15px rgba(255,255,255,0.12),
+            0 25px 60px rgba(0,50,100,0.25);
+
+        animation: floating 4s ease-in-out infinite;
+    }
+
+    .doraemon-face {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+    }
+
+
+    /* HERO TITLE */
+
+    .hero h1 {
+        font-size: 43px;
+
+        line-height: 1.05;
+    }
+
+
+    /* HERO TEXT */
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =================================================
+       SECTIONS
+    ================================================= */
+
+    .explore,
+    .gadget-section,
+    .favorite-section {
+        width: 94%;
+
+        margin:
+            50px auto;
+    }
+
+    .section-title h2 {
+        font-size: 31px;
+    }
+
+
+    /* =================================================
+       FEATURE
+    ================================================= */
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .feature-card {
+        min-height: 180px;
+
+        padding: 20px;
+    }
+
+
+    /* =================================================
+       GADGET
+    ================================================= */
+
+    .gadget-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .gadget-card {
+        padding: 18px;
+    }
+
+    .gadget-card > div {
+        font-size: 32px;
+    }
+
+    .gadget-card h3 {
+        font-size: 16px;
+    }
+
+    .gadget-card p {
+        font-size: 13px;
+    }
+
+
+    /* =================================================
+       FAVORITES
+    ================================================= */
+
+    .favorite-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .favorite-card {
+        min-height: 125px;
+
+        padding: 20px;
+    }
+
+
+    /* =================================================
+       FOOTER
+    ================================================= */
+
+    footer {
+        margin-top: 50px;
+
+        padding:
+            28px 15px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .hero {
+        padding:
+            25px 16px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .character-orb {
+        width: 220px;
+        height: 220px;
+    }
+
+    .gadget-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .favorite-number {
+        font-size: 26px;
+    }
+
+}

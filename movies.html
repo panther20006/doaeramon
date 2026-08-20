@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doraemon World - Movies</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ================= MOVIES PAGE ================= */
+
+        .movies-page {
+            padding: 60px 7%;
+        }
+
+        .movies-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .movies-header .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(18, 159, 229, 0.12);
+            color: #078bd1;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .movies-header h1 {
+            font-size: clamp(38px, 6vw, 70px);
+            margin: 0;
+            color: #063b68;
+        }
+
+        .movies-header h1 span {
+            color: #0b9de2;
+        }
+
+        .movies-header p {
+            max-width: 700px;
+            margin: 15px auto;
+            color: #60758a;
+            line-height: 1.7;
+        }
+
+        /* FILTER */
+
+        .movie-filter {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .movie-filter button {
+            border: none;
+            padding: 11px 20px;
+            border-radius: 30px;
+            background: white;
+            color: #14658f;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0, 80, 130, 0.10);
+            transition: 0.3s;
+        }
+
+        .movie-filter button:hover,
+        .movie-filter button.active {
+            background: #0b9de2;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* MOVIE GRID */
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .movie-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 22px;
+            padding: 22px;
+            box-shadow: 0 12px 35px rgba(0, 80, 130, 0.10);
+            border: 1px solid rgba(18,159,229,0.10);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 100, 180, 0.18);
+        }
+
+        .movie-number {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #0b9de2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .movie-poster {
+            height: 190px;
+            border-radius: 17px;
+            background:
+                linear-gradient(135deg,#8edcff,#dff7ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            margin-bottom: 18px;
+        }
+
+        .movie-year {
+            color: #0b9de2;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .movie-card h3 {
+            color: #073e68;
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 7px 0;
+        }
+
+        .movie-card p {
+            color: #6a7e90;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .movie-tag {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #e9f8ff;
+            color: #078bd1;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1100px) {
+            .movie-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+        @media(max-width:800px) {
+            .movie-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .movies-page {
+                padding: 45px 5%;
+            }
+        }
+
+        @media(max-width:520px) {
+            .movie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .movie-poster {
+                height: 220px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        DORAEMON 🌐
+    </a>
+
+    <button id="menu" class="menu-btn">
+        ☰
+    </button>
+
+    <nav id="nav">
+
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <a href="movies.html" class="active">
+            🎬 Movies
+        </a>
+
+        <a href="episodes.html">
+            📺 Episodes
+        </a>
+
+        <a href="characters.html">
+            👥 Characters
+        </a>
+
+        <a href="wallpapers.html">
+            🖼️ Wallpapers
+        </a>
+
+        <a href="music.html">
+            🎵 Music
+        </a>
+
+        <a href="gallery.html">
+            📸 Gallery
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= MOVIES ================= -->
+
+<main>
+
+<section class="movies-page">
+
+    <div class="movies-header">
+
+        <span class="badge">
+            🎬 DORAEMON MOVIE COLLECTION
+        </span>
+
+        <h1>
+            All <span>Doraemon Movies</span>
+        </h1>
+
+        <p>
+            1980 se 2025 tak Doraemon ki theatrical movie
+            collection. Original adventures, remakes aur
+            3D movies ek hi jagah.
+        </p>
+
+    </div>
+
+
+    <!-- FILTER -->
+
+    <div class="movie-filter">
+
+        <button class="active" onclick="filterMovies('all')">
+            🌎 All
+        </button>
+
+        <button onclick="filterMovies('classic')">
+            ⭐ Classic
+        </button>
+
+        <button onclick="filterMovies('modern')">
+            ✨ Modern
+        </button>
+
+        <button onclick="filterMovies('3d')">
+            🎥 3D
+        </button>
+
+        <button onclick="filterMovies('remake')">
+            🔄 Remakes
+        </button>
+
+    </div>
+
+
+    <!-- MOVIE GRID -->
+
+    <div class="movie-grid">
+
+
+        <!-- 01 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">01</div>
+
+            <div class="movie-poster">🦖</div>
+
+            <span class="movie-year">1980</span>
+
+            <h3>
+                Doraemon: Nobita's Dinosaur
+            </h3>
+
+            <p>
+                Nobita aur uske dinosaur friend
+                ki amazing adventure.
+            </p>
+
+            <span class="movie-tag">
+                JAPAN
+            </span>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">02</div>
+
+            <div class="movie-poster">🚀</div>
+
+            <span class="movie-year">1981</span>
+
+            <h3>
+                The Records of Nobita, Spaceblazer
+            </h3>
+
+            <p>
+                Nobita ka exciting space adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">03</div>
+
+            <div class="movie-poster">🏰</div>
+
+            <span class="movie-year">1982</span>
+
+            <h3>
+                Nobita and the Haunts of Evil
+            </h3>
+
+            <p>
+                Nobita aur friends ek mysterious
+                adventure mein fas jaate hain.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">04</div>
+
+            <div class="movie-poster">🌊</div>
+
+            <span class="movie-year">1983</span>
+
+            <h3>
+                Nobita and the Castle of the Undersea Devil
+            </h3>
+
+            <p>
+                Samundar ke neeche ek incredible adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">05</div>
+
+            <div class="movie-poster">🧙</div>
+
+            <span class="movie-year">1984</span>
+
+            <h3>
+                Nobita's Great Adventure into the Underworld
+            </h3>
+
+            <p>
+                Magical world mein Nobita ki journey.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">06</div>
+
+            <div class="movie-poster">🚀</div>
+
+            <span class="movie-year">1985</span>
+
+            <h3>
+                Nobita's Little Star Wars
+            </h3>
+
+            <p>
+                Chhote planet aur space heroes ki adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">07</div>
+
+            <div class="movie-poster">🤖</div>
+
+            <span class="movie-year">1986</span>
+
+            <h3>
+                Nobita and the Steel Troops
+            </h3>
+
+            <p>
+                Giant robots aur Nobita ki epic battle.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">08</div>
+
+            <div class="movie-poster">🦕</div>
+
+            <span class="movie-year">1987</span>
+
+            <h3>
+                Nobita and the Knights on Dinosaurs
+            </h3>
+
+            <p>
+                Dinosaurs aur ancient warriors ka adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">09</div>
+
+            <div class="movie-poster">🐒</div>
+
+            <span class="movie-year">1988</span>
+
+            <h3>
+                Nobita's Parallel Visit to the West
+            </h3>
+
+            <p>
+                Journey to the West inspired adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">10</div>
+
+            <div class="movie-poster">🗾</div>
+
+            <span class="movie-year">1989</span>
+
+            <h3>
+                Nobita and the Birth of Japan
+            </h3>
+
+            <p>
+                Ancient Japan mein Nobita aur friends.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">11</div>
+
+            <div class="movie-poster">🌳</div>
+
+            <span class="movie-year">1990</span>
+
+            <h3>
+                Nobita and the Animal Planet
+            </h3>
+
+            <p>
+                Animals ke mysterious planet ki journey.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">12</div>
+
+            <div class="movie-poster">🏜️</div>
+
+            <span class="movie-year">1991</span>
+
+            <h3>
+                Nobita's Dorabian Nights
+            </h3>
+
+            <p>
+                Arabian Nights inspired magical adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">13</div>
+
+            <div class="movie-poster">☁️</div>
+
+            <span class="movie-year">1992</span>
+
+            <h3>
+                Nobita and the Kingdom of Clouds
+            </h3>
+
+            <p>
+                Clouds ke magical kingdom ka adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">14</div>
+
+            <div class="movie-poster">🏨</div>
+
+            <span class="movie-year">1993</span>
+
+            <h3>
+                Nobita and the Tin Labyrinth
+            </h3>
+
+            <p>
+                Mysterious labyrinth aur exciting mystery.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">15</div>
+
+            <div class="movie-poster">⚔️</div>
+
+            <span class="movie-year">1994</span>
+
+            <h3>
+                Nobita's Three Visionary Swordsmen
+            </h3>
+
+            <p>
+                Fantasy world mein sword adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">16</div>
+
+            <div class="movie-poster">🌍</div>
+
+            <span class="movie-year">1995</span>
+
+            <h3>
+                Nobita's Diary on the Creation of the World
+            </h3>
+
+            <p>
+                World creation ke imagination adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">17</div>
+
+            <div class="movie-poster">🚄</div>
+
+            <span class="movie-year">1996</span>
+
+            <h3>
+                Nobita and the Galaxy Super-Express
+            </h3>
+
+            <p>
+                Galaxy train par unforgettable journey.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">18</div>
+
+            <div class="movie-poster">🏙️</div>
+
+            <span class="movie-year">1997</span>
+
+            <h3>
+                Nobita's Spiral City Adventure
+            </h3>
+
+            <p>
+                Ek strange futuristic city ka adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">19</div>
+
+            <div class="movie-poster">🏝️</div>
+
+            <span class="movie-year">1998</span>
+
+            <h3>
+                Nobita's Great Adventure in the South Seas
+            </h3>
+
+            <p>
+                Pirates aur ocean adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">20</div>
+
+            <div class="movie-poster">🌌</div>
+
+            <span class="movie-year">1999</span>
+
+            <h3>
+                Nobita Drifts in the Universe
+            </h3>
+
+            <p>
+                Space mein Nobita ki dangerous journey.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 21 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">21</div>
+
+            <div class="movie-poster">☀️</div>
+
+            <span class="movie-year">2000</span>
+
+            <h3>
+                Nobita and the Legend of the Sun King
+            </h3>
+
+            <p>
+                Ancient kingdom aur Sun King ki story.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 22 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">22</div>
+
+            <div class="movie-poster">🦅</div>
+
+            <span class="movie-year">2001</span>
+
+            <h3>
+                Nobita and the Winged Braves
+            </h3>
+
+            <p>
+                Flying heroes aur mysterious world.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 23 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">23</div>
+
+            <div class="movie-poster">🤖</div>
+
+            <span class="movie-year">2002</span>
+
+            <h3>
+                Nobita in the Robot Kingdom
+            </h3>
+
+            <p>
+                Robots ke kingdom mein adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 24 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">24</div>
+
+            <div class="movie-poster">🌪️</div>
+
+            <span class="movie-year">2003</span>
+
+            <h3>
+                Nobita and the Windmasters
+            </h3>
+
+            <p>
+                Wind powers aur mysterious tribe ki story.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 25 -->
+
+        <div class="movie-card classic">
+
+            <div class="movie-number">25</div>
+
+            <div class="movie-poster">🐱</div>
+
+            <span class="movie-year">2004</span>
+
+            <h3>
+                Nobita in the Wan-Nyan Spacetime Odyssey
+            </h3>
+
+            <p>
+                Dogs, cats aur time-space adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 26 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">26</div>
+
+            <div class="movie-poster">🦖</div>
+
+            <span class="movie-year">2006</span>
+
+            <h3>
+                Nobita's Dinosaur
+            </h3>
+
+            <p>
+                1980 classic ka modern remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 27 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">27</div>
+
+            <div class="movie-poster">🧙</div>
+
+            <span class="movie-year">2007</span>
+
+            <h3>
+                New Great Adventure into the Underworld
+            </h3>
+
+            <p>
+                Classic magical adventure ka remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 28 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">28</div>
+
+            <div class="movie-poster">🌱</div>
+
+            <span class="movie-year">2008</span>
+
+            <h3>
+                Nobita and the Legend of the Green Giant
+            </h3>
+
+            <p>
+                Nature aur mysterious green world.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 29 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">29</div>
+
+            <div class="movie-poster">🚀</div>
+
+            <span class="movie-year">2009</span>
+
+            <h3>
+                The New Record of Nobita: Spaceblazer
+            </h3>
+
+            <p>
+                Spaceblazer story ka modern remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 30 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">30</div>
+
+            <div class="movie-poster">🧜</div>
+
+            <span class="movie-year">2010</span>
+
+            <h3>
+                Nobita's Great Battle of the Mermaid King
+            </h3>
+
+            <p>
+                Underwater kingdom aur mermaid adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 31 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">31</div>
+
+            <div class="movie-poster">🤖</div>
+
+            <span class="movie-year">2011</span>
+
+            <h3>
+                New Steel Troops - Winged Angels
+            </h3>
+
+            <p>
+                Steel Troops story ka modern remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 32 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">32</div>
+
+            <div class="movie-poster">🦁</div>
+
+            <span class="movie-year">2012</span>
+
+            <h3>
+                Island of Miracles - Animal Adventure
+            </h3>
+
+            <p>
+                Mysterious island aur animal adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 33 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">33</div>
+
+            <div class="movie-poster">🏛️</div>
+
+            <span class="movie-year">2013</span>
+
+            <h3>
+                Nobita's Secret Gadget Museum
+            </h3>
+
+            <p>
+                Doraemon ke gadgets aur museum mystery.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 34 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">34</div>
+
+            <div class="movie-poster">🐶</div>
+
+            <span class="movie-year">2014</span>
+
+            <h3>
+                New Great Demon - Peko and the Exploration Party of Five
+            </h3>
+
+            <p>
+                Peko aur friends ki giant adventure.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 35 -->
+
+        <div class="movie-card 3d">
+
+            <div class="movie-number">35</div>
+
+            <div class="movie-poster">💙</div>
+
+            <span class="movie-year">2014</span>
+
+            <h3>
+                Stand by Me Doraemon
+            </h3>
+
+            <p>
+                Doraemon aur Nobita ki emotional 3D story.
+            </p>
+
+            <span class="movie-tag">3D CGI</span>
+
+        </div>
+
+
+        <!-- 36 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">36</div>
+
+            <div class="movie-poster">🦸</div>
+
+            <span class="movie-year">2015</span>
+
+            <h3>
+                Nobita's Space Heroes
+            </h3>
+
+            <p>
+                Nobita aur friends become space heroes.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 37 -->
+
+        <div class="movie-card remake">
+
+            <div class="movie-number">37</div>
+
+            <div class="movie-poster">🗾</div>
+
+            <span class="movie-year">2016</span>
+
+            <h3>
+                Nobita and the Birth of Japan
+            </h3>
+
+            <p>
+                Birth of Japan ka modern remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 38 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">38</div>
+
+            <div class="movie-poster">❄️</div>
+
+            <span class="movie-year">2017</span>
+
+            <h3>
+                Nobita's Great Adventure in the Antarctic Kachi Kochi
+            </h3>
+
+            <p>
+                Antarctica mein thrilling adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 39 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">39</div>
+
+            <div class="movie-poster">🏴‍☠️</div>
+
+            <span class="movie-year">2018</span>
+
+            <h3>
+                Nobita's Treasure Island
+            </h3>
+
+            <p>
+                Treasure hunt aur pirate adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 40 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">40</div>
+
+            <div class="movie-poster">🌙</div>
+
+            <span class="movie-year">2019</span>
+
+            <h3>
+                Nobita's Chronicle of the Moon Exploration
+            </h3>
+
+            <p>
+                Moon aur mysterious civilization ki story.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 41 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">41</div>
+
+            <div class="movie-poster">🦕</div>
+
+            <span class="movie-year">2020</span>
+
+            <h3>
+                Nobita's New Dinosaur
+            </h3>
+
+            <p>
+                Do dinosaur friends ke saath adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 42 -->
+
+        <div class="movie-card 3d">
+
+            <div class="movie-number">42</div>
+
+            <div class="movie-poster">💙</div>
+
+            <span class="movie-year">2020</span>
+
+            <h3>
+                Stand by Me Doraemon 2
+            </h3>
+
+            <p>
+                Stand by Me story ka emotional sequel.
+            </p>
+
+            <span class="movie-tag">3D CGI</span>
+
+        </div>
+
+
+        <!-- 43 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">43</div>
+
+            <div class="movie-poster">🚀</div>
+
+            <span class="movie-year">2022</span>
+
+            <h3>
+                Nobita's Little Star Wars 2021
+            </h3>
+
+            <p>
+                Little Star Wars ka modern remake.
+            </p>
+
+            <span class="movie-tag">REMAKE</span>
+
+        </div>
+
+
+        <!-- 44 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">44</div>
+
+            <div class="movie-poster">🏝️</div>
+
+            <span class="movie-year">2023</span>
+
+            <h3>
+                Nobita's Sky Utopia
+            </h3>
+
+            <p>
+                Sky world aur mysterious Utopia.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 45 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">45</div>
+
+            <div class="movie-poster">🎵</div>
+
+            <span class="movie-year">2024</span>
+
+            <h3>
+                Nobita's Earth Symphony
+            </h3>
+
+            <p>
+                Music aur Earth ke around unique adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+        <!-- 46 -->
+
+        <div class="movie-card modern">
+
+            <div class="movie-number">46</div>
+
+            <div class="movie-poster">🎨</div>
+
+            <span class="movie-year">2025</span>
+
+            <h3>
+                Nobita's Art World Tales
+            </h3>
+
+            <p>
+                Art world mein Nobita aur friends ki
+                latest adventure.
+            </p>
+
+            <span class="movie-tag">JAPAN</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        DORAEMON WORLD 💙
+    </div>
+
+    <p>
+        Unofficial fan-made website.
+    </p>
+
+    <p class="copyright">
+        © 2026 Doraemon World
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+
+<script>
+
+function filterMovies(type) {
+
+    const cards = document.querySelectorAll(".movie-card");
+    const buttons = document.querySelectorAll(".movie-filter button");
+
+    buttons.forEach(button => {
+        button.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
+
+    cards.forEach(card => {
+
+        if (type === "all") {
+            card.style.display = "block";
+        }
+
+        else if (card.classList.contains(type)) {
+            card.style.display = "block";
+        }
+
+        else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

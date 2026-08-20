@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Doraemon World - All Episodes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ==========================================
+           EPISODES PAGE
+        ========================================== */
+
+        .episodes-page {
+            min-height: 100vh;
+            padding: 70px 7%;
+        }
+
+
+        /* ==========================================
+           PAGE HERO
+        ========================================== */
+
+        .episodes-hero {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 45px;
+        }
+
+        .episodes-badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(14, 157, 226, 0.12);
+
+            color: #078bd1;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+        }
+
+        .episodes-hero h1 {
+            margin: 0;
+
+            font-size: clamp(42px, 6vw, 75px);
+
+            line-height: 1.05;
+
+            color: #073d67;
+        }
+
+        .episodes-hero h1 span {
+            color: #079fe6;
+        }
+
+        .episodes-hero p {
+            max-width: 700px;
+
+            margin: 18px auto 0;
+
+            color: #687d90;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==========================================
+           STATS
+        ========================================== */
+
+        .episode-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .episode-stat {
+
+            background: rgba(255,255,255,0.9);
+
+            border: 1px solid
+                rgba(14,157,226,0.10);
+
+            border-radius: 22px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,70,120,0.08);
+        }
+
+        .episode-stat strong {
+
+            display: block;
+
+            color: #079fe6;
+
+            font-size: 30px;
+
+            margin-bottom: 5px;
+        }
+
+        .episode-stat span {
+
+            color: #718496;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        /* ==========================================
+           CONTROLS
+        ========================================== */
+
+        .episode-controls {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 22px;
+        }
+
+
+        .episode-search {
+
+            width: min(550px, 100%);
+
+            height: 52px;
+
+            border: 1px solid
+                rgba(14,157,226,0.15);
+
+            border-radius: 30px;
+
+            padding: 0 22px;
+
+            outline: none;
+
+            background: white;
+
+            color: #194b68;
+
+            font-size: 14px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,70,120,0.07);
+
+            transition: 0.25s;
+        }
+
+        .episode-search:focus {
+
+            border-color: #079fe6;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(7,159,230,0.10);
+        }
+
+
+        .episode-year {
+
+            height: 52px;
+
+            min-width: 160px;
+
+            padding: 0 18px;
+
+            border-radius: 30px;
+
+            border: 1px solid
+                rgba(14,157,226,0.15);
+
+            background: white;
+
+            color: #155c7e;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            outline: none;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,70,120,0.07);
+        }
+
+
+        /* ==========================================
+           FILTER BUTTONS
+        ========================================== */
+
+        .episode-filter {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+        }
+
+        .episode-filter button {
+
+            border: none;
+
+            padding: 11px 19px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #166084;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,70,120,0.07);
+
+            transition: 0.25s;
+        }
+
+        .episode-filter button:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+        .episode-filter button.active {
+
+            background: #079fe6;
+
+            color: white;
+
+        }
+
+
+        /* ==========================================
+           RESULTS
+        ========================================== */
+
+        .episode-result-bar {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+            color: #587386;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+        #resultCount {
+
+            color: #079fe6;
+
+            font-weight: 800;
+        }
+
+
+        /* ==========================================
+           EPISODE GRID
+        ========================================== */
+
+        .episode-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* ==========================================
+           CARD
+        ========================================== */
+
+        .episode-card {
+
+            background: rgba(255,255,255,0.94);
+
+            border-radius: 23px;
+
+            overflow: hidden;
+
+            border: 1px solid
+                rgba(14,157,226,0.10);
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,70,120,0.08);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .episode-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 22px 45px
+                rgba(0,100,180,0.15);
+        }
+
+
+        /* ==========================================
+           CARD IMAGE AREA
+        ========================================== */
+
+        .episode-image {
+
+            height: 190px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b8ebff,
+                    #edfaff
+                );
+
+            overflow: hidden;
+        }
+
+        .episode-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+
+            height: 170px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.35);
+
+            top: -70px;
+
+            right: -50px;
+        }
+
+        .episode-image-icon {
+
+            font-size: 65px;
+
+            position: relative;
+
+            z-index: 2;
+
+            filter:
+                drop-shadow(
+                    0 8px 12px
+                    rgba(0,80,130,0.15)
+                );
+        }
+
+
+        /* ==========================================
+           NUMBER
+        ========================================== */
+
+        .episode-number {
+
+            position: absolute;
+
+            top: 14px;
+
+            left: 14px;
+
+            z-index: 5;
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.92);
+
+            color: #078bd1;
+
+            font-size: 11px;
+
+            font-weight: 900;
+        }
+
+
+        /* ==========================================
+           YEAR
+        ========================================== */
+
+        .episode-year-tag {
+
+            position: absolute;
+
+            top: 14px;
+
+            right: 14px;
+
+            z-index: 5;
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            background: #079fe6;
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        /* ==========================================
+           CARD CONTENT
+        ========================================== */
+
+        .episode-content {
+
+            padding: 21px;
+        }
+
+        .episode-content h3 {
+
+            margin: 0 0 9px;
+
+            color: #073f68;
+
+            font-size: 18px;
+
+            line-height: 1.4;
+        }
+
+        .episode-content p {
+
+            margin: 0;
+
+            color: #708394;
+
+            font-size: 13px;
+
+            line-height: 1.65;
+        }
+
+
+        /* ==========================================
+           META
+        ========================================== */
+
+        .episode-meta {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: 16px;
+
+            padding-top: 14px;
+
+            border-top: 1px solid
+                rgba(0,80,130,0.08);
+        }
+
+        .episode-series {
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background: #eaf8ff;
+
+            color: #078bd1;
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+        .episode-arrow {
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: #079fe6;
+
+            color: white;
+
+            font-weight: bold;
+        }
+
+
+        /* ==========================================
+           NO RESULT
+        ========================================== */
+
+        .no-results {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            color: #708394;
+        }
+
+        .no-results-icon {
+
+            font-size: 60px;
+
+            margin-bottom: 15px;
+        }
+
+        .no-results h2 {
+
+            color: #174c6d;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ==========================================
+           PAGINATION
+        ========================================== */
+
+        .pagination {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 45px;
+
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: white;
+
+            color: #166084;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 20px
+                rgba(0,70,120,0.08);
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+
+            background: #079fe6;
+
+            color: white;
+        }
+
+
+        /* ==========================================
+           LOADING
+        ========================================== */
+
+        .episodes-loading {
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            color: #079fe6;
+
+            font-weight: 700;
+        }
+
+        .loading-circle {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: 4px solid
+                rgba(7,159,230,0.15);
+
+            border-top-color: #079fe6;
+
+            animation:
+                spin 0.8s linear infinite;
+
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media(max-width: 1000px) {
+
+            .episode-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .episode-stats {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 650px) {
+
+            .episodes-page {
+
+                padding: 50px 5%;
+            }
+
+            .episode-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .episode-stats {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .episode-stat {
+
+                padding: 20px 10px;
+            }
+
+            .episode-stat strong {
+
+                font-size: 25px;
+            }
+
+            .episode-controls {
+
+                flex-direction: column;
+            }
+
+            .episode-search,
+            .episode-year {
+
+                width: 100%;
+
+                max-width: 100%;
+            }
+
+            .episode-image {
+
+                height: 210px;
+            }
+
+        }
+
+
+        @media(max-width: 400px) {
+
+            .episode-stats {
+
+                grid-template-columns: 1fr;
+            }
+
+            .episodes-hero h1 {
+
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+
+    <a href="index.html"
+       class="logo">
+
+        DORAEMON 🌐
+
+    </a>
+
+
+    <button
+        id="menu"
+        class="menu-btn"
+        aria-label="Open Menu">
+
+        ☰
+
+    </button>
+
+
+    <nav id="nav">
+
+
+        <a href="index.html">
+
+            🏠 Home
+
+        </a>
+
+
+        <a href="movies.html">
+
+            🎬 Movies
+
+        </a>
+
+
+        <a href="episodes.html"
+           class="active">
+
+            📺 Episodes
+
+        </a>
+
+
+        <a href="characters.html">
+
+            👥 Characters
+
+        </a>
+
+
+        <a href="wallpapers.html">
+
+            🖼️ Wallpapers
+
+        </a>
+
+
+        <a href="music.html">
+
+            🎵 Music
+
+        </a>
+
+
+        <a href="gallery.html">
+
+            📸 Gallery
+
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<section class="episodes-page">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <div class="episodes-hero">
+
+
+        <span class="episodes-badge">
+
+            📺 DORAEMON EPISODE LIBRARY
+
+        </span>
+
+
+        <h1>
+
+            All <span>Episodes</span>
+
+        </h1>
+
+
+        <p>
+
+            Doraemon ke classic aur new series
+            episodes ko search karo, year ke
+            according filter karo aur apne
+            favourite adventures explore karo.
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <div class="episode-stats">
+
+
+        <div class="episode-stat">
+
+            <strong>1,787</strong>
+
+            <span>
+
+                Classic Episodes
+
+            </span>
+
+        </div>
+
+
+        <div class="episode-stat">
+
+            <strong>30</strong>
+
+            <span>
+
+                Classic Specials
+
+            </span>
+
+        </div>
+
+
+        <div class="episode-stat">
+
+            <strong>2005+</strong>
+
+            <span>
+
+                New Series
+
+            </span>
+
+        </div>
+
+
+        <div class="episode-stat">
+
+            <strong>∞</strong>
+
+            <span>
+
+                Adventures
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SEARCH
+    ================================================== -->
+
+    <div class="episode-controls">
+
+
+        <input
+            type="search"
+            id="episodeSearch"
+            class="episode-search"
+            placeholder="🔎 Search episode name...">
+
+
+        <select
+            id="yearSelect"
+            class="episode-year">
+
+            <option value="all">
+
+                📅 All Years
+
+            </option>
+
+        </select>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FILTER
+    ================================================== -->
+
+    <div class="episode-filter">
+
+
+        <button
+            class="active"
+            data-filter="all">
+
+            🌎 All Episodes
+
+        </button>
+
+
+        <button
+            data-filter="classic">
+
+            ⭐ Classic 1979
+
+        </button>
+
+
+        <button
+            data-filter="new">
+
+            ✨ 2005+
+
+        </button>
+
+
+        <button
+            data-filter="special">
+
+            🎉 Specials
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         RESULT COUNT
+    ================================================== -->
+
+    <div class="episode-result-bar">
+
+
+        <span>
+
+            Showing episodes
+
+        </span>
+
+
+        <span>
+
+            <span id="resultCount">0</span>
+            results
+
+        </span>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         LOADING
+    ================================================== -->
+
+    <div
+        class="episodes-loading"
+        id="episodesLoading">
+
+        <div class="loading-circle"></div>
+
+        Loading Doraemon episodes...
+
+    </div>
+
+
+
+    <!-- =================================================
+         EPISODE GRID
+    ================================================== -->
+
+    <div
+        class="episode-grid"
+        id="episodeGrid">
+
+    </div>
+
+
+
+    <!-- =================================================
+         NO RESULTS
+    ================================================== -->
+
+    <div
+        class="no-results"
+        id="noResults">
+
+
+        <div class="no-results-icon">
+
+            😿
+
+        </div>
+
+
+        <h2>
+
+            Episode nahi mila
+
+        </h2>
+
+
+        <p>
+
+            Search ya year filter change karke
+            dobara try karo.
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         PAGINATION
+    ================================================== -->
+
+    <div
+        class="pagination"
+        id="pagination">
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        DORAEMON WORLD 💙
+
+    </div>
+
+
+    <p>
+
+        Unofficial fan-made website.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Doraemon World
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     MAIN SCRIPT
+===================================================== -->
+
+<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     EPISODE DATABASE
+===================================================== -->
+
+<script src="js/episodes.js"></script>
+
+
+
+<script>
+
+    /* =====================================================
+       EPISODE PAGE ENGINE
+    ===================================================== */
+
+
+    const grid =
+        document.getElementById("episodeGrid");
+
+
+    const search =
+        document.getElementById("episodeSearch");
+
+
+    const yearSelect =
+        document.getElementById("yearSelect");
+
+
+    const resultCount =
+        document.getElementById("resultCount");
+
+
+    const pagination =
+        document.getElementById("pagination");
+
+
+    const loading =
+        document.getElementById("episodesLoading");
+
+
+    const noResults =
+        document.getElementById("noResults");
+
+
+    let activeFilter = "all";
+
+
+    let currentPage = 1;
+
+
+    const perPage = 24;
+
+
+    let filteredEpisodes = [];
+
+
+    /* =====================================================
+       WAIT FOR DATABASE
+    ===================================================== */
+
+    window.addEventListener(
+        "load",
+        () => {
+
+            loading.style.display = "none";
+
+
+            if (
+                typeof episodes === "undefined" ||
+                !Array.isArray(episodes)
+            ) {
+
+                noResults.style.display =
+                    "block";
+
+                noResults.querySelector("h2")
+                    .textContent =
+                    "Episode database load nahi hua";
+
+                return;
+
+            }
+
+
+            createYearList();
+
+            applyFilters();
+
+        }
+    );
+
+
+
+    /* =====================================================
+       YEAR LIST
+    ===================================================== */
+
+    function createYearList() {
+
+        const years =
+            [...new Set(
+                episodes
+                    .map(ep => ep.year)
+                    .filter(Boolean)
+            )]
+            .sort((a,b) => a-b);
+
+
+        years.forEach(year => {
+
+            const option =
+                document.createElement("option");
+
+
+            option.value = year;
+
+
+            option.textContent = year;
+
+
+            yearSelect.appendChild(option);
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       FILTER BUTTONS
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".episode-filter button"
+        )
+        .forEach(button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    document
+                        .querySelectorAll(
+                            ".episode-filter button"
+                        )
+                        .forEach(btn => {
+
+                            btn.classList
+                                .remove("active");
+
+                        });
+
+
+                    button.classList
+                        .add("active");
+
+
+                    activeFilter =
+                        button.dataset.filter;
+
+
+                    currentPage = 1;
+
+
+                    applyFilters();
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    search.addEventListener(
+        "input",
+        () => {
+
+            currentPage = 1;
+
+            applyFilters();
+
+        }
+    );
+
+
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    yearSelect.addEventListener(
+        "change",
+        () => {
+
+            currentPage = 1;
+
+            applyFilters();
+
+        }
+    );
+
+
+
+    /* =====================================================
+       APPLY FILTERS
+    ===================================================== */
+
+    function applyFilters() {
+
+
+        const searchText =
+            search.value
+                .trim()
+                .toLowerCase();
+
+
+        const selectedYear =
+            yearSelect.value;
+
+
+        filteredEpisodes =
+            episodes.filter(ep => {
+
+
+                const title =
+                    String(
+                        ep.title || ""
+                    ).toLowerCase();
+
+
+                const japanese =
+                    String(
+                        ep.japanese || ""
+                    ).toLowerCase();
+
+
+                const searchMatch =
+                    !searchText ||
+                    title.includes(searchText) ||
+                    japanese.includes(searchText);
+
+
+                const yearMatch =
+                    selectedYear === "all" ||
+                    String(ep.year) ===
+                    selectedYear;
+
+
+                let seriesMatch = true;
+
+
+                if (
+                    activeFilter !== "all"
+                ) {
+
+                    seriesMatch =
+                        ep.series ===
+                        activeFilter;
+
+                }
+
+
+                return (
+                    searchMatch &&
+                    yearMatch &&
+                    seriesMatch
+                );
+
+            });
+
+
+        resultCount.textContent =
+            filteredEpisodes.length;
+
+
+        renderEpisodes();
+
+    }
+
+
+
+    /* =====================================================
+       RENDER EPISODES
+    ===================================================== */
+
+    function renderEpisodes() {
+
+
+        grid.innerHTML = "";
+
+
+        const total =
+            filteredEpisodes.length;
+
+
+        if (total === 0) {
+
+            noResults.style.display =
+                "block";
+
+            pagination.innerHTML = "";
+
+            return;
+
+        }
+
+
+        noResults.style.display =
+            "none";
+
+
+        const start =
+            (currentPage - 1) *
+            perPage;
+
+
+        const end =
+            start + perPage;
+
+
+        const pageEpisodes =
+            filteredEpisodes.slice(
+                start,
+                end
+            );
+
+
+        pageEpisodes.forEach(
+            episode => {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "episode-card";
+
+
+                const number =
+                    episode.no ??
+                    "—";
+
+
+                const title =
+                    episode.title ||
+                    "Untitled Episode";
+
+
+                const year =
+                    episode.year ||
+                    "—";
+
+
+                const japanese =
+                    episode.japanese ||
+                    "";
+
+
+                let icon = "📺";
+
+
+                if (
+                    episode.series ===
+                    "classic"
+                ) {
+
+                    icon = "⭐";
+
+                }
+
+                if (
+                    episode.series ===
+                    "new"
+                ) {
+
+                    icon = "✨";
+
+                }
+
+                if (
+                    episode.series ===
+                    "special"
+                ) {
+
+                    icon = "🎉";
+
+                }
+
+
+                let seriesName =
+                    "EPISODE";
+
+
+                if (
+                    episode.series ===
+                    "classic"
+                ) {
+
+                    seriesName =
+                        "CLASSIC";
+
+                }
+
+                else if (
+                    episode.series ===
+                    "new"
+                ) {
+
+                    seriesName =
+                        "2005+";
+
+                }
+
+                else if (
+                    episode.series ===
+                    "special"
+                ) {
+
+                    seriesName =
+                        "SPECIAL";
+
+                }
+
+
+                card.innerHTML = `
+
+                    <div class="episode-image">
+
+                        <span class="episode-number">
+
+                            EP ${number}
+
+                        </span>
+
+                        <span class="episode-year-tag">
+
+                            ${year}
+
+                        </span>
+
+                        <span class="episode-image-icon">
+
+                            ${icon}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="episode-content">
+
+                        <h3>
+
+                            ${escapeHTML(title)}
+
+                        </h3>
+
+
+                        <p>
+
+                            ${escapeHTML(japanese)}
+
+                        </p>
+
+
+                        <div class="episode-meta">
+
+                            <span class="episode-series">
+
+                                ${seriesName}
+
+                            </span>
+
+
+                            <span class="episode-arrow">
+
+                                →
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                grid.appendChild(card);
+
+            }
+        );
+
+
+        renderPagination();
+
+    }
+
+
+
+    /* =====================================================
+       PAGINATION
+    ===================================================== */
+
+    function renderPagination() {
+
+
+        pagination.innerHTML = "";
+
+
+        const totalPages =
+            Math.ceil(
+                filteredEpisodes.length /
+                perPage
+            );
+
+
+        if (totalPages <= 1) {
+
+            return;
+
+        }
+
+
+        const previous =
+            document.createElement("button");
+
+
+        previous.className =
+            "page-btn";
+
+
+        previous.textContent =
+            "‹";
+
+
+        previous.disabled =
+            currentPage === 1;
+
+
+        previous.onclick =
+            () => {
+
+                if (
+                    currentPage > 1
+                ) {
+
+                    currentPage--;
+
+                    renderEpisodes();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+
+            };
+
+
+        pagination.appendChild(
+            previous
+        );
+
+
+        const maxButtons = 7;
+
+
+        let startPage =
+            Math.max(
+                1,
+                currentPage - 3
+            );
+
+
+        let endPage =
+            Math.min(
+                totalPages,
+                startPage + maxButtons - 1
+            );
+
+
+        if (
+            endPage - startPage <
+            maxButtons - 1
+        ) {
+
+            startPage =
+                Math.max(
+                    1,
+                    endPage - maxButtons + 1
+                );
+
+        }
+
+
+        for (
+            let i = startPage;
+            i <= endPage;
+            i++
+        ) {
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "page-btn";
+
+
+            button.textContent =
+                i;
+
+
+            if (
+                i === currentPage
+            ) {
+
+                button.classList
+                    .add("active");
+
+            }
+
+
+            button.onclick =
+                () => {
+
+                    currentPage = i;
+
+                    renderEpisodes();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                };
+
+
+            pagination.appendChild(
+                button
+            );
+
+        }
+
+
+        const next =
+            document.createElement("button");
+
+
+        next.className =
+            "page-btn";
+
+
+        next.textContent =
+            "›";
+
+
+        next.disabled =
+            currentPage === totalPages;
+
+
+        next.onclick =
+            () => {
+
+                if (
+                    currentPage <
+                    totalPages
+                ) {
+
+                    currentPage++;
+
+                    renderEpisodes();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+
+            };
+
+
+        pagination.appendChild(
+            next
+        );
+
+    }
+
+
+
+    /* =====================================================
+       HTML ESCAPE
+    ===================================================== */
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
