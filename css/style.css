@@ -37,7 +37,7 @@ button {
 
 
 /* =========================================================
-   MOBILE VERSION HIDDEN BY DEFAULT
+   MOBILE ELEMENTS HIDDEN BY DEFAULT
 ========================================================= */
 
 .mobile-header,
@@ -177,11 +177,15 @@ button {
     min-height: 500px;
 
     margin: 30px auto;
-    padding: 55px;
+    padding: 50px;
 
     display: grid;
 
-    grid-template-columns: 44% 56%;
+    /*
+       Reduced Doraemon area so image
+       does not become too large.
+    */
+    grid-template-columns: 48% 52%;
 
     align-items: center;
 
@@ -299,7 +303,7 @@ button {
     margin-top: 18px;
 
     font-size:
-        clamp(42px, 6vw, 76px);
+        clamp(42px, 5vw, 70px);
 
     line-height: 1.05;
 
@@ -405,11 +409,17 @@ button {
 
 /* =========================================================
    DORAEMON ORB
+   DESKTOP SIZE REDUCED
 ========================================================= */
 
 .character-orb {
-    width: min(520px, 100%);
-    height: 520px;
+    /*
+       Main desktop size reduced
+       from 520px to 400px.
+    */
+
+    width: min(400px, 90%);
+    height: 400px;
 
     display: flex;
 
@@ -425,13 +435,13 @@ button {
             #078ed4
         );
 
-    border: 8px solid white;
+    border: 7px solid white;
 
     overflow: hidden;
 
     box-shadow:
 
-        0 0 0 15px
+        0 0 0 12px
         rgba(255, 255, 255, 0.10),
 
         0 25px 60px
@@ -447,14 +457,15 @@ button {
 ========================================================= */
 
 .doraemon-face {
-    width: 88%;
-    height: 88%;
+    width: 86%;
+    height: 86%;
 
     object-fit: contain;
 
     display: block;
 
     max-width: 100%;
+    max-height: 100%;
 }
 
 
@@ -469,7 +480,7 @@ button {
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
     }
 
     100% {
@@ -881,14 +892,14 @@ footer p {
 @media (max-width: 1200px) {
 
     .hero {
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 48% 52%;
 
-        padding: 45px;
+        padding: 42px;
     }
 
     .character-orb {
-        width: 440px;
-        height: 440px;
+        width: 360px;
+        height: 360px;
     }
 
     #nav a {
@@ -907,18 +918,18 @@ footer p {
 @media (max-width: 1050px) {
 
     .hero {
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 48% 52%;
 
-        padding: 40px;
+        padding: 38px;
     }
 
     .character-orb {
-        width: 390px;
-        height: 390px;
+        width: 330px;
+        height: 330px;
     }
 
     .hero h1 {
-        font-size: 55px;
+        font-size: 52px;
     }
 
     .feature-grid {
@@ -1247,6 +1258,65 @@ footer p {
                 translateY(0);
         }
 
+    }
+
+
+    /* =====================================================
+       HEY MAUSAM
+       NAME BESIDE DORAEMON
+    ===================================================== */
+
+    .mobile-mausam-name {
+        position: absolute;
+
+        z-index: 10;
+
+        /*
+           Name stays beside Doraemon
+           instead of covering his face.
+        */
+        right: 18px;
+        bottom: 175px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 7px 11px;
+
+        border-radius: 12px;
+
+        background:
+            rgba(255, 255, 255, 0.22);
+
+        border:
+            1px solid rgba(255, 255, 255, 0.45);
+
+        backdrop-filter: blur(10px);
+
+        -webkit-backdrop-filter: blur(10px);
+
+        color: white;
+
+        font-size: 13px;
+
+        font-weight: 900;
+
+        white-space: nowrap;
+
+        text-shadow:
+            1px 2px 3px
+            rgba(0, 70, 130, 0.35);
+
+        box-shadow:
+            0 6px 18px
+            rgba(0, 70, 120, 0.12);
+    }
+
+    .mobile-mausam-name span:last-child {
+        font-size: 15px;
     }
 
 
@@ -1609,7 +1679,7 @@ footer p {
 
 
     /* =====================================================
-       MOBILE BOTTOM NAV
+       MOBILE BOTTOM NAVIGATION
     ===================================================== */
 
     .mobile-bottom-nav {
@@ -1795,6 +1865,29 @@ footer p {
         bottom: -5px;
     }
 
+
+    /* =====================================================
+       MAUSAM - SMALL MOBILE
+    ===================================================== */
+
+    .mobile-mausam-name {
+        right: 12px;
+
+        /*
+           Keep it above Doraemon.
+        */
+        bottom: 155px;
+
+        padding: 6px 9px;
+
+        font-size: 11px;
+    }
+
+    .mobile-mausam-name span:last-child {
+        font-size: 13px;
+    }
+
+
     .mobile-quick-menu {
         width: 94%;
 
@@ -1966,6 +2059,26 @@ footer p {
         height: 135px;
     }
 
+
+    /* =====================================================
+       MAUSAM - VERY SMALL MOBILE
+    ===================================================== */
+
+    .mobile-mausam-name {
+        right: 9px;
+
+        bottom: 135px;
+
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+    .mobile-mausam-name span:last-child {
+        font-size: 11px;
+    }
+
+
     .mobile-quick-menu {
         gap: 5px;
     }
@@ -2092,65 +2205,3 @@ footer p {
 /* =========================================================
    END OF DORAEMON WORLD CSS
 ========================================================= */
-/* =========================================================
-   MAUSAM NAME - BESIDE DORAEMON
-========================================================= */
-
-.mobile-mausam-name {
-    position: absolute;
-
-    z-index: 10;
-
-    right: 18px;
-    bottom: 25px;
-
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    padding: 7px 11px;
-
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.22);
-
-    border: 1px solid rgba(255, 255, 255, 0.45);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    color: white;
-
-    font-size: 13px;
-    font-weight: 900;
-
-    text-shadow:
-        1px 2px 3px rgba(0, 70, 130, 0.35);
-
-    box-shadow:
-        0 6px 18px rgba(0, 70, 120, 0.12);
-}
-
-.mobile-mausam-name span:last-child {
-    font-size: 15px;
-}
-
-
-/* SMALL MOBILE */
-
-@media (max-width: 400px) {
-
-    .mobile-mausam-name {
-        right: 12px;
-        bottom: 20px;
-
-        padding: 6px 9px;
-
-        font-size: 11px;
-    }
-
-    .mobile-mausam-name span:last-child {
-        font-size: 13px;
-    }
-
-}
