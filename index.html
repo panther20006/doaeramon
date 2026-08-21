@@ -1,396 +1,144 @@
 <!DOCTYPE html>
-<html lang="hi">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Doraemon World</title>
+    <title>Doraemon - Magic World</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
-    <header class="topbar">
+    <header class="navbar">
 
-        <a href="index.html" class="logo">
-            DORAEMON 🌐
-        </a>
+        <div class="nav-container">
 
-        <button id="menu" class="menu-btn" aria-label="Open Menu">
-            ☰
-        </button>
-
-        <nav id="nav">
-
-            <a href="index.html" class="active">
-                🏠 Home
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                DORAEMON
+                <span class="logo-globe">🌐</span>
             </a>
 
-            <a href="movies.html">
-                🎬 Movies
-            </a>
 
-            <a href="episodes.html">
-                📺 Episodes
-            </a>
+            <!-- NAVIGATION -->
+            <nav class="nav-menu">
 
-            <a href="characters.html">
-                👥 Characters
-            </a>
+                <a href="index.html" class="nav-link active">
+                    🏠 <span>Home</span>
+                </a>
 
-            <a href="wallpapers.html">
-                🖼️ Wallpapers
-            </a>
+                <a href="movies.html" class="nav-link">
+                    🎬 <span>Movies</span>
+                </a>
 
-            <a href="music.html">
-                🎵 Music
-            </a>
+                <a href="episodes.html" class="nav-link">
+                    📺 <span>Episodes</span>
+                </a>
 
-            <a href="gallery.html">
-                📸 Gallery
-            </a>
+                <a href="characters.html" class="nav-link">
+                    👥 <span>Characters</span>
+                </a>
 
-        </nav>
+                <a href="wallpapers.html" class="nav-link">
+                    🖼️ <span>Wallpapers</span>
+                </a>
+
+                <a href="music.html" class="nav-link">
+                    🎵 <span>Music</span>
+                </a>
+
+                <a href="gallery.html" class="nav-link">
+                    📷 <span>Gallery</span>
+                </a>
+
+            </nav>
+
+        </div>
 
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- =========================================
+         MAIN
+    ========================================== -->
 
     <main>
 
         <section class="hero">
 
-            <!-- HERO CONTENT -->
+            <!-- Decorative circles -->
+            <div class="decor-circle circle-one"></div>
+            <div class="decor-circle circle-two"></div>
+            <div class="decor-circle circle-three"></div>
+
 
             <div class="hero-content">
 
-                <span class="badge">
-                    💙 UNOFFICIAL FAN PROJECT
-                </span>
+                <!-- =================================
+                     LEFT CONTENT
+                ================================== -->
 
-                <h1>
-                    Doraemon ki
-                    <br>
-                    <strong>Magic World!</strong>
-                </h1>
+                <div class="hero-text">
 
-                <p>
-                    Doraemon movies, episodes, characters,
-                    wallpapers, music aur gadgets —
-                    sab ek hi jagah.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="wallpapers.html" class="btn primary">
-                        🖼️ Wallpapers
-                    </a>
-
-                    <a href="characters.html" class="btn secondary">
-                        👥 Characters
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= HERO ART ================= -->
-
-            <div class="hero-art">
-
-                <div class="character-orb">
-
-                    <img
-                        src="./assets/images/characters/Doraemon.png"
-                        alt="Doraemon"
-                        class="doraemon-face"
-                    >
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= EXPLORE ================= -->
-
-        <section class="explore">
-
-            <div class="section-title">
-
-                <span>
-                    EXPLORE
-                </span>
-
-                <h2>
-                    Doraemon World 🌈
-                </h2>
-
-                <p>
-                    Jo chahiye woh ek click mein dekho.
-                </p>
-
-            </div>
-
-
-            <div class="feature-grid">
-
-
-                <!-- MOVIES -->
-
-                <a href="movies.html" class="feature-card">
-
-                    <div class="feature-icon">
-                        🎬
+                    <div class="project-badge">
+                        ♡
+                        <span>UNOFFICIAL FAN PROJECT</span>
                     </div>
 
-                    <h3>
-                        Movies
-                    </h3>
 
-                    <p>
-                        Japan aur India ki
-                        Doraemon movie information.
+                    <h1>
+                        Doraemon ki
+                        <span>Magic World!</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Doraemon movies, episodes, characters,
+                        wallpapers, music aur gadgets
+                        <br>
+                        — sab ek hi jagah.
                     </p>
 
-                    <span class="card-arrow">
-                        →
-                    </span>
 
-                </a>
+                    <!-- BUTTONS -->
 
+                    <div class="hero-buttons">
 
-                <!-- EPISODES -->
+                        <a href="wallpapers.html" class="hero-button primary">
+                            🖼️
+                            <span>Wallpapers</span>
+                        </a>
 
-                <a href="episodes.html" class="feature-card">
+                        <a href="characters.html" class="hero-button secondary">
+                            👥
+                            <span>Characters</span>
+                        </a>
 
-                    <div class="feature-icon">
-                        📺
                     </div>
-
-                    <h3>
-                        Episodes
-                    </h3>
-
-                    <p>
-                        Favourite episodes aur
-                        story information.
-                    </p>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <!-- CHARACTERS -->
-
-                <a href="characters.html" class="feature-card">
-
-                    <div class="feature-icon">
-                        👥
-                    </div>
-
-                    <h3>
-                        Characters
-                    </h3>
-
-                    <p>
-                        Doraemon aur friends
-                        ke detailed profiles.
-                    </p>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <!-- WALLPAPERS -->
-
-                <a href="wallpapers.html" class="feature-card">
-
-                    <div class="feature-icon">
-                        🖼️
-                    </div>
-
-                    <h3>
-                        Wallpapers
-                    </h3>
-
-                    <p>
-                        Mobile aur desktop
-                        wallpapers.
-                    </p>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <!-- MUSIC -->
-
-                <a href="music.html" class="feature-card">
-
-                    <div class="feature-icon">
-                        🎵
-                    </div>
-
-                    <h3>
-                        Music
-                    </h3>
-
-                    <p>
-                        Theme songs aur
-                        music information.
-                    </p>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <!-- GALLERY -->
-
-                <a href="gallery.html" class="feature-card">
-
-                    <div class="feature-icon">
-                        📸
-                    </div>
-
-                    <h3>
-                        Gallery
-                    </h3>
-
-                    <p>
-                        Doraemon world ki
-                        image gallery.
-                    </p>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= GADGET SECTION ================= -->
-
-        <section class="gadget-section">
-
-            <div class="section-title">
-
-                <span>
-                    MAGIC GADGETS
-                </span>
-
-                <h2>
-                    Doraemon ke Gadgets ✨
-                </h2>
-
-                <p>
-                    Doraemon ke famous magical gadgets explore karo.
-                </p>
-
-            </div>
-
-
-            <div class="gadget-grid">
-
-
-                <!-- ANYWHERE DOOR -->
-
-                <div class="gadget-card">
-
-                    <div class="gadget-icon">
-                        🚪
-                    </div>
-
-                    <h3>
-                        Anywhere Door
-                    </h3>
-
-                    <p>
-                        Kahin bhi instantly
-                        travel karne ka magical door.
-                    </p>
 
                 </div>
 
 
-                <!-- 4D POCKET -->
+                <!-- =================================
+                     RIGHT CHARACTER
+                ================================== -->
 
-                <div class="gadget-card">
+                <div class="hero-art">
 
-                    <div class="gadget-icon">
-                        🎒
+                    <div class="character-orb">
+
+                        <img
+                            src="assets/images/characters/doraemon.png"
+                            alt="Doraemon"
+                        >
+
                     </div>
-
-                    <h3>
-                        4D Pocket
-                    </h3>
-
-                    <p>
-                        Doraemon ki famous
-                        unlimited pocket.
-                    </p>
-
-                </div>
-
-
-                <!-- TAKE-COPTER -->
-
-                <div class="gadget-card">
-
-                    <div class="gadget-icon">
-                        🚁
-                    </div>
-
-                    <h3>
-                        Take-copter
-                    </h3>
-
-                    <p>
-                        Flying ke liye
-                        famous gadget.
-                    </p>
-
-                </div>
-
-
-                <!-- TIME MACHINE -->
-
-                <div class="gadget-card">
-
-                    <div class="gadget-icon">
-                        ⏰
-                    </div>
-
-                    <h3>
-                        Time Machine
-                    </h3>
-
-                    <p>
-                        Past aur future
-                        travel ka gadget.
-                    </p>
 
                 </div>
 
@@ -399,95 +147,60 @@
         </section>
 
 
-        <!-- ================= FAVORITE SECTION ================= -->
+        <!-- =========================================
+             QUICK SECTIONS
+        ========================================== -->
 
-        <section class="favorite-section">
+        <section class="quick-section">
 
             <div class="section-title">
-
-                <span>
-                    FAN FAVORITES
-                </span>
-
-                <h2>
-                    Sabse Popular 💙
-                </h2>
-
-                <p>
-                    Doraemon World ke favourite sections.
-                </p>
-
+                <span>✨</span>
+                Explore Doraemon World
+                <span>✨</span>
             </div>
 
 
-            <div class="favorite-grid">
+            <div class="quick-grid">
 
-                <a href="movies.html" class="favorite-card">
-
-                    <span class="favorite-number">
-                        01
-                    </span>
-
-                    <div>
-                        <h3>
-                            Popular Movies
-                        </h3>
-
-                        <p>
-                            Amazing Doraemon movie stories.
-                        </p>
-                    </div>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
+                <a href="movies.html" class="quick-card">
+                    <div class="quick-icon">🎬</div>
+                    <h3>Movies</h3>
+                    <p>Explore Doraemon movies</p>
                 </a>
 
 
-                <a href="characters.html" class="favorite-card">
-
-                    <span class="favorite-number">
-                        02
-                    </span>
-
-                    <div>
-                        <h3>
-                            Favourite Characters
-                        </h3>
-
-                        <p>
-                            Doraemon aur uske friends.
-                        </p>
-                    </div>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
+                <a href="episodes.html" class="quick-card">
+                    <div class="quick-icon">📺</div>
+                    <h3>Episodes</h3>
+                    <p>Browse all episodes</p>
                 </a>
 
 
-                <a href="wallpapers.html" class="favorite-card">
+                <a href="characters.html" class="quick-card">
+                    <div class="quick-icon">👥</div>
+                    <h3>Characters</h3>
+                    <p>Meet your favourite characters</p>
+                </a>
 
-                    <span class="favorite-number">
-                        03
-                    </span>
 
-                    <div>
-                        <h3>
-                            Wallpapers
-                        </h3>
+                <a href="wallpapers.html" class="quick-card">
+                    <div class="quick-icon">🖼️</div>
+                    <h3>Wallpapers</h3>
+                    <p>Beautiful Doraemon wallpapers</p>
+                </a>
 
-                        <p>
-                            Desktop aur mobile wallpapers.
-                        </p>
-                    </div>
 
-                    <span class="card-arrow">
-                        →
-                    </span>
+                <a href="music.html" class="quick-card">
+                    <div class="quick-icon">🎵</div>
+                    <h3>Music</h3>
+                    <p>Listen to Doraemon music</p>
+                </a>
 
+
+                <a href="gallery.html" class="quick-card">
+                    <div class="quick-icon">📷</div>
+                    <h3>Gallery</h3>
+                    <p>Explore the gallery</p>
                 </a>
 
             </div>
@@ -497,29 +210,73 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-    <footer>
+    <footer class="footer">
 
-        <div class="footer-logo">
-            DORAEMON WORLD 💙
+        <div class="footer-content">
+
+            <h2>🔵 DORAEMON</h2>
+
+            <p>
+                Doraemon Magic World — Unofficial Fan Project
+            </p>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © 2026 Doraemon Fan Project
+            </p>
+
         </div>
-
-        <p>
-            Unofficial fan-made website.
-        </p>
-
-        <p class="copyright">
-            © 2026 Doraemon World
-        </p>
 
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-    <script src="js/script.js"></script>
+    <script>
+
+        // Add small click effect to buttons
+
+        document.querySelectorAll(".hero-button").forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                this.style.transform = "scale(0.96)";
+
+                setTimeout(() => {
+                    this.style.transform = "";
+                }, 120);
+
+            });
+
+        });
+
+
+        // Navbar active state
+
+        const currentPage =
+            window.location.pathname.split("/").pop() || "index.html";
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+
+            const linkPage =
+                link.getAttribute("href");
+
+            if (linkPage === currentPage) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    </script>
 
 </body>
-
 </html>
