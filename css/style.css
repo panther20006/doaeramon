@@ -1997,3 +1997,72 @@ footer p {
     }
 
 }
+/* =====================================================
+   MOBILE / DESKTOP VISIBILITY FIX
+   ===================================================== */
+
+/* Default: MOBILE VERSION HIDDEN */
+.mobile-header,
+.mobile-home,
+.mobile-bottom-nav {
+    display: none;
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 701px) {
+
+    .topbar,
+    .hero,
+    .explore,
+    .gadget-section,
+    .favorite-section,
+    footer {
+        display: block;
+    }
+
+    .mobile-header,
+    .mobile-home,
+    .mobile-bottom-nav {
+        display: none !important;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    /* DESKTOP VERSION COMPLETELY HIDE */
+
+    .topbar,
+    .hero,
+    .explore,
+    .gadget-section,
+    .favorite-section,
+    footer {
+        display: none !important;
+    }
+
+
+    /* MOBILE VERSION SHOW */
+
+    .mobile-header {
+        display: flex !important;
+    }
+
+    .mobile-home {
+        display: block !important;
+    }
+
+    .mobile-bottom-nav {
+        display: flex !important;
+    }
+
+}
