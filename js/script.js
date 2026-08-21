@@ -1,200 +1,439 @@
 // =====================================================
 // DORAEMON WORLD
-// MAIN JAVASCRIPT
+// COMPLETE JAVASCRIPT
+// Desktop + Tablet + Mobile
 // =====================================================
 
+document.addEventListener("DOMContentLoaded", () => {
 
-// =====================================================
-// MOBILE MENU
-// =====================================================
+    // =================================================
+    // ELEMENTS
+    // =================================================
 
-const menuButton = document.getElementById("menu");
-const navigation = document.getElementById("nav");
+    const menuButton = document.getElementById("menu");
+    const navigation = document.getElementById("nav");
 
-if (menuButton && navigation) {
+    const mobileMenuButton =
+        document.querySelector(".mobile-menu-btn");
 
-    menuButton.addEventListener("click", () => {
+    const mobileMenuPanel =
+        document.querySelector(".mobile-menu-panel");
 
-        navigation.classList.toggle("show");
+    const buttons =
+        document.querySelectorAll(".btn");
+
+    const featureCards =
+        document.querySelectorAll(".feature-card");
+
+    const gadgetCards =
+        document.querySelectorAll(".gadget-card");
+
+    const doraemonImages =
+        document.querySelectorAll(
+            ".desktop-doraemon, .mobile-doraemon, .doraemon-face"
+        );
+
+    const copyright =
+        document.querySelector(".copyright");
+
+
+    // =================================================
+    // DESKTOP / TABLET MENU
+    // =================================================
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            navigation.classList.toggle("show");
+
+        });
+
+
+        // Navigation link click
+        const navLinks =
+            navigation.querySelectorAll("a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navigation.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+    // =================================================
+    // MOBILE MENU
+    // =================================================
+
+    if (mobileMenuButton && mobileMenuPanel) {
+
+        mobileMenuButton.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            mobileMenuPanel.classList.toggle("show");
+
+        });
+
+
+        const mobileLinks =
+            mobileMenuPanel.querySelectorAll("a");
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenuPanel.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+    // =================================================
+    // CLOSE MENU WHEN CLICKING OUTSIDE
+    // =================================================
+
+    document.addEventListener("click", (event) => {
+
+        // Desktop menu
+        if (
+            navigation &&
+            menuButton &&
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+
+            navigation.classList.remove("show");
+
+        }
+
+
+        // Mobile menu
+        if (
+            mobileMenuPanel &&
+            mobileMenuButton &&
+            !mobileMenuPanel.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+
+            mobileMenuPanel.classList.remove("show");
+
+        }
 
     });
 
 
-    // Menu link click ke baad mobile menu close
-    const navLinks = navigation.querySelectorAll("a");
+    // =================================================
+    // ESC KEY
+    // =================================================
 
-    navLinks.forEach(link => {
+    document.addEventListener("keydown", (event) => {
 
-        link.addEventListener("click", () => {
+        if (event.key === "Escape") {
 
-            navigation.classList.remove("show");
+            if (navigation) {
+                navigation.classList.remove("show");
+            }
+
+            if (mobileMenuPanel) {
+                mobileMenuPanel.classList.remove("show");
+            }
+
+        }
+
+    });
+
+
+    // =================================================
+    // BUTTON CLICK EFFECT
+    // =================================================
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            button.style.transform =
+                "scale(0.97)";
+
+            setTimeout(() => {
+
+                button.style.transform = "";
+
+            }, 120);
 
         });
 
     });
 
-}
+
+    // =================================================
+    // FEATURE CARD
+    // =================================================
+
+    featureCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.zIndex = "5";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.zIndex = "";
+
+        });
+
+    });
 
 
-// =====================================================
-// CLOSE MENU WHEN CLICKING OUTSIDE
-// =====================================================
+    // =================================================
+    // GADGET CARD
+    // =================================================
 
-document.addEventListener("click", (event) => {
+    gadgetCards.forEach(card => {
 
-    if (!menuButton || !navigation) {
-        return;
+        card.addEventListener("mouseenter", () => {
+
+            card.style.zIndex = "5";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.zIndex = "";
+
+        });
+
+    });
+
+
+    // =================================================
+    // DORAEMON IMAGE ERROR HANDLER
+    // =================================================
+
+    doraemonImages.forEach(image => {
+
+        image.addEventListener("error", () => {
+
+            console.warn(
+                "Doraemon image could not be loaded. Check image path."
+            );
+
+            image.style.visibility = "hidden";
+
+        });
+
+    });
+
+
+    // =================================================
+    // CURRENT YEAR
+    // =================================================
+
+    if (copyright) {
+
+        const year =
+            new Date().getFullYear();
+
+        copyright.textContent =
+            `© ${year} Doraemon World`;
+
     }
 
-    const clickedInsideMenu =
-        navigation.contains(event.target);
 
-    const clickedMenuButton =
-        menuButton.contains(event.target);
+    // =================================================
+    // ACTIVE NAVIGATION
+    // =================================================
 
-    if (!clickedInsideMenu && !clickedMenuButton) {
-
-        navigation.classList.remove("show");
-
-    }
-
-});
-
-
-// =====================================================
-// ESCAPE KEY - CLOSE MENU
-// =====================================================
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-        if (navigation) {
-            navigation.classList.remove("show");
-        }
-
-    }
-
-});
-
-
-// =====================================================
-// DORAEMON IMAGE ERROR HANDLER
-// =====================================================
-
-const doraemonImage =
-    document.querySelector(".doraemon-face");
-
-if (doraemonImage) {
-
-    doraemonImage.addEventListener("error", () => {
-
-        console.warn(
-            "Doraemon image could not be loaded. Check the image path."
+    const allNavLinks =
+        document.querySelectorAll(
+            "#nav a, .mobile-menu-panel a, .bottom-nav-item"
         );
 
-        doraemonImage.style.display = "none";
+    allNavLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            allNavLinks.forEach(item => {
+
+                item.classList.remove("active");
+
+            });
+
+            link.classList.add("active");
+
+        });
 
     });
 
-}
 
+    // =================================================
+    // SMOOTH SCROLL
+    // =================================================
 
-// =====================================================
-// BUTTON CLICK EFFECT
-// =====================================================
+    const scrollLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
-const buttons =
-    document.querySelectorAll(".btn");
+    scrollLinks.forEach(link => {
 
-buttons.forEach(button => {
+        link.addEventListener("click", (event) => {
 
-    button.addEventListener("click", () => {
+            const targetId =
+                link.getAttribute("href");
 
-        button.style.transform = "scale(0.97)";
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
 
-        setTimeout(() => {
+            const target =
+                document.querySelector(targetId);
 
-            button.style.transform = "";
+            if (target) {
 
-        }, 120);
+                event.preventDefault();
 
-    });
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
-});
+            }
 
-
-// =====================================================
-// FEATURE CARD HOVER
-// =====================================================
-
-const featureCards =
-    document.querySelectorAll(".feature-card");
-
-featureCards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.zIndex = "5";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.zIndex = "";
+        });
 
     });
 
-});
 
+    // =================================================
+    // MOBILE BOTTOM NAV
+    // =================================================
 
-// =====================================================
-// GADGET CARD HOVER
-// =====================================================
+    const bottomNavItems =
+        document.querySelectorAll(
+            ".bottom-nav-item"
+        );
 
-const gadgetCards =
-    document.querySelectorAll(".gadget-card");
+    bottomNavItems.forEach(item => {
 
-gadgetCards.forEach(card => {
+        item.addEventListener("click", () => {
 
-    card.addEventListener("mouseenter", () => {
+            bottomNavItems.forEach(nav => {
 
-        card.style.zIndex = "5";
+                nav.classList.remove("active");
+
+            });
+
+            item.classList.add("active");
+
+        });
 
     });
 
-    card.addEventListener("mouseleave", () => {
 
-        card.style.zIndex = "";
+    // =================================================
+    // MOVIE HORIZONTAL SCROLL
+    // =================================================
+
+    const movieRows =
+        document.querySelectorAll(
+            ".mobile-movie-row"
+        );
+
+    movieRows.forEach(row => {
+
+        row.addEventListener(
+            "wheel",
+            (event) => {
+
+                if (window.innerWidth <= 700) {
+
+                    if (
+                        Math.abs(event.deltaY) >
+                        Math.abs(event.deltaX)
+                    ) {
+
+                        event.preventDefault();
+
+                        row.scrollLeft +=
+                            event.deltaY;
+
+                    }
+
+                }
+
+            },
+            { passive: false }
+        );
 
     });
 
-});
+
+    // =================================================
+    // GADGET HORIZONTAL SCROLL
+    // =================================================
+
+    const gadgetRows =
+        document.querySelectorAll(
+            ".mobile-gadget-row"
+        );
+
+    gadgetRows.forEach(row => {
+
+        row.addEventListener(
+            "wheel",
+            (event) => {
+
+                if (window.innerWidth <= 700) {
+
+                    if (
+                        Math.abs(event.deltaY) >
+                        Math.abs(event.deltaX)
+                    ) {
+
+                        event.preventDefault();
+
+                        row.scrollLeft +=
+                            event.deltaY;
+
+                    }
+
+                }
+
+            },
+            { passive: false }
+        );
+
+    });
 
 
-// =====================================================
-// CURRENT YEAR
-// =====================================================
+    // =================================================
+    // PAGE LOADED
+    // =================================================
 
-const copyright =
-    document.querySelector(".copyright");
-
-if (copyright) {
-
-    const year = new Date().getFullYear();
-
-    copyright.textContent =
-        `© ${year} Doraemon World`;
-
-}
+    document.body.classList.add(
+        "page-loaded"
+    );
 
 
-// =====================================================
-// PAGE LOADED
-// =====================================================
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("page-loaded");
+    console.log(
+        "Doraemon World loaded successfully! 💙"
+    );
 
 });
