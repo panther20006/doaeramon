@@ -4969,7 +4969,7 @@ const episodes = [
     series: "special",
     title: "I Found a Tsuchinoko!",
     japanese: "ツチノコ見つけた！"
-}
+},
 {
     no: 529,
     year: 2013,
@@ -6793,7 +6793,7 @@ const episodes = [
     title: "The Birth of Manga Artist Christine Sensei",
     japanese: "誕生！まんが家クリスチーネ先生"
 },
-{{
+{
     no: 800,
     year: 2024,
     date: "2024-03-09",
@@ -6863,7 +6863,7 @@ const episodes = [
     series: "regular",
     title: "Bamboo Shoot-shaped Tent Village",
     japanese: "たけのこ型テントの里"
-}
+},
 {
     no: 807,
     year: 2016,
@@ -7777,7 +7777,7 @@ const episodes = [
     series: "regular",
     title: "Gian's Lullaby",
     japanese: "ジャイアンの子守歌"
-}
+},
 {
     no: 932,
     year: 2018,
@@ -7962,6 +7962,7 @@ const episodes = [
     title: "Running Across Time! The Time Borrowing Race",
     japanese: "時を走れ！タイム借り物競走"
 },
+
 {
     no: 955,
     year: 2018,
