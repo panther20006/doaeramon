@@ -1,7 +1,7 @@
 /* =========================================================
    DORAEMON WORLD
-   COMPLETE RESPONSIVE CSS
-   DESKTOP + MOBILE
+   COMPLETE CLEAN RESPONSIVE CSS
+   DESKTOP + TABLET + MOBILE
 ========================================================= */
 
 
@@ -20,15 +20,9 @@ html {
 }
 
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: #f2fbff;
-
     color: #073b70;
-
     overflow-x: hidden;
 }
 
@@ -43,13 +37,13 @@ button {
 
 
 /* =========================================================
-   IMPORTANT:
-   MOBILE ELEMENTS HIDDEN BY DEFAULT
+   MOBILE VERSION HIDDEN BY DEFAULT
 ========================================================= */
 
 .mobile-header,
 .mobile-home,
-.mobile-bottom-nav {
+.mobile-bottom-nav,
+.mobile-menu-panel {
     display: none;
 }
 
@@ -72,8 +66,7 @@ button {
 
     z-index: 1000;
 
-    background:
-        rgba(4, 76, 132, 0.97);
+    background: rgba(4, 76, 132, 0.97);
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -91,11 +84,9 @@ button {
     color: white;
 
     font-size: 23px;
-
     font-weight: 900;
 
     letter-spacing: 1px;
-
     white-space: nowrap;
 
     display: flex;
@@ -110,14 +101,13 @@ button {
 
 
 /* =========================================================
-   DESKTOP NAV
+   DESKTOP NAVIGATION
 ========================================================= */
 
 #nav {
     margin-left: auto;
 
     display: flex;
-
     align-items: center;
 
     gap: 5px;
@@ -127,7 +117,6 @@ button {
     color: white;
 
     font-size: 14px;
-
     font-weight: 700;
 
     padding: 10px 12px;
@@ -141,7 +130,6 @@ button {
 
 #nav a:hover {
     background: #20a8f5;
-
     transform: translateY(-2px);
 }
 
@@ -166,7 +154,6 @@ button {
     height: 44px;
 
     border: none;
-
     border-radius: 12px;
 
     background: #168fd1;
@@ -185,13 +172,11 @@ button {
 
 .hero {
     width: 90%;
-
     max-width: 1450px;
 
     min-height: 500px;
 
     margin: 30px auto;
-
     padding: 55px;
 
     display: grid;
@@ -207,13 +192,11 @@ button {
     border-radius: 30px;
 
     background:
-
         radial-gradient(
             circle at 85% 20%,
-            rgba(255,255,255,0.35),
+            rgba(255, 255, 255, 0.35),
             transparent 25%
         ),
-
         linear-gradient(
             135deg,
             #058ed8,
@@ -241,7 +224,7 @@ button {
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.12);
+        rgba(255, 255, 255, 0.12);
 
     right: -80px;
     bottom: -100px;
@@ -260,7 +243,7 @@ button {
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.10);
 
     left: 45%;
     top: -80px;
@@ -279,13 +262,12 @@ button {
     z-index: 5;
 
     max-width: 650px;
-
     min-width: 0;
 }
 
 
 /* =========================================================
-   BADGE
+   HERO BADGE
 ========================================================= */
 
 .badge {
@@ -296,12 +278,11 @@ button {
     border-radius: 50px;
 
     background:
-        rgba(255,255,255,0.30);
+        rgba(255, 255, 255, 0.30);
 
     color: white;
 
     font-size: 11px;
-
     font-weight: 900;
 
     letter-spacing: 1px;
@@ -391,12 +372,12 @@ button {
 
 .btn.secondary {
     background:
-        rgba(255,255,255,0.25);
+        rgba(255, 255, 255, 0.25);
 
     color: white;
 
     border:
-        1px solid rgba(255,255,255,0.5);
+        1px solid rgba(255, 255, 255, 0.5);
 
     backdrop-filter: blur(10px);
 }
@@ -416,7 +397,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: visible;
@@ -429,13 +409,11 @@ button {
 
 .character-orb {
     width: min(520px, 100%);
-
     height: 520px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
@@ -454,10 +432,10 @@ button {
     box-shadow:
 
         0 0 0 15px
-        rgba(255,255,255,0.10),
+        rgba(255, 255, 255, 0.10),
 
         0 25px 60px
-        rgba(0,50,100,0.25);
+        rgba(0, 50, 100, 0.25);
 
     animation:
         floating 4s ease-in-out infinite;
@@ -470,7 +448,6 @@ button {
 
 .doraemon-face {
     width: 88%;
-
     height: 88%;
 
     object-fit: contain;
@@ -482,7 +459,7 @@ button {
 
 
 /* =========================================================
-   FLOATING
+   FLOATING ANIMATION
 ========================================================= */
 
 @keyframes floating {
@@ -509,7 +486,6 @@ button {
 .explore,
 .gadget-section,
 .favorite-section {
-
     width: 90%;
 
     max-width: 1450px;
@@ -559,7 +535,6 @@ button {
 ========================================================= */
 
 .feature-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -574,7 +549,6 @@ button {
 ========================================================= */
 
 .feature-card {
-
     position: relative;
 
     min-height: 220px;
@@ -584,7 +558,7 @@ button {
     border-radius: 22px;
 
     background:
-        rgba(255,255,255,0.85);
+        rgba(255, 255, 255, 0.85);
 
     border:
         1px solid #c9eafa;
@@ -593,7 +567,7 @@ button {
 
     box-shadow:
         0 15px 40px
-        rgba(0,80,130,0.07);
+        rgba(0, 80, 130, 0.07);
 
     overflow: hidden;
 
@@ -603,7 +577,6 @@ button {
 }
 
 .feature-card::before {
-
     content: "";
 
     position: absolute;
@@ -622,13 +595,12 @@ button {
 }
 
 .feature-card:hover {
-
     transform:
         translateY(-8px);
 
     box-shadow:
         0 25px 50px
-        rgba(0,100,160,0.14);
+        rgba(0, 100, 160, 0.14);
 }
 
 .feature-card:hover::before {
@@ -641,7 +613,6 @@ button {
 ========================================================= */
 
 .feature-icon {
-
     position: relative;
 
     z-index: 2;
@@ -667,7 +638,6 @@ button {
 ========================================================= */
 
 .feature-card h3 {
-
     position: relative;
 
     z-index: 2;
@@ -678,7 +648,6 @@ button {
 }
 
 .feature-card p {
-
     position: relative;
 
     z-index: 2;
@@ -692,15 +661,13 @@ button {
 
 
 /* =========================================================
-   ARROW
+   CARD ARROW
 ========================================================= */
 
 .card-arrow {
-
     position: absolute;
 
     right: 20px;
-
     bottom: 20px;
 
     font-size: 25px;
@@ -714,7 +681,6 @@ button {
 ========================================================= */
 
 .gadget-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -729,7 +695,6 @@ button {
 ========================================================= */
 
 .gadget-card {
-
     padding: 25px;
 
     background: white;
@@ -741,13 +706,12 @@ button {
 
     box-shadow:
         0 12px 35px
-        rgba(0,70,120,0.06);
+        rgba(0, 70, 120, 0.06);
 
     transition: 0.3s ease;
 }
 
 .gadget-card:hover {
-
     transform:
         translateY(-7px);
 
@@ -756,11 +720,10 @@ button {
 
     box-shadow:
         0 20px 40px
-        rgba(0,100,160,0.12);
+        rgba(0, 100, 160, 0.12);
 }
 
 .gadget-card > div {
-
     font-size: 42px;
 
     margin-bottom: 15px;
@@ -771,7 +734,6 @@ button {
 }
 
 .gadget-card p {
-
     margin-top: 8px;
 
     color: #6a8292;
@@ -781,15 +743,19 @@ button {
 
 
 /* =========================================================
-   FAVORITE GRID
+   FAVORITE SECTION
 ========================================================= */
 
 .favorite-section {
     margin-top: 90px;
 }
 
-.favorite-grid {
 
+/* =========================================================
+   FAVORITE GRID
+========================================================= */
+
+.favorite-grid {
     display: grid;
 
     grid-template-columns:
@@ -804,7 +770,6 @@ button {
 ========================================================= */
 
 .favorite-card {
-
     position: relative;
 
     display: flex;
@@ -828,7 +793,7 @@ button {
 
     box-shadow:
         0 12px 35px
-        rgba(0,70,120,0.06);
+        rgba(0, 70, 120, 0.06);
 
     overflow: hidden;
 
@@ -836,7 +801,6 @@ button {
 }
 
 .favorite-card:hover {
-
     transform:
         translateY(-7px);
 
@@ -845,11 +809,10 @@ button {
 
     box-shadow:
         0 20px 45px
-        rgba(0,100,160,0.12);
+        rgba(0, 100, 160, 0.12);
 }
 
 .favorite-number {
-
     font-size: 32px;
 
     font-weight: 900;
@@ -866,7 +829,6 @@ button {
 }
 
 .favorite-card p {
-
     margin-top: 7px;
 
     color: #6a8292;
@@ -878,11 +840,10 @@ button {
 
 
 /* =========================================================
-   FOOTER
+   DESKTOP FOOTER
 ========================================================= */
 
 footer {
-
     margin-top: 80px;
 
     padding: 35px 20px;
@@ -895,7 +856,6 @@ footer {
 }
 
 .footer-logo {
-
     font-size: 20px;
 
     font-weight: 900;
@@ -904,7 +864,6 @@ footer {
 }
 
 footer p {
-
     margin-top: 8px;
 
     opacity: 0.8;
@@ -922,24 +881,18 @@ footer p {
 @media (max-width: 1200px) {
 
     .hero {
-
-        grid-template-columns:
-            45% 55%;
+        grid-template-columns: 45% 55%;
 
         padding: 45px;
     }
 
     .character-orb {
-
         width: 440px;
-
         height: 440px;
     }
 
     #nav a {
-
-        padding:
-            9px 8px;
+        padding: 9px 8px;
 
         font-size: 13px;
     }
@@ -954,17 +907,13 @@ footer p {
 @media (max-width: 1050px) {
 
     .hero {
-
-        grid-template-columns:
-            45% 55%;
+        grid-template-columns: 45% 55%;
 
         padding: 40px;
     }
 
     .character-orb {
-
         width: 390px;
-
         height: 390px;
     }
 
@@ -973,19 +922,16 @@ footer p {
     }
 
     .feature-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
     .gadget-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
     .favorite-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
@@ -994,17 +940,16 @@ footer p {
 
 
 /* =========================================================
-   MOBILE
-   IMPORTANT:
-   DESKTOP CONTENT HIDE
+   MOBILE VERSION
+   MAX WIDTH: 700px
 ========================================================= */
 
 @media (max-width: 700px) {
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        HIDE DESKTOP
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .topbar,
     .hero,
@@ -1012,79 +957,74 @@ footer p {
     .gadget-section,
     .favorite-section,
     body > footer {
-
         display: none !important;
     }
 
 
-    /* -----------------------------------------------------
-       SHOW MOBILE
-    ----------------------------------------------------- */
+    /* =====================================================
+       MOBILE HEADER
+    ===================================================== */
 
     .mobile-header {
-
-        display: flex;
+        display: flex !important;
 
         position: sticky;
 
         top: 0;
 
-        z-index: 5000;
+        z-index: 10000;
 
         width: 100%;
 
-        height: 64px;
+        height: 62px;
 
-        padding: 0 14px;
+        padding: 8px 15px;
 
         align-items: center;
 
         justify-content: space-between;
 
-        background:
-            #064d87;
+        background: white;
 
         box-shadow:
-            0 4px 18px
-            rgba(0,0,0,0.18);
+            0 5px 20px
+            rgba(0, 60, 100, 0.08);
     }
 
 
-    /* -----------------------------------------------------
-       MOBILE MENU
-    ----------------------------------------------------- */
+    /* =====================================================
+       MOBILE MENU BUTTON
+    ===================================================== */
 
     .mobile-menu-btn {
-
         width: 42px;
-
         height: 42px;
 
         border: none;
 
-        background: transparent;
+        border-radius: 12px;
 
-        color: white;
+        background: #e7f7ff;
 
-        font-size: 25px;
+        color: #087fc0;
+
+        font-size: 20px;
 
         cursor: pointer;
 
         display: flex;
 
         align-items: center;
-
         justify-content: center;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MOBILE LOGO
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .mobile-logo {
-
-        color: white;
+        color: #073b70;
 
         font-size: 20px;
 
@@ -1100,44 +1040,47 @@ footer p {
     }
 
     .mobile-logo span {
-
-        font-size: 18px;
+        font-size: 16px;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MOBILE SEARCH
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .mobile-search-btn {
-
         width: 42px;
-
         height: 42px;
 
         border: none;
 
-        background: transparent;
+        border-radius: 12px;
 
-        color: white;
+        background: #e7f7ff;
 
-        font-size: 22px;
+        color: #087fc0;
+
+        font-size: 20px;
 
         cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MOBILE HOME
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .mobile-home {
-
-        display: block;
+        display: block !important;
 
         width: 100%;
 
-        padding-bottom: 85px;
+        padding-bottom: 90px;
     }
 
 
@@ -1146,195 +1089,161 @@ footer p {
     ===================================================== */
 
     .mobile-welcome {
-
         position: relative;
 
-        width: calc(100% - 24px);
+        width: 94%;
 
-        min-height: 430px;
+        min-height: 300px;
 
-        margin: 0 auto;
+        margin: 15px auto 25px;
+
+        padding: 28px 20px;
 
         overflow: hidden;
 
-        border-radius:
-            0 0 28px 28px;
+        border-radius: 25px;
 
         background:
-
             linear-gradient(
-                180deg,
-                #24aef0,
-                #0798dd 60%,
-                #8ee1ff
+                135deg,
+                #078ed4,
+                #25b9f2,
+                #b9efff
             );
 
         box-shadow:
-            0 12px 30px
-            rgba(0,100,160,0.15);
+            0 15px 40px
+            rgba(0, 80, 130, 0.15);
     }
 
 
-    /* -----------------------------------------------------
-       CLOUDS
-    ----------------------------------------------------- */
+    /* =====================================================
+       MOBILE CLOUDS
+    ===================================================== */
 
     .mobile-cloud {
-
         position: absolute;
 
         border-radius: 50%;
 
         background:
-            rgba(255,255,255,0.13);
+            rgba(255, 255, 255, 0.18);
 
         pointer-events: none;
     }
 
     .cloud-one {
+        width: 100px;
+        height: 100px;
 
-        width: 180px;
-
-        height: 180px;
-
-        right: -70px;
-
-        top: -70px;
+        right: 20px;
+        top: -30px;
     }
 
     .cloud-two {
+        width: 70px;
+        height: 70px;
 
-        width: 130px;
-
-        height: 130px;
-
-        left: -55px;
-
-        bottom: 40px;
+        left: -20px;
+        bottom: -20px;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MOBILE WELCOME TEXT
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .mobile-welcome-text {
-
         position: relative;
 
         z-index: 5;
 
-        padding:
-            28px 18px 0;
+        width: 58%;
+    }
 
-        text-align: center;
-
+    .mobile-welcome-text > p:first-child {
         color: white;
+
+        font-size: 13px;
+
+        font-weight: 700;
     }
 
-    .mobile-welcome-text p {
-
-        font-size: 17px;
-
-        font-weight: 600;
-
-        margin-bottom: 2px;
-    }
-
-    .mobile-welcome-text h1 {
-
-        font-size:
-            clamp(42px, 12vw, 64px);
-
-        line-height: 0.95;
-
-        font-weight: 1000;
-
-        letter-spacing: -1px;
-
-        text-shadow:
-            2px 3px 0
-            rgba(0,70,130,0.3);
-    }
-
-    .mobile-welcome-text h2 {
-
+    .mobile-welcome h1 {
         margin-top: 5px;
 
-        font-size: 28px;
+        color: white;
 
-        color: #ffe52e;
+        font-size: 34px;
 
-        text-shadow:
-            1px 2px 0
-            rgba(0,70,130,0.3);
+        line-height: 1;
+    }
+
+    .mobile-welcome h2 {
+        margin-top: 5px;
+
+        color: #ffe02e;
+
+        font-size: 24px;
     }
 
     .mobile-description {
+        margin-top: 12px;
 
-        max-width: 320px;
+        color: white;
 
-        margin:
-            12px auto 0;
-
-        font-size: 13px !important;
+        font-size: 12px;
 
         line-height: 1.5;
-
-        font-weight: 500 !important;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MOBILE DORAEMON
-    ----------------------------------------------------- */
+    ===================================================== */
 
     .mobile-doraemon {
-
         position: absolute;
 
-        z-index: 4;
+        z-index: 3;
 
-        width: 270px;
-
-        height: 270px;
+        width: 175px;
+        height: 175px;
 
         object-fit: contain;
 
-        left: 50%;
-
-        bottom: -18px;
-
-        transform:
-            translateX(-50%);
+        right: -8px;
+        bottom: -5px;
 
         filter:
             drop-shadow(
                 0 12px 12px
-                rgba(0,60,100,0.25)
+                rgba(0, 60, 100, 0.25)
             );
 
         animation:
             mobileFloat 4s ease-in-out infinite;
     }
 
+
+    /* =====================================================
+       MOBILE DORAEMON FLOAT
+    ===================================================== */
+
     @keyframes mobileFloat {
 
         0% {
             transform:
-                translateX(-50%)
                 translateY(0);
         }
 
         50% {
             transform:
-                translateX(-50%)
                 translateY(-7px);
         }
 
         100% {
             transform:
-                translateX(-50%)
                 translateY(0);
         }
 
@@ -1342,76 +1251,62 @@ footer p {
 
 
     /* =====================================================
-       QUICK MENU
+       MOBILE QUICK MENU
     ===================================================== */
 
     .mobile-quick-menu {
+        width: 94%;
+
+        margin: 0 auto 30px;
 
         display: grid;
 
         grid-template-columns:
             repeat(4, 1fr);
 
-        gap: 8px;
-
-        width:
-            calc(100% - 32px);
-
-        margin:
-            -28px auto 0;
-
-        position: relative;
-
-        z-index: 20;
+        gap: 9px;
     }
 
     .mobile-quick-card {
-
-        min-height: 76px;
-
-        padding:
-            9px 4px;
-
-        background: white;
-
-        border:
-            1px solid #d9eef8;
-
-        border-radius: 14px;
+        min-height: 85px;
 
         display: flex;
 
         flex-direction: column;
 
         align-items: center;
-
         justify-content: center;
 
-        gap: 5px;
+        gap: 7px;
+
+        background: white;
+
+        border:
+            1px solid #c9eafa;
+
+        border-radius: 15px;
 
         color: #073b70;
 
         box-shadow:
-            0 7px 18px
-            rgba(0,70,120,0.12);
+            0 8px 25px
+            rgba(0, 70, 120, 0.06);
 
-        transition: 0.2s ease;
+        transition:
+            transform 0.2s ease;
     }
 
     .mobile-quick-card:active {
-
         transform:
             scale(0.96);
     }
 
     .quick-icon {
-
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .mobile-quick-card strong {
-
-        font-size: 10px;
+        font-size: 11px;
 
         white-space: nowrap;
     }
@@ -1422,12 +1317,9 @@ footer p {
     ===================================================== */
 
     .mobile-section-title {
+        width: 94%;
 
-        width:
-            calc(100% - 28px);
-
-        margin:
-            30px auto 14px;
+        margin: 28px auto 14px;
 
         display: flex;
 
@@ -1439,17 +1331,15 @@ footer p {
     }
 
     .mobile-section-title h2 {
-
-        color: #073b70;
-
         font-size: 21px;
 
         line-height: 1.2;
+
+        color: #073b70;
     }
 
     .mobile-section-title a {
-
-        color: #078fd5;
+        color: #0797dd;
 
         font-size: 12px;
 
@@ -1460,76 +1350,94 @@ footer p {
 
 
     /* =====================================================
-       POPULAR MOVIES
+       MOBILE MOVIES
     ===================================================== */
 
     .mobile-movie-row {
+        width: 94%;
 
-        width:
-            calc(100% - 28px);
+        margin: auto;
 
-        margin: 0 auto;
+        display: flex;
 
-        display: grid;
+        gap: 12px;
 
-        grid-template-columns:
-            repeat(3, 1fr);
+        overflow-x: auto;
 
-        gap: 8px;
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-movie-row::-webkit-scrollbar {
+        display: none;
     }
 
     .mobile-movie-card {
+        flex:
+            0 0 155px;
 
-        min-width: 0;
+        min-width: 155px;
 
-        padding: 7px;
+        padding: 10px;
 
         background: white;
 
         border:
-            1px solid #dceff8;
+            1px solid #c9eafa;
 
-        border-radius: 12px;
+        border-radius: 17px;
+
+        color: #073b70;
 
         box-shadow:
-            0 5px 15px
-            rgba(0,60,100,0.08);
+            0 8px 25px
+            rgba(0, 70, 120, 0.06);
 
         overflow: hidden;
     }
 
     .mobile-movie-image {
-
         width: 100%;
 
-        aspect-ratio: 0.75;
-
-        border-radius: 8px;
+        height: 125px;
 
         display: flex;
 
         align-items: center;
-
         justify-content: center;
 
-        font-size: 38px;
+        border-radius: 12px;
 
         background:
-
             linear-gradient(
-                145deg,
-                #d9f6ff,
-                #6bcfff
+                135deg,
+                #dff8ff,
+                #8edfff
             );
+
+        font-size: 42px;
+
+        overflow: hidden;
+    }
+
+    .mobile-movie-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
     }
 
     .mobile-movie-card h3 {
-
-        margin-top: 7px;
+        margin-top: 10px;
 
         color: #0753a0;
 
-        font-size: 11px;
+        font-size: 14px;
 
         line-height: 1.3;
 
@@ -1541,28 +1449,25 @@ footer p {
 
         overflow: hidden;
     }
-    
 
     .mobile-movie-card p {
+        margin-top: 7px;
 
-        margin-top: 4px;
+        color: #ffb400;
 
-        color: #f2a900;
-
-        font-size: 11px;
+        font-size: 12px;
 
         font-weight: 800;
     }
 
     .mobile-movie-card small {
-
         display: block;
 
-        margin-top: 3px;
+        margin-top: 4px;
 
-        color: #667d8d;
+        color: #78909c;
 
-        font-size: 9px;
+        font-size: 10px;
     }
 
 
@@ -1571,56 +1476,59 @@ footer p {
     ===================================================== */
 
     .mobile-explore-grid {
+        width: 94%;
 
-        width:
-            calc(100% - 28px);
-
-        margin: 0 auto;
+        margin: auto;
 
         display: grid;
 
         grid-template-columns:
-            repeat(4, 1fr);
+            repeat(2, 1fr);
 
-        gap: 8px;
+        gap: 12px;
     }
 
     .mobile-explore-card {
-
-        min-height: 75px;
-
-        background: white;
-
-        border:
-            1px solid #dceff8;
-
-        border-radius: 12px;
+        min-height: 90px;
 
         display: flex;
-
-        flex-direction: column;
 
         align-items: center;
 
         justify-content: center;
 
-        gap: 5px;
+        flex-direction: column;
+
+        gap: 8px;
+
+        background: white;
+
+        border:
+            1px solid #c9eafa;
+
+        border-radius: 17px;
 
         color: #073b70;
 
         box-shadow:
-            0 5px 15px
-            rgba(0,60,100,0.07);
+            0 8px 25px
+            rgba(0, 70, 120, 0.06);
+
+        transition:
+            transform 0.2s ease;
+    }
+
+    .mobile-explore-card:active {
+        transform:
+            scale(0.97);
     }
 
     .mobile-explore-card span {
-
-        font-size: 23px;
+        font-size: 27px;
     }
 
     .mobile-explore-card strong {
-
-        font-size: 9px;
+        font-size: 13px;
 
         text-align: center;
     }
@@ -1631,60 +1539,70 @@ footer p {
     ===================================================== */
 
     .mobile-gadget-row {
+        width: 94%;
 
-        width:
-            calc(100% - 28px);
+        margin: auto;
 
-        margin: 0 auto;
+        display: flex;
 
-        display: grid;
+        gap: 12px;
 
-        grid-template-columns:
-            repeat(3, 1fr);
+        overflow-x: auto;
 
-        gap: 8px;
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-gadget-row::-webkit-scrollbar {
+        display: none;
     }
 
     .mobile-gadget-card {
+        flex:
+            0 0 120px;
 
-        min-height: 95px;
-
-        padding: 10px;
-
-        border-radius: 14px;
-
-        background: white;
-
-        border:
-            1px solid #dceff8;
+        min-height: 110px;
 
         display: flex;
 
         flex-direction: column;
 
         align-items: center;
-
         justify-content: center;
 
-        gap: 7px;
+        gap: 8px;
 
         text-align: center;
 
+        background: white;
+
+        border:
+            1px solid #c9eafa;
+
+        border-radius: 17px;
+
         box-shadow:
-            0 5px 15px
-            rgba(0,60,100,0.07);
+            0 8px 25px
+            rgba(0, 70, 120, 0.06);
+
+        transition:
+            transform 0.2s ease;
+    }
+
+    .mobile-gadget-card:active {
+        transform:
+            scale(0.96);
     }
 
     .mobile-gadget-card span {
-
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .mobile-gadget-card strong {
+        font-size: 12px;
 
-        color: #0753a0;
-
-        font-size: 10px;
+        color: #073b70;
 
         line-height: 1.2;
     }
@@ -1695,48 +1613,48 @@ footer p {
     ===================================================== */
 
     .mobile-bottom-nav {
-
-        display: flex;
+        display: flex !important;
 
         position: fixed;
 
-        left: 0;
+        left: 10px;
+        right: 10px;
 
-        right: 0;
+        bottom: 10px;
 
-        bottom: 0;
+        height: 65px;
 
-        z-index: 6000;
+        z-index: 9999;
 
-        height: 68px;
+        align-items: center;
+
+        justify-content: space-around;
+
+        padding: 5px;
 
         background:
-            rgba(255,255,255,0.97);
+            rgba(255, 255, 255, 0.96);
+
+        border:
+            1px solid #c9eafa;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 10px 35px
+            rgba(0, 60, 100, 0.18);
 
         backdrop-filter:
             blur(15px);
 
         -webkit-backdrop-filter:
             blur(15px);
-
-        border-top:
-            1px solid #d9edf7;
-
-        box-shadow:
-            0 -5px 20px
-            rgba(0,70,120,0.10);
-
-        align-items: stretch;
-
-        justify-content: space-around;
-
-        padding:
-            5px 3px;
     }
 
     .bottom-nav-item {
+        width: 20%;
 
-        flex: 1;
+        height: 100%;
 
         display: flex;
 
@@ -1746,32 +1664,30 @@ footer p {
 
         justify-content: center;
 
-        gap: 2px;
+        gap: 3px;
 
-        color: #587182;
+        color: #78909c;
 
-        border-radius: 10px;
+        border-radius: 14px;
 
-        transition: 0.2s ease;
+        transition:
+            0.2s ease;
     }
 
     .bottom-nav-item span {
-
         font-size: 20px;
 
         line-height: 1;
     }
 
     .bottom-nav-item small {
-
         font-size: 9px;
 
         font-weight: 700;
     }
 
     .bottom-nav-item.active {
-
-        color: #078fdb;
+        color: #0797dd;
 
         background:
             #e9f8ff;
@@ -1779,804 +1695,84 @@ footer p {
 
 
     /* =====================================================
-       MOBILE MENU OVERLAY SUPPORT
+       MOBILE MENU PANEL
     ===================================================== */
 
     .mobile-menu-panel {
-
         position: fixed;
 
-        inset: 64px 10px auto 10px;
+        top: 72px;
 
-        z-index: 5500;
+        left: 10px;
+        right: 10px;
+
+        z-index: 9998;
 
         display: none;
 
         padding: 12px;
 
-        background: #064d87;
+        background:
+            rgba(6, 77, 135, 0.98);
 
         border-radius: 16px;
 
         box-shadow:
             0 15px 40px
-            rgba(0,0,0,0.25);
+            rgba(0, 0, 0, 0.25);
+
+        backdrop-filter:
+            blur(15px);
     }
 
     .mobile-menu-panel.show {
-
         display: block;
     }
-
 
 }
 
 
 /* =========================================================
    SMALL MOBILE
+   MAX WIDTH: 400px
 ========================================================= */
 
 @media (max-width: 400px) {
 
     .mobile-header {
         height: 60px;
+
+        padding:
+            7px 12px;
     }
 
     .mobile-logo {
         font-size: 17px;
+    }
+
+    .mobile-logo span {
+        font-size: 14px;
     }
 
     .mobile-menu-btn,
     .mobile-search-btn {
-
         width: 38px;
         height: 38px;
-    }
-
-    .mobile-welcome {
-
-        width:
-            calc(100% - 18px);
-
-        min-height: 400px;
-    }
-
-    .mobile-welcome-text {
-
-        padding-top: 25px;
-    }
-
-    .mobile-welcome-text h1 {
-
-        font-size: 40px;
-    }
-
-    .mobile-welcome-text h2 {
-
-        font-size: 24px;
-    }
-
-    .mobile-doraemon {
-
-        width: 235px;
-
-        height: 235px;
-
-        bottom: -15px;
-    }
-
-    .mobile-quick-menu {
-
-        width:
-            calc(100% - 22px);
-
-        gap: 5px;
-    }
-
-    .mobile-quick-card {
-
-        min-height: 70px;
-    }
-
-    .quick-icon {
-
-        font-size: 21px;
-    }
-
-    .mobile-quick-card strong {
-
-        font-size: 9px;
-    }
-
-    .mobile-section-title {
-
-        width:
-            calc(100% - 22px);
-
-        margin-top: 27px;
-    }
-
-    .mobile-section-title h2 {
-
-        font-size: 19px;
-    }
-
-    .mobile-movie-row {
-
-        width:
-            calc(100% - 22px);
-
-        gap: 6px;
-    }
-
-    .mobile-movie-card {
-
-        padding: 5px;
-
-        border-radius: 10px;
-    }
-
-    .mobile-movie-card h3 {
-
-        font-size: 10px;
-    }
-
-    .mobile-explore-grid {
-
-        width:
-            calc(100% - 22px);
-
-        gap: 6px;
-    }
-
-    .mobile-gadget-row {
-
-        width:
-            calc(100% - 22px);
-
-        gap: 6px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 330px) {
-
-    .mobile-logo {
-        font-size: 15px;
-    }
-
-    .mobile-welcome {
-
-        min-height: 370px;
-    }
-
-    .mobile-welcome-text h1 {
-
-        font-size: 35px;
-    }
-
-    .mobile-welcome-text h2 {
-
-        font-size: 21px;
-    }
-
-    .mobile-doraemon {
-
-        width: 210px;
-
-        height: 210px;
-    }
-
-    .mobile-quick-card strong {
-
-        font-size: 8px;
-    }
-
-    .mobile-movie-card h3 {
-
-        font-size: 9px;
-    }
-
-    .mobile-section-title h2 {
-
-        font-size: 17px;
-    }
-
-    .bottom-nav-item span {
 
         font-size: 18px;
     }
 
-    .bottom-nav-item small {
-
-        font-size: 8px;
-    }
-
-}
-/* =====================================================
-   MOBILE / DESKTOP VISIBILITY FIX
-   ===================================================== */
-
-/* Default: MOBILE VERSION HIDDEN */
-.mobile-header,
-.mobile-home,
-.mobile-bottom-nav {
-    display: none;
-}
-
-
-/* =====================================================
-   DESKTOP
-   ===================================================== */
-
-@media (min-width: 701px) {
-
-    .topbar,
-    .hero,
-    .explore,
-    .gadget-section,
-    .favorite-section,
-    footer {
-        display: block;
-    }
-
-    .mobile-header,
-    .mobile-home,
-    .mobile-bottom-nav {
-        display: none !important;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 700px) {
-
-    /* DESKTOP VERSION COMPLETELY HIDE */
-
-    .topbar,
-    .hero,
-    .explore,
-    .gadget-section,
-    .favorite-section,
-    footer {
-        display: none !important;
-    }
-
-
-    /* MOBILE VERSION SHOW */
-
-   /* =====================================================
-   MOBILE HEADER
-===================================================== */
-
-.mobile-header {
-    display: none;
-}
-
-.mobile-logo {
-    color: #073b70;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.mobile-logo span {
-    font-size: 16px;
-}
-
-.mobile-menu-btn,
-.mobile-search-btn {
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 12px;
-    background: #e7f7ff;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.mobile-menu-btn {
-    color: #087fc0;
-}
-
-.mobile-search-btn {
-    color: #087fc0;
-}
-
-
-/* =====================================================
-   MOBILE HOME
-===================================================== */
-
-.mobile-home {
-    display: none;
-}
-
-.mobile-welcome {
-    position: relative;
-    width: 94%;
-    min-height: 300px;
-    margin: 15px auto 25px;
-    padding: 28px 20px;
-    overflow: hidden;
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #078ed4,
-            #25b9f2,
-            #b9efff
-        );
-
-    box-shadow:
-        0 15px 40px rgba(0,80,130,0.15);
-}
-
-.mobile-welcome-text {
-    position: relative;
-    z-index: 5;
-    width: 58%;
-}
-
-.mobile-welcome-text > p:first-child {
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.mobile-welcome h1 {
-    margin-top: 5px;
-    color: white;
-    font-size: 34px;
-    line-height: 1;
-}
-
-.mobile-welcome h2 {
-    margin-top: 5px;
-    color: #ffe02e;
-    font-size: 24px;
-}
-
-.mobile-description {
-    margin-top: 12px;
-    color: white;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.mobile-doraemon {
-    position: absolute;
-    z-index: 3;
-
-    width: 175px;
-    height: 175px;
-
-    object-fit: contain;
-
-    right: -8px;
-    bottom: -5px;
-
-    animation: floating 4s ease-in-out infinite;
-}
-
-
-/* CLOUDS */
-
-.mobile-cloud {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.18);
-}
-
-.cloud-one {
-    width: 100px;
-    height: 100px;
-    right: 20px;
-    top: -30px;
-}
-
-.cloud-two {
-    width: 70px;
-    height: 70px;
-    left: -20px;
-    bottom: -20px;
-}
-
-
-/* =====================================================
-   MOBILE QUICK MENU
-===================================================== */
-
-.mobile-quick-menu {
-    width: 94%;
-    margin: 0 auto 30px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 9px;
-}
-
-.mobile-quick-card {
-    min-height: 85px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    background: white;
-    border: 1px solid #c9eafa;
-    border-radius: 15px;
-
-    color: #073b70;
-
-    box-shadow:
-        0 8px 25px rgba(0,70,120,0.06);
-}
-
-.quick-icon {
-    font-size: 25px;
-}
-
-.mobile-quick-card strong {
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   MOBILE SECTION TITLE
-===================================================== */
-
-.mobile-section-title {
-    width: 94%;
-    margin: 28px auto 14px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.mobile-section-title h2 {
-    font-size: 21px;
-    color: #073b70;
-}
-
-.mobile-section-title a {
-    color: #0797dd;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-
-/* =====================================================
-   MOBILE MOVIES
-===================================================== */
-
-.mobile-movie-row {
-    width: 94%;
-    margin: auto;
-
-    display: flex;
-    gap: 12px;
-
-    overflow-x: auto;
-
-    padding-bottom: 8px;
-
-    scrollbar-width: none;
-}
-
-.mobile-movie-row::-webkit-scrollbar {
-    display: none;
-}
-
-.mobile-movie-card {
-    flex: 0 0 155px;
-
-    padding: 10px;
-
-    background: white;
-
-    border: 1px solid #c9eafa;
-    border-radius: 17px;
-
-    color: #073b70;
-
-    box-shadow:
-        0 8px 25px rgba(0,70,120,0.06);
-}
-
-.mobile-movie-image {
-    width: 100%;
-    height: 125px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #dff8ff,
-            #8edfff
-        );
-
-    font-size: 42px;
-}
-
-.mobile-movie-card h3 {
-    margin-top: 10px;
-
-    font-size: 14px;
-    line-height: 1.3;
-}
-
-.mobile-movie-card p {
-    margin-top: 7px;
-
-    color: #ffb400;
-    font-size: 12px;
-}
-
-.mobile-movie-card small {
-    display: block;
-
-    margin-top: 4px;
-
-    color: #78909c;
-    font-size: 10px;
-}
-
-
-/* =====================================================
-   MOBILE EXPLORE
-===================================================== */
-
-.mobile-explore-grid {
-    width: 94%;
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-.mobile-explore-card {
-    min-height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-    background: white;
-
-    border: 1px solid #c9eafa;
-    border-radius: 17px;
-
-    color: #073b70;
-
-    box-shadow:
-        0 8px 25px rgba(0,70,120,0.06);
-}
-
-.mobile-explore-card span {
-    font-size: 27px;
-}
-
-.mobile-explore-card strong {
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   MOBILE GADGETS
-===================================================== */
-
-.mobile-gadget-row {
-    width: 94%;
-    margin: auto;
-
-    display: flex;
-
-    gap: 12px;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-}
-
-.mobile-gadget-row::-webkit-scrollbar {
-    display: none;
-}
-
-.mobile-gadget-card {
-    flex: 0 0 120px;
-
-    min-height: 110px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    text-align: center;
-
-    background: white;
-
-    border: 1px solid #c9eafa;
-    border-radius: 17px;
-
-    box-shadow:
-        0 8px 25px rgba(0,70,120,0.06);
-}
-
-.mobile-gadget-card span {
-    font-size: 32px;
-}
-
-.mobile-gadget-card strong {
-    font-size: 12px;
-    color: #073b70;
-}
-
-
-/* =====================================================
-   MOBILE BOTTOM NAV
-===================================================== */
-
-.mobile-bottom-nav {
-    display: none;
-
-    position: fixed;
-
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-
-    height: 65px;
-
-    z-index: 9999;
-
-    align-items: center;
-    justify-content: space-around;
-
-    background: rgba(255,255,255,0.96);
-
-    border: 1px solid #c9eafa;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 35px rgba(0,60,100,0.18);
-
-    backdrop-filter: blur(15px);
-}
-
-.bottom-nav-item {
-    width: 20%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 3px;
-
-    color: #78909c;
-}
-
-.bottom-nav-item span {
-    font-size: 20px;
-}
-
-.bottom-nav-item small {
-    font-size: 9px;
-    font-weight: 700;
-}
-
-.bottom-nav-item.active {
-    color: #0797dd;
-}
-
-
-/* =====================================================
-   FINAL RESPONSIVE FIX
-===================================================== */
-
-@media (min-width: 701px) {
-
-    .mobile-header,
-    .mobile-home,
-    .mobile-bottom-nav {
-        display: none !important;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    /* HIDE COMPLETE DESKTOP VERSION */
-
-    .topbar,
-    .hero,
-    .explore,
-    .gadget-section,
-    .favorite-section,
-    footer {
-        display: none !important;
-    }
-
-    /* SHOW COMPLETE MOBILE VERSION */
-
-    .mobile-header {
-        display: flex !important;
-
-        position: sticky;
-        top: 0;
-        z-index: 10000;
-
-        width: 100%;
-        height: 62px;
-
-        padding: 8px 15px;
-
-        align-items: center;
-        justify-content: space-between;
-
-        background: white;
-
-        box-shadow:
-            0 5px 20px rgba(0,60,100,0.08);
-    }
-
-    .mobile-home {
-        display: block !important;
-        padding-bottom: 90px;
-    }
-
-    .mobile-bottom-nav {
-        display: flex !important;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL MOBILE
-===================================================== */
-
-@media (max-width: 400px) {
-
     .mobile-welcome {
+        width: 94%;
+
         min-height: 280px;
+
+        padding:
+            24px 16px;
+    }
+
+    .mobile-welcome-text {
+        width: 60%;
     }
 
     .mobile-welcome h1 {
@@ -2587,17 +1783,28 @@ footer p {
         font-size: 21px;
     }
 
+    .mobile-description {
+        font-size: 11px;
+    }
+
     .mobile-doraemon {
         width: 155px;
         height: 155px;
+
+        right: -5px;
+        bottom: -5px;
     }
 
     .mobile-quick-menu {
+        width: 94%;
+
         gap: 6px;
     }
 
     .mobile-quick-card {
         min-height: 78px;
+
+        border-radius: 13px;
     }
 
     .quick-icon {
@@ -2608,5 +1815,280 @@ footer p {
         font-size: 10px;
     }
 
+    .mobile-section-title {
+        width: 94%;
+
+        margin-top: 27px;
+    }
+
+    .mobile-section-title h2 {
+        font-size: 19px;
+    }
+
+    .mobile-movie-row {
+        width: 94%;
+
+        gap: 9px;
+    }
+
+    .mobile-movie-card {
+        flex-basis: 140px;
+
+        min-width: 140px;
+
+        padding: 8px;
+
+        border-radius: 14px;
+    }
+
+    .mobile-movie-image {
+        height: 115px;
+    }
+
+    .mobile-movie-card h3 {
+        font-size: 12px;
+    }
+
+    .mobile-movie-card p {
+        font-size: 11px;
+    }
+
+    .mobile-movie-card small {
+        font-size: 9px;
+    }
+
+    .mobile-explore-grid {
+        width: 94%;
+
+        gap: 8px;
+    }
+
+    .mobile-explore-card {
+        min-height: 82px;
+
+        border-radius: 14px;
+    }
+
+    .mobile-explore-card span {
+        font-size: 24px;
+    }
+
+    .mobile-explore-card strong {
+        font-size: 11px;
+    }
+
+    .mobile-gadget-row {
+        width: 94%;
+
+        gap: 9px;
+    }
+
+    .mobile-gadget-card {
+        flex-basis: 110px;
+
+        min-width: 110px;
+
+        min-height: 100px;
+
+        border-radius: 14px;
+    }
+
+    .mobile-gadget-card span {
+        font-size: 29px;
+    }
+
+    .mobile-gadget-card strong {
+        font-size: 11px;
+    }
+
+    .mobile-bottom-nav {
+        left: 7px;
+        right: 7px;
+
+        bottom: 7px;
+
+        height: 62px;
+
+        border-radius: 18px;
+    }
+
+    .bottom-nav-item span {
+        font-size: 18px;
+    }
+
+    .bottom-nav-item small {
+        font-size: 8px;
+    }
+
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   MAX WIDTH: 330px
+========================================================= */
+
+@media (max-width: 330px) {
+
+    .mobile-logo {
+        font-size: 15px;
+    }
+
+    .mobile-logo span {
+        font-size: 12px;
+    }
+
+    .mobile-welcome {
+        min-height: 260px;
+
+        padding:
+            22px 14px;
+    }
+
+    .mobile-welcome-text {
+        width: 61%;
+    }
+
+    .mobile-welcome h1 {
+        font-size: 25px;
+    }
+
+    .mobile-welcome h2 {
+        font-size: 19px;
+    }
+
+    .mobile-description {
+        font-size: 10px;
+    }
+
+    .mobile-doraemon {
+        width: 135px;
+        height: 135px;
+    }
+
+    .mobile-quick-menu {
+        gap: 5px;
+    }
+
+    .mobile-quick-card {
+        min-height: 72px;
+
+        border-radius: 11px;
+    }
+
+    .quick-icon {
+        font-size: 20px;
+    }
+
+    .mobile-quick-card strong {
+        font-size: 8px;
+    }
+
+    .mobile-section-title h2 {
+        font-size: 17px;
+    }
+
+    .mobile-section-title a {
+        font-size: 10px;
+    }
+
+    .mobile-movie-row {
+        gap: 7px;
+    }
+
+    .mobile-movie-card {
+        flex-basis: 130px;
+
+        min-width: 130px;
+
+        padding: 7px;
+    }
+
+    .mobile-movie-image {
+        height: 105px;
+    }
+
+    .mobile-movie-card h3 {
+        font-size: 10px;
+    }
+
+    .mobile-movie-card p {
+        font-size: 10px;
+    }
+
+    .mobile-movie-card small {
+        font-size: 8px;
+    }
+
+    .mobile-explore-grid {
+        gap: 6px;
+    }
+
+    .mobile-explore-card {
+        min-height: 75px;
+    }
+
+    .mobile-explore-card span {
+        font-size: 21px;
+    }
+
+    .mobile-explore-card strong {
+        font-size: 9px;
+    }
+
+    .mobile-gadget-row {
+        gap: 7px;
+    }
+
+    .mobile-gadget-card {
+        flex-basis: 100px;
+
+        min-width: 100px;
+
+        min-height: 92px;
+    }
+
+    .mobile-gadget-card span {
+        font-size: 26px;
+    }
+
+    .mobile-gadget-card strong {
+        font-size: 9px;
+    }
+
+    .mobile-bottom-nav {
+        height: 58px;
+
+        border-radius: 16px;
+    }
+
+    .bottom-nav-item span {
+        font-size: 17px;
+    }
+
+    .bottom-nav-item small {
+        font-size: 7px;
+    }
+
 }
+
+
+/* =========================================================
+   DESKTOP ONLY SAFETY
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .mobile-header,
+    .mobile-home,
+    .mobile-bottom-nav,
+    .mobile-menu-panel {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   END OF DORAEMON WORLD CSS
+========================================================= */
