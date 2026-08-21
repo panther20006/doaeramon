@@ -56,10 +56,11 @@ button {
     width: 100%;
     min-height: 64px;
 
-    padding: 8px 4%;
+    padding: 8px 3%;
 
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     position: sticky;
     top: 0;
@@ -78,23 +79,24 @@ button {
 
 /* =========================================================
    DESKTOP LOGO
-   LEFT SIDE
+   LOGO = RIGHT SIDE
 ========================================================= */
 
 .logo {
+    order: 2;
+
     color: white;
 
     font-size: 23px;
     font-weight: 900;
 
     letter-spacing: 1px;
-
     white-space: nowrap;
 
     display: flex;
     align-items: center;
 
-    flex-shrink: 0;
+    margin-left: 18px;
 
     transition: 0.25s ease;
 }
@@ -106,19 +108,18 @@ button {
 
 /* =========================================================
    DESKTOP NAVIGATION
-   RIGHT SIDE
+   NAV = LEFT OF LOGO
 ========================================================= */
 
 #nav {
+    order: 1;
+
     margin-left: auto;
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
 
-    gap: 4px;
-
-    flex-shrink: 0;
+    gap: 5px;
 }
 
 #nav a {
@@ -156,6 +157,22 @@ button {
 
 .menu-btn {
     display: none;
+
+    margin-left: auto;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #168fd1;
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
 }
 
 
@@ -255,6 +272,7 @@ button {
     z-index: 5;
 
     max-width: 650px;
+
     min-width: 0;
 }
 
@@ -281,6 +299,7 @@ button {
     letter-spacing: 1px;
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -378,7 +397,6 @@ button {
 
 /* =========================================================
    HERO ART
-   DORAEMON RIGHT SIDE
 ========================================================= */
 
 .hero-art {
@@ -393,7 +411,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: visible;
@@ -427,7 +444,7 @@ button {
 
 
 /* =========================================================
-   DESKTOP DORAEMON FLOAT
+   DESKTOP DORAEMON ANIMATION
 ========================================================= */
 
 @keyframes desktopFloat {
@@ -849,8 +866,8 @@ footer p {
 @media (max-width: 1200px) {
 
     .topbar {
-        padding-left: 3%;
-        padding-right: 3%;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
     #nav {
@@ -859,13 +876,16 @@ footer p {
 
     #nav a {
         padding: 9px 8px;
-
         font-size: 13px;
     }
 
+    .logo {
+        font-size: 21px;
+        margin-left: 12px;
+    }
+
     .hero {
-        grid-template-columns:
-            48% 52%;
+        grid-template-columns: 48% 52%;
 
         padding: 42px;
     }
@@ -875,7 +895,6 @@ footer p {
 
         max-height: 390px;
     }
-
 }
 
 
@@ -886,8 +905,7 @@ footer p {
 @media (max-width: 1050px) {
 
     .hero {
-        grid-template-columns:
-            48% 52%;
+        grid-template-columns: 48% 52%;
 
         padding: 38px;
     }
@@ -920,7 +938,6 @@ footer p {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
 }
 
 
@@ -930,6 +947,7 @@ footer p {
 ========================================================= */
 
 @media (max-width: 700px) {
+
 
     /* =====================================================
        HIDE DESKTOP
@@ -1236,7 +1254,6 @@ footer p {
 
     /* =====================================================
        MOBILE HEY
-       DORAEMON KE UPAR
     ===================================================== */
 
     .mobile-mausam-name {
@@ -2189,43 +2206,13 @@ footer p {
 
 /* =========================================================
    IMPORTANT:
-   DESKTOP HEY / MAUSAM HIDDEN
-========================================================= */
-
-.desktop-mausam-name {
-    display: none !important;
-}
-
-
-/* =========================================================
-   DESKTOP HEADER FINAL ALIGNMENT
+   DESKTOP "HEY" IS HIDDEN
 ========================================================= */
 
 @media (min-width: 701px) {
 
-    .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding-left: 4%;
-        padding-right: 3%;
-    }
-
-    .logo {
-        margin-right: 20px;
-    }
-
-    #nav {
-        margin-left: auto;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: flex-end;
-
-        gap: 4px;
+    .desktop-mausam-name {
+        display: none !important;
     }
 
 }
