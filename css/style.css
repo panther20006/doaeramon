@@ -1,6 +1,6 @@
 /* =========================================================
    DORAEMON WORLD
-   COMPLETE CLEAN RESPONSIVE CSS
+   COMPLETE RESPONSIVE CSS
    DESKTOP + TABLET + MOBILE
 ========================================================= */
 
@@ -54,9 +54,9 @@ button {
 
 .topbar {
     width: 100%;
-    min-height: 68px;
+    min-height: 64px;
 
-    padding: 10px 5%;
+    padding: 8px 5%;
 
     display: flex;
     align-items: center;
@@ -181,10 +181,6 @@ button {
 
     display: grid;
 
-    /*
-       Reduced Doraemon area so image
-       does not become too large.
-    */
     grid-template-columns: 48% 52%;
 
     align-items: center;
@@ -409,15 +405,9 @@ button {
 
 /* =========================================================
    DORAEMON ORB
-   DESKTOP SIZE REDUCED
 ========================================================= */
 
 .character-orb {
-    /*
-       Main desktop size reduced
-       from 520px to 400px.
-    */
-
     width: min(400px, 90%);
     height: 400px;
 
@@ -951,7 +941,7 @@ footer p {
 
 
 /* =========================================================
-   MOBILE VERSION
+   MOBILE
    MAX WIDTH: 700px
 ========================================================= */
 
@@ -1262,8 +1252,7 @@ footer p {
 
 
     /* =====================================================
-       HEY MAUSAM
-       NAME BESIDE DORAEMON
+       MAUSAM NAME
     ===================================================== */
 
     .mobile-mausam-name {
@@ -1271,10 +1260,6 @@ footer p {
 
         z-index: 10;
 
-        /*
-           Name stays beside Doraemon
-           instead of covering his face.
-        */
         right: 18px;
         bottom: 175px;
 
@@ -1564,7 +1549,6 @@ footer p {
         display: flex;
 
         align-items: center;
-
         justify-content: center;
 
         flex-direction: column;
@@ -1873,9 +1857,6 @@ footer p {
     .mobile-mausam-name {
         right: 12px;
 
-        /*
-           Keep it above Doraemon.
-        */
         bottom: 155px;
 
         padding: 6px 9px;
