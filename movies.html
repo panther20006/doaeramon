@@ -19,84 +19,31 @@
         ===================================================== */
 
         .movies-page {
-            padding: 45px 6%;
+            padding: 50px 6%;
         }
 
         .movies-header {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         .movies-header span {
-            display: inline-block;
             color: #168cff;
-            font-size: 13px;
-            font-weight: 800;
+            font-size: 14px;
+            font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 8px;
         }
 
         .movies-header h1 {
-            font-size: clamp(32px, 5vw, 58px);
-            color: #12345b;
-            margin-bottom: 10px;
+            margin: 10px 0;
+            font-size: 42px;
+            color: #123;
         }
 
         .movies-header p {
-            color: #60758d;
+            color: #667;
             font-size: 16px;
         }
-
-
-        /* =====================================================
-           SEARCH
-        ===================================================== */
-
-        .movie-tools {
-            max-width: 900px;
-            margin: 0 auto 40px;
-
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .movie-search {
-            flex: 1;
-            min-width: 250px;
-
-            padding: 15px 20px;
-
-            border: 2px solid #dceeff;
-            border-radius: 16px;
-
-            outline: none;
-
-            font-size: 15px;
-
-            background: #ffffff;
-        }
-
-        .movie-search:focus {
-            border-color: #168cff;
-        }
-
-        .movie-filter {
-            padding: 15px 18px;
-
-            border: 2px solid #dceeff;
-            border-radius: 16px;
-
-            background: #ffffff;
-
-            color: #12345b;
-
-            font-weight: 600;
-
-            outline: none;
-        }
-
 
         /* =====================================================
            MOVIE GRID
@@ -104,204 +51,133 @@
 
         .movies-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(5, minmax(0, 1fr));
-
-            gap: 24px;
-
-            max-width: 1500px;
-
-            margin: auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
-
-
-        /* =====================================================
-           MOVIE CARD
-        ===================================================== */
 
         .movie-card {
             display: block;
-
-            background: #ffffff;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
             text-decoration: none;
-
             color: inherit;
-
-            border: 1px solid #e4f1fc;
-
-            box-shadow:
-                0 10px 30px rgba(25, 100, 160, 0.08);
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease;
-
-            position: relative;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 80, 160, 0.10);
+            transition: 0.3s ease;
+            border: 1px solid rgba(20, 140, 255, 0.08);
         }
 
         .movie-card:hover {
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 18px 40px rgba(25, 120, 190, 0.18);
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 100, 220, 0.18);
         }
 
-
-        /* =====================================================
-           POSTER
-        ===================================================== */
-
-        .movie-poster {
+        .movie-image {
             width: 100%;
-
-            aspect-ratio: 2 / 3;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #dff4ff,
-                    #f7fcff
-                );
-
+            height: 330px;
+            background: linear-gradient(
+                135deg,
+                #dff5ff,
+                #f5fbff
+            );
             overflow: hidden;
-
             position: relative;
         }
 
-        .movie-poster img {
+        .movie-image img {
             width: 100%;
             height: 100%;
-
-            object-fit: cover;
-
             display: block;
-
-            transition:
-                transform .4s ease;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
 
-        .movie-card:hover
-        .movie-poster img {
+        .movie-card:hover .movie-image img {
             transform: scale(1.05);
         }
 
-
-        /* =====================================================
-           MOVIE NUMBER
-        ===================================================== */
-
         .movie-number {
             position: absolute;
-
-            top: 10px;
-            left: 10px;
-
-            background: #168cff;
-
-            color: white;
-
-            padding: 6px 9px;
-
-            border-radius: 10px;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
+            top: 12px;
+            left: 12px;
             z-index: 2;
+            background: #168cff;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
         }
 
-
-        /* =====================================================
-           MOVIE INFO
-        ===================================================== */
-
         .movie-info {
-            padding: 16px;
+            padding: 17px;
         }
 
         .movie-info h2 {
-            font-size: 17px;
-
+            font-size: 18px;
             line-height: 1.35;
-
-            color: #12345b;
-
-            margin: 0 0 8px;
+            margin-bottom: 8px;
+            color: #123;
         }
 
         .movie-meta {
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
-            gap: 8px;
+            gap: 10px;
         }
 
         .movie-year {
-            color: #71849a;
-
+            color: #718096;
             font-size: 13px;
-
-            font-weight: 600;
         }
 
         .movie-rating {
-            color: #f5a400;
-
+            color: #f59e0b;
             font-size: 13px;
-
             font-weight: 700;
         }
 
+        .movie-country {
+            margin-top: 8px;
+            color: #7a8797;
+            font-size: 12px;
+        }
 
         /* =====================================================
-           EMPTY
+           FOOTER
         ===================================================== */
 
-        .no-results {
-            display: none;
-
+        .movies-footer {
             text-align: center;
-
-            padding: 60px 20px;
-
-            color: #71849a;
+            padding: 50px 20px;
+            margin-top: 30px;
         }
-
-        .no-results h2 {
-            color: #12345b;
-            margin-bottom: 8px;
-        }
-
 
         /* =====================================================
-           MOBILE
+           TABLET
         ===================================================== */
 
         @media (max-width: 1100px) {
 
             .movies-grid {
-                grid-template-columns:
-                    repeat(4, minmax(0, 1fr));
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .movie-image {
+                height: 310px;
             }
 
         }
 
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
 
             .movies-page {
-                padding:
-                    30px 16px 100px;
+                padding: 30px 15px 100px;
             }
 
             .movies-header {
@@ -309,41 +185,25 @@
             }
 
             .movies-header h1 {
-                font-size: 34px;
+                font-size: 30px;
             }
 
             .movies-header p {
                 font-size: 14px;
+                line-height: 1.6;
             }
-
-            .movie-tools {
-                margin-bottom: 25px;
-            }
-
-            .movie-search {
-                width: 100%;
-                min-width: 0;
-            }
-
-            .movie-filter {
-                width: 100%;
-            }
-
-
-            /* MOBILE 2 COLUMN */
 
             .movies-grid {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
+                grid-template-columns: repeat(2, 1fr);
                 gap: 14px;
-
             }
-
 
             .movie-card {
                 border-radius: 15px;
+            }
+
+            .movie-image {
+                height: 230px;
             }
 
             .movie-info {
@@ -352,29 +212,37 @@
 
             .movie-info h2 {
                 font-size: 14px;
+                margin-bottom: 7px;
             }
 
             .movie-year,
-            .movie-rating {
-                font-size: 11px;
+            .movie-rating,
+            .movie-country {
+                font-size: 10px;
             }
 
             .movie-number {
-                top: 7px;
-                left: 7px;
-
+                top: 8px;
+                left: 8px;
                 padding: 5px 7px;
-
-                font-size: 10px;
+                font-size: 9px;
+                border-radius: 7px;
             }
 
         }
 
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
 
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
 
             .movies-grid {
                 gap: 10px;
+            }
+
+            .movie-image {
+                height: 205px;
             }
 
             .movie-info h2 {
@@ -393,7 +261,7 @@
 
     <!-- =====================================================
          DESKTOP HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="topbar">
 
@@ -445,7 +313,7 @@
 
     <!-- =====================================================
          MOBILE HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="mobile-header">
 
@@ -479,2101 +347,1941 @@
 
     <!-- =====================================================
          MAIN
-    ====================================================== -->
+    ===================================================== -->
 
-    <main>
-
-        <section class="movies-page">
+    <main class="movies-page">
 
 
-            <!-- =================================================
-                 TITLE
-            ================================================== -->
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
 
-            <div class="movies-header">
+        <section class="movies-header">
 
-                <span>
-                    DORAEMON MOVIE COLLECTION
-                </span>
+            <span>
+                DORAEMON WORLD
+            </span>
 
-                <h1>
-                    All Doraemon Movies 🎬
-                </h1>
+            <h1>
+                🎬 Doraemon Movies
+            </h1>
 
-                <p>
-                    Doraemon ki magical movie journey
-                    1980 se latest adventures tak.
-                </p>
+            <p>
+                Doraemon ki amazing movies explore karo.
+                Japan ki famous movie collection ek jagah.
+            </p>
 
-            </div>
-
-
-            <!-- =================================================
-                 SEARCH + FILTER
-            ================================================== -->
-
-            <div class="movie-tools">
-
-                <input
-                    type="search"
-                    id="movieSearch"
-                    class="movie-search"
-                    placeholder="🔍 Search Doraemon movie...">
-
-                <select
-                    id="yearFilter"
-                    class="movie-filter">
-
-                    <option value="all">
-                        All Years
-                    </option>
-
-                    <option value="1980">
-                        1980–1989
-                    </option>
-
-                    <option value="1990">
-                        1990–1999
-                    </option>
-
-                    <option value="2000">
-                        2000–2009
-                    </option>
-
-                    <option value="2010">
-                        2010–2019
-                    </option>
-
-                    <option value="2020">
-                        2020–2029
-                    </option>
-
-                </select>
-
-            </div>
+        </section>
 
 
-            <!-- =================================================
-                 MOVIES
-            ================================================== -->
+        <!-- =================================================
+             MOVIES
+        ================================================== -->
 
-            <div
-                class="movies-grid"
-                id="moviesGrid">
+        <section class="movies-grid">
 
 
-                <!-- 01 -->
+            <!-- 01 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1980"
-                    data-title="Nobita's Dinosaur">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            01
+                    <span class="movie-number">01</span>
+
+                    <img
+                        src="./assets/images/movies/movie-01.jpg"
+                        alt="Doraemon Movie 1"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Dinosaur
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1980
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-dinosaur.jpg"
-                            alt="Nobita's Dinosaur"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Dinosaur
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1980
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 02 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1981"
-                    data-title="The Records of Nobita Spaceblazer">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            02
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/records-of-nobita-spaceblazer.jpg"
-                            alt="The Records of Nobita Spaceblazer"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            The Records of Nobita, Spaceblazer
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1981
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 03 -->
+            <!-- 02 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1982"
-                    data-title="Nobita and the Haunts of Evil">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            03
+                    <span class="movie-number">02</span>
+
+                    <img
+                        src="./assets/images/movies/movie-02.jpg"
+                        alt="Doraemon Movie 2"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        The Records of Nobita
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1981
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-and-the-haunts-of-evil.jpg"
-                            alt="Nobita and the Haunts of Evil"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Haunts of Evil
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1982
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 04 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1983"
-                    data-title="Nobita and the Castle of the Undersea Devil">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            04
+                        <span class="movie-rating">
+                            ⭐ 8.1
                         </span>
 
-                        <img
-                            src="assets/images/movies/castle-of-the-undersea-devil.jpg"
-                            alt="Nobita and the Castle of the Undersea Devil"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Castle of the Undersea Devil
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1983
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 05 -->
+            <!-- 03 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1984"
-                    data-title="Nobita's Great Adventure into the Underworld">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            05
+                    <span class="movie-number">03</span>
+
+                    <img
+                        src="./assets/images/movies/movie-03.jpg"
+                        alt="Doraemon Movie 3"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Haunts
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1982
                         </span>
 
-                        <img
-                            src="assets/images/movies/great-adventure-into-the-underworld.jpg"
-                            alt="Nobita's Great Adventure into the Underworld"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Great Adventure into the Underworld
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1984
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 06 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1985"
-                    data-title="Nobita's Little Star Wars">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            06
+                        <span class="movie-rating">
+                            ⭐ 8.0
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-little-star-wars.jpg"
-                            alt="Nobita's Little Star Wars"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Little Star Wars
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1985
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.3
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 07 -->
+            <!-- 04 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1986"
-                    data-title="Nobita and the Steel Troops">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            07
+                    <span class="movie-number">04</span>
+
+                    <img
+                        src="./assets/images/movies/movie-04.jpg"
+                        alt="Doraemon Movie 4"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Great Adventure
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1983
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-and-the-steel-troops.jpg"
-                            alt="Nobita and the Steel Troops"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Steel Troops
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1986
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.4
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 08 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1987"
-                    data-title="Nobita and the Knights on Dinosaurs">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            08
+                        <span class="movie-rating">
+                            ⭐ 8.3
                         </span>
 
-                        <img
-                            src="assets/images/movies/knights-on-dinosaurs.jpg"
-                            alt="Nobita and the Knights on Dinosaurs"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Knights on Dinosaurs
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1987
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 09 -->
+            <!-- 05 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1988"
-                    data-title="The Record of Nobita's Parallel Visit to the West">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            09
+                    <span class="movie-number">05</span>
+
+                    <img
+                        src="./assets/images/movies/movie-05.jpg"
+                        alt="Doraemon Movie 5"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Little Star Wars
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1985
                         </span>
 
-                        <img
-                            src="assets/images/movies/parallel-visit-to-the-west.jpg"
-                            alt="Nobita's Parallel Visit to the West"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Parallel Visit to the West
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1988
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 10 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1989"
-                    data-title="Nobita and the Birth of Japan">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            10
+                        <span class="movie-rating">
+                            ⭐ 8.4
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-and-the-birth-of-japan.jpg"
-                            alt="Nobita and the Birth of Japan"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Birth of Japan
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1989
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.3
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 11 -->
+            <!-- 06 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1990"
-                    data-title="Nobita and the Animal Planet">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            11
+                    <span class="movie-number">06</span>
+
+                    <img
+                        src="./assets/images/movies/movie-06.jpg"
+                        alt="Doraemon Movie 6"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Steel Troops
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1986
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-and-the-animal-planet.jpg"
-                            alt="Nobita and the Animal Planet"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Animal Planet
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1990
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 12 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1991"
-                    data-title="Nobita's Dorabian Nights">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            12
+                        <span class="movie-rating">
+                            ⭐ 8.5
                         </span>
 
-                        <img
-                            src="assets/images/movies/dorabian-nights.jpg"
-                            alt="Nobita's Dorabian Nights"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Dorabian Nights
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1991
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 13 -->
+            <!-- 07 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1992"
-                    data-title="Nobita and the Kingdom of Clouds">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            13
+                    <span class="movie-number">07</span>
+
+                    <img
+                        src="./assets/images/movies/movie-07.jpg"
+                        alt="Doraemon Movie 7"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Great Adventure
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1987
                         </span>
 
-                        <img
-                            src="assets/images/movies/kingdom-of-clouds.jpg"
-                            alt="Nobita and the Kingdom of Clouds"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Kingdom of Clouds
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1992
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 14 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1993"
-                    data-title="Nobita and the Tin Labyrinth">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            14
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/tin-labyrinth.jpg"
-                            alt="Nobita and the Tin Labyrinth"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Tin Labyrinth
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1993
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 15 -->
+            <!-- 08 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1994"
-                    data-title="Nobita's Three Visionary Swordsmen">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            15
+                    <span class="movie-number">08</span>
+
+                    <img
+                        src="./assets/images/movies/movie-08.jpg"
+                        alt="Doraemon Movie 8"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Parallel Journey
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1988
                         </span>
 
-                        <img
-                            src="assets/images/movies/three-visionary-swordsmen.jpg"
-                            alt="Nobita's Three Visionary Swordsmen"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Three Visionary Swordsmen
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1994
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 16 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1995"
-                    data-title="Nobita's Diary on the Creation of the World">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            16
+                        <span class="movie-rating">
+                            ⭐ 8.1
                         </span>
 
-                        <img
-                            src="assets/images/movies/creation-of-the-world.jpg"
-                            alt="Nobita's Diary on the Creation of the World"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Diary on the Creation of the World
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1995
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 17 -->
+            <!-- 09 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1996"
-                    data-title="Nobita and the Galaxy Super-express">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            17
+                    <span class="movie-number">09</span>
+
+                    <img
+                        src="./assets/images/movies/movie-09.jpg"
+                        alt="Doraemon Movie 9"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Birth of Japan
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1989
                         </span>
 
-                        <img
-                            src="assets/images/movies/galaxy-super-express.jpg"
-                            alt="Nobita and the Galaxy Super-express"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Galaxy Super-express
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1996
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.3
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 18 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1997"
-                    data-title="Nobita and the Spiral City">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            18
+                        <span class="movie-rating">
+                            ⭐ 8.4
                         </span>
 
-                        <img
-                            src="assets/images/movies/spiral-city.jpg"
-                            alt="Nobita and the Spiral City"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Spiral City
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1997
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 19 -->
+            <!-- 10 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1998"
-                    data-title="Nobita's Great Adventure in the South Seas">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            19
+                    <span class="movie-number">10</span>
+
+                    <img
+                        src="./assets/images/movies/movie-10.jpg"
+                        alt="Doraemon Movie 10"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Animal Planet
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1990
                         </span>
 
-                        <img
-                            src="assets/images/movies/great-adventure-south-seas.jpg"
-                            alt="Nobita's Great Adventure in the South Seas"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Great Adventure in the South Seas
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1998
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 20 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="1999"
-                    data-title="Nobita Drifts in the Universe">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            20
+                        <span class="movie-rating">
+                            ⭐ 8.3
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-drifts-in-the-universe.jpg"
-                            alt="Nobita Drifts in the Universe"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita Drifts in the Universe
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                1999
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 21 -->
+            <!-- 11 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2000"
-                    data-title="Nobita and the Legend of the Sun King">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            21
+                    <span class="movie-number">11</span>
+
+                    <img
+                        src="./assets/images/movies/movie-11.jpg"
+                        alt="Doraemon Movie 11"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Dorabian Nights
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1991
                         </span>
 
-                        <img
-                            src="assets/images/movies/legend-of-the-sun-king.jpg"
-                            alt="Nobita and the Legend of the Sun King"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Legend of the Sun King
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2000
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 22 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2001"
-                    data-title="Nobita and the Winged Braves">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            22
+                        <span class="movie-rating">
+                            ⭐ 8.4
                         </span>
 
-                        <img
-                            src="assets/images/movies/winged-braves.jpg"
-                            alt="Nobita and the Winged Braves"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Winged Braves
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2001
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 23 -->
+            <!-- 12 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2002"
-                    data-title="Nobita in the Robot Kingdom">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            23
+                    <span class="movie-number">12</span>
+
+                    <img
+                        src="./assets/images/movies/movie-12.jpg"
+                        alt="Doraemon Movie 12"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Kingdom of Clouds
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1992
                         </span>
 
-                        <img
-                            src="assets/images/movies/robot-kingdom.jpg"
-                            alt="Nobita in the Robot Kingdom"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita in the Robot Kingdom
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2002
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 24 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2003"
-                    data-title="Nobita and the Windmasters">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            24
+                        <span class="movie-rating">
+                            ⭐ 8.3
                         </span>
 
-                        <img
-                            src="assets/images/movies/windmasters.jpg"
-                            alt="Nobita and the Windmasters"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Windmasters
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2003
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 25 -->
+            <!-- 13 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2004"
-                    data-title="Nobita in the Wan-Nyan Spacetime Odyssey">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            25
+                    <span class="movie-number">13</span>
+
+                    <img
+                        src="./assets/images/movies/movie-13.jpg"
+                        alt="Doraemon Movie 13"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Tin Labyrinth
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1993
                         </span>
 
-                        <img
-                            src="assets/images/movies/wan-nyan-spacetime-odyssey.jpg"
-                            alt="Nobita in the Wan-Nyan Spacetime Odyssey"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita in the Wan-Nyan Spacetime Odyssey
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2004
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 26 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2006"
-                    data-title="Nobita's Dinosaur 2006">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            26
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-dinosaur-2006.jpg"
-                            alt="Nobita's Dinosaur 2006"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Dinosaur 2006
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2006
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 27 -->
+            <!-- 14 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2007"
-                    data-title="Nobita's New Great Adventure into the Underworld">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            27
+                    <span class="movie-number">14</span>
+
+                    <img
+                        src="./assets/images/movies/movie-14.jpg"
+                        alt="Doraemon Movie 14"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Three Visionary Swordsmen
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1994
                         </span>
 
-                        <img
-                            src="assets/images/movies/new-great-adventure-underworld.jpg"
-                            alt="Nobita's New Great Adventure into the Underworld"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's New Great Adventure into the Underworld
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2007
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 28 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2008"
-                    data-title="Nobita and the Green Giant Legend">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            28
+                        <span class="movie-rating">
+                            ⭐ 8.4
                         </span>
 
-                        <img
-                            src="assets/images/movies/green-giant-legend.jpg"
-                            alt="Nobita and the Green Giant Legend"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Green Giant Legend
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2008
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 29 -->
+            <!-- 15 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2009"
-                    data-title="The New Record of Nobita Spaceblazer">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            29
+                    <span class="movie-number">15</span>
+
+                    <img
+                        src="./assets/images/movies/movie-15.jpg"
+                        alt="Doraemon Movie 15"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Diary on the Creation of the World
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1995
                         </span>
 
-                        <img
-                            src="assets/images/movies/new-record-spaceblazer.jpg"
-                            alt="The New Record of Nobita Spaceblazer"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            The New Record of Nobita, Spaceblazer
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2009
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 30 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2010"
-                    data-title="Nobita's Great Battle of the Mermaid King">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            30
+                        <span class="movie-rating">
+                            ⭐ 8.1
                         </span>
 
-                        <img
-                            src="assets/images/movies/mermaid-king.jpg"
-                            alt="Nobita's Great Battle of the Mermaid King"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Great Battle of the Mermaid King
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2010
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 31 -->
+            <!-- 16 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2011"
-                    data-title="New Nobita and the Steel Troops Winged Angel">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            31
+                    <span class="movie-number">16</span>
+
+                    <img
+                        src="./assets/images/movies/movie-16.jpg"
+                        alt="Doraemon Movie 16"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Galaxy Super-express
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1996
                         </span>
 
-                        <img
-                            src="assets/images/movies/steel-troops-winged-angels.jpg"
-                            alt="New Nobita and the Steel Troops"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            New Nobita and the Steel Troops
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2011
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.4
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 32 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2012"
-                    data-title="Nobita and the Island of Miracles">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            32
+                        <span class="movie-rating">
+                            ⭐ 8.5
                         </span>
 
-                        <img
-                            src="assets/images/movies/island-of-miracles.jpg"
-                            alt="Nobita and the Island of Miracles"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Island of Miracles
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2012
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 33 -->
+            <!-- 17 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2013"
-                    data-title="Nobita's Secret Gadget Museum">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            33
+                    <span class="movie-number">17</span>
+
+                    <img
+                        src="./assets/images/movies/movie-17.jpg"
+                        alt="Doraemon Movie 17"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Adventure in the South Seas
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1998
                         </span>
 
-                        <img
-                            src="assets/images/movies/secret-gadget-museum.jpg"
-                            alt="Nobita's Secret Gadget Museum"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Secret Gadget Museum
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2013
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 34 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2014"
-                    data-title="New Nobita's Great Demon Peko and the Exploration Party of Five">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            34
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/great-demon-peko.jpg"
-                            alt="New Nobita's Great Demon Peko"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            New Nobita's Great Demon Peko
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2014
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 35 -->
+            <!-- 18 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2015"
-                    data-title="Nobita's Space Heroes">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            35
+                    <span class="movie-number">18</span>
+
+                    <img
+                        src="./assets/images/movies/movie-18.jpg"
+                        alt="Doraemon Movie 18"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Great Adventure in the South Seas
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1998
                         </span>
 
-                        <img
-                            src="assets/images/movies/space-heroes.jpg"
-                            alt="Nobita's Space Heroes"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Space Heroes
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2015
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 36 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2016"
-                    data-title="Nobita and the Birth of Japan 2016">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            36
+                        <span class="movie-rating">
+                            ⭐ 8.1
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobita-birth-of-japan-2016.jpg"
-                            alt="Nobita and the Birth of Japan 2016"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita and the Birth of Japan
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2016
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 37 -->
+            <!-- 19 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2017"
-                    data-title="Nobita's Great Adventure in the Antarctic Kachi Kochi">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            37
+                    <span class="movie-number">19</span>
+
+                    <img
+                        src="./assets/images/movies/movie-19.jpg"
+                        alt="Doraemon Movie 19"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Drifts in the Universe
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            1999
                         </span>
 
-                        <img
-                            src="assets/images/movies/antarctic-kachi-kochi.jpg"
-                            alt="Nobita's Great Adventure in the Antarctic Kachi Kochi"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Antarctic Kachi Kochi
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2017
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 38 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2018"
-                    data-title="Nobita's Treasure Island">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            38
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/treasure-island.jpg"
-                            alt="Nobita's Treasure Island"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Treasure Island
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2018
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 39 -->
+            <!-- 20 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2019"
-                    data-title="Nobita's Chronicle of the Moon Exploration">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            39
+                    <span class="movie-number">20</span>
+
+                    <img
+                        src="./assets/images/movies/movie-20.jpg"
+                        alt="Doraemon Movie 20"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Legend of the Sun King
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2000
                         </span>
 
-                        <img
-                            src="assets/images/movies/doraemon-nobitas-chronicle-of-the-moon-exploration.jpg"
-                            alt="Nobita's Chronicle of the Moon Exploration"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Chronicle of the Moon Exploration
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2019
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 40 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2020"
-                    data-title="Nobita's New Dinosaur">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            40
+                        <span class="movie-rating">
+                            ⭐ 8.4
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-new-dinosaur.jpg"
-                            alt="Nobita's New Dinosaur"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's New Dinosaur
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2020
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.2
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 41 -->
+            <!-- 21 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2020"
-                    data-title="Stand by Me Doraemon 2">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            41
+                    <span class="movie-number">21</span>
+
+                    <img
+                        src="./assets/images/movies/movie-21.jpg"
+                        alt="Doraemon Movie 21"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Winged Braves
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2001
                         </span>
 
-                        <img
-                            src="assets/images/movies/stand-by-me-doraemon-2.jpg"
-                            alt="Stand by Me Doraemon 2"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Stand by Me Doraemon 2
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2020
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.7
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 42 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2022"
-                    data-title="Nobita's Little Star Wars 2021">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            42
+                        <span class="movie-rating">
+                            ⭐ 8.3
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-little-star-wars-2021.jpg"
-                            alt="Nobita's Little Star Wars 2021"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Little Star Wars 2021
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2022
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 43 -->
+            <!-- 22 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2023"
-                    data-title="Nobita's Sky Utopia">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            43
+                    <span class="movie-number">22</span>
+
+                    <img
+                        src="./assets/images/movies/movie-22.jpg"
+                        alt="Doraemon Movie 22"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Robot Kingdom
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2002
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-sky-utopia.jpg"
-                            alt="Nobita's Sky Utopia"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Sky Utopia
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2023
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- 44 -->
-
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2024"
-                    data-title="Nobita's Earth Symphony">
-
-                    <div class="movie-poster">
-
-                        <span class="movie-number">
-                            44
+                        <span class="movie-rating">
+                            ⭐ 8.2
                         </span>
 
-                        <img
-                            src="assets/images/movies/nobitas-earth-symphony.jpg"
-                            alt="Nobita's Earth Symphony"
-                            loading="lazy">
-
                     </div>
 
-                    <div class="movie-info">
-
-                        <h2>
-                            Nobita's Earth Symphony
-                        </h2>
-
-                        <div class="movie-meta">
-
-                            <span class="movie-year">
-                                2024
-                            </span>
-
-                            <span class="movie-rating">
-                                ⭐ 8.1
-                            </span>
-
-                        </div>
-
+                    <div class="movie-country">
+                        🇯🇵 Japan
                     </div>
 
-                </a>
+                </div>
+
+            </a>
 
 
-                <!-- 45 -->
+            <!-- 23 -->
 
-                <a
-                    href="#"
-                    class="movie-card"
-                    data-year="2025"
-                    data-title="New Nobita's Art World Tales">
+            <a href="#" class="movie-card">
 
-                    <div class="movie-poster">
+                <div class="movie-image">
 
-                        <span class="movie-number">
-                            45
+                    <span class="movie-number">23</span>
+
+                    <img
+                        src="./assets/images/movies/movie-23.jpg"
+                        alt="Doraemon Movie 23"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Windmasters
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2003
                         </span>
 
-                        <img
-                            src="assets/images/movies/new-nobitas-art-world-tales.jpg"
-                            alt="New Nobita's Art World Tales"
-                            loading="lazy">
+                        <span class="movie-rating">
+                            ⭐ 8.4
+                        </span>
 
                     </div>
 
-                    <div class="movie-info">
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
 
-                        <h2>
-                            New Nobita's Art World Tales
-                        </h2>
+                </div>
 
-                        <div class="movie-meta">
+            </a>
 
-                            <span class="movie-year">
-                                2025
-                            </span>
 
-                            <span class="movie-rating">
-                                ⭐ 8.0
-                            </span>
+            <!-- 24 -->
 
-                        </div>
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">24</span>
+
+                    <img
+                        src="./assets/images/movies/movie-24.jpg"
+                        alt="Doraemon Movie 24"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Wan-Nyan Space-Time Odyssey
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2004
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.3
+                        </span>
 
                     </div>
 
-                </a>
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
 
 
-            </div>
+            <!-- 25 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">25</span>
+
+                    <img
+                        src="./assets/images/movies/movie-25.jpg"
+                        alt="Doraemon Movie 25"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Dinosaur 2006
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2006
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.6
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
 
 
-            <!-- =================================================
-                 NO RESULTS
-            ================================================== -->
+            <!-- 26 -->
 
-            <div
-                id="noResults"
-                class="no-results">
+            <a href="#" class="movie-card">
 
-                <h2>
-                    Movie nahi mili 😢
-                </h2>
+                <div class="movie-image">
 
-                <p>
-                    Search name ya year change karke try karo.
-                </p>
+                    <span class="movie-number">26</span>
 
-            </div>
+                    <img
+                        src="./assets/images/movies/movie-26.jpg"
+                        alt="Doraemon Movie 26"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's New Great Adventure
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2006
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.2
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 27 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">27</span>
+
+                    <img
+                        src="./assets/images/movies/movie-27.jpg"
+                        alt="Doraemon Movie 27"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Green Giant Legend
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2008
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.1
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 28 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">28</span>
+
+                    <img
+                        src="./assets/images/movies/movie-28.jpg"
+                        alt="Doraemon Movie 28"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        The New Record of Nobita
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2009
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.0
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 29 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">29</span>
+
+                    <img
+                        src="./assets/images/movies/movie-29.jpg"
+                        alt="Doraemon Movie 29"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Great Battle of the Mermaid King
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2010
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.3
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 30 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">30</span>
+
+                    <img
+                        src="./assets/images/movies/movie-30.jpg"
+                        alt="Doraemon Movie 30"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the New Steel Troops
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2011
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.5
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 31 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">31</span>
+
+                    <img
+                        src="./assets/images/movies/movie-31.jpg"
+                        alt="Doraemon Movie 31"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita and the Island of Miracles
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2012
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.1
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 32 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">32</span>
+
+                    <img
+                        src="./assets/images/movies/movie-32.jpg"
+                        alt="Doraemon Movie 32"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Secret Gadget Museum
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2013
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.2
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 33 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">33</span>
+
+                    <img
+                        src="./assets/images/movies/movie-33.jpg"
+                        alt="Doraemon Movie 33"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        New Nobita's Great Demon
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2014
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.3
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 34 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">34</span>
+
+                    <img
+                        src="./assets/images/movies/movie-34.jpg"
+                        alt="Doraemon Movie 34"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Stand by Me Doraemon
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2014
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.7
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 35 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">35</span>
+
+                    <img
+                        src="./assets/images/movies/movie-35.jpg"
+                        alt="Doraemon Movie 35"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Space Heroes
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2015
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.2
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 36 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">36</span>
+
+                    <img
+                        src="./assets/images/movies/movie-36.jpg"
+                        alt="Doraemon Movie 36"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        New Nobita's Birth of Japan
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2016
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.4
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 37 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">37</span>
+
+                    <img
+                        src="./assets/images/movies/movie-37.jpg"
+                        alt="Doraemon Movie 37"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Great Adventure in the Antarctic
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2017
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.3
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 38 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">38</span>
+
+                    <img
+                        src="./assets/images/movies/movie-38.jpg"
+                        alt="Doraemon Movie 38"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Treasure Island
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2018
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.5
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 39 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">39</span>
+
+                    <img
+                        src="./assets/images/movies/movie-39.jpg"
+                        alt="Doraemon Movie 39"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Chronicle of the Moon Exploration
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2019
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 9.1
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 40 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">40</span>
+
+                    <img
+                        src="./assets/images/movies/movie-40.jpg"
+                        alt="Doraemon Movie 40"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        New Nobita's Dinosaur
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2020
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.6
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 41 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">41</span>
+
+                    <img
+                        src="./assets/images/movies/movie-41.jpg"
+                        alt="Doraemon Movie 41"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Stand by Me Doraemon 2
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2020
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.7
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 42 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">42</span>
+
+                    <img
+                        src="./assets/images/movies/movie-42.jpg"
+                        alt="Doraemon Movie 42"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Little Star Wars 2021
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2022
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.2
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 43 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">43</span>
+
+                    <img
+                        src="./assets/images/movies/movie-43.jpg"
+                        alt="Doraemon Movie 43"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Sky Utopia
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2023
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.4
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 44 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">44</span>
+
+                    <img
+                        src="./assets/images/movies/movie-44.jpg"
+                        alt="Doraemon Movie 44"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        Nobita's Earth Symphony
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2024
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.3
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- 45 -->
+
+            <a href="#" class="movie-card">
+
+                <div class="movie-image">
+
+                    <span class="movie-number">45</span>
+
+                    <img
+                        src="./assets/images/movies/movie-45.jpg"
+                        alt="Doraemon Movie 45"
+                        loading="lazy">
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h2>
+                        New Doraemon Movie
+                    </h2>
+
+                    <div class="movie-meta">
+
+                        <span class="movie-year">
+                            2025
+                        </span>
+
+                        <span class="movie-rating">
+                            ⭐ 8.4
+                        </span>
+
+                    </div>
+
+                    <div class="movie-country">
+                        🇯🇵 Japan
+                    </div>
+
+                </div>
+
+            </a>
 
 
         </section>
+
 
     </main>
 
 
     <!-- =====================================================
          FOOTER
-    ====================================================== -->
+    ===================================================== -->
 
-    <footer>
+    <footer class="movies-footer">
 
         <div class="footer-logo">
             DORAEMON WORLD 💙
@@ -2592,7 +2300,7 @@
 
     <!-- =====================================================
          MOBILE BOTTOM NAVIGATION
-    ====================================================== -->
+    ===================================================== -->
 
     <nav class="mobile-bottom-nav">
 
@@ -2601,62 +2309,43 @@
             class="bottom-nav-item">
 
             <span>🏠</span>
-
-            <small>
-                Home
-            </small>
+            <small>Home</small>
 
         </a>
-
 
         <a
             href="movies.html"
             class="bottom-nav-item active">
 
             <span>🎬</span>
-
-            <small>
-                Movies
-            </small>
+            <small>Movies</small>
 
         </a>
-
 
         <a
             href="episodes.html"
             class="bottom-nav-item">
 
             <span>📺</span>
-
-            <small>
-                Episodes
-            </small>
+            <small>Episodes</small>
 
         </a>
-
 
         <a
             href="characters.html"
             class="bottom-nav-item">
 
             <span>👥</span>
-
-            <small>
-                Characters
-            </small>
+            <small>Characters</small>
 
         </a>
-
 
         <a
             href="music.html"
             class="bottom-nav-item">
 
             <span>🎵</span>
-
-            <small>
-                Music
-            </small>
+            <small>Music</small>
 
         </a>
 
@@ -2664,8 +2353,8 @@
 
 
     <!-- =====================================================
-         MOBILE MENU
-    ====================================================== -->
+         MOBILE MENU PANEL
+    ===================================================== -->
 
     <div
         id="mobileMenuPanel"
@@ -2704,116 +2393,11 @@
 
     <!-- =====================================================
          JAVASCRIPT
-    ====================================================== -->
+    ===================================================== -->
 
     <script src="js/script.js"></script>
 
-
-    <script>
-
-        /* =====================================================
-           MOVIE SEARCH
-        ===================================================== */
-
-        const searchInput =
-            document.getElementById("movieSearch");
-
-        const yearFilter =
-            document.getElementById("yearFilter");
-
-        const movieCards =
-            document.querySelectorAll(".movie-card");
-
-        const noResults =
-            document.getElementById("noResults");
-
-
-        function filterMovies() {
-
-            const search =
-                searchInput.value
-                .toLowerCase()
-                .trim();
-
-            const selectedYear =
-                yearFilter.value;
-
-            let visibleMovies = 0;
-
-
-            movieCards.forEach(card => {
-
-                const title =
-                    card.dataset.title
-                    .toLowerCase();
-
-                const year =
-                    parseInt(card.dataset.year);
-
-
-                const matchesSearch =
-                    title.includes(search);
-
-
-                let matchesYear = true;
-
-
-                if (selectedYear !== "all") {
-
-                    const start =
-                        parseInt(selectedYear);
-
-                    const end =
-                        start + 9;
-
-                    matchesYear =
-                        year >= start &&
-                        year <= end;
-
-                }
-
-
-                if (
-                    matchesSearch &&
-                    matchesYear
-                ) {
-
-                    card.style.display = "";
-
-                    visibleMovies++;
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-
-            noResults.style.display =
-                visibleMovies === 0
-                    ? "block"
-                    : "none";
-
-        }
-
-
-        searchInput.addEventListener(
-            "input",
-            filterMovies
-        );
-
-
-        yearFilter.addEventListener(
-            "change",
-            filterMovies
-        );
-
-
-    </script>
-
-
+    
 </body>
 
 </html>

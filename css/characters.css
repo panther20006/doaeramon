@@ -1,0 +1,1256 @@
+/* =====================================================
+   DORAEMON WORLD
+   CHARACTERS PAGE
+   DESKTOP + MOBILE RESPONSIVE
+===================================================== */
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.characters-page {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CHARACTERS HERO
+===================================================== */
+
+.characters-hero {
+    position: relative;
+    width: 100%;
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 9% 60px;
+
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(0, 160, 255, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eaf9ff,
+            #ffffff
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.characters-hero::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(0, 150, 255, 0.12);
+
+    right: 18%;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.characters-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 150, 255, 0.08);
+
+    right: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.characters-hero-content {
+    position: relative;
+    z-index: 3;
+
+    max-width: 650px;
+}
+
+
+.characters-badge {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 150, 255, 0.09);
+
+    border: 1px solid rgba(0, 150, 255, 0.18);
+
+    color: #087dc1;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.characters-hero h1 {
+    margin-top: 20px;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    color: #102a43;
+
+    font-weight: 800;
+}
+
+
+.characters-hero h1 strong {
+    display: block;
+
+    color: #008fe8;
+}
+
+
+.characters-hero-content > p {
+    margin-top: 22px;
+
+    max-width: 570px;
+
+    color: #587080;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CHARACTER COUNT
+===================================================== */
+
+.character-count {
+    margin-top: 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(0, 140, 230, 0.12);
+
+    box-shadow: 0 8px 30px rgba(0, 100, 180, 0.08);
+}
+
+
+.character-count span {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: #008fe8;
+}
+
+
+.character-count small {
+    color: #657b88;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   HERO DORAEMON
+===================================================== */
+
+.characters-hero-image {
+    position: relative;
+
+    z-index: 4;
+
+    width: min(340px, 32vw);
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin-right: 8%;
+
+    filter:
+        drop-shadow(
+            0 20px 30px
+            rgba(0, 110, 190, 0.20)
+        );
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.character-controls {
+    width: 84%;
+
+    margin: 40px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.character-search {
+    width: 320px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #dcebf4;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 100, 170, 0.07);
+
+    transition: 0.25s ease;
+}
+
+
+.character-search:focus-within {
+    border-color: #0098ee;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(0, 152, 238, 0.08);
+}
+
+
+.character-search span {
+    font-size: 18px;
+}
+
+
+.character-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: #243746;
+}
+
+
+.character-search input::placeholder {
+    color: #9aabb5;
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.character-filters {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+}
+
+
+.character-filter {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background: #f0f7fb;
+
+    color: #526a78;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.character-filter:hover {
+    transform: translateY(-2px);
+
+    background: #dff3ff;
+
+    color: #008ee6;
+}
+
+
+.character-filter.active {
+    background: #0098ee;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 16px
+        rgba(0, 152, 238, 0.22);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.characters-section-title {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.characters-section-title span {
+    color: #008fe8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.characters-section-title h2 {
+    margin-top: 8px;
+
+    color: #102a43;
+
+    font-size: 34px;
+
+    font-weight: 800;
+}
+
+
+.characters-section-title p {
+    margin-top: 8px;
+
+    color: #71838e;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FEATURED SECTION
+===================================================== */
+
+.featured-characters {
+    width: 84%;
+
+    margin: 70px auto 0;
+}
+
+
+/* =====================================================
+   FEATURED GRID
+===================================================== */
+
+.featured-character-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   FEATURED CARD
+===================================================== */
+
+.featured-character-card {
+    position: relative;
+
+    min-height: 275px;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eefaff,
+            #ffffff
+        );
+
+    border: 1px solid #dceef7;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.featured-character-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 100, 180, 0.13);
+}
+
+
+/* =====================================================
+   FEATURED IMAGE
+===================================================== */
+
+.featured-character-card img {
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 145px;
+    height: 155px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+
+.featured-character-card:hover img {
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+/* =====================================================
+   FEATURED TEXT
+===================================================== */
+
+.featured-character-info {
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 155px;
+}
+
+
+.featured-character-info h3 {
+    color: #102a43;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+
+.featured-character-info p {
+    color: #71838e;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+.character-category {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #e6f7ff;
+
+    color: #0089dc;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   ALL CHARACTERS
+===================================================== */
+
+.all-characters {
+    width: 84%;
+
+    margin: 85px auto 0;
+}
+
+
+/* =====================================================
+   CHARACTER GRID
+===================================================== */
+
+.character-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   CHARACTER CARD
+===================================================== */
+
+.character-card {
+    position: relative;
+
+    min-height: 295px;
+
+    padding: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e0edf3;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.character-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #b8e4fa;
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 100, 170, 0.12);
+}
+
+
+/* =====================================================
+   CARD IMAGE
+===================================================== */
+
+.character-image-box {
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    height: 175px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.character-image-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.character-card:hover
+.character-image-box img {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   CARD INFO
+===================================================== */
+
+.character-info {
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 175px;
+}
+
+
+.character-info h3 {
+    margin: 0;
+
+    color: #102a43;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.character-japanese {
+    margin-top: 3px;
+
+    color: #8b9ba5;
+
+    font-size: 11px;
+}
+
+
+.character-info p {
+    margin-top: 8px;
+
+    color: #71838e;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD BADGE
+===================================================== */
+
+.character-info .character-category {
+    margin-top: 9px;
+}
+
+
+/* =====================================================
+   LOAD MORE
+===================================================== */
+
+.characters-load-more {
+    width: 84%;
+
+    margin: 45px auto 80px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.characters-load-more-btn {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: #0098ee;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px
+        rgba(0, 152, 238, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.characters-load-more-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 152, 238, 0.28);
+}
+
+
+.characters-load-more-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.no-characters {
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+
+.no-characters > div {
+    font-size: 42px;
+}
+
+
+.no-characters h3 {
+    margin-top: 12px;
+
+    color: #263f50;
+
+    font-size: 22px;
+}
+
+
+.no-characters p {
+    margin-top: 7px;
+
+    color: #82929c;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FOOTER SPACE
+===================================================== */
+
+.characters-page + footer {
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .characters-hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    .characters-hero-image {
+        width: 290px;
+        margin-right: 2%;
+    }
+
+
+    .character-grid,
+    .featured-character-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+
+    .character-controls,
+    .featured-characters,
+    .all-characters {
+        width: 90%;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .characters-hero {
+        min-height: 390px;
+
+        padding: 55px 5%;
+    }
+
+
+    .characters-hero-image {
+        width: 240px;
+    }
+
+
+    .characters-hero h1 {
+        font-size: 48px;
+    }
+
+
+    .character-controls {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .character-search {
+        width: 100%;
+    }
+
+
+    .character-filters {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .character-grid,
+    .featured-character-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+    /* HERO */
+
+    .characters-hero {
+        min-height: 570px;
+
+        padding:
+            40px 20px
+            20px;
+
+        display: block;
+
+        text-align: center;
+
+        background:
+            radial-gradient(
+                circle at 50% 75%,
+                rgba(0, 160, 255, 0.18),
+                transparent 35%
+            ),
+            linear-gradient(
+                180deg,
+                #eaf9ff,
+                #ffffff
+            );
+    }
+
+
+    .characters-hero-content {
+        max-width: 100%;
+    }
+
+
+    .characters-badge {
+        font-size: 9px;
+
+        padding: 8px 13px;
+    }
+
+
+    .characters-hero h1 {
+        margin-top: 15px;
+
+        font-size: 40px;
+    }
+
+
+    .characters-hero-content > p {
+        margin: 16px auto 0;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        max-width: 330px;
+    }
+
+
+    .character-count {
+        margin-top: 18px;
+    }
+
+
+    /* DORAEMON */
+
+    .characters-hero-image {
+        display: block;
+
+        width: 220px;
+
+        margin:
+            15px auto 0;
+    }
+
+
+    /* CONTROLS */
+
+    .character-controls {
+        width: calc(100% - 30px);
+
+        margin-top: 25px;
+
+        gap: 14px;
+    }
+
+
+    .character-search {
+        height: 48px;
+
+        border-radius: 13px;
+    }
+
+
+    .character-filters {
+        gap: 7px;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        width: 100%;
+
+        padding-bottom: 5px;
+
+        justify-content: flex-start;
+
+        scrollbar-width: none;
+    }
+
+
+    .character-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .character-filter {
+        flex-shrink: 0;
+
+        padding: 8px 12px;
+
+        font-size: 10px;
+    }
+
+
+    /* SECTION */
+
+    .featured-characters,
+    .all-characters {
+        width: calc(100% - 30px);
+
+        margin-top: 50px;
+    }
+
+
+    .characters-section-title {
+        margin-bottom: 25px;
+    }
+
+
+    .characters-section-title span {
+        font-size: 9px;
+    }
+
+
+    .characters-section-title h2 {
+        font-size: 27px;
+    }
+
+
+    .characters-section-title p {
+        font-size: 12px;
+    }
+
+
+    /* FEATURED */
+
+    .featured-character-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .featured-character-card {
+        min-height: 235px;
+
+        padding: 13px;
+
+        border-radius: 17px;
+    }
+
+
+    .featured-character-card img {
+        width: 115px;
+        height: 125px;
+    }
+
+
+    .featured-character-info {
+        padding-top: 125px;
+    }
+
+
+    .featured-character-info h3 {
+        font-size: 14px;
+    }
+
+
+    .featured-character-info p {
+        font-size: 10px;
+    }
+
+
+    /* ALL CARDS */
+
+    .character-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .character-card {
+        min-height: 245px;
+
+        padding: 12px;
+
+        border-radius: 16px;
+    }
+
+
+    .character-image-box {
+        height: 145px;
+
+        top: 8px;
+    }
+
+
+    .character-info {
+        padding-top: 145px;
+    }
+
+
+    .character-info h3 {
+        font-size: 13px;
+    }
+
+
+    .character-japanese {
+        font-size: 9px;
+    }
+
+
+    .character-info p {
+        font-size: 10px;
+
+        line-height: 1.4;
+    }
+
+
+    .character-info .character-category {
+        font-size: 8px;
+
+        padding: 4px 7px;
+    }
+
+
+    /* LOAD MORE */
+
+    .characters-load-more {
+        width: calc(100% - 30px);
+
+        margin-bottom: 100px;
+    }
+
+
+    .characters-load-more-btn {
+        width: 100%;
+
+        padding: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .characters-hero {
+        min-height: 535px;
+    }
+
+
+    .characters-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .characters-hero-image {
+        width: 190px;
+    }
+
+
+    .featured-character-grid,
+    .character-grid {
+        gap: 9px;
+    }
+
+
+    .character-card {
+        min-height: 225px;
+    }
+
+
+    .character-image-box {
+        height: 130px;
+    }
+
+
+    .character-info {
+        padding-top: 130px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .character-card,
+    .featured-character-card,
+    .character-filter,
+    .characters-load-more-btn,
+    .character-image-box img,
+    .featured-character-card img {
+        transition: none;
+    }
+
+}
