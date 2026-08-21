@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Doraemon World</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =====================================================
+         DESKTOP / EXISTING HEADER
+    ====================================================== -->
 
     <header class="topbar">
 
@@ -20,9 +27,14 @@
             DORAEMON 🌐
         </a>
 
-        <button id="menu" class="menu-btn" aria-label="Open Menu">
+
+        <button
+            id="menu"
+            class="menu-btn"
+            aria-label="Open Menu">
             ☰
         </button>
+
 
         <nav id="nav">
 
@@ -59,50 +71,121 @@
     </header>
 
 
-    <!-- ================= HERO ================= -->
+
+    <!-- =====================================================
+         MOBILE HEADER
+    ====================================================== -->
+
+    <header class="mobile-header">
+
+        <button
+            id="mobileMenu"
+            class="mobile-menu-btn"
+            aria-label="Open Menu">
+            ☰
+        </button>
+
+
+        <a href="index.html" class="mobile-logo">
+
+            DORAEMON
+
+            <span>🔵</span>
+
+        </a>
+
+
+        <button
+            class="mobile-search-btn"
+            aria-label="Search">
+
+            🔍
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         DESKTOP MAIN
+    ====================================================== -->
 
     <main>
 
+
+        <!-- =================================================
+             DESKTOP HERO
+        ================================================== -->
+
         <section class="hero">
+
 
             <!-- HERO CONTENT -->
 
             <div class="hero-content">
 
-                <span class="badge">
+
+                <div class="badge">
+
                     💙 UNOFFICIAL FAN PROJECT
-                </span>
+
+                </div>
+
 
                 <h1>
+
                     Doraemon ki
+
                     <br>
-                    <strong>Magic World!</strong>
+
+                    <strong>
+                        Magic World!
+                    </strong>
+
                 </h1>
 
+
                 <p>
+
                     Doraemon movies, episodes, characters,
                     wallpapers, music aur gadgets —
                     sab ek hi jagah.
+
                 </p>
+
 
                 <div class="hero-buttons">
 
-                    <a href="wallpapers.html" class="btn primary">
+
+                    <a
+                        href="wallpapers.html"
+                        class="btn primary">
+
                         🖼️ Wallpapers
+
                     </a>
 
-                    <a href="characters.html" class="btn secondary">
+
+                    <a
+                        href="characters.html"
+                        class="btn secondary">
+
                         👥 Characters
+
                     </a>
+
 
                 </div>
+
 
             </div>
 
 
-            <!-- ================= HERO ART ================= -->
 
-            <!-- ================= HERO ART ================= -->
+            <!-- =================================================
+                 HERO ART
+            ================================================== -->
 
             <div class="hero-art">
 
@@ -111,21 +194,426 @@
                     <img
                         src="./assets/images/characters/doraemon.png"
                         alt="Doraemon"
-                        class="doraemon-face"
-                    >
+                        class="doraemon-face">
 
                 </div>
 
             </div>
 
-            </div>
 
         </section>
 
 
-        <!-- ================= EXPLORE ================= -->
+
+        <!-- =================================================
+             MOBILE HOME CONTENT
+        ================================================== -->
+
+        <section class="mobile-home">
+
+
+            <!-- ===============================================
+                 MOBILE HERO
+            ================================================ -->
+
+            <div class="mobile-welcome">
+
+
+                <div class="mobile-cloud cloud-one"></div>
+
+                <div class="mobile-cloud cloud-two"></div>
+
+
+                <div class="mobile-welcome-text">
+
+                    <p>
+                        Welcome to
+                    </p>
+
+
+                    <h1>
+                        DORAEMON
+                    </h1>
+
+
+                    <h2>
+                        Magic World!
+                    </h2>
+
+
+                    <p class="mobile-description">
+
+                        Explore Doraemon movies,
+                        episodes, characters,
+                        wallpapers and music.
+
+                    </p>
+
+                </div>
+
+
+
+                <img
+                    src="./assets/images/characters/doraemon.png"
+                    alt="Doraemon"
+                    class="mobile-doraemon">
+
+            </div>
+
+
+
+            <!-- ===============================================
+                 MOBILE QUICK MENU
+            ================================================ -->
+
+            <div class="mobile-quick-menu">
+
+
+                <a
+                    href="movies.html"
+                    class="mobile-quick-card">
+
+                    <span class="quick-icon">
+                        🎬
+                    </span>
+
+                    <strong>
+                        Movies
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="episodes.html"
+                    class="mobile-quick-card">
+
+                    <span class="quick-icon">
+                        📺
+                    </span>
+
+                    <strong>
+                        Episodes
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="characters.html"
+                    class="mobile-quick-card">
+
+                    <span class="quick-icon">
+                        👥
+                    </span>
+
+                    <strong>
+                        Characters
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="music.html"
+                    class="mobile-quick-card">
+
+                    <span class="quick-icon">
+                        🎵
+                    </span>
+
+                    <strong>
+                        Music
+                    </strong>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ===============================================
+                 POPULAR MOVIES
+            ================================================ -->
+
+            <div class="mobile-section-title">
+
+                <h2>
+                    Popular Movies
+                </h2>
+
+
+                <a href="movies.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+
+            <div class="mobile-movie-row">
+
+
+                <a
+                    href="movies.html"
+                    class="mobile-movie-card">
+
+
+                    <div class="mobile-movie-image">
+
+                        🎬
+
+                    </div>
+
+
+                    <h3>
+                        Stand By Me
+                        Doraemon 2
+                    </h3>
+
+
+                    <p>
+                        ⭐ 8.7
+                    </p>
+
+
+                    <small>
+                        2020 · Japan
+                    </small>
+
+
+                </a>
+
+
+
+                <a
+                    href="movies.html"
+                    class="mobile-movie-card">
+
+
+                    <div class="mobile-movie-image">
+
+                        🌙
+
+                    </div>
+
+
+                    <h3>
+                        Nobita's Chronicle
+                        of the Moon
+                    </h3>
+
+
+                    <p>
+                        ⭐ 9.1
+                    </p>
+
+
+                    <small>
+                        2019 · Japan
+                    </small>
+
+
+                </a>
+
+
+
+                <a
+                    href="movies.html"
+                    class="mobile-movie-card">
+
+
+                    <div class="mobile-movie-image">
+
+                        🏝️
+
+                    </div>
+
+
+                    <h3>
+                        Nobita and
+                        the Birth of Japan
+                    </h3>
+
+
+                    <p>
+                        ⭐ 8.6
+                    </p>
+
+
+                    <small>
+                        2016 · Japan
+                    </small>
+
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ===============================================
+                 MOBILE EXPLORE
+            ================================================ -->
+
+            <div class="mobile-section-title">
+
+                <h2>
+                    Explore Doraemon
+                </h2>
+
+
+                <a href="index.html">
+                    Explore →
+                </a>
+
+            </div>
+
+
+
+            <div class="mobile-explore-grid">
+
+
+                <a
+                    href="wallpapers.html"
+                    class="mobile-explore-card">
+
+                    <span>
+                        🖼️
+                    </span>
+
+                    <strong>
+                        Wallpapers
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="gallery.html"
+                    class="mobile-explore-card">
+
+                    <span>
+                        📸
+                    </span>
+
+                    <strong>
+                        Gallery
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="episodes.html"
+                    class="mobile-explore-card">
+
+                    <span>
+                        📺
+                    </span>
+
+                    <strong>
+                        Episodes
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="characters.html"
+                    class="mobile-explore-card">
+
+                    <span>
+                        👥
+                    </span>
+
+                    <strong>
+                        Characters
+                    </strong>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ===============================================
+                 MOBILE GADGETS
+            ================================================ -->
+
+            <div class="mobile-section-title">
+
+                <h2>
+                    Magic Gadgets
+                </h2>
+
+
+                <a href="gadgets.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+
+            <div class="mobile-gadget-row">
+
+
+                <div class="mobile-gadget-card">
+
+                    <span>
+                        🚪
+                    </span>
+
+                    <strong>
+                        Anywhere Door
+                    </strong>
+
+                </div>
+
+
+                <div class="mobile-gadget-card">
+
+                    <span>
+                        🎒
+                    </span>
+
+                    <strong>
+                        4D Pocket
+                    </strong>
+
+                </div>
+
+
+                <div class="mobile-gadget-card">
+
+                    <span>
+                        🚁
+                    </span>
+
+                    <strong>
+                        Take-copter
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DESKTOP EXPLORE
+        ================================================== -->
 
         <section class="explore">
+
 
             <div class="section-title">
 
@@ -133,9 +621,11 @@
                     EXPLORE
                 </span>
 
+
                 <h2>
                     Doraemon World 🌈
                 </h2>
+
 
                 <p>
                     Jo chahiye woh ek click mein dekho.
@@ -144,12 +634,13 @@
             </div>
 
 
+
             <div class="feature-grid">
 
 
-                <!-- MOVIES -->
-
-                <a href="movies.html" class="feature-card">
+                <a
+                    href="movies.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         🎬
@@ -171,9 +662,10 @@
                 </a>
 
 
-                <!-- EPISODES -->
 
-                <a href="episodes.html" class="feature-card">
+                <a
+                    href="episodes.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         📺
@@ -195,9 +687,10 @@
                 </a>
 
 
-                <!-- CHARACTERS -->
 
-                <a href="characters.html" class="feature-card">
+                <a
+                    href="characters.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         👥
@@ -219,9 +712,10 @@
                 </a>
 
 
-                <!-- WALLPAPERS -->
 
-                <a href="wallpapers.html" class="feature-card">
+                <a
+                    href="wallpapers.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         🖼️
@@ -243,9 +737,10 @@
                 </a>
 
 
-                <!-- MUSIC -->
 
-                <a href="music.html" class="feature-card">
+                <a
+                    href="music.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         🎵
@@ -267,9 +762,10 @@
                 </a>
 
 
-                <!-- GALLERY -->
 
-                <a href="gallery.html" class="feature-card">
+                <a
+                    href="gallery.html"
+                    class="feature-card">
 
                     <div class="feature-icon">
                         📸
@@ -290,14 +786,19 @@
 
                 </a>
 
+
             </div>
 
         </section>
 
 
-        <!-- ================= GADGET SECTION ================= -->
+
+        <!-- =================================================
+             DESKTOP GADGET SECTION
+        ================================================== -->
 
         <section class="gadget-section">
+
 
             <div class="section-title">
 
@@ -305,9 +806,11 @@
                     MAGIC GADGETS
                 </span>
 
+
                 <h2>
                     Doraemon ke Gadgets ✨
                 </h2>
+
 
                 <p>
                     Doraemon ke famous magical gadgets explore karo.
@@ -316,10 +819,9 @@
             </div>
 
 
+
             <div class="gadget-grid">
 
-
-                <!-- ANYWHERE DOOR -->
 
                 <div class="gadget-card">
 
@@ -339,7 +841,6 @@
                 </div>
 
 
-                <!-- 4D POCKET -->
 
                 <div class="gadget-card">
 
@@ -359,7 +860,6 @@
                 </div>
 
 
-                <!-- TAKE-COPTER -->
 
                 <div class="gadget-card">
 
@@ -379,7 +879,6 @@
                 </div>
 
 
-                <!-- TIME MACHINE -->
 
                 <div class="gadget-card">
 
@@ -398,14 +897,19 @@
 
                 </div>
 
+
             </div>
 
         </section>
 
 
-        <!-- ================= FAVORITE SECTION ================= -->
+
+        <!-- =================================================
+             FAVORITE SECTION
+        ================================================== -->
 
         <section class="favorite-section">
+
 
             <div class="section-title">
 
@@ -413,9 +917,11 @@
                     FAN FAVORITES
                 </span>
 
+
                 <h2>
                     Sabse Popular 💙
                 </h2>
+
 
                 <p>
                     Doraemon World ke favourite sections.
@@ -424,15 +930,20 @@
             </div>
 
 
+
             <div class="favorite-grid">
 
-                <a href="movies.html" class="favorite-card">
+
+                <a
+                    href="movies.html"
+                    class="favorite-card">
 
                     <span class="favorite-number">
                         01
                     </span>
 
                     <div>
+
                         <h3>
                             Popular Movies
                         </h3>
@@ -440,6 +951,7 @@
                         <p>
                             Amazing Doraemon movie stories.
                         </p>
+
                     </div>
 
                     <span class="card-arrow">
@@ -449,13 +961,17 @@
                 </a>
 
 
-                <a href="characters.html" class="favorite-card">
+
+                <a
+                    href="characters.html"
+                    class="favorite-card">
 
                     <span class="favorite-number">
                         02
                     </span>
 
                     <div>
+
                         <h3>
                             Favourite Characters
                         </h3>
@@ -463,6 +979,7 @@
                         <p>
                             Doraemon aur uske friends.
                         </p>
+
                     </div>
 
                     <span class="card-arrow">
@@ -472,13 +989,17 @@
                 </a>
 
 
-                <a href="wallpapers.html" class="favorite-card">
+
+                <a
+                    href="wallpapers.html"
+                    class="favorite-card">
 
                     <span class="favorite-number">
                         03
                     </span>
 
                     <div>
+
                         <h3>
                             Wallpapers
                         </h3>
@@ -486,6 +1007,7 @@
                         <p>
                             Desktop aur mobile wallpapers.
                         </p>
+
                     </div>
 
                     <span class="card-arrow">
@@ -494,14 +1016,19 @@
 
                 </a>
 
+
             </div>
 
         </section>
 
+
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =====================================================
+         DESKTOP FOOTER
+    ====================================================== -->
 
     <footer>
 
@@ -520,9 +1047,103 @@
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+
+    <!-- =====================================================
+         MOBILE BOTTOM NAVIGATION
+    ====================================================== -->
+
+    <nav class="mobile-bottom-nav">
+
+
+        <a
+            href="index.html"
+            class="bottom-nav-item active">
+
+            <span>
+                🏠
+            </span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+
+        <a
+            href="movies.html"
+            class="bottom-nav-item">
+
+            <span>
+                🎬
+            </span>
+
+            <small>
+                Movies
+            </small>
+
+        </a>
+
+
+
+        <a
+            href="episodes.html"
+            class="bottom-nav-item">
+
+            <span>
+                📺
+            </span>
+
+            <small>
+                Episodes
+            </small>
+
+        </a>
+
+
+
+        <a
+            href="characters.html"
+            class="bottom-nav-item">
+
+            <span>
+                👥
+            </span>
+
+            <small>
+                Characters
+            </small>
+
+        </a>
+
+
+
+        <a
+            href="music.html"
+            class="bottom-nav-item">
+
+            <span>
+                🎵
+            </span>
+
+            <small>
+                Music
+            </small>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="js/script.js"></script>
+
 
 </body>
 

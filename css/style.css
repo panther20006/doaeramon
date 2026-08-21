@@ -1195,3 +1195,32 @@ footer p {
     }
 
 }
+@media (max-width: 600px) {
+
+    .topbar {
+        display: none !important;
+    }
+
+    .hero {
+        display: none !important;
+    }
+
+    .explore,
+    .gadget-section,
+    .favorite-section,
+    footer {
+        display: none !important;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .mobile-home {
+        display: block;
+    }
+
+    .mobile-bottom-nav {
+        display: flex;
+    }
+}
