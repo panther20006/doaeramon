@@ -4970,6 +4970,4273 @@ const episodes = [
     title: "I Found a Tsuchinoko!",
     japanese: "ツチノコ見つけた！"
 }
+{
+    no: 529,
+    year: 2013,
+    date: "2013-01-18",
+    series: "regular",
+    title: "I Want to Eat Crab!",
+    japanese: "カニ食べたい！"
+},
 
+{
+    no: 530,
+    year: 2013,
+    date: "2013-01-18",
+    series: "regular",
+    title: "Shopping Across the Ages",
+    japanese: "時代を超えてお買い物"
+},
+
+{
+    no: 531,
+    year: 2013,
+    date: "2013-01-25",
+    series: "regular",
+    title: "Ultra Ehoumaki",
+    japanese: "ウルトラ恵方巻き"
+},
+
+{
+    no: 532,
+    year: 2013,
+    date: "2013-01-25",
+    series: "regular",
+    title: "The Snow's Hot, Hot, Hot!",
+    japanese: "雪でアッチッチ"
+},
+
+{
+    no: 533,
+    year: 2013,
+    date: "2013-02-01",
+    series: "regular",
+    title: "Suneo Falls in Love at First Sight",
+    japanese: "スネ夫がひとめぼれ"
+},
+
+{
+    no: 534,
+    year: 2013,
+    date: "2013-02-01",
+    series: "regular",
+    title: "Shizuka's Space Open-Air Bath",
+    japanese: "しずかの宇宙ろてん風呂"
+},
+
+{
+    no: 535,
+    year: 2013,
+    date: "2013-02-15",
+    series: "regular",
+    title: "Phantom Thief Nobita Appears!",
+    japanese: "怪盗のび太参上！"
+},
+
+{
+    no: 536,
+    year: 2013,
+    date: "2013-02-15",
+    series: "regular",
+    title: "Bird Cap to the Sky",
+    japanese: "バードキャップで大空へ"
+},
+
+{
+    no: 537,
+    year: 2013,
+    date: "2013-02-22",
+    series: "regular",
+    title: "Papa and Mama's Big Battle at Home",
+    japanese: "パパママおうちで大バトル"
+},
+
+{
+    no: 538,
+    year: 2013,
+    date: "2013-02-22",
+    series: "regular",
+    title: "Will It Always Hit? Palm Reading Set",
+    japanese: "かならず当たる？手相セット"
+},
+
+{
+    no: 539,
+    year: 2013,
+    date: "2013-03-01",
+    series: "regular",
+    title: "The Strongest! Korobashiya Z",
+    japanese: "最強！ころばし屋Ｚ"
+},
+
+{
+    no: 540,
+    year: 2013,
+    date: "2013-04-12",
+    series: "regular",
+    title: "Explosive Pepper",
+    japanese: "ばくはつコショウ"
+},
+
+{
+    no: 541,
+    year: 2013,
+    date: "2013-04-12",
+    series: "regular",
+    title: "No Matter What, Let's Go Flower Viewing",
+    japanese: "何が何でもお花見を"
+},
+
+{
+    no: 542,
+    year: 2013,
+    date: "2013-04-26",
+    series: "regular",
+    title: "Save Money and Travel to Hawaii",
+    japanese: "やりクリしてハワイ旅行"
+},
+
+{
+    no: 543,
+    year: 2013,
+    date: "2013-04-26",
+    series: "regular",
+    title: "Shizuka's Feather Robe",
+    japanese: "しずかちゃんのはごろも"
+},
+
+{
+    no: 544,
+    year: 2013,
+    date: "2013-05-03",
+    series: "regular",
+    title: "Naps Are Heaven",
+    japanese: "ひるねは天国で"
+},
+
+{
+    no: 545,
+    year: 2013,
+    date: "2013-05-03",
+    series: "regular",
+    title: "Dictator Switch",
+    japanese: "どくさいスイッチ"
+},
+
+{
+    no: 546,
+    year: 2013,
+    date: "2013-05-10",
+    series: "regular",
+    title: "Instant Mama",
+    japanese: "インスタントママ"
+},
+
+{
+    no: 547,
+    year: 2013,
+    date: "2013-05-10",
+    series: "regular",
+    title: "Gian Is Targeted",
+    japanese: "狙われたジャイアン"
+},
+
+{
+    no: 548,
+    year: 2013,
+    date: "2013-05-17",
+    series: "regular",
+    title: "Escape! The Terrifying Suneo Mansion",
+    japanese: "脱出！恐怖の骨川ハウス"
+},
+
+{
+    no: 549,
+    year: 2013,
+    date: "2013-05-17",
+    series: "regular",
+    title: "Satori Helmet",
+    japanese: "さとりヘルメット"
+},
+{
+    no: 550,
+    year: 2013,
+    date: "2013-05-24",
+    series: "regular",
+    title: "House 'Copter",
+    japanese: "イエコプター"
+},
+
+{
+    no: 551,
+    year: 2013,
+    date: "2013-05-24",
+    series: "regular",
+    title: "Shizuka-chan's Worst Birthday",
+    japanese: "しずかちゃんの最悪な誕生日"
+},
+
+{
+    no: 552,
+    year: 2013,
+    date: "2013-05-31",
+    series: "regular",
+    title: "Proximity to Cinnabar Stick",
+    japanese: "朱にまじわれ棒"
+},
+
+{
+    no: 553,
+    year: 2013,
+    date: "2013-05-31",
+    series: "regular",
+    title: "Gian Is a Panda",
+    japanese: "ジャイアンがパンダ"
+},
+
+{
+    no: 554,
+    year: 2013,
+    date: "2013-06-07",
+    series: "regular",
+    title: "The Souvenir Cloth",
+    japanese: "おみやげフロシキ"
+},
+
+{
+    no: 555,
+    year: 2013,
+    date: "2013-06-07",
+    series: "regular",
+    title: "Strongest! Black Belt Nobita",
+    japanese: "最強！黒おびのび太"
+},
+
+{
+    no: 556,
+    year: 2013,
+    date: "2013-06-14",
+    series: "regular",
+    title: "Gian's Retirement Concert",
+    japanese: "ジャイアンの引退コンサート"
+},
+
+{
+    no: 557,
+    year: 2013,
+    date: "2013-06-14",
+    series: "regular",
+    title: "The Dream Director's Chair",
+    japanese: "ユメかんとくいす"
+},
+
+{
+    no: 558,
+    year: 2013,
+    date: "2013-06-21",
+    series: "regular",
+    title: "The Opposite World Mirror",
+    japanese: "あべこべ世界ミラー"
+},
+
+{
+    no: 559,
+    year: 2013,
+    date: "2013-06-21",
+    series: "regular",
+    title: "Nobita's Secret Tunnel",
+    japanese: "のび太の秘密トンネル"
+},
+
+{
+    no: 560,
+    year: 2013,
+    date: "2013-07-05",
+    series: "regular",
+    title: "Moving with the Moving Map",
+    japanese: "ひっこし地図でおひっこし"
+},
+
+{
+    no: 561,
+    year: 2013,
+    date: "2013-07-05",
+    series: "regular",
+    title: "Commercial with a Mirror",
+    japanese: "かがみでコマーシャル"
+},
+
+{
+    no: 562,
+    year: 2013,
+    date: "2013-07-12",
+    series: "regular",
+    title: "Anything Ice Stick",
+    japanese: "なんでもアイス棒"
+},
+
+{
+    no: 563,
+    year: 2013,
+    date: "2013-07-12",
+    series: "regular",
+    title: "Determination Concrete",
+    japanese: "決心コンクリート"
+},
+
+{
+    no: 564,
+    year: 2013,
+    date: "2013-07-26",
+    series: "special",
+    title: "Goodbye, My Vacuum Cleaner",
+    japanese: "さよならボクのそうじ機"
+},
+
+{
+    no: 565,
+    year: 2013,
+    date: "2013-07-26",
+    series: "special",
+    title: "Great Adventure on a Midsummer Night",
+    japanese: "真夏の夜の大航海"
+},
+
+{
+    no: 566,
+    year: 2013,
+    date: "2013-07-26",
+    series: "special",
+    title: "Daisuki Drink",
+    japanese: "ダイスキンドリンク"
+},
+
+{
+    no: 567,
+    year: 2013,
+    date: "2013-08-09",
+    series: "regular",
+    title: "Deep Sea Cycling",
+    japanese: "深海サイクリング"
+},
+
+{
+    no: 568,
+    year: 2013,
+    date: "2013-08-09",
+    series: "regular",
+    title: "Nobita's Prank Video",
+    japanese: "のび太のドッキリビデオ"
+},
+
+{
+    no: 569,
+    year: 2013,
+    date: "2013-08-16",
+    series: "regular",
+    title: "Let's Grow Fireworks!",
+    japanese: "花火を育てよう！"
+},
+
+{
+    no: 570,
+    year: 2013,
+    date: "2013-08-16",
+    series: "regular",
+    title: "Clone Hammer",
+    japanese: "分身ハンマー"
+},
+
+{
+    no: 571,
+    year: 2013,
+    date: "2013-08-23",
+    series: "regular",
+    title: "Summer Vacation Living with a Ghost",
+    japanese: "オバケと暮らした夏休み"
+},
+
+{
+    no: 572,
+    year: 2013,
+    date: "2013-08-23",
+    series: "regular",
+    title: "Freezing Light",
+    japanese: "カチンカチンライト"
+},
+
+{
+    no: 573,
+    year: 2013,
+    date: "2013-08-30",
+    series: "regular",
+    title: "Nobita's Summer Festival Operation!",
+    japanese: "のび太の夏祭り大作戦！"
+},
+
+{
+    no: 574,
+    year: 2013,
+    date: "2013-08-30",
+    series: "regular",
+    title: "You Can't Study in the Sahara Desert",
+    japanese: "サハラ砂漠で勉強はできない"
+},
+
+{
+    no: 575,
+    year: 2013,
+    date: "2013-09-06",
+    series: "regular",
+    title: "How Nobita Uses Energy",
+    japanese: "のび太エネルギーの使い方"
+},
+
+{
+    no: 576,
+    year: 2013,
+    date: "2013-09-06",
+    series: "regular",
+    title: "Into the Sky with Balloon Flowers",
+    japanese: "はなバルーンで大空に"
+},
+
+{
+    no: 577,
+    year: 2013,
+    date: "2013-09-13",
+    series: "special",
+    title: "The Giant Dora-Tanuki at Midnight",
+    japanese: "真夜中の巨大ドラたぬき"
+},
+
+{
+    no: 578,
+    year: 2013,
+    date: "2013-10-18",
+    series: "regular",
+    title: "Human Train",
+    japanese: "にんげん機関車"
+},
+
+{
+    no: 579,
+    year: 2013,
+    date: "2013-10-18",
+    series: "regular",
+    title: "Matsutake Hunting in a Miniature Garden",
+    japanese: "箱庭で松たけがり"
+},
+
+{
+    no: 580,
+    year: 2013,
+    date: "2013-10-25",
+    series: "regular",
+    title: "What Day Is Halloween?",
+    japanese: "ハロウィンって何の日？"
+},
+
+{
+    no: 581,
+    year: 2013,
+    date: "2013-10-25",
+    series: "regular",
+    title: "Tasting Spoon",
+    japanese: "味見スプーン"
+},
+
+{
+    no: 582,
+    year: 2013,
+    date: "2013-11-01",
+    series: "regular",
+    title: "Do Whatever You Want with the Magic Hand",
+    japanese: "マジックハンドでやりたい放題"
+},
+
+{
+    no: 583,
+    year: 2013,
+    date: "2013-11-01",
+    series: "regular",
+    title: "Gorgon's Head",
+    japanese: "ゴルゴンの首"
+},
+
+{
+    no: 584,
+    year: 2013,
+    date: "2013-11-08",
+    series: "regular",
+    title: "The Feelings of Roasted Sweet Potato",
+    japanese: "ヤキイモの気持ち"
+},
+
+{
+    no: 585,
+    year: 2013,
+    date: "2013-11-08",
+    series: "regular",
+    title: "Comet Shining Brightly",
+    japanese: "すい星がギンギラギン"
+},
+
+{
+    no: 586,
+    year: 2013,
+    date: "2013-11-15",
+    series: "regular",
+    title: "Nobita vs Musashi: The Battle Before Ganryujima",
+    japanese: "のび太vs武蔵　巌流島ちょっと前の戦い"
+},
+
+{
+    no: 587,
+    year: 2013,
+    date: "2013-12-06",
+    series: "special",
+    title: "Doraemon Gets Scribbled On",
+    japanese: "ドラえもんに落書き"
+},
+
+{
+    no: 588,
+    year: 2013,
+    date: "2013-12-06",
+    series: "special",
+    title: "Doraemi's Skating Training",
+    japanese: "燃えよ！ドラミのスケート特訓"
+},
+
+{
+    no: 589,
+    year: 2013,
+    date: "2013-12-06",
+    series: "special",
+    title: "The Time Machine Has Disappeared!",
+    japanese: "タイムマシンがなくなった！！"
+},
+
+{
+    no: 590,
+    year: 2013,
+    date: "2013-12-13",
+    series: "regular",
+    title: "Fur Ring",
+    japanese: "ケガワリング"
+},
+
+{
+    no: 591,
+    year: 2013,
+    date: "2013-12-13",
+    series: "regular",
+    title: "Christmas Sparkling Operation",
+    japanese: "クリスマスきらきら大作戦"
+},
+
+{
+    no: 592,
+    year: 2013,
+    date: "2013-12-30",
+    series: "special",
+    title: "Door of Glory",
+    japanese: "エイコーノトビラ"
+},
+
+{
+    no: 593,
+    year: 2013,
+    date: "2013-12-30",
+    series: "special",
+    title: "Flattery Jaws",
+    japanese: "おだてジョーズ"
+},
+
+{
+    no: 594,
+    year: 2013,
+    date: "2013-12-30",
+    series: "special",
+    title: "Romance in the Snowy Mountains",
+    japanese: "雪山のロマンス"
+},
+
+{
+    no: 595,
+    year: 2014,
+    date: "2014-01-17",
+    series: "regular",
+    title: "Good House, Bad House",
+    japanese: "よい家わるい家"
+},
+
+{
+    no: 596,
+    year: 2014,
+    date: "2014-01-17",
+    series: "regular",
+    title: "Phobia of ◯△□",
+    japanese: "◯△□恐怖症"
+},
+
+{
+    no: 597,
+    year: 2014,
+    date: "2014-01-31",
+    series: "regular",
+    title: "Earth Escape Plan",
+    japanese: "地球脱出計画"
+},
+
+{
+    no: 598,
+    year: 2014,
+    date: "2014-01-31",
+    series: "regular",
+    title: "Word-Banning Marker",
+    japanese: "ことばきんしマーカー"
+},
+
+{
+    no: 599,
+    year: 2014,
+    date: "2014-02-07",
+    series: "regular",
+    title: "Animal Transformation Repayment Medicine",
+    japanese: "動物変身恩返しグスリ"
+},
+
+{
+    no: 600,
+    year: 2014,
+    date: "2014-02-07",
+    series: "regular",
+    title: "The Snowman Came to Town",
+    japanese: "雪だるまが町にやってきた"
+},
+
+{
+    no: 601,
+    year: 2014,
+    date: "2014-02-14",
+    series: "regular",
+    title: "Eat Chocolate Nobita",
+    japanese: "チョコのび太をめしあがれ"
+},
+
+{
+    no: 602,
+    year: 2014,
+    date: "2014-02-14",
+    series: "regular",
+    title: "Recital on a Blue Moon Night",
+    japanese: "青い月夜のリサイタル"
+},
+
+{
+    no: 603,
+    year: 2014,
+    date: "2014-02-28",
+    series: "regular",
+    title: "Rotating Sushi for the Person I Want to Meet",
+    japanese: "会いたいヒト回転寿司"
+},
+
+{
+    no: 604,
+    year: 2014,
+    date: "2014-02-28",
+    series: "regular",
+    title: "Relax with a Copy Brain",
+    japanese: "コピー頭脳でラクしよう"
+},
+
+{
+    no: 605,
+    year: 2014,
+    date: "2014-03-14",
+    series: "regular",
+    title: "Lucky Pair",
+    japanese: "ふくびんコンビ"
+},
+
+{
+    no: 606,
+    year: 2014,
+    date: "2014-03-14",
+    series: "regular",
+    title: "Walk, Walk, All the Way to the Moon",
+    japanese: "歩け歩け月までも"
+},
+
+{
+    no: 607,
+    year: 2014,
+    date: "2014-04-11",
+    series: "regular",
+    title: "Umatake Ranch",
+    japanese: "ウマタケ牧場"
+},
+
+{
+    no: 608,
+    year: 2014,
+    date: "2014-04-11",
+    series: "regular",
+    title: "Test Cramming Doray",
+    japanese: "テストに一夜漬けダル"
+},
+
+{
+    no: 609,
+    year: 2014,
+    date: "2014-04-18",
+    series: "regular",
+    title: "Dolphin in the Empty Lot",
+    japanese: "空き地のイルカ"
+},
+
+{
+    no: 610,
+    year: 2014,
+    date: "2014-04-18",
+    series: "regular",
+    title: "Erase Troublesome Things with the Time Pistol",
+    japanese: "タイムピストルで“じゃま物”は消せ"
+},
+
+{
+    no: 611,
+    year: 2014,
+    date: "2014-04-25",
+    series: "regular",
+    title: "To the King of the Stone Age",
+    japanese: "石器時代の王さまに"
+},
+
+{
+    no: 612,
+    year: 2014,
+    date: "2014-04-25",
+    series: "regular",
+    title: "Catch the Carp Streamers",
+    japanese: "鯉のぼりをつかまえろ！"
+},
+
+{
+    no: 613,
+    year: 2014,
+    date: "2014-05-02",
+    series: "regular",
+    title: "Let's Make an Anywhere Door!",
+    japanese: "どこでもドアを作ろう！"
+},
+
+{
+    no: 614,
+    year: 2014,
+    date: "2014-05-02",
+    series: "regular",
+    title: "Crane, Repay Your Debt!",
+    japanese: "ツルよ、恩をかえして！"
+},
+
+{
+    no: 615,
+    year: 2014,
+    date: "2014-05-16",
+    series: "regular",
+    title: "Nobita Railway",
+    japanese: "のび太鉄道"
+},
+
+{
+    no: 616,
+    year: 2014,
+    date: "2014-05-16",
+    series: "regular",
+    title: "Object Conversion Gun Turns Bag into Hippo!?",
+    japanese: "物体変換銃でカバンをカバに!?"
+},
+
+{
+    no: 617,
+    year: 2014,
+    date: "2014-05-23",
+    series: "regular",
+    title: "Nobita Got 100 Points!!",
+    japanese: "な、なんと!! のび太が１００点とった!!"
+},
+
+{
+    no: 618,
+    year: 2014,
+    date: "2014-05-23",
+    series: "regular",
+    title: "Treasure of Chingar Pass",
+    japanese: "珍加羅峠の宝物"
+},
+
+{
+    no: 619,
+    year: 2014,
+    date: "2014-05-30",
+    series: "regular",
+    title: "Deluxe Light",
+    japanese: "デラックスライト"
+},
+
+{
+    no: 620,
+    year: 2014,
+    date: "2014-05-30",
+    series: "regular",
+    title: "Nobita's 100 Points: Big Incident 25 Years Later",
+    japanese: "のび太の１００点 ２５年後の大事件"
+},
+
+{
+    no: 621,
+    year: 2014,
+    date: "2014-06-06",
+    series: "regular",
+    title: "Nobita's Fried Shrimp",
+    japanese: "のび太のエビフライ"
+},
+
+{
+    no: 622,
+    year: 2014,
+    date: "2014-06-06",
+    series: "regular",
+    title: "Help! Rescue Ship",
+    japanese: "たすけて！助け船"
+},
+
+{
+    no: 623,
+    year: 2014,
+    date: "2014-06-13",
+    series: "regular",
+    title: "Papa Is Also Spoiled",
+    japanese: "パパもあまえんぼ"
+},
+
+{
+    no: 624,
+    year: 2014,
+    date: "2014-06-13",
+    series: "regular",
+    title: "Takeshi's Zundoko Birthday",
+    japanese: "たけしのズンドコ誕生日"
+},
+
+{
+    no: 625,
+    year: 2014,
+    date: "2014-06-20",
+    series: "regular",
+    title: "Nobita Eleven",
+    japanese: "のび太イレブン"
+},
+
+{
+    no: 626,
+    year: 2014,
+    date: "2014-06-20",
+    series: "regular",
+    title: "Barter Machine",
+    japanese: "ぶつぶつ交換機"
+},
+
+{
+    no: 627,
+    year: 2014,
+    date: "2014-06-27",
+    series: "regular",
+    title: "Doraemon Castle in the Hills",
+    japanese: "裏山のドラえもん城"
+},
+
+{
+    no: 628,
+    year: 2014,
+    date: "2014-06-27",
+    series: "regular",
+    title: "The Flag of Truth Is Always Right",
+    japanese: "「真実の旗印」はつねに正しい"
+},
+
+{
+    no: 629,
+    year: 2014,
+    date: "2014-07-11",
+    series: "regular",
+    title: "Fish Turns into a Boat",
+    japanese: "さかながボートに大変身"
+},
+
+{
+    no: 630,
+    year: 2014,
+    date: "2014-07-11",
+    series: "regular",
+    title: "Contagious Cat-Shrew Virus",
+    japanese: "流行性ネコシャクシウイルス"
+},
+
+{
+    no: 631,
+    year: 2014,
+    date: "2014-08-01",
+    series: "special",
+    title: "Eight Days in Ryugu Castle",
+    japanese: "竜宮城の八日間"
+},
+
+{
+    no: 632,
+    year: 2014,
+    date: "2014-08-01",
+    series: "special",
+    title: "Anything Airport",
+    japanese: "なんでも空港"
+},
+
+{
+    no: 633,
+    year: 2014,
+    date: "2014-08-01",
+    series: "special",
+    title: "Ghost Story Lamp",
+    japanese: "怪談ランプ"
+},
+
+{
+    no: 634,
+    year: 2014,
+    date: "2014-08-08",
+    series: "regular",
+    title: "Invisible Stone Hat",
+    japanese: "石ころぼうし"
+},
+
+{
+    no: 635,
+    year: 2014,
+    date: "2014-08-08",
+    series: "regular",
+    title: "Nobita's Future Bride",
+    japanese: "のび太のおよめさん"
+},
+
+{
+    no: 636,
+    year: 2014,
+    date: "2014-08-29",
+    series: "regular",
+    title: "Survive Summer with a Mini House",
+    japanese: "ミニハウスでのりきる夏"
+},
+
+{
+    no: 637,
+    year: 2014,
+    date: "2014-08-29",
+    series: "regular",
+    title: "Exciting Float",
+    japanese: "うきうきするウキワ"
+},
+
+{
+    no: 638,
+    year: 2014,
+    date: "2014-09-05",
+    series: "regular",
+    title: "A Great Operation 100 Miles Underground",
+    japanese: "地底100マイルちょっとの大作戦"
+},
+
+{
+    no: 639,
+    year: 2014,
+    date: "2014-09-12",
+    series: "regular",
+    title: "Shizuka Turns into a Kappa!?",
+    japanese: "しずかちゃんがカッパに！？"
+},
+
+{
+    no: 640,
+    year: 2014,
+    date: "2014-09-12",
+    series: "regular",
+    title: "Guiding Angel",
+    japanese: "ミチビキエンゼル"
+},
+
+{
+    no: 641,
+    year: 2014,
+    date: "2014-09-19",
+    series: "regular",
+    title: "Welcome to Nobita Airlines",
+    japanese: "のび太航空へようこそ"
+},
+
+{
+    no: 642,
+    year: 2014,
+    date: "2014-09-19",
+    series: "regular",
+    title: "Playing God",
+    japanese: "神さまごっこ"
+},
+
+{
+    no: 643,
+    year: 2014,
+    date: "2014-10-17",
+    series: "regular",
+    title: "A Wonderful 22nd Century Camp",
+    japanese: "２２世紀のすてきなキャンプ"
+},
+
+{
+    no: 644,
+    year: 2014,
+    date: "2014-10-17",
+    series: "regular",
+    title: "Portable Parliament",
+    japanese: "ポータブル国会"
+},
+
+{
+    no: 645,
+    year: 2014,
+    date: "2014-10-24",
+    series: "regular",
+    title: "Angry Popcorn",
+    japanese: "怒りのポップコーン"
+},
+
+{
+    no: 646,
+    year: 2014,
+    date: "2014-10-24",
+    series: "regular",
+    title: "Tanuki Machine",
+    japanese: "タヌ機"
+},
+
+{
+    no: 647,
+    year: 2014,
+    date: "2014-10-31",
+    series: "regular",
+    title: "Halloween's Rampaging Pumpkin",
+    japanese: "ハロウィーンの暴走かぼちゃ"
+},
+
+{
+    no: 648,
+    year: 2014,
+    date: "2014-10-31",
+    series: "regular",
+    title: "Lying Ancestors",
+    japanese: "ホラふきご先祖"
+},
+
+{
+    no: 649,
+    year: 2014,
+    date: "2014-11-07",
+    series: "regular",
+    title: "Flying Manga Book",
+    japanese: "空とぶマンガ本"
+},
+
+{
+    no: 650,
+    year: 2014,
+    date: "2014-11-07",
+    series: "regular",
+    title: "Let's Put the Blame on Someone Else",
+    japanese: "ぬれぎぬを着せよう！"
+},
+
+{
+    no: 651,
+    year: 2014,
+    date: "2014-11-14",
+    series: "regular",
+    title: "Muscle Body Clay",
+    japanese: "ムキムキからだねん土"
+},
+
+{
+    no: 652,
+    year: 2014,
+    date: "2014-11-14",
+    series: "regular",
+    title: "Beat Them with a Storm!",
+    japanese: "嵐でやっつけろ！"
+},
+
+{
+    no: 653,
+    year: 2014,
+    date: "2014-11-21",
+    series: "regular",
+    title: "Fallen Leaves and Jaiko",
+    japanese: "落ち葉とジャイ子"
+},
+
+{
+    no: 654,
+    year: 2014,
+    date: "2014-11-21",
+    series: "regular",
+    title: "Nobita Became Shizuka",
+    japanese: "しずかちゃんになったのび太"
+},
+
+{
+    no: 655,
+    year: 2014,
+    date: "2014-11-28",
+    series: "regular",
+    title: "Clone Liquid Goku",
+    japanese: "クローンリキッドごくう"
+},
+
+{
+    no: 656,
+    year: 2014,
+    date: "2014-11-28",
+    series: "regular",
+    title: "The World Without Money",
+    japanese: "お金のいらない世界"
+},
+
+{
+    no: 657,
+    year: 2014,
+    date: "2014-12-05",
+    series: "regular",
+    title: "The Day Dorami Was Born",
+    japanese: "ドラミが生まれた日"
+},
+
+{
+    no: 658,
+    year: 2014,
+    date: "2014-12-05",
+    series: "regular",
+    title: "Recycling with the Thrifty Ants",
+    japanese: "やりくりアリでリサイクル"
+},
+
+{
+    no: 659,
+    year: 2014,
+    date: "2014-12-12",
+    series: "regular",
+    title: "Flattery Lipstick",
+    japanese: "おせじ口べに"
+},
+
+{
+    no: 660,
+    year: 2014,
+    date: "2014-12-12",
+    series: "regular",
+    title: "Master's House Signboard",
+    japanese: "家元かんばん"
+},
+
+{
+    no: 661,
+    year: 2014,
+    date: "2014-12-30",
+    series: "special",
+    title: "Sharing Gum",
+    japanese: "おすそわけガム"
+},
+
+{
+    no: 662,
+    year: 2014,
+    date: "2014-12-30",
+    series: "special",
+    title: "Space Battleship Nobita Attacked",
+    japanese: "宇宙戦艦のび太を襲う"
+},
+
+{
+    no: 663,
+    year: 2014,
+    date: "2014-12-30",
+    series: "special",
+    title: "Remember! That Day's Emotion",
+    japanese: "思い出せ！あの日の感動"
+},
+
+{
+    no: 664,
+    year: 2015,
+    date: "2015-01-09",
+    series: "regular",
+    title: "The Whole Town Is Putty",
+    japanese: "町中グニャグニャネンドロン"
+},
+
+{
+    no: 665,
+    year: 2015,
+    date: "2015-01-09",
+    series: "regular",
+    title: "Let's Become Snow Women on Cold Days!",
+    japanese: "寒い日は雪女になろう！"
+},
+
+{
+    no: 666,
+    year: 2015,
+    date: "2015-01-23",
+    series: "regular",
+    title: "Protect the World in Our Secret Headquarters!",
+    japanese: "秘密基地で世界を守れ！"
+},
+
+{
+    no: 667,
+    year: 2015,
+    date: "2015-01-23",
+    series: "regular",
+    title: "Four-Dimensional Cycling",
+    japanese: "四次元サイクリング"
+},
+
+{
+    no: 668,
+    year: 2015,
+    date: "2015-02-06",
+    series: "regular",
+    title: "Dinosaur Hunter",
+    japanese: "恐竜ハンター"
+},
+
+{
+    no: 669,
+    year: 2015,
+    date: "2015-02-13",
+    series: "regular",
+    title: "Mochi and Sumo for Valentine's",
+    japanese: "バレンタインにはおモチとすもうを"
+},
+
+{
+    no: 670,
+    year: 2015,
+    date: "2015-02-13",
+    series: "regular",
+    title: "Shizuka-chan and the Mini Garden Ski Slope",
+    japanese: "しずかちゃんと はこ庭スキー場"
+},
+
+{
+    no: 671,
+    year: 2015,
+    date: "2015-02-20",
+    series: "regular",
+    title: "Someone Richer Than Suneo Arrived",
+    japanese: "スネ夫より金持ちがやってきた"
+},
+
+{
+    no: 672,
+    year: 2015,
+    date: "2015-02-20",
+    series: "regular",
+    title: "Pet Look-Alike Manju",
+    japanese: "ペットそっくりまんじゅう"
+},
+
+{
+    no: 673,
+    year: 2015,
+    date: "2015-02-27",
+    series: "regular",
+    title: "Invincible Super Backpack",
+    japanese: "無敵のスーパーランドセル"
+},
+
+{
+    no: 674,
+    year: 2015,
+    date: "2015-02-27",
+    series: "regular",
+    title: "Dive! Hamaguri Pack",
+    japanese: "もぐれ！ハマグリパック"
+},
+
+{
+    no: 675,
+    year: 2015,
+    date: "2015-03-13",
+    series: "regular",
+    title: "Nobita's Cardboard Space Station",
+    japanese: "のび太のダンボール宇宙ステーション"
+},
+
+{
+    no: 676,
+    year: 2015,
+    date: "2015-03-20",
+    series: "regular",
+    title: "Let's Punish Gian for Snatching",
+    japanese: "横取りジャイアンをこらしめよう"
+},
+
+{
+    no: 677,
+    year: 2015,
+    date: "2015-03-20",
+    series: "regular",
+    title: "Let's Move Everywhere",
+    japanese: "あちこちひっこそう"
+},
+
+{
+    no: 678,
+    year: 2015,
+    date: "2015-04-10",
+    series: "regular",
+    title: "Love-Love Parasol",
+    japanese: "あいあいパラソル"
+},
+
+{
+    no: 679,
+    year: 2015,
+    date: "2015-04-10",
+    series: "regular",
+    title: "Find the Culprit with the Time Machine",
+    japanese: "タイムマシンで犯人を"
+},
+
+{
+    no: 680,
+    year: 2015,
+    date: "2015-04-10",
+    series: "regular",
+    title: "Mushakusha Timer",
+    japanese: "ムシャクシャタイマー"
+},
+
+{
+    no: 681,
+    year: 2015,
+    date: "2015-04-17",
+    series: "regular",
+    title: "Split the River with a Stick",
+    japanese: "ステッキで川をまっぷたつ"
+},
+
+{
+    no: 682,
+    year: 2015,
+    date: "2015-04-17",
+    series: "regular",
+    title: "Revenge Voucher",
+    japanese: "しかえし伝票"
+},
+
+{
+    no: 683,
+    year: 2015,
+    date: "2015-04-24",
+    series: "regular",
+    title: "Sea Trip on a Dolphin",
+    japanese: "イルカにのって海の旅"
+},
+
+{
+    no: 684,
+    year: 2015,
+    date: "2015-04-24",
+    series: "regular",
+    title: "Sympathy Robot",
+    japanese: "いたわりロボット"
+},
+
+{
+    no: 685,
+    year: 2015,
+    date: "2015-05-01",
+    series: "regular",
+    title: "Gian Came Flying",
+    japanese: "ジャイアンが飛んできた"
+},
+
+{
+    no: 686,
+    year: 2015,
+    date: "2015-05-01",
+    series: "regular",
+    title: "Forget-Me Flower",
+    japanese: "わすれろ草"
+},
+
+{
+    no: 687,
+    year: 2015,
+    date: "2015-05-08",
+    series: "regular",
+    title: "Our Great Air Battle",
+    japanese: "ぼくらの大空中戦"
+},
+
+{
+    no: 688,
+    year: 2015,
+    date: "2015-05-08",
+    series: "regular",
+    title: "Nikumenain",
+    japanese: "ニクメナイン"
+},
+
+{
+    no: 689,
+    year: 2015,
+    date: "2015-05-15",
+    series: "regular",
+    title: "Nobi House Is on the 30th Floor",
+    japanese: "野比家は三十階"
+},
+
+{
+    no: 690,
+    year: 2015,
+    date: "2015-05-15",
+    series: "regular",
+    title: "Runaway! Present Tree",
+    japanese: "暴走！プレゼントの木"
+},
+
+{
+    no: 691,
+    year: 2015,
+    date: "2015-05-15",
+    series: "regular",
+    title: "The Water Was Watching",
+    japanese: "水はみていた"
+},
+
+{
+    no: 692,
+    year: 2015,
+    date: "2015-05-22",
+    series: "regular",
+    title: "Lucky Kettle",
+    japanese: "ラッキーやかん"
+},
+
+{
+    no: 693,
+    year: 2015,
+    date: "2015-05-22",
+    series: "regular",
+    title: "Everything Becomes a Stuffed Toy",
+    japanese: "なんでもぬいぐるみに…"
+},
+
+{
+    no: 694,
+    year: 2015,
+    date: "2015-05-22",
+    series: "regular",
+    title: "I Want to Become an Adult",
+    japanese: "大人になりたい"
+},
+
+{
+    no: 695,
+    year: 2015,
+    date: "2015-05-29",
+    series: "regular",
+    title: "Something Happens at Seven",
+    japanese: "七時に何かがおこる"
+},
+
+{
+    no: 696,
+    year: 2015,
+    date: "2015-05-29",
+    series: "regular",
+    title: "Jack-in-the-Box Stick",
+    japanese: "びっくり箱ステッキ"
+},
+
+{
+    no: 697,
+    year: 2015,
+    date: "2015-05-29",
+    series: "regular",
+    title: "Someone Worse Than Me Came",
+    japanese: "ぼくよりダメなやつがきた"
+},
+
+{
+    no: 698,
+    year: 2015,
+    date: "2015-06-05",
+    series: "regular",
+    title: "Parlor Aquarium",
+    japanese: "おざしき水族館"
+},
+
+{
+    no: 699,
+    year: 2015,
+    date: "2015-06-05",
+    series: "regular",
+    title: "Oda Chimpanzee",
+    japanese: "オダチンパンジー"
+},
+
+{
+    no: 700,
+    year: 2015,
+    date: "2015-06-05",
+    series: "regular",
+    title: "Nobita's Long Day",
+    japanese: "のび太の長い一日"
+},
+{
+    no: 700,
+    year: 2015,
+    date: "2015-04-03",
+    series: "regular",
+    title: "Nobita's Long Day",
+    japanese: "のび太の長い一日"
+},
+
+{
+    no: 701,
+    year: 2015,
+    date: "2015-04-10",
+    series: "regular",
+    title: "Layer Vision",
+    japanese: "まる見え!断層ビジョン"
+},
+
+{
+    no: 702,
+    year: 2015,
+    date: "2015-04-17",
+    series: "regular",
+    title: "Nobita's Gourmet Report",
+    japanese: "突げき!のび太のグルメリポート"
+},
+
+{
+    no: 703,
+    year: 2015,
+    date: "2015-04-24",
+    series: "regular",
+    title: "That Day Has Come Again This Year!",
+    japanese: "今年もあの日がやってきた!"
+},
+
+{
+    no: 704,
+    year: 2015,
+    date: "2015-05-01",
+    series: "regular",
+    title: "Take My Picture! The Face-Loving Camera",
+    japanese: "ボクを写して!めんくいカメラ"
+},
+
+{
+    no: 705,
+    year: 2015,
+    date: "2015-05-08",
+    series: "regular",
+    title: "Let's Find Nessie Through Shiritori",
+    japanese: "しりとりでネッシーに"
+},
+
+{
+    no: 706,
+    year: 2015,
+    date: "2015-05-15",
+    series: "regular",
+    title: "Shadow Hunting",
+    japanese: "かげがり"
+},
+
+{
+    no: 707,
+    year: 2015,
+    date: "2015-05-22",
+    series: "regular",
+    title: "Cut Out a Piece of the Sea",
+    japanese: "海をひときれ切りとって"
+},
+
+{
+    no: 708,
+    year: 2015,
+    date: "2015-05-29",
+    series: "regular",
+    title: "Leave It to the Touch Gloves",
+    japanese: "あとはおまかせタッチてぶくろ"
+},
+
+{
+    no: 709,
+    year: 2015,
+    date: "2015-06-05",
+    series: "regular",
+    title: "Hungry Nobita's Three-Day Story",
+    japanese: "はらぺこ のび太の3日間"
+},
+
+{
+    no: 710,
+    year: 2015,
+    date: "2015-06-12",
+    series: "regular",
+    title: "Slowly, Frantically",
+    japanese: "のろのろ、じたばた"
+},
+
+{
+    no: 711,
+    year: 2015,
+    date: "2015-06-19",
+    series: "regular",
+    title: "Watermelon Pen",
+    japanese: "スイカ割りにスイカペン"
+},
+
+{
+    no: 712,
+    year: 2015,
+    date: "2015-06-26",
+    series: "regular",
+    title: "Tamashii Machine",
+    japanese: "タマシイム・マシン"
+},
+
+{
+    no: 713,
+    year: 2015,
+    date: "2015-07-03",
+    series: "regular",
+    title: "Mood-Boosting Orchestra",
+    japanese: "ムードもりあげ楽団"
+},
+
+{
+    no: 714,
+    year: 2015,
+    date: "2015-07-10",
+    series: "regular",
+    title: "The Easy BBQ Set Isn't Easy",
+    japanese: "楽々バーベキューセットはラクじゃない"
+},
+{
+    no: 715,
+    year: 2015,
+    date: "2015-07-31",
+    series: "regular",
+    title: "The Great Adventure in the South Seas ~ Captain Silver's Treasure ~",
+    japanese: "南海の大冒険～キャプテン・シルバーの財宝～"
+},
+
+{
+    no: 716,
+    year: 2015,
+    date: "2015-07-31",
+    series: "regular",
+    title: "If Nobita Cries, It Will Rain",
+    japanese: "のび太が泣けば雨がふる"
+},
+
+{
+    no: 717,
+    year: 2015,
+    date: "2015-08-07",
+    series: "regular",
+    title: "Origami Jungle Expedition",
+    japanese: "ジャングル探検にはおり紙を"
+},
+
+{
+    no: 718,
+    year: 2015,
+    date: "2015-08-14",
+    series: "regular",
+    title: "Spooky! Ghost Incense",
+    japanese: "ゾクゾク!おばけ線香"
+},
+
+{
+    no: 719,
+    year: 2015,
+    date: "2015-08-21",
+    series: "regular",
+    title: "The Rumor Flower Has Bloomed!",
+    japanese: "うわさ花しが咲いちゃった!"
+},
+
+{
+    no: 720,
+    year: 2015,
+    date: "2015-08-28",
+    series: "regular",
+    title: "Gian's Repayment",
+    japanese: "ジャイアンの恩返し"
+},
+
+{
+    no: 721,
+    year: 2015,
+    date: "2015-09-04",
+    series: "regular",
+    title: "Let's Assemble a Southern Island",
+    japanese: "南の島を組み立てよう"
+},
+
+{
+    no: 722,
+    year: 2015,
+    date: "2015-09-11",
+    series: "regular",
+    title: "Nobita Express and the Mysterious Train Hunter",
+    japanese: "のび太特急と謎のトレインハンター"
+},
+
+{
+    no: 723,
+    year: 2015,
+    date: "2015-09-18",
+    series: "regular",
+    title: "We Sell the Night",
+    japanese: "夜を売ります"
+},
+
+{
+    no: 724,
+    year: 2015,
+    date: "2015-09-25",
+    series: "regular",
+    title: "The Rabbit Monster of the Hill",
+    japanese: "うら山のウサギ怪獣"
+},
+
+{
+    no: 725,
+    year: 2015,
+    date: "2015-10-02",
+    series: "regular",
+    title: "Nobita the Lord",
+    japanese: "アッパレ！のび殿さま"
+},
+
+{
+    no: 726,
+    year: 2015,
+    date: "2015-10-09",
+    series: "regular",
+    title: "Autumn Insect Recital",
+    japanese: "秋の虫のリサイタル"
+},
+
+{
+    no: 727,
+    year: 2015,
+    date: "2015-10-16",
+    series: "regular",
+    title: "Feel Better with the Sinking Ball",
+    japanese: "しずめ玉でスッキリ"
+},
+
+{
+    no: 728,
+    year: 2015,
+    date: "2015-10-23",
+    series: "regular",
+    title: "Nobita's Treasure Appraisal",
+    japanese: "のび太のお宝鑑定"
+},
+
+{
+    no: 729,
+    year: 2015,
+    date: "2015-10-30",
+    series: "regular",
+    title: "Halloween and Nobita Frog",
+    japanese: "ハロウィンとのびガエル"
+},
+
+{
+    no: 730,
+    year: 2015,
+    date: "2015-11-06",
+    series: "regular",
+    title: "The Birth of Manga Artist Christine Sensei",
+    japanese: "誕生！まんが家クリスチーネ先生"
+},
+{{
+    no: 800,
+    year: 2024,
+    date: "2024-03-09",
+    series: "regular",
+    title: "Invincible Castle at the Back Hills",
+    japanese: "うら山の無敵城"
+},
+
+{
+    no: 801,
+    year: 2024,
+    date: "2024-03-09",
+    series: "regular",
+    title: "The Crude-But-Charming Spray",
+    japanese: "へたうまスプレー"
+},
+
+{
+    no: 802,
+    year: 2024,
+    date: "2024-03-16",
+    series: "regular",
+    title: "Our Homemade Giant Robot Loses Control",
+    japanese: "大あばれ、手作り巨大ロボ"
+},
+
+{
+    no: 803,
+    year: 2024,
+    date: "2024-03-23",
+    series: "regular",
+    title: "The Human Controller",
+    japanese: "人間あやつり機"
+},
+
+{
+    no: 804,
+    year: 2024,
+    date: "2024-03-30",
+    series: "regular",
+    title: "To the Sky! To the River! Flower Craft",
+    japanese: "空へ! 川へ! 花クラフト"
+},
+
+{
+    no: 805,
+    year: 2024,
+    date: "2024-04-06",
+    series: "regular",
+    title: "Touching Drink",
+    japanese: "カンゲキドリンク"
+},
+
+{
+    no: 806,
+    year: 2024,
+    date: "2024-04-13",
+    series: "regular",
+    title: "Rent in a Pinch!",
+    japanese: "ピンチの時はレンタルで"
+},
+
+{
+    no: 807,
+    year: 2024,
+    date: "2024-04-20",
+    series: "regular",
+    title: "Bamboo Shoot-shaped Tent Village",
+    japanese: "たけのこ型テントの里"
+}
+{
+    no: 807,
+    year: 2016,
+    date: "2016-10-21",
+    series: "tv",
+    title: "Pandora's Ghost",
+    japanese: "パンドラのおばけ"
+},
+{
+    no: 808,
+    year: 2016,
+    date: "2016-10-21",
+    series: "tv",
+    title: "First Antenna",
+    japanese: "あらかじめアンテナ"
+},
+{
+    no: 809,
+    year: 2016,
+    date: "2016-10-28",
+    series: "tv",
+    title: "Magnify Bad Habits Gas",
+    japanese: "くせなおしガス"
+},
+{
+    no: 810,
+    year: 2016,
+    date: "2016-11-04",
+    series: "tv",
+    title: "Hot Blooded! Dodgeball",
+    japanese: "熱血！ドッジボール"
+},
+{
+    no: 811,
+    year: 2016,
+    date: "2016-11-18",
+    series: "tv",
+    title: "Wrapper Cab",
+    japanese: "ふろしきタクシー"
+},
+{
+    no: 812,
+    year: 2016,
+    date: "2016-11-18",
+    series: "tv",
+    title: "Anytime Anywhere Sketch Set",
+    japanese: "いつでもどこでもスケッチセット"
+},
+{
+    no: 813,
+    year: 2016,
+    date: "2016-11-25",
+    series: "tv",
+    title: "Rocket Control Training Machine",
+    japanese: "ロケットそうじゅうくんれん機"
+},
+{
+    no: 814,
+    year: 2016,
+    date: "2016-11-25",
+    series: "tv",
+    title: "The Best Fan Letter for Gian",
+    japanese: "ジャイアンへのホットなレター"
+},
+{
+    no: 815,
+    year: 2016,
+    date: "2016-12-02",
+    series: "tv",
+    title: "Super Hero Wrapping Cloth",
+    japanese: "スーパーヒーローふろしき"
+},
+{
+    no: 816,
+    year: 2016,
+    date: "2016-12-02",
+    series: "tv",
+    title: "Cuckoo Egg",
+    japanese: "カッコータマゴ"
+},
+{
+    no: 817,
+    year: 2016,
+    date: "2016-12-09",
+    series: "tv",
+    title: "Save the Antarctic Penguin!",
+    japanese: "南極ペンギンを救え！"
+},
+{
+    no: 818,
+    year: 2016,
+    date: "2016-12-09",
+    series: "tv",
+    title: "Day Changing Calendar",
+    japanese: "日づけ変更カレンダー"
+},
+{
+    no: 819,
+    year: 2016,
+    date: "2016-12-16",
+    series: "tv",
+    title: "Snow at Christmas",
+    japanese: "クリスマスに雪を"
+},
+{
+    no: 820,
+    year: 2016,
+    date: "2016-12-16",
+    series: "tv",
+    title: "Watch Out for the Challenging Phase!",
+    japanese: "チュー難の相に気をつけろ!"
+},
+{
+    no: 821,
+    year: 2016,
+    date: "2016-12-31",
+    series: "tv",
+    title: "Do your Best, Sengoku Rider Nobibe",
+    japanese: "戦国のび兵衛がんばれ"
+},
+{
+    no: 822,
+    year: 2016,
+    date: "2016-12-31",
+    series: "tv",
+    title: "The Secret Love Life of Sumire Hoshino",
+    japanese: "星野スミレのひみつの恋"
+},
+
+{
+    no: 823,
+    year: 2017,
+    date: "2017-01-13",
+    series: "tv",
+    title: "Earth Elevator",
+    japanese: "地球エレベーター"
+},
+{
+    no: 824,
+    year: 2017,
+    date: "2017-01-13",
+    series: "tv",
+    title: "Pair Finding Leash",
+    japanese: "かたっぽ探知リード"
+},
+{
+    no: 825,
+    year: 2017,
+    date: "2017-01-20",
+    series: "tv",
+    title: "Piihyoro Rope",
+    japanese: "ピーヒョロ ロープ"
+},
+{
+    no: 826,
+    year: 2017,
+    date: "2017-01-20",
+    series: "tv",
+    title: "Brotherly Seal",
+    japanese: "兄弟シール"
+},
+{
+    no: 827,
+    year: 2017,
+    date: "2017-01-27",
+    series: "tv",
+    title: "Tarzan Underwear",
+    japanese: "ターザンパンツ"
+},
+{
+    no: 828,
+    year: 2017,
+    date: "2017-01-27",
+    series: "tv",
+    title: "Tracing With the Tracer Badge",
+    japanese: "追跡！トレーサーバッジ"
+},
+{
+    no: 829,
+    year: 2017,
+    date: "2017-02-03",
+    series: "tv",
+    title: "Small-size Nobita Faces the Demon",
+    japanese: "一寸のび太の鬼たいじ"
+},
+{
+    no: 830,
+    year: 2017,
+    date: "2017-02-03",
+    series: "tv",
+    title: "Doctor Bag",
+    japanese: "お医者さんカバン"
+},
+{
+    no: 831,
+    year: 2017,
+    date: "2017-02-10",
+    series: "tv",
+    title: "Hearted Chocolate",
+    japanese: "ココロチョコ"
+},
+{
+    no: 832,
+    year: 2017,
+    date: "2017-02-10",
+    series: "tv",
+    title: "Nobita Country Declares Independence",
+    japanese: "独立！のび太国"
+},
+{
+    no: 833,
+    year: 2017,
+    date: "2017-02-17",
+    series: "tv",
+    title: "Thrilling Boomerang",
+    japanese: "スリルブーメラン"
+},
+{
+    no: 834,
+    year: 2017,
+    date: "2017-02-17",
+    series: "tv",
+    title: "Prophecy: The End of the Earth",
+    japanese: "大予言・地球の滅びる日"
+},
+{
+    no: 835,
+    year: 2017,
+    date: "2017-02-24",
+    series: "tv",
+    title: "The Snow and The Dinosaur",
+    japanese: "雪と恐竜"
+},
+{
+    no: 836,
+    year: 2017,
+    date: "2017-02-24",
+    series: "tv",
+    title: "To Miss Yumeko Nijitani",
+    japanese: "拝啓、虹谷ユメ子さん"
+},
+{
+    no: 837,
+    year: 2017,
+    date: "2017-03-17",
+    series: "tv",
+    title: "Paopao, The Lost Child",
+    japanese: "迷子のパオパオ"
+},
+{
+    no: 838,
+    year: 2017,
+    date: "2017-04-07",
+    series: "tv",
+    title: "Doradora Ponpoko Major Investigation",
+    japanese: "ドラドラポンポン大捜査"
+},
+{
+    no: 839,
+    year: 2017,
+    date: "2017-04-07",
+    series: "tv",
+    title: "Animal Type Tablet",
+    japanese: "動物型にげだし錠"
+},
+{
+    no: 840,
+    year: 2017,
+    date: "2017-04-07",
+    series: "tv",
+    title: "Eating, Singing, and Bio Flower Gazing",
+    japanese: "食べて歌ってバイオ花見"
+},
+{
+    no: 841,
+    year: 2017,
+    date: "2017-04-14",
+    series: "tv",
+    title: "Welcome to the Castle of Haribote!",
+    japanese: "ようこそ！ハリボテの城へ"
+},
+{
+    no: 842,
+    year: 2017,
+    date: "2017-04-14",
+    series: "tv",
+    title: "The Mystery of the Ghost Mouth",
+    japanese: "おばけ口目の怪"
+},
+{
+    no: 843,
+    year: 2017,
+    date: "2017-04-21",
+    series: "tv",
+    title: "Reverse Invisibility Eye Drop",
+    japanese: "見えなくなる目ぐすり"
+},
+{
+    no: 844,
+    year: 2017,
+    date: "2017-04-21",
+    series: "tv",
+    title: "You Can Eat With Your Mouth, as Well as Your Eyes",
+    japanese: "目は口ほどに物を食べ"
+},
+{
+    no: 845,
+    year: 2017,
+    date: "2017-04-28",
+    series: "tv",
+    title: "Martian Picnic",
+    japanese: "火星ピクニック"
+},
+{
+    no: 846,
+    year: 2017,
+    date: "2017-04-28",
+    series: "tv",
+    title: "Telepathy Fruit",
+    japanese: "テレパしい"
+},
+{
+    no: 847,
+    year: 2017,
+    date: "2017-05-12",
+    series: "tv",
+    title: "Stop Mom From Running Away!",
+    japanese: "ママをつかまえろ！"
+},
+{
+    no: 848,
+    year: 2017,
+    date: "2017-05-12",
+    series: "tv",
+    title: "Four Dimensional Dust Bin",
+    japanese: "四次元くずかご"
+},
+{
+    no: 849,
+    year: 2017,
+    date: "2017-05-19",
+    series: "tv",
+    title: "Self Confidence Helmet",
+    japanese: "自信ヘルメット"
+},
+{
+    no: 850,
+    year: 2017,
+    date: "2017-05-19",
+    series: "tv",
+    title: "Who is the Mask of Academic?",
+    japanese: "ガッコー仮面は誰でしょう？"
+},
+{
+    no: 862,
+    year: 2017,
+    date: "2017-06-30",
+    series: "tv",
+    title: "Masterpiece Theater Camera",
+    japanese: "名作劇場カメラ"
+},
+{
+    no: 863,
+    year: 2017,
+    date: "2017-06-30",
+    series: "tv",
+    title: "The Sleeping Man's Pillow",
+    japanese: "三年寝太郎まくら"
+},
+{
+    no: 864,
+    year: 2017,
+    date: "2017-07-07",
+    series: "tv",
+    title: "Room Swimmer",
+    japanese: "ルームスイマー"
+},
+{
+    no: 865,
+    year: 2017,
+    date: "2017-07-07",
+    series: "tv",
+    title: "A Late-night Town in the Bottom of the Sea",
+    japanese: "深夜の町は海の底"
+},
+{
+    no: 866,
+    year: 2017,
+    date: "2017-07-28",
+    series: "tv",
+    title: "I'm Mini Doraemon",
+    japanese: "ぼくミニドラえもん"
+},
+{
+    no: 867,
+    year: 2017,
+    date: "2017-07-28",
+    series: "tv",
+    title: "The Elephant and the Uncle",
+    japanese: "ぞうとおじさん"
+},
+{
+    no: 868,
+    year: 2017,
+    date: "2017-08-04",
+    series: "tv",
+    title: "Star Wars in My Attic",
+    japanese: "天井うらの宇宙戦争"
+},
+{
+    no: 869,
+    year: 2017,
+    date: "2017-08-18",
+    series: "tv",
+    title: "Do Your Best! Ghost House",
+    japanese: "がんばれ！おばけハウス"
+},
+{
+    no: 870,
+    year: 2017,
+    date: "2017-08-18",
+    series: "tv",
+    title: "Robinson Crusoe Set",
+    japanese: "ロビンソンクルーソーセット"
+},
+{
+    no: 871,
+    year: 2017,
+    date: "2017-08-25",
+    series: "tv",
+    title: "Sweets Ranch",
+    japanese: "おかし牧場"
+},
+{
+    no: 872,
+    year: 2017,
+    date: "2017-08-25",
+    series: "tv",
+    title: "The Forest is Alive",
+    japanese: "森は生きている"
+},
+{
+    no: 873,
+    year: 2017,
+    date: "2017-09-01",
+    series: "tv",
+    title: "The Mystery of the Pyramids!? The Great Egyptian Adventure",
+    japanese: "謎のピラミッドス！？ エジプト大冒険"
+},
+{
+    no: 874,
+    year: 2017,
+    date: "2017-09-08",
+    series: "tv",
+    title: "The Schedule Clock",
+    japanese: "スケジュール時計"
+},
+{
+    no: 875,
+    year: 2017,
+    date: "2017-09-08",
+    series: "tv",
+    title: "Nin'nin Training Set",
+    japanese: "ニンニン修行セット"
+},
+{
+    no: 876,
+    year: 2017,
+    date: "2017-09-15",
+    series: "tv",
+    title: "Aren't You Nobita, the Cat?",
+    japanese: "ネコののび太いりませんか"
+},
+{
+    no: 877,
+    year: 2017,
+    date: "2017-09-15",
+    series: "tv",
+    title: "Prize Winning Cowbot",
+    japanese: "賞品かせぎカウボット"
+},
+{
+    no: 878,
+    year: 2017,
+    date: "2017-10-13",
+    series: "tv",
+    title: "Multiplication Liquid",
+    japanese: "バイバイン"
+},
+{
+    no: 879,
+    year: 2017,
+    date: "2017-10-13",
+    series: "tv",
+    title: "The Forceful Athletic School",
+    japanese: "むりやりアスレチックスクール"
+},
+{
+    no: 880,
+    year: 2017,
+    date: "2017-10-20",
+    series: "tv",
+    title: "Oh, Lovely Mii-chan!",
+    japanese: "すてきなミイちゃん"
+},
+{
+    no: 881,
+    year: 2017,
+    date: "2017-10-20",
+    series: "tv",
+    title: "Magical Girl Shizu-chan",
+    japanese: "魔女っ子しずちゃん"
+},
+{
+    no: 882,
+    year: 2017,
+    date: "2017-10-27",
+    series: "tv",
+    title: "The Emperor's New Clothes!? Super Armor",
+    japanese: "はだかの王様！？ウルトラよろい"
+},
+{
+    no: 883,
+    year: 2017,
+    date: "2017-10-27",
+    series: "tv",
+    title: "The Girl With the Red Shoes",
+    japanese: "赤いくつの女の子"
+},
+{
+    no: 884,
+    year: 2017,
+    date: "2017-11-03",
+    series: "tv",
+    title: "Spider Web Cable",
+    japanese: "クモノイトン"
+},
+{
+    no: 885,
+    year: 2017,
+    date: "2017-11-03",
+    series: "tv",
+    title: "Proposal Strategy",
+    japanese: "プロポーズ作戦"
+},
+{
+    no: 886,
+    year: 2017,
+    date: "2017-11-10",
+    series: "tv",
+    title: "Nobita the Leaf Detective",
+    japanese: "葉っぱ探偵のび太"
+},
+{
+    no: 887,
+    year: 2017,
+    date: "2017-11-10",
+    series: "tv",
+    title: "Feudal Lord of the 21st Century",
+    japanese: "二十一世紀のおとのさま"
+},
+{
+    no: 888,
+    year: 2017,
+    date: "2017-11-17",
+    series: "tv",
+    title: "Inventing with the Inventing Machine",
+    japanese: "ハツメイカーで大発明"
+},
+{
+    no: 889,
+    year: 2017,
+    date: "2017-11-17",
+    series: "tv",
+    title: "Sharing Secrets in a Cannon",
+    japanese: "大砲でないしょのはなし"
+},
+{
+    no: 890,
+    year: 2017,
+    date: "2017-11-24",
+    series: "tv",
+    title: "A World Without Mirrors",
+    japanese: "かがみのない世界"
+},
+{
+    no: 891,
+    year: 2017,
+    date: "2017-11-24",
+    series: "tv",
+    title: "All Sorts of Future Treasure Appraisals",
+    japanese: "ピンキリ！お宝未来鑑定"
+},
+{
+    no: 892,
+    year: 2017,
+    date: "2017-12-01",
+    series: "tv",
+    title: "Christmas in the House of Candies",
+    japanese: "クリスマスはおかしの家で"
+},
+{
+    no: 893,
+    year: 2017,
+    date: "2017-12-01",
+    series: "tv",
+    title: "The Wish Realizing Machine Is Too Much!",
+    japanese: "やりすぎ！のぞみ実現機"
+},
+{
+    no: 894,
+    year: 2017,
+    date: "2017-12-31",
+    series: "tv",
+    title: "Zodiac Transformation Dice",
+    japanese: "十二支変身サイコロ"
+},
+{
+    no: 895,
+    year: 2017,
+    date: "2017-12-31",
+    series: "tv",
+    title: "The Dream Channel",
+    japanese: "ゆめのチャンネル"
+},
+
+{
+    no: 896,
+    year: 2018,
+    date: "2018-01-07",
+    series: "tv",
+    title: "A Hand of Love to God's Robot!",
+    japanese: "神さまロボットに愛の手を!"
+},
+{
+    no: 897,
+    year: 2018,
+    date: "2018-01-07",
+    series: "tv",
+    title: "Rich as a Yen Pit",
+    japanese: "円ピツで大金持ち"
+},
+{
+    no: 898,
+    year: 2018,
+    date: "2018-01-12",
+    series: "tv",
+    title: "Nobita the Gunfighter",
+    japanese: "ガンファイターのび太"
+},
+{
+    no: 899,
+    year: 2018,
+    date: "2018-01-19",
+    series: "tv",
+    title: "Viking, By All Means",
+    japanese: "なんでもバイキング"
+},
+{
+    no: 900,
+    year: 2018,
+    date: "2018-01-19",
+    series: "tv",
+    title: "Jack, Betty, and Jenny",
+    japanese: "ジャックとベティとジャニー"
+},
+{
+    no: 901,
+    year: 2018,
+    date: "2018-01-26",
+    series: "tv",
+    title: "Fictitious Character Egg",
+    japanese: "架空人物たまご"
+},
+{
+    no: 902,
+    year: 2018,
+    date: "2018-01-26",
+    series: "tv",
+    title: "Doradora Spy Battle",
+    japanese: "ドラドラスパイ大作戦"
+},
+{
+    no: 903,
+    year: 2018,
+    date: "2018-02-02",
+    series: "tv",
+    title: "Roboko Loves You",
+    japanese: "ロボ子が愛してる"
+},
+{
+    no: 904,
+    year: 2018,
+    date: "2018-02-02",
+    series: "tv",
+    title: "Big Trouble! Suneo's Test Result",
+    japanese: "大ピンチ！スネ夫の答案"
+},
+{
+    no: 905,
+    year: 2018,
+    date: "2018-02-09",
+    series: "tv",
+    title: "Dwarf Robot",
+    japanese: "こびとロボット"
+},
+{
+    no: 906,
+    year: 2018,
+    date: "2018-02-09",
+    series: "tv",
+    title: "Space Expedition!? The Back Mountain Planet",
+    japanese: "宇宙たんけん！ウラヤマ星"
+},
+{
+    no: 907,
+    year: 2018,
+    date: "2018-02-16",
+    series: "tv",
+    title: "Gian vs Mecha Gian",
+    japanese: "ジャイアンvsメカジャイアン"
+},
+{
+    no: 908,
+    year: 2018,
+    date: "2018-02-16",
+    series: "tv",
+    title: "The Story of Getting Pinched by a Fox",
+    japanese: "きつねにつままれた話"
+},
+{
+    no: 909,
+    year: 2018,
+    date: "2018-02-23",
+    series: "tv",
+    title: "The Troublesome Gulliver",
+    japanese: "めいわくガリバー"
+},
+{
+    no: 910,
+    year: 2018,
+    date: "2018-02-23",
+    series: "tv",
+    title: "Nobita Runs Away From Home for a Long Time",
+    japanese: "のび太のなが～い家出"
+},
+{
+    no: 911,
+    year: 2018,
+    date: "2018-03-09",
+    series: "tv",
+    title: "Convenient Treasure Island",
+    japanese: "ほどほど宝島"
+},
+{
+    no: 912,
+    year: 2018,
+    date: "2018-04-06",
+    series: "tv",
+    title: "Owl Man Suit",
+    japanese: "フクロマンスーツ"
+},
+{
+    no: 913,
+    year: 2018,
+    date: "2018-04-06",
+    series: "tv",
+    title: "I Found Tsuchinoko!",
+    japanese: "ツチノコみつけた！"
+},
+{
+    no: 914,
+    year: 2018,
+    date: "2018-04-06",
+    series: "tv",
+    title: "Take It Back with the Remote Control Cat!",
+    japanese: "リモコンねこでとり返せ！"
+},
+{
+    no: 915,
+    year: 2018,
+    date: "2018-04-13",
+    series: "tv",
+    title: "The Transformation Biscuits",
+    japanese: "動物変身ビスケット"
+},
+{
+    no: 916,
+    year: 2018,
+    date: "2018-04-13",
+    series: "tv",
+    title: "The Progression-Regression Beam",
+    japanese: "進化退化光線銃"
+},
+{
+    no: 917,
+    year: 2018,
+    date: "2018-04-20",
+    series: "tv",
+    title: "Bunbuku Dora Cauldron",
+    japanese: "ぶんぶくドラ釜"
+},
+{
+    no: 918,
+    year: 2018,
+    date: "2018-04-20",
+    series: "tv",
+    title: "I Got 100%, For Once in My Life...",
+    japanese: "一生に一度は百点を…"
+},
+{
+    no: 919,
+    year: 2018,
+    date: "2018-04-27",
+    series: "tv",
+    title: "The Dangerous Living Creature Park in the Mountain",
+    japanese: "うら山危険生物パーク"
+},
+{
+    no: 920,
+    year: 2018,
+    date: "2018-04-27",
+    series: "tv",
+    title: "All-in-one Rein",
+    japanese: "はいどうたづな"
+},
+{
+    no: 921,
+    year: 2018,
+    date: "2018-05-11",
+    series: "tv",
+    title: "Swapping Moms",
+    japanese: "ママをとりかえっこ"
+},
+{
+    no: 922,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Even Cushions Have Souls",
+    japanese: "ざぶとんにもたましいがある"
+},
+{
+    no: 923,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Nobita Is the Only One in the World",
+    japanese: "のび太は世界にただ一匹"
+},
+{
+    no: 924,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Horizon Tape",
+    japanese: "地平線テープ"
+},
+{
+    no: 925,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Nin-ninja! Karakuri Ninja Mansion",
+    japanese: "ニニンジャ！からくり忍者屋敷"
+},
+{
+    no: 926,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Circle of Friends",
+    japanese: "友だちの輪"
+},
+{
+    no: 927,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Summer! Mountain! Nobi Family Camping",
+    japanese: "夏だ！山だ！野比家のキャンプ"
+},
+{
+    no: 928,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Instant Robot",
+    japanese: "インスタントロボット"
+},
+{
+    no: 929,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Light the Heart Lamp",
+    japanese: "ハー灯に火をともせ"
+},
+{
+    no: 930,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "It's Tough Being a Rain Man",
+    japanese: "雨男はつらいよ"
+},
+{
+    no: 931,
+    year: 2019,
+    date: "",
+    series: "regular",
+    title: "Gian's Lullaby",
+    japanese: "ジャイアンの子守歌"
+}
+{
+    no: 932,
+    year: 2018,
+    date: "2018-06-15",
+    series: "regular",
+    title: "Level Me Up",
+    japanese: "おれさまをグレードアップ"
+},
+{
+    no: 933,
+    year: 2018,
+    date: "2018-06-22",
+    series: "regular",
+    title: "The Making of a Television Channel",
+    japanese: "テレビ局をはじめたよ"
+},
+{
+    no: 934,
+    year: 2018,
+    date: "2018-06-22",
+    series: "regular",
+    title: "Switching Gun",
+    japanese: "人の身になるタチバガン"
+},
+{
+    no: 935,
+    year: 2018,
+    date: "2018-06-29",
+    series: "regular",
+    title: "Enjoying Memories With a Recording Machine",
+    japanese: "録験機でたのしもう"
+},
+{
+    no: 936,
+    year: 2018,
+    date: "2018-06-29",
+    series: "regular",
+    title: "The Rewarding Headband",
+    japanese: "アセッカキン"
+},
+{
+    no: 937,
+    year: 2018,
+    date: "2018-07-06",
+    series: "regular",
+    title: "Fishing Stars Among the Clouds",
+    japanese: "天の川で星釣りを"
+},
+{
+    no: 938,
+    year: 2018,
+    date: "2018-07-06",
+    series: "regular",
+    title: "The Wishing Star",
+    japanese: "ねがい星"
+},
+{
+    no: 939,
+    year: 2018,
+    date: "2018-07-20",
+    series: "regular",
+    title: "Courage Testing Glasses",
+    japanese: "きもだめしめがね"
+},
+{
+    no: 940,
+    year: 2018,
+    date: "2018-07-20",
+    series: "regular",
+    title: "The Living Origami",
+    japanese: "いきものおりがみ"
+},
+{
+    no: 941,
+    year: 2018,
+    date: "2018-07-27",
+    series: "regular",
+    title: "Superb! The Flowing Somen Miniature Garden",
+    japanese: "絶景！箱庭ソーメン流し"
+},
+{
+    no: 942,
+    year: 2018,
+    date: "2018-07-27",
+    series: "regular",
+    title: "Half, and Half, and Half Again",
+    japanese: "半分の半分のまた半分"
+},
+{
+    no: 943,
+    year: 2018,
+    date: "2018-08-03",
+    series: "regular",
+    title: "Friendship Capsule",
+    japanese: "友情カプセル"
+},
+{
+    no: 944,
+    year: 2018,
+    date: "2018-08-03",
+    series: "regular",
+    title: "Jaiko's Lover = Nobita",
+    japanese: "ジャイ子の恋人=のび太"
+},
+{
+    no: 945,
+    year: 2018,
+    date: "2018-08-17",
+    series: "regular",
+    title: "Go Through The Picture Frame To The Sea",
+    japanese: "額縁をくぐって海へ"
+},
+{
+    no: 946,
+    year: 2018,
+    date: "2018-08-17",
+    series: "regular",
+    title: "Chukenper",
+    japanese: "チューケンパー"
+},
+{
+    no: 947,
+    year: 2018,
+    date: "2018-08-24",
+    series: "regular",
+    title: "The Lying Mirror",
+    japanese: "うそつきかがみ"
+},
+{
+    no: 948,
+    year: 2018,
+    date: "2018-08-24",
+    series: "regular",
+    title: "\"Anything is 10 Yen\" Store",
+    japanese: "十円なんでもストア"
+},
+{
+    no: 949,
+    year: 2018,
+    date: "2018-08-31",
+    series: "regular",
+    title: "The Easy Way of a Hermit",
+    japanese: "仙人らくらくコース"
+},
+{
+    no: 950,
+    year: 2018,
+    date: "2018-08-31",
+    series: "regular",
+    title: "The Bad Luck Diamond",
+    japanese: "悪運ダイヤ"
+},
+{
+    no: 951,
+    year: 2018,
+    date: "2018-09-07",
+    series: "regular",
+    title: "A Whale and Mystery of Pipe Island",
+    japanese: "クジラとまぼろしのパイプ島"
+},
+{
+    no: 952,
+    year: 2018,
+    date: "2018-09-14",
+    series: "regular",
+    title: "Doraemon's Song",
+    japanese: "ドラえもんの歌"
+},
+{
+    no: 953,
+    year: 2018,
+    date: "2018-09-14",
+    series: "regular",
+    title: "Correlation Diagram Maker",
+    japanese: "相関図メーカー"
+},
+{
+    no: 954,
+    year: 2018,
+    date: "2018-10-12",
+    series: "regular",
+    title: "Running Across Time! The Time Borrowing Race",
+    japanese: "時を走れ！タイム借り物競走"
+},
+{
+    no: 955,
+    year: 2018,
+    date: "2018-10-12",
+    series: "regular",
+    title: "The Stupidity Time Bombs",
+    japanese: "時限バカ弾"
+},
+{
+    no: 956,
+    year: 2018,
+    date: "2018-10-19",
+    series: "regular",
+    title: "Sorcerer Nobita",
+    japanese: "魔法使いのび太"
+},
+{
+    no: 957,
+    year: 2018,
+    date: "2018-10-19",
+    series: "regular",
+    title: "Nobi House, The Dream Hot Spring Trip",
+    japanese: "野比家、夢の温泉旅行"
+},
+{
+    no: 958,
+    year: 2018,
+    date: "2018-10-26",
+    series: "regular",
+    title: "Combining Glue",
+    japanese: "合体ノリ"
+},
+{
+    no: 959,
+    year: 2018,
+    date: "2018-10-26",
+    series: "regular",
+    title: "Go! Nobita Man",
+    japanese: "行け！ノビタマン"
+},
+{
+    no: 960,
+    year: 2018,
+    date: "2018-11-02",
+    series: "regular",
+    title: "Various Soda Set",
+    japanese: "いろいろソーダセット"
+},
+{
+    no: 961,
+    year: 2018,
+    date: "2018-11-02",
+    series: "regular",
+    title: "Magic Box",
+    japanese: "マジックボックス"
+},
+{
+    no: 962,
+    year: 2018,
+    date: "2018-11-09",
+    series: "regular",
+    title: "Aibou",
+    japanese: "あい棒"
+},
+{
+    no: 963,
+    year: 2018,
+    date: "2018-11-09",
+    series: "regular",
+    title: "The Lie Speaker",
+    japanese: "アトカラホントスピーカー"
+},
+{
+    no: 964,
+    year: 2018,
+    date: "2018-11-16",
+    series: "regular",
+    title: "Nobita's Shooting Stars",
+    japanese: "のび太の流れ星"
+},
+{
+    no: 965,
+    year: 2018,
+    date: "2018-11-16",
+    series: "regular",
+    title: "The Over-exaggerating Overcoat",
+    japanese: "オーバーオーバー"
+},
+{
+    no: 966,
+    year: 2018,
+    date: "2018-11-23",
+    series: "regular",
+    title: "Doraemon Stove",
+    japanese: "ドラえもんストーブ"
+},
+{
+    no: 967,
+    year: 2018,
+    date: "2018-11-23",
+    series: "regular",
+    title: "Growing Persimmons In One Night",
+    japanese: "一晩でカキの実がなった"
+},
+{
+    no: 968,
+    year: 2018,
+    date: "2018-11-30",
+    series: "regular",
+    title: "The Helping Hand Spray",
+    japanese: "つづきをヨロシク"
+},
+{
+    no: 969,
+    year: 2018,
+    date: "2018-11-30",
+    series: "regular",
+    title: "What If We Turn Day Into Night!?",
+    japanese: "もしもボックスで昼ふかし!？"
+},
+{
+    no: 970,
+    year: 2018,
+    date: "2018-12-07",
+    series: "regular",
+    title: "The Fearsome Happiness Cards",
+    japanese: "しあわせトランプの恐怖"
+},
+{
+    no: 971,
+    year: 2018,
+    date: "2018-12-07",
+    series: "regular",
+    title: "Christmas Cards from the Future",
+    japanese: "未来のクリスマスカード"
+},
+{
+    no: 972,
+    year: 2018,
+    date: "2018-12-14",
+    series: "regular",
+    title: "The Urashima Candy",
+    japanese: "ウラシマキャンデー"
+},
+{
+    no: 973,
+    year: 2018,
+    date: "2018-12-14",
+    series: "regular",
+    title: "Escape with the Substitution Stickers!",
+    japanese: "シールで逃げきれ！"
+},
+{
+    no: 974,
+    year: 2018,
+    date: "2018-12-31",
+    series: "regular",
+    title: "Kukku, the Kamaitachi",
+    japanese: "かまいたちのクック"
+},
+{
+    no: 975,
+    year: 2019,
+    date: "2019-01-18",
+    series: "regular",
+    title: "The Smoke Monster of the Lamp",
+    japanese: "ランプのけむりオバケ"
+},
+{
+    no: 976,
+    year: 2019,
+    date: "2019-01-18",
+    series: "regular",
+    title: "Gian Stew",
+    japanese: "ジャイアンシチュー"
+},
+{
+    no: 977,
+    year: 2019,
+    date: "2019-01-25",
+    series: "regular",
+    title: "Pyonta in My Pocket",
+    japanese: "ポケットの中のぴょん太"
+},
+{
+    no: 978,
+    year: 2019,
+    date: "2019-01-25",
+    series: "regular",
+    title: "Peace Antenna",
+    japanese: "平和アンテナ"
+},
+{
+    no: 979,
+    year: 2019,
+    date: "2019-02-08",
+    series: "regular",
+    title: "Event Balloon",
+    japanese: "フェスティバルーン"
+},
+{
+    no: 980,
+    year: 2019,
+    date: "2019-02-08",
+    series: "regular",
+    title: "The Warm Snowball Fight",
+    japanese: "ホカホカ雪で雪合戦"
+},
+{
+    no: 981,
+    year: 2019,
+    date: "2019-02-15",
+    series: "regular",
+    title: "Think-Of Cumin",
+    japanese: "熱血応援マイク"
+},
+{
+    no: 982,
+    year: 2019,
+    date: "2019-02-15",
+    series: "regular",
+    title: "A Hot Blood Support Microphone",
+    japanese: "オモイコミン"
+},
+{
+    no: 983,
+    year: 2019,
+    date: "2019-02-22",
+    series: "regular",
+    title: "Dorakaguya is returning to the moon!?",
+    japanese: "ドラかぐや、月に帰る！？"
+},
+{
+    no: 984,
+    year: 2019,
+    date: "2019-02-22",
+    series: "regular",
+    title: "Werewolf Cream",
+    japanese: "おおかみ男クリーム"
+},
+{
+    no: 985,
+    year: 2019,
+    date: "2019-03-08",
+    series: "regular",
+    title: "The Time Cloth",
+    japanese: "タイムふろしき"
+},
+{
+    no: 986,
+    year: 2019,
+    date: "2019-03-08",
+    series: "regular",
+    title: "The Fake Alien",
+    japanese: "ニセ宇宙人"
+},
+{
+    no: 987,
+    year: 2019,
+    date: "2019-03-15",
+    series: "regular",
+    title: "The Big Fossil Discovery",
+    japanese: "化石大発見！"
+},
+{
+    no: 988,
+    year: 2019,
+    date: "2019-03-15",
+    series: "regular",
+    title: "Fluffy on Futon",
+    japanese: "布団にのってふわふわり"
+},
+{
+    no: 989,
+    year: 2019,
+    date: "2019-04-05",
+    series: "regular",
+    title: "The City of Dreams, Nobita Land",
+    japanese: "ゆめの町、ノビタランド"
+},
+{
+    no: 990,
+    year: 2019,
+    date: "2019-04-05",
+    series: "regular",
+    title: "Look at Doraemon! His Secret",
+    japanese: "ドラえもんをのぞいちゃえ！"
+},
+{
+    no: 991,
+    year: 2019,
+    date: "2019-04-19",
+    series: "regular",
+    title: "The Dajale Land",
+    japanese: "ダジャレーランド"
+},
+{
+    no: 992,
+    year: 2019,
+    date: "2019-04-19",
+    series: "regular",
+    title: "The Invincible! Insect Pills",
+    japanese: "無敵！コンチュー丹"
+},
+{
+    no: 993,
+    year: 2019,
+    date: "2019-04-26",
+    series: "regular",
+    title: "Tajami Rice Field",
+    japanese: "タタミのたんぼ"
+},
+{
+    no: 994,
+    year: 2019,
+    date: "2019-04-26",
+    series: "regular",
+    title: "Shopping in the Future",
+    japanese: "未来からの買い物"
+},
+{
+    no: 995,
+    year: 2019,
+    date: "2019-05-10",
+    series: "regular",
+    title: "How to Eat the Delicious Nobita",
+    japanese: "のび太のおいしい食べ方"
+},
+{
+    no: 996,
+    year: 2019,
+    date: "2019-05-10",
+    series: "regular",
+    title: "The Cooking Badges",
+    japanese: "お料理ワッペン"
+},
+{
+    no: 997,
+    year: 2019,
+    date: "2019-05-17",
+    series: "regular",
+    title: "The Courtesy Candy",
+    japanese: "しつけキャンディー"
+},
+{
+    no: 998,
+    year: 2019,
+    date: "2019-05-17",
+    series: "regular",
+    title: "The Taste Seasoning of the Human World",
+    japanese: "人間味調味料"
+},
+{
+    no: 999,
+    year: 2019,
+    date: "2019-05-31",
+    series: "regular",
+    title: "Trampolingen",
+    japanese: "トランポリンゲン"
+},
+{
+    no: 1000,
+    year: 2019,
+    date: "2019-05-31",
+    series: "regular",
+    title: "Soap Bubble Courier",
+    japanese: "シャボン玉宅配便"
+},
+{
+    no: 1000,
+    year: 1988,
+    date: "1988-11-11",
+    series: "classic",
+    title: "Chameleon Tea",
+    japanese: "カメレオンちゃ"
+},
+
+{
+    no: 1001,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Trampolinegen",
+    japanese: ""
+},
+
+{
+    no: 1002,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Induction Foot Stamp",
+    japanese: ""
+},
+
+{
+    no: 1003,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Photo Chamber",
+    japanese: ""
+},
+
+{
+    no: 1004,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Time Room",
+    japanese: ""
+},
+
+{
+    no: 1005,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Instant Iwanomoto",
+    japanese: ""
+},
+
+{
+    no: 1006,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Foolproof Safety Umbrella",
+    japanese: ""
+},
+
+{
+    no: 1007,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1007",
+    japanese: ""
+},
+
+{
+    no: 1008,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1008",
+    japanese: ""
+},
+
+{
+    no: 1009,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1009",
+    japanese: ""
+},
+
+{
+    no: 1010,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: 'The "Out with the Demons" Beans',
+    japanese: ""
+},
+
+{
+    no: 1011,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1011",
+    japanese: ""
+},
+
+{
+    no: 1012,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1012",
+    japanese: ""
+},
+
+{
+    no: 1013,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1013",
+    japanese: ""
+},
+
+{
+    no: 1014,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1014",
+    japanese: ""
+},
+
+{
+    no: 1015,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Airport for Anything",
+    japanese: ""
+},
+
+{
+    no: 1016,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1016",
+    japanese: ""
+},
+
+{
+    no: 1017,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1017",
+    japanese: ""
+},
+
+{
+    no: 1018,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1018",
+    japanese: ""
+},
+
+{
+    no: 1019,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1019",
+    japanese: ""
+},
+
+{
+    no: 1020,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1020",
+    japanese: ""
+},
+
+{
+    no: 1021,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1021",
+    japanese: ""
+},
+
+{
+    no: 1022,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1022",
+    japanese: ""
+},
+
+{
+    no: 1023,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1023",
+    japanese: ""
+},
+
+{
+    no: 1024,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Present of the Snowy Mountain",
+    japanese: ""
+},
+
+{
+    no: 1025,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Bring Nature into My Room",
+    japanese: ""
+},
+
+{
+    no: 1026,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1026",
+    japanese: ""
+},
+
+{
+    no: 1027,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Uninhabited Island Is My Island",
+    japanese: ""
+},
+
+{
+    no: 1028,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1028",
+    japanese: ""
+},
+
+{
+    no: 1029,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1029",
+    japanese: ""
+},
+
+{
+    no: 1030,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Mini TV Station",
+    japanese: ""
+},
+
+{
+    no: 1031,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1031",
+    japanese: ""
+},
+
+{
+    no: 1032,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1032",
+    japanese: ""
+},
+
+{
+    no: 1033,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1033",
+    japanese: ""
+},
+
+{
+    no: 1034,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1034",
+    japanese: ""
+},
+
+{
+    no: 1035,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Commercial Candy Launcher",
+    japanese: ""
+},
+
+{
+    no: 1036,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Free Size Plush Camera",
+    japanese: ""
+},
+
+{
+    no: 1037,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Dream Hall",
+    japanese: ""
+},
+
+{
+    no: 1038,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1038",
+    japanese: ""
+},
+
+{
+    no: 1039,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1039",
+    japanese: ""
+},
+
+{
+    no: 1040,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Self Alarm",
+    japanese: ""
+},
+
+{
+    no: 1041,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Transformation Ring and Card",
+    japanese: ""
+},
+
+{
+    no: 1042,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Dorami-Shaped Mini Hot Air Balloon",
+    japanese: ""
+},
+
+{
+    no: 1043,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Decoy Case",
+    japanese: ""
+},
+
+{
+    no: 1044,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Sherlock Holmes Three-Piece Set",
+    japanese: ""
+},
+
+{
+    no: 1045,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1045",
+    japanese: ""
+},
+
+{
+    no: 1046,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Substitute Microphone",
+    japanese: ""
+},
+
+{
+    no: 1047,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1047",
+    japanese: ""
+},
+
+{
+    no: 1048,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Hypnosis Megaphone",
+    japanese: ""
+},
+
+{
+    no: 1049,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Home Economy Apron",
+    japanese: ""
+},
+
+{
+    no: 1050,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1050",
+    japanese: ""
+},
+
+{
+    no: 1051,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Where Were You at That Time",
+    japanese: ""
+},
+
+{
+    no: 1052,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1052",
+    japanese: ""
+},
+
+{
+    no: 1053,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Anytime Anywhere Sketch Set",
+    japanese: ""
+},
+
+{
+    no: 1054,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Gian's Dinner Show",
+    japanese: ""
+},
+
+{
+    no: 1055,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1055",
+    japanese: ""
+},
+
+{
+    no: 1056,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1056",
+    japanese: ""
+},
+
+{
+    no: 1057,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Air Conditioner Photo",
+    japanese: ""
+},
+
+{
+    no: 1058,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Powerful Ultra Super Deluxe Candy",
+    japanese: ""
+},
+
+{
+    no: 1059,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Nobita's Birthday",
+    japanese: ""
+},
+
+{
+    no: 1060,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1060",
+    japanese: ""
+},
+
+{
+    no: 1061,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Dream Player",
+    japanese: ""
+},
+
+{
+    no: 1062,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Trendy Collection",
+    japanese: ""
+},
+
+{
+    no: 1063,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1063",
+    japanese: ""
+},
+
+{
+    no: 1064,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1064",
+    japanese: ""
+},
+
+{
+    no: 1065,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1065",
+    japanese: ""
+},
+
+{
+    no: 1066,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Future Book Coupon",
+    japanese: ""
+},
+
+{
+    no: 1067,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Gorgon's Head",
+    japanese: ""
+},
+
+{
+    no: 1068,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Object Replacing Cloth",
+    japanese: ""
+},
+
+{
+    no: 1069,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Environmental Screen and Projector",
+    japanese: ""
+},
+
+{
+    no: 1070,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "My Guardian Paper",
+    japanese: ""
+},
+
+{
+    no: 1071,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Paper Craft",
+    japanese: ""
+},
+
+{
+    no: 1072,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "A Complete Restoration Liquid",
+    japanese: ""
+},
+
+{
+    no: 1073,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Light or Heavy Meter",
+    japanese: ""
+},
+
+{
+    no: 1074,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Doraemon's Health Check Up",
+    japanese: ""
+},
+
+{
+    no: 1075,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Indoor Trip Set",
+    japanese: ""
+},
+
+{
+    no: 1076,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Invincible! Insect Pills",
+    japanese: ""
+},
+
+{
+    no: 1077,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1077",
+    japanese: ""
+},
+
+{
+    no: 1078,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1078",
+    japanese: ""
+},
+
+{
+    no: 1079,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1079",
+    japanese: ""
+},
+
+{
+    no: 1080,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Pinch Runner",
+    japanese: ""
+},
+
+{
+    no: 1081,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "High-rise Condo Escape Plan",
+    japanese: ""
+},
+
+{
+    no: 1082,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Almighty Cleaner",
+    japanese: ""
+},
+
+{
+    no: 1083,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Time Pistol",
+    japanese: ""
+},
+
+{
+    no: 1084,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Counsellor to Progress",
+    japanese: ""
+},
+
+{
+    no: 1085,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Diving in the Town",
+    japanese: ""
+},
+
+{
+    no: 1086,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1086",
+    japanese: ""
+},
+
+{
+    no: 1087,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1087",
+    japanese: ""
+},
+
+{
+    no: 1088,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Substitute Picture Mirror",
+    japanese: ""
+},
+
+{
+    no: 1089,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Lost Item Comeback Spray",
+    japanese: ""
+},
+
+{
+    no: 1090,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1090",
+    japanese: ""
+},
+
+{
+    no: 1091,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Payback Hand",
+    japanese: ""
+},
+
+{
+    no: 1092,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Episode 1092",
+    japanese: ""
+},
+
+{
+    no: 1093,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Anyday Calendar",
+    japanese: ""
+},
+
+{
+    no: 1094,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Reality Picture Book",
+    japanese: ""
+},
+
+{
+    no: 1095,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Animal Reincarnation Egg",
+    japanese: ""
+},
+
+{
+    no: 1096,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Nobita's Great Escapade in the Neighbourhood",
+    japanese: ""
+},
+
+{
+    no: 1097,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "The Complete Encyclopedia of the Universe",
+    japanese: ""
+},
+
+{
+    no: 1098,
+    year: 1988,
+    date: "",
+    series: "classic",
+    title: "Anyone Can Become an Immortal Sage Kit",
+    japanese: ""
+},
+
+{
+    no: 1099,
+    year: 1988,
+    date: "1988-10-05",
+    series: "special",
+    title: "Let's Go to Japan 70,000 Years Ago",
+    japanese: "７万年前の日本へ行こう"
+},
+
+{
+    no: 1100,
+    year: 1988,
+    date: "1988-10-19",
+    series: "classic",
+    title: "Justice Police Car",
+    japanese: "正義の味方パトカー"
+},
 
 ];
