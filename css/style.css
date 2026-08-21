@@ -1,11 +1,6 @@
 /* =====================================================
-   DORAEMON MAGIC WORLD
-   MAIN STYLE
-===================================================== */
-
-
-/* =====================================================
-   RESET
+   DORAEMON WORLD
+   MAIN RESPONSIVE STYLE
 ===================================================== */
 
 * {
@@ -14,181 +9,131 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f4fbff 0%,
-            #e9f8ff 50%,
-            #f7fcff 100%
-        );
-
-    color: #ffffff;
-
-    min-height: 100vh;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2fbff;
+    color: #073b70;
     overflow-x: hidden;
 }
 
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
 /* =====================================================
-   NAVBAR
+   HEADER
 ===================================================== */
 
-.navbar {
-
+.topbar {
     width: 100%;
+    min-height: 68px;
 
-    height: 80px;
+    padding: 12px 5%;
 
-    background:
-        #07558a;
+    display: flex;
+    align-items: center;
 
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
-    box-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.12);
+    background: rgba(4, 76, 132, 0.96);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 5px 25px rgba(0, 60, 100, 0.15);
 }
 
 
-.nav-container {
-
-    width: 90%;
-
-    max-width: 1600px;
-
-    height: 100%;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
+/* LOGO */
 
 .logo {
+    color: white;
 
-    display: flex;
+    text-decoration: none;
 
-    align-items: center;
-
-    gap: 14px;
-
-    font-size: 27px;
-
+    font-size: 23px;
     font-weight: 900;
 
     letter-spacing: 1px;
-
-    color: #ffffff;
 
     white-space: nowrap;
 }
 
 
-.logo-globe {
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-    width: 30px;
-
-    height: 30px;
+#nav {
+    margin-left: auto;
 
     display: flex;
-
     align-items: center;
 
-    justify-content: center;
+    gap: 5px;
+}
 
-    font-size: 26px;
+#nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    transition: 0.25s ease;
+}
+
+#nav a:hover {
+    background: #20a8f5;
+
+    transform: translateY(-2px);
+}
+
+#nav a.active {
+    background: #20a8f5;
+
+    box-shadow:
+        0 0 15px rgba(32, 168, 245, 0.45);
 }
 
 
 /* =====================================================
-   NAV MENU
+   MOBILE MENU BUTTON
 ===================================================== */
 
-.nav-menu {
+.menu-btn {
+    display: none;
 
-    display: flex;
+    margin-left: auto;
 
-    align-items: center;
+    width: 44px;
+    height: 44px;
 
-    gap: 8px;
-}
-
-
-.nav-link {
-
-    height: 46px;
-
-    padding: 0 15px;
+    border: none;
 
     border-radius: 12px;
 
-    display: flex;
+    background: #168fd1;
 
-    align-items: center;
+    color: white;
 
-    justify-content: center;
+    font-size: 23px;
 
-    gap: 7px;
+    cursor: pointer;
 
-    color: #ffffff;
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.25s ease;
 }
 
-
-.nav-link:hover {
-
-    background:
-        rgba(255, 255, 255, 0.13);
-
-    transform:
-        translateY(-2px);
-}
-
-
-.nav-link.active {
-
-    background:
-        #22aaf0;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.12);
+.menu-btn:hover {
+    background: #20a8f5;
+    transform: translateY(-2px);
 }
 
 
@@ -197,90 +142,87 @@ a {
 ===================================================== */
 
 .hero {
-
     width: 90%;
+    max-width: 1450px;
 
-    max-width: 1600px;
+    min-height: 500px;
 
-    min-height: 735px;
+    margin: 30px auto;
 
-    margin: 35px auto 0;
+    padding: 55px;
 
-    border-radius: 36px;
+    display: grid;
 
-    position: relative;
+    /*
+       Text ko thoda kam aur Doraemon ko
+       proper space diya gaya hai.
+    */
+    grid-template-columns: 44% 56%;
+
+    align-items: center;
+
+    border-radius: 30px;
 
     overflow: hidden;
 
+    position: relative;
+
     background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,0.35),
+            transparent 25%
+        ),
         linear-gradient(
-            110deg,
-            #0b99d5 0%,
-            #16afe6 48%,
-            #8cdef3 100%
+            135deg,
+            #058ed8,
+            #23b8f4,
+            #b7efff
         );
 
     box-shadow:
-        0 15px 45px rgba(20, 140, 190, 0.16);
+        0 25px 60px rgba(0, 100, 160, 0.20);
 }
 
 
 /* =====================================================
-   HERO DECORATION
+   HERO BACKGROUND CIRCLES
 ===================================================== */
 
-.decor-circle {
+.hero::before {
+    content: "";
 
     position: absolute;
 
+    width: 300px;
+    height: 300px;
+
     border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    right: -80px;
+    bottom: -100px;
 
     pointer-events: none;
 }
 
+.hero::after {
+    content: "";
 
-.circle-one {
+    position: absolute;
 
-    width: 190px;
+    width: 160px;
+    height: 160px;
 
-    height: 190px;
+    border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.09);
-
-    top: -95px;
+    background: rgba(255,255,255,0.10);
 
     left: 45%;
-}
+    top: -80px;
 
-
-.circle-two {
-
-    width: 330px;
-
-    height: 330px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    right: -110px;
-
-    bottom: -130px;
-}
-
-
-.circle-three {
-
-    width: 130px;
-
-    height: 130px;
-
-    background:
-        rgba(255, 255, 255, 0.06);
-
-    right: 15%;
-
-    top: 8%;
+    pointer-events: none;
 }
 
 
@@ -289,111 +231,78 @@ a {
 ===================================================== */
 
 .hero-content {
-
-    width: 100%;
-
-    min-height: 735px;
-
-    padding:
-        70px 65px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
     position: relative;
+    z-index: 5;
 
-    z-index: 2;
+    max-width: 650px;
+
+    min-width: 0;
+}
+
+
+/* BADGE */
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.30);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(10px);
 }
 
 
 /* =====================================================
-   HERO TEXT
+   HERO TITLE
 ===================================================== */
 
-.hero-text {
+.hero h1 {
+    margin-top: 18px;
 
-    width: 50%;
+    font-size: clamp(
+        42px,
+        6vw,
+        76px
+    );
 
-    position: relative;
+    line-height: 1.05;
 
-    z-index: 5;
-}
-
-
-.project-badge {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    padding:
-        10px 18px;
-
-    border-radius: 30px;
-
-    background:
-        rgba(255, 255, 255, 0.22);
-
-    color: #ffffff;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-
-    margin-bottom: 25px;
-
-    backdrop-filter:
-        blur(5px);
-}
-
-
-.hero-text h1 {
-
-    font-size:
-        clamp(55px, 5vw, 88px);
-
-    line-height: 1.04;
-
-    font-weight: 900;
-
-    letter-spacing: -2px;
-
-    color: #ffffff;
+    color: white;
 
     text-shadow:
-        0 5px 0 rgba(0, 0, 0, 0.10);
+        3px 4px 0 rgba(0, 80, 130, 0.35);
+}
+
+.hero h1 strong {
+    color: #ffe02e;
 }
 
 
-.hero-text h1 span {
+/* =====================================================
+   HERO PARAGRAPH
+===================================================== */
 
-    display: block;
+.hero p {
+    max-width: 600px;
 
-    color: #ffd91a;
+    margin-top: 20px;
 
-    text-shadow:
-        0 5px 0 rgba(0, 0, 0, 0.12);
-}
+    color: white;
 
+    font-size: 17px;
 
-.hero-description {
-
-    margin-top: 30px;
-
-    font-size: 19px;
-
-    line-height: 1.65;
-
-    color: #ffffff;
-
-    max-width: 700px;
+    line-height: 1.8;
 }
 
 
@@ -402,80 +311,50 @@ a {
 ===================================================== */
 
 .hero-buttons {
-
     display: flex;
 
-    align-items: center;
+    gap: 12px;
 
-    gap: 14px;
+    margin-top: 28px;
 
-    margin-top: 38px;
+    flex-wrap: wrap;
 }
 
+.btn {
+    display: inline-block;
 
-.hero-button {
+    padding: 14px 20px;
 
-    min-width: 190px;
+    border-radius: 13px;
 
-    height: 62px;
+    text-decoration: none;
 
-    padding:
-        0 25px;
+    font-weight: 900;
 
-    border-radius: 15px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    font-size: 18px;
-
-    font-weight: 800;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+    transition: 0.25s ease;
 }
 
+.btn:hover {
+    transform: translateY(-3px);
+}
 
-.hero-button:hover {
+.btn.primary {
+    background: #ffd52b;
 
-    transform:
-        translateY(-4px);
+    color: #063b67;
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.15);
+        0 10px 25px rgba(255, 210, 30, 0.30);
 }
 
+.btn.secondary {
+    background: rgba(255,255,255,0.25);
 
-.hero-button.primary {
+    color: white;
 
-    background:
-        #ffd21a;
+    border: 1px solid rgba(255,255,255,0.5);
 
-    color:
-        #16476c;
-}
-
-
-.hero-button.secondary {
-
-    background:
-        rgba(255, 255, 255, 0.15);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.55);
-
-    color:
-        #ffffff;
-
-    backdrop-filter:
-        blur(6px);
+    backdrop-filter: blur(10px);
 }
 
 
@@ -484,44 +363,10 @@ a {
 ===================================================== */
 
 .hero-art {
-
-    width: 50%;
-
-    min-height: 600px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     position: relative;
-}
+    z-index: 2;
 
-
-/* =====================================================
-   CHARACTER CIRCLE
-===================================================== */
-
-.character-orb {
-
-    width:
-        min(600px, 42vw);
-
-    height:
-        min(600px, 42vw);
-
-    min-width: 430px;
-
-    min-height: 430px;
-
-    border:
-        7px solid #ffffff;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 255, 255, 0.05);
+    min-width: 0;
 
     display: flex;
 
@@ -530,94 +375,131 @@ a {
     justify-content: center;
 
     overflow: hidden;
-
-    position: relative;
-
-    box-shadow:
-        0 0 0 18px rgba(255, 255, 255, 0.06),
-        0 20px 45px rgba(0, 90, 150, 0.12);
 }
 
 
 /* =====================================================
-   DORAEMON IMAGE
+   DORAEMON CHARACTER ORB
 ===================================================== */
 
-.character-orb img {
+.character-orb {
+    width: min(520px, 100%);
+    height: 520px;
 
-    width: 88%;
+    display: flex;
 
-    height: 88%;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #66d7ff,
+            #078ed4
+        );
+
+    border: 8px solid white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 15px rgba(255,255,255,0.10),
+        0 25px 60px rgba(0,50,100,0.25);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* DORAEMON IMAGE */
+
+.doraemon-face {
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
 
     object-fit: contain;
 
     display: block;
-
-    position: relative;
-
-    z-index: 3;
-
-    filter:
-        drop-shadow(
-            0 18px 18px
-            rgba(0, 70, 120, 0.18)
-        );
-
-    transition:
-        transform 0.35s ease;
-}
-
-
-.character-orb:hover img {
-
-    transform:
-        scale(1.05);
 }
 
 
 /* =====================================================
-   QUICK SECTION
+   FLOATING ANIMATION
 ===================================================== */
 
-.quick-section {
+@keyframes floating {
 
-    width: 90%;
+    0% {
+        transform: translateY(0);
+    }
 
-    max-width: 1600px;
+    50% {
+        transform: translateY(-15px);
+    }
 
-    margin: 70px auto;
+    100% {
+        transform: translateY(0);
+    }
 
-    color: #07558a;
 }
 
 
+/* =====================================================
+   SECTION
+===================================================== */
+
+.explore,
+.gadget-section,
+.favorite-section {
+    width: 90%;
+
+    max-width: 1450px;
+
+    margin: 70px auto;
+}
+
 .section-title {
+    margin-bottom: 30px;
+}
 
-    text-align: center;
+.section-title span {
+    color: #0797dd;
 
-    font-size: 32px;
+    font-size: 11px;
 
     font-weight: 900;
 
-    margin-bottom: 35px;
-
-    color: #07558a;
+    letter-spacing: 2px;
 }
 
+.section-title h2 {
+    margin-top: 8px;
 
-.section-title span {
+    font-size: clamp(
+        30px,
+        4vw,
+        48px
+    );
 
-    margin:
-        0 8px;
+    color: #073b70;
+}
+
+.section-title p {
+    margin-top: 8px;
+
+    color: #658397;
 }
 
 
 /* =====================================================
-   QUICK GRID
+   FEATURE GRID
 ===================================================== */
 
-.quick-grid {
-
+.feature-grid {
     display: grid;
 
     grid-template-columns:
@@ -627,60 +509,297 @@ a {
 }
 
 
-.quick-card {
+/* FEATURE CARD */
 
-    padding: 30px;
+.feature-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 25px;
 
     border-radius: 22px;
 
-    background:
-        #ffffff;
+    background: rgba(255,255,255,0.85);
 
-    border:
-        1px solid #dceff8;
+    border: 1px solid #c9eafa;
+
+    text-decoration: none;
+
+    color: #073b70;
 
     box-shadow:
-        0 10px 30px rgba(0, 90, 140, 0.08);
+        0 15px 40px rgba(0,80,130,0.07);
+
+    overflow: hidden;
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
+.feature-card::before {
+    content: "";
 
-.quick-card:hover {
+    position: absolute;
 
-    transform:
-        translateY(-7px);
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #e3f8ff;
+
+    right: -35px;
+    bottom: -35px;
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
 
     box-shadow:
-        0 18px 40px rgba(0, 90, 140, 0.14);
+        0 25px 50px rgba(0,100,160,0.14);
+}
+
+.feature-card:hover::before {
+    transform: scale(1.5);
 }
 
 
-.quick-icon {
+/* FEATURE ICON */
 
+.feature-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #e6f8ff;
+
+    font-size: 28px;
+}
+
+
+/* FEATURE TITLE */
+
+.feature-card h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 20px;
+
+    font-size: 22px;
+}
+
+
+/* FEATURE TEXT */
+
+.feature-card p {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 8px;
+
+    color: #668093;
+
+    line-height: 1.6;
+}
+
+
+/* ARROW */
+
+.card-arrow {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    font-size: 25px;
+
+    color: #0797dd;
+}
+
+
+/* =====================================================
+   GADGET SECTION
+===================================================== */
+
+.gadget-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* GADGET CARD */
+
+.gadget-card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #c9eafa;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 12px 35px rgba(0,70,120,0.06);
+}
+
+.gadget-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #35baf3;
+
+    box-shadow:
+        0 20px 40px rgba(0,100,160,0.12);
+}
+
+
+/* GADGET ICON */
+
+.gadget-card > div {
     font-size: 42px;
 
     margin-bottom: 15px;
 }
 
 
-.quick-card h3 {
+/* GADGET TITLE */
 
-    font-size: 22px;
-
-    margin-bottom: 8px;
-
-    color: #07558a;
+.gadget-card h3 {
+    font-size: 19px;
 }
 
 
-.quick-card p {
+/* GADGET TEXT */
 
-    color: #628096;
+.gadget-card p {
+    margin-top: 8px;
 
-    font-size: 15px;
+    color: #6a8292;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FAVORITE SECTION
+===================================================== */
+
+.favorite-section {
+    margin-top: 90px;
+}
+
+
+/* FAVORITE GRID */
+
+.favorite-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* FAVORITE CARD */
+
+.favorite-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 140px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #c9eafa;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: #073b70;
+
+    box-shadow:
+        0 12px 35px rgba(0,70,120,0.06);
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #35baf3;
+
+    box-shadow:
+        0 20px 45px rgba(0,100,160,0.12);
+}
+
+
+/* FAVORITE NUMBER */
+
+.favorite-number {
+    font-size: 32px;
+
+    font-weight: 900;
+
+    color: #20a8f5;
+
+    opacity: 0.35;
+}
+
+
+/* FAVORITE TITLE */
+
+.favorite-card h3 {
+    font-size: 20px;
+}
+
+
+/* FAVORITE TEXT */
+
+.favorite-card p {
+    margin-top: 7px;
+
+    color: #6a8292;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* FAVORITE ARROW */
+
+.favorite-card .card-arrow {
+    right: 18px;
+    bottom: 18px;
 }
 
 
@@ -688,251 +807,361 @@ a {
    FOOTER
 ===================================================== */
 
-.footer {
+footer {
+    margin-top: 80px;
 
-    background:
-        #07558a;
-
-    padding:
-        45px 20px;
+    padding: 35px 20px;
 
     text-align: center;
+
+    background: #064d87;
+
+    color: white;
 }
 
+.footer-logo {
+    font-size: 20px;
 
-.footer-content h2 {
+    font-weight: 900;
 
-    font-size: 26px;
-
-    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
+footer p {
+    margin-top: 8px;
 
-.footer-content p {
-
-    color:
-        rgba(255, 255, 255, 0.85);
-
-    font-size: 14px;
+    opacity: 0.8;
 }
 
-
-.footer-line {
-
-    width: 80px;
-
-    height: 3px;
-
-    background: #22aaf0;
-
-    margin:
-        22px auto;
+.copyright {
+    font-size: 12px;
 }
 
 
 /* =====================================================
-   RESPONSIVE - TABLET
+   TABLET
 ===================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
 
-    .nav-container {
+    .hero {
+        grid-template-columns: 45% 55%;
 
-        width: 94%;
+        padding: 45px;
+    }
+
+    .character-orb {
+        width: 440px;
+        height: 440px;
+    }
+
+    #nav a {
+        padding: 9px 8px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALLER TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .hero {
+        grid-template-columns: 45% 55%;
+
+        padding: 40px;
+    }
+
+    .character-orb {
+        width: 390px;
+        height: 390px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gadget-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .favorite-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    .topbar {
+        min-height: 62px;
+
+        padding:
+            9px 4%;
+    }
+
+    .logo {
+        font-size: 19px;
     }
 
 
-    .nav-menu {
+    /* MENU BUTTON */
 
-        gap: 2px;
+    .menu-btn {
+        display: block;
     }
 
 
-    .nav-link {
+    /* MOBILE NAV */
 
-        padding: 0 9px;
+    #nav {
+        display: none;
+
+        position: absolute;
+
+        top: 62px;
+
+        left: 10px;
+        right: 10px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        background: #064d87;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    #nav.show {
+        display: flex;
+    }
+
+    #nav a {
+        width: 100%;
+
+        padding: 13px;
 
         font-size: 14px;
     }
 
 
-    .hero {
-
-        width: 94%;
-    }
-
-
-    .hero-content {
-
-        padding:
-            50px 40px;
-    }
-
-
-    .hero-text h1 {
-
-        font-size: 58px;
-    }
-
-
-    .character-orb {
-
-        min-width: 380px;
-
-        min-height: 380px;
-
-        width: 40vw;
-
-        height: 40vw;
-    }
-
-}
-
-
-/* =====================================================
-   RESPONSIVE - MOBILE
-===================================================== */
-
-@media (max-width: 800px) {
-
-    .navbar {
-
-        height: auto;
-
-        min-height: 70px;
-    }
-
-
-    .nav-container {
-
-        padding:
-            14px 0;
-
-        flex-direction: column;
-
-        gap: 12px;
-    }
-
-
-    .logo {
-
-        font-size: 24px;
-    }
-
-
-    .nav-menu {
-
-        width: 100%;
-
-        overflow-x: auto;
-
-        justify-content: flex-start;
-
-        padding-bottom: 5px;
-    }
-
-
-    .nav-link {
-
-        flex-shrink: 0;
-
-        font-size: 13px;
-
-        padding: 0 10px;
-    }
-
+    /* =================================================
+       HERO
+    ================================================= */
 
     .hero {
-
         width: 94%;
 
-        margin-top: 20px;
+        margin:
+            14px auto;
 
-        border-radius: 25px;
-    }
-
-
-    .hero-content {
+        padding:
+            30px 20px;
 
         min-height: auto;
 
-        padding:
-            45px 25px;
+        grid-template-columns: 1fr;
 
+        border-radius: 24px;
+    }
+
+
+    /* HERO IMAGE FIRST */
+
+    .hero-art {
+        order: -1;
+
+        margin-bottom: 25px;
+
+        overflow: visible;
+    }
+
+
+    /* DORAEMON */
+
+    .character-orb {
+        width: 280px;
+        height: 280px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                #66d7ff,
+                #078ed4
+            );
+
+        border: 8px solid white;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 0 0 15px rgba(255,255,255,0.12),
+            0 25px 60px rgba(0,50,100,0.25);
+
+        animation: floating 4s ease-in-out infinite;
+    }
+
+    .doraemon-face {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+    }
+
+
+    /* HERO TITLE */
+
+    .hero h1 {
+        font-size: 43px;
+
+        line-height: 1.05;
+    }
+
+
+    /* HERO TEXT */
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .hero-buttons {
         flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
 
         text-align: center;
     }
 
 
-    .hero-text {
+    /* =================================================
+       SECTIONS
+    ================================================= */
 
-        width: 100%;
+    .explore,
+    .gadget-section,
+    .favorite-section {
+        width: 94%;
+
+        margin:
+            50px auto;
+    }
+
+    .section-title h2 {
+        font-size: 31px;
     }
 
 
-    .project-badge {
+    /* =================================================
+       FEATURE
+    ================================================= */
 
-        font-size: 12px;
+    .feature-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .feature-card {
+        min-height: 180px;
+
+        padding: 20px;
     }
 
 
-    .hero-text h1 {
+    /* =================================================
+       GADGET
+    ================================================= */
 
-        font-size: 48px;
+    .gadget-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
 
-        letter-spacing: -1px;
+        gap: 12px;
     }
 
+    .gadget-card {
+        padding: 18px;
+    }
 
-    .hero-description {
+    .gadget-card > div {
+        font-size: 32px;
+    }
 
+    .gadget-card h3 {
         font-size: 16px;
     }
 
-
-    .hero-buttons {
-
-        justify-content: center;
-
-        flex-wrap: wrap;
+    .gadget-card p {
+        font-size: 13px;
     }
 
 
-    .hero-button {
+    /* =================================================
+       FAVORITES
+    ================================================= */
 
-        min-width: 170px;
+    .favorite-grid {
+        grid-template-columns: 1fr;
 
-        height: 56px;
+        gap: 14px;
+    }
+
+    .favorite-card {
+        min-height: 125px;
+
+        padding: 20px;
     }
 
 
-    .hero-art {
+    /* =================================================
+       FOOTER
+    ================================================= */
 
-        width: 100%;
-
-        min-height: auto;
-
+    footer {
         margin-top: 50px;
-    }
 
-
-    .character-orb {
-
-        width: 330px;
-
-        height: 330px;
-
-        min-width: 0;
-
-        min-height: 0;
-    }
-
-
-    .quick-grid {
-
-        grid-template-columns:
-            1fr;
+        padding:
+            28px 15px;
     }
 
 }
@@ -942,39 +1171,32 @@ a {
    SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
 
-    .hero-text h1 {
-
-        font-size: 39px;
+    .logo {
+        font-size: 17px;
     }
 
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        width: 100%;
+    .hero {
+        padding:
+            25px 16px;
     }
 
-
-    .hero-button {
-
-        width: 100%;
+    .hero h1 {
+        font-size: 36px;
     }
-
 
     .character-orb {
-
-        width: 280px;
-
-        height: 280px;
+        width: 220px;
+        height: 220px;
     }
 
+    .gadget-grid {
+        grid-template-columns: 1fr;
+    }
 
-    .section-title {
-
-        font-size: 25px;
+    .favorite-number {
+        font-size: 26px;
     }
 
 }
