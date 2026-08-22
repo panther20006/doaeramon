@@ -32,67 +32,101 @@ body {
 
 .topbar {
     width: 100%;
-    min-height: 72px;
+    min-height: 64px;
+
+    padding: 8px 4%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #dceff8;
 
     position: sticky;
     top: 0;
+
     z-index: 1000;
 
-    box-shadow: 0 4px 20px rgba(0, 120, 180, 0.08);
+    background: rgba(4, 76, 132, 0.97);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 5px 25px rgba(0, 60, 100, 0.15);
 }
 
 
-/* LOGO */
+/* =========================================================
+   DESKTOP LOGO
+   LEFT SIDE
+========================================================= */
 
 .logo {
-    text-decoration: none;
-    color: #087dcc;
+    color: white;
 
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 900;
+
     letter-spacing: 1px;
 
     white-space: nowrap;
-}
 
-
-/* NAV */
-
-#nav {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
 
-#nav a {
-    text-decoration: none;
-
-    color: #435466;
-
-    padding: 11px 14px;
-
-    border-radius: 12px;
-
-    font-size: 14px;
-    font-weight: 700;
+    flex-shrink: 0;
 
     transition: 0.25s ease;
 }
 
-#nav a:hover,
-#nav a.active {
-    color: #087dcc;
-    background: #e8f7ff;
+.logo:hover {
+    transform: scale(1.03);
 }
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   RIGHT SIDE
+========================================================= */
+
+#nav {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    flex-shrink: 0;
+}
+
+#nav a {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    white-space: nowrap;
+
+    transition: 0.25s ease;
+}
+
+#nav a:hover {
+    background: #20a8f5;
+
+    transform: translateY(-2px);
+}
+
+#nav a.active {
+    background: #20a8f5;
+
+    box-shadow:
+        0 0 15px rgba(32, 168, 245, 0.45);
+}
+
 
 
 /* MENU BUTTON */

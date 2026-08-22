@@ -2,12 +2,19 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Doraemon Test</title>
 
+<link rel="stylesheet" href="css/style.css">
+
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
     margin:0;
@@ -21,60 +28,118 @@ body{
     color:#172b3d;
 }
 
-/* ================= HEADER ================= */
 
-.header{
-    height:70px;
-    padding:0 6%;
+/* =========================================================
+   TOP NAVIGATION BAR
+========================================================= */
+
+.topbar{
+    width:100%;
+    min-height:64px;
+
+    padding:8px 4%;
 
     display:flex;
     align-items:center;
-    justify-content:space-between;
-
-    background:#fff;
-
-    border-bottom:1px solid #dceef7;
 
     position:sticky;
     top:0;
+
     z-index:1000;
+
+    background:rgba(4,76,132,0.97);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 5px 25px rgba(0,60,100,0.15);
 }
+
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo{
-    text-decoration:none;
-    color:#087dcc;
+    color:white;
+
     font-size:23px;
     font-weight:900;
-}
 
-.nav{
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
     display:flex;
-    gap:6px;
+    align-items:center;
+
+    flex-shrink:0;
+
+    transition:0.25s ease;
+
+    text-decoration:none;
 }
 
-.nav a{
-    text-decoration:none;
-    color:#526777;
-    font-size:13px;
+.logo:hover{
+    transform:scale(1.03);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+#nav{
+    margin-left:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:4px;
+
+    flex-shrink:0;
+}
+
+#nav a{
+    color:white;
+
+    font-size:14px;
     font-weight:700;
 
     padding:10px 12px;
+
     border-radius:10px;
 
-    transition:.2s;
+    white-space:nowrap;
+
+    transition:0.25s ease;
+
+    text-decoration:none;
 }
 
-.nav a:hover,
-.nav a.active{
-    background:#e7f7ff;
-    color:#087dcc;
+#nav a:hover{
+    background:#20a8f5;
+
+    transform:translateY(-2px);
+}
+
+#nav a.active{
+    background:#20a8f5;
+
+    box-shadow:
+        0 0 15px rgba(32,168,245,0.45);
 }
 
 
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     text-align:center;
+
     padding:45px 20px 35px;
 
     background:
@@ -117,7 +182,9 @@ body{
 }
 
 
-/* ================= TEST ================= */
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container{
     width:92%;
@@ -127,10 +194,13 @@ body{
 }
 
 
-/* ================= INFO ================= */
+/* =========================================================
+   TEST INFO
+========================================================= */
 
 .test-info{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
 
     gap:12px;
@@ -149,7 +219,8 @@ body{
 
     text-align:center;
 
-    box-shadow:0 6px 20px rgba(0,100,160,.06);
+    box-shadow:
+        0 6px 20px rgba(0,100,160,.06);
 }
 
 .info small{
@@ -169,7 +240,9 @@ body{
 }
 
 
-/* ================= NAME ================= */
+/* =========================================================
+   NAME BOX
+========================================================= */
 
 .name-box{
     background:#fff;
@@ -213,7 +286,9 @@ body{
 }
 
 
-/* ================= SECTION ================= */
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section{
     background:#fff;
@@ -226,7 +301,8 @@ body{
 
     overflow:hidden;
 
-    box-shadow:0 6px 20px rgba(0,100,160,.05);
+    box-shadow:
+        0 6px 20px rgba(0,100,160,.05);
 }
 
 .section-title{
@@ -252,7 +328,9 @@ body{
 }
 
 
-/* ================= QUESTION ================= */
+/* =========================================================
+   QUESTION
+========================================================= */
 
 .question{
     padding:18px;
@@ -275,7 +353,9 @@ body{
 }
 
 
-/* ================= OPTIONS ================= */
+/* =========================================================
+   OPTIONS
+========================================================= */
 
 .options{
     display:grid;
@@ -307,6 +387,7 @@ body{
 
 .option:hover{
     background:#eaf8ff;
+
     border-color:#9dd9ef;
 }
 
@@ -315,7 +396,9 @@ body{
 }
 
 
-/* ================= FILL BLANK ================= */
+/* =========================================================
+   FILL OPTIONS
+========================================================= */
 
 .fill-options{
     display:grid;
@@ -354,7 +437,9 @@ body{
 }
 
 
-/* ================= BUTTON ================= */
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
 .submit-area{
     text-align:center;
@@ -380,7 +465,7 @@ body{
     cursor:pointer;
 
     box-shadow:
-    0 8px 22px rgba(8,125,204,.25);
+        0 8px 22px rgba(8,125,204,.25);
 }
 
 .submit:hover{
@@ -388,7 +473,9 @@ body{
 }
 
 
-/* ================= RESULT ================= */
+/* =========================================================
+   RESULT
+========================================================= */
 
 .result{
     display:none;
@@ -453,7 +540,9 @@ body{
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     text-align:center;
@@ -480,22 +569,34 @@ footer p{
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:700px){
 
-    .header{
-        height:60px;
+    .topbar{
+        min-height:60px;
 
-        padding:0 15px;
-    }
+        padding:8px 15px;
 
-    .nav{
-        display:none;
+        overflow-x:auto;
     }
 
     .logo{
         font-size:19px;
+    }
+
+    #nav{
+        margin-left:auto;
+
+        gap:3px;
+    }
+
+    #nav a{
+        font-size:12px;
+
+        padding:8px 9px;
     }
 
     .hero{
@@ -540,6 +641,7 @@ footer p{
 
     .option{
         font-size:12px;
+
         padding:10px;
     }
 
@@ -561,34 +663,52 @@ footer p{
 
 </head>
 
+
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     TOP NAVIGATION
+===================================================== -->
 
-<header class="header">
+<header class="topbar">
 
     <a href="index.html" class="logo">
         DORAEMON 🌐
     </a>
 
-    <nav class="nav">
+    <nav id="nav">
 
-        <a href="index.html">🏠 Home</a>
+        <a href="index.html">
+            🏠 Home
+        </a>
 
-        <a href="movies.html">🎬 Movies</a>
+        <a href="movies.html">
+            🎬 Movies
+        </a>
 
-        <a href="episodes.html">📺 Episodes</a>
+        <a href="episodes.html">
+            📺 Episodes
+        </a>
 
-        <a href="characters.html">👥 Characters</a>
+        <a href="characters.html">
+            👥 Characters
+        </a>
 
-        <a href="wallpapers.html">🖼️ Wallpapers</a>
+        <a href="wallpaper.html">
+            🖼️ Wallpapers
+        </a>
 
-        <a href="music.html">🎵 Music</a>
+        <a href="music.html">
+            🎵 Music
+        </a>
+
+        <a href="gallery.html">
+            📸 Gallery
+        </a>
 
         <a href="test.html" class="active">
-            <span class="nav-icon">📝</span>
-            Test
+            📝 Test
         </a>
 
     </nav>
@@ -596,7 +716,9 @@ footer p{
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -618,7 +740,9 @@ footer p{
 <main class="container">
 
 
-<!-- ================= TEST INFO ================= -->
+<!-- =====================================================
+     TEST INFO
+===================================================== -->
 
 <div class="test-info">
 
@@ -657,7 +781,9 @@ footer p{
 </div>
 
 
-<!-- ================= NAME ================= -->
+<!-- =====================================================
+     NAME
+===================================================== -->
 
 <div class="name-box">
 
@@ -1016,7 +1142,7 @@ footer p{
 
 
 <!-- =====================================================
-     SECTION C - FILL BLANK OPTIONS
+     SECTION C
 ===================================================== -->
 
 <section class="section">
@@ -1407,7 +1533,9 @@ footer p{
 </section>
 
 
-<!-- ================= RESULT ================= -->
+<!-- =====================================================
+     RESULT
+===================================================== -->
 
 <div class="result" id="result">
 
@@ -1436,7 +1564,9 @@ footer p{
 </div>
 
 
-<!-- ================= SUBMIT ================= -->
+<!-- =====================================================
+     SUBMIT
+===================================================== -->
 
 <div class="submit-area">
 
@@ -1453,7 +1583,9 @@ footer p{
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1512,7 +1644,6 @@ let timeLeft = 30 * 60;
 const timer =
     document.getElementById("timer");
 
-
 const timerInterval =
 setInterval(function(){
 
@@ -1523,7 +1654,6 @@ setInterval(function(){
 
     let seconds =
         timeLeft % 60;
-
 
     timer.textContent =
         String(minutes).padStart(2,"0")
@@ -1627,6 +1757,7 @@ function submitTest(){
 }
 
 </script>
+
 
 </body>
 

@@ -1,20 +1,17 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Doraemon World - Hindi Music</title>
 
 <style>
 
 /* =====================================================
-   DORAEMON WORLD - HINDI MUSIC
+   RESET
 ===================================================== */
 
 *{
@@ -35,69 +32,101 @@ body{
 
 
 /* =====================================================
-   DESKTOP HEADER
+   TOP NAVIGATION
 ===================================================== */
 
 .topbar{
-    min-height:72px;
-    padding:0 6%;
+    width:100%;
+    min-height:64px;
+
+    padding:8px 4%;
 
     display:flex;
     align-items:center;
-    justify-content:space-between;
 
     position:sticky;
     top:0;
+
     z-index:1000;
 
-    background:rgba(255,255,255,.97);
+    background:rgba(4,76,132,.97);
 
-    border-bottom:1px solid #dceff8;
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
 
-    box-shadow:0 4px 20px rgba(0,120,180,.08);
+    box-shadow:
+        0 5px 25px rgba(0,60,100,.15);
 }
+
+
+/* LOGO */
 
 .logo{
-    color:#087dcc;
+    color:white;
+
+    font-size:23px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
+    display:flex;
+    align-items:center;
+
+    flex-shrink:0;
+
     text-decoration:none;
 
-    font-size:24px;
-    font-weight:900;
-    letter-spacing:1px;
+    transition:.25s ease;
 }
 
+.logo:hover{
+    transform:scale(1.03);
+}
+
+
+/* NAV */
+
 #nav{
+    margin-left:auto;
+
     display:flex;
-    gap:6px;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:4px;
+
+    flex-shrink:0;
 }
 
 #nav a{
-    color:#435466;
-    text-decoration:none;
-
-    padding:11px 13px;
-
-    border-radius:12px;
+    color:white;
 
     font-size:14px;
     font-weight:700;
 
-    transition:.25s;
+    padding:10px 12px;
+
+    border-radius:10px;
+
+    white-space:nowrap;
+
+    text-decoration:none;
+
+    transition:.25s ease;
 }
 
-#nav a:hover,
+#nav a:hover{
+    background:#20a8f5;
+    transform:translateY(-2px);
+}
+
 #nav a.active{
-    color:#087dcc;
-    background:#e8f7ff;
-}
+    background:#20a8f5;
 
-
-/* =====================================================
-   MOBILE HEADER
-===================================================== */
-
-.mobile-header{
-    display:none;
+    box-shadow:
+        0 0 15px rgba(32,168,245,.45);
 }
 
 
@@ -106,87 +135,352 @@ body{
 ===================================================== */
 
 .hero{
-    text-align:center;
 
-    padding:70px 20px 55px;
+    min-height:570px;
+
+    padding:70px 8% 60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
 
     background:
+
         radial-gradient(
-            circle at 20% 20%,
-            rgba(0,170,255,.14),
+            circle at 15% 20%,
+            rgba(0,170,255,.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(0,120,255,.16),
             transparent 35%
         ),
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(0,100,255,.12),
-            transparent 35%
-        ),
+
         linear-gradient(
-            180deg,
-            #e9f9ff,
-            #f8fdff
+            135deg,
+            #dff6ff 0%,
+            #eefbff 48%,
+            #f7fdff 100%
         );
 }
 
+
+/* HERO LIGHT EFFECT */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-150px;
+    top:-180px;
+
+    background:rgba(55,180,255,.12);
+
+    border-radius:50%;
+
+    filter:blur(20px);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    width:55%;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* BADGE */
+
 .badge{
-    display:inline-block;
 
-    padding:8px 16px;
+    display:inline-flex;
 
-    background:#fff;
+    align-items:center;
+
+    padding:9px 18px;
+
+    background:white;
 
     border-radius:50px;
 
     color:#0785d1;
 
     font-size:11px;
+
     font-weight:900;
 
-    letter-spacing:1px;
+    letter-spacing:1.2px;
 
-    margin-bottom:18px;
+    margin-bottom:22px;
 
-    box-shadow:0 8px 25px rgba(0,130,200,.1);
+    box-shadow:
+        0 8px 25px rgba(0,130,200,.10);
 }
 
+
+/* TITLE */
+
 .hero h1{
+
     color:#142b42;
 
-    font-size:clamp(42px,6vw,70px);
+    font-size:clamp(
+        48px,
+        6vw,
+        82px
+    );
 
-    line-height:1.05;
+    line-height:.98;
 
-    margin-bottom:17px;
+    font-weight:900;
+
+    letter-spacing:-2px;
+
+    margin-bottom:20px;
 }
 
 .hero h1 strong{
+
+    display:block;
+
     color:#0785d1;
 }
 
+
+/* DESCRIPTION */
+
 .hero p{
-    max-width:700px;
 
-    margin:auto;
+    max-width:650px;
 
-    color:#65798a;
+    color:#55758d;
 
     line-height:1.7;
 
-    font-size:15px;
+    font-size:16px;
+
+    margin-bottom:28px;
+}
+
+
+/* HERO BUTTON */
+
+.hero-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:13px 22px;
+
+    border-radius:12px;
+
+    background:#078bd6;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 10px 25px rgba(0,120,190,.20);
+
+    transition:.25s ease;
+}
+
+.hero-btn:hover{
+
+    background:#066fae;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,120,190,.25);
 }
 
 
 /* =====================================================
-   SEARCH / FILTER
+   DORAEMON HERO IMAGE
+===================================================== */
+
+.hero-art{
+
+    width:42%;
+
+    min-height:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* IMAGE GLOW */
+
+.hero-art::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,160,255,.22),
+            rgba(0,160,255,.04) 55%,
+            transparent 70%
+        );
+
+    filter:blur(5px);
+
+    z-index:-1;
+}
+
+
+/* DORAEMON IMAGE */
+
+.hero-art img{
+
+    width:min(
+        420px,
+        90%
+    );
+
+    max-height:440px;
+
+    object-fit:contain;
+
+    display:block;
+
+    filter:
+        drop-shadow(
+            0 25px 25px
+            rgba(0,90,160,.18)
+        );
+
+    animation:
+        doraemonFloat 4s ease-in-out infinite;
+}
+
+
+/* FLOAT ANIMATION */
+
+@keyframes doraemonFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   COLLECTION SECTION
+===================================================== */
+
+.music-section{
+
+    width:88%;
+
+    max-width:1400px;
+
+    margin:50px auto 90px;
+}
+
+
+/* TITLE */
+
+.section-title{
+
+    margin-bottom:25px;
+}
+
+.section-title span{
+
+    color:#078bd6;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.section-title h2{
+
+    color:#172d43;
+
+    font-size:32px;
+
+    margin-top:7px;
+}
+
+.section-title p{
+
+    color:#718393;
+
+    font-size:14px;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   SEARCH
 ===================================================== */
 
 .controls{
+
     width:88%;
+
     max-width:1300px;
 
     margin:30px auto 10px;
 
     display:flex;
+
     align-items:center;
 
     gap:12px;
@@ -195,7 +489,9 @@ body{
 }
 
 .search{
+
     flex:1;
+
     min-width:250px;
 
     height:48px;
@@ -208,30 +504,39 @@ body{
 
     outline:none;
 
-    background:#fff;
+    background:white;
 
     font-size:14px;
 
-    box-shadow:0 5px 20px rgba(0,100,160,.06);
+    box-shadow:
+        0 5px 20px rgba(0,100,160,.06);
 }
 
 .search:focus{
+
     border-color:#078bd6;
 
     box-shadow:
-        0 0 0 4px rgba(7,139,214,.1);
+        0 0 0 4px rgba(7,139,214,.10);
 }
 
+
+/* FILTERS */
+
 .filters{
+
     display:flex;
+
     gap:7px;
+
     flex-wrap:wrap;
 }
 
 .filter{
+
     border:1px solid #d5eaf5;
 
-    background:#fff;
+    background:white;
 
     color:#53687a;
 
@@ -242,6 +547,7 @@ body{
     cursor:pointer;
 
     font-size:12px;
+
     font-weight:800;
 
     transition:.25s;
@@ -249,51 +555,12 @@ body{
 
 .filter:hover,
 .filter.active{
+
     background:#078bd6;
-    color:#fff;
+
+    color:white;
 
     border-color:#078bd6;
-}
-
-
-/* =====================================================
-   MUSIC SECTION
-===================================================== */
-
-.music-section{
-    width:88%;
-    max-width:1400px;
-
-    margin:45px auto 90px;
-}
-
-.section-title{
-    margin-bottom:25px;
-}
-
-.section-title span{
-    color:#078bd6;
-
-    font-size:11px;
-    font-weight:900;
-
-    letter-spacing:2px;
-}
-
-.section-title h2{
-    color:#172d43;
-
-    font-size:32px;
-
-    margin-top:7px;
-}
-
-.section-title p{
-    color:#718393;
-
-    font-size:14px;
-
-    margin-top:7px;
 }
 
 
@@ -302,6 +569,7 @@ body{
 ===================================================== */
 
 .song-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -311,12 +579,11 @@ body{
 }
 
 
-/* =====================================================
-   SONG CARD
-===================================================== */
+/* CARD */
 
 .song-card{
-    background:#fff;
+
+    background:white;
 
     border:1px solid #e0eff6;
 
@@ -331,6 +598,7 @@ body{
 }
 
 .song-card:hover{
+
     transform:translateY(-6px);
 
     border-color:#8bd6f6;
@@ -340,15 +608,16 @@ body{
 }
 
 
-/* =====================================================
-   COVER
-===================================================== */
+/* COVER */
 
 .song-cover{
+
     height:190px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     position:relative;
@@ -362,6 +631,7 @@ body{
 }
 
 .number{
+
     position:absolute;
 
     top:12px;
@@ -371,6 +641,7 @@ body{
     height:35px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -381,20 +652,24 @@ body{
     color:#087dcc;
 
     font-size:10px;
+
     font-weight:900;
 }
 
 .music-icon{
+
     font-size:65px;
 
     transition:.3s;
 }
 
 .song-card:hover .music-icon{
+
     transform:scale(1.1);
 }
 
 .play-btn{
+
     position:absolute;
 
     right:12px;
@@ -420,15 +695,15 @@ body{
 }
 
 
-/* =====================================================
-   SONG INFO
-===================================================== */
+/* INFO */
 
 .song-info{
+
     padding:15px;
 }
 
 .song-info h3{
+
     color:#20384e;
 
     font-size:15px;
@@ -439,6 +714,7 @@ body{
 }
 
 .artist{
+
     color:#718393;
 
     font-size:12px;
@@ -447,6 +723,7 @@ body{
 }
 
 .type{
+
     display:inline-block;
 
     margin-top:10px;
@@ -466,138 +743,22 @@ body{
 
 
 /* =====================================================
-   NO RESULT
-===================================================== */
-
-.no-result{
-    display:none;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    border-radius:20px;
-
-    background:#fff;
-
-    border:1px solid #e0eff6;
-
-    color:#718393;
-}
-
-
-/* =====================================================
-   PLAYER
-===================================================== */
-
-.player{
-    position:fixed;
-
-    left:50%;
-    bottom:25px;
-
-    transform:
-        translateX(-50%)
-        translateY(130px);
-
-    width:min(760px,90%);
-
-    padding:13px 16px;
-
-    display:flex;
-    align-items:center;
-
-    gap:13px;
-
-    background:rgba(255,255,255,.98);
-
-    border:1px solid #d5edf7;
-
-    border-radius:18px;
-
-    box-shadow:
-        0 15px 45px rgba(0,80,130,.18);
-
-    z-index:1500;
-
-    transition:.35s;
-}
-
-.player.show{
-    transform:
-        translateX(-50%)
-        translateY(0);
-}
-
-.player-icon{
-    width:45px;
-    height:45px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#e5f7ff;
-
-    border-radius:12px;
-
-    font-size:21px;
-}
-
-.player-info{
-    flex:1;
-    min-width:0;
-}
-
-.player-info strong{
-    display:block;
-
-    color:#1c344a;
-
-    font-size:14px;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.player-info small{
-    color:#7d8f9d;
-
-    font-size:11px;
-}
-
-.close-player{
-    width:34px;
-    height:34px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#edf8fd;
-
-    color:#487087;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
    FOOTER
 ===================================================== */
 
 footer{
+
     padding:45px 20px;
 
     text-align:center;
 
-    background:#fff;
+    background:white;
 
     border-top:1px solid #deeff7;
 }
 
 .footer-logo{
+
     color:#087dcc;
 
     font-size:21px;
@@ -608,6 +769,7 @@ footer{
 }
 
 footer p{
+
     color:#7a8c9b;
 
     font-size:13px;
@@ -617,31 +779,30 @@ footer p{
 
 
 /* =====================================================
-   MOBILE BOTTOM NAV
+   MOBILE
 ===================================================== */
 
-.mobile-bottom{
+.mobile-header{
     display:none;
 }
 
 
-/* =====================================================
-   TABLET
-===================================================== */
-
 @media(max-width:1100px){
 
     .song-grid{
+
         grid-template-columns:
             repeat(3,1fr);
     }
 
+    .hero{
+
+        padding-left:6%;
+        padding-right:6%;
+    }
+
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media(max-width:700px){
 
@@ -649,11 +810,18 @@ footer p{
         padding-bottom:70px;
     }
 
+
+    /* DESKTOP NAV HIDE */
+
     .topbar{
         display:none;
     }
 
+
+    /* MOBILE HEADER */
+
     .mobile-header{
+
         display:flex;
 
         height:62px;
@@ -661,22 +829,28 @@ footer p{
         padding:0 15px;
 
         align-items:center;
+
         justify-content:space-between;
 
         position:sticky;
+
         top:0;
 
         z-index:2000;
 
-        background:rgba(255,255,255,.98);
+        background:
+            rgba(255,255,255,.98);
 
-        border-bottom:1px solid #dceff8;
+        border-bottom:
+            1px solid #dceff8;
 
         box-shadow:
-            0 4px 18px rgba(0,100,170,.08);
+            0 4px 18px
+            rgba(0,100,170,.08);
     }
 
     .mobile-header button{
+
         width:40px;
         height:40px;
 
@@ -689,9 +863,12 @@ footer p{
         color:#087dcc;
 
         font-size:19px;
+
+        cursor:pointer;
     }
 
     .mobile-logo{
+
         color:#087dcc;
 
         text-decoration:none;
@@ -704,20 +881,86 @@ footer p{
     }
 
 
+    /* HERO MOBILE */
+
     .hero{
-        padding:48px 20px 40px;
+
+        min-height:auto;
+
+        padding:
+            45px 20px 30px;
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .hero-content{
+
+        width:100%;
+
+        order:1;
+    }
+
+    .badge{
+
+        font-size:9px;
+
+        padding:8px 13px;
+
+        margin-bottom:17px;
     }
 
     .hero h1{
-        font-size:40px;
+
+        font-size:42px;
+
+        letter-spacing:-1px;
+
+        line-height:1;
     }
 
     .hero p{
-        font-size:14px;
+
+        font-size:13px;
+
+        margin:15px auto 20px;
+
+        max-width:500px;
     }
 
 
+    /* IMAGE MOBILE */
+
+    .hero-art{
+
+        width:100%;
+
+        min-height:280px;
+
+        order:2;
+
+        margin-top:5px;
+    }
+
+    .hero-art::before{
+
+        width:270px;
+        height:270px;
+    }
+
+    .hero-art img{
+
+        width:280px;
+
+        max-height:300px;
+    }
+
+
+    /* SEARCH */
+
     .controls{
+
         width:92%;
 
         display:block;
@@ -726,12 +969,14 @@ footer p{
     }
 
     .search{
+
         width:100%;
 
         margin-bottom:12px;
     }
 
     .filters{
+
         overflow-x:auto;
 
         flex-wrap:nowrap;
@@ -740,28 +985,36 @@ footer p{
     }
 
     .filters::-webkit-scrollbar{
+
         display:none;
     }
 
     .filter{
+
         flex:0 0 auto;
 
         white-space:nowrap;
     }
 
 
+    /* MUSIC */
+
     .music-section{
+
         width:92%;
 
-        margin:35px auto 70px;
+        margin:
+            35px auto 70px;
     }
 
     .section-title h2{
+
         font-size:25px;
     }
 
 
     .song-grid{
+
         grid-template-columns:
             repeat(2,1fr);
 
@@ -769,105 +1022,38 @@ footer p{
     }
 
     .song-card{
+
         border-radius:15px;
     }
 
     .song-card:hover{
+
         transform:none;
     }
 
     .song-cover{
+
         height:145px;
     }
 
     .music-icon{
+
         font-size:48px;
     }
 
-    .number{
-        width:29px;
-        height:29px;
-
-        font-size:9px;
-    }
-
     .song-info{
+
         padding:11px;
     }
 
     .song-info h3{
+
         font-size:12px;
     }
 
     .artist{
+
         font-size:10px;
-    }
-
-    .type{
-        font-size:7px;
-    }
-
-
-    .player{
-        width:92%;
-
-        bottom:78px;
-    }
-
-
-    .mobile-bottom{
-        position:fixed;
-
-        left:0;
-        right:0;
-        bottom:0;
-
-        height:68px;
-
-        display:flex;
-
-        align-items:center;
-        justify-content:space-around;
-
-        z-index:3000;
-
-        background:rgba(255,255,255,.98);
-
-        border-top:1px solid #dceff8;
-
-        box-shadow:
-            0 -5px 20px rgba(0,90,150,.10);
-    }
-
-    .mobile-bottom a{
-        flex:1;
-
-        height:100%;
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-        justify-content:center;
-
-        gap:3px;
-
-        text-decoration:none;
-
-        color:#718393;
-
-        font-size:18px;
-    }
-
-    .mobile-bottom small{
-        font-size:9px;
-
-        font-weight:700;
-    }
-
-    .mobile-bottom a.active{
-        color:#087dcc;
     }
 
 }
@@ -880,22 +1066,39 @@ footer p{
 @media(max-width:400px){
 
     .mobile-logo{
+
         font-size:16px;
     }
 
     .hero h1{
-        font-size:35px;
+
+        font-size:36px;
+    }
+
+    .hero-art{
+
+        min-height:240px;
+    }
+
+    .hero-art img{
+
+        width:240px;
+
+        max-height:260px;
     }
 
     .song-grid{
+
         gap:9px;
     }
 
     .song-cover{
+
         height:125px;
     }
 
     .song-info{
+
         padding:9px;
     }
 
@@ -910,7 +1113,7 @@ footer p{
 
 
 <!-- =====================================================
-     DESKTOP HEADER
+     DESKTOP NAVIGATION
 ===================================================== -->
 
 <header class="topbar">
@@ -918,6 +1121,7 @@ footer p{
     <a href="index.html" class="logo">
         DORAEMON 🌐
     </a>
+
 
     <nav id="nav">
 
@@ -948,8 +1152,9 @@ footer p{
         <a href="gallery.html">
             📸 Gallery
         </a>
+
         <a href="test.html">
-                📝 Test
+            📝 Test
         </a>
 
     </nav>
@@ -984,20 +1189,56 @@ footer p{
 
 <section class="hero">
 
-    <div class="badge">
-        🇮🇳 HINDI MUSIC COLLECTION
+
+    <!-- LEFT CONTENT -->
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🎵 HINDI MUSIC COLLECTION
+        </div>
+
+
+        <h1>
+
+            Doraemon
+
+            <strong>
+                Hindi Songs!
+            </strong>
+
+        </h1>
+
+
+        <p>
+
+            Doraemon ke Hindi TV aur movie
+            songs ko ek hi jagah explore karo.
+
+        </p>
+
+
+        <a
+            href="#music"
+            class="hero-btn">
+
+            🎵 Explore Music
+
+        </a>
+
     </div>
 
-    <h1>
-        Doraemon
-        <br>
-        <strong>Hindi Songs!</strong>
-    </h1>
 
-    <p>
-        Doraemon ke Hindi TV aur movie
-        songs ko ek hi jagah explore karo.
-    </p>
+    <!-- RIGHT DORAEMON -->
+
+    <div class="hero-art">
+
+        <img
+            src="images/doraemon-music.png"
+            alt="Doraemon listening to music">
+
+    </div>
+
 
 </section>
 
@@ -1014,24 +1255,33 @@ footer p{
         type="search"
         placeholder="🔍 Hindi song search karo...">
 
+
     <div class="filters">
 
         <button
             class="filter active"
             onclick="setFilter('all',this)">
+
             All
+
         </button>
+
 
         <button
             class="filter"
             onclick="setFilter('tv',this)">
+
             📺 TV
+
         </button>
+
 
         <button
             class="filter"
             onclick="setFilter('movie',this)">
+
             🎬 Movies
+
         </button>
 
     </div>
@@ -1040,12 +1290,13 @@ footer p{
 
 
 <!-- =====================================================
-     SONG SECTION
+     MUSIC COLLECTION
 ===================================================== -->
 
-<main>
+<main id="music">
 
 <section class="music-section">
+
 
     <div class="section-title">
 
@@ -1071,59 +1322,9 @@ footer p{
     </div>
 
 
-    <div
-        id="noResult"
-        class="no-result">
-
-        <h3>
-            Song nahi mila 🎵
-        </h3>
-
-        <p>
-            Dusra title ya keyword search karo.
-        </p>
-
-    </div>
-
 </section>
 
 </main>
-
-
-<!-- =====================================================
-     PLAYER UI
-===================================================== -->
-
-<div
-    id="player"
-    class="player">
-
-    <div class="player-icon">
-        🎵
-    </div>
-
-    <div class="player-info">
-
-        <strong id="playerTitle">
-            Doraemon Hindi Music
-        </strong>
-
-        <small>
-            Audio file connect karne ke liye
-            assets/music/ use karo.
-        </small>
-
-    </div>
-
-    <button
-        class="close-player"
-        onclick="closePlayer()">
-
-        ✕
-
-    </button>
-
-</div>
 
 
 <!-- =====================================================
@@ -1147,47 +1348,10 @@ footer p{
 </footer>
 
 
-<!-- =====================================================
-     MOBILE BOTTOM NAV
-===================================================== -->
-
-<nav class="mobile-bottom">
-
-    <a href="index.html">
-        🏠
-        <small>Home</small>
-    </a>
-
-    <a href="movies.html">
-        🎬
-        <small>Movies</small>
-    </a>
-
-    <a href="episodes.html">
-        📺
-        <small>Episodes</small>
-    </a>
-
-    <a href="characters.html">
-        👥
-        <small>Characters</small>
-    </a>
-
-    <a href="music.html" class="active">
-        🎵
-        <small>Music</small>
-    </a>
-
-</nav>
-
-
 <script>
 
 /* =====================================================
-   HINDI SONG DATABASE
-
-   Keep only songs that you have verified/licensed
-   for your website.
+   SONG DATABASE
 ===================================================== */
 
 const songs = [
@@ -1252,14 +1416,11 @@ const songs = [
 
 
 /* =====================================================
-   RENDER
+   RENDER SONGS
 ===================================================== */
 
 const grid =
     document.getElementById("songGrid");
-
-const noResult =
-    document.getElementById("noResult");
 
 let currentFilter = "all";
 
@@ -1273,9 +1434,8 @@ function renderSongs(){
         .toLowerCase()
         .trim();
 
-    grid.innerHTML = "";
 
-    let count = 0;
+    grid.innerHTML = "";
 
 
     songs.forEach(song => {
@@ -1298,9 +1458,6 @@ function renderSongs(){
 
 
         if(filterMatch && searchMatch){
-
-            count++;
-
 
             const icon =
                 song.type === "movie"
@@ -1350,9 +1507,13 @@ function renderSongs(){
                     </div>
 
                     <span class="type">
-                        ${song.type === "movie"
+
+                        ${
+                            song.type === "movie"
                             ? "Hindi Movie"
-                            : "Hindi TV"}
+                            : "Hindi TV"
+                        }
+
                     </span>
 
                 </div>
@@ -1365,12 +1526,6 @@ function renderSongs(){
         }
 
     });
-
-
-    noResult.style.display =
-        count === 0
-        ? "block"
-        : "none";
 
 }
 
@@ -1407,54 +1562,14 @@ function setFilter(type,button){
 
     button.classList.add("active");
 
+
     renderSongs();
 
 }
 
 
 /* =====================================================
-   PLAYER
-===================================================== */
-
-function playSong(id){
-
-    const song =
-        songs.find(
-            item => item.id === id
-        );
-
-
-    if(!song) return;
-
-
-    document
-    .getElementById("playerTitle")
-    .textContent =
-        song.title;
-
-
-    document
-    .getElementById("player")
-    .classList.add("show");
-
-}
-
-
-/* =====================================================
-   CLOSE PLAYER
-===================================================== */
-
-function closePlayer(){
-
-    document
-    .getElementById("player")
-    .classList.remove("show");
-
-}
-
-
-/* =====================================================
-   SEARCH BUTTON
+   MOBILE SEARCH
 ===================================================== */
 
 function focusSearch(){
@@ -1462,18 +1577,23 @@ function focusSearch(){
     const search =
         document.getElementById("search");
 
+
     search.focus();
 
+
     window.scrollTo({
-        top:250,
+
+        top:650,
+
         behavior:"smooth"
+
     });
 
 }
 
 
 /* =====================================================
-   MOBILE MENU
+   MOBILE HOME
 ===================================================== */
 
 function goHome(){
@@ -1485,7 +1605,7 @@ function goHome(){
 
 
 /* =====================================================
-   INITIAL LOAD
+   INITIAL
 ===================================================== */
 
 renderSongs();
@@ -1496,4 +1616,3 @@ renderSongs();
 </body>
 
 </html>
-```
