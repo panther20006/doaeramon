@@ -141,8 +141,154 @@ body{
    MOBILE HEADER
 ========================================================= */
 
-.mobile-header{
-    display:none;
+/* =========================================================
+   MOBILE RESPONSIVE - TEST PAGE
+========================================================= */
+
+@media (max-width: 768px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        height: auto;
+        min-height: 70px;
+        padding: 12px 18px;
+        flex-wrap: wrap;
+    }
+
+    .logo{
+        font-size: 22px;
+    }
+
+    .nav-links{
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar{
+        display: none;
+    }
+
+    .nav-links a{
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+
+    /* TEST HERO */
+    .test-hero{
+        min-height: auto;
+        padding: 70px 20px 50px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .test-hero-content{
+        width: 100%;
+    }
+
+    .test-badge{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .test-hero h1{
+        font-size: clamp(42px, 12vw, 65px);
+        line-height: 0.95;
+        margin: 25px 0 15px;
+    }
+
+    .test-hero p{
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .test-hero-btn{
+        margin-top: 25px;
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+    }
+
+    /* DORAEMON IMAGE */
+    .test-hero-image{
+        width: 100%;
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .test-hero-image img{
+        width: min(80vw, 350px);
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* TEST CARDS */
+    .test-container{
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .test-grid{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .test-card{
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px){
+
+    .navbar{
+        padding: 10px 12px;
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+    .nav-links a{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .test-hero{
+        padding: 50px 15px 35px;
+    }
+
+    .test-hero h1{
+        font-size: 43px;
+    }
+
+    .test-hero p{
+        font-size: 14px;
+    }
+
+    .test-hero-image img{
+        width: 78vw;
+    }
+
+    .test-hero-btn{
+        font-size: 14px;
+        padding: 13px 20px;
+    }
 }
 
 
