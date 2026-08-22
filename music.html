@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -28,6 +29,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background:#f2fbff;
     color:#172033;
+    padding-bottom:0;
 }
 
 
@@ -170,8 +172,6 @@ body{
         );
 }
 
-
-/* HERO LIGHT EFFECT */
 
 .hero::before{
 
@@ -344,8 +344,6 @@ body{
 }
 
 
-/* IMAGE GLOW */
-
 .hero-art::before{
 
     content:"";
@@ -371,8 +369,6 @@ body{
 }
 
 
-/* DORAEMON IMAGE */
-
 .hero-art img{
 
     width:min(
@@ -396,8 +392,6 @@ body{
         doraemonFloat 4s ease-in-out infinite;
 }
 
-
-/* FLOAT ANIMATION */
 
 @keyframes doraemonFloat{
 
@@ -429,8 +423,6 @@ body{
     margin:50px auto 90px;
 }
 
-
-/* TITLE */
 
 .section-title{
 
@@ -695,6 +687,39 @@ body{
 }
 
 
+/* PLAYING CARD */
+
+.song-card.playing{
+
+    border-color:#078bd6;
+
+    box-shadow:
+        0 0 0 2px rgba(7,139,214,.12),
+        0 18px 40px rgba(0,120,190,.16);
+}
+
+.song-card.playing .music-icon{
+
+    animation:
+        musicPulse 1s ease-in-out infinite;
+}
+
+@keyframes musicPulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+
 /* INFO */
 
 .song-info{
@@ -739,6 +764,264 @@ body{
     font-size:9px;
 
     font-weight:900;
+}
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+.music-player{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    width:min(900px,92%);
+
+    min-height:76px;
+
+    padding:12px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(4,76,132,.97);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 45px rgba(0,60,110,.30);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    z-index:3000;
+}
+
+
+.player-info{
+
+    min-width:150px;
+
+    max-width:210px;
+
+    overflow:hidden;
+}
+
+.player-title{
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+.player-artist{
+
+    color:#bde8ff;
+
+    font-size:10px;
+
+    margin-top:4px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+.player-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+}
+
+.player-btn{
+
+    width:36px;
+    height:36px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#e9f7ff;
+
+    color:#087dcc;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.player-btn:hover{
+
+    background:#20a8f5;
+
+    color:white;
+
+    transform:scale(1.05);
+}
+
+.player-btn.main{
+
+    width:44px;
+    height:44px;
+
+    background:#20a8f5;
+
+    color:white;
+
+    font-size:17px;
+}
+
+
+.player-progress{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-width:120px;
+}
+
+.time{
+
+    color:#d8f2ff;
+
+    font-size:9px;
+
+    white-space:nowrap;
+
+    min-width:30px;
+
+    text-align:center;
+}
+
+.progress{
+
+    width:100%;
+
+    height:5px;
+
+    border-radius:10px;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    background:#b9dceb;
+
+    cursor:pointer;
+
+    outline:none;
+}
+
+.progress::-webkit-slider-thumb{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:13px;
+
+    height:13px;
+
+    border-radius:50%;
+
+    background:#20a8f5;
+
+    cursor:pointer;
+}
+
+.progress::-moz-range-thumb{
+
+    width:13px;
+
+    height:13px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#20a8f5;
+
+    cursor:pointer;
+}
+
+
+.volume{
+
+    width:80px;
+
+    height:5px;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    background:#b9dceb;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.volume::-webkit-slider-thumb{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#20a8f5;
+}
+
+.volume::-moz-range-thumb{
+
+    width:12px;
+
+    height:12px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#20a8f5;
 }
 
 
@@ -811,14 +1094,10 @@ footer p{
     }
 
 
-    /* DESKTOP NAV HIDE */
-
     .topbar{
         display:none;
     }
 
-
-    /* MOBILE HEADER */
 
     .mobile-header{
 
@@ -849,6 +1128,7 @@ footer p{
             rgba(0,100,170,.08);
     }
 
+
     .mobile-header button{
 
         width:40px;
@@ -866,6 +1146,7 @@ footer p{
 
         cursor:pointer;
     }
+
 
     .mobile-logo{
 
@@ -1056,12 +1337,80 @@ footer p{
         font-size:10px;
     }
 
+
+    /* MUSIC PLAYER MOBILE */
+
+    .music-player{
+
+        width:94%;
+
+        bottom:10px;
+
+        min-height:65px;
+
+        padding:9px 10px;
+
+        gap:8px;
+
+        border-radius:16px;
+
+        flex-wrap:wrap;
+    }
+
+    .player-info{
+
+        min-width:90px;
+
+        max-width:115px;
+    }
+
+    .player-title{
+
+        font-size:10px;
+    }
+
+    .player-artist{
+
+        font-size:8px;
+    }
+
+    .player-controls{
+
+        gap:3px;
+    }
+
+    .player-btn{
+
+        width:30px;
+        height:30px;
+
+        font-size:11px;
+    }
+
+    .player-btn.main{
+
+        width:36px;
+        height:36px;
+
+        font-size:14px;
+    }
+
+    .player-progress{
+
+        order:5;
+
+        flex-basis:100%;
+
+        width:100%;
+    }
+
+    .volume{
+
+        display:none;
+    }
+
 }
 
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
 
 @media(max-width:400px){
 
@@ -1189,9 +1538,6 @@ footer p{
 
 <section class="hero">
 
-
-    <!-- LEFT CONTENT -->
-
     <div class="hero-content">
 
         <div class="badge">
@@ -1229,16 +1575,13 @@ footer p{
     </div>
 
 
-    <!-- RIGHT DORAEMON -->
-
     <div class="hero-art">
 
         <img
-           src="assets/images/characters/doraemon-music.png"
+            src="assets/images/characters/doraemon-music.png"
             alt="Doraemon listening to music">
 
     </div>
-
 
 </section>
 
@@ -1348,6 +1691,112 @@ footer p{
 </footer>
 
 
+<!-- =====================================================
+     MUSIC PLAYER
+===================================================== -->
+
+<div class="music-player">
+
+    <div class="player-info">
+
+        <div
+            id="playerTitle"
+            class="player-title">
+
+            No Song Playing
+
+        </div>
+
+        <div
+            id="playerArtist"
+            class="player-artist">
+
+            Select a song
+
+        </div>
+
+    </div>
+
+
+    <div class="player-controls">
+
+        <button
+            class="player-btn"
+            onclick="previousSong()">
+
+            ⏮
+
+        </button>
+
+
+        <button
+            id="mainPlayBtn"
+            class="player-btn main"
+            onclick="togglePlay()">
+
+            ▶
+
+        </button>
+
+
+        <button
+            class="player-btn"
+            onclick="nextSong()">
+
+            ⏭
+
+        </button>
+
+    </div>
+
+
+    <div class="player-progress">
+
+        <span
+            id="currentTime"
+            class="time">
+
+            0:00
+
+        </span>
+
+
+        <input
+            id="progress"
+            class="progress"
+            type="range"
+            min="0"
+            max="100"
+            value="0">
+
+
+        <span
+            id="duration"
+            class="time">
+
+            0:00
+
+        </span>
+
+    </div>
+
+
+    <span>
+        🔊
+    </span>
+
+    <input
+        id="volume"
+        class="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1">
+
+</div>
+
+
 <script>
 
 /* =====================================================
@@ -1356,74 +1805,56 @@ footer p{
 
 const songs = [
 
+   
     {
-        id:1,
-        title:"Doraemon Hindi Theme",
-        artist:"Hindi TV Version",
-        type:"tv"
-    },
-
-    {
-        id:2,
-        title:"Doraemon Hindi Opening",
-        artist:"Hindi TV Version",
-        type:"tv"
-    },
-
-    {
-        id:3,
-        title:"Doraemon Hindi Ending",
-        artist:"Hindi TV Version",
-        type:"tv"
-    },
-
-    {
-        id:4,
-        title:"Doraemon Hindi Theme Song",
-        artist:"Hindi Version",
-        type:"tv"
-    },
-
-    {
-        id:5,
-        title:"Doraemon Movie Hindi Theme",
-        artist:"Hindi Movie Version",
-        type:"movie"
-    },
-
-    {
-        id:6,
-        title:"Stand By Me Doraemon Hindi Theme",
-        artist:"Hindi Movie Version",
-        type:"movie"
-    },
-
-    {
-        id:7,
-        title:"Doraemon Movie Hindi Song",
-        artist:"Hindi Movie Version",
-        type:"movie"
-    },
-
-    {
-        id:8,
-        title:"Doraemon Hindi Special Song",
-        artist:"Hindi Version",
-        type:"tv"
-    }
+    id: 1,
+    title: "Zindagi Sawar Du",
+    artist: "Doraemon Hindi",
+    type: "tv",
+    audio: "assets/music/Zindagi-Sawar-Du-Doraemon.mp3"
+}
 
 ];
 
 
 /* =====================================================
-   RENDER SONGS
+   VARIABLES
 ===================================================== */
 
 const grid =
     document.getElementById("songGrid");
 
+const playerTitle =
+    document.getElementById("playerTitle");
+
+const playerArtist =
+    document.getElementById("playerArtist");
+
+const mainPlayBtn =
+    document.getElementById("mainPlayBtn");
+
+const progress =
+    document.getElementById("progress");
+
+const volume =
+    document.getElementById("volume");
+
+const currentTime =
+    document.getElementById("currentTime");
+
+const duration =
+    document.getElementById("duration");
+
 let currentFilter = "all";
 
+let currentAudio = null;
+
+let currentSongId = null;
+
+
+/* =====================================================
+   RENDER SONGS
+===================================================== */
 
 function renderSongs(){
 
@@ -1472,18 +1903,27 @@ function renderSongs(){
             card.className =
                 "song-card";
 
+            card.dataset.id =
+                song.id;
+
 
             card.innerHTML = `
 
                 <div class="song-cover">
 
                     <div class="number">
+
                         ${String(song.id).padStart(2,"0")}
+
                     </div>
 
+
                     <div class="music-icon">
+
                         ${icon}
+
                     </div>
+
 
                     <button
                         class="play-btn"
@@ -1499,12 +1939,18 @@ function renderSongs(){
                 <div class="song-info">
 
                     <h3>
+
                         ${song.title}
+
                     </h3>
 
+
                     <div class="artist">
+
                         🎤 ${song.artist}
+
                     </div>
+
 
                     <span class="type">
 
@@ -1531,6 +1977,455 @@ function renderSongs(){
 
 
 /* =====================================================
+   PLAY SONG
+===================================================== */
+
+function playSong(id){
+
+    const song =
+        songs.find(
+            item => item.id === id
+        );
+
+
+    if(!song){
+        return;
+    }
+
+
+    /* SAME SONG */
+
+    if(
+        currentSongId === id &&
+        currentAudio
+    ){
+
+        if(currentAudio.paused){
+
+            currentAudio.play();
+
+        }else{
+
+            currentAudio.pause();
+
+        }
+
+        updatePlayButtons();
+
+        return;
+    }
+
+
+    /* STOP OLD AUDIO */
+
+    if(currentAudio){
+
+        currentAudio.pause();
+
+        currentAudio.currentTime = 0;
+    }
+
+
+    /* CREATE AUDIO */
+
+    currentAudio =
+        new Audio(song.audio);
+
+
+    currentAudio.volume =
+        volume.value;
+
+
+    currentSongId =
+        id;
+
+
+    /* PLAYER INFO */
+
+    playerTitle.textContent =
+        song.title;
+
+    playerArtist.textContent =
+        song.artist;
+
+
+    /* PLAY */
+
+    currentAudio.play()
+    .then(() => {
+
+        updatePlayButtons();
+
+    })
+    .catch(error => {
+
+        console.log(error);
+
+        alert(
+            "Music file nahi mili!\n\n" +
+            "Check karo:\n" +
+            song.audio
+        );
+
+    });
+
+
+    /* TIME UPDATE */
+
+    currentAudio.addEventListener(
+        "timeupdate",
+        updateProgress
+    );
+
+
+    /* LOADED */
+
+    currentAudio.addEventListener(
+        "loadedmetadata",
+        function(){
+
+            duration.textContent =
+                formatTime(
+                    currentAudio.duration
+                );
+
+        }
+    );
+
+
+    /* MUSIC END */
+
+    currentAudio.addEventListener(
+        "ended",
+        function(){
+
+            nextSong();
+
+        }
+    );
+
+
+    updatePlayingCard();
+
+}
+
+
+/* =====================================================
+   TOGGLE PLAY
+===================================================== */
+
+function togglePlay(){
+
+    if(!currentAudio){
+
+        playSong(songs[0].id);
+
+        return;
+    }
+
+
+    if(currentAudio.paused){
+
+        currentAudio.play();
+
+    }else{
+
+        currentAudio.pause();
+
+    }
+
+
+    updatePlayButtons();
+
+}
+
+
+/* =====================================================
+   NEXT SONG
+===================================================== */
+
+function nextSong(){
+
+    if(!currentSongId){
+
+        playSong(songs[0].id);
+
+        return;
+    }
+
+
+    let index =
+        songs.findIndex(
+            song => song.id === currentSongId
+        );
+
+
+    index++;
+
+
+    if(index >= songs.length){
+
+        index = 0;
+
+    }
+
+
+    playSong(
+        songs[index].id
+    );
+
+}
+
+
+/* =====================================================
+   PREVIOUS SONG
+===================================================== */
+
+function previousSong(){
+
+    if(!currentSongId){
+
+        playSong(songs[0].id);
+
+        return;
+    }
+
+
+    let index =
+        songs.findIndex(
+            song => song.id === currentSongId
+        );
+
+
+    index--;
+
+
+    if(index < 0){
+
+        index =
+            songs.length - 1;
+
+    }
+
+
+    playSong(
+        songs[index].id
+    );
+
+}
+
+
+/* =====================================================
+   PLAY BUTTON UPDATE
+===================================================== */
+
+function updatePlayButtons(){
+
+    const buttons =
+        document.querySelectorAll(
+            ".play-btn"
+        );
+
+
+    buttons.forEach(button => {
+
+        button.textContent = "▶";
+
+    });
+
+
+    if(
+        currentAudio &&
+        !currentAudio.paused
+    ){
+
+        const card =
+            document.querySelector(
+                `.song-card[data-id="${currentSongId}"]`
+            );
+
+
+        if(card){
+
+            const button =
+                card.querySelector(
+                    ".play-btn"
+                );
+
+
+            if(button){
+
+                button.textContent =
+                    "⏸";
+
+            }
+
+        }
+
+        mainPlayBtn.textContent =
+            "⏸";
+
+    }else{
+
+        mainPlayBtn.textContent =
+            "▶";
+
+    }
+
+}
+
+
+/* =====================================================
+   PLAYING CARD
+===================================================== */
+
+function updatePlayingCard(){
+
+    document
+    .querySelectorAll(".song-card")
+    .forEach(card => {
+
+        card.classList.remove(
+            "playing"
+        );
+
+    });
+
+
+    const activeCard =
+        document.querySelector(
+            `.song-card[data-id="${currentSongId}"]`
+        );
+
+
+    if(activeCard){
+
+        activeCard.classList.add(
+            "playing"
+        );
+
+    }
+
+
+    updatePlayButtons();
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress(){
+
+    if(!currentAudio){
+
+        return;
+    }
+
+
+    const percent =
+        (
+            currentAudio.currentTime /
+            currentAudio.duration
+        ) * 100;
+
+
+    progress.value =
+        isNaN(percent)
+        ? 0
+        : percent;
+
+
+    currentTime.textContent =
+        formatTime(
+            currentAudio.currentTime
+        );
+
+}
+
+
+/* =====================================================
+   SEEK
+===================================================== */
+
+progress.addEventListener(
+    "input",
+    function(){
+
+        if(!currentAudio){
+
+            return;
+        }
+
+
+        currentAudio.currentTime =
+            (
+                progress.value / 100
+            ) *
+            currentAudio.duration;
+
+    }
+);
+
+
+/* =====================================================
+   VOLUME
+===================================================== */
+
+volume.addEventListener(
+    "input",
+    function(){
+
+        if(currentAudio){
+
+            currentAudio.volume =
+                volume.value;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FORMAT TIME
+===================================================== */
+
+function formatTime(seconds){
+
+    if(
+        !seconds ||
+        isNaN(seconds)
+    ){
+
+        return "0:00";
+
+    }
+
+
+    const minutes =
+        Math.floor(
+            seconds / 60
+        );
+
+
+    const secs =
+        Math.floor(
+            seconds % 60
+        );
+
+
+    return (
+        minutes +
+        ":" +
+        String(secs).padStart(2,"0")
+    );
+
+}
+
+
+/* =====================================================
    SEARCH
 ===================================================== */
 
@@ -1548,19 +2443,24 @@ document
 
 function setFilter(type,button){
 
-    currentFilter = type;
+    currentFilter =
+        type;
 
 
     document
     .querySelectorAll(".filter")
     .forEach(btn => {
 
-        btn.classList.remove("active");
+        btn.classList.remove(
+            "active"
+        );
 
     });
 
 
-    button.classList.add("active");
+    button.classList.add(
+        "active"
+    );
 
 
     renderSongs();
@@ -1575,7 +2475,9 @@ function setFilter(type,button){
 function focusSearch(){
 
     const search =
-        document.getElementById("search");
+        document.getElementById(
+            "search"
+        );
 
 
     search.focus();
@@ -1616,3 +2518,4 @@ renderSongs();
 </body>
 
 </html>
+
