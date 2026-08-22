@@ -1,1008 +1,907 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Doraemon World - Music</title>
+<title>Doraemon World - Hindi Music</title>
 
-    <style>
+<style>
 
-        /* =====================================================
-           DORAEMON WORLD
-           MUSIC PAGE
-        ===================================================== */
+/* =====================================================
+   DORAEMON WORLD - HINDI MUSIC
+===================================================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f2fbff;
-            color: #172033;
-            min-height: 100vh;
-            padding-bottom: 0;
-        }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2fbff;
+    color:#172033;
+}
 
 
-        /* =====================================================
-           HEADER
-        ===================================================== */
+/* =====================================================
+   DESKTOP HEADER
+===================================================== */
 
-        .topbar {
-            width: 100%;
-            min-height: 72px;
+.topbar{
+    min-height:72px;
+    padding:0 6%;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-            padding: 0 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-            background: rgba(255,255,255,.96);
+    background:rgba(255,255,255,.97);
 
-            border-bottom: 1px solid #dceff8;
+    border-bottom:1px solid #dceff8;
 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+    box-shadow:0 4px 20px rgba(0,120,180,.08);
+}
 
-            box-shadow:
-                0 4px 20px rgba(0,120,180,.08);
-        }
+.logo{
+    color:#087dcc;
+    text-decoration:none;
 
-        .logo {
-            text-decoration: none;
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:1px;
+}
 
-            color: #087dcc;
+#nav{
+    display:flex;
+    gap:6px;
+}
 
-            font-size: 24px;
-            font-weight: 900;
+#nav a{
+    color:#435466;
+    text-decoration:none;
 
-            letter-spacing: 1px;
+    padding:11px 13px;
 
-            white-space: nowrap;
-        }
+    border-radius:12px;
 
-        #nav {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
+    font-size:14px;
+    font-weight:700;
 
-        #nav a {
-            text-decoration: none;
+    transition:.25s;
+}
 
-            color: #435466;
+#nav a:hover,
+#nav a.active{
+    color:#087dcc;
+    background:#e8f7ff;
+}
 
-            padding: 11px 13px;
 
-            border-radius: 12px;
+/* =====================================================
+   MOBILE HEADER
+===================================================== */
 
-            font-size: 14px;
-            font-weight: 700;
+.mobile-header{
+    display:none;
+}
 
-            transition: .25s ease;
-        }
 
-        #nav a:hover,
-        #nav a.active {
-            color: #087dcc;
-            background: #e8f7ff;
-        }
+/* =====================================================
+   HERO
+===================================================== */
 
+.hero{
+    text-align:center;
 
-        /* =====================================================
-           MOBILE HEADER
-        ===================================================== */
+    padding:70px 20px 55px;
 
-        .mobile-header {
-            display: none;
-        }
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,170,255,.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0,100,255,.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #e9f9ff,
+            #f8fdff
+        );
+}
 
+.badge{
+    display:inline-block;
 
-        /* =====================================================
-           HERO
-        ===================================================== */
+    padding:8px 16px;
 
-        .music-hero {
-            padding: 80px 6% 65px;
+    background:#fff;
 
-            text-align: center;
+    border-radius:50px;
 
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0,170,255,.14),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(0,110,255,.12),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    180deg,
-                    #e9f9ff,
-                    #f8fdff
-                );
-        }
+    color:#0785d1;
 
-        .music-badge {
-            display: inline-block;
+    font-size:11px;
+    font-weight:900;
 
-            padding: 8px 16px;
+    letter-spacing:1px;
 
-            border-radius: 50px;
+    margin-bottom:18px;
 
-            background: #fff;
+    box-shadow:0 8px 25px rgba(0,130,200,.1);
+}
 
-            color: #087dcc;
+.hero h1{
+    color:#142b42;
 
-            font-size: 12px;
-            font-weight: 800;
+    font-size:clamp(42px,6vw,70px);
 
-            letter-spacing: 1px;
+    line-height:1.05;
 
-            margin-bottom: 18px;
+    margin-bottom:17px;
+}
 
-            box-shadow:
-                0 8px 25px rgba(0,130,200,.10);
-        }
+.hero h1 strong{
+    color:#0785d1;
+}
 
-        .music-hero h1 {
-            font-size: clamp(40px,6vw,72px);
+.hero p{
+    max-width:700px;
 
-            line-height: 1.05;
+    margin:auto;
 
-            color: #142b42;
+    color:#65798a;
 
-            margin-bottom: 18px;
+    line-height:1.7;
 
-            font-weight: 900;
-        }
+    font-size:15px;
+}
 
-        .music-hero h1 strong {
-            color: #0785d1;
-        }
 
-        .music-hero p {
-            max-width: 700px;
+/* =====================================================
+   SEARCH / FILTER
+===================================================== */
 
-            margin: auto;
+.controls{
+    width:88%;
+    max-width:1300px;
 
-            color: #637689;
+    margin:30px auto 10px;
 
-            font-size: 17px;
+    display:flex;
+    align-items:center;
 
-            line-height: 1.7;
-        }
+    gap:12px;
 
+    flex-wrap:wrap;
+}
 
-        /* =====================================================
-           MUSIC CONTROLS
-        ===================================================== */
+.search{
+    flex:1;
+    min-width:250px;
 
-        .music-controls {
-            width: 88%;
-            max-width: 1250px;
+    height:48px;
 
-            margin: 35px auto 10px;
+    padding:0 17px;
 
-            display: flex;
+    border:1px solid #d5eaf5;
 
-            justify-content: space-between;
+    border-radius:14px;
 
-            align-items: center;
+    outline:none;
 
-            gap: 15px;
+    background:#fff;
 
-            flex-wrap: wrap;
-        }
+    font-size:14px;
 
-        .music-search {
-            flex: 1;
+    box-shadow:0 5px 20px rgba(0,100,160,.06);
+}
 
-            min-width: 250px;
+.search:focus{
+    border-color:#078bd6;
 
-            height: 48px;
+    box-shadow:
+        0 0 0 4px rgba(7,139,214,.1);
+}
 
-            border: 1px solid #d6eaf5;
+.filters{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
 
-            border-radius: 14px;
+.filter{
+    border:1px solid #d5eaf5;
 
-            padding: 0 18px;
+    background:#fff;
 
-            outline: none;
+    color:#53687a;
 
-            background: #fff;
+    padding:10px 14px;
 
-            font-size: 14px;
+    border-radius:11px;
 
-            box-shadow:
-                0 5px 20px rgba(0,100,160,.06);
-        }
+    cursor:pointer;
 
-        .music-search:focus {
-            border-color: #078bd6;
+    font-size:12px;
+    font-weight:800;
 
-            box-shadow:
-                0 0 0 4px rgba(7,139,214,.10);
-        }
+    transition:.25s;
+}
 
-        .music-filter {
-            display: flex;
+.filter:hover,
+.filter.active{
+    background:#078bd6;
+    color:#fff;
 
-            gap: 8px;
+    border-color:#078bd6;
+}
 
-            flex-wrap: wrap;
-        }
 
-        .filter-btn {
-            border: 1px solid #d6eaf5;
+/* =====================================================
+   MUSIC SECTION
+===================================================== */
 
-            background: #fff;
+.music-section{
+    width:88%;
+    max-width:1400px;
 
-            color: #53687a;
+    margin:45px auto 90px;
+}
 
-            padding: 11px 16px;
+.section-title{
+    margin-bottom:25px;
+}
 
-            border-radius: 12px;
+.section-title span{
+    color:#078bd6;
 
-            font-size: 13px;
+    font-size:11px;
+    font-weight:900;
 
-            font-weight: 700;
+    letter-spacing:2px;
+}
 
-            cursor: pointer;
+.section-title h2{
+    color:#172d43;
 
-            transition: .25s ease;
-        }
+    font-size:32px;
 
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #078bd6;
+    margin-top:7px;
+}
 
-            color: #fff;
+.section-title p{
+    color:#718393;
 
-            border-color: #078bd6;
-        }
+    font-size:14px;
 
+    margin-top:7px;
+}
 
-        /* =====================================================
-           MUSIC SECTION
-        ===================================================== */
 
-        .music-section {
-            width: 88%;
+/* =====================================================
+   SONG GRID
+===================================================== */
 
-            max-width: 1400px;
+.song-grid{
+    display:grid;
 
-            margin: 50px auto 90px;
-        }
+    grid-template-columns:
+        repeat(4,1fr);
 
-        .section-title {
-            margin-bottom: 25px;
-        }
+    gap:20px;
+}
 
-        .section-title span {
-            color: #078bd6;
 
-            font-size: 11px;
+/* =====================================================
+   SONG CARD
+===================================================== */
 
-            font-weight: 900;
+.song-card{
+    background:#fff;
 
-            letter-spacing: 2px;
-        }
+    border:1px solid #e0eff6;
 
-        .section-title h2 {
-            color: #172d43;
+    border-radius:20px;
 
-            font-size: 32px;
+    overflow:hidden;
 
-            margin-top: 7px;
+    box-shadow:
+        0 8px 25px rgba(0,100,160,.07);
 
-            font-weight: 900;
-        }
+    transition:.3s;
+}
 
-        .section-title p {
-            margin-top: 7px;
+.song-card:hover{
+    transform:translateY(-6px);
 
-            color: #718393;
+    border-color:#8bd6f6;
 
-            font-size: 14px;
-        }
+    box-shadow:
+        0 18px 40px rgba(0,120,190,.15);
+}
 
 
-        /* =====================================================
-           MUSIC GRID
-        ===================================================== */
+/* =====================================================
+   COVER
+===================================================== */
 
-        .music-grid {
-            display: grid;
+.song-cover{
+    height:190px;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            gap: 22px;
-        }
+    position:relative;
 
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #b8e9ff
+        );
+}
 
-        /* =====================================================
-           MUSIC CARD
-        ===================================================== */
+.number{
+    position:absolute;
 
-        .music-card {
-            background: #fff;
+    top:12px;
+    left:12px;
 
-            border: 1px solid #e0eff6;
+    width:35px;
+    height:35px;
 
-            border-radius: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            overflow: hidden;
+    border-radius:10px;
 
-            box-shadow:
-                0 8px 25px rgba(0,100,160,.07);
+    background:rgba(255,255,255,.9);
 
-            transition: .3s ease;
-        }
+    color:#087dcc;
 
-        .music-card:hover {
-            transform: translateY(-7px);
+    font-size:10px;
+    font-weight:900;
+}
 
-            border-color: #94d9f7;
+.music-icon{
+    font-size:65px;
 
-            box-shadow:
-                0 18px 40px rgba(0,120,190,.16);
-        }
+    transition:.3s;
+}
 
+.song-card:hover .music-icon{
+    transform:scale(1.1);
+}
 
-        /* =====================================================
-           ALBUM
-        ===================================================== */
+.play-btn{
+    position:absolute;
 
-        .album-art {
-            position: relative;
+    right:12px;
+    bottom:12px;
 
-            width: 100%;
+    width:44px;
+    height:44px;
 
-            aspect-ratio: 1 / 1;
+    border:0;
 
-            display: flex;
+    border-radius:50%;
 
-            align-items: center;
+    background:#078bd6;
 
-            justify-content: center;
+    color:white;
 
-            overflow: hidden;
+    font-size:16px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #dff7ff,
-                    #b8e9ff
-                );
-        }
+    cursor:pointer;
 
-        .album-art img {
-            width: 100%;
-            height: 100%;
+    box-shadow:
+        0 8px 22px rgba(0,100,180,.25);
+}
 
-            object-fit: cover;
 
-            display: block;
+/* =====================================================
+   SONG INFO
+===================================================== */
 
-            transition: .4s ease;
-        }
+.song-info{
+    padding:15px;
+}
 
-        .music-card:hover .album-art img {
-            transform: scale(1.06);
-        }
+.song-info h3{
+    color:#20384e;
 
+    font-size:15px;
 
-        /* FALLBACK ICON */
+    line-height:1.4;
 
-        .album-fallback {
-            font-size: 80px;
+    margin-bottom:7px;
+}
 
-            opacity: .9;
-        }
+.artist{
+    color:#718393;
 
+    font-size:12px;
 
-        /* =====================================================
-           PLAY BUTTON
-        ===================================================== */
+    line-height:1.5;
+}
 
-        .play-button {
-            position: absolute;
+.type{
+    display:inline-block;
 
-            right: 15px;
-            bottom: 15px;
+    margin-top:10px;
 
-            width: 48px;
-            height: 48px;
+    padding:5px 9px;
 
-            border-radius: 50%;
+    border-radius:7px;
 
-            border: none;
+    background:#eaf8ff;
 
-            background: #078bd6;
+    color:#0785d1;
 
-            color: #fff;
+    font-size:9px;
 
-            font-size: 19px;
+    font-weight:900;
+}
 
-            cursor: pointer;
 
-            box-shadow:
-                0 8px 22px rgba(0,100,180,.25);
+/* =====================================================
+   NO RESULT
+===================================================== */
 
-            transition: .25s ease;
-        }
+.no-result{
+    display:none;
 
-        .play-button:hover {
-            transform: scale(1.08);
+    text-align:center;
 
-            background: #056fae;
-        }
+    padding:50px 20px;
 
+    border-radius:20px;
 
-        /* =====================================================
-           MUSIC INFO
-        ===================================================== */
+    background:#fff;
 
-        .music-info {
-            padding: 17px;
-        }
+    border:1px solid #e0eff6;
 
-        .music-info h3 {
-            color: #20384e;
+    color:#718393;
+}
 
-            font-size: 16px;
 
-            line-height: 1.35;
+/* =====================================================
+   PLAYER
+===================================================== */
 
-            margin-bottom: 7px;
-        }
+.player{
+    position:fixed;
 
-        .music-info p {
-            color: #7b8c9b;
+    left:50%;
+    bottom:25px;
 
-            font-size: 12px;
+    transform:
+        translateX(-50%)
+        translateY(130px);
 
-            line-height: 1.5;
-        }
+    width:min(760px,90%);
 
-        .music-tag {
-            display: inline-block;
+    padding:13px 16px;
 
-            margin-top: 10px;
+    display:flex;
+    align-items:center;
 
-            padding: 5px 9px;
+    gap:13px;
 
-            border-radius: 7px;
+    background:rgba(255,255,255,.98);
 
-            background: #eaf8ff;
+    border:1px solid #d5edf7;
 
-            color: #0785d1;
+    border-radius:18px;
 
-            font-size: 9px;
+    box-shadow:
+        0 15px 45px rgba(0,80,130,.18);
 
-            font-weight: 800;
+    z-index:1500;
 
-            text-transform: uppercase;
-        }
+    transition:.35s;
+}
 
+.player.show{
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
 
-        /* =====================================================
-           PLAYER BAR
-        ===================================================== */
+.player-icon{
+    width:45px;
+    height:45px;
 
-        .music-player {
-            position: fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            left: 50%;
+    background:#e5f7ff;
 
-            bottom: 25px;
+    border-radius:12px;
 
-            transform:
-                translateX(-50%)
-                translateY(120px);
+    font-size:21px;
+}
 
-            width: min(760px, 90%);
+.player-info{
+    flex:1;
+    min-width:0;
+}
 
-            padding: 15px 18px;
+.player-info strong{
+    display:block;
 
-            background:
-                rgba(255,255,255,.97);
+    color:#1c344a;
 
-            border:
-                1px solid #d5edf7;
+    font-size:14px;
 
-            border-radius: 18px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
 
-            display: flex;
+.player-info small{
+    color:#7d8f9d;
 
-            align-items: center;
+    font-size:11px;
+}
 
-            gap: 15px;
+.close-player{
+    width:34px;
+    height:34px;
 
-            z-index: 1500;
+    border:0;
 
-            box-shadow:
-                0 15px 45px rgba(0,80,130,.18);
+    border-radius:50%;
 
-            transition: .35s ease;
-        }
+    background:#edf8fd;
 
-        .music-player.show {
-            transform:
-                translateX(-50%)
-                translateY(0);
-        }
+    color:#487087;
 
-        .player-icon {
-            width: 48px;
-            height: 48px;
+    cursor:pointer;
+}
 
-            border-radius: 12px;
 
-            background: #e5f7ff;
+/* =====================================================
+   FOOTER
+===================================================== */
 
-            display: flex;
+footer{
+    padding:45px 20px;
 
-            align-items: center;
+    text-align:center;
 
-            justify-content: center;
+    background:#fff;
 
-            font-size: 23px;
+    border-top:1px solid #deeff7;
+}
 
-            flex-shrink: 0;
-        }
+.footer-logo{
+    color:#087dcc;
 
-        .player-details {
-            flex: 1;
+    font-size:21px;
 
-            min-width: 0;
-        }
+    font-weight:900;
 
-        .player-details strong {
-            display: block;
+    margin-bottom:10px;
+}
 
-            color: #1c344a;
+footer p{
+    color:#7a8c9b;
 
-            font-size: 14px;
+    font-size:13px;
 
-            white-space: nowrap;
+    margin-top:7px;
+}
 
-            overflow: hidden;
 
-            text-overflow: ellipsis;
-        }
+/* =====================================================
+   MOBILE BOTTOM NAV
+===================================================== */
 
-        .player-details small {
-            color: #7d8f9d;
+.mobile-bottom{
+    display:none;
+}
 
-            font-size: 11px;
-        }
 
-        .player-close {
-            width: 35px;
-            height: 35px;
+/* =====================================================
+   TABLET
+===================================================== */
 
-            border: none;
+@media(max-width:1100px){
 
-            border-radius: 50%;
+    .song-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
 
-            background: #edf8fd;
+}
 
-            color: #487087;
 
-            cursor: pointer;
+/* =====================================================
+   MOBILE
+===================================================== */
 
-            font-size: 15px;
-        }
+@media(max-width:700px){
 
+    body{
+        padding-bottom:70px;
+    }
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+    .topbar{
+        display:none;
+    }
 
-        footer {
-            padding: 45px 20px;
+    .mobile-header{
+        display:flex;
 
-            text-align: center;
+        height:62px;
 
-            background: #fff;
+        padding:0 15px;
 
-            border-top: 1px solid #deeff7;
-        }
+        align-items:center;
+        justify-content:space-between;
 
-        .footer-logo {
-            color: #087dcc;
+        position:sticky;
+        top:0;
 
-            font-size: 21px;
+        z-index:2000;
 
-            font-weight: 900;
+        background:rgba(255,255,255,.98);
 
-            margin-bottom: 10px;
-        }
+        border-bottom:1px solid #dceff8;
 
-        footer p {
-            color: #7a8c9b;
+        box-shadow:
+            0 4px 18px rgba(0,100,170,.08);
+    }
 
-            font-size: 13px;
+    .mobile-header button{
+        width:40px;
+        height:40px;
 
-            margin-top: 7px;
-        }
+        border:0;
 
-        .copyright {
-            color: #9aa8b4;
-        }
+        border-radius:12px;
 
+        background:#e9f7ff;
 
-        /* =====================================================
-           MOBILE BOTTOM NAV
-        ===================================================== */
+        color:#087dcc;
 
-        .mobile-bottom-nav {
-            display: none;
-        }
+        font-size:19px;
+    }
 
+    .mobile-logo{
+        color:#087dcc;
 
-        /* =====================================================
-           TABLET
-        ===================================================== */
+        text-decoration:none;
 
-        @media (max-width: 1100px) {
+        font-size:18px;
 
-            .music-grid {
-                grid-template-columns:
-                    repeat(3,1fr);
-            }
+        font-weight:900;
 
-        }
+        letter-spacing:1px;
+    }
 
 
-        @media (max-width: 850px) {
+    .hero{
+        padding:48px 20px 40px;
+    }
 
-            .topbar {
-                padding: 0 4%;
-            }
+    .hero h1{
+        font-size:40px;
+    }
 
-            #nav a {
-                padding: 9px 8px;
+    .hero p{
+        font-size:14px;
+    }
 
-                font-size: 12px;
-            }
 
-            .music-grid {
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
+    .controls{
+        width:92%;
 
-        }
+        display:block;
 
+        margin-top:24px;
+    }
 
-        /* =====================================================
-           MOBILE
-        ===================================================== */
+    .search{
+        width:100%;
 
-        @media (max-width: 700px) {
+        margin-bottom:12px;
+    }
 
-            body {
-                padding-bottom: 70px;
-            }
+    .filters{
+        overflow-x:auto;
 
-            .topbar {
-                display: none;
-            }
+        flex-wrap:nowrap;
 
-            .mobile-header {
-                position: sticky;
+        scrollbar-width:none;
+    }
 
-                top: 0;
+    .filters::-webkit-scrollbar{
+        display:none;
+    }
 
-                z-index: 2000;
+    .filter{
+        flex:0 0 auto;
 
-                height: 62px;
+        white-space:nowrap;
+    }
 
-                padding: 0 16px;
 
-                display: flex;
+    .music-section{
+        width:92%;
 
-                align-items: center;
+        margin:35px auto 70px;
+    }
 
-                justify-content: space-between;
+    .section-title h2{
+        font-size:25px;
+    }
 
-                background:
-                    rgba(255,255,255,.97);
 
-                border-bottom:
-                    1px solid #dceff8;
+    .song-grid{
+        grid-template-columns:
+            repeat(2,1fr);
 
-                box-shadow:
-                    0 4px 18px rgba(0,100,170,.08);
-            }
+        gap:12px;
+    }
 
-            .mobile-menu-btn,
-            .mobile-search-btn {
-                width: 40px;
-                height: 40px;
+    .song-card{
+        border-radius:15px;
+    }
 
-                border: none;
+    .song-card:hover{
+        transform:none;
+    }
 
-                border-radius: 12px;
+    .song-cover{
+        height:145px;
+    }
 
-                background: #e9f7ff;
+    .music-icon{
+        font-size:48px;
+    }
 
-                color: #087dcc;
+    .number{
+        width:29px;
+        height:29px;
 
-                font-size: 19px;
+        font-size:9px;
+    }
 
-                cursor: pointer;
-            }
+    .song-info{
+        padding:11px;
+    }
 
-            .mobile-logo {
-                text-decoration: none;
+    .song-info h3{
+        font-size:12px;
+    }
 
-                color: #087dcc;
+    .artist{
+        font-size:10px;
+    }
 
-                font-size: 20px;
+    .type{
+        font-size:7px;
+    }
 
-                font-weight: 900;
 
-                letter-spacing: 1px;
-            }
+    .player{
+        width:92%;
 
-            /* HERO */
+        bottom:78px;
+    }
 
-            .music-hero {
-                padding: 50px 20px 40px;
-            }
 
-            .music-badge {
-                font-size: 10px;
+    .mobile-bottom{
+        position:fixed;
 
-                padding: 7px 12px;
-            }
+        left:0;
+        right:0;
+        bottom:0;
 
-            .music-hero h1 {
-                font-size: 42px;
-            }
+        height:68px;
 
-            .music-hero p {
-                font-size: 14px;
+        display:flex;
 
-                line-height: 1.6;
-            }
+        align-items:center;
+        justify-content:space-around;
 
-            /* CONTROLS */
+        z-index:3000;
 
-            .music-controls {
-                width: 92%;
+        background:rgba(255,255,255,.98);
 
-                display: block;
+        border-top:1px solid #dceff8;
 
-                margin-top: 25px;
-            }
+        box-shadow:
+            0 -5px 20px rgba(0,90,150,.10);
+    }
 
-            .music-search {
-                width: 100%;
+    .mobile-bottom a{
+        flex:1;
 
-                margin-bottom: 12px;
-            }
+        height:100%;
 
-            .music-filter {
-                overflow-x: auto;
+        display:flex;
 
-                flex-wrap: nowrap;
+        flex-direction:column;
 
-                scrollbar-width: none;
+        align-items:center;
+        justify-content:center;
 
-                padding-bottom: 5px;
-            }
+        gap:3px;
 
-            .music-filter::-webkit-scrollbar {
-                display: none;
-            }
+        text-decoration:none;
 
-            .filter-btn {
-                flex: 0 0 auto;
+        color:#718393;
 
-                white-space: nowrap;
-            }
+        font-size:18px;
+    }
 
-            /* SECTION */
+    .mobile-bottom small{
+        font-size:9px;
 
-            .music-section {
-                width: 92%;
+        font-weight:700;
+    }
 
-                margin: 35px auto 70px;
-            }
+    .mobile-bottom a.active{
+        color:#087dcc;
+    }
 
-            .section-title h2 {
-                font-size: 25px;
-            }
+}
 
-            .section-title p {
-                font-size: 12px;
-            }
 
-            /* GRID */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-            .music-grid {
-                grid-template-columns:
-                    repeat(2,1fr);
+@media(max-width:400px){
 
-                gap: 12px;
-            }
+    .mobile-logo{
+        font-size:16px;
+    }
 
-            .music-card {
-                border-radius: 15px;
-            }
+    .hero h1{
+        font-size:35px;
+    }
 
-            .music-card:hover {
-                transform: none;
-            }
+    .song-grid{
+        gap:9px;
+    }
 
-            .music-info {
-                padding: 11px;
-            }
+    .song-cover{
+        height:125px;
+    }
 
-            .music-info h3 {
-                font-size: 13px;
-            }
+    .song-info{
+        padding:9px;
+    }
 
-            .music-info p {
-                font-size: 10px;
-            }
+}
 
-            .music-tag {
-                font-size: 8px;
-
-                padding: 4px 7px;
-            }
-
-            .play-button {
-                width: 40px;
-                height: 40px;
-
-                right: 9px;
-                bottom: 9px;
-
-                font-size: 15px;
-            }
-
-            /* PLAYER */
-
-            .music-player {
-                width: 92%;
-
-                bottom: 78px;
-
-                padding: 11px;
-            }
-
-            .player-icon {
-                width: 42px;
-                height: 42px;
-
-                font-size: 19px;
-            }
-
-            /* BOTTOM NAV */
-
-            .mobile-bottom-nav {
-                position: fixed;
-
-                display: flex;
-
-                left: 0;
-                right: 0;
-                bottom: 0;
-
-                height: 68px;
-
-                z-index: 3000;
-
-                align-items: center;
-
-                justify-content: space-around;
-
-                background:
-                    rgba(255,255,255,.98);
-
-                border-top:
-                    1px solid #dceff8;
-
-                box-shadow:
-                    0 -5px 20px rgba(0,90,150,.10);
-            }
-
-            .bottom-nav-item {
-                flex: 1;
-
-                height: 100%;
-
-                display: flex;
-
-                flex-direction: column;
-
-                align-items: center;
-
-                justify-content: center;
-
-                gap: 3px;
-
-                text-decoration: none;
-
-                color: #718393;
-
-                font-size: 18px;
-            }
-
-            .bottom-nav-item small {
-                font-size: 9px;
-
-                font-weight: 700;
-            }
-
-            .bottom-nav-item.active {
-                color: #087dcc;
-            }
-
-        }
-
-
-        /* =====================================================
-           SMALL MOBILE
-        ===================================================== */
-
-        @media (max-width: 400px) {
-
-            .mobile-logo {
-                font-size: 17px;
-            }
-
-            .music-hero h1 {
-                font-size: 36px;
-            }
-
-            .music-grid {
-                gap: 9px;
-            }
-
-            .music-info {
-                padding: 9px;
-            }
-
-            .music-info h3 {
-                font-size: 12px;
-            }
-
-            .bottom-nav-item {
-                font-size: 16px;
-            }
-
-            .bottom-nav-item small {
-                font-size: 8px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -1010,820 +909,588 @@
 <body>
 
 
-    <!-- =====================================================
-         DESKTOP HEADER
-    ====================================================== -->
+<!-- =====================================================
+     DESKTOP HEADER
+===================================================== -->
 
-    <header class="topbar">
+<header class="topbar">
 
-        <a href="index.html" class="logo">
-            DORAEMON 🌐
+    <a href="index.html" class="logo">
+        DORAEMON 🌐
+    </a>
+
+    <nav id="nav">
+
+        <a href="index.html">
+            🏠 Home
         </a>
 
-        <nav id="nav">
-
-            <a href="index.html">
-                🏠 Home
-            </a>
-
-            <a href="movies.html">
-                🎬 Movies
-            </a>
-
-            <a href="episodes.html">
-                📺 Episodes
-            </a>
-
-            <a href="characters.html">
-                👥 Characters
-            </a>
-
-            <a href="wallpapers.html">
-                🖼️ Wallpapers
-            </a>
-
-            <a href="music.html" class="active">
-                🎵 Music
-            </a>
-
-            <a href="gallery.html">
-                📸 Gallery
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- =====================================================
-         MOBILE HEADER
-    ====================================================== -->
-
-    <header class="mobile-header">
-
-        <button
-            class="mobile-menu-btn"
-            onclick="openMenu()">
-
-            ☰
-
-        </button>
-
-
-        <a href="index.html"
-           class="mobile-logo">
-
-            DORAEMON 🔵
-
+        <a href="movies.html">
+            🎬 Movies
         </a>
 
-
-        <button
-            class="mobile-search-btn"
-            onclick="focusSearch()">
-
-            🔍
-
-        </button>
-
-    </header>
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section class="music-hero">
-
-        <div class="music-badge">
-            🎵 DORAEMON MUSIC WORLD
-        </div>
-
-        <h1>
-            Doraemon
-            <br>
-            <strong>Music Magic!</strong>
-        </h1>
-
-        <p>
-            Doraemon ke famous theme songs,
-            opening songs, ending songs aur
-            movie music explore karo.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         SEARCH & FILTER
-    ====================================================== -->
-
-    <div class="music-controls">
-
-        <input
-            id="musicSearch"
-            class="music-search"
-            type="search"
-            placeholder="🔍 Search Doraemon songs...">
-
-        <div class="music-filter">
-
-            <button
-                class="filter-btn active"
-                onclick="filterMusic('all',this)">
-                All
-            </button>
-
-            <button
-                class="filter-btn"
-                onclick="filterMusic('opening',this)">
-                Opening
-            </button>
-
-            <button
-                class="filter-btn"
-                onclick="filterMusic('ending',this)">
-                Ending
-            </button>
-
-            <button
-                class="filter-btn"
-                onclick="filterMusic('movie',this)">
-                Movies
-            </button>
-
-            <button
-                class="filter-btn"
-                onclick="filterMusic('theme',this)">
-                Themes
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         MUSIC
-    ====================================================== -->
-
-    <main>
-
-        <section class="music-section">
-
-            <div class="section-title">
-
-                <span>
-                    DORAEMON SONGS
-                </span>
-
-                <h2>
-                    Popular Music 🎵
-                </h2>
-
-                <p>
-                    Favourite Doraemon songs ek jagah.
-                </p>
-
-            </div>
-
-
-            <div class="music-grid" id="musicGrid">
-
-
-                <!-- SONG 1 -->
-
-                <article
-                    class="music-card"
-                    data-type="opening"
-                    data-name="Doraemon No Uta">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/doraemon-no-uta.jpg"
-                            alt="Doraemon No Uta"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🎵
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Doraemon No Uta')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Doraemon No Uta
-                        </h3>
-
-                        <p>
-                            Classic Doraemon Opening
-                        </p>
-
-                        <span class="music-tag">
-                            Opening
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 2 -->
-
-                <article
-                    class="music-card"
-                    data-type="theme"
-                    data-name="Doraemon Theme">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/doraemon-theme.jpg"
-                            alt="Doraemon Theme"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            💙
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Doraemon Theme')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Doraemon Theme
-                        </h3>
-
-                        <p>
-                            Main Theme Music
-                        </p>
-
-                        <span class="music-tag">
-                            Theme
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 3 -->
-
-                <article
-                    class="music-card"
-                    data-type="opening"
-                    data-name="Doraemon Opening">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/doraemon-opening.jpg"
-                            alt="Doraemon Opening"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🎶
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Doraemon Opening')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Doraemon Opening
-                        </h3>
-
-                        <p>
-                            Opening Theme
-                        </p>
-
-                        <span class="music-tag">
-                            Opening
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 4 -->
-
-                <article
-                    class="music-card"
-                    data-type="ending"
-                    data-name="Doraemon Ending">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/doraemon-ending.jpg"
-                            alt="Doraemon Ending"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🎵
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Doraemon Ending')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Doraemon Ending
-                        </h3>
-
-                        <p>
-                            Classic Ending Song
-                        </p>
-
-                        <span class="music-tag">
-                            Ending
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 5 -->
-
-                <article
-                    class="music-card"
-                    data-type="movie"
-                    data-name="Stand By Me Doraemon">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/stand-by-me.jpg"
-                            alt="Stand By Me Doraemon"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🎬
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Stand By Me Doraemon')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Stand By Me Doraemon
-                        </h3>
-
-                        <p>
-                            Movie Theme
-                        </p>
-
-                        <span class="music-tag">
-                            Movie
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 6 -->
-
-                <article
-                    class="music-card"
-                    data-type="movie"
-                    data-name="Stand By Me Doraemon 2">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/stand-by-me-2.jpg"
-                            alt="Stand By Me Doraemon 2"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            💙
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Stand By Me Doraemon 2')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Stand By Me Doraemon 2
-                        </h3>
-
-                        <p>
-                            Movie Music
-                        </p>
-
-                        <span class="music-tag">
-                            Movie
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 7 -->
-
-                <article
-                    class="music-card"
-                    data-type="movie"
-                    data-name="Nobita's New Dinosaur">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/new-dinosaur.jpg"
-                            alt="Nobita's New Dinosaur"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🦖
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Nobitas New Dinosaur')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Nobita's New Dinosaur
-                        </h3>
-
-                        <p>
-                            Movie Theme Music
-                        </p>
-
-                        <span class="music-tag">
-                            Movie
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONG 8 -->
-
-                <article
-                    class="music-card"
-                    data-type="theme"
-                    data-name="Doraemon Friendship Theme">
-
-                    <div class="album-art">
-
-                        <img
-                            src="assets/images/music/friendship.jpg"
-                            alt="Doraemon Friendship"
-                            onerror="this.style.display='none';">
-
-                        <div class="album-fallback">
-                            🤝
-                        </div>
-
-                        <button
-                            class="play-button"
-                            onclick="playSong('Doraemon Friendship Theme')">
-
-                            ▶
-
-                        </button>
-
-                    </div>
-
-                    <div class="music-info">
-
-                        <h3>
-                            Friendship Theme
-                        </h3>
-
-                        <p>
-                            Doraemon & Friends
-                        </p>
-
-                        <span class="music-tag">
-                            Theme
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         MINI PLAYER
-    ====================================================== -->
-
-    <div
-        id="musicPlayer"
-        class="music-player">
-
-        <div class="player-icon">
-            🎵
-        </div>
-
-        <div class="player-details">
-
-            <strong id="playerTitle">
-                Doraemon Music
-            </strong>
-
-            <small>
-                Now selected
-            </small>
-
-        </div>
-
-        <button
-            class="player-close"
-            onclick="closePlayer()">
-
-            ✕
-
-        </button>
-
-    </div>
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-logo">
-            DORAEMON WORLD 💙
-        </div>
-
-        <p>
-            Unofficial fan-made website.
-        </p>
-
-        <p class="copyright">
-            © 2026 Doraemon World
-        </p>
-
-    </footer>
-
-
-    <!-- =====================================================
-         MOBILE BOTTOM NAV
-    ====================================================== -->
-
-    <nav class="mobile-bottom-nav">
-
-        <a
-            href="index.html"
-            class="bottom-nav-item">
-
-            <span>🏠</span>
-            <small>Home</small>
-
+        <a href="episodes.html">
+            📺 Episodes
         </a>
 
-        <a
-            href="movies.html"
-            class="bottom-nav-item">
-
-            <span>🎬</span>
-            <small>Movies</small>
-
+        <a href="characters.html">
+            👥 Characters
         </a>
 
-        <a
-            href="episodes.html"
-            class="bottom-nav-item">
-
-            <span>📺</span>
-            <small>Episodes</small>
-
+        <a href="wallpapers.html">
+            🖼️ Wallpapers
         </a>
 
-        <a
-            href="characters.html"
-            class="bottom-nav-item">
-
-            <span>👥</span>
-            <small>Characters</small>
-
+        <a href="music.html" class="active">
+            🎵 Music
         </a>
 
-        <a
-            href="music.html"
-            class="bottom-nav-item active">
-
-            <span>🎵</span>
-            <small>Music</small>
-
+        <a href="gallery.html">
+            📸 Gallery
+        </a>
+        <a href="test.html">
+                📝 Test
         </a>
 
     </nav>
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script>
-
-        /* =====================================================
-           SEARCH
-        ===================================================== */
-
-        const search =
-            document.getElementById("musicSearch");
-
-        search.addEventListener("input", function () {
-
-            const value =
-                this.value.toLowerCase();
-
-            const cards =
-                document.querySelectorAll(".music-card");
-
-            cards.forEach(card => {
-
-                const name =
-                    card.dataset.name.toLowerCase();
-
-                if (name.includes(value)) {
-
-                    card.style.display = "";
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-        });
+</header>
 
 
-        /* =====================================================
-           FILTER
-        ===================================================== */
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
 
-        function filterMusic(type, button) {
+<header class="mobile-header">
 
-            const cards =
-                document.querySelectorAll(".music-card");
+    <button onclick="goHome()">
+        ☰
+    </button>
 
-            const buttons =
-                document.querySelectorAll(".filter-btn");
+    <a href="index.html" class="mobile-logo">
+        DORAEMON 🔵
+    </a>
 
-            buttons.forEach(btn => {
-                btn.classList.remove("active");
-            });
+    <button onclick="focusSearch()">
+        🔍
+    </button>
 
-            button.classList.add("active");
+</header>
 
 
-            cards.forEach(card => {
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-                if (
-                    type === "all" ||
-                    card.dataset.type === type
-                ) {
+<section class="hero">
 
-                    card.style.display = "";
+    <div class="badge">
+        🇮🇳 HINDI MUSIC COLLECTION
+    </div>
 
-                } else {
+    <h1>
+        Doraemon
+        <br>
+        <strong>Hindi Songs!</strong>
+    </h1>
 
-                    card.style.display = "none";
+    <p>
+        Doraemon ke Hindi TV aur movie
+        songs ko ek hi jagah explore karo.
+    </p>
 
-                }
+</section>
 
-            });
+
+<!-- =====================================================
+     SEARCH + FILTER
+===================================================== -->
+
+<div class="controls">
+
+    <input
+        id="search"
+        class="search"
+        type="search"
+        placeholder="🔍 Hindi song search karo...">
+
+    <div class="filters">
+
+        <button
+            class="filter active"
+            onclick="setFilter('all',this)">
+            All
+        </button>
+
+        <button
+            class="filter"
+            onclick="setFilter('tv',this)">
+            📺 TV
+        </button>
+
+        <button
+            class="filter"
+            onclick="setFilter('movie',this)">
+            🎬 Movies
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SONG SECTION
+===================================================== -->
+
+<main>
+
+<section class="music-section">
+
+    <div class="section-title">
+
+        <span>
+            HINDI COLLECTION
+        </span>
+
+        <h2>
+            Doraemon Hindi Music 🎵
+        </h2>
+
+        <p>
+            Hindi releases aur Hindi-language
+            versions ke liye dedicated section.
+        </p>
+
+    </div>
+
+
+    <div
+        id="songGrid"
+        class="song-grid">
+    </div>
+
+
+    <div
+        id="noResult"
+        class="no-result">
+
+        <h3>
+            Song nahi mila 🎵
+        </h3>
+
+        <p>
+            Dusra title ya keyword search karo.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     PLAYER UI
+===================================================== -->
+
+<div
+    id="player"
+    class="player">
+
+    <div class="player-icon">
+        🎵
+    </div>
+
+    <div class="player-info">
+
+        <strong id="playerTitle">
+            Doraemon Hindi Music
+        </strong>
+
+        <small>
+            Audio file connect karne ke liye
+            assets/music/ use karo.
+        </small>
+
+    </div>
+
+    <button
+        class="close-player"
+        onclick="closePlayer()">
+
+        ✕
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        DORAEMON WORLD 💙
+    </div>
+
+    <p>
+        Unofficial fan-made website.
+    </p>
+
+    <p>
+        © 2026 Doraemon World
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="mobile-bottom">
+
+    <a href="index.html">
+        🏠
+        <small>Home</small>
+    </a>
+
+    <a href="movies.html">
+        🎬
+        <small>Movies</small>
+    </a>
+
+    <a href="episodes.html">
+        📺
+        <small>Episodes</small>
+    </a>
+
+    <a href="characters.html">
+        👥
+        <small>Characters</small>
+    </a>
+
+    <a href="music.html" class="active">
+        🎵
+        <small>Music</small>
+    </a>
+
+</nav>
+
+
+<script>
+
+/* =====================================================
+   HINDI SONG DATABASE
+
+   Keep only songs that you have verified/licensed
+   for your website.
+===================================================== */
+
+const songs = [
+
+    {
+        id:1,
+        title:"Doraemon Hindi Theme",
+        artist:"Hindi TV Version",
+        type:"tv"
+    },
+
+    {
+        id:2,
+        title:"Doraemon Hindi Opening",
+        artist:"Hindi TV Version",
+        type:"tv"
+    },
+
+    {
+        id:3,
+        title:"Doraemon Hindi Ending",
+        artist:"Hindi TV Version",
+        type:"tv"
+    },
+
+    {
+        id:4,
+        title:"Doraemon Hindi Theme Song",
+        artist:"Hindi Version",
+        type:"tv"
+    },
+
+    {
+        id:5,
+        title:"Doraemon Movie Hindi Theme",
+        artist:"Hindi Movie Version",
+        type:"movie"
+    },
+
+    {
+        id:6,
+        title:"Stand By Me Doraemon Hindi Theme",
+        artist:"Hindi Movie Version",
+        type:"movie"
+    },
+
+    {
+        id:7,
+        title:"Doraemon Movie Hindi Song",
+        artist:"Hindi Movie Version",
+        type:"movie"
+    },
+
+    {
+        id:8,
+        title:"Doraemon Hindi Special Song",
+        artist:"Hindi Version",
+        type:"tv"
+    }
+
+];
+
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+const grid =
+    document.getElementById("songGrid");
+
+const noResult =
+    document.getElementById("noResult");
+
+let currentFilter = "all";
+
+
+function renderSongs(){
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    grid.innerHTML = "";
+
+    let count = 0;
+
+
+    songs.forEach(song => {
+
+        const filterMatch =
+            currentFilter === "all" ||
+            song.type === currentFilter;
+
+
+        const text =
+            (
+                song.title +
+                " " +
+                song.artist
+            ).toLowerCase();
+
+
+        const searchMatch =
+            text.includes(search);
+
+
+        if(filterMatch && searchMatch){
+
+            count++;
+
+
+            const icon =
+                song.type === "movie"
+                ? "🎬"
+                : "📺";
+
+
+            const card =
+                document.createElement("article");
+
+
+            card.className =
+                "song-card";
+
+
+            card.innerHTML = `
+
+                <div class="song-cover">
+
+                    <div class="number">
+                        ${String(song.id).padStart(2,"0")}
+                    </div>
+
+                    <div class="music-icon">
+                        ${icon}
+                    </div>
+
+                    <button
+                        class="play-btn"
+                        onclick="playSong(${song.id})">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+
+                <div class="song-info">
+
+                    <h3>
+                        ${song.title}
+                    </h3>
+
+                    <div class="artist">
+                        🎤 ${song.artist}
+                    </div>
+
+                    <span class="type">
+                        ${song.type === "movie"
+                            ? "Hindi Movie"
+                            : "Hindi TV"}
+                    </span>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
 
         }
 
-
-        /* =====================================================
-           PLAYER
-        ===================================================== */
-
-        function playSong(song) {
-
-            const player =
-                document.getElementById("musicPlayer");
-
-            const title =
-                document.getElementById("playerTitle");
-
-            title.textContent = song;
-
-            player.classList.add("show");
-
-        }
+    });
 
 
-        function closePlayer() {
+    noResult.style.display =
+        count === 0
+        ? "block"
+        : "none";
 
-            document
-                .getElementById("musicPlayer")
-                .classList.remove("show");
-
-        }
-
-
-        /* =====================================================
-           SEARCH BUTTON
-        ===================================================== */
-
-        function focusSearch() {
-
-            const search =
-                document.getElementById("musicSearch");
-
-            search.focus();
-
-            window.scrollTo({
-                top: 250,
-                behavior: "smooth"
-            });
-
-        }
+}
 
 
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
+/* =====================================================
+   SEARCH
+===================================================== */
 
-        function openMenu() {
+document
+.getElementById("search")
+.addEventListener(
+    "input",
+    renderSongs
+);
 
-            alert(
-                "Menu: Home • Movies • Episodes • Characters • Wallpapers • Music • Gallery"
-            );
 
-        }
+/* =====================================================
+   FILTER
+===================================================== */
 
-    </script>
+function setFilter(type,button){
+
+    currentFilter = type;
+
+
+    document
+    .querySelectorAll(".filter")
+    .forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+    renderSongs();
+
+}
+
+
+/* =====================================================
+   PLAYER
+===================================================== */
+
+function playSong(id){
+
+    const song =
+        songs.find(
+            item => item.id === id
+        );
+
+
+    if(!song) return;
+
+
+    document
+    .getElementById("playerTitle")
+    .textContent =
+        song.title;
+
+
+    document
+    .getElementById("player")
+    .classList.add("show");
+
+}
+
+
+/* =====================================================
+   CLOSE PLAYER
+===================================================== */
+
+function closePlayer(){
+
+    document
+    .getElementById("player")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+function focusSearch(){
+
+    const search =
+        document.getElementById("search");
+
+    search.focus();
+
+    window.scrollTo({
+        top:250,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+renderSongs();
+
+</script>
 
 
 </body>

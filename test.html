@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doraemon Test</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f2fbff;
+    color:#172b3d;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:70px;
+    padding:0 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#fff;
+
+    border-bottom:1px solid #dceef7;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    text-decoration:none;
+    color:#087dcc;
+    font-size:23px;
+    font-weight:900;
+}
+
+.nav{
+    display:flex;
+    gap:6px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#526777;
+    font-size:13px;
+    font-weight:700;
+
+    padding:10px 12px;
+    border-radius:10px;
+
+    transition:.2s;
+}
+
+.nav a:hover,
+.nav a.active{
+    background:#e7f7ff;
+    color:#087dcc;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:45px 20px 35px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #e4f8ff,
+        #f7fdff
+    );
+}
+
+.badge{
+    display:inline-block;
+
+    background:#fff;
+    color:#087dcc;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:11px;
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#17324a;
+}
+
+.hero h1 span{
+    color:#087dcc;
+}
+
+.hero p{
+    color:#718594;
+    font-size:14px;
+    margin-top:10px;
+}
+
+
+/* ================= TEST ================= */
+
+.container{
+    width:92%;
+    max-width:900px;
+
+    margin:30px auto 80px;
+}
+
+
+/* ================= INFO ================= */
+
+.test-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:20px;
+}
+
+.info{
+    background:#fff;
+
+    border:1px solid #dceef7;
+
+    border-radius:15px;
+
+    padding:16px;
+
+    text-align:center;
+
+    box-shadow:0 6px 20px rgba(0,100,160,.06);
+}
+
+.info small{
+    display:block;
+
+    color:#7b8d9a;
+
+    font-size:11px;
+
+    margin-bottom:6px;
+}
+
+.info strong{
+    color:#087dcc;
+
+    font-size:19px;
+}
+
+
+/* ================= NAME ================= */
+
+.name-box{
+    background:#fff;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:1px solid #dceef7;
+
+    margin-bottom:20px;
+}
+
+.name-box label{
+    display:block;
+
+    font-size:13px;
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+.name-box input{
+    width:100%;
+
+    height:45px;
+
+    border:1px solid #d5e7ef;
+
+    border-radius:10px;
+
+    padding:0 13px;
+
+    outline:none;
+
+    font-size:14px;
+}
+
+.name-box input:focus{
+    border-color:#087dcc;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+    background:#fff;
+
+    border:1px solid #dceef7;
+
+    border-radius:17px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 6px 20px rgba(0,100,160,.05);
+}
+
+.section-title{
+    background:#eaf8ff;
+
+    padding:16px 18px;
+
+    border-bottom:1px solid #dceef7;
+}
+
+.section-title h2{
+    font-size:18px;
+
+    color:#173c58;
+}
+
+.section-title p{
+    font-size:11px;
+
+    color:#718594;
+
+    margin-top:4px;
+}
+
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:18px;
+
+    border-bottom:1px solid #edf4f7;
+}
+
+.question:last-child{
+    border-bottom:0;
+}
+
+.question-text{
+    font-size:14px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+    margin-bottom:12px;
+}
+
+
+/* ================= OPTIONS ================= */
+
+.options{
+    display:grid;
+
+    gap:8px;
+}
+
+.option{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:11px 13px;
+
+    background:#f8fcfe;
+
+    border:1px solid #e0edf2;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    transition:.2s;
+}
+
+.option:hover{
+    background:#eaf8ff;
+    border-color:#9dd9ef;
+}
+
+.option input{
+    accent-color:#087dcc;
+}
+
+
+/* ================= FILL BLANK ================= */
+
+.fill-options{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:8px;
+}
+
+.fill-option{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:11px;
+
+    background:#f8fcfe;
+
+    border:1px solid #e0edf2;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.fill-option:hover{
+    background:#eaf8ff;
+}
+
+.fill-option input{
+    accent-color:#087dcc;
+}
+
+
+/* ================= BUTTON ================= */
+
+.submit-area{
+    text-align:center;
+
+    margin-top:25px;
+}
+
+.submit{
+    border:0;
+
+    background:#087dcc;
+
+    color:#fff;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 22px rgba(8,125,204,.25);
+}
+
+.submit:hover{
+    background:#066eae;
+}
+
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+
+    background:#fff;
+
+    border:2px solid #9bdaf2;
+
+    border-radius:18px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    margin-top:25px;
+}
+
+.result.show{
+    display:block;
+}
+
+.result-icon{
+    font-size:48px;
+}
+
+.result h2{
+    color:#087dcc;
+
+    margin:8px 0;
+}
+
+.result-name{
+    color:#657b8b;
+
+    font-size:14px;
+}
+
+.final-marks{
+    font-size:38px;
+
+    font-weight:900;
+
+    color:#17354d;
+
+    margin:12px 0;
+}
+
+.percentage{
+    color:#087dcc;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+.correct{
+    margin-top:10px;
+
+    color:#708594;
+
+    font-size:13px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+
+    background:#fff;
+
+    padding:40px 20px;
+
+    border-top:1px solid #dceef7;
+}
+
+footer strong{
+    color:#087dcc;
+
+    font-size:20px;
+}
+
+footer p{
+    color:#82929e;
+
+    font-size:12px;
+
+    margin-top:8px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        height:60px;
+
+        padding:0 15px;
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .hero{
+        padding:38px 18px 30px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .container{
+        width:94%;
+    }
+
+    .test-info{
+        gap:7px;
+    }
+
+    .info{
+        padding:13px 5px;
+    }
+
+    .info small{
+        font-size:9px;
+    }
+
+    .info strong{
+        font-size:16px;
+    }
+
+    .question{
+        padding:15px;
+    }
+
+    .question-text{
+        font-size:13px;
+    }
+
+    .option{
+        font-size:12px;
+        padding:10px;
+    }
+
+    .fill-options{
+        grid-template-columns:1fr;
+    }
+
+    .fill-option{
+        font-size:12px;
+    }
+
+    .submit{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        DORAEMON 🌐
+    </a>
+
+    <nav class="nav">
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="movies.html">🎬 Movies</a>
+
+        <a href="episodes.html">📺 Episodes</a>
+
+        <a href="characters.html">👥 Characters</a>
+
+        <a href="wallpapers.html">🖼️ Wallpapers</a>
+
+        <a href="music.html">🎵 Music</a>
+
+        <a href="test.html" class="active">
+            <span class="nav-icon">📝</span>
+            Test
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="badge">
+        📝 DORAEMON QUIZ
+    </div>
+
+    <h1>
+        Doraemon <span>Test</span>
+    </h1>
+
+    <p>
+        Simple questions solve karo aur apna score dekho!
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- ================= TEST INFO ================= -->
+
+<div class="test-info">
+
+    <div class="info">
+
+        <small>⏱️ TIME</small>
+
+        <strong id="timer">
+            30:00
+        </strong>
+
+    </div>
+
+
+    <div class="info">
+
+        <small>💯 TOTAL MARKS</small>
+
+        <strong>
+            20
+        </strong>
+
+    </div>
+
+
+    <div class="info">
+
+        <small>❓ QUESTIONS</small>
+
+        <strong>
+            20
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NAME ================= -->
+
+<div class="name-box">
+
+    <label>
+        👤 Your Name
+    </label>
+
+    <input
+        type="text"
+        id="studentName"
+        placeholder="Enter your name">
+
+</div>
+
+
+<!-- =====================================================
+     SECTION A
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Section A — MCQs
+        </h2>
+
+        <p>
+            Each question = 1 mark
+        </p>
+
+    </div>
+
+
+    <!-- Q1 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            1. Doraemon ka favourite food kya hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                A) Pizza
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                B) Dorayaki
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                C) Burger
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="d">
+                D) Cake
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q2 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            2. Nobita ka best robotic friend kaun hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                A) Gian
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                B) Suneo
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                C) Doraemon
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="d">
+                D) Dekisugi
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q3 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            3. Doraemon kis colour ka hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                A) Red
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                B) Blue
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                C) Green
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="d">
+                D) Yellow
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q4 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            4. Nobita ki best friend kaun hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q4" value="a">
+                A) Shizuka
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="b">
+                B) Dorami
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="c">
+                C) Jaiko
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="d">
+                D) Sewashi
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q5 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            5. Gian ka real name kya hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q5" value="a">
+                A) Takeshi Goda
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="b">
+                B) Suneo Honekawa
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="c">
+                C) Nobita Nobi
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="d">
+                D) Hidetoshi
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION B
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Section B — True / False
+        </h2>
+
+        <p>
+            Each question = 1 mark
+        </p>
+
+    </div>
+
+
+    <!-- Q6 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            6. Doraemon ko mice se dar lagta hai.
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q6" value="true">
+                True
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="false">
+                False
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q7 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            7. Nobita ek excellent student hai.
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q7" value="true">
+                True
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="false">
+                False
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q8 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            8. Shizuka ko swimming pasand hai.
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q8" value="true">
+                True
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="false">
+                False
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q9 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            9. Suneo ko expensive cheezein pasand hain.
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q9" value="true">
+                True
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="false">
+                False
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q10 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            10. Doraemon ke paas bahut saare futuristic gadgets hain.
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q10" value="true">
+                True
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="false">
+                False
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION C - FILL BLANK OPTIONS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Section C — Fill in the Blanks
+        </h2>
+
+        <p>
+            Select the correct option — each question = 1 mark
+        </p>
+
+    </div>
+
+
+    <!-- Q11 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            11. Doraemon ko ______ khana bahut pasand hai.
+        </div>
+
+        <div class="fill-options">
+
+            <label class="fill-option">
+                <input type="radio" name="q11" value="a">
+                A) Dorayaki
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q11" value="b">
+                B) Pizza
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q11" value="c">
+                C) Sandwich
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q11" value="d">
+                D) Rice
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q12 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            12. Doraemon ke sar par ______ Copter hota hai.
+        </div>
+
+        <div class="fill-options">
+
+            <label class="fill-option">
+                <input type="radio" name="q12" value="a">
+                A) Rocket
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q12" value="b">
+                B) Bamboo
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q12" value="c">
+                C) Magic
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q12" value="d">
+                D) Flying
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q13 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            13. Nobita ka surname ______ hai.
+        </div>
+
+        <div class="fill-options">
+
+            <label class="fill-option">
+                <input type="radio" name="q13" value="a">
+                A) Goda
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q13" value="b">
+                B) Nobi
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q13" value="c">
+                C) Honekawa
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q13" value="d">
+                D) Minamoto
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q14 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            14. Shizuka ka surname ______ hai.
+        </div>
+
+        <div class="fill-options">
+
+            <label class="fill-option">
+                <input type="radio" name="q14" value="a">
+                A) Nobi
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q14" value="b">
+                B) Goda
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q14" value="c">
+                C) Minamoto
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q14" value="d">
+                D) Honekawa
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q15 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            15. Suneo ka surname ______ hai.
+        </div>
+
+        <div class="fill-options">
+
+            <label class="fill-option">
+                <input type="radio" name="q15" value="a">
+                A) Honekawa
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q15" value="b">
+                B) Nobi
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q15" value="c">
+                C) Goda
+            </label>
+
+            <label class="fill-option">
+                <input type="radio" name="q15" value="d">
+                D) Minamoto
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION D
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Section D — Easy Questions
+        </h2>
+
+        <p>
+            Each question = 1 mark
+        </p>
+
+    </div>
+
+
+    <!-- Q16 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            16. Anywhere Door ka kya use hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q16" value="a">
+                A) Kahin bhi travel karna
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="b">
+                B) Food banana
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="c">
+                C) Time stop karna
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="d">
+                D) Invisible hona
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q17 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            17. Nobita ki mummy ka naam kya hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q17" value="a">
+                A) Shizuka
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="b">
+                B) Tamako
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="c">
+                C) Dorami
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="d">
+                D) Jaiko
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q18 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            18. Doraemon ki sister ka naam kya hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q18" value="a">
+                A) Shizuka
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="b">
+                B) Jaiko
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="c">
+                C) Dorami
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="d">
+                D) Tamako
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q19 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            19. Time Machine kis jagah se connected hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q19" value="a">
+                A) Nobita ke study room
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="b">
+                B) Nobita ke desk
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="c">
+                C) School
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="d">
+                D) Park
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Q20 -->
+
+    <div class="question">
+
+        <div class="question-text">
+            20. Doraemon ka sabse famous gadget kaunsa hai?
+        </div>
+
+        <div class="options">
+
+            <label class="option">
+                <input type="radio" name="q20" value="a">
+                A) Anywhere Door
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="b">
+                B) Camera
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="c">
+                C) Radio
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="d">
+                D) Clock
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESULT ================= -->
+
+<div class="result" id="result">
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+    <h2>
+        Test Completed!
+    </h2>
+
+    <div class="result-name" id="resultName"></div>
+
+    <div class="final-marks" id="finalMarks">
+        0 / 20
+    </div>
+
+    <div class="percentage" id="percentage">
+        0%
+    </div>
+
+    <div class="correct" id="correctText">
+        Correct Answers: 0 / 20
+    </div>
+
+</div>
+
+
+<!-- ================= SUBMIT ================= -->
+
+<div class="submit-area">
+
+    <button
+        class="submit"
+        onclick="submitTest()">
+
+        ✅ Submit Test
+
+    </button>
+
+</div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>
+        DORAEMON WORLD 💙
+    </strong>
+
+    <p>
+        Unofficial fan-made website
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   CORRECT ANSWERS
+===================================================== */
+
+const answers = {
+
+    q1:"b",
+    q2:"c",
+    q3:"b",
+    q4:"a",
+    q5:"a",
+
+    q6:"true",
+    q7:"false",
+    q8:"true",
+    q9:"true",
+    q10:"true",
+
+    q11:"a",
+    q12:"b",
+    q13:"b",
+    q14:"c",
+    q15:"a",
+
+    q16:"a",
+    q17:"b",
+    q18:"c",
+    q19:"b",
+    q20:"a"
+
+};
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+let timeLeft = 30 * 60;
+
+const timer =
+    document.getElementById("timer");
+
+
+const timerInterval =
+setInterval(function(){
+
+    timeLeft--;
+
+    let minutes =
+        Math.floor(timeLeft / 60);
+
+    let seconds =
+        timeLeft % 60;
+
+
+    timer.textContent =
+        String(minutes).padStart(2,"0")
+        + ":"
+        + String(seconds).padStart(2,"0");
+
+
+    if(timeLeft <= 0){
+
+        clearInterval(timerInterval);
+
+        submitTest();
+
+    }
+
+},1000);
+
+
+/* =====================================================
+   SUBMIT TEST
+===================================================== */
+
+function submitTest(){
+
+    let score = 0;
+
+
+    Object.keys(answers).forEach(function(question){
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+
+        if(
+            selected &&
+            selected.value === answers[question]
+        ){
+
+            score++;
+
+        }
+
+    });
+
+
+    const name =
+        document
+        .getElementById("studentName")
+        .value
+        .trim();
+
+
+    const percentage =
+        Math.round(
+            (score / 20) * 100
+        );
+
+
+    document
+    .getElementById("finalMarks")
+    .textContent =
+        score + " / 20 Marks";
+
+
+    document
+    .getElementById("percentage")
+    .textContent =
+        percentage + "%";
+
+
+    document
+    .getElementById("correctText")
+    .textContent =
+        "Correct Answers: "
+        + score
+        + " / 20";
+
+
+    document
+    .getElementById("resultName")
+    .textContent =
+        name
+        ? "Well done, " + name + "!"
+        : "Well done!";
+
+
+    document
+    .getElementById("result")
+    .classList.add("show");
+
+
+    document
+    .getElementById("result")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
