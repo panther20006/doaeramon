@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Doraemon Test</title>
-
-<link rel="stylesheet" href="css/style.css">
+<title>Doraemon World - Test</title>
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   RESET
 ========================================================= */
 
 *{
@@ -22,18 +20,23 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#f2fbff;
-    color:#172b3d;
+    color:#172033;
 }
 
 
 /* =========================================================
-   TOP NAVIGATION BAR
+   DESKTOP NAVIGATION
 ========================================================= */
 
 .topbar{
+
     width:100%;
     min-height:64px;
 
@@ -47,21 +50,20 @@ body{
 
     z-index:1000;
 
-    background:rgba(4,76,132,0.97);
+    background:rgba(4,76,132,.97);
 
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
 
     box-shadow:
-        0 5px 25px rgba(0,60,100,0.15);
+        0 5px 25px rgba(0,60,100,.15);
 }
 
 
-/* =========================================================
-   LOGO
-========================================================= */
+/* LOGO */
 
 .logo{
+
     color:white;
 
     font-size:23px;
@@ -76,9 +78,9 @@ body{
 
     flex-shrink:0;
 
-    transition:0.25s ease;
-
     text-decoration:none;
+
+    transition:.25s ease;
 }
 
 .logo:hover{
@@ -86,11 +88,10 @@ body{
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAV */
 
 #nav{
+
     margin-left:auto;
 
     display:flex;
@@ -103,6 +104,7 @@ body{
 }
 
 #nav a{
+
     color:white;
 
     font-size:14px;
@@ -114,22 +116,33 @@ body{
 
     white-space:nowrap;
 
-    transition:0.25s ease;
-
     text-decoration:none;
+
+    transition:.25s ease;
 }
 
 #nav a:hover{
+
     background:#20a8f5;
 
     transform:translateY(-2px);
 }
 
 #nav a.active{
+
     background:#20a8f5;
 
     box-shadow:
-        0 0 15px rgba(32,168,245,0.45);
+        0 0 15px rgba(32,168,245,.45);
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.mobile-header{
+    display:none;
 }
 
 
@@ -138,59 +151,301 @@ body{
 ========================================================= */
 
 .hero{
-    text-align:center;
 
-    padding:45px 20px 35px;
+    min-height:570px;
+
+    padding:70px 8% 60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
 
     background:
-    linear-gradient(
-        180deg,
-        #e4f8ff,
-        #f7fdff
-    );
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,170,255,.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(0,120,255,.16),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dff6ff 0%,
+            #eefbff 48%,
+            #f7fdff 100%
+        );
 }
 
-.badge{
-    display:inline-block;
 
-    background:#fff;
-    color:#087dcc;
+/* HERO LIGHT */
 
-    padding:8px 15px;
+.hero::before{
 
-    border-radius:30px;
+    content:"";
 
-    font-size:11px;
-    font-weight:900;
+    position:absolute;
 
-    margin-bottom:15px;
-}
+    width:500px;
+    height:500px;
 
-.hero h1{
-    font-size:48px;
-    color:#17324a;
-}
+    right:-150px;
+    top:-180px;
 
-.hero h1 span{
-    color:#087dcc;
-}
+    background:rgba(55,180,255,.12);
 
-.hero p{
-    color:#718594;
-    font-size:14px;
-    margin-top:10px;
+    border-radius:50%;
+
+    filter:blur(20px);
 }
 
 
 /* =========================================================
-   CONTAINER
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    width:55%;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* BADGE */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:9px 18px;
+
+    background:white;
+
+    border-radius:50px;
+
+    color:#0785d1;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1.2px;
+
+    margin-bottom:22px;
+
+    box-shadow:
+        0 8px 25px rgba(0,130,200,.10);
+}
+
+
+/* TITLE */
+
+.hero h1{
+
+    color:#142b42;
+
+    font-size:clamp(
+        48px,
+        6vw,
+        82px
+    );
+
+    line-height:.98;
+
+    font-weight:900;
+
+    letter-spacing:-2px;
+
+    margin-bottom:20px;
+}
+
+.hero h1 strong{
+
+    display:block;
+
+    color:#0785d1;
+}
+
+
+/* DESCRIPTION */
+
+.hero p{
+
+    max-width:650px;
+
+    color:#55758d;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+    margin-bottom:28px;
+}
+
+
+/* HERO BUTTON */
+
+.hero-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:13px 22px;
+
+    border-radius:12px;
+
+    background:#078bd6;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 10px 25px rgba(0,120,190,.20);
+
+    transition:.25s ease;
+}
+
+.hero-btn:hover{
+
+    background:#066fae;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,120,190,.25);
+}
+
+
+/* =========================================================
+   DORAEMON HERO IMAGE
+========================================================= */
+
+.hero-art{
+
+    width:42%;
+
+    min-height:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* IMAGE GLOW */
+
+.hero-art::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(0,160,255,.22),
+            rgba(0,160,255,.04) 55%,
+            transparent 70%
+        );
+
+    filter:blur(5px);
+
+    z-index:-1;
+}
+
+
+/* DORAEMON IMAGE */
+
+.hero-art img{
+
+    width:min(
+        420px,
+        90%
+    );
+
+    max-height:440px;
+
+    object-fit:contain;
+
+    display:block;
+
+    filter:
+        drop-shadow(
+            0 25px 25px
+            rgba(0,90,160,.18)
+        );
+
+    animation:
+        doraemonFloat 4s ease-in-out infinite;
+}
+
+
+/* FLOAT */
+
+@keyframes doraemonFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TEST CONTAINER
 ========================================================= */
 
 .container{
-    width:92%;
-    max-width:900px;
 
-    margin:30px auto 80px;
+    width:92%;
+
+    max-width:1000px;
+
+    margin:50px auto 90px;
 }
 
 
@@ -199,44 +454,61 @@ body{
 ========================================================= */
 
 .test-info{
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
-    gap:12px;
+    gap:15px;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .info{
-    background:#fff;
+
+    background:white;
 
     border:1px solid #dceef7;
 
-    border-radius:15px;
+    border-radius:17px;
 
-    padding:16px;
+    padding:18px;
 
     text-align:center;
 
     box-shadow:
-        0 6px 20px rgba(0,100,160,.06);
+        0 8px 25px rgba(0,100,160,.06);
+
+    transition:.25s ease;
+}
+
+.info:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,100,160,.10);
 }
 
 .info small{
+
     display:block;
 
     color:#7b8d9a;
 
     font-size:11px;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
+
+    font-weight:700;
 }
 
 .info strong{
+
     color:#087dcc;
 
-    font-size:19px;
+    font-size:21px;
 }
 
 
@@ -245,36 +517,45 @@ body{
 ========================================================= */
 
 .name-box{
-    background:#fff;
 
-    padding:18px;
+    background:white;
 
-    border-radius:15px;
+    padding:20px;
+
+    border-radius:17px;
 
     border:1px solid #dceef7;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
+
+    box-shadow:
+        0 8px 25px rgba(0,100,160,.05);
 }
 
 .name-box label{
+
     display:block;
 
     font-size:13px;
-    font-weight:700;
 
-    margin-bottom:8px;
+    font-weight:800;
+
+    margin-bottom:9px;
+
+    color:#17324a;
 }
 
 .name-box input{
+
     width:100%;
 
-    height:45px;
+    height:48px;
 
     border:1px solid #d5e7ef;
 
-    border-radius:10px;
+    border-radius:11px;
 
-    padding:0 13px;
+    padding:0 14px;
 
     outline:none;
 
@@ -282,7 +563,11 @@ body{
 }
 
 .name-box input:focus{
+
     border-color:#087dcc;
+
+    box-shadow:
+        0 0 0 4px rgba(8,125,204,.08);
 }
 
 
@@ -291,40 +576,50 @@ body{
 ========================================================= */
 
 .section{
-    background:#fff;
+
+    background:white;
 
     border:1px solid #dceef7;
 
-    border-radius:17px;
+    border-radius:20px;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
     overflow:hidden;
 
     box-shadow:
-        0 6px 20px rgba(0,100,160,.05);
+        0 8px 25px rgba(0,100,160,.05);
 }
 
 .section-title{
-    background:#eaf8ff;
 
-    padding:16px 18px;
+    background:
+
+        linear-gradient(
+            135deg,
+            #e5f8ff,
+            #f3fcff
+        );
+
+    padding:18px 20px;
 
     border-bottom:1px solid #dceef7;
 }
 
 .section-title h2{
-    font-size:18px;
+
+    font-size:19px;
 
     color:#173c58;
 }
 
 .section-title p{
+
     font-size:11px;
 
     color:#718594;
 
-    margin-top:4px;
+    margin-top:5px;
 }
 
 
@@ -333,7 +628,8 @@ body{
 ========================================================= */
 
 .question{
-    padding:18px;
+
+    padding:20px;
 
     border-bottom:1px solid #edf4f7;
 }
@@ -343,13 +639,16 @@ body{
 }
 
 .question-text{
+
     font-size:14px;
 
-    font-weight:700;
+    font-weight:800;
 
-    line-height:1.5;
+    line-height:1.6;
 
-    margin-bottom:12px;
+    margin-bottom:13px;
+
+    color:#20384e;
 }
 
 
@@ -358,40 +657,46 @@ body{
 ========================================================= */
 
 .options{
+
     display:grid;
 
-    gap:8px;
+    gap:9px;
 }
 
 .option{
+
     display:flex;
 
     align-items:center;
 
-    gap:9px;
+    gap:10px;
 
-    padding:11px 13px;
+    padding:12px 14px;
 
     background:#f8fcfe;
 
     border:1px solid #e0edf2;
 
-    border-radius:9px;
+    border-radius:10px;
 
     cursor:pointer;
 
     font-size:13px;
 
-    transition:.2s;
+    transition:.2s ease;
 }
 
 .option:hover{
+
     background:#eaf8ff;
 
     border-color:#9dd9ef;
+
+    transform:translateX(3px);
 }
 
 .option input{
+
     accent-color:#087dcc;
 }
 
@@ -401,60 +706,73 @@ body{
 ========================================================= */
 
 .fill-options{
+
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
-    gap:8px;
+    gap:9px;
 }
 
 .fill-option{
+
     display:flex;
 
     align-items:center;
 
     gap:8px;
 
-    padding:11px;
+    padding:12px;
 
     background:#f8fcfe;
 
     border:1px solid #e0edf2;
 
-    border-radius:9px;
+    border-radius:10px;
 
     cursor:pointer;
 
     font-size:13px;
+
+    transition:.2s ease;
 }
 
 .fill-option:hover{
+
     background:#eaf8ff;
+
+    border-color:#9dd9ef;
+
+    transform:translateY(-2px);
 }
 
 .fill-option input{
+
     accent-color:#087dcc;
 }
 
 
 /* =========================================================
-   SUBMIT BUTTON
+   SUBMIT
 ========================================================= */
 
 .submit-area{
+
     text-align:center;
 
-    margin-top:25px;
+    margin-top:28px;
 }
 
 .submit{
+
     border:0;
 
-    background:#087dcc;
+    background:#078bd6;
 
-    color:#fff;
+    color:white;
 
-    padding:14px 30px;
+    padding:14px 32px;
 
     border-radius:12px;
 
@@ -465,11 +783,19 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 22px rgba(8,125,204,.25);
+        0 10px 25px rgba(0,120,190,.20);
+
+    transition:.25s ease;
 }
 
 .submit:hover{
-    background:#066eae;
+
+    background:#066fae;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,120,190,.25);
 }
 
 
@@ -478,60 +804,88 @@ body{
 ========================================================= */
 
 .result{
+
     display:none;
 
-    background:#fff;
+    background:white;
 
     border:2px solid #9bdaf2;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:28px 20px;
+    padding:30px 20px;
 
     text-align:center;
 
-    margin-top:25px;
+    margin-top:28px;
+
+    box-shadow:
+        0 12px 35px rgba(0,100,160,.08);
 }
 
 .result.show{
+
     display:block;
+
+    animation:
+        resultShow .5s ease;
+}
+
+@keyframes resultShow{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 .result-icon{
-    font-size:48px;
+
+    font-size:52px;
 }
 
 .result h2{
+
     color:#087dcc;
 
-    margin:8px 0;
+    margin:9px 0;
 }
 
 .result-name{
+
     color:#657b8b;
 
     font-size:14px;
 }
 
 .final-marks{
-    font-size:38px;
+
+    font-size:40px;
 
     font-weight:900;
 
     color:#17354d;
 
-    margin:12px 0;
+    margin:13px 0;
 }
 
 .percentage{
+
     color:#087dcc;
 
-    font-size:18px;
+    font-size:19px;
 
     font-weight:800;
 }
 
 .correct{
+
     margin-top:10px;
 
     color:#708594;
@@ -545,27 +899,59 @@ body{
 ========================================================= */
 
 footer{
+
+    padding:45px 20px;
+
     text-align:center;
 
-    background:#fff;
+    background:white;
 
-    padding:40px 20px;
-
-    border-top:1px solid #dceef7;
+    border-top:1px solid #deeff7;
 }
 
-footer strong{
+.footer-logo{
+
     color:#087dcc;
 
-    font-size:20px;
+    font-size:21px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
 }
 
 footer p{
-    color:#82929e;
 
-    font-size:12px;
+    color:#7a8c9b;
 
-    margin-top:8px;
+    font-size:13px;
+
+    margin-top:7px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    .hero{
+
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .hero h1{
+
+        font-size:
+            clamp(
+                45px,
+                6vw,
+                70px
+            );
+    }
+
 }
 
 
@@ -575,86 +961,275 @@ footer p{
 
 @media(max-width:700px){
 
+    body{
+        padding-bottom:20px;
+    }
+
+
+    /* HIDE DESKTOP NAV */
+
     .topbar{
-        min-height:60px;
-
-        padding:8px 15px;
-
-        overflow-x:auto;
+        display:none;
     }
 
-    .logo{
+
+    /* MOBILE HEADER */
+
+    .mobile-header{
+
+        display:flex;
+
+        height:62px;
+
+        padding:0 15px;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        position:sticky;
+
+        top:0;
+
+        z-index:2000;
+
+        background:
+            rgba(255,255,255,.98);
+
+        border-bottom:
+            1px solid #dceff8;
+
+        box-shadow:
+            0 4px 18px
+            rgba(0,100,170,.08);
+    }
+
+    .mobile-header button{
+
+        width:40px;
+        height:40px;
+
+        border:0;
+
+        border-radius:12px;
+
+        background:#e9f7ff;
+
+        color:#087dcc;
+
         font-size:19px;
+
+        cursor:pointer;
     }
 
-    #nav{
-        margin-left:auto;
+    .mobile-logo{
 
-        gap:3px;
+        color:#087dcc;
+
+        text-decoration:none;
+
+        font-size:18px;
+
+        font-weight:900;
+
+        letter-spacing:1px;
     }
 
-    #nav a{
-        font-size:12px;
 
-        padding:8px 9px;
-    }
+    /* HERO */
 
     .hero{
-        padding:38px 18px 30px;
+
+        min-height:auto;
+
+        padding:
+            45px 20px 30px;
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .hero-content{
+
+        width:100%;
+
+        order:1;
+    }
+
+    .badge{
+
+        font-size:9px;
+
+        padding:8px 13px;
+
+        margin-bottom:17px;
     }
 
     .hero h1{
-        font-size:38px;
+
+        font-size:42px;
+
+        letter-spacing:-1px;
+
+        line-height:1;
     }
 
     .hero p{
+
         font-size:13px;
+
+        margin:
+            15px auto 20px;
+
+        max-width:500px;
     }
+
+    .hero-btn{
+
+        padding:
+            12px 20px;
+    }
+
+
+    /* IMAGE */
+
+    .hero-art{
+
+        width:100%;
+
+        min-height:280px;
+
+        order:2;
+
+        margin-top:5px;
+    }
+
+    .hero-art::before{
+
+        width:270px;
+        height:270px;
+    }
+
+    .hero-art img{
+
+        width:280px;
+
+        max-height:300px;
+    }
+
+
+    /* CONTAINER */
 
     .container{
-        width:94%;
+
+        width:92%;
+
+        margin-top:35px;
     }
 
+
+    /* INFO */
+
     .test-info{
-        gap:7px;
+
+        gap:8px;
     }
 
     .info{
+
         padding:13px 5px;
+
+        border-radius:13px;
     }
 
     .info small{
+
         font-size:9px;
     }
 
     .info strong{
+
         font-size:16px;
     }
 
+
+    /* QUESTIONS */
+
     .question{
+
         padding:15px;
     }
 
     .question-text{
+
         font-size:13px;
     }
 
     .option{
+
         font-size:12px;
 
         padding:10px;
     }
 
     .fill-options{
+
         grid-template-columns:1fr;
     }
 
     .fill-option{
+
         font-size:12px;
     }
 
+
+    /* BUTTON */
+
     .submit{
+
         width:100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:400px){
+
+    .mobile-logo{
+
+        font-size:16px;
+    }
+
+    .hero h1{
+
+        font-size:36px;
+    }
+
+    .hero-art{
+
+        min-height:240px;
+    }
+
+    .hero-art img{
+
+        width:240px;
+
+        max-height:260px;
+    }
+
+    .test-info{
+
+        gap:6px;
+    }
+
+    .info strong{
+
+        font-size:14px;
     }
 
 }
@@ -667,15 +1242,16 @@ footer p{
 <body>
 
 
-<!-- =====================================================
-     TOP NAVIGATION
-===================================================== -->
+<!-- =========================================================
+     DESKTOP NAVIGATION
+========================================================= -->
 
 <header class="topbar">
 
     <a href="index.html" class="logo">
         DORAEMON 🌐
     </a>
+
 
     <nav id="nav">
 
@@ -716,39 +1292,110 @@ footer p{
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
+     MOBILE HEADER
+========================================================= -->
+
+<header class="mobile-header">
+
+    <button onclick="goHome()">
+        ☰
+    </button>
+
+    <a href="index.html" class="mobile-logo">
+        DORAEMON 🔵
+    </a>
+
+    <button onclick="scrollToTest()">
+        📝
+    </button>
+
+</header>
+
+
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero">
 
-    <div class="badge">
-        📝 DORAEMON QUIZ
+
+    <!-- LEFT -->
+
+    <div class="hero-content">
+
+        <div class="badge">
+
+            📝 DORAEMON QUIZ
+
+        </div>
+
+
+        <h1>
+
+            Doraemon
+
+            <strong>
+                Test!
+            </strong>
+
+        </h1>
+
+
+        <p>
+
+            Doraemon ke baare mein kitna jaante ho?
+            20 questions solve karo aur apna score dekho.
+
+        </p>
+
+
+        <a
+            href="#test"
+            class="hero-btn">
+
+            📝 Start Test
+
+        </a>
+
     </div>
 
-    <h1>
-        Doraemon <span>Test</span>
-    </h1>
 
-    <p>
-        Simple questions solve karo aur apna score dekho!
-    </p>
+    <!-- RIGHT DORAEMON -->
+
+    <div class="hero-art">
+
+        <img
+            src="assets/images/characters/doraemon-test.png"
+            alt="Doraemon Test">
+
+    </div>
 
 </section>
 
 
-<main class="container">
+
+<!-- =========================================================
+     TEST
+========================================================= -->
+
+<main
+    id="test"
+    class="container">
 
 
-<!-- =====================================================
+<!-- =========================================================
      TEST INFO
-===================================================== -->
+========================================================= -->
 
 <div class="test-info">
 
+
     <div class="info">
 
-        <small>⏱️ TIME</small>
+        <small>
+            ⏱️ TIME
+        </small>
 
         <strong id="timer">
             30:00
@@ -759,7 +1406,9 @@ footer p{
 
     <div class="info">
 
-        <small>💯 TOTAL MARKS</small>
+        <small>
+            💯 TOTAL MARKS
+        </small>
 
         <strong>
             20
@@ -770,7 +1419,9 @@ footer p{
 
     <div class="info">
 
-        <small>❓ QUESTIONS</small>
+        <small>
+            ❓ QUESTIONS
+        </small>
 
         <strong>
             20
@@ -781,9 +1432,10 @@ footer p{
 </div>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      NAME
-===================================================== -->
+========================================================= -->
 
 <div class="name-box">
 
@@ -799,9 +1451,10 @@ footer p{
 </div>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SECTION A
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
@@ -829,22 +1482,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q1" value="a">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="a">
                 A) Pizza
             </label>
 
             <label class="option">
-                <input type="radio" name="q1" value="b">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="b">
                 B) Dorayaki
             </label>
 
             <label class="option">
-                <input type="radio" name="q1" value="c">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="c">
                 C) Burger
             </label>
 
             <label class="option">
-                <input type="radio" name="q1" value="d">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="d">
                 D) Cake
             </label>
 
@@ -864,22 +1529,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q2" value="a">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="a">
                 A) Gian
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="b">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="b">
                 B) Suneo
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="c">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="c">
                 C) Doraemon
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="d">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="d">
                 D) Dekisugi
             </label>
 
@@ -899,22 +1576,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q3" value="a">
+                <input
+                    type="radio"
+                    name="q3"
+                    value="a">
                 A) Red
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="b">
+                <input
+                    type="radio"
+                    name="q3"
+                    value="b">
                 B) Blue
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="c">
+                <input
+                    type="radio"
+                    name="q3"
+                    value="c">
                 C) Green
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="d">
+                <input
+                    type="radio"
+                    name="q3"
+                    value="d">
                 D) Yellow
             </label>
 
@@ -934,22 +1623,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q4" value="a">
+                <input
+                    type="radio"
+                    name="q4"
+                    value="a">
                 A) Shizuka
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="b">
+                <input
+                    type="radio"
+                    name="q4"
+                    value="b">
                 B) Dorami
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="c">
+                <input
+                    type="radio"
+                    name="q4"
+                    value="c">
                 C) Jaiko
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="d">
+                <input
+                    type="radio"
+                    name="q4"
+                    value="d">
                 D) Sewashi
             </label>
 
@@ -969,22 +1670,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q5" value="a">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="a">
                 A) Takeshi Goda
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="b">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="b">
                 B) Suneo Honekawa
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="c">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="c">
                 C) Nobita Nobi
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="d">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="d">
                 D) Hidetoshi
             </label>
 
@@ -995,9 +1708,10 @@ footer p{
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SECTION B
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
@@ -1025,12 +1739,18 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q6" value="true">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="true">
                 True
             </label>
 
             <label class="option">
-                <input type="radio" name="q6" value="false">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="false">
                 False
             </label>
 
@@ -1050,12 +1770,18 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q7" value="true">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="true">
                 True
             </label>
 
             <label class="option">
-                <input type="radio" name="q7" value="false">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="false">
                 False
             </label>
 
@@ -1075,12 +1801,18 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q8" value="true">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="true">
                 True
             </label>
 
             <label class="option">
-                <input type="radio" name="q8" value="false">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="false">
                 False
             </label>
 
@@ -1100,12 +1832,18 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q9" value="true">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="true">
                 True
             </label>
 
             <label class="option">
-                <input type="radio" name="q9" value="false">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="false">
                 False
             </label>
 
@@ -1125,12 +1863,18 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q10" value="true">
+                <input
+                    type="radio"
+                    name="q10"
+                    value="true">
                 True
             </label>
 
             <label class="option">
-                <input type="radio" name="q10" value="false">
+                <input
+                    type="radio"
+                    name="q10"
+                    value="false">
                 False
             </label>
 
@@ -1141,9 +1885,10 @@ footer p{
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SECTION C
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
@@ -1171,22 +1916,34 @@ footer p{
         <div class="fill-options">
 
             <label class="fill-option">
-                <input type="radio" name="q11" value="a">
+                <input
+                    type="radio"
+                    name="q11"
+                    value="a">
                 A) Dorayaki
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q11" value="b">
+                <input
+                    type="radio"
+                    name="q11"
+                    value="b">
                 B) Pizza
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q11" value="c">
+                <input
+                    type="radio"
+                    name="q11"
+                    value="c">
                 C) Sandwich
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q11" value="d">
+                <input
+                    type="radio"
+                    name="q11"
+                    value="d">
                 D) Rice
             </label>
 
@@ -1206,22 +1963,34 @@ footer p{
         <div class="fill-options">
 
             <label class="fill-option">
-                <input type="radio" name="q12" value="a">
+                <input
+                    type="radio"
+                    name="q12"
+                    value="a">
                 A) Rocket
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q12" value="b">
+                <input
+                    type="radio"
+                    name="q12"
+                    value="b">
                 B) Bamboo
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q12" value="c">
+                <input
+                    type="radio"
+                    name="q12"
+                    value="c">
                 C) Magic
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q12" value="d">
+                <input
+                    type="radio"
+                    name="q12"
+                    value="d">
                 D) Flying
             </label>
 
@@ -1241,22 +2010,34 @@ footer p{
         <div class="fill-options">
 
             <label class="fill-option">
-                <input type="radio" name="q13" value="a">
+                <input
+                    type="radio"
+                    name="q13"
+                    value="a">
                 A) Goda
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q13" value="b">
+                <input
+                    type="radio"
+                    name="q13"
+                    value="b">
                 B) Nobi
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q13" value="c">
+                <input
+                    type="radio"
+                    name="q13"
+                    value="c">
                 C) Honekawa
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q13" value="d">
+                <input
+                    type="radio"
+                    name="q13"
+                    value="d">
                 D) Minamoto
             </label>
 
@@ -1276,22 +2057,34 @@ footer p{
         <div class="fill-options">
 
             <label class="fill-option">
-                <input type="radio" name="q14" value="a">
+                <input
+                    type="radio"
+                    name="q14"
+                    value="a">
                 A) Nobi
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q14" value="b">
+                <input
+                    type="radio"
+                    name="q14"
+                    value="b">
                 B) Goda
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q14" value="c">
+                <input
+                    type="radio"
+                    name="q14"
+                    value="c">
                 C) Minamoto
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q14" value="d">
+                <input
+                    type="radio"
+                    name="q14"
+                    value="d">
                 D) Honekawa
             </label>
 
@@ -1311,22 +2104,34 @@ footer p{
         <div class="fill-options">
 
             <label class="fill-option">
-                <input type="radio" name="q15" value="a">
+                <input
+                    type="radio"
+                    name="q15"
+                    value="a">
                 A) Honekawa
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q15" value="b">
+                <input
+                    type="radio"
+                    name="q15"
+                    value="b">
                 B) Nobi
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q15" value="c">
+                <input
+                    type="radio"
+                    name="q15"
+                    value="c">
                 C) Goda
             </label>
 
             <label class="fill-option">
-                <input type="radio" name="q15" value="d">
+                <input
+                    type="radio"
+                    name="q15"
+                    value="d">
                 D) Minamoto
             </label>
 
@@ -1337,9 +2142,10 @@ footer p{
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SECTION D
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
@@ -1367,22 +2173,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q16" value="a">
+                <input
+                    type="radio"
+                    name="q16"
+                    value="a">
                 A) Kahin bhi travel karna
             </label>
 
             <label class="option">
-                <input type="radio" name="q16" value="b">
+                <input
+                    type="radio"
+                    name="q16"
+                    value="b">
                 B) Food banana
             </label>
 
             <label class="option">
-                <input type="radio" name="q16" value="c">
+                <input
+                    type="radio"
+                    name="q16"
+                    value="c">
                 C) Time stop karna
             </label>
 
             <label class="option">
-                <input type="radio" name="q16" value="d">
+                <input
+                    type="radio"
+                    name="q16"
+                    value="d">
                 D) Invisible hona
             </label>
 
@@ -1402,22 +2220,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q17" value="a">
+                <input
+                    type="radio"
+                    name="q17"
+                    value="a">
                 A) Shizuka
             </label>
 
             <label class="option">
-                <input type="radio" name="q17" value="b">
+                <input
+                    type="radio"
+                    name="q17"
+                    value="b">
                 B) Tamako
             </label>
 
             <label class="option">
-                <input type="radio" name="q17" value="c">
+                <input
+                    type="radio"
+                    name="q17"
+                    value="c">
                 C) Dorami
             </label>
 
             <label class="option">
-                <input type="radio" name="q17" value="d">
+                <input
+                    type="radio"
+                    name="q17"
+                    value="d">
                 D) Jaiko
             </label>
 
@@ -1437,22 +2267,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q18" value="a">
+                <input
+                    type="radio"
+                    name="q18"
+                    value="a">
                 A) Shizuka
             </label>
 
             <label class="option">
-                <input type="radio" name="q18" value="b">
+                <input
+                    type="radio"
+                    name="q18"
+                    value="b">
                 B) Jaiko
             </label>
 
             <label class="option">
-                <input type="radio" name="q18" value="c">
+                <input
+                    type="radio"
+                    name="q18"
+                    value="c">
                 C) Dorami
             </label>
 
             <label class="option">
-                <input type="radio" name="q18" value="d">
+                <input
+                    type="radio"
+                    name="q18"
+                    value="d">
                 D) Tamako
             </label>
 
@@ -1472,22 +2314,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q19" value="a">
+                <input
+                    type="radio"
+                    name="q19"
+                    value="a">
                 A) Nobita ke study room
             </label>
 
             <label class="option">
-                <input type="radio" name="q19" value="b">
+                <input
+                    type="radio"
+                    name="q19"
+                    value="b">
                 B) Nobita ke desk
             </label>
 
             <label class="option">
-                <input type="radio" name="q19" value="c">
+                <input
+                    type="radio"
+                    name="q19"
+                    value="c">
                 C) School
             </label>
 
             <label class="option">
-                <input type="radio" name="q19" value="d">
+                <input
+                    type="radio"
+                    name="q19"
+                    value="d">
                 D) Park
             </label>
 
@@ -1507,22 +2361,34 @@ footer p{
         <div class="options">
 
             <label class="option">
-                <input type="radio" name="q20" value="a">
+                <input
+                    type="radio"
+                    name="q20"
+                    value="a">
                 A) Anywhere Door
             </label>
 
             <label class="option">
-                <input type="radio" name="q20" value="b">
+                <input
+                    type="radio"
+                    name="q20"
+                    value="b">
                 B) Camera
             </label>
 
             <label class="option">
-                <input type="radio" name="q20" value="c">
+                <input
+                    type="radio"
+                    name="q20"
+                    value="c">
                 C) Radio
             </label>
 
             <label class="option">
-                <input type="radio" name="q20" value="d">
+                <input
+                    type="radio"
+                    name="q20"
+                    value="d">
                 D) Clock
             </label>
 
@@ -1533,11 +2399,14 @@ footer p{
 </section>
 
 
-<!-- =====================================================
-     RESULT
-===================================================== -->
 
-<div class="result" id="result">
+<!-- =========================================================
+     RESULT
+========================================================= -->
+
+<div
+    class="result"
+    id="result">
 
     <div class="result-icon">
         🏆
@@ -1547,26 +2416,42 @@ footer p{
         Test Completed!
     </h2>
 
-    <div class="result-name" id="resultName"></div>
+    <div
+        class="result-name"
+        id="resultName">
+    </div>
 
-    <div class="final-marks" id="finalMarks">
+    <div
+        class="final-marks"
+        id="finalMarks">
+
         0 / 20
+
     </div>
 
-    <div class="percentage" id="percentage">
+    <div
+        class="percentage"
+        id="percentage">
+
         0%
+
     </div>
 
-    <div class="correct" id="correctText">
+    <div
+        class="correct"
+        id="correctText">
+
         Correct Answers: 0 / 20
+
     </div>
 
 </div>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      SUBMIT
-===================================================== -->
+========================================================= -->
 
 <div class="submit-area">
 
@@ -1580,31 +2465,38 @@ footer p{
 
 </div>
 
+
 </main>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer>
 
-    <strong>
+    <div class="footer-logo">
         DORAEMON WORLD 💙
-    </strong>
+    </div>
 
     <p>
-        Unofficial fan-made website
+        Unofficial fan-made website.
+    </p>
+
+    <p>
+        © 2026 Doraemon World
     </p>
 
 </footer>
 
 
+
 <script>
 
-/* =====================================================
+/* =========================================================
    CORRECT ANSWERS
-===================================================== */
+========================================================= */
 
 const answers = {
 
@@ -1635,14 +2527,15 @@ const answers = {
 };
 
 
-/* =====================================================
+/* =========================================================
    TIMER
-===================================================== */
+========================================================= */
 
 let timeLeft = 30 * 60;
 
 const timer =
     document.getElementById("timer");
+
 
 const timerInterval =
 setInterval(function(){
@@ -1654,6 +2547,7 @@ setInterval(function(){
 
     let seconds =
         timeLeft % 60;
+
 
     timer.textContent =
         String(minutes).padStart(2,"0")
@@ -1672,9 +2566,9 @@ setInterval(function(){
 },1000);
 
 
-/* =====================================================
+/* =========================================================
    SUBMIT TEST
-===================================================== */
+========================================================= */
 
 function submitTest(){
 
@@ -1750,8 +2644,40 @@ function submitTest(){
     document
     .getElementById("result")
     .scrollIntoView({
+
         behavior:"smooth",
+
         block:"center"
+
+    });
+
+}
+
+
+/* =========================================================
+   MOBILE HOME
+========================================================= */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =========================================================
+   MOBILE TEST
+========================================================= */
+
+function scrollToTest(){
+
+    document
+    .getElementById("test")
+    .scrollIntoView({
+
+        behavior:"smooth"
+
     });
 
 }
