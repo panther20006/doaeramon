@@ -11,11 +11,12 @@
     <title>Doraemon Wallpapers</title>
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link rel="stylesheet" href="css/wallpapers.css">
 
 
 <style>
+
 /* =====================================================
    FULLSCREEN WALLPAPER VIEWER
 ===================================================== */
@@ -28,98 +29,235 @@
     cursor:zoom-in;
 }
 
-/* Fullscreen overlay */
+
+/* =====================================================
+   FULLSCREEN OVERLAY
+===================================================== */
+
 .wallpaper-lightbox{
+
     position:fixed;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     padding:20px;
-    background:rgba(0,0,0,.94);
+
+    background:rgba(0,0,0,.95);
+
     z-index:99999;
+
     cursor:zoom-out;
+
 }
+
+
+/* SHOW */
 
 .wallpaper-lightbox.show{
+
     display:flex;
+
 }
+
+
+/* FULLSCREEN IMAGE */
 
 .wallpaper-lightbox img{
+
     max-width:96vw;
+
     max-height:94vh;
+
     width:auto;
+
     height:auto;
+
     object-fit:contain;
+
     border-radius:8px;
-    box-shadow:0 0 40px rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,255,255,.15);
+
     cursor:default;
+
     user-select:none;
+
+    animation:
+        wallpaperZoom .25s ease;
+
 }
+
+
+/* IMAGE OPEN ANIMATION */
+
+@keyframes wallpaperZoom{
+
+    from{
+
+        transform:scale(.85);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
 
 .lightbox-close{
+
     position:fixed;
+
     top:18px;
+
     right:20px;
+
     width:46px;
+
     height:46px;
+
     border:0;
+
     border-radius:50%;
-    background:rgba(255,255,255,.14);
+
+    background:
+        rgba(255,255,255,.14);
+
     color:#fff;
+
     font-size:28px;
+
     line-height:1;
+
     cursor:pointer;
+
     z-index:100000;
+
     backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
 }
+
 
 .lightbox-close:hover{
-    background:rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.25);
+
+    transform:scale(1.05);
+
 }
+
+
+/* =====================================================
+   TITLE
+===================================================== */
 
 .lightbox-title{
+
     position:fixed;
+
     left:50%;
+
     bottom:18px;
+
     transform:translateX(-50%);
+
     max-width:90%;
+
     padding:9px 16px;
+
     border-radius:30px;
-    background:rgba(0,0,0,.55);
+
+    background:
+        rgba(0,0,0,.55);
+
     color:#fff;
+
     font-size:13px;
+
     font-weight:700;
+
     text-align:center;
+
     backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
 }
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px){
+
     .wallpaper-lightbox{
+
         padding:10px;
+
     }
+
 
     .wallpaper-lightbox img{
+
         max-width:98vw;
+
         max-height:90vh;
+
         border-radius:5px;
+
     }
+
 
     .lightbox-close{
+
         top:12px;
+
         right:12px;
+
         width:42px;
+
         height:42px;
+
         font-size:25px;
+
     }
 
+
     .lightbox-title{
+
         bottom:12px;
+
         font-size:11px;
+
     }
+
 }
+
 </style>
 
 </head>
@@ -128,911 +266,1093 @@
 <body>
 
 
-    <!-- =====================================================
-         DESKTOP NAVBAR
-    ====================================================== -->
+<!-- =====================================================
+     DESKTOP NAVBAR
+===================================================== -->
 
-    <header class="topbar">
+<header class="topbar">
 
-        <a href="index.html" class="logo">
-            DORAEMON 🌐
-        </a>
+    <a href="index.html" class="logo">
 
-        <button
-            id="menu"
-            class="menu-btn"
-            aria-label="Open Menu">
-            ☰
-        </button>
+        DORAEMON 🌐
 
-        <nav id="nav">
+    </a>
 
-            <a href="index.html">
-                🏠 Home
-            </a>
 
-            <a href="movies.html">
-                🎬 Movies
-            </a>
+    <button
+        id="menu"
+        class="menu-btn"
+        aria-label="Open Menu">
 
-            <a href="episodes.html">
-                📺 Episodes
-            </a>
+        ☰
 
-            <a href="characters.html">
-                👥 Characters
-            </a>
+    </button>
 
-            <a href="wallpapers.html" class="active">
-                🖼️ Wallpapers
-            </a>
 
-            <a href="music.html">
-                🎵 Music
-            </a>
-
-            <a href="gallery.html">
-                📸 Gallery
-            </a>
-            <a href="test.html">
-                📝 Test
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MOBILE HEADER
-    ====================================================== -->
-
-    <header class="mobile-header">
-
-        <button
-            id="mobileMenu"
-            class="mobile-menu-btn"
-            aria-label="Open Menu">
-            ☰
-        </button>
-
-
-        <a
-            href="index.html"
-            class="mobile-logo">
-
-            DORAEMON
-
-            <span>🔵</span>
-
-        </a>
-
-
-        <button
-            class="mobile-search-btn"
-            aria-label="Search">
-
-            🔍
-
-        </button>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
-    <main>
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="wallpaper-hero">
-
-            <div class="wallpaper-hero-content">
-
-                <span class="hero-badge">
-                    💙 DORAEMON COLLECTION
-                </span>
-
-                <h1>
-
-                    Doraemon
-
-                    <strong>
-                        Wallpapers
-                    </strong>
-
-                </h1>
-
-                <p>
-
-                    Doraemon ke amazing wallpapers
-                    mobile aur desktop ke liye.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             WALLPAPER SECTION
-        ================================================== -->
-
-        <section class="wallpaper-section">
-
-
-            <div class="section-title">
-
-                <span>
-                    WALLPAPER COLLECTION
-                </span>
-
-                <h2>
-                    Doraemon Wallpapers 🖼️
-                </h2>
-
-                <p>
-                    Apna favourite Doraemon wallpaper choose karo.
-                </p>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 WALLPAPER GRID
-            ================================================== -->
-
-            <div class="wallpaper-grid">
-
-
-                <!-- 01 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-01.jpg"
-                            alt="Doraemon Wallpaper 01"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Blue
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-01.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 02 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-02.jpg"
-                            alt="Doraemon Wallpaper 02"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Smile
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-02.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 03 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-03.jpg"
-                            alt="Doraemon Wallpaper 03"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Magic
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-03.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 04 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-04.jpg"
-                            alt="Doraemon Wallpaper 04"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon & Nobita
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-04.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 05 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-05.jpg"
-                            alt="Doraemon Wallpaper 05"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Nobita & Doraemon
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-05.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 06 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-06.jpg"
-                            alt="Doraemon Wallpaper 06"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Friends Forever
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-06.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 07 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-07.jpg"
-                            alt="Doraemon Wallpaper 07"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Adventure
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-07.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 08 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-08.jpg"
-                            alt="Doraemon Wallpaper 08"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Magic World
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-08.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 09 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-09.jpg"
-                            alt="Doraemon Wallpaper 09"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Magic Gadgets
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-09.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 10 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-10.jpg"
-                            alt="Doraemon Wallpaper 10"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Anywhere Door
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-10.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 11 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-11.jpg"
-                            alt="Doraemon Wallpaper 11"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Take-copter
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-11.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 12 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-12.jpg"
-                            alt="Doraemon Wallpaper 12"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            4D Pocket
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-12.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 13 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-13.jpg"
-                            alt="Doraemon Wallpaper 13"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Time Machine
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-13.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 14 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-14.jpg"
-                            alt="Doraemon Wallpaper 14"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Night
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-14.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- 15 -->
-
-                <article class="wallpaper-card">
-
-                    <div class="wallpaper-image">
-
-                        <img
-                            src="assets/images/wallpapers/doraemon-15.jpg"
-                            alt="Doraemon Wallpaper 15"
-                            loading="lazy">
-
-                    </div>
-
-                    <div class="wallpaper-info">
-
-                        <h3>
-                            Doraemon Sky
-                        </h3>
-
-                        <p>
-                            HD Wallpaper
-                        </p>
-
-                        <a
-                            href="assets/images/wallpapers/doraemon-15.jpg"
-                            download>
-
-                            Download ↓
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-logo">
-            DORAEMON WORLD 💙
-        </div>
-
-        <p>
-            Unofficial fan-made website.
-        </p>
-
-        <p class="copyright">
-            © 2026 Doraemon World
-        </p>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         MOBILE BOTTOM NAVIGATION
-    ====================================================== -->
-
-    <nav class="mobile-bottom-nav">
+    <nav id="nav">
 
         <a href="index.html">
-
-            <span>🏠</span>
-
-            <small>
-                Home
-            </small>
-
+            🏠 Home
         </a>
-
 
         <a href="movies.html">
-
-            <span>🎬</span>
-
-            <small>
-                Movies
-            </small>
-
+            🎬 Movies
         </a>
-
 
         <a href="episodes.html">
-
-            <span>📺</span>
-
-            <small>
-                Episodes
-            </small>
-
+            📺 Episodes
         </a>
-
 
         <a href="characters.html">
+            👥 Characters
+        </a>
 
-            <span>👥</span>
+        <a href="wallpapers.html"
+           class="active">
 
-            <small>
-                Characters
-            </small>
+            🖼️ Wallpapers
 
         </a>
 
+        <a href="music.html">
+            🎵 Music
+        </a>
 
-        <a href="wallpapers.html" class="active">
+        <a href="gallery.html">
+            📸 Gallery
+        </a>
 
-            <span>
-                🖼️
-            </span>
-
-            <small>
-                Wallpapers
-            </small>
-
+        <a href="test.html">
+            📝 Test
         </a>
 
     </nav>
 
+</header>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
 
-    
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
+
+<header class="mobile-header">
+
+    <button
+        id="mobileMenu"
+        class="mobile-menu-btn"
+        aria-label="Open Menu">
+
+        ☰
+
+    </button>
+
+
+    <a
+        href="index.html"
+        class="mobile-logo">
+
+        DORAEMON
+
+        <span>🔵</span>
+
+    </a>
+
+
+    <button
+        class="mobile-search-btn"
+        aria-label="Search">
+
+        🔍
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="wallpaper-hero">
+
+    <div class="wallpaper-hero-content">
+
+        <span class="hero-badge">
+
+            💙 DORAEMON COLLECTION
+
+        </span>
+
+
+        <h1>
+
+            Doraemon
+
+            <strong>
+
+                Wallpapers
+
+            </strong>
+
+        </h1>
+
+
+        <p>
+
+            Doraemon ke amazing wallpapers
+            mobile aur desktop ke liye.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WALLPAPER SECTION
+===================================================== -->
+
+<section class="wallpaper-section">
+
+
+    <div class="section-title">
+
+        <span>
+
+            WALLPAPER COLLECTION
+
+        </span>
+
+
+        <h2>
+
+            Doraemon Wallpapers 🖼️
+
+        </h2>
+
+
+        <p>
+
+            Apna favourite Doraemon wallpaper choose karo.
+
+        </p>
+
+    </div>
+
+
+
+<!-- =====================================================
+     WALLPAPER GRID
+===================================================== -->
+
+<div class="wallpaper-grid">
+
+
+<!-- 01 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-01.jpg"
+            alt="Doraemon Wallpaper 01"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Blue
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-01.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 02 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-02.jpg"
+            alt="Doraemon Wallpaper 02"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Smile
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-02.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 03 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-03.jpg"
+            alt="Doraemon Wallpaper 03"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Magic
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-03.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 04 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-04.jpg"
+            alt="Doraemon Wallpaper 04"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon & Nobita
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-04.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 05 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-05.jpg"
+            alt="Doraemon Wallpaper 05"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Nobita & Doraemon
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-05.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 06 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-06.jpg"
+            alt="Doraemon Wallpaper 06"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Friends Forever
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-06.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 07 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-07.jpg"
+            alt="Doraemon Wallpaper 07"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Adventure
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-07.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 08 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-08.jpg"
+            alt="Doraemon Wallpaper 08"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Magic World
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-08.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 09 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-09.jpg"
+            alt="Doraemon Wallpaper 09"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Magic Gadgets
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-09.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 10 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-10.jpg"
+            alt="Doraemon Wallpaper 10"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Anywhere Door
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-10.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 11 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-11.jpg"
+            alt="Doraemon Wallpaper 11"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Take-copter
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-11.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 12 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-12.jpg"
+            alt="Doraemon Wallpaper 12"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            4D Pocket
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-12.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 13 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-13.jpg"
+            alt="Doraemon Wallpaper 13"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Time Machine
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-13.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 14 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-14.jpg"
+            alt="Doraemon Wallpaper 14"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Night
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-14.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- 15 -->
+
+<article class="wallpaper-card">
+
+    <div class="wallpaper-image">
+
+        <img
+            src="assets/images/wallpapers/doraemon-15.jpg"
+            alt="Doraemon Wallpaper 15"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="wallpaper-info">
+
+        <h3>
+            Doraemon Sky
+        </h3>
+
+        <p>
+            HD Wallpaper
+        </p>
+
+        <a
+            href="assets/images/wallpapers/doraemon-15.jpg"
+            download>
+
+            Download ↓
+
+        </a>
+
+    </div>
+
+</article>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        DORAEMON WORLD 💙
+
+    </div>
+
+    <p>
+
+        Unofficial fan-made website.
+
+    </p>
+
+    <p class="copyright">
+
+        © 2026 Doraemon World
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="index.html">
+
+        <span>🏠</span>
+
+        <small>
+            Home
+        </small>
+
+    </a>
+
+
+    <a href="movies.html">
+
+        <span>🎬</span>
+
+        <small>
+            Movies
+        </small>
+
+    </a>
+
+
+    <a href="episodes.html">
+
+        <span>📺</span>
+
+        <small>
+            Episodes
+        </small>
+
+    </a>
+
+
+    <a href="characters.html">
+
+        <span>👥</span>
+
+        <small>
+            Characters
+        </small>
+
+    </a>
+
+
+    <a
+        href="wallpapers.html"
+        class="active">
+
+        <span>
+            🖼️
+        </span>
+
+        <small>
+            Wallpapers
+        </small>
+
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     FULLSCREEN LIGHTBOX
+     
+     IMPORTANT:
+     Ye part tumhare previous code me missing tha.
+===================================================== -->
+
+<div
+    id="wallpaperLightbox"
+    class="wallpaper-lightbox"
+    aria-hidden="true">
+
+
+    <!-- CLOSE BUTTON -->
+
+    <button
+        id="lightboxClose"
+        class="lightbox-close"
+        type="button"
+        aria-label="Close">
+
+        ×
+
+    </button>
+
+
+    <!-- FULLSCREEN IMAGE -->
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Doraemon Wallpaper">
+
+
+    <!-- TITLE -->
+
+    <div
+        id="lightboxTitle"
+        class="lightbox-title">
+
+        Doraemon Wallpaper
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
+
 /* =====================================================
    WALLPAPER FULLSCREEN
 ===================================================== */
 
+
+/* GET ELEMENTS */
+
 const wallpaperLightbox =
-    document.getElementById("wallpaperLightbox");
+    document.getElementById(
+        "wallpaperLightbox"
+    );
+
 
 const lightboxImage =
-    document.getElementById("lightboxImage");
+    document.getElementById(
+        "lightboxImage"
+    );
+
 
 const lightboxTitle =
-    document.getElementById("lightboxTitle");
+    document.getElementById(
+        "lightboxTitle"
+    );
+
 
 const lightboxClose =
-    document.getElementById("lightboxClose");
+    document.getElementById(
+        "lightboxClose"
+    );
 
 
-/* OPEN FULLSCREEN */
+
+/* =====================================================
+   OPEN FULLSCREEN
+===================================================== */
 
 document
-.querySelectorAll(".wallpaper-image img")
+.querySelectorAll(
+    ".wallpaper-image img"
+)
 .forEach(function(image){
 
-    image.addEventListener("click", function(){
+    image.addEventListener(
+        "click",
+        function(){
 
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
+            /* IMAGE */
 
-        const card = image.closest(".wallpaper-card");
-        const title = card
-            ? card.querySelector(".wallpaper-info h3")
-            : null;
+            lightboxImage.src =
+                image.src;
 
-        lightboxTitle.textContent =
-            title
-            ? title.textContent.trim()
-            : "Doraemon Wallpaper";
+            lightboxImage.alt =
+                image.alt;
 
-        wallpaperLightbox.classList.add("show");
-        wallpaperLightbox.setAttribute("aria-hidden","false");
 
-        document.body.style.overflow = "hidden";
+            /* GET CARD */
 
-    });
+            const card =
+                image.closest(
+                    ".wallpaper-card"
+                );
+
+
+            /* GET TITLE */
+
+            const title =
+                card
+                ? card.querySelector(
+                    ".wallpaper-info h3"
+                  )
+                : null;
+
+
+            /* SET TITLE */
+
+            lightboxTitle.textContent =
+                title
+                ? title.textContent.trim()
+                : "Doraemon Wallpaper";
+
+
+            /* SHOW */
+
+            wallpaperLightbox.classList.add(
+                "show"
+            );
+
+
+            wallpaperLightbox.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            /* STOP PAGE SCROLL */
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+    );
 
 });
 
 
-/* CLOSE */
+
+/* =====================================================
+   CLOSE FUNCTION
+===================================================== */
 
 function closeWallpaper(){
 
-    wallpaperLightbox.classList.remove("show");
-    wallpaperLightbox.setAttribute("aria-hidden","true");
+    wallpaperLightbox.classList.remove(
+        "show"
+    );
 
-    lightboxImage.src = "";
 
-    document.body.style.overflow = "";
+    wallpaperLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    lightboxImage.src =
+        "";
+
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
-/* CLOSE BUTTON */
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
 
 lightboxClose.addEventListener(
     "click",
-    closeWallpaper
+    function(event){
+
+        event.stopPropagation();
+
+        closeWallpaper();
+
+    }
 );
 
 
-/* CLICK OUTSIDE IMAGE */
+
+/* =====================================================
+   CLICK OUTSIDE IMAGE
+===================================================== */
 
 wallpaperLightbox.addEventListener(
     "click",
     function(event){
 
+        /*
+         * Sirf black background par
+         * click karne par close hoga.
+         */
+
         if(
-            event.target === wallpaperLightbox ||
-            event.target === lightboxClose
+            event.target ===
+            wallpaperLightbox
         ){
 
             closeWallpaper();
@@ -1043,7 +1363,10 @@ wallpaperLightbox.addEventListener(
 );
 
 
-/* ESC KEY */
+
+/* =====================================================
+   ESC KEY
+===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -1051,7 +1374,9 @@ document.addEventListener(
 
         if(
             event.key === "Escape" &&
-            wallpaperLightbox.classList.contains("show")
+            wallpaperLightbox.classList.contains(
+                "show"
+            )
         ){
 
             closeWallpaper();
@@ -1060,10 +1385,32 @@ document.addEventListener(
 
     }
 );
+
+
+
+/* =====================================================
+   DOUBLE CLICK / MOBILE SUPPORT
+===================================================== */
+
+lightboxImage.addEventListener(
+    "click",
+    function(event){
+
+        event.stopPropagation();
+
+    }
+);
+
 </script>
 
 
-    <script src="js/script.js"></script>
+
+<!-- =====================================================
+     YOUR MAIN SCRIPT
+===================================================== -->
+
+<script src="js/script.js"></script>
+
 
 </body>
 
