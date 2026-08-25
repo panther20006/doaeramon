@@ -21,7 +21,7 @@ const characters = [
         japanese: "ドラえもん",
         category: "main",
         role: "Robot Cat",
-        image: "assets/images/characters/doraemon.png",
+        image: "assets/images/characters/Doremon.ch.png",
         description: "A robotic cat from the 22nd century who helps Nobita.",
         featured: true
     },
