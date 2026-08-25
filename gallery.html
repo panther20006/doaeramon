@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Doraemon Gallery</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           GALLERY PAGE
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2fbff;
+            color: #073b70;
+            padding-bottom: 90px;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .gallery-header {
+            height: 74px;
+            background: linear-gradient(90deg, #0068c9, #049fe5);
+            display: flex;
+            align-items: center;
+            padding: 0 35px;
+            gap: 30px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .gallery-logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            margin-right: auto;
+        }
+
+        .gallery-nav {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .gallery-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .gallery-nav a:hover,
+        .gallery-nav a.active {
+            background: white;
+            color: #087fd0;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .gallery-hero {
+            min-height: 300px;
+            border-radius: 28px;
+            background:
+                linear-gradient(
+                    120deg,
+                    #dff6ff,
+                    #8edfff
+                );
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 55px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .gallery-hero-text {
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-badge {
+            display: inline-block;
+            background: white;
+            color: #0789d4;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-hero h1 {
+            font-size: 58px;
+            line-height: 1;
+            color: #073b70;
+            margin-bottom: 15px;
+        }
+
+        .gallery-hero h1 span {
+            color: #078edb;
+        }
+
+        .gallery-hero p {
+            color: #42647e;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .hero-doraemon {
+            width: 340px;
+            max-height: 290px;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+
+        .gallery-tools {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .search-box {
+            flex: 1;
+            background: white;
+            border: 1px solid #d4edfc;
+            border-radius: 30px;
+            padding: 15px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 100, 180, 0.05);
+        }
+
+        .search-box span {
+            font-size: 22px;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #174b75;
+        }
+
+
+        /* =====================================================
+           FILTERS
+        ===================================================== */
+
+        .gallery-filters {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .gallery-filters::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            flex-shrink: 0;
+            border: 1px solid #d6ecf8;
+            background: white;
+            color: #174b75;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #078ddd;
+            color: white;
+            border-color: #078ddd;
+        }
+
+
+        /* =====================================================
+           GALLERY GRID
+        ===================================================== */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 12px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 100, 180, 0.08);
+            cursor: pointer;
+            transition: 0.25s ease;
+            position: relative;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 100, 180, 0.18);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background: #dff6ff;
+            position: relative;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .zoom-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(0, 50, 90, 0.75);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        .gallery-info {
+            padding: 12px;
+        }
+
+        .gallery-info h3 {
+            font-size: 16px;
+            color: #073b70;
+            margin-bottom: 8px;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #078ddd;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           PAGINATION
+        ===================================================== */
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 30px 0;
+        }
+
+        .page-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d5eaf7;
+            border-radius: 10px;
+            background: white;
+            color: #075087;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .page-btn.active,
+        .page-btn:hover {
+            background: #078ddd;
+            color: white;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .gallery-stats {
+            background: white;
+            border: 1px solid #d9effc;
+            border-radius: 22px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid #dceff8;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+            display: block;
+            color: #078ddd;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            color: #607c92;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 20, 45, 0.92);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 75vh;
+            border-radius: 18px;
+            object-fit: contain;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .lightbox-title {
+            color: white;
+            font-size: 20px;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            right: 0;
+            top: -45px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            color: #075087;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .lightbox-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            color: #075087;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .lightbox-prev {
+            left: 25px;
+        }
+
+        .lightbox-next {
+            right: 25px;
+        }
+
+
+        /* =====================================================
+           MOBILE BOTTOM NAV
+        ===================================================== */
+
+        .mobile-bottom-nav {
+            display: none;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .gallery-header {
+                padding: 0 18px;
+            }
+
+            .gallery-nav {
+                display: none;
+            }
+
+            .gallery-logo {
+                font-size: 22px;
+            }
+
+            .gallery-hero {
+                padding: 30px;
+            }
+
+            .gallery-hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-doraemon {
+                width: 270px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-bottom: 105px;
+            }
+
+            .gallery-container {
+                padding: 12px;
+            }
+
+            .gallery-header {
+                height: 68px;
+                justify-content: center;
+            }
+
+            .gallery-logo {
+                margin: 0;
+            }
+
+            .gallery-hero {
+                min-height: 390px;
+                padding: 25px 20px;
+                display: block;
+                text-align: left;
+            }
+
+            .gallery-hero h1 {
+                font-size: 42px;
+            }
+
+            .gallery-hero p {
+                font-size: 14px;
+            }
+
+            .hero-doraemon {
+                display: block;
+                width: 240px;
+                height: 190px;
+                margin: 10px auto 0;
+            }
+
+            .gallery-tools {
+                display: block;
+            }
+
+            .search-box {
+                margin-bottom: 12px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .gallery-image {
+                height: 145px;
+            }
+
+            .gallery-info {
+                padding: 9px;
+            }
+
+            .gallery-info h3 {
+                font-size: 13px;
+            }
+
+            .category-tag {
+                font-size: 9px;
+            }
+
+            .gallery-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat {
+                border-right: none;
+            }
+
+            .mobile-bottom-nav {
+                position: fixed;
+                left: 15px;
+                right: 15px;
+                bottom: 10px;
+                height: 76px;
+                background: rgba(255,255,255,0.97);
+                border: 1px solid #d8efff;
+                border-radius: 24px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                z-index: 9999;
+                box-shadow: 0 8px 30px rgba(0,100,180,0.15);
+            }
+
+            .bottom-nav-item {
+                width: 20%;
+                height: 62px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #71879a;
+                border-radius: 17px;
+            }
+
+            .bottom-nav-item span {
+                font-size: 23px;
+                margin-bottom: 4px;
+            }
+
+            .bottom-nav-item small {
+                font-size: 10px;
+                font-weight: 700;
+            }
+
+            .bottom-nav-item.active {
+                background: #e9f8ff;
+                color: #078ddd;
+            }
+
+            .lightbox {
+                padding: 15px;
+            }
+
+            .lightbox-image {
+                max-height: 65vh;
+            }
+
+            .lightbox-arrow {
+                width: 42px;
+                height: 42px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="gallery-header">
+
+    <a href="index.html" class="gallery-logo">
+        🤖 DORAEMON WORLD 🌐
+    </a>
+
+
+    <nav class="gallery-nav">
+
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <a href="movies.html">
+            🎬 Movies
+        </a>
+
+        <a href="episodes.html">
+            📺 Episodes
+        </a>
+
+        <a href="characters.html">
+            👥 Characters
+        </a>
+
+        <a href="music.html">
+            🎵 Music
+        </a>
+
+        <a href="gallery.html" class="active">
+            📸 Gallery
+        </a>
+
+        <a href="test.html">
+            📝 Test
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="gallery-container">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="gallery-hero">
+
+        <div class="gallery-hero-text">
+
+            <div class="gallery-badge">
+                📸 DORAEMON GALLERY
+            </div>
+
+            <h1>
+                Doraemon
+                <span>Gallery</span>
+            </h1>
+
+            <p>
+                Explore beautiful Doraemon moments,
+                characters, movies, gadgets and
+                adventures all in one place.
+            </p>
+
+        </div>
+
+
+        <img
+            src="assets/images/characters/doraemon.png"
+            alt="Doraemon"
+            class="hero-doraemon">
+
+    </section>
+
+
+
+    <!-- =================================================
+         SEARCH
+    ================================================== -->
+
+    <section class="gallery-tools">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search images...">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FILTERS
+    ================================================== -->
+
+    <div class="gallery-filters">
+
+        <button
+            class="filter-btn active"
+            data-filter="all">
+            ▦ All
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="characters">
+            👥 Characters
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="movies">
+            🎬 Movies
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="funny">
+            😄 Funny
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="gadgets">
+            ✨ Gadgets
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="adventures">
+            🌈 Adventures
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         GALLERY GRID
+    ================================================== -->
+
+    <section
+        class="gallery-grid"
+        id="galleryGrid">
+    </section>
+
+
+
+    <!-- =================================================
+         PAGINATION
+    ================================================== -->
+
+    <div class="pagination">
+
+        <button class="page-btn">
+            ‹
+        </button>
+
+        <button class="page-btn active">
+            1
+        </button>
+
+        <button class="page-btn">
+            2
+        </button>
+
+        <button class="page-btn">
+            3
+        </button>
+
+        <button class="page-btn">
+            ...
+        </button>
+
+        <button class="page-btn">
+            15
+        </button>
+
+        <button class="page-btn">
+            ›
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <section class="gallery-stats">
+
+        <div class="stat">
+
+            <strong id="imageCount">
+                0
+            </strong>
+
+            <span>
+                Images
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                6
+            </strong>
+
+            <span>
+                Categories
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                Regular
+            </strong>
+
+            <span>
+                Updates
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                💙
+            </strong>
+
+            <span>
+                Made with Love
+            </span>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox">
+
+    <button
+        class="lightbox-arrow lightbox-prev"
+        id="prevBtn">
+        ‹
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <button
+            class="close-lightbox"
+            id="closeBtn">
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            class="lightbox-image"
+            src=""
+            alt="Gallery Image">
+
+        <div
+            id="lightboxTitle"
+            class="lightbox-title">
+        </div>
+
+    </div>
+
+
+    <button
+        class="lightbox-arrow lightbox-next"
+        id="nextBtn">
+        ›
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="mobile-bottom-nav">
+
+    <a
+        href="index.html"
+        class="bottom-nav-item">
+
+        <span>🏠</span>
+        <small>Home</small>
+
+    </a>
+
+
+    <a
+        href="movies.html"
+        class="bottom-nav-item">
+
+        <span>🎬</span>
+        <small>Movies</small>
+
+    </a>
+
+
+    <a
+        href="episodes.html"
+        class="bottom-nav-item">
+
+        <span>📺</span>
+        <small>Episodes</small>
+
+    </a>
+
+
+    <a
+        href="characters.html"
+        class="bottom-nav-item">
+
+        <span>👥</span>
+        <small>Characters</small>
+
+    </a>
+
+
+    <a
+        href="music.html"
+        class="bottom-nav-item">
+
+        <span>🎵</span>
+        <small>Music</small>
+
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       GALLERY DATA
+    ===================================================== */
+
+    const galleryImages = [
+
+        {
+            title: "Doraemon",
+            category: "characters",
+            image: "assets/images/gallery/doraemon.jpg"
+        },
+
+        {
+            title: "Nobita",
+            category: "characters",
+            image: "assets/images/gallery/nobita.jpg"
+        },
+
+        {
+            title: "Shizuka",
+            category: "characters",
+            image: "assets/images/gallery/shizuka.jpg"
+        },
+
+        {
+            title: "Gian",
+            category: "characters",
+            image: "assets/images/gallery/gian.jpg"
+        },
+
+        {
+            title: "Suneo",
+            category: "characters",
+            image: "assets/images/gallery/suneo.jpg"
+        },
+
+        {
+            title: "Dorami",
+            category: "characters",
+            image: "assets/images/gallery/dorami.jpg"
+        },
+
+        {
+            title: "Doraemon Movie",
+            category: "movies",
+            image: "assets/images/gallery/movie-1.jpg"
+        },
+
+        {
+            title: "Doraemon Movie Adventure",
+            category: "movies",
+            image: "assets/images/gallery/movie-2.jpg"
+        },
+
+        {
+            title: "Funny Doraemon",
+            category: "funny",
+            image: "assets/images/gallery/funny-1.jpg"
+        },
+
+        {
+            title: "Funny Nobita",
+            category: "funny",
+            image: "assets/images/gallery/funny-2.jpg"
+        },
+
+        {
+            title: "Funny Gian",
+            category: "funny",
+            image: "assets/images/gallery/funny-3.jpg"
+        },
+
+        {
+            title: "Funny Suneo",
+            category: "funny",
+            image: "assets/images/gallery/funny-4.jpg"
+        },
+
+        {
+            title: "Anywhere Door",
+            category: "gadgets",
+            image: "assets/images/gallery/anywhere-door.jpg"
+        },
+
+        {
+            title: "4D Pocket",
+            category: "gadgets",
+            image: "assets/images/gallery/4d-pocket.jpg"
+        },
+
+        {
+            title: "Take-copter",
+            category: "gadgets",
+            image: "assets/images/gallery/take-copter.jpg"
+        },
+
+        {
+            title: "Doraemon Adventure",
+            category: "adventures",
+            image: "assets/images/gallery/adventure-1.jpg"
+        }
+
+    ];
+
+
+    let currentFilter = "all";
+    let filteredImages = [...galleryImages];
+    let currentIndex = 0;
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const galleryGrid =
+        document.getElementById("galleryGrid");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const imageCount =
+        document.getElementById("imageCount");
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    const lightboxTitle =
+        document.getElementById("lightboxTitle");
+
+
+    /* =====================================================
+       RENDER GALLERY
+    ===================================================== */
+
+    function renderGallery() {
+
+        const search =
+            searchInput.value
+            .toLowerCase()
+            .trim();
+
+
+        filteredImages =
+            galleryImages.filter(item => {
+
+                const matchesFilter =
+                    currentFilter === "all" ||
+                    item.category === currentFilter;
+
+                const matchesSearch =
+                    item.title
+                    .toLowerCase()
+                    .includes(search);
+
+                return matchesFilter &&
+                       matchesSearch;
+
+            });
+
+
+        galleryGrid.innerHTML = "";
+
+
+        imageCount.textContent =
+            filteredImages.length;
+
+
+        if (filteredImages.length === 0) {
+
+            galleryGrid.innerHTML = `
+                <div style="
+                    grid-column:1/-1;
+                    text-align:center;
+                    padding:60px 20px;
+                    color:#6b8498;
+                ">
+                    <div style="font-size:50px;">
+                        😔
+                    </div>
+
+                    <h2 style="margin:15px 0;">
+                        No images found
+                    </h2>
+
+                    <p>
+                        Try another search or category.
+                    </p>
+                </div>
+            `;
+
+            return;
+        }
+
+
+        filteredImages.forEach((item, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "gallery-card";
+
+
+            card.innerHTML = `
+
+                <div class="gallery-image">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.title}"
+                        loading="lazy"
+                        onerror="
+                            this.parentElement.innerHTML =
+                            '<div style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            height:100%;
+                            font-size:40px;
+                            ">🖼️</div>';
+                        "
+                    >
+
+                    <div class="zoom-icon">
+                        🔍
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-info">
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <span class="category-tag">
+                        ${item.category}
+                    </span>
+
+                </div>
+
+            `;
+
+
+            card.addEventListener(
+                "click",
+                () => openLightbox(index)
+            );
+
+
+            galleryGrid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       FILTER
+    ===================================================== */
+
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .querySelectorAll(".filter-btn")
+                        .forEach(btn => {
+                            btn.classList.remove("active");
+                        });
+
+
+                    button.classList.add("active");
+
+
+                    currentFilter =
+                        button.dataset.filter;
+
+
+                    renderGallery();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    searchInput.addEventListener(
+        "input",
+        renderGallery
+    );
+
+
+    /* =====================================================
+       LIGHTBOX
+    ===================================================== */
+
+    function openLightbox(index) {
+
+        currentIndex = index;
+
+        const item =
+            filteredImages[currentIndex];
+
+        if (!item) {
+            return;
+        }
+
+
+        lightboxImage.src =
+            item.image;
+
+        lightboxImage.alt =
+            item.title;
+
+        lightboxTitle.textContent =
+            item.title;
+
+
+        lightbox.classList.add("show");
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("show");
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    function showNext() {
+
+        if (!filteredImages.length) {
+            return;
+        }
+
+        currentIndex++;
+
+        if (
+            currentIndex >=
+            filteredImages.length
+        ) {
+            currentIndex = 0;
+        }
+
+        openLightbox(currentIndex);
+
+    }
+
+
+    function showPrevious() {
+
+        if (!filteredImages.length) {
+            return;
+        }
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex =
+                filteredImages.length - 1;
+        }
+
+        openLightbox(currentIndex);
+
+    }
+
+
+    document
+        .getElementById("closeBtn")
+        .addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+    document
+        .getElementById("nextBtn")
+        .addEventListener(
+            "click",
+            showNext
+        );
+
+
+    document
+        .getElementById("prevBtn")
+        .addEventListener(
+            "click",
+            showPrevious
+        );
+
+
+    lightbox.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       KEYBOARD
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (!lightbox.classList.contains("show")) {
+                return;
+            }
+
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+
+            if (event.key === "ArrowRight") {
+                showNext();
+            }
+
+
+            if (event.key === "ArrowLeft") {
+                showPrevious();
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIAL LOAD
+    ===================================================== */
+
+    renderGallery();
+
+</script>
+
+
+</body>
+
+</html>
