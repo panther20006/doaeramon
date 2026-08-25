@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -1453,6 +1453,113 @@ footer p{
 
 }
 
+
+
+/* =====================================================
+   MOBILE BOTTOM NAVIGATION
+===================================================== */
+
+.mobile-bottom-nav{
+    display:none;
+}
+
+@media(max-width:700px){
+
+    .mobile-bottom-nav{
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:10px;
+        height:78px;
+
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+
+        padding:7px 4px;
+
+        background:rgba(255,255,255,.98);
+        border:1px solid #d8efff;
+        border-radius:22px;
+
+        box-shadow:0 8px 30px rgba(0,80,140,.18);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+
+        z-index:5000;
+    }
+
+    .bottom-nav-item{
+        width:20%;
+        height:62px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        color:#71879a;
+        text-decoration:none;
+        border-radius:17px;
+        transition:.2s ease;
+    }
+
+    .bottom-nav-item span{
+        font-size:23px;
+        line-height:1;
+        margin-bottom:5px;
+    }
+
+    .bottom-nav-item small{
+        font-size:10px;
+        font-weight:800;
+        line-height:1;
+    }
+
+    .bottom-nav-item.active{
+        background:#e8f7ff;
+        color:#078bd6;
+    }
+
+    .bottom-nav-item:active{
+        transform:scale(.95);
+    }
+
+    /* Music player ko bottom navigation ke upar rakho */
+    .music-player{
+        bottom:100px;
+    }
+
+    body{
+        padding-bottom:190px;
+    }
+}
+
+@media(max-width:400px){
+    .mobile-bottom-nav{
+        left:8px;
+        right:8px;
+        height:74px;
+        bottom:8px;
+    }
+
+    .bottom-nav-item{
+        height:58px;
+    }
+
+    .bottom-nav-item span{
+        font-size:21px;
+    }
+
+    .bottom-nav-item small{
+        font-size:9px;
+    }
+
+    .music-player{
+        bottom:92px;
+    }
+}
+
 </style>
 
 </head>
@@ -1669,6 +1776,39 @@ footer p{
 
 </main>
 
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+<nav class="mobile-bottom-nav">
+
+    <a href="index.html" class="bottom-nav-item">
+        <span>🏠</span>
+        <small>Home</small>
+    </a>
+
+    <a href="movies.html" class="bottom-nav-item">
+        <span>🎬</span>
+        <small>Movies</small>
+    </a>
+
+    <a href="episodes.html" class="bottom-nav-item">
+        <span>📺</span>
+        <small>Episodes</small>
+    </a>
+
+    <a href="characters.html" class="bottom-nav-item">
+        <span>👥</span>
+        <small>Characters</small>
+    </a>
+
+    <a href="music.html" class="bottom-nav-item active">
+        <span>🎵</span>
+        <small>Music</small>
+    </a>
+
+</nav>
 
 <!-- =====================================================
      FOOTER
