@@ -437,7 +437,7 @@ function createCharacterCard(character) {
         document.createElement("a");
 
     card.href =
-        "#";
+        `character.html?id=${character.id}`;
 
     card.className =
         "character-card";
