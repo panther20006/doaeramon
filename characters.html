@@ -8,569 +8,376 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Doraemon Characters | Doraemon World</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <title>Doraemon World - Characters</title>
 
     <link rel="stylesheet" href="css/characters.css">
 
 </head>
 
-
 <body>
 
 
-    <!-- =====================================================
-         DESKTOP HEADER
-    ====================================================== -->
+<!-- =====================================================
+     DESKTOP HEADER
+===================================================== -->
 
-    <header class="topbar">
+<header class="topbar">
 
-        <a href="index.html" class="logo">
-            DORAEMON 🌐
-        </a>
+    <a href="index.html" class="logo">
+        DORAEMON
+    </a>
 
+    <nav class="desktop-nav">
 
-        <button
-            id="menu"
-            class="menu-btn"
-            aria-label="Open Menu">
+        <a href="index.html">🏠 Home</a>
 
-            ☰
+        <a href="movies.html">🎬 Movies</a>
 
-        </button>
+        <a href="episodes.html">📺 Episodes</a>
 
-
-        <nav id="nav">
-
-            <a href="index.html">
-                🏠 Home
-            </a>
-
-            <a href="movies.html">
-                🎬 Movies
-            </a>
-
-            <a href="episodes.html">
-                📺 Episodes
-            </a>
-
-            <a href="characters.html" class="active">
-                👥 Characters
-            </a>
-
-            <a href="wallpapers.html">
-                🖼️ Wallpapers
-            </a>
-
-            <a href="music.html">
-                🎵 Music
-            </a>
-
-            <a href="gallery.html">
-                📸 Gallery
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MOBILE HEADER
-    ====================================================== -->
-
-    <header class="mobile-header">
-
-        <button
-            id="mobileMenu"
-            class="mobile-menu-btn"
-            aria-label="Open Menu">
-
-            ☰
-
-        </button>
-
-
-        <a
-            href="index.html"
-            class="mobile-logo">
-
-            DORAEMON
-
-            <span>🔵</span>
-
-        </a>
-
-
-        <button
-            class="mobile-search-btn"
-            aria-label="Search">
-
-            🔍
-
-        </button>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
-    <main class="characters-page">
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="characters-hero">
-
-            <div class="characters-hero-content">
-
-                <span class="characters-badge">
-                    👥 DORAEMON WORLD
-                </span>
-
-
-                <h1>
-                    Doraemon
-                    <strong>Characters</strong>
-                </h1>
-
-
-                <p>
-                    Doraemon universe ke favourite characters,
-                    friends, family, robots aur movie characters
-                    explore karo.
-                </p>
-
-
-                <div class="character-count">
-
-                    <span id="characterCount">
-                        200+
-                    </span>
-
-                    <small>
-                        Characters
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- HERO DORAEMON -->
-
-            <img
-                src="assets/images/characters/doraemon.png"
-                alt="Doraemon"
-                class="characters-hero-image">
-
-        </section>
-
-
-
-        <!-- =================================================
-             SEARCH + FILTER
-        ================================================== -->
-
-        <section class="character-controls">
-
-
-            <div class="character-search">
-
-                <span>
-                    🔍
-                </span>
-
-                <input
-                    type="search"
-                    id="characterSearch"
-                    placeholder="Search character..."
-                    autocomplete="off">
-
-            </div>
-
-
-
-            <div class="character-filters"
-                 id="characterFilters">
-
-
-                <button
-                    class="character-filter active"
-                    data-category="all">
-
-                    All
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="main">
-
-                    ⭐ Main
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="family">
-
-                    👨‍👩‍👧 Family
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="friends">
-
-                    👥 Friends
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="school">
-
-                    🏫 School
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="robot">
-
-                    🤖 Robots
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="movie">
-
-                    🎬 Movies
-
-                </button>
-
-
-                <button
-                    class="character-filter"
-                    data-category="minor">
-
-                    🌍 Others
-
-                </button>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             FEATURED CHARACTERS
-        ================================================== -->
-
-        <section class="featured-characters">
-
-
-            <div class="characters-section-title">
-
-                <span>
-                    ⭐ FAN FAVOURITES
-                </span>
-
-                <h2>
-                    Main Characters
-                </h2>
-
-                <p>
-                    Doraemon aur uske closest friends.
-                </p>
-
-            </div>
-
-
-
-            <div
-                class="featured-character-grid"
-                id="featuredCharacters">
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             ALL CHARACTERS
-        ================================================== -->
-
-        <section class="all-characters">
-
-
-            <div class="characters-section-title">
-
-                <span>
-                    DORAEMON UNIVERSE
-                </span>
-
-                <h2>
-                    All Characters
-                </h2>
-
-                <p>
-                    Search aur category filter se character
-                    easily find karo.
-                </p>
-
-            </div>
-
-
-
-            <div
-                class="character-grid"
-                id="characterGrid">
-
-            </div>
-
-
-
-            <!-- NO RESULTS -->
-
-            <div
-                id="noCharacters"
-                class="no-characters"
-                hidden>
-
-                <div>
-                    🔎
-                </div>
-
-                <h3>
-                    Character not found
-                </h3>
-
-                <p>
-                    Dusra character name ya category try karo.
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             LOAD MORE
-        ================================================== -->
-
-        <div class="characters-load-more">
-
-            <button
-                id="loadMoreCharacters"
-                class="characters-load-more-btn">
-
-                Load More Characters
-
-            </button>
-
-        </div>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-logo">
-            DORAEMON WORLD 💙
-        </div>
-
-
-        <p>
-            Unofficial fan-made website.
-        </p>
-
-
-        <p class="copyright">
-            © 2026 Doraemon World
-        </p>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         MOBILE BOTTOM NAVIGATION
-    ====================================================== -->
-
-    <nav class="mobile-bottom-nav">
-
-
-        <a
-            href="index.html"
-            class="bottom-nav-item">
-
-            <span>
-                🏠
-            </span>
-
-            <small>
-                Home
-            </small>
-
-        </a>
-
-
-
-        <a
-            href="movies.html"
-            class="bottom-nav-item">
-
-            <span>
-                🎬
-            </span>
-
-            <small>
-                Movies
-            </small>
-
-        </a>
-
-
-
-        <a
-            href="episodes.html"
-            class="bottom-nav-item">
-
-            <span>
-                📺
-            </span>
-
-            <small>
-                Episodes
-            </small>
-
-        </a>
-
-
-
-        <a
-            href="characters.html"
-            class="bottom-nav-item active">
-
-            <span>
-                👥
-            </span>
-
-            <small>
-                Characters
-            </small>
-
-        </a>
-
-
-
-        <a
-            href="music.html"
-            class="bottom-nav-item">
-
-            <span>
-                🎵
-            </span>
-
-            <small>
-                Music
-            </small>
-
-        </a>
-
-
-    </nav>
-
-
-
-    <!-- =====================================================
-         MOBILE MENU PANEL
-    ====================================================== -->
-
-    <div
-        id="mobileMenuPanel"
-        class="mobile-menu-panel">
-
-
-        <a href="index.html">
-            🏠 Home
-        </a>
-
-
-        <a href="movies.html">
-            🎬 Movies
-        </a>
-
-
-        <a href="episodes.html">
-            📺 Episodes
-        </a>
-
-
-        <a href="characters.html">
+        <a href="characters.html" class="active">
             👥 Characters
         </a>
 
+        <a href="wallpapers.html">🖼️ Wallpapers</a>
 
-        <a href="wallpapers.html">
-            🖼️ Wallpapers
+        <a href="music.html">🎵 Music</a>
+
+        <a href="gallery.html">📸 Gallery</a>
+
+        <a href="test.html">📝 Test</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
+
+<header class="mobile-header">
+
+    <button id="mobileMenu"
+            class="mobile-menu-btn">
+        ☰
+    </button>
+
+    <a href="index.html"
+       class="mobile-logo">
+        DORAEMON
+    </a>
+
+    <button id="mobileSearch"
+            class="mobile-search-btn">
+        🔍
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div id="mobileMenuPanel"
+     class="mobile-menu-panel">
+
+    <a href="index.html">🏠 Home</a>
+
+    <a href="movies.html">🎬 Movies</a>
+
+    <a href="episodes.html">📺 Episodes</a>
+
+    <a href="characters.html"
+       class="active">
+        👥 Characters
+    </a>
+
+    <a href="wallpapers.html">🖼️ Wallpapers</a>
+
+    <a href="music.html">🎵 Music</a>
+
+    <a href="gallery.html">📸 Gallery</a>
+
+    <a href="test.html">📝 Test</a>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            👥 DORAEMON WORLD
+        </span>
+
+        <h1>
+            Doraemon
+            <strong>Characters</strong>
+        </h1>
+
+        <p>
+            Doraemon World ke saare favourite
+            characters ko ek hi jagah explore karo.
+        </p>
+
+        <a href="#characters"
+           class="hero-button">
+            Explore Characters
         </a>
-
-
-        <a href="music.html">
-            🎵 Music
-        </a>
-
-
-        <a href="gallery.html">
-            📸 Gallery
-        </a>
-        
-        <a href="test.html">
-                📝 Test
-        </a>
-
 
     </div>
 
 
+    <div class="hero-art">
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+        <img
+            src="assets/images/characters/doraemon.png"
+            alt="Doraemon">
 
-    <script src="js/script.js"></script>
+    </div>
 
-    <script src="js/characters.js"></script>
+</section>
 
+
+<!-- =====================================================
+     SEARCH + FILTER
+===================================================== -->
+
+<section class="controls-section">
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+            type="search"
+            id="characterSearch"
+            placeholder="Search character...">
+
+    </div>
+
+
+    <div class="filter-wrapper">
+
+        <button
+            class="character-filter active"
+            data-category="all">
+
+            🌎 All
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="main">
+
+            ⭐ Main
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="family">
+
+            👨‍👩‍👧 Family
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="friends">
+
+            👥 Friends
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="school">
+
+            🏫 School
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="robot">
+
+            🤖 Robot
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="movie">
+
+            🎬 Movie
+
+        </button>
+
+
+        <button
+            class="character-filter"
+            data-category="minor">
+
+            🌍 Others
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHARACTERS
+===================================================== -->
+
+<main id="characters"
+      class="all-characters">
+
+    <section class="characters-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    DORAEMON WORLD
+                </span>
+
+                <h2 id="charactersHeading">
+                    All Characters
+                </h2>
+
+                <p id="charactersDescription">
+                    Doraemon ke saare characters
+                    ek hi jagah.
+                </p>
+
+            </div>
+
+
+            <div class="character-count-box">
+
+                <strong id="characterCount">
+                    22
+                </strong>
+
+                <small>
+                    Characters
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHARACTER GRID -->
+
+        <div id="characterGrid"
+             class="character-grid">
+        </div>
+
+
+        <!-- NO RESULT -->
+
+        <div id="noCharacters"
+             class="no-characters"
+             hidden>
+
+            <div class="no-icon">
+                😔
+            </div>
+
+            <h3>
+                Character Not Found
+            </h3>
+
+            <p>
+                Search ya category change karke
+                dobara try karo.
+            </p>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        DORAEMON WORLD
+    </div>
+
+    <p>
+        Unofficial Doraemon Fan Website
+    </p>
+
+    <p>
+        © 2026 Doraemon World
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="index.html">
+        <span>🏠</span>
+        <small>Home</small>
+    </a>
+
+    <a href="movies.html">
+        <span>🎬</span>
+        <small>Movies</small>
+    </a>
+
+    <a href="episodes.html">
+        <span>📺</span>
+        <small>Episodes</small>
+    </a>
+
+    <a href="characters.html"
+       class="active">
+        <span>👥</span>
+        <small>Characters</small>
+    </a>
+
+    <a href="music.html">
+        <span>🎵</span>
+        <small>Music</small>
+    </a>
+
+</nav>
+
+
+<script src="js/characters.js"></script>
 
 </body>
 

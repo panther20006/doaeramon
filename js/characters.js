@@ -1,579 +1,270 @@
 /* =====================================================
    DORAEMON WORLD
    CHARACTERS DATABASE
-   SEARCH + FILTER + LOAD MORE
-===================================================== */
-
-
-/* =====================================================
-   CHARACTER DATABASE
 ===================================================== */
 
 const characters = [
 
-    /* =================================================
-       MAIN CHARACTERS
-    ================================================= */
-
     {
         id: 1,
-        name: "Doraemon",
-        japanese: "ドラえもん",
+        name: "Nobita Nobi",
+        role: "Doraemon's Best Friend",
         category: "main",
-        role: "Robot Cat",
-        image: "assets/images/characters/Doremon.ch.png",
-        description: "A robotic cat from the 22nd century who helps Nobita.",
-        featured: true
+        image: "assets/images/characters/nobita.png"
     },
 
     {
         id: 2,
-        name: "Nobita Nobi",
-        japanese: "野比のび太",
+        name: "Doraemon",
+        role: "Robot Cat from 22nd Century",
         category: "main",
-        role: "Student",
-        image: "assets/images/characters/nobita.png",
-        description: "Nobita is Doraemon's best friend and owner.",
-        featured: true
+        image: "assets/images/characters/Doremon.ch.png"
     },
 
     {
         id: 3,
-        name: "Shizuka Minamoto",
-        japanese: "源静香",
+        name: "Suneo Honekawa",
+        role: "Nobita's Friend",
         category: "main",
-        role: "Student",
-        image: "assets/images/characters/shizuka.png",
-        description: "Nobita's kind and intelligent friend.",
-        featured: true
+        image: "assets/images/characters/suneo.png"
     },
 
     {
         id: 4,
-        name: "Takeshi Goda",
-        japanese: "剛田武",
+        name: "Gian (Takeshi Gouda)",
+        role: "Nobita's Friend",
         category: "main",
-        role: "Student",
-        image: "assets/images/characters/gian.png",
-        description: "Gian is strong, loud and loves singing.",
-        featured: true
+        image: "assets/images/characters/gian.png"
     },
 
     {
         id: 5,
-        name: "Suneo Honekawa",
-        japanese: "骨川スネ夫",
+        name: "Shizuka Minamoto",
+        role: "Nobita's Friend",
         category: "main",
-        role: "Student",
-        image: "assets/images/characters/suneo.png",
-        description: "Suneo is a clever and wealthy friend of Nobita.",
-        featured: true
+        image: "assets/images/characters/shizuka.png"
     },
 
     {
         id: 6,
         name: "Dorami",
-        japanese: "ドラミ",
-        category: "main",
-        role: "Robot Cat",
-        image: "assets/images/characters/dorami.png",
-        description: "Doraemon's younger sister from the future.",
-        featured: true
+        role: "Doraemon's Sister",
+        category: "family",
+        image: "assets/images/characters/dorami.png"
     },
 
     {
         id: 7,
-        name: "Hidetoshi Dekisugi",
-        japanese: "出木杉英才",
-        category: "friends",
-        role: "Student",
-        image: "assets/images/characters/dekisugi.png",
-        description: "A brilliant and talented student.",
-        featured: true
+        name: "Dekisugi",
+        role: "Brilliant Student",
+        category: "school",
+        image: "assets/images/characters/dekisugi.png"
     },
-
-
-    /* =================================================
-       NOBI FAMILY
-    ================================================= */
 
     {
         id: 8,
-        name: "Tamako Nobi",
-        japanese: "野比玉子",
+        name: "Sewashi",
+        role: "Nobita's Descendant",
         category: "family",
-        role: "Nobita's Mother",
-        image: "assets/images/characters/tamako.png",
-        description: "Nobita's mother who takes care of the family."
+        image: "assets/images/characters/sewashi.png"
     },
 
     {
         id: 9,
-        name: "Nobisuke Nobi",
-        japanese: "野比のび助",
-        category: "family",
-        role: "Nobita's Father",
-        image: "assets/images/characters/nobisuke.png",
-        description: "Nobita's father and Tamako's husband."
+        name: "Pippo",
+        role: "Doraemon Universe Character",
+        category: "minor",
+        image: "assets/images/characters/pippo.png"
     },
 
     {
         id: 10,
-        name: "Sewashi Nobi",
-        japanese: "野比セワシ",
+        name: "Sunekichi",
+        role: "Suneo's Family",
         category: "family",
-        role: "Future Descendant",
-        image: "assets/images/characters/sewashi.png",
-        description: "Nobita's descendant from the 22nd century."
+        image: "assets/images/characters/sunekichi.png"
     },
 
     {
         id: 11,
-        name: "Nobita's Grandmother",
-        japanese: "のび太の祖母",
-        category: "family",
-        role: "Grandmother",
-        image: "assets/images/characters/nobita-grandmother.png",
-        description: "Nobita's beloved grandmother."
+        name: "Peko",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/peko.png"
     },
 
     {
         id: 12,
-        name: "Nobita's Grandfather",
-        japanese: "野比の祖父",
-        category: "family",
-        role: "Grandfather",
-        image: "assets/images/characters/nobita-grandfather.png",
-        description: "Nobita's grandfather."
+        name: "Sofia",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/sofia.png"
     },
 
     {
         id: 13,
-        name: "Nobita's Future Son",
-        japanese: "野比ノビスケ",
-        category: "family",
-        role: "Future Family",
-        image: "assets/images/characters/nobisuke-future.png",
-        description: "Nobita's future son."
+        name: "Fuko",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/fuko.png"
     },
 
     {
         id: 14,
-        name: "Jaiko Goda",
-        japanese: "剛田ジャイ子",
-        category: "family",
-        role: "Gian's Sister",
-        image: "assets/images/characters/jaiko.png",
-        description: "Gian's younger sister who loves drawing manga."
+        name: "Kukku",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/kukku.png"
     },
-
-
-    /* =================================================
-       FRIENDS
-    ================================================= */
 
     {
         id: 15,
-        name: "Suneo's Mother",
-        japanese: "骨川夫人",
-        category: "friends",
-        role: "Parent",
-        image: "assets/images/characters/suneo-mother.png",
-        description: "Suneo's fashionable mother."
+        name: "Paruparu",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/paruparu.png"
     },
 
     {
         id: 16,
-        name: "Gian's Mother",
-        japanese: "剛田家の母",
-        category: "friends",
-        role: "Parent",
-        image: "assets/images/characters/gian-mother.png",
-        description: "Gian and Jaiko's mother."
+        name: "Chamocha",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/chamocha.png"
     },
 
     {
         id: 17,
-        name: "Kaminari",
-        japanese: "神成さん",
-        category: "friends",
-        role: "Neighbour",
-        image: "assets/images/characters/kaminari.png",
-        description: "The strict neighbour who often gets annoyed."
+        name: "Riruru",
+        role: "Robot Girl",
+        category: "robot",
+        image: "assets/images/characters/riruru.png"
     },
 
     {
         id: 18,
-        name: "Nobita's Classmate",
-        japanese: "クラスメート",
-        category: "friends",
-        role: "Student",
-        image: "assets/images/characters/classmate.png",
-        description: "One of Nobita's classmates."
+        name: "Professor Mangetsu",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/professor-mangetsu.png"
     },
-
-
-    /* =================================================
-       SCHOOL
-    ================================================= */
 
     {
         id: 19,
-        name: "Nobita's Teacher",
-        japanese: "先生",
-        category: "school",
-        role: "Teacher",
-        image: "assets/images/characters/teacher.png",
-        description: "Nobita's strict school teacher."
+        name: "Dr. Kos",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/dr-kos.png"
     },
 
     {
         id: 20,
-        name: "School Principal",
-        japanese: "校長先生",
-        category: "school",
-        role: "Principal",
-        image: "assets/images/characters/principal.png",
-        description: "The principal of Nobita's school."
+        name: "Miyoko",
+        role: "Movie Character",
+        category: "movie",
+        image: "assets/images/characters/miyoko.png"
     },
-
-
-    /* =================================================
-       FUTURE / ROBOTS
-    ================================================= */
 
     {
         id: 21,
-        name: "Mini-Dora",
-        japanese: "ミニドラ",
-        category: "robot",
-        role: "Mini Robot",
-        image: "assets/images/characters/mini-dora.png",
-        description: "Tiny robot versions related to Doraemon."
+        name: "Bunta",
+        role: "Doraemon Universe Character",
+        category: "minor",
+        image: "assets/images/characters/bunta.png"
     },
 
     {
         id: 22,
-        name: "Dorami's Friend",
-        japanese: "ロボット",
-        category: "robot",
-        role: "Robot",
-        image: "assets/images/characters/robot-friend.png",
-        description: "A robot character from the future."
-    },
-
-    {
-        id: 23,
-        name: "Time Patrol",
-        japanese: "タイムパトロール",
-        category: "robot",
-        role: "Time Police",
-        image: "assets/images/characters/time-patrol.png",
-        description: "Future police responsible for protecting time."
-    },
-
-
-    /* =================================================
-       MOVIE CHARACTERS
-    ================================================= */
-
-    {
-        id: 24,
-        name: "Pippo",
-        japanese: "ピッポ",
-        category: "movie",
-        role: "Movie Character",
-        image: "assets/images/characters/pippo.png",
-        description: "A character from Doraemon movie adventures."
-    },
-
-    {
-        id: 25,
-        name: "Sofia",
-        japanese: "ソフィア",
-        category: "movie",
-        role: "Movie Character",
-        image: "assets/images/characters/sofia.png",
-        description: "A character appearing in a Doraemon movie."
-    },
-
-    {
-        id: 26,
-        name: "Luka",
-        japanese: "ルカ",
-        category: "movie",
-        role: "Movie Character",
-        image: "assets/images/characters/luka.png",
-        description: "A character from Doraemon's movie universe."
-    },
-
-    {
-        id: 27,
-        name: "Fuko",
-        japanese: "フー子",
-        category: "movie",
-        role: "Movie Character",
-        image: "assets/images/characters/fuko.png",
-        description: "A memorable character from a Doraemon adventure."
-    },
-
-
-    /* =================================================
-       OTHER CHARACTERS
-    ================================================= */
-
-    {
-        id: 28,
-        name: "Nobita's Friend",
-        japanese: "友達",
+        name: "Honeko",
+        role: "Doraemon Universe Character",
         category: "minor",
-        role: "Supporting",
-        image: "assets/images/characters/friend.png",
-        description: "A supporting character from the Doraemon universe."
-    },
-
-    {
-        id: 29,
-        name: "Future Citizen",
-        japanese: "未来人",
-        category: "minor",
-        role: "Future Character",
-        image: "assets/images/characters/future-citizen.png",
-        description: "A citizen living in the future."
-    },
-
-    {
-        id: 30,
-        name: "Robot Shopkeeper",
-        japanese: "ロボット店員",
-        category: "minor",
-        role: "Shopkeeper",
-        image: "assets/images/characters/robot-shopkeeper.png",
-        description: "A robot character from the future world."
+        image: "assets/images/characters/honeko.png"
     }
 
 ];
 
 
 /* =====================================================
-   IMPORTANT
-   =====================================================
-
-   More characters can be added here.
-
-   Example:
-
-   {
-       id: 31,
-       name: "Character Name",
-       japanese: "Japanese Name",
-       category: "movie",
-       role: "Movie Character",
-       image: "assets/images/characters/character-name.png",
-       description: "Character description."
-   }
-
-===================================================== */
-
-
-/* =====================================================
-   ELEMENTS
+   VARIABLES
 ===================================================== */
 
 const characterGrid =
     document.getElementById("characterGrid");
 
-const featuredCharacters =
-    document.getElementById("featuredCharacters");
-
-const searchInput =
+const characterSearch =
     document.getElementById("characterSearch");
-
-const filterButtons =
-    document.querySelectorAll(".character-filter");
 
 const noCharacters =
     document.getElementById("noCharacters");
 
-const loadMoreButton =
-    document.getElementById("loadMoreCharacters");
-
 const characterCount =
     document.getElementById("characterCount");
 
+const charactersHeading =
+    document.getElementById("charactersHeading");
 
-/* =====================================================
-   SETTINGS
-===================================================== */
+const charactersDescription =
+    document.getElementById("charactersDescription");
 
 let currentCategory = "all";
 
-let currentSearch = "";
 
-let visibleCharacters = 20;
+/* =====================================================
+   CATEGORY NAMES
+===================================================== */
 
-const charactersPerLoad = 20;
+const categoryNames = {
+
+    all: "All Characters",
+
+    main: "Main Characters",
+
+    family: "Family Characters",
+
+    friends: "Friends",
+
+    school: "School Characters",
+
+    robot: "Robot Characters",
+
+    movie: "Movie Characters",
+
+    minor: "Other Characters"
+
+};
 
 
 /* =====================================================
-   CHARACTER COUNT
+   CATEGORY DESCRIPTION
 ===================================================== */
 
-if (characterCount) {
+const categoryDescriptions = {
 
-    characterCount.textContent =
-        characters.length + "+";
+    all:
+        "Doraemon ke saare characters ek hi jagah.",
 
-}
+    main:
+        "Doraemon aur uske closest main characters.",
 
+    family:
+        "Doraemon universe ke family characters.",
 
-/* =====================================================
-   CREATE CHARACTER CARD
-===================================================== */
+    friends:
+        "Nobita aur Doraemon ke friends.",
 
-function createCharacterCard(character) {
+    school:
+        "School ke important characters.",
 
-    const card =
-        document.createElement("a");
+    robot:
+        "Doraemon universe ke robots.",
 
-    card.href =
-        `character.html?id=${character.id}`;
+    movie:
+        "Doraemon movies ke special characters.",
 
-    card.className =
-        "character-card";
+    minor:
+        "Doraemon universe ke other characters."
 
-
-    card.innerHTML = `
-
-        <div class="character-image-box">
-
-            <img
-                src="${character.image}"
-                alt="${character.name}"
-                loading="lazy"
-                onerror="this.style.opacity='0.15';">
-
-        </div>
-
-
-        <div class="character-info">
-
-            <h3>
-                ${character.name}
-            </h3>
-
-
-            <div class="character-japanese">
-                ${character.japanese || ""}
-            </div>
-
-
-            <p>
-                ${character.description || ""}
-            </p>
-
-
-            <span class="character-category">
-                ${character.category}
-            </span>
-
-        </div>
-
-    `;
-
-
-    return card;
-
-}
-
-
-/* =====================================================
-   CREATE FEATURED CARD
-===================================================== */
-
-function createFeaturedCard(character) {
-
-    const card =
-        document.createElement("a");
-
-    card.href =
-        "#";
-
-    card.className =
-        "featured-character-card";
-
-
-    card.innerHTML = `
-
-        <img
-            src="${character.image}"
-            alt="${character.name}"
-            loading="lazy"
-            onerror="this.style.opacity='0.15';">
-
-
-        <div class="featured-character-info">
-
-            <h3>
-                ${character.name}
-            </h3>
-
-
-            <p>
-                ${character.role || ""}
-            </p>
-
-
-            <span class="character-category">
-                ${character.category}
-            </span>
-
-        </div>
-
-    `;
-
-
-    return card;
-
-}
-
-
-/* =====================================================
-   GET FILTERED CHARACTERS
-===================================================== */
-
-function getFilteredCharacters() {
-
-    return characters.filter(character => {
-
-        const categoryMatch =
-            currentCategory === "all" ||
-            character.category === currentCategory;
-
-
-        const searchText =
-            currentSearch.toLowerCase();
-
-
-        const searchMatch =
-            character.name
-                .toLowerCase()
-                .includes(searchText)
-            ||
-            (character.japanese || "")
-                .toLowerCase()
-                .includes(searchText)
-            ||
-            (character.role || "")
-                .toLowerCase()
-                .includes(searchText);
-
-
-        return categoryMatch && searchMatch;
-
-    });
-
-}
+};
 
 
 /* =====================================================
@@ -582,113 +273,246 @@ function getFilteredCharacters() {
 
 function renderCharacters() {
 
-    if (!characterGrid) {
-        return;
-    }
-
-
-    const filtered =
-        getFilteredCharacters();
+    const searchText =
+        characterSearch.value
+        .toLowerCase()
+        .trim();
 
 
     characterGrid.innerHTML = "";
 
 
-    const visible =
-        filtered.slice(
-            0,
-            visibleCharacters
-        );
+    const filteredCharacters =
+        characters.filter(character => {
+
+            const categoryMatch =
+                currentCategory === "all" ||
+                character.category === currentCategory;
+
+            const text =
+                (
+                    character.name +
+                    " " +
+                    character.role
+                ).toLowerCase();
+
+            const searchMatch =
+                text.includes(searchText);
+
+            return categoryMatch && searchMatch;
+
+        });
 
 
-    visible.forEach(character => {
+    /* =================================================
+       COUNT
+    ================================================= */
 
-        characterGrid.appendChild(
-            createCharacterCard(character)
-        );
+    characterCount.textContent =
+        filteredCharacters.length;
+
+
+    /* =================================================
+       HEADING
+    ================================================= */
+
+    charactersHeading.textContent =
+        categoryNames[currentCategory];
+
+
+    charactersDescription.textContent =
+        categoryDescriptions[currentCategory];
+
+
+    /* =================================================
+       NO RESULTS
+    ================================================= */
+
+    if (filteredCharacters.length === 0) {
+
+        noCharacters.hidden = false;
+
+        return;
+
+    }
+
+
+    noCharacters.hidden = true;
+
+
+    /* =================================================
+       CREATE CARDS
+    ================================================= */
+
+    filteredCharacters.forEach(character => {
+
+        const card =
+            document.createElement("article");
+
+
+        card.className =
+            "character-card";
+
+
+        card.dataset.id =
+            character.id;
+
+
+        card.innerHTML = `
+
+            <div class="character-image">
+
+                <div class="character-number">
+
+                    ${String(character.id).padStart(2, "0")}
+
+                </div>
+
+
+                <img
+                    src="${character.image}"
+                    alt="${character.name}"
+                    loading="lazy"
+                    onerror="this.src='assets/images/characters/doraemon.png';">
+
+            </div>
+
+
+            <div class="character-info">
+
+                <h3>
+                    ${character.name}
+                </h3>
+
+                <div class="character-role">
+                    👤 ${character.role}
+                </div>
+
+                <span class="character-category">
+                    ${getCategoryLabel(character.category)}
+                </span>
+
+            </div>
+
+        `;
+
+
+        characterGrid.appendChild(card);
 
     });
-
-
-    /* NO RESULTS */
-
-    if (noCharacters) {
-
-        noCharacters.hidden =
-            filtered.length !== 0;
-
-    }
-
-
-    /* LOAD MORE */
-
-    if (loadMoreButton) {
-
-        if (visibleCharacters >= filtered.length) {
-
-            loadMoreButton.style.display =
-                "none";
-
-        } else {
-
-            loadMoreButton.style.display =
-                "block";
-
-        }
-
-    }
 
 }
 
 
 /* =====================================================
-   RENDER FEATURED
+   CATEGORY LABEL
 ===================================================== */
 
-function renderFeaturedCharacters() {
+function getCategoryLabel(category) {
 
-    if (!featuredCharacters) {
-        return;
-    }
+    const labels = {
+
+        main: "⭐ Main",
+
+        family: "👨‍👩‍👧 Family",
+
+        friends: "👥 Friends",
+
+        school: "🏫 School",
+
+        robot: "🤖 Robot",
+
+        movie: "🎬 Movie",
+
+        minor: "🌍 Others"
+
+    };
 
 
-    featuredCharacters.innerHTML = "";
+    return labels[category] || "Character";
+
+}
 
 
-    const featured =
-        characters
-            .filter(character => character.featured)
-            .slice(0, 5);
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+document
+    .querySelectorAll(".character-filter")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                currentCategory =
+                    this.dataset.category;
 
 
-    featured.forEach(character => {
+                document
+                    .querySelectorAll(".character-filter")
+                    .forEach(btn => {
 
-        featuredCharacters.appendChild(
-            createFeaturedCard(character)
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                renderCharacters();
+
+
+                document
+                    .querySelector(".all-characters")
+                    .scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+            }
         );
 
     });
-
-}
 
 
 /* =====================================================
    SEARCH
 ===================================================== */
 
-if (searchInput) {
+characterSearch.addEventListener(
+    "input",
+    renderCharacters
+);
 
-    searchInput.addEventListener(
-        "input",
-        event => {
 
-            currentSearch =
-                event.target.value.trim();
+/* =====================================================
+   MOBILE SEARCH BUTTON
+===================================================== */
 
-            visibleCharacters =
-                charactersPerLoad;
+const mobileSearch =
+    document.getElementById("mobileSearch");
 
-            renderCharacters();
+
+if (mobileSearch) {
+
+    mobileSearch.addEventListener(
+        "click",
+        function() {
+
+            characterSearch.focus();
+
+            characterSearch.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
 
         }
     );
@@ -697,64 +521,48 @@ if (searchInput) {
 
 
 /* =====================================================
-   CATEGORY FILTER
+   MOBILE MENU
 ===================================================== */
 
-filterButtons.forEach(button => {
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-    button.addEventListener(
+const mobileMenuPanel =
+    document.getElementById("mobileMenuPanel");
+
+
+if (mobileMenu && mobileMenuPanel) {
+
+    mobileMenu.addEventListener(
         "click",
-        () => {
+        function() {
 
-            filterButtons.forEach(
-                item => {
+            mobileMenuPanel.classList.toggle(
+                "show"
+            );
 
-                    item.classList.remove(
-                        "active"
+        }
+    );
+
+
+    document
+        .addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    !mobileMenu.contains(event.target) &&
+                    !mobileMenuPanel.contains(event.target)
+                ) {
+
+                    mobileMenuPanel.classList.remove(
+                        "show"
                     );
 
                 }
-            );
 
-
-            button.classList.add(
-                "active"
-            );
-
-
-            currentCategory =
-                button.dataset.category;
-
-
-            visibleCharacters =
-                charactersPerLoad;
-
-
-            renderCharacters();
-
-        }
-    );
-
-});
-
-
-/* =====================================================
-   LOAD MORE
-===================================================== */
-
-if (loadMoreButton) {
-
-    loadMoreButton.addEventListener(
-        "click",
-        () => {
-
-            visibleCharacters +=
-                charactersPerLoad;
-
-            renderCharacters();
-
-        }
-    );
+            }
+        );
 
 }
 
@@ -763,28 +571,4 @@ if (loadMoreButton) {
    INITIAL LOAD
 ===================================================== */
 
-renderFeaturedCharacters();
-
 renderCharacters();
-
-
-/* =====================================================
-   IMAGE FALLBACK
-===================================================== */
-
-document.addEventListener(
-    "error",
-    event => {
-
-        if (
-            event.target.tagName === "IMG"
-        ) {
-
-            event.target.style.opacity =
-                "0.15";
-
-        }
-
-    },
-    true
-);
