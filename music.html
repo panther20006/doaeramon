@@ -8,19 +8,21 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Doraemon World - Hindi Music</title>
+<title>Doraemon World - Music</title>
+
 
 <style>
 
-/* =====================================================
+/* =========================================================
    DORAEMON WORLD
    MUSIC PAGE
    DESKTOP + MOBILE RESPONSIVE
-===================================================== */
+========================================================= */
 
-/* =====================================================
+
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 *{
     margin:0;
@@ -40,38 +42,49 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    DESKTOP TOP NAVIGATION
-===================================================== */
+========================================================= */
 
 .topbar{
+
     width:100%;
     min-height:64px;
+
     padding:8px 4%;
+
     display:flex;
     align-items:center;
+
     position:sticky;
     top:0;
+
     z-index:1000;
 
-    background:rgba(4,76,132,.97);
+    background:rgba(255,255,255,.98);
 
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
 
     box-shadow:
-        0 5px 25px rgba(0,60,100,.15);
+        0 5px 25px rgba(0,60,100,.12);
+
+    border-bottom:
+        1px solid #dceff8;
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGO
-===================================================== */
+========================================================= */
 
 .logo{
-    color:#ffffff;
+
+    color:#078bd6;
+
     font-size:23px;
     font-weight:900;
+
     letter-spacing:1px;
 
     white-space:nowrap;
@@ -91,11 +104,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    DESKTOP NAVIGATION
-===================================================== */
+========================================================= */
 
 #nav{
+
     margin-left:auto;
 
     display:flex;
@@ -108,14 +122,15 @@ body{
 }
 
 #nav a{
-    color:#ffffff;
+
+    color:#172033;
 
     font-size:14px;
     font-weight:700;
 
     padding:10px 12px;
 
-    border-radius:10px;
+    border-radius:12px;
 
     white-space:nowrap;
 
@@ -125,107 +140,151 @@ body{
 }
 
 #nav a:hover{
-    background:#20a8f5;
+
+    background:#e8f7ff;
+
+    color:#078bd6;
+
     transform:translateY(-2px);
 }
 
 #nav a.active{
-    background:#20a8f5;
+
+    background:#078bd6;
+
+    color:white;
 
     box-shadow:
-        0 0 15px rgba(32,168,245,.45);
+        0 0 15px rgba(32,168,245,.30);
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE HEADER
-===================================================== */
+========================================================= */
 
 .mobile-header{
     display:none;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
-    min-height:570px;
 
-    padding:70px 8% 60px;
+    min-height:500px;
+
+    padding:65px 8% 55px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     position:relative;
+
     overflow:hidden;
 
     background:
 
         radial-gradient(
             circle at 15% 20%,
-            rgba(0,170,255,.18),
+            rgba(0,170,255,.30),
             transparent 32%
         ),
 
         radial-gradient(
             circle at 85% 30%,
-            rgba(0,120,255,.16),
+            rgba(0,120,255,.22),
             transparent 35%
         ),
 
         linear-gradient(
             135deg,
-            #dff6ff 0%,
-            #eefbff 48%,
-            #f7fdff 100%
+            #078be0 0%,
+            #20b8f4 48%,
+            #a5e9ff 100%
         );
+
+    border-radius:0 0 28px 28px;
 }
 
+
+/* =========================================================
+   HERO BACKGROUND MUSIC ICONS
+========================================================= */
+
 .hero::before{
-    content:"";
+
+    content:"♪  ♫  ♪  ♬  ♪  ♫";
 
     position:absolute;
 
-    width:500px;
-    height:500px;
+    left:4%;
+    top:25px;
 
-    right:-150px;
-    top:-180px;
+    font-size:50px;
 
-    background:rgba(55,180,255,.12);
+    letter-spacing:30px;
 
-    border-radius:50%;
+    color:rgba(255,255,255,.16);
 
-    filter:blur(20px);
+    white-space:nowrap;
+
+    transform:rotate(-5deg);
+}
+
+.hero::after{
+
+    content:"♫  ♪  ♬  ♪  ♫";
+
+    position:absolute;
+
+    right:3%;
+    bottom:30px;
+
+    font-size:55px;
+
+    letter-spacing:35px;
+
+    color:rgba(255,255,255,.14);
+
+    white-space:nowrap;
+
+    transform:rotate(4deg);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO CONTENT
-===================================================== */
+========================================================= */
 
 .hero-content{
-    width:55%;
+
+    width:53%;
 
     position:relative;
-    z-index:2;
+
+    z-index:5;
 }
 
 
-/* =====================================================
+/* =========================================================
    BADGE
-===================================================== */
+========================================================= */
 
 .badge{
+
     display:inline-flex;
+
     align-items:center;
 
-    padding:9px 18px;
+    padding:9px 17px;
 
-    background:#ffffff;
+    background:white;
 
     border-radius:50px;
 
@@ -234,26 +293,27 @@ body{
     font-size:11px;
     font-weight:900;
 
-    letter-spacing:1.2px;
+    letter-spacing:.7px;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
     box-shadow:
-        0 8px 25px rgba(0,130,200,.10);
+        0 8px 25px rgba(0,70,150,.15);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO TITLE
-===================================================== */
+========================================================= */
 
 .hero h1{
-    color:#142b42;
+
+    color:white;
 
     font-size:clamp(
-        48px,
+        45px,
         6vw,
-        82px
+        78px
     );
 
     line-height:.98;
@@ -262,37 +322,50 @@ body{
 
     letter-spacing:-2px;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .hero h1 strong{
+
     display:block;
-    color:#0785d1;
+
+    color:#fff3a8;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO DESCRIPTION
-===================================================== */
+========================================================= */
 
 .hero p{
-    max-width:650px;
 
-    color:#55758d;
+    max-width:610px;
+
+    color:white;
 
     line-height:1.7;
 
     font-size:16px;
 
-    margin-bottom:28px;
+    margin-bottom:27px;
 }
 
 
-/* =====================================================
-   HERO BUTTON
-===================================================== */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
 
 .hero-btn{
+
     display:inline-flex;
 
     align-items:center;
@@ -301,9 +374,9 @@ body{
 
     padding:13px 22px;
 
-    border-radius:12px;
+    border-radius:13px;
 
-    background:#078bd6;
+    background:#086eea;
 
     color:white;
 
@@ -314,58 +387,68 @@ body{
     font-weight:800;
 
     box-shadow:
-        0 10px 25px rgba(0,120,190,.20);
+        0 10px 25px rgba(0,60,180,.25);
 
     transition:.25s ease;
 }
 
 .hero-btn:hover{
-    background:#066fae;
+
+    background:#0759bd;
 
     transform:translateY(-3px);
+}
 
-    box-shadow:
-        0 15px 30px rgba(0,120,190,.25);
+.hero-btn.secondary{
+
+    background:rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.55);
+}
+
+.hero-btn.secondary:hover{
+
+    background:white;
+
+    color:#078bd6;
 }
 
 
-/* =====================================================
+/* =========================================================
    DORAEMON HERO IMAGE
-===================================================== */
+========================================================= */
 
 .hero-art{
-    width:42%;
 
-    min-height:430px;
+    width:43%;
+
+    min-height:420px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 }
 
 .hero-art::before{
+
     content:"";
 
     position:absolute;
 
-    width:350px;
-    height:350px;
+    width:390px;
+    height:390px;
 
     border-radius:50%;
 
     background:
-
-        radial-gradient(
-            circle,
-            rgba(0,160,255,.22),
-            rgba(0,160,255,.04) 55%,
-            transparent 70%
-        );
+        rgba(255,255,255,.18);
 
     filter:blur(5px);
 
@@ -373,9 +456,10 @@ body{
 }
 
 .hero-art img{
+
     width:min(
-        420px,
-        90%
+        440px,
+        100%
     );
 
     max-height:440px;
@@ -387,12 +471,13 @@ body{
     filter:
         drop-shadow(
             0 25px 25px
-            rgba(0,90,160,.18)
+            rgba(0,60,120,.25)
         );
 
     animation:
         doraemonFloat 4s ease-in-out infinite;
 }
+
 
 @keyframes doraemonFloat{
 
@@ -410,16 +495,17 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTROLS
-===================================================== */
+========================================================= */
 
 .controls{
+
     width:88%;
 
     max-width:1300px;
 
-    margin:30px auto 10px;
+    margin:35px auto 10px;
 
     display:flex;
 
@@ -431,11 +517,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    SEARCH
-===================================================== */
+========================================================= */
 
 .search{
+
     flex:1;
 
     min-width:250px;
@@ -444,7 +531,8 @@ body{
 
     padding:0 17px;
 
-    border:1px solid #d5eaf5;
+    border:
+        1px solid #d5eaf5;
 
     border-radius:14px;
 
@@ -455,22 +543,26 @@ body{
     font-size:14px;
 
     box-shadow:
-        0 5px 20px rgba(0,100,160,.06);
+        0 5px 20px
+        rgba(0,100,160,.06);
 }
 
 .search:focus{
+
     border-color:#078bd6;
 
     box-shadow:
-        0 0 0 4px rgba(7,139,214,.10);
+        0 0 0 4px
+        rgba(7,139,214,.10);
 }
 
 
-/* =====================================================
+/* =========================================================
    FILTERS
-===================================================== */
+========================================================= */
 
 .filters{
+
     display:flex;
 
     gap:7px;
@@ -479,7 +571,9 @@ body{
 }
 
 .filter{
-    border:1px solid #d5eaf5;
+
+    border:
+        1px solid #d5eaf5;
 
     background:white;
 
@@ -500,6 +594,7 @@ body{
 
 .filter:hover,
 .filter.active{
+
     background:#078bd6;
 
     color:white;
@@ -508,11 +603,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    MUSIC SECTION
-===================================================== */
+========================================================= */
 
 .music-section{
+
     width:88%;
 
     max-width:1400px;
@@ -521,15 +617,17 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    SECTION TITLE
-===================================================== */
+========================================================= */
 
 .section-title{
+
     margin-bottom:25px;
 }
 
 .section-title span{
+
     color:#078bd6;
 
     font-size:11px;
@@ -540,6 +638,7 @@ body{
 }
 
 .section-title h2{
+
     color:#172d43;
 
     font-size:32px;
@@ -548,6 +647,7 @@ body{
 }
 
 .section-title p{
+
     color:#718393;
 
     font-size:14px;
@@ -556,11 +656,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    SONG GRID
-===================================================== */
+========================================================= */
 
 .song-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -570,51 +671,59 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    SONG CARD
-===================================================== */
+========================================================= */
 
 .song-card{
+
     background:white;
 
-    border:1px solid #e0eff6;
+    border:
+        1px solid #e0eff6;
 
     border-radius:20px;
 
     overflow:hidden;
 
     box-shadow:
-        0 8px 25px rgba(0,100,160,.07);
+        0 8px 25px
+        rgba(0,100,160,.07);
 
     transition:.3s;
 }
 
 .song-card:hover{
+
     transform:translateY(-6px);
 
     border-color:#8bd6f6;
 
     box-shadow:
-        0 18px 40px rgba(0,120,190,.15);
+        0 18px 40px
+        rgba(0,120,190,.15);
 }
 
 
-/* =====================================================
-   SONG COVER
-===================================================== */
+/* =========================================================
+   SONG COVER IMAGE
+========================================================= */
 
 .song-cover{
-    height:190px;
+
+    height:205px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     position:relative;
 
-    background:
+    overflow:hidden;
 
+    background:
         linear-gradient(
             135deg,
             #dff7ff,
@@ -622,7 +731,32 @@ body{
         );
 }
 
+.song-cover img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.35s ease;
+}
+
+.song-card:hover
+.song-cover img{
+
+    transform:scale(1.06);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
 .number{
+
     position:absolute;
 
     top:12px;
@@ -638,33 +772,61 @@ body{
 
     border-radius:10px;
 
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.92);
 
     color:#087dcc;
 
     font-size:10px;
 
     font-weight:900;
+
+    z-index:3;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,60,120,.10);
 }
 
-.music-icon{
-    font-size:65px;
 
-    transition:.3s;
+/* =========================================================
+   COVER OVERLAY
+========================================================= */
+
+.song-cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:80px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,60,100,.30)
+        );
+
+    pointer-events:none;
 }
 
-.song-card:hover .music-icon{
-    transform:scale(1.1);
-}
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
 
 .play-btn{
+
     position:absolute;
 
     right:12px;
     bottom:12px;
 
-    width:44px;
-    height:44px;
+    width:46px;
+    height:46px;
 
     border:0;
 
@@ -679,15 +841,28 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 22px rgba(0,100,180,.25);
+        0 8px 22px
+        rgba(0,100,180,.30);
+
+    z-index:5;
+
+    transition:.2s;
+}
+
+.play-btn:hover{
+
+    transform:scale(1.08);
+
+    background:#066fae;
 }
 
 
-/* =====================================================
+/* =========================================================
    PLAYING CARD
-===================================================== */
+========================================================= */
 
 .song-card.playing{
+
     border-color:#078bd6;
 
     box-shadow:
@@ -699,36 +874,24 @@ body{
         rgba(0,120,190,.16);
 }
 
-.song-card.playing .music-icon{
-    animation:
-        musicPulse 1s ease-in-out infinite;
-}
+.song-card.playing
+.song-cover img{
 
-@keyframes musicPulse{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.15);
-    }
-
-    100%{
-        transform:scale(1);
-    }
+    transform:scale(1.05);
 }
 
 
-/* =====================================================
+/* =========================================================
    SONG INFO
-===================================================== */
+========================================================= */
 
 .song-info{
+
     padding:15px;
 }
 
 .song-info h3{
+
     color:#20384e;
 
     font-size:15px;
@@ -739,6 +902,7 @@ body{
 }
 
 .artist{
+
     color:#718393;
 
     font-size:12px;
@@ -747,6 +911,7 @@ body{
 }
 
 .type{
+
     display:inline-block;
 
     margin-top:10px;
@@ -765,11 +930,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    MUSIC PLAYER
-===================================================== */
+========================================================= */
 
 .music-player{
+
     position:fixed;
 
     left:50%;
@@ -791,12 +957,15 @@ body{
 
     background:rgba(4,76,132,.97);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
     border-radius:20px;
 
     box-shadow:
-        0 15px 45px rgba(0,60,110,.30);
+        0 15px 45px
+        rgba(0,60,110,.30);
 
     backdrop-filter:blur(18px);
 
@@ -805,7 +974,13 @@ body{
     z-index:3000;
 }
 
+
+/* =========================================================
+   PLAYER INFO
+========================================================= */
+
 .player-info{
+
     min-width:150px;
 
     max-width:210px;
@@ -814,6 +989,7 @@ body{
 }
 
 .player-title{
+
     color:white;
 
     font-size:13px;
@@ -828,6 +1004,7 @@ body{
 }
 
 .player-artist{
+
     color:#bde8ff;
 
     font-size:10px;
@@ -842,11 +1019,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    PLAYER CONTROLS
-===================================================== */
+========================================================= */
 
 .player-controls{
+
     display:flex;
 
     align-items:center;
@@ -855,6 +1033,7 @@ body{
 }
 
 .player-btn{
+
     width:36px;
     height:36px;
 
@@ -874,6 +1053,7 @@ body{
 }
 
 .player-btn:hover{
+
     background:#20a8f5;
 
     color:white;
@@ -882,6 +1062,7 @@ body{
 }
 
 .player-btn.main{
+
     width:44px;
     height:44px;
 
@@ -893,11 +1074,12 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    PROGRESS
-===================================================== */
+========================================================= */
 
 .player-progress{
+
     flex:1;
 
     display:flex;
@@ -910,6 +1092,7 @@ body{
 }
 
 .time{
+
     color:#d8f2ff;
 
     font-size:9px;
@@ -922,6 +1105,7 @@ body{
 }
 
 .progress{
+
     width:100%;
 
     height:5px;
@@ -929,7 +1113,6 @@ body{
     border-radius:10px;
 
     appearance:none;
-
     -webkit-appearance:none;
 
     background:#b9dceb;
@@ -940,8 +1123,8 @@ body{
 }
 
 .progress::-webkit-slider-thumb{
-    appearance:none;
 
+    appearance:none;
     -webkit-appearance:none;
 
     width:13px;
@@ -955,6 +1138,7 @@ body{
 }
 
 .progress::-moz-range-thumb{
+
     width:13px;
     height:13px;
 
@@ -968,17 +1152,17 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    VOLUME
-===================================================== */
+========================================================= */
 
 .volume{
+
     width:80px;
 
     height:5px;
 
     appearance:none;
-
     -webkit-appearance:none;
 
     background:#b9dceb;
@@ -989,8 +1173,8 @@ body{
 }
 
 .volume::-webkit-slider-thumb{
-    appearance:none;
 
+    appearance:none;
     -webkit-appearance:none;
 
     width:12px;
@@ -1002,6 +1186,7 @@ body{
 }
 
 .volume::-moz-range-thumb{
+
     width:12px;
     height:12px;
 
@@ -1013,21 +1198,24 @@ body{
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
+
     padding:45px 20px;
 
     text-align:center;
 
     background:white;
 
-    border-top:1px solid #deeff7;
+    border-top:
+        1px solid #deeff7;
 }
 
 .footer-logo{
+
     color:#087dcc;
 
     font-size:21px;
@@ -1038,6 +1226,7 @@ footer{
 }
 
 footer p{
+
     color:#7a8c9b;
 
     font-size:13px;
@@ -1046,40 +1235,44 @@ footer p{
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE BOTTOM NAVIGATION
-===================================================== */
+========================================================= */
 
 .mobile-bottom-nav{
+
     display:none;
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media(max-width:1100px){
 
     .song-grid{
+
         grid-template-columns:
             repeat(3,1fr);
     }
 
     .hero{
+
         padding-left:6%;
         padding-right:6%;
     }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media(max-width:700px){
 
     body{
+
         padding-bottom:190px;
     }
 
@@ -1087,6 +1280,7 @@ footer p{
     /* DESKTOP NAV */
 
     .topbar{
+
         display:none;
     }
 
@@ -1094,6 +1288,7 @@ footer p{
     /* MOBILE HEADER */
 
     .mobile-header{
+
         display:flex;
 
         height:62px;
@@ -1122,6 +1317,7 @@ footer p{
     }
 
     .mobile-header button{
+
         width:40px;
         height:40px;
 
@@ -1139,6 +1335,7 @@ footer p{
     }
 
     .mobile-logo{
+
         color:#087dcc;
 
         text-decoration:none;
@@ -1151,36 +1348,42 @@ footer p{
     }
 
 
-    /* =================================================
+    /* =====================================================
        HERO MOBILE
-    ================================================= */
+    ===================================================== */
 
     .hero{
+
         min-height:auto;
 
         padding:
-            45px 20px 30px;
+            40px 20px 25px;
 
         flex-direction:column;
 
         text-align:center;
+
+        border-radius:0 0 20px 20px;
     }
 
     .hero-content{
+
         width:100%;
 
         order:1;
     }
 
     .badge{
+
         font-size:9px;
 
         padding:8px 13px;
 
-        margin-bottom:17px;
+        margin-bottom:16px;
     }
 
     .hero h1{
+
         font-size:42px;
 
         letter-spacing:-1px;
@@ -1189,6 +1392,7 @@ footer p{
     }
 
     .hero p{
+
         font-size:13px;
 
         margin:15px auto 20px;
@@ -1196,10 +1400,23 @@ footer p{
         max-width:500px;
     }
 
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .hero-btn{
+
+        padding:11px 17px;
+
+        font-size:12px;
+    }
+
 
     /* HERO IMAGE */
 
     .hero-art{
+
         width:100%;
 
         min-height:280px;
@@ -1210,22 +1427,25 @@ footer p{
     }
 
     .hero-art::before{
+
         width:270px;
         height:270px;
     }
 
     .hero-art img{
+
         width:280px;
 
         max-height:300px;
     }
 
 
-    /* =================================================
+    /* =====================================================
        SEARCH
-    ================================================= */
+    ===================================================== */
 
     .controls{
+
         width:92%;
 
         display:block;
@@ -1234,12 +1454,14 @@ footer p{
     }
 
     .search{
+
         width:100%;
 
         margin-bottom:12px;
     }
 
     .filters{
+
         overflow-x:auto;
 
         flex-wrap:nowrap;
@@ -1248,21 +1470,24 @@ footer p{
     }
 
     .filters::-webkit-scrollbar{
+
         display:none;
     }
 
     .filter{
+
         flex:0 0 auto;
 
         white-space:nowrap;
     }
 
 
-    /* =================================================
+    /* =====================================================
        MUSIC
-    ================================================= */
+    ===================================================== */
 
     .music-section{
+
         width:92%;
 
         margin:
@@ -1270,10 +1495,18 @@ footer p{
     }
 
     .section-title h2{
+
         font-size:25px;
     }
 
+    .section-title p{
+
+        font-size:12px;
+        line-height:1.6;
+    }
+
     .song-grid{
+
         grid-template-columns:
             repeat(2,1fr);
 
@@ -1281,39 +1514,67 @@ footer p{
     }
 
     .song-card{
+
         border-radius:15px;
     }
 
     .song-card:hover{
+
         transform:none;
     }
 
     .song-cover{
+
         height:145px;
     }
 
-    .music-icon{
-        font-size:48px;
-    }
-
     .song-info{
+
         padding:11px;
     }
 
     .song-info h3{
+
         font-size:12px;
     }
 
     .artist{
+
         font-size:10px;
     }
 
+    .type{
 
-    /* =================================================
+        font-size:8px;
+
+        padding:4px 7px;
+    }
+
+    .number{
+
+        width:30px;
+        height:30px;
+
+        top:8px;
+        left:8px;
+    }
+
+    .play-btn{
+
+        width:40px;
+        height:40px;
+
+        right:8px;
+        bottom:8px;
+    }
+
+
+    /* =====================================================
        MUSIC PLAYER
-    ================================================= */
+    ===================================================== */
 
     .music-player{
+
         width:94%;
 
         bottom:100px;
@@ -1330,24 +1591,29 @@ footer p{
     }
 
     .player-info{
+
         min-width:90px;
 
         max-width:115px;
     }
 
     .player-title{
+
         font-size:10px;
     }
 
     .player-artist{
+
         font-size:8px;
     }
 
     .player-controls{
+
         gap:3px;
     }
 
     .player-btn{
+
         width:30px;
         height:30px;
 
@@ -1355,6 +1621,7 @@ footer p{
     }
 
     .player-btn.main{
+
         width:36px;
         height:36px;
 
@@ -1362,6 +1629,7 @@ footer p{
     }
 
     .player-progress{
+
         order:5;
 
         flex-basis:100%;
@@ -1370,15 +1638,17 @@ footer p{
     }
 
     .volume{
+
         display:none;
     }
 
 
-    /* =================================================
+    /* =====================================================
        MOBILE BOTTOM NAV
-    ================================================= */
+    ===================================================== */
 
     .mobile-bottom-nav{
+
         position:fixed;
 
         left:12px;
@@ -1386,7 +1656,7 @@ footer p{
 
         bottom:10px;
 
-        height: 65px;
+        height:65px;
 
         display:flex;
 
@@ -1416,6 +1686,7 @@ footer p{
     }
 
     .bottom-nav-item{
+
         flex:1;
 
         max-width:90px;
@@ -1439,18 +1710,20 @@ footer p{
         border-radius:16px;
 
         transition:
-            background 0.2s ease,
-            color 0.2s ease,
-            transform 0.2s ease;
+            background .2s ease,
+            color .2s ease,
+            transform .2s ease;
     }
 
     .bottom-nav-item span{
+
         line-height:1;
 
         font-size:21px;
     }
 
     .bottom-nav-item small{
+
         font-size:10px;
 
         line-height:1;
@@ -1458,21 +1731,19 @@ footer p{
         font-weight:700;
     }
 
-    /* ACTIVE */
-
     .bottom-nav-item.active{
+
         color:#087dcc;
 
         background:#e9f7ff;
 
         box-shadow:
             inset 0 0 0 1px
-            rgba(8,125,204,0.05);
+            rgba(8,125,204,.05);
     }
 
-    /* HOVER */
-
     .bottom-nav-item:hover{
+
         color:#087dcc;
 
         background:#f0faff;
@@ -1480,51 +1751,58 @@ footer p{
         transform:translateY(-1px);
     }
 
-    /* CLICK / PRESS */
-
     .bottom-nav-item:active{
+
         transform:scale(.94);
     }
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media(max-width:400px){
 
     .mobile-logo{
+
         font-size:16px;
     }
 
     .hero h1{
+
         font-size:36px;
     }
 
     .hero-art{
+
         min-height:240px;
     }
 
     .hero-art img{
+
         width:240px;
 
         max-height:260px;
     }
 
     .song-grid{
+
         gap:9px;
     }
 
     .song-cover{
+
         height:125px;
     }
 
     .song-info{
+
         padding:9px;
     }
 
     .mobile-bottom-nav{
+
         left:8px;
         right:8px;
 
@@ -1534,31 +1812,37 @@ footer p{
     }
 
     .bottom-nav-item{
+
         height:58px;
     }
 
     .bottom-nav-item span{
+
         font-size:21px;
     }
 
     .bottom-nav-item small{
+
         font-size:9px;
     }
 
     .music-player{
+
         bottom:92px;
     }
 }
 
 
-/* =====================================================
+/* =========================================================
    REDUCE MOTION
-===================================================== */
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
     *{
+
         animation:none !important;
+
         transition:none !important;
     }
 }
@@ -1577,9 +1861,13 @@ footer p{
 
 <header class="topbar">
 
-    <a href="index.html" class="logo">
+    <a href="index.html"
+       class="logo">
+
         DORAEMON 🌐
+
     </a>
+
 
     <nav id="nav">
 
@@ -1603,8 +1891,11 @@ footer p{
             🖼️ Wallpapers
         </a>
 
-        <a href="music.html" class="active">
+        <a href="music.html"
+           class="active">
+
             🎵 Music
+
         </a>
 
         <a href="gallery.html">
@@ -1630,8 +1921,11 @@ footer p{
         ☰
     </button>
 
-    <a href="index.html" class="mobile-logo">
+    <a href="index.html"
+       class="mobile-logo">
+
         DORAEMON 🔵
+
     </a>
 
     <button onclick="focusSearch()">
@@ -1647,42 +1941,70 @@ footer p{
 
 <section class="hero">
 
+
     <div class="hero-content">
 
         <div class="badge">
-            🎵 HINDI MUSIC COLLECTION
+
+            🎵 DORAEMON WORLD
+
         </div>
 
+
         <h1>
+
             Doraemon
+
             <strong>
-                Hindi Songs!
+                Music Collection
             </strong>
+
         </h1>
 
+
         <p>
-            Doraemon ke Hindi TV aur movie
-            songs ko ek hi jagah explore karo.
+
+            Doraemon ke saare yaadgaar songs,
+            themes aur background music ek hi
+            jagah suno. Apne favourite tracks
+            enjoy karo aur Doraemon ki magical
+            world mein kho jao!
+
         </p>
 
-        <a
-            href="#music"
-            class="hero-btn">
 
-            🎵 Explore Music
+        <div class="hero-buttons">
 
-        </a>
+            <a href="#music"
+               class="hero-btn">
+
+                ▶ Listen Now
+
+            </a>
+
+
+            <a href="#music"
+               class="hero-btn secondary">
+
+                🎧 All Songs
+
+            </a>
+
+        </div>
 
     </div>
 
+
+    <!-- HERO IMAGE -->
 
     <div class="hero-art">
 
         <img
             src="assets/images/characters/doraemon-music.png"
-            alt="Doraemon listening to music">
+            alt="Doraemon Music">
 
     </div>
+
 
 </section>
 
@@ -1693,31 +2015,43 @@ footer p{
 
 <div class="controls">
 
+
     <input
         id="search"
         class="search"
         type="search"
         placeholder="🔍 Hindi song search karo...">
 
+
     <div class="filters">
+
 
         <button
             class="filter active"
             onclick="setFilter('all',this)">
+
             All
+
         </button>
+
 
         <button
             class="filter"
             onclick="setFilter('tv',this)">
+
             📺 TV
+
         </button>
+
 
         <button
             class="filter"
             onclick="setFilter('movie',this)">
+
             🎬 Movies
+
         </button>
+
 
     </div>
 
@@ -1730,31 +2064,47 @@ footer p{
 
 <main id="music">
 
+
 <section class="music-section">
+
 
     <div class="section-title">
 
         <span>
-            HINDI COLLECTION
+
+            DORAEMON MUSIC
+
         </span>
 
+
         <h2>
-            Doraemon Hindi Music 🎵
+
+            Doraemon Music Collection 🎵
+
         </h2>
 
+
         <p>
-            Hindi releases aur Hindi-language
-            versions ke liye dedicated section.
+
+            Doraemon ke favourite Hindi songs,
+            themes aur special music collection.
+
         </p>
 
     </div>
 
+
+    <!-- SONGS DIRECTLY HERE -->
+
     <div
         id="songGrid"
         class="song-grid">
+
     </div>
 
+
 </section>
+
 
 </main>
 
@@ -1764,6 +2114,7 @@ footer p{
 ===================================================== -->
 
 <nav class="mobile-bottom-nav">
+
 
     <a
         href="index.html"
@@ -1829,6 +2180,7 @@ footer p{
 
     </a>
 
+
 </nav>
 
 
@@ -1839,15 +2191,23 @@ footer p{
 <footer>
 
     <div class="footer-logo">
+
         DORAEMON WORLD 💙
+
     </div>
 
-    <p>
-        Unofficial fan-made website.
-    </p>
 
     <p>
+
+        Unofficial fan-made website.
+
+    </p>
+
+
+    <p>
+
         © 2026 Doraemon World
+
     </p>
 
 </footer>
@@ -1859,18 +2219,24 @@ footer p{
 
 <div class="music-player">
 
+
     <div class="player-info">
 
         <div
             id="playerTitle"
             class="player-title">
+
             No Song Playing
+
         </div>
+
 
         <div
             id="playerArtist"
             class="player-artist">
+
             Select a song
+
         </div>
 
     </div>
@@ -1878,35 +2244,49 @@ footer p{
 
     <div class="player-controls">
 
+
         <button
             class="player-btn"
             onclick="previousSong()">
+
             ⏮
+
         </button>
+
 
         <button
             id="mainPlayBtn"
             class="player-btn main"
             onclick="togglePlay()">
+
             ▶
+
         </button>
+
 
         <button
             class="player-btn"
             onclick="nextSong()">
+
             ⏭
+
         </button>
+
 
     </div>
 
 
     <div class="player-progress">
 
+
         <span
             id="currentTime"
             class="time">
+
             0:00
+
         </span>
+
 
         <input
             id="progress"
@@ -1916,18 +2296,25 @@ footer p{
             max="100"
             value="0">
 
+
         <span
             id="duration"
             class="time">
+
             0:00
+
         </span>
+
 
     </div>
 
 
     <span>
+
         🔊
+
     </span>
+
 
     <input
         id="volume"
@@ -1938,79 +2325,143 @@ footer p{
         step="0.01"
         value="1">
 
+
 </div>
+
 
 
 <script>
 
-/* =====================================================
+/* =========================================================
    SONG DATABASE
-===================================================== */
+========================================================= */
 
 const songs = [
 
     {
         id:1,
+
         title:"Zindagi Sawar Du",
+
         artist:"Doraemon Hindi",
+
         type:"tv",
-        audio:"assets/music/Zindagi-Sawar-Du-Doraemon.mp3"
+
+        audio:
+            "assets/music/Zindagi-Sawar-Du-Doraemon.mp3",
+
+        cover:
+            "assets/images/music/zindagi-sawar-du.jpg"
     },
+
 
     {
         id:2,
+
         title:"Aapne Dil Mein Dekho",
+
         artist:"Doraemon Hindi",
+
         type:"tv",
-        audio:"assets/music/aapne-dil-mein-dekho.mp3"
+
+        audio:
+            "assets/music/aapne-dil-mein-dekho.mp3",
+
+        cover:
+            "assets/images/music/aapne-dil-mein-dekho.jpg"
     },
+
 
     {
         id:3,
+
         title:"Jeene Ka Sahi Dhang",
+
         artist:"Doraemon Hindi",
+
         type:"tv",
-        audio:"assets/music/jeene-ka-sahi-dhang.mp3"
+
+        audio:
+            "assets/music/jeene-ka-sahi-dhang.mp3",
+
+        cover:
+            "assets/images/music/jeene-ka-sahi-dhang.jpg"
     },
+
 
     {
         id:4,
+
         title:"Sabse Pehle Hai Pyaar",
+
         artist:"Doraemon Hindi",
+
         type:"tv",
-        audio:"assets/music/sabse-pehle-hai-pyaar.mp3"
+
+        audio:
+            "assets/music/sabse-pehle-hai-pyaar.mp3",
+
+        cover:
+            "assets/images/music/sabse-pehle-hai-pyaar.jpg"
     },
+
 
     {
         id:5,
+
         title:"Doraemon Instrumental",
+
         artist:"Doraemon Music",
+
         type:"tv",
-        audio:"assets/music/doraemon-song.mp3"
+
+        audio:
+            "assets/music/doraemon-song.mp3",
+
+        cover:
+            "assets/images/music/doraemon-instrumental.jpg"
     },
+
 
     {
         id:6,
+
         title:"Doraemon Japanese Song",
+
         artist:"Doraemon",
-        type:"japanese",
-        audio:"assets/music/doraemon-japanese.mp3"
+
+        type:"movie",
+
+        audio:
+            "assets/music/doraemon-japanese.mp3",
+
+        cover:
+            "assets/images/music/doraemon-japanese.jpg"
     },
+
 
     {
         id:7,
+
         title:"Paani Ki Boond",
+
         artist:"Doraemon Music",
-        type:"hindi",
-        audio:"assets/music/paani-ki-boond.mp3"
+
+        type:"movie",
+
+        audio:
+            "assets/music/paani-ki-boond.mp3",
+
+        cover:
+            "assets/images/music/paani-ki-boond.jpg"
     }
 
 ];
 
 
-/* =====================================================
+/* =========================================================
    VARIABLES
-===================================================== */
+========================================================= */
 
 const grid =
     document.getElementById("songGrid");
@@ -2036,6 +2487,7 @@ const currentTime =
 const duration =
     document.getElementById("duration");
 
+
 let currentFilter = "all";
 
 let currentAudio = null;
@@ -2043,9 +2495,9 @@ let currentAudio = null;
 let currentSongId = null;
 
 
-/* =====================================================
+/* =========================================================
    RENDER SONGS
-===================================================== */
+========================================================= */
 
 function renderSongs(){
 
@@ -2056,13 +2508,17 @@ function renderSongs(){
         .toLowerCase()
         .trim();
 
+
     grid.innerHTML = "";
 
+
     songs.forEach(song => {
+
 
         const filterMatch =
             currentFilter === "all" ||
             song.type === currentFilter;
+
 
         const text =
             (
@@ -2071,45 +2527,45 @@ function renderSongs(){
                 song.artist
             ).toLowerCase();
 
+
         const searchMatch =
             text.includes(search);
 
-        if(filterMatch && searchMatch){
 
-            let icon = "📺";
-
-            if(song.type === "movie"){
-                icon = "🎬";
-            }
-
-            if(song.type === "japanese"){
-                icon = "🎌";
-            }
-
-            if(song.type === "hindi"){
-                icon = "🎵";
-            }
+        if(
+            filterMatch &&
+            searchMatch
+        ){
 
             const card =
                 document.createElement("article");
 
+
             card.className =
                 "song-card";
 
+
             card.dataset.id =
                 song.id;
+
 
             card.innerHTML = `
 
                 <div class="song-cover">
 
                     <div class="number">
+
                         ${String(song.id).padStart(2,"0")}
+
                     </div>
 
-                    <div class="music-icon">
-                        ${icon}
-                    </div>
+
+                    <img
+                        src="${song.cover}"
+                        alt="${song.title}"
+                        loading="lazy"
+                        onerror="this.src='assets/images/characters/doraemon-music.png'">
+
 
                     <button
                         class="play-btn"
@@ -2125,22 +2581,24 @@ function renderSongs(){
                 <div class="song-info">
 
                     <h3>
+
                         ${song.title}
+
                     </h3>
 
+
                     <div class="artist">
+
                         🎤 ${song.artist}
+
                     </div>
+
 
                     <span class="type">
 
                         ${
                             song.type === "movie"
-                            ? "Hindi Movie"
-                            : song.type === "japanese"
-                            ? "Japanese"
-                            : song.type === "hindi"
-                            ? "Hindi Music"
+                            ? "Movie Music"
                             : "Hindi TV"
                         }
 
@@ -2150,18 +2608,22 @@ function renderSongs(){
 
             `;
 
+
             grid.appendChild(card);
+
         }
 
     });
 
+
     updatePlayingCard();
+
 }
 
 
-/* =====================================================
+/* =========================================================
    PLAY SONG
-===================================================== */
+========================================================= */
 
 function playSong(id){
 
@@ -2169,6 +2631,7 @@ function playSong(id){
         songs.find(
             item => item.id === id
         );
+
 
     if(!song){
         return;
@@ -2213,14 +2676,16 @@ function playSong(id){
     currentAudio =
         new Audio(song.audio);
 
+
     currentAudio.volume =
         Number(volume.value);
+
 
     currentSongId =
         id;
 
 
-    /* RESET PROGRESS */
+    /* RESET */
 
     progress.value = 0;
 
@@ -2243,11 +2708,13 @@ function playSong(id){
     /* PLAY */
 
     currentAudio.play()
+
     .then(() => {
 
         updatePlayButtons();
 
     })
+
     .catch(error => {
 
         console.log(error);
@@ -2297,12 +2764,13 @@ function playSong(id){
 
 
     updatePlayingCard();
+
 }
 
 
-/* =====================================================
+/* =========================================================
    TOGGLE PLAY
-===================================================== */
+========================================================= */
 
 function togglePlay(){
 
@@ -2326,12 +2794,13 @@ function togglePlay(){
 
 
     updatePlayButtons();
+
 }
 
 
-/* =====================================================
+/* =========================================================
    NEXT SONG
-===================================================== */
+========================================================= */
 
 function nextSong(){
 
@@ -2363,12 +2832,13 @@ function nextSong(){
     playSong(
         songs[index].id
     );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    PREVIOUS SONG
-===================================================== */
+========================================================= */
 
 function previousSong(){
 
@@ -2401,12 +2871,13 @@ function previousSong(){
     playSong(
         songs[index].id
     );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    UPDATE PLAY BUTTONS
-===================================================== */
+========================================================= */
 
 function updatePlayButtons(){
 
@@ -2462,12 +2933,13 @@ function updatePlayButtons(){
             "▶";
 
     }
+
 }
 
 
-/* =====================================================
+/* =========================================================
    PLAYING CARD
-===================================================== */
+========================================================= */
 
 function updatePlayingCard(){
 
@@ -2498,17 +2970,20 @@ function updatePlayingCard(){
 
 
     updatePlayButtons();
+
 }
 
 
-/* =====================================================
+/* =========================================================
    PROGRESS
-===================================================== */
+========================================================= */
 
 function updateProgress(){
 
     if(!currentAudio){
+
         return;
+
     }
 
 
@@ -2529,23 +3004,30 @@ function updateProgress(){
         formatTime(
             currentAudio.currentTime
         );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    SEEK
-===================================================== */
+========================================================= */
 
 progress.addEventListener(
     "input",
     function(){
 
         if(!currentAudio){
+
             return;
+
         }
 
 
-        if(!isNaN(currentAudio.duration)){
+        if(
+            !isNaN(
+                currentAudio.duration
+            )
+        ){
 
             currentAudio.currentTime =
                 (
@@ -2559,9 +3041,9 @@ progress.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    VOLUME
-===================================================== */
+========================================================= */
 
 volume.addEventListener(
     "input",
@@ -2578,9 +3060,9 @@ volume.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    FORMAT TIME
-===================================================== */
+========================================================= */
 
 function formatTime(seconds){
 
@@ -2611,12 +3093,13 @@ function formatTime(seconds){
         ":" +
         String(secs).padStart(2,"0")
     );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    SEARCH
-===================================================== */
+========================================================= */
 
 document
 .getElementById("search")
@@ -2626,11 +3109,14 @@ document
 );
 
 
-/* =====================================================
+/* =========================================================
    FILTER
-===================================================== */
+========================================================= */
 
-function setFilter(type,button){
+function setFilter(
+    type,
+    button
+){
 
     currentFilter =
         type;
@@ -2653,12 +3139,13 @@ function setFilter(type,button){
 
 
     renderSongs();
+
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE SEARCH
-===================================================== */
+========================================================= */
 
 function focusSearch(){
 
@@ -2673,28 +3160,30 @@ function focusSearch(){
 
     window.scrollTo({
 
-        top:650,
+        top:500,
 
         behavior:"smooth"
 
     });
+
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE HOME
-===================================================== */
+========================================================= */
 
 function goHome(){
 
     window.location.href =
         "index.html";
+
 }
 
 
-/* =====================================================
+/* =========================================================
    INITIAL
-===================================================== */
+========================================================= */
 
 renderSongs();
 
