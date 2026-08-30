@@ -2395,3 +2395,146 @@ footer p {
 /* =========================================================
    END OF STYLE.CSS
 ========================================================= */
+/* =========================================================
+   DORAEMON HERO POSITION FIX
+   RIGHT SIDE - DESKTOP
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .hero {
+        display: grid;
+        grid-template-columns: 52% 48%;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        z-index: 5;
+    }
+
+    .hero-art {
+        grid-column: 2;
+        grid-row: 1;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        position: relative;
+        z-index: 3;
+    }
+
+    .desktop-doraemon {
+        display: block;
+
+        width: min(470px, 100%);
+        height: auto;
+
+        max-height: 470px;
+
+        object-fit: contain;
+
+        margin: 0 -20px 0 0;
+
+        position: relative;
+        z-index: 4;
+
+        filter:
+            drop-shadow(
+                0 20px 18px
+                rgba(0, 60, 100, 0.25)
+            );
+
+        animation:
+            desktopFloat 4s ease-in-out infinite;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1199px) {
+
+    .hero {
+        grid-template-columns: 51% 49%;
+        min-height: 450px;
+        padding-left: 35px;
+        padding-right: 0;
+    }
+
+    .hero-art {
+        justify-content: flex-end;
+    }
+
+    .desktop-doraemon {
+        width: min(390px, 100%);
+        max-height: 400px;
+        margin-right: -10px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .hero {
+        grid-template-columns: 52% 48%;
+        min-height: 500px;
+        padding-left: 55px;
+        padding-right: 0;
+    }
+
+    .desktop-doraemon {
+        width: 470px;
+        max-height: 470px;
+        margin-right: -20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - ORIGINAL MOBILE DORAEMON
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        display: none !important;
+    }
+
+    .desktop-doraemon {
+        display: none !important;
+    }
+
+    .hero-art {
+        display: none !important;
+    }
+
+    .mobile-doraemon {
+        display: block !important;
+
+        position: absolute;
+
+        width: 175px;
+        height: 175px;
+
+        right: -8px;
+        bottom: -5px;
+
+        object-fit: contain;
+
+        z-index: 3;
+    }
+}
