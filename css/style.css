@@ -2,6 +2,7 @@
    DORAEMON WORLD
    COMPLETE RESPONSIVE CSS
    DESKTOP + TABLET + MOBILE
+   4 IMAGE DORAEMON EFFECT
 ========================================================= */
 
 
@@ -97,6 +98,8 @@ button {
     flex-shrink: 0;
 
     transition: 0.25s ease;
+
+    margin-right: 20px;
 }
 
 .logo:hover {
@@ -169,6 +172,7 @@ button {
     min-height: 500px;
 
     margin: 30px auto;
+
     padding: 50px 0 50px 50px;
 
     display: grid;
@@ -254,6 +258,7 @@ button {
     z-index: 5;
 
     max-width: 680px;
+
     min-width: 0;
 
     padding-right: 20px;
@@ -277,6 +282,7 @@ button {
     color: white;
 
     font-size: 11px;
+
     font-weight: 900;
 
     letter-spacing: 1px;
@@ -381,7 +387,6 @@ button {
 
 /* =========================================================
    HERO DORAEMON
-   DIRECT IMAGE SUPPORT
 ========================================================= */
 
 .desktop-doraemon {
@@ -389,9 +394,9 @@ button {
 
     z-index: 5;
 
-    width: min(470px, 100%);
+    width: min(460px, 100%);
 
-    max-height: 470px;
+    max-height: 460px;
 
     height: auto;
 
@@ -401,7 +406,7 @@ button {
 
     justify-self: end;
 
-    margin-right: -20px;
+    margin-right: -10px;
 
     filter:
         drop-shadow(
@@ -873,7 +878,6 @@ footer p {
 
         margin-right: -15px;
     }
-
 }
 
 
@@ -921,7 +925,6 @@ footer p {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
 }
 
 
@@ -1247,7 +1250,7 @@ footer p {
 
 
     /* =====================================================
-       MOBILE HEY
+       MOBILE HEY / MAUSAM
     ===================================================== */
 
     .mobile-mausam-name {
@@ -1803,12 +1806,14 @@ footer p {
 
         from {
             opacity: 0;
+
             transform:
                 translateY(-10px);
         }
 
         to {
             opacity: 1;
+
             transform:
                 translateY(0);
         }
@@ -2384,8 +2389,11 @@ footer p {
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
     }
 
@@ -2393,126 +2401,186 @@ footer p {
 
 
 /* =========================================================
-   END OF STYLE.CSS
+   DORAEMON FULL SCREEN CLICK EFFECT
+   4 IMAGES
 ========================================================= */
-/* =====================================================
-   DORAEMON CLICK EFFECT
-===================================================== */
 
 #doraemon-effect {
     position: fixed;
-    left: 50%;
-    top: 50%;
 
-    width: 180px;
-    height: 180px;
+    inset: 0;
 
-    transform: translate(-50%, -50%) scale(0);
+    width: 100vw;
+    height: 100vh;
 
-    z-index: 99999;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    z-index: 999999;
 
     pointer-events: none;
 
     opacity: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    visibility: hidden;
+
+    overflow: hidden;
 }
 
 
-/* DORAEMON IMAGE */
+/* =========================================================
+   DORAEMON EFFECT IMAGE
+========================================================= */
 
 #doraemon-effect img {
-    width: 100%;
-    height: 100%;
+    width: min(85vw, 700px);
+
+    height: min(85vh, 700px);
 
     object-fit: contain;
 
     display: block;
 
     user-select: none;
+
     -webkit-user-drag: none;
+
+    transform:
+        scale(0.1);
 }
 
 
-/* ACTIVE EFFECT */
+/* =========================================================
+   DORAEMON EFFECT SHOW
+========================================================= */
 
 #doraemon-effect.show {
-    animation: doraemonPop 1.7s ease-out forwards;
+
+    visibility: visible;
+
+    animation:
+        doraemonScreen 7s ease-in-out forwards;
 }
 
 
-/* POP ANIMATION */
+/* =========================================================
+   DORAEMON IMAGE SHOW
+========================================================= */
 
-@keyframes doraemonPop {
+#doraemon-effect.show img {
+
+    animation:
+        doraemonImage 7s ease-in-out forwards;
+}
+
+
+/* =========================================================
+   FULL SCREEN EFFECT ANIMATION
+========================================================= */
+
+@keyframes doraemonScreen {
 
     0% {
         opacity: 0;
-        transform:
-            translate(-50%, -50%)
-            scale(0.15)
-            rotate(-10deg);
     }
 
-    15% {
+    8% {
         opacity: 1;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+
+
+/* =========================================================
+   DORAEMON IMAGE ANIMATION
+========================================================= */
+
+@keyframes doraemonImage {
+
+    0% {
+
         transform:
-            translate(-50%, -50%)
-            scale(1.15)
+            scale(0.1)
+            rotate(-15deg);
+    }
+
+    12% {
+
+        transform:
+            scale(1.1)
             rotate(5deg);
     }
 
-    30% {
-        opacity: 1;
+    22% {
+
         transform:
-            translate(-50%, -50%)
             scale(1)
             rotate(0deg);
     }
 
-    70% {
-        opacity: 1;
+    80% {
+
         transform:
-            translate(-50%, -50%)
             scale(1)
             rotate(0deg);
     }
 
     100% {
-        opacity: 0;
+
         transform:
-            translate(-50%, -50%)
-            scale(0.85)
+            scale(0.8)
             rotate(5deg);
     }
 
 }
 
 
-/* =====================================================
-   MOBILE DORAEMON EFFECT
-===================================================== */
+/* =========================================================
+   DORAEMON EFFECT - MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
-    #doraemon-effect {
-        width: 145px;
-        height: 145px;
+    #doraemon-effect img {
+
+        width: 90vw;
+
+        height: 80vh;
     }
 
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+/* =========================================================
+   DORAEMON EFFECT - SMALL MOBILE
+========================================================= */
 
 @media (max-width: 400px) {
 
-    #doraemon-effect {
-        width: 125px;
-        height: 125px;
+    #doraemon-effect img {
+
+        width: 95vw;
+
+        height: 75vh;
     }
 
 }
+
+
+/* =========================================================
+   END OF DORAEMON WORLD STYLE.CSS
+========================================================= */
