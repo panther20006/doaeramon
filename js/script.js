@@ -5,8 +5,13 @@
 //
 // DORAEMON START EFFECT
 // 8 IMAGES - LINE BY LINE
-// ONE CLICK ONLY
+// ONE CLICK ONLY PER SESSION
 // AUDIO = 7 SECONDS
+//
+// IMPORTANT FIX:
+// sessionStorage is used so that after
+// Index → Movies → Episodes → Home
+// Doraemon audio/effect does NOT play again.
 // =====================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,8 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // =================================================
     // DORAEMON 8 IMAGES
     //
-    // IMPORTANT:
-    //
     // 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08
     //
     // NO RANDOM
@@ -92,7 +95,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // EFFECT SETTINGS
     // =================================================
 
-    let effectPlayed = false;
+    /*
+        IMPORTANT:
+
+        Pehle:
+            let effectPlayed = false;
+
+        Isse har naye page par effect dobara
+        start ho jata tha.
+
+        Ab sessionStorage use ho raha hai.
+
+        Same browser tab/session mein:
+        ek baar effect chalega.
+
+        Example:
+
+        Index
+           ↓
+        Movies
+           ↓
+        Episodes
+           ↓
+        Characters
+           ↓
+        Home
+
+        Audio dobara nahi chalega.
+    */
+
+    let effectPlayed =
+        sessionStorage.getItem(
+            "doraemonEffectPlayed"
+        ) === "true";
+
 
     let imageIndex = 0;
 
@@ -145,7 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 event.stopPropagation();
 
-                navigation.classList.toggle("show");
+                navigation.classList.toggle(
+                    "show"
+                );
 
             }
         );
@@ -226,7 +264,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         (event) => {
 
-            // Desktop
+            // -----------------------------------------
+            // DESKTOP MENU
+            // -----------------------------------------
 
             if (
                 navigation &&
@@ -242,7 +282,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            // Mobile
+            // -----------------------------------------
+            // MOBILE MENU
+            // -----------------------------------------
 
             if (
                 mobileMenuPanel &&
@@ -507,17 +549,23 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        // Stop image timer
+        // ---------------------------------------------
+        // STOP IMAGE TIMER
+        // ---------------------------------------------
 
         stopImageTimer();
 
 
-        // Stop fallback
+        // ---------------------------------------------
+        // STOP FALLBACK TIMER
+        // ---------------------------------------------
 
         stopFallbackTimer();
 
 
-        // Hide effect
+        // ---------------------------------------------
+        // HIDE EFFECT
+        // ---------------------------------------------
 
         if (doraemonEffect) {
 
@@ -528,7 +576,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        // Stop audio
+        // ---------------------------------------------
+        // STOP AUDIO
+        // ---------------------------------------------
 
         if (doraemonAudio) {
 
@@ -538,7 +588,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 doraemonAudio.currentTime = 0;
 
-            } catch (error) {
+            }
+            catch (error) {
 
                 console.log(
                     "Audio reset error"
@@ -551,6 +602,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         audioStarted = false;
 
+        /*
+            IMPORTANT:
+
+            Yaha effectPlayed ko false NAHI karna.
+
+            Agar yaha:
+
+                effectPlayed = false;
+
+            likh diya to page reload/navigation ke
+            baad effect dobara play ho sakta hai.
+
+            sessionStorage state maintain karega.
+        */
+
     }
 
 
@@ -558,7 +624,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // START IMAGE ANIMATION
     //
     // 7 SECOND AUDIO
-    //
     // 8 IMAGES
     //
     // 7000 / 8 = 875ms
@@ -577,24 +642,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startImageAnimation() {
 
-        // Stop old timer
+        // ---------------------------------------------
+        // STOP OLD TIMER
+        // ---------------------------------------------
 
         stopImageTimer();
 
 
-        // Start from image 01
+        // ---------------------------------------------
+        // START FROM IMAGE 01
+        // ---------------------------------------------
 
         imageIndex = 0;
 
         setDoraemonImage(0);
 
 
-        // Change every 875ms
+        // ---------------------------------------------
+        // CHANGE EVERY 875ms
+        // ---------------------------------------------
 
         imageTimer = setInterval(
             () => {
 
-                // Move to next image
+                // -------------------------------------
+                // NEXT IMAGE
+                // -------------------------------------
 
                 if (
                     imageIndex <
@@ -611,12 +684,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 else {
 
-                    // IMPORTANT:
-                    //
-                    // Do NOT go back to image 01.
-                    //
-                    // Keep image 08 visible
-                    // until audio ends.
+                    /*
+                        Image 08 par ruk jao.
+
+                        Image 01 par wapas nahi jayega.
+                    */
 
                     stopImageTimer();
 
@@ -636,13 +708,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function playDoraemonEffect() {
 
         // =================================================
-        // ONLY FIRST CLICK
+        // ONLY FIRST CLICK PER SESSION
         // =================================================
 
         if (effectPlayed) {
 
             console.log(
-                "Doraemon effect already played."
+                "Doraemon effect already played in this session."
             );
 
             return;
@@ -690,10 +762,21 @@ document.addEventListener("DOMContentLoaded", () => {
         // =================================================
         // MARK AS PLAYED
         //
-        // SECOND CLICK WILL NOT WORK
+        // VERY IMPORTANT
         // =================================================
 
         effectPlayed = true;
+
+
+        /*
+            Browser/page navigation ke baad bhi
+            ye value true rahegi.
+        */
+
+        sessionStorage.setItem(
+            "doraemonEffectPlayed",
+            "true"
+        );
 
 
         console.log(
@@ -720,7 +803,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             doraemonAudio.currentTime = 0;
 
-        } catch (error) {
+        }
+        catch (error) {
 
             console.log(
                 "Audio currentTime reset error."
@@ -743,7 +827,7 @@ document.addEventListener("DOMContentLoaded", () => {
         void doraemonEffect.offsetWidth;
 
 
-        // Show
+        // Show effect
 
         doraemonEffect.classList.add(
             "show"
@@ -791,7 +875,10 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            // Keep animation for 7 seconds
+            /*
+                Audio error hone par bhi
+                7 second fallback animation chalegi.
+            */
 
         };
 
@@ -815,6 +902,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         audioStarted = true;
 
+
                         console.log(
                             "Doraemon audio started 🔊"
                         );
@@ -832,7 +920,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
-
         catch (error) {
 
             console.error(
@@ -845,8 +932,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // =================================================
         // 7 SECOND FALLBACK
-        //
-        // Agar audio ended event na aaye
         // =================================================
 
         fallbackTimer =
@@ -865,10 +950,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // =================================================
     // FIRST CLICK ONLY
     //
-    // IMPORTANT:
-    // Audio browser ke autoplay restriction se bachne
-    // ke liye playDoraemonEffect() direct click ke
-    // andar call ho raha hai.
+    // Audio browser autoplay restriction se bachne ke
+    // liye playDoraemonEffect() direct click ke andar
+    // call ho raha hai.
     // =================================================
 
     document.addEventListener(
@@ -1282,11 +1366,18 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     console.log(
-        "Doraemon effect: ONE CLICK ONLY"
+        "Doraemon effect: ONE CLICK ONLY PER SESSION"
     );
 
     console.log(
         "Images: 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08"
+    );
+
+    console.log(
+        "Effect state:",
+        effectPlayed
+            ? "ALREADY PLAYED"
+            : "READY TO PLAY"
     );
 
 });

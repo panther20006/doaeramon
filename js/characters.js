@@ -15,7 +15,7 @@ const characters = [
         name: "Doraemon",
         japanese: "ドラえもん",
         category: "main",
-        image: "assets/images/characters/doraemon.png",
+        image: "assets/images/characters/Doremon.ch.png",
 
         dob: "September 3, 2112",
         age: "Future Robot",

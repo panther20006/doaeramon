@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Doraemon World - Magic Gadgets</title>
+
+    <link rel="stylesheet" href="css/gadgets.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     DESKTOP HEADER
+===================================================== -->
+
+<header class="topbar">
+
+    <a href="index.html" class="logo">
+        DORAEMON
+    </a>
+
+    <nav class="desktop-nav">
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="movies.html">🎬 Movies</a>
+
+        <a href="episodes.html">📺 Episodes</a>
+
+        <a href="characters.html">👥 Characters</a>
+
+        <a href="wallpapers.html">🖼️ Wallpapers</a>
+
+        <a href="music.html">🎵 Music</a>
+
+        <a href="gallery.html">📸 Gallery</a>
+
+        <a href="gadgets.html" class="active">
+            🪄 Gadgets
+        </a>
+
+        <a href="test.html">📝 Test</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
+
+<header class="mobile-header">
+
+    <button id="mobileMenu"
+            class="mobile-menu-btn">
+        ☰
+    </button>
+
+    <a href="index.html"
+       class="mobile-logo">
+        DORAEMON
+    </a>
+
+    <button id="mobileSearch"
+            class="mobile-search-btn">
+        🔍
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div id="mobileMenuPanel"
+     class="mobile-menu-panel">
+
+    <a href="index.html">
+        🏠 Home
+    </a>
+
+    <a href="movies.html">
+        🎬 Movies
+    </a>
+
+    <a href="episodes.html">
+        📺 Episodes
+    </a>
+
+    <a href="characters.html">
+        👥 Characters
+    </a>
+
+    <a href="wallpapers.html">
+        🖼️ Wallpapers
+    </a>
+
+    <a href="music.html">
+        🎵 Music
+    </a>
+
+    <a href="gallery.html">
+        📸 Gallery
+    </a>
+
+    <a href="gadgets.html"
+       class="active">
+        🪄 Gadgets
+    </a>
+
+    <a href="test.html">
+        📝 Test
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="gadget-hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🪄 DORAEMON WORLD
+        </span>
+
+        <h1>
+            Magic
+            <strong>Gadgets</strong>
+        </h1>
+
+        <p>
+            Doraemon ki future se aayi amazing
+            magic gadgets ko explore karo.
+        </p>
+
+        <a href="#gadgets"
+           class="hero-button">
+            Explore Gadgets
+        </a>
+
+    </div>
+
+
+    <div class="hero-art">
+
+    <img
+        src="assets/images/gadgets/doraemon.png"
+        alt="Doraemon Magic Gadget">
+
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH + FILTER
+===================================================== -->
+
+<section class="controls-section">
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+            type="search"
+            id="gadgetSearch"
+            placeholder="Search magic gadget...">
+
+    </div>
+
+
+    <div class="filter-wrapper">
+
+        <button
+            class="gadget-filter active"
+            data-category="all">
+
+            🌎 All
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="famous">
+
+            ⭐ Famous
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="time">
+
+            ⏰ Time
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="travel">
+
+            🚪 Travel
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="communication">
+
+            📞 Communication
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="science">
+
+            🔬 Science
+
+        </button>
+
+
+        <button
+            class="gadget-filter"
+            data-category="fun">
+
+            🎮 Fun
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GADGETS
+===================================================== -->
+
+<main id="gadgets"
+      class="all-gadgets">
+
+    <section class="gadgets-section">
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    DORAEMON WORLD
+                </span>
+
+                <h2 id="gadgetsHeading">
+                    Magic Gadgets
+                </h2>
+
+                <p id="gadgetsDescription">
+                    Doraemon ke amazing gadgets
+                    ek hi jagah explore karo.
+                </p>
+
+            </div>
+
+
+            <div class="gadget-count-box">
+
+                <strong id="gadgetCount">
+                    20
+                </strong>
+
+                <small>
+                    Gadgets
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- GADGET GRID -->
+
+        <div id="gadgetGrid"
+             class="gadget-grid">
+        </div>
+
+
+        <!-- NO RESULT -->
+
+        <div id="noGadgets"
+             class="no-gadgets"
+             hidden>
+
+            <div class="no-icon">
+                😔
+            </div>
+
+            <h3>
+                Gadget Not Found
+            </h3>
+
+            <p>
+                Search ya category change karke
+                dobara try karo.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div id="gadgetLightbox"
+     class="gadget-lightbox">
+
+    <button id="lightboxClose"
+            class="lightbox-close">
+        ×
+    </button>
+
+    <img id="lightboxImage"
+         src=""
+         alt="Magic Gadget">
+
+    <div id="lightboxTitle"
+         class="lightbox-title">
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        DORAEMON WORLD
+    </div>
+
+    <p>
+        Unofficial Doraemon Fan Website
+    </p>
+
+    <p>
+        © 2026 Doraemon World
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="index.html"
+       class="bottom-nav-item">
+
+        <span>🏠</span>
+
+        <small>
+            Home
+        </small>
+
+    </a>
+
+
+    <a href="movies.html"
+       class="bottom-nav-item">
+
+        <span>🎬</span>
+
+        <small>
+            Movies
+        </small>
+
+    </a>
+
+
+    <a href="episodes.html"
+       class="bottom-nav-item">
+
+        <span>📺</span>
+
+        <small>
+            Episodes
+        </small>
+
+    </a>
+
+
+    <a href="characters.html"
+       class="bottom-nav-item">
+
+        <span>👥</span>
+
+        <small>
+            Characters
+        </small>
+
+    </a>
+
+
+    <a href="gadgets.html"
+       class="bottom-nav-item active">
+
+        <span>🪄</span>
+
+        <small>
+            Gadgets
+        </small>
+
+    </a>
+
+</nav>
+
+
+<script src="js/gadgets.js"></script>
+
+</body>
+
+</html>

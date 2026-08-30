@@ -2584,3 +2584,18 @@ footer p {
 /* =========================================================
    END OF DORAEMON WORLD STYLE.CSS
 ========================================================= */
+/* =====================================================
+   CLICKABLE GADGET CARDS
+===================================================== */
+
+.gadget-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mobile-gadget-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
