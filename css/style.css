@@ -2395,3 +2395,124 @@ footer p {
 /* =========================================================
    END OF STYLE.CSS
 ========================================================= */
+/* =====================================================
+   DORAEMON CLICK EFFECT
+===================================================== */
+
+#doraemon-effect {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    z-index: 99999;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* DORAEMON IMAGE */
+
+#doraemon-effect img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ACTIVE EFFECT */
+
+#doraemon-effect.show {
+    animation: doraemonPop 1.7s ease-out forwards;
+}
+
+
+/* POP ANIMATION */
+
+@keyframes doraemonPop {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.15)
+            rotate(-10deg);
+    }
+
+    15% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.15)
+            rotate(5deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(0deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.85)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE DORAEMON EFFECT
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #doraemon-effect {
+        width: 145px;
+        height: 145px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    #doraemon-effect {
+        width: 125px;
+        height: 125px;
+    }
+
+}
