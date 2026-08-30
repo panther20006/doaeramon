@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // ELEMENTS
     // =================================================
 
-    const menuButton = document.getElementById("menu");
-    const navigation = document.getElementById("nav");
+    const menuButton =
+        document.getElementById("menu");
+
+    const navigation =
+        document.getElementById("nav");
 
     const mobileMenuButton =
         document.querySelector(".mobile-menu-btn");
@@ -38,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // DESKTOP MENU
+    // DESKTOP / TABLET MENU
     // =================================================
 
     if (menuButton && navigation) {
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
+        // Navigation links
         const navLinks =
             navigation.querySelectorAll("a");
 
@@ -80,19 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mobileMenuPanel.classList.toggle("show");
 
-            // Change hamburger icon
-            if (
-                mobileMenuPanel.classList.contains("show")
-            ) {
-
-                mobileMenuButton.textContent = "✕";
-
-            } else {
-
-                mobileMenuButton.textContent = "☰";
-
-            }
-
         });
 
 
@@ -105,8 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 mobileMenuPanel.classList.remove("show");
 
-                mobileMenuButton.textContent = "☰";
-
             });
 
         });
@@ -115,12 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // CLOSE MENUS WHEN CLICKING OUTSIDE
+    // CLOSE MENU WHEN CLICKING OUTSIDE
     // =================================================
 
     document.addEventListener("click", (event) => {
 
-        // Desktop navigation
+        // Desktop menu
+
         if (
             navigation &&
             menuButton &&
@@ -133,7 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        // Mobile navigation
+        // Mobile menu
+
         if (
             mobileMenuPanel &&
             mobileMenuButton &&
@@ -142,8 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
 
             mobileMenuPanel.classList.remove("show");
-
-            mobileMenuButton.textContent = "☰";
 
         }
 
@@ -170,12 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            if (mobileMenuButton) {
-
-                mobileMenuButton.textContent = "☰";
-
-            }
-
         }
 
     });
@@ -191,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             button.style.transform =
                 "scale(0.97)";
+
 
             setTimeout(() => {
 
@@ -215,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
         card.addEventListener("mouseleave", () => {
 
             card.style.zIndex = "";
@@ -235,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.zIndex = "5";
 
         });
+
 
         card.addEventListener("mouseleave", () => {
 
@@ -299,60 +285,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
+
             link.classList.add("active");
 
         });
 
     });
-
-
-    // =================================================
-    // SET ACTIVE PAGE AUTOMATICALLY
-    // =================================================
-
-    const currentPage =
-        window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase();
-
-
-    if (currentPage === "") {
-
-        setActiveLink("index.html");
-
-    } else {
-
-        setActiveLink(currentPage);
-
-    }
-
-
-    function setActiveLink(page) {
-
-        allNavLinks.forEach(link => {
-
-            const href =
-                link.getAttribute("href");
-
-            if (!href) return;
-
-            const cleanHref =
-                href.split("#")[0]
-                    .split("?")[0]
-                    .toLowerCase();
-
-            if (
-                cleanHref === page
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
 
 
     // =================================================
@@ -391,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 event.preventDefault();
 
+
                 target.scrollIntoView({
 
                     behavior: "smooth",
@@ -407,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // MOBILE BOTTOM NAVIGATION
+    // MOBILE BOTTOM NAV
     // =================================================
 
     const bottomNavItems =
@@ -426,6 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
+
             item.classList.add("active");
 
         });
@@ -434,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // MOBILE MOVIE HORIZONTAL SCROLL
+    // MOVIE HORIZONTAL SCROLL
     // =================================================
 
     const movieRows =
@@ -458,6 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         event.preventDefault();
 
+
                         row.scrollLeft +=
                             event.deltaY;
 
@@ -466,16 +407,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             },
-            {
-                passive: false
-            }
+            { passive: false }
         );
 
     });
 
 
     // =================================================
-    // MOBILE GADGET HORIZONTAL SCROLL
+    // GADGET HORIZONTAL SCROLL
     // =================================================
 
     const gadgetRows =
@@ -499,6 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         event.preventDefault();
 
+
                         row.scrollLeft +=
                             event.deltaY;
 
@@ -507,227 +447,126 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             },
-            {
-                passive: false
-            }
+            { passive: false }
         );
 
     });
 
 
     // =================================================
-    // TOUCH DRAG FOR MOBILE MOVIE ROW
+    // DORAEMON CLICK EFFECT
     // =================================================
 
-    enableTouchScroll(".mobile-movie-row");
-
-    enableTouchScroll(".mobile-gadget-row");
-
-
-    function enableTouchScroll(selector) {
-
-        const rows =
-            document.querySelectorAll(selector);
-
-
-        rows.forEach(row => {
-
-            let startX = 0;
-
-            let startScrollLeft = 0;
-
-
-            row.addEventListener("touchstart", (event) => {
-
-                startX =
-                    event.touches[0].pageX;
-
-                startScrollLeft =
-                    row.scrollLeft;
-
-            }, {
-                passive: true
-            });
-
-
-            row.addEventListener("touchmove", (event) => {
-
-                const currentX =
-                    event.touches[0].pageX;
-
-                const distance =
-                    currentX - startX;
-
-                row.scrollLeft =
-                    startScrollLeft - distance;
-
-            }, {
-                passive: true
-            });
-
-        });
-
-    }
-
-
-    // =================================================
-    // MOBILE SEARCH BUTTON
-    // =================================================
-
-    const searchButton =
-        document.querySelector(
-            ".mobile-search-btn"
+    const doraemonEffect =
+        document.getElementById(
+            "doraemon-effect"
         );
 
 
-    if (searchButton) {
-
-        searchButton.addEventListener("click", () => {
-
-            // Simple search prompt
-            const search =
-                prompt(
-                    "Doraemon World me kya search karna hai?"
-                );
+    const doraemonAudio =
+        document.getElementById(
+            "doraemon-audio"
+        );
 
 
-            if (
-                search &&
-                search.trim() !== ""
-            ) {
+    if (
+        doraemonEffect &&
+        doraemonAudio
+    ) {
 
-                const query =
-                    search.trim().toLowerCase();
+        document.addEventListener(
+            "click",
+            (event) => {
 
+                // Effect ke andar click ignore
+                if (
+                    doraemonEffect.contains(
+                        event.target
+                    )
+                ) {
 
-                const searchableElements =
-                    document.querySelectorAll(
-                        "h1, h2, h3, p, strong"
-                    );
-
-
-                let found = false;
-
-
-                searchableElements.forEach(element => {
-
-                    if (
-                        element.textContent
-                            .toLowerCase()
-                            .includes(query)
-                    ) {
-
-                        if (!found) {
-
-                            element.scrollIntoView({
-
-                                behavior: "smooth",
-
-                                block: "center"
-
-                            });
-
-                            found = true;
-
-                        }
-
-                    }
-
-                });
-
-
-                if (!found) {
-
-                    alert(
-                        "Sorry 😅 '" +
-                        search +
-                        "' nahi mila."
-                    );
+                    return;
 
                 }
 
-            }
 
-        });
+                // =================================================
+                // PLAY DORAEMON SOUND
+                // =================================================
+
+                doraemonAudio.pause();
+
+                doraemonAudio.currentTime = 0;
+
+
+                const playAudio =
+                    doraemonAudio.play();
+
+
+                if (playAudio !== undefined) {
+
+                    playAudio.catch(() => {
+
+                        console.log(
+                            "Doraemon audio playback blocked."
+                        );
+
+                    });
+
+                }
+
+
+                // =================================================
+                // SHOW DORAEMON
+                // =================================================
+
+                doraemonEffect.classList.remove(
+                    "show"
+                );
+
+
+                // Animation restart
+                void doraemonEffect.offsetWidth;
+
+
+                doraemonEffect.classList.add(
+                    "show"
+                );
+
+
+                // =================================================
+                // REMOVE EFFECT
+                // =================================================
+
+                setTimeout(() => {
+
+                    doraemonEffect.classList.remove(
+                        "show"
+                    );
+
+                }, 1700);
+
+            }
+        );
 
     }
-
-
-    // =================================================
-    // PREVENT BROKEN IMAGE DISPLAY
-    // =================================================
-
-    const allImages =
-        document.querySelectorAll("img");
-
-
-    allImages.forEach(image => {
-
-        image.addEventListener("error", () => {
-
-            console.warn(
-                "Image not found:",
-                image.getAttribute("src")
-            );
-
-            image.style.opacity = "0";
-
-        });
-
-    });
 
 
     // =================================================
     // PAGE LOADED
     // =================================================
 
-    window.addEventListener("load", () => {
-
-        document.body.classList.add(
-            "page-loaded"
-        );
-
-    });
-
-
-    // =================================================
-    // RESIZE HANDLER
-    // =================================================
-
-    window.addEventListener("resize", () => {
-
-        // Desktop
-        if (window.innerWidth > 700) {
-
-            if (mobileMenuPanel) {
-
-                mobileMenuPanel.classList.remove(
-                    "show"
-                );
-
-            }
-
-            if (mobileMenuButton) {
-
-                mobileMenuButton.textContent = "☰";
-
-            }
-
-        }
-
-    });
-
-
-    // =================================================
-    // DORAEMON WORLD CONSOLE
-    // =================================================
-
-    console.log(
-        "💙 Doraemon World loaded successfully!"
+    document.body.classList.add(
+        "page-loaded"
     );
 
+
+    // =================================================
+    // CONSOLE
+    // =================================================
+
     console.log(
-        "🏠 Home | 🎬 Movies | 📺 Episodes | 👥 Characters | 🎵 Music"
+        "Doraemon World loaded successfully! 💙"
     );
 
 });
