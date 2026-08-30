@@ -66,7 +66,7 @@ body {
 
     text-decoration: none;
 
-    font-size: 23px;
+    font-size: 20px;
 
     font-weight: 900;
 
@@ -331,15 +331,11 @@ body {
 ===================================================== */
 
 .hero-art {
-
-    width: 300px;
-    height: 300px;
-
+    width: 280px;
+    height: 280px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
 }
 
@@ -702,7 +698,7 @@ body {
 
     width: 100%;
 
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.85;
 
     overflow: hidden;
 
@@ -718,9 +714,9 @@ body {
 
 .gadget-image img {
 
-    width: 100%;
+    width: 88%;
 
-    height: 100%;
+    height: 88%;
 
     display: block;
 
@@ -1202,7 +1198,7 @@ footer p {
 
         color: #087dcc;
 
-        font-size: 20px;
+        font-size: 18px;
 
         font-weight: 900;
 
@@ -1784,56 +1780,33 @@ input:focus-visible {
         rgba(0, 139, 214, 0.25);
 
     outline-offset: 2px;
-}
-/* =====================================================
-   HERO ART / TOP GADGET IMAGE
+}/* =====================================================
+   GADGET HERO DORAEMON IMAGE
 ===================================================== */
 
-.hero-art {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42%;
-    min-height: 380px;
-}
-
-.hero-art img {
-    width: 360px;
+.gadget-hero-image {
+    width: 260px;
     max-width: 100%;
-    height: 360px;
+    height: auto;
+    display: block;
     object-fit: contain;
-
-    filter:
-        drop-shadow(0 20px 35px rgba(0, 100, 180, 0.20));
-
-    animation:
-        gadgetFloat 4s ease-in-out infinite;
-
-    transition:
-        transform 0.35s ease,
-        filter 0.35s ease;
-}
-
-.hero-art img:hover {
-    transform: scale(1.06);
-
-    filter:
-        drop-shadow(0 25px 45px rgba(0, 120, 210, 0.30));
+    filter: drop-shadow(0 15px 25px rgba(0, 100, 180, 0.15));
+    animation: gadgetDoraemonFloat 4s ease-in-out infinite;
 }
 
 
 /* =====================================================
-   GADGET FLOAT ANIMATION
+   HERO IMAGE ANIMATION
 ===================================================== */
 
-@keyframes gadgetFloat {
+@keyframes gadgetDoraemonFloat {
 
     0% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-14px);
+        transform: translateY(-12px);
     }
 
     100% {
@@ -1844,25 +1817,27 @@ input:focus-visible {
 
 
 /* =====================================================
-   MOBILE HERO IMAGE
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .gadget-hero-image {
+        width: 270px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
 ===================================================== */
 
 @media (max-width: 700px) {
 
-    .gadget-hero {
-        padding:
-            45px 20px 40px;
-    }
-
-    .hero-art {
-        width: 100%;
-        min-height: auto;
-        margin-top: 30px;
-    }
-
-    .hero-art img {
+    .gadget-hero-image {
         width: 240px;
-        height: 240px;
+        margin: 10px auto 0;
     }
 
 }
@@ -1874,13 +1849,8 @@ input:focus-visible {
 
 @media (max-width: 400px) {
 
-    .hero-art {
-        margin-top: 25px;
-    }
-
-    .hero-art img {
+    .gadget-hero-image {
         width: 210px;
-        height: 210px;
     }
 
 }
