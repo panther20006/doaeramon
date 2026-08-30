@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // DESKTOP / TABLET MENU
+    // DESKTOP MENU
     // =================================================
 
     if (menuButton && navigation) {
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // Navigation link click
         const navLinks =
             navigation.querySelectorAll("a");
 
@@ -81,6 +80,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mobileMenuPanel.classList.toggle("show");
 
+            // Change hamburger icon
+            if (
+                mobileMenuPanel.classList.contains("show")
+            ) {
+
+                mobileMenuButton.textContent = "✕";
+
+            } else {
+
+                mobileMenuButton.textContent = "☰";
+
+            }
+
         });
 
 
@@ -93,6 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 mobileMenuPanel.classList.remove("show");
 
+                mobileMenuButton.textContent = "☰";
+
             });
 
         });
@@ -101,12 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // CLOSE MENU WHEN CLICKING OUTSIDE
+    // CLOSE MENUS WHEN CLICKING OUTSIDE
     // =================================================
 
     document.addEventListener("click", (event) => {
 
-        // Desktop menu
+        // Desktop navigation
         if (
             navigation &&
             menuButton &&
@@ -119,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        // Mobile menu
+        // Mobile navigation
         if (
             mobileMenuPanel &&
             mobileMenuButton &&
@@ -128,6 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
 
             mobileMenuPanel.classList.remove("show");
+
+            mobileMenuButton.textContent = "☰";
 
         }
 
@@ -143,11 +159,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "Escape") {
 
             if (navigation) {
+
                 navigation.classList.remove("show");
+
             }
 
             if (mobileMenuPanel) {
+
                 mobileMenuPanel.classList.remove("show");
+
+            }
+
+            if (mobileMenuButton) {
+
+                mobileMenuButton.textContent = "☰";
+
             }
 
         }
@@ -262,6 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "#nav a, .mobile-menu-panel a, .bottom-nav-item"
         );
 
+
     allNavLinks.forEach(link => {
 
         link.addEventListener("click", () => {
@@ -280,6 +307,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
+    // SET ACTIVE PAGE AUTOMATICALLY
+    // =================================================
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+
+    if (currentPage === "") {
+
+        setActiveLink("index.html");
+
+    } else {
+
+        setActiveLink(currentPage);
+
+    }
+
+
+    function setActiveLink(page) {
+
+        allNavLinks.forEach(link => {
+
+            const href =
+                link.getAttribute("href");
+
+            if (!href) return;
+
+            const cleanHref =
+                href.split("#")[0]
+                    .split("?")[0]
+                    .toLowerCase();
+
+            if (
+                cleanHref === page
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    // =================================================
     // SMOOTH SCROLL
     // =================================================
 
@@ -288,6 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'a[href^="#"]'
         );
 
+
     scrollLinks.forEach(link => {
 
         link.addEventListener("click", (event) => {
@@ -295,23 +372,31 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetId =
                 link.getAttribute("href");
 
+
             if (
                 !targetId ||
                 targetId === "#"
             ) {
+
                 return;
+
             }
+
 
             const target =
                 document.querySelector(targetId);
+
 
             if (target) {
 
                 event.preventDefault();
 
                 target.scrollIntoView({
+
                     behavior: "smooth",
+
                     block: "start"
+
                 });
 
             }
@@ -322,13 +407,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // MOBILE BOTTOM NAV
+    // MOBILE BOTTOM NAVIGATION
     // =================================================
 
     const bottomNavItems =
         document.querySelectorAll(
             ".bottom-nav-item"
         );
+
 
     bottomNavItems.forEach(item => {
 
@@ -348,13 +434,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
-    // MOVIE HORIZONTAL SCROLL
+    // MOBILE MOVIE HORIZONTAL SCROLL
     // =================================================
 
     const movieRows =
         document.querySelectorAll(
             ".mobile-movie-row"
         );
+
 
     movieRows.forEach(row => {
 
@@ -379,20 +466,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             },
-            { passive: false }
+            {
+                passive: false
+            }
         );
 
     });
 
 
     // =================================================
-    // GADGET HORIZONTAL SCROLL
+    // MOBILE GADGET HORIZONTAL SCROLL
     // =================================================
 
     const gadgetRows =
         document.querySelectorAll(
             ".mobile-gadget-row"
         );
+
 
     gadgetRows.forEach(row => {
 
@@ -417,8 +507,172 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             },
-            { passive: false }
+            {
+                passive: false
+            }
         );
+
+    });
+
+
+    // =================================================
+    // TOUCH DRAG FOR MOBILE MOVIE ROW
+    // =================================================
+
+    enableTouchScroll(".mobile-movie-row");
+
+    enableTouchScroll(".mobile-gadget-row");
+
+
+    function enableTouchScroll(selector) {
+
+        const rows =
+            document.querySelectorAll(selector);
+
+
+        rows.forEach(row => {
+
+            let startX = 0;
+
+            let startScrollLeft = 0;
+
+
+            row.addEventListener("touchstart", (event) => {
+
+                startX =
+                    event.touches[0].pageX;
+
+                startScrollLeft =
+                    row.scrollLeft;
+
+            }, {
+                passive: true
+            });
+
+
+            row.addEventListener("touchmove", (event) => {
+
+                const currentX =
+                    event.touches[0].pageX;
+
+                const distance =
+                    currentX - startX;
+
+                row.scrollLeft =
+                    startScrollLeft - distance;
+
+            }, {
+                passive: true
+            });
+
+        });
+
+    }
+
+
+    // =================================================
+    // MOBILE SEARCH BUTTON
+    // =================================================
+
+    const searchButton =
+        document.querySelector(
+            ".mobile-search-btn"
+        );
+
+
+    if (searchButton) {
+
+        searchButton.addEventListener("click", () => {
+
+            // Simple search prompt
+            const search =
+                prompt(
+                    "Doraemon World me kya search karna hai?"
+                );
+
+
+            if (
+                search &&
+                search.trim() !== ""
+            ) {
+
+                const query =
+                    search.trim().toLowerCase();
+
+
+                const searchableElements =
+                    document.querySelectorAll(
+                        "h1, h2, h3, p, strong"
+                    );
+
+
+                let found = false;
+
+
+                searchableElements.forEach(element => {
+
+                    if (
+                        element.textContent
+                            .toLowerCase()
+                            .includes(query)
+                    ) {
+
+                        if (!found) {
+
+                            element.scrollIntoView({
+
+                                behavior: "smooth",
+
+                                block: "center"
+
+                            });
+
+                            found = true;
+
+                        }
+
+                    }
+
+                });
+
+
+                if (!found) {
+
+                    alert(
+                        "Sorry 😅 '" +
+                        search +
+                        "' nahi mila."
+                    );
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+    // =================================================
+    // PREVENT BROKEN IMAGE DISPLAY
+    // =================================================
+
+    const allImages =
+        document.querySelectorAll("img");
+
+
+    allImages.forEach(image => {
+
+        image.addEventListener("error", () => {
+
+            console.warn(
+                "Image not found:",
+                image.getAttribute("src")
+            );
+
+            image.style.opacity = "0";
+
+        });
 
     });
 
@@ -427,13 +681,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // PAGE LOADED
     // =================================================
 
-    document.body.classList.add(
-        "page-loaded"
-    );
+    window.addEventListener("load", () => {
 
+        document.body.classList.add(
+            "page-loaded"
+        );
+
+    });
+
+
+    // =================================================
+    // RESIZE HANDLER
+    // =================================================
+
+    window.addEventListener("resize", () => {
+
+        // Desktop
+        if (window.innerWidth > 700) {
+
+            if (mobileMenuPanel) {
+
+                mobileMenuPanel.classList.remove(
+                    "show"
+                );
+
+            }
+
+            if (mobileMenuButton) {
+
+                mobileMenuButton.textContent = "☰";
+
+            }
+
+        }
+
+    });
+
+
+    // =================================================
+    // DORAEMON WORLD CONSOLE
+    // =================================================
 
     console.log(
-        "Doraemon World loaded successfully! 💙"
+        "💙 Doraemon World loaded successfully!"
+    );
+
+    console.log(
+        "🏠 Home | 🎬 Movies | 📺 Episodes | 👥 Characters | 🎵 Music"
     );
 
 });
