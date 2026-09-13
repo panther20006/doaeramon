@@ -2599,3 +2599,372 @@ footer p {
     color: inherit;
     cursor: pointer;
 }
+/* =========================================================
+   DORAEMON MOTIVATION
+   DESKTOP + MOBILE
+========================================================= */
+
+/* =========================================================
+   DESKTOP MOTIVATION SECTION
+========================================================= */
+
+.motivation-section {
+    width: 92%;
+    max-width: 1250px;
+    margin: 70px auto 60px;
+}
+
+.motivation-section .section-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.motivation-section .section-title span {
+    display: inline-block;
+    color: #087dcc;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.motivation-section .section-title h2 {
+    color: #073b70;
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 8px;
+}
+
+.motivation-section .section-title p {
+    color: #62809a;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Main motivation card */
+
+.motivation-card {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #eefaff 50%,
+        #dff5ff 100%
+    );
+    border: 1px solid rgba(32, 168, 245, 0.16);
+    box-shadow:
+        0 15px 45px rgba(0, 90, 140, 0.12),
+        0 0 30px rgba(32, 168, 245, 0.06);
+    transition: 0.35s ease;
+}
+
+.motivation-card:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 22px 55px rgba(0, 90, 140, 0.18),
+        0 0 35px rgba(32, 168, 245, 0.12);
+}
+
+/* Image */
+
+.motivation-image {
+    width: 40%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.motivation-image::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(32, 168, 245, 0.12);
+}
+
+.motivation-image img {
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    transition: 0.35s ease;
+    filter: drop-shadow(0 15px 18px rgba(0, 70, 120, 0.15));
+}
+
+.motivation-card:hover .motivation-image img {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+/* Content */
+
+.motivation-content {
+    flex: 1;
+    padding: 45px 55px 45px 20px;
+}
+
+.motivation-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #d9f3ff;
+    color: #087dcc;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+    margin-bottom: 16px;
+}
+
+.motivation-content h3 {
+    color: #073b70;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 900;
+    margin: 0 0 14px;
+}
+
+.motivation-content p {
+    max-width: 650px;
+    color: #55758f;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+}
+
+.motivation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #087dcc;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(8, 125, 204, 0.22);
+    transition: 0.25s ease;
+}
+
+.motivation-card:hover .motivation-button {
+    background: #20a8f5;
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE MOTIVATION
+========================================================= */
+
+.mobile-section-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 25px 0 14px;
+}
+
+.mobile-section-title h2 {
+    margin: 0;
+    color: #073b70;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.mobile-section-title a {
+    color: #087dcc;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* Mobile motivation card */
+
+.mobile-motivation-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eefaff
+    );
+    border: 1px solid rgba(32, 168, 245, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 70, 120, 0.09);
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.mobile-motivation-card:active {
+    transform: scale(0.98);
+}
+
+
+/* Mobile image */
+
+.mobile-motivation-image {
+    width: 105px;
+    min-width: 105px;
+    height: 115px;
+    border-radius: 17px;
+    background: #e4f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mobile-motivation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Mobile content */
+
+.mobile-motivation-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.mobile-motivation-label {
+    display: inline-block;
+    color: #087dcc;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.mobile-motivation-content h3 {
+    color: #073b70;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.25;
+    margin: 0 0 5px;
+}
+
+.mobile-motivation-content p {
+    color: #638097;
+    font-size: 11px;
+    line-height: 1.45;
+    margin: 0 0 9px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mobile-motivation-button {
+    color: #087dcc;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .motivation-content {
+        padding: 35px 35px 35px 10px;
+    }
+
+    .motivation-content h3 {
+        font-size: 28px;
+    }
+
+    .motivation-content p {
+        font-size: 15px;
+    }
+
+    .motivation-image {
+        width: 38%;
+    }
+
+    .motivation-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .motivation-image::before {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Hide desktop motivation */
+
+    .motivation-section {
+        display: none !important;
+    }
+
+    /* Mobile motivation */
+
+    .mobile-motivation-card {
+        display: flex;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .mobile-motivation-card {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .mobile-motivation-image {
+        width: 90px;
+        min-width: 90px;
+        height: 100px;
+    }
+
+    .mobile-motivation-content h3 {
+        font-size: 15px;
+    }
+
+    .mobile-motivation-content p {
+        font-size: 10px;
+    }
+
+    .mobile-section-title h2 {
+        font-size: 18px;
+    }
+
+}

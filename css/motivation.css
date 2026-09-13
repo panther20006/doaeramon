@@ -1,0 +1,554 @@
+/* =========================================================
+   DORAEMON MOTIVATION REELS
+   INSTAGRAM STYLE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #000;
+}
+
+
+/* =========================================================
+   REELS CONTAINER
+========================================================= */
+
+.reels-container {
+    width: 100vw;
+    height: 100vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scroll-snap-type: y mandatory;
+
+    scrollbar-width: none;
+
+    background: #000;
+}
+
+.reels-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   EACH REEL
+========================================================= */
+
+.reel {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    background: #000;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.reel-video {
+    display: block;
+
+    width: auto;
+    height: 94vh;
+
+    aspect-ratio: 9 / 16;
+
+    max-width: calc(100vw - 180px);
+    max-height: 94vh;
+
+    object-fit: contain;
+
+    background: #000;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.65);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PLAY / PAUSE CENTER ICON
+========================================================= */
+
+.video-status {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 76px;
+    height: 76px;
+
+    transform: translate(-50%, -50%) scale(0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.video-status.show {
+    animation: videoStatus 1s ease forwards;
+}
+
+@keyframes videoStatus {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   SHARE + DOWNLOAD
+========================================================= */
+
+.reel-actions {
+    position: absolute;
+
+    left: calc(50% + 250px);
+    bottom: 65px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    z-index: 100;
+}
+
+.action-btn {
+    width: 62px;
+    height: 62px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    color: white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.08);
+
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.action-btn span {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.action-btn small {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESKTOP UP / DOWN
+========================================================= */
+
+.desktop-navigation {
+    position: fixed;
+
+    left: 30px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    z-index: 200;
+}
+
+.reel-nav-btn {
+    width: 54px;
+    height: 54px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: 0.2s ease;
+}
+
+.reel-nav-btn:hover {
+    transform: scale(1.08);
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   SHARE MESSAGE
+========================================================= */
+
+.share-message {
+    position: fixed;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%) translateY(20px);
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 500;
+
+    transition: 0.3s ease;
+}
+
+.share-message.show {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE — INSTAGRAM REELS STYLE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+
+        background: #000;
+    }
+
+    .doraemon-bg {
+        display: none;
+    }
+
+    .reels-container {
+        width: 100vw;
+        height: 100dvh;
+
+        padding: 0;
+
+        background: #000;
+
+        scroll-snap-type: y mandatory;
+    }
+
+    .reel {
+        width: 100vw;
+
+        height: 100dvh;
+        min-height: 100dvh;
+
+        background: #000;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+
+    /* ---------------------------------------------
+       INSTAGRAM 9:16 VIDEO
+    --------------------------------------------- */
+
+    .reel-video {
+
+        width: 100vw;
+        height: 100dvh;
+
+        max-width: none;
+        max-height: none;
+
+        aspect-ratio: 9 / 16;
+
+        object-fit: contain;
+
+        border-radius: 0;
+
+        background: #000;
+
+        box-shadow: none;
+    }
+
+
+    /* ---------------------------------------------
+       CENTER PLAY / PAUSE
+    --------------------------------------------- */
+
+    .video-status {
+
+        width: 68px;
+        height: 68px;
+
+        font-size: 27px;
+
+        background: rgba(0, 0, 0, 0.65);
+    }
+
+
+    /* ---------------------------------------------
+       SHARE + DOWNLOAD
+    --------------------------------------------- */
+
+    .reel-actions {
+
+        left: auto;
+        right: 12px;
+
+        bottom: 80px;
+
+        gap: 12px;
+    }
+
+    .action-btn {
+
+        width: 54px;
+        height: 54px;
+    }
+
+    .action-btn span {
+        font-size: 21px;
+    }
+
+    .action-btn small {
+        font-size: 7px;
+    }
+
+
+    /* ---------------------------------------------
+       HIDE DESKTOP ARROWS
+    --------------------------------------------- */
+
+    .desktop-navigation {
+        display: none;
+    }
+
+
+    /* ---------------------------------------------
+       SHARE TOAST
+    --------------------------------------------- */
+
+    .share-message {
+
+        bottom: 22px;
+
+        padding: 10px 17px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .reel-actions {
+
+        right: 9px;
+
+        bottom: 70px;
+    }
+
+    .action-btn {
+
+        width: 50px;
+        height: 50px;
+    }
+
+    .video-status {
+
+        width: 62px;
+        height: 62px;
+
+        font-size: 24px;
+    }
+
+}
+/* =========================================================
+   SIMPLE DORAEMON THEME BACKGROUND
+========================================================= */
+
+body {
+    background: linear-gradient(
+        135deg,
+        #eaf8ff 0%,
+        #bde9ff 50%,
+        #8ed8ff 100%
+    );
+}
+
+
+/* Reel area */
+.reels-container {
+    background: linear-gradient(
+        135deg,
+        #eaf8ff 0%,
+        #c7edff 50%,
+        #9cddff 100%
+    );
+}
+
+
+/* Each reel */
+.reel {
+    background: transparent;
+}
+
+
+/* Hide old decorative background */
+.doraemon-bg {
+    display: none;
+}
+
+
+/* Desktop */
+@media (min-width: 701px) {
+
+    .reels-container {
+        background: linear-gradient(
+            135deg,
+            #eaf8ff,
+            #b8e8ff,
+            #8bd5ff
+        );
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .reels-container {
+        background: #87ceeb;
+    }
+
+    .reel {
+        background: #87ceeb;
+    }
+
+}

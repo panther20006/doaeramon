@@ -10,15 +10,13 @@
 
 <title>Doraemon World - Music</title>
 
-
 <style>
 
 /* =========================================================
    DORAEMON WORLD
    MUSIC PAGE
-   DESKTOP + MOBILE RESPONSIVE
+   COMPLETE HTML + CSS + JS
 ========================================================= */
-
 
 /* =========================================================
    RESET
@@ -44,10 +42,10 @@ body{
 
 /* =========================================================
    DESKTOP TOP NAVIGATION
+   SAME AS HOME PAGE
 ========================================================= */
 
 .topbar{
-
     width:100%;
     min-height:64px;
 
@@ -55,22 +53,20 @@ body{
 
     display:flex;
     align-items:center;
+    justify-content:space-between;
 
     position:sticky;
     top:0;
 
     z-index:1000;
 
-    background:rgba(255,255,255,.98);
+    background:rgba(4,76,132,.97);
 
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
 
     box-shadow:
-        0 5px 25px rgba(0,60,100,.12);
-
-    border-bottom:
-        1px solid #dceff8;
+        0 5px 25px rgba(0,60,100,.15);
 }
 
 
@@ -79,8 +75,7 @@ body{
 ========================================================= */
 
 .logo{
-
-    color:#078bd6;
+    color:white !important;
 
     font-size:23px;
     font-weight:900;
@@ -97,6 +92,8 @@ body{
     text-decoration:none;
 
     transition:.25s ease;
+
+    margin-right:20px;
 }
 
 .logo:hover{
@@ -109,7 +106,6 @@ body{
 ========================================================= */
 
 #nav{
-
     margin-left:auto;
 
     display:flex;
@@ -122,15 +118,14 @@ body{
 }
 
 #nav a{
-
-    color:#172033;
+    color:white !important;
 
     font-size:14px;
     font-weight:700;
 
     padding:10px 12px;
 
-    border-radius:12px;
+    border-radius:10px;
 
     white-space:nowrap;
 
@@ -140,22 +135,29 @@ body{
 }
 
 #nav a:hover{
+    background:#20a8f5;
 
-    background:#e8f7ff;
-
-    color:#078bd6;
+    color:white !important;
 
     transform:translateY(-2px);
 }
 
 #nav a.active{
+    background:#20a8f5;
 
-    background:#078bd6;
-
-    color:white;
+    color:white !important;
 
     box-shadow:
-        0 0 15px rgba(32,168,245,.30);
+        0 0 15px rgba(32,168,245,.45);
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.menu-btn{
+    display:none;
 }
 
 
@@ -173,15 +175,12 @@ body{
 ========================================================= */
 
 .hero{
-
     min-height:500px;
 
     padding:65px 8% 55px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     position:relative;
@@ -214,11 +213,10 @@ body{
 
 
 /* =========================================================
-   HERO BACKGROUND MUSIC ICONS
+   HERO MUSIC ICONS
 ========================================================= */
 
 .hero::before{
-
     content:"♪  ♫  ♪  ♬  ♪  ♫";
 
     position:absolute;
@@ -238,7 +236,6 @@ body{
 }
 
 .hero::after{
-
     content:"♫  ♪  ♬  ♪  ♫";
 
     position:absolute;
@@ -263,7 +260,6 @@ body{
 ========================================================= */
 
 .hero-content{
-
     width:53%;
 
     position:relative;
@@ -277,7 +273,6 @@ body{
 ========================================================= */
 
 .badge{
-
     display:inline-flex;
 
     align-items:center;
@@ -291,6 +286,7 @@ body{
     color:#0785d1;
 
     font-size:11px;
+
     font-weight:900;
 
     letter-spacing:.7px;
@@ -307,14 +303,9 @@ body{
 ========================================================= */
 
 .hero h1{
-
     color:white;
 
-    font-size:clamp(
-        45px,
-        6vw,
-        78px
-    );
+    font-size:clamp(45px,6vw,78px);
 
     line-height:.98;
 
@@ -326,7 +317,6 @@ body{
 }
 
 .hero h1 strong{
-
     display:block;
 
     color:#fff3a8;
@@ -338,7 +328,6 @@ body{
 ========================================================= */
 
 .hero p{
-
     max-width:610px;
 
     color:white;
@@ -356,7 +345,6 @@ body{
 ========================================================= */
 
 .hero-buttons{
-
     display:flex;
 
     gap:12px;
@@ -365,7 +353,6 @@ body{
 }
 
 .hero-btn{
-
     display:inline-flex;
 
     align-items:center;
@@ -393,14 +380,12 @@ body{
 }
 
 .hero-btn:hover{
-
     background:#0759bd;
 
     transform:translateY(-3px);
 }
 
 .hero-btn.secondary{
-
     background:rgba(255,255,255,.12);
 
     border:
@@ -408,7 +393,6 @@ body{
 }
 
 .hero-btn.secondary:hover{
-
     background:white;
 
     color:#078bd6;
@@ -420,7 +404,6 @@ body{
 ========================================================= */
 
 .hero-art{
-
     width:43%;
 
     min-height:420px;
@@ -428,7 +411,6 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     position:relative;
@@ -437,7 +419,6 @@ body{
 }
 
 .hero-art::before{
-
     content:"";
 
     position:absolute;
@@ -456,11 +437,7 @@ body{
 }
 
 .hero-art img{
-
-    width:min(
-        440px,
-        100%
-    );
+    width:min(440px,100%);
 
     max-height:440px;
 
@@ -477,7 +454,6 @@ body{
     animation:
         doraemonFloat 4s ease-in-out infinite;
 }
-
 
 @keyframes doraemonFloat{
 
@@ -500,7 +476,6 @@ body{
 ========================================================= */
 
 .controls{
-
     width:88%;
 
     max-width:1300px;
@@ -522,7 +497,6 @@ body{
 ========================================================= */
 
 .search{
-
     flex:1;
 
     min-width:250px;
@@ -543,12 +517,10 @@ body{
     font-size:14px;
 
     box-shadow:
-        0 5px 20px
-        rgba(0,100,160,.06);
+        0 5px 20px rgba(0,100,160,.06);
 }
 
 .search:focus{
-
     border-color:#078bd6;
 
     box-shadow:
@@ -562,7 +534,6 @@ body{
 ========================================================= */
 
 .filters{
-
     display:flex;
 
     gap:7px;
@@ -571,7 +542,6 @@ body{
 }
 
 .filter{
-
     border:
         1px solid #d5eaf5;
 
@@ -594,7 +564,6 @@ body{
 
 .filter:hover,
 .filter.active{
-
     background:#078bd6;
 
     color:white;
@@ -608,7 +577,6 @@ body{
 ========================================================= */
 
 .music-section{
-
     width:88%;
 
     max-width:1400px;
@@ -622,12 +590,10 @@ body{
 ========================================================= */
 
 .section-title{
-
     margin-bottom:25px;
 }
 
 .section-title span{
-
     color:#078bd6;
 
     font-size:11px;
@@ -638,7 +604,6 @@ body{
 }
 
 .section-title h2{
-
     color:#172d43;
 
     font-size:32px;
@@ -647,7 +612,6 @@ body{
 }
 
 .section-title p{
-
     color:#718393;
 
     font-size:14px;
@@ -661,7 +625,6 @@ body{
 ========================================================= */
 
 .song-grid{
-
     display:grid;
 
     grid-template-columns:
@@ -676,7 +639,6 @@ body{
 ========================================================= */
 
 .song-card{
-
     background:white;
 
     border:
@@ -687,36 +649,31 @@ body{
     overflow:hidden;
 
     box-shadow:
-        0 8px 25px
-        rgba(0,100,160,.07);
+        0 8px 25px rgba(0,100,160,.07);
 
     transition:.3s;
 }
 
 .song-card:hover{
-
     transform:translateY(-6px);
 
     border-color:#8bd6f6;
 
     box-shadow:
-        0 18px 40px
-        rgba(0,120,190,.15);
+        0 18px 40px rgba(0,120,190,.15);
 }
 
 
 /* =========================================================
-   SONG COVER IMAGE
+   SONG COVER
 ========================================================= */
 
 .song-cover{
-
     height:205px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     position:relative;
@@ -732,9 +689,7 @@ body{
 }
 
 .song-cover img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -744,9 +699,7 @@ body{
     transition:.35s ease;
 }
 
-.song-card:hover
-.song-cover img{
-
+.song-card:hover .song-cover img{
     transform:scale(1.06);
 }
 
@@ -756,7 +709,6 @@ body{
 ========================================================= */
 
 .number{
-
     position:absolute;
 
     top:12px;
@@ -783,8 +735,7 @@ body{
     z-index:3;
 
     box-shadow:
-        0 4px 12px
-        rgba(0,60,120,.10);
+        0 4px 12px rgba(0,60,120,.10);
 }
 
 
@@ -793,7 +744,6 @@ body{
 ========================================================= */
 
 .song-cover::after{
-
     content:"";
 
     position:absolute;
@@ -819,7 +769,6 @@ body{
 ========================================================= */
 
 .play-btn{
-
     position:absolute;
 
     right:12px;
@@ -841,8 +790,7 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 22px
-        rgba(0,100,180,.30);
+        0 8px 22px rgba(0,100,180,.30);
 
     z-index:5;
 
@@ -850,7 +798,6 @@ body{
 }
 
 .play-btn:hover{
-
     transform:scale(1.08);
 
     background:#066fae;
@@ -862,11 +809,9 @@ body{
 ========================================================= */
 
 .song-card.playing{
-
     border-color:#078bd6;
 
     box-shadow:
-
         0 0 0 2px
         rgba(7,139,214,.12),
 
@@ -874,9 +819,7 @@ body{
         rgba(0,120,190,.16);
 }
 
-.song-card.playing
-.song-cover img{
-
+.song-card.playing .song-cover img{
     transform:scale(1.05);
 }
 
@@ -886,12 +829,10 @@ body{
 ========================================================= */
 
 .song-info{
-
     padding:15px;
 }
 
 .song-info h3{
-
     color:#20384e;
 
     font-size:15px;
@@ -902,7 +843,6 @@ body{
 }
 
 .artist{
-
     color:#718393;
 
     font-size:12px;
@@ -911,7 +851,6 @@ body{
 }
 
 .type{
-
     display:inline-block;
 
     margin-top:10px;
@@ -935,7 +874,6 @@ body{
 ========================================================= */
 
 .music-player{
-
     position:fixed;
 
     left:50%;
@@ -958,14 +896,12 @@ body{
     background:rgba(4,76,132,.97);
 
     border:
-        1px solid
-        rgba(255,255,255,.15);
+        1px solid rgba(255,255,255,.15);
 
     border-radius:20px;
 
     box-shadow:
-        0 15px 45px
-        rgba(0,60,110,.30);
+        0 15px 45px rgba(0,60,110,.30);
 
     backdrop-filter:blur(18px);
 
@@ -980,7 +916,6 @@ body{
 ========================================================= */
 
 .player-info{
-
     min-width:150px;
 
     max-width:210px;
@@ -989,7 +924,6 @@ body{
 }
 
 .player-title{
-
     color:white;
 
     font-size:13px;
@@ -1004,7 +938,6 @@ body{
 }
 
 .player-artist{
-
     color:#bde8ff;
 
     font-size:10px;
@@ -1024,7 +957,6 @@ body{
 ========================================================= */
 
 .player-controls{
-
     display:flex;
 
     align-items:center;
@@ -1033,7 +965,6 @@ body{
 }
 
 .player-btn{
-
     width:36px;
     height:36px;
 
@@ -1053,7 +984,6 @@ body{
 }
 
 .player-btn:hover{
-
     background:#20a8f5;
 
     color:white;
@@ -1062,7 +992,6 @@ body{
 }
 
 .player-btn.main{
-
     width:44px;
     height:44px;
 
@@ -1075,11 +1004,10 @@ body{
 
 
 /* =========================================================
-   PROGRESS
+   PLAYER PROGRESS
 ========================================================= */
 
 .player-progress{
-
     flex:1;
 
     display:flex;
@@ -1092,7 +1020,6 @@ body{
 }
 
 .time{
-
     color:#d8f2ff;
 
     font-size:9px;
@@ -1105,7 +1032,6 @@ body{
 }
 
 .progress{
-
     width:100%;
 
     height:5px;
@@ -1123,7 +1049,6 @@ body{
 }
 
 .progress::-webkit-slider-thumb{
-
     appearance:none;
     -webkit-appearance:none;
 
@@ -1138,7 +1063,6 @@ body{
 }
 
 .progress::-moz-range-thumb{
-
     width:13px;
     height:13px;
 
@@ -1157,7 +1081,6 @@ body{
 ========================================================= */
 
 .volume{
-
     width:80px;
 
     height:5px;
@@ -1173,7 +1096,6 @@ body{
 }
 
 .volume::-webkit-slider-thumb{
-
     appearance:none;
     -webkit-appearance:none;
 
@@ -1186,7 +1108,6 @@ body{
 }
 
 .volume::-moz-range-thumb{
-
     width:12px;
     height:12px;
 
@@ -1203,7 +1124,6 @@ body{
 ========================================================= */
 
 footer{
-
     padding:45px 20px;
 
     text-align:center;
@@ -1215,7 +1135,6 @@ footer{
 }
 
 .footer-logo{
-
     color:#087dcc;
 
     font-size:21px;
@@ -1226,7 +1145,6 @@ footer{
 }
 
 footer p{
-
     color:#7a8c9b;
 
     font-size:13px;
@@ -1236,11 +1154,10 @@ footer p{
 
 
 /* =========================================================
-   MOBILE BOTTOM NAVIGATION
+   MOBILE BOTTOM NAV
 ========================================================= */
 
 .mobile-bottom-nav{
-
     display:none;
 }
 
@@ -1249,18 +1166,74 @@ footer p{
    TABLET
 ========================================================= */
 
+@media(max-width:1200px){
+
+    .topbar{
+        padding-left:3%;
+        padding-right:3%;
+    }
+
+    #nav{
+        gap:2px;
+    }
+
+    #nav a{
+        padding:9px 8px;
+        font-size:13px;
+    }
+}
+
+
 @media(max-width:1100px){
 
     .song-grid{
-
         grid-template-columns:
             repeat(3,1fr);
     }
 
     .hero{
-
         padding-left:6%;
         padding-right:6%;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP ONLY
+========================================================= */
+
+@media(min-width:701px){
+
+    .topbar{
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        padding-left:4%;
+        padding-right:3%;
+    }
+
+    .logo{
+        margin-right:20px;
+    }
+
+    #nav{
+        margin-left:auto;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-end;
+
+        gap:4px;
+    }
+
+    .mobile-header,
+    .mobile-bottom-nav{
+        display:none !important;
     }
 }
 
@@ -1272,79 +1245,134 @@ footer p{
 @media(max-width:700px){
 
     body{
-
         padding-bottom:190px;
     }
 
 
-    /* DESKTOP NAV */
+    /* DESKTOP NAV HIDE */
 
     .topbar{
-
-        display:none;
+        display:none !important;
     }
 
 
-    /* MOBILE HEADER */
+    /* =====================================================
+       MOBILE HEADER
+    ===================================================== */
 
     .mobile-header{
-
-        display:flex;
-
-        height:62px;
-
-        padding:0 15px;
-
-        align-items:center;
-
-        justify-content:space-between;
+        display:flex !important;
 
         position:sticky;
 
         top:0;
 
-        z-index:2000;
+        z-index:10000;
 
-        background:
-            rgba(255,255,255,.98);
+        width:100%;
 
-        border-bottom:
-            1px solid #dceff8;
+        height:62px;
+
+        padding:8px 15px;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        background:white;
 
         box-shadow:
-            0 4px 18px
-            rgba(0,100,170,.08);
+            0 5px 20px
+            rgba(0,60,100,.08);
     }
 
-    .mobile-header button{
 
-        width:40px;
-        height:40px;
+    /* MOBILE MENU BUTTON */
 
-        border:0;
+    .mobile-menu-btn{
+        width:42px;
+        height:42px;
+
+        border:none;
 
         border-radius:12px;
 
-        background:#e9f7ff;
+        background:#e7f7ff;
 
-        color:#087dcc;
+        color:#087fc0;
 
-        font-size:19px;
+        font-size:20px;
 
         cursor:pointer;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        transition:.2s ease;
     }
 
+    .mobile-menu-btn:active{
+        transform:scale(.92);
+    }
+
+
+    /* MOBILE LOGO */
+
     .mobile-logo{
+        color:#073b70 !important;
 
-        color:#087dcc;
-
-        text-decoration:none;
-
-        font-size:18px;
+        font-size:20px;
 
         font-weight:900;
 
         letter-spacing:1px;
+
+        text-decoration:none;
+
+        display:flex;
+
+        align-items:center;
+
+        gap:3px;
+    }
+
+    .mobile-logo span{
+        font-size:16px;
+    }
+
+
+    /* MOBILE SEARCH */
+
+    .mobile-search-btn{
+        width:42px;
+        height:42px;
+
+        border:none;
+
+        border-radius:12px;
+
+        background:#e7f7ff;
+
+        color:#087fc0;
+
+        font-size:20px;
+
+        cursor:pointer;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        transition:.2s ease;
+    }
+
+    .mobile-search-btn:active{
+        transform:scale(.92);
     }
 
 
@@ -1367,7 +1395,6 @@ footer p{
     }
 
     .hero-content{
-
         width:100%;
 
         order:1;
@@ -1413,7 +1440,9 @@ footer p{
     }
 
 
-    /* HERO IMAGE */
+    /* =====================================================
+       HERO IMAGE MOBILE
+    ===================================================== */
 
     .hero-art{
 
@@ -1429,6 +1458,7 @@ footer p{
     .hero-art::before{
 
         width:270px;
+
         height:270px;
     }
 
@@ -1441,7 +1471,7 @@ footer p{
 
 
     /* =====================================================
-       SEARCH
+       SEARCH MOBILE
     ===================================================== */
 
     .controls{
@@ -1470,7 +1500,6 @@ footer p{
     }
 
     .filters::-webkit-scrollbar{
-
         display:none;
     }
 
@@ -1483,7 +1512,7 @@ footer p{
 
 
     /* =====================================================
-       MUSIC
+       MUSIC MOBILE
     ===================================================== */
 
     .music-section{
@@ -1502,6 +1531,7 @@ footer p{
     .section-title p{
 
         font-size:12px;
+
         line-height:1.6;
     }
 
@@ -1570,7 +1600,7 @@ footer p{
 
 
     /* =====================================================
-       MUSIC PLAYER
+       MUSIC PLAYER MOBILE
     ===================================================== */
 
     .music-player{
@@ -1755,6 +1785,13 @@ footer p{
 
         transform:scale(.94);
     }
+
+
+    /* HIDE FOOTER ON MOBILE */
+
+    footer{
+        display:none;
+    }
 }
 
 
@@ -1765,39 +1802,31 @@ footer p{
 @media(max-width:400px){
 
     .mobile-logo{
-
         font-size:16px;
     }
 
     .hero h1{
-
         font-size:36px;
     }
 
     .hero-art{
-
         min-height:240px;
     }
 
     .hero-art img{
-
         width:240px;
-
         max-height:260px;
     }
 
     .song-grid{
-
         gap:9px;
     }
 
     .song-cover{
-
         height:125px;
     }
 
     .song-info{
-
         padding:9px;
     }
 
@@ -1812,22 +1841,18 @@ footer p{
     }
 
     .bottom-nav-item{
-
         height:58px;
     }
 
     .bottom-nav-item span{
-
         font-size:21px;
     }
 
     .bottom-nav-item small{
-
         font-size:9px;
     }
 
     .music-player{
-
         bottom:92px;
     }
 }
@@ -1840,7 +1865,6 @@ footer p{
 @media(prefers-reduced-motion:reduce){
 
     *{
-
         animation:none !important;
 
         transition:none !important;
@@ -1863,11 +1887,8 @@ footer p{
 
     <a href="index.html"
        class="logo">
-
         DORAEMON 🌐
-
     </a>
-
 
     <nav id="nav">
 
@@ -1893,13 +1914,15 @@ footer p{
 
         <a href="music.html"
            class="active">
-
             🎵 Music
-
         </a>
 
         <a href="gallery.html">
             📸 Gallery
+        </a>
+
+        <a href="gadgets.html">
+            🪄 Gadgets
         </a>
 
         <a href="test.html">
@@ -1917,19 +1940,31 @@ footer p{
 
 <header class="mobile-header">
 
-    <button onclick="goHome()">
+    <button
+        id="mobileMenu"
+        class="mobile-menu-btn"
+        aria-label="Open Menu">
+
         ☰
+
     </button>
 
-    <a href="index.html"
-       class="mobile-logo">
+    <a
+        href="index.html"
+        class="mobile-logo">
 
-        DORAEMON 🔵
+        DORAEMON
+
+        <span>🌐</span>
 
     </a>
 
-    <button onclick="focusSearch()">
+    <button
+        class="mobile-search-btn"
+        aria-label="Search">
+
         🔍
+
     </button>
 
 </header>
@@ -1941,15 +1976,11 @@ footer p{
 
 <section class="hero">
 
-
     <div class="hero-content">
 
         <div class="badge">
-
             🎵 DORAEMON WORLD
-
         </div>
-
 
         <h1>
 
@@ -1961,7 +1992,6 @@ footer p{
 
         </h1>
 
-
         <p>
 
             Doraemon ke saare yaadgaar songs,
@@ -1972,7 +2002,6 @@ footer p{
 
         </p>
 
-
         <div class="hero-buttons">
 
             <a href="#music"
@@ -1981,7 +2010,6 @@ footer p{
                 ▶ Listen Now
 
             </a>
-
 
             <a href="#music"
                class="hero-btn secondary">
@@ -2005,7 +2033,6 @@ footer p{
 
     </div>
 
-
 </section>
 
 
@@ -2015,16 +2042,13 @@ footer p{
 
 <div class="controls">
 
-
     <input
         id="search"
         class="search"
         type="search"
         placeholder="🔍 Hindi song search karo...">
 
-
     <div class="filters">
-
 
         <button
             class="filter active"
@@ -2034,7 +2058,6 @@ footer p{
 
         </button>
 
-
         <button
             class="filter"
             onclick="setFilter('tv',this)">
@@ -2043,7 +2066,6 @@ footer p{
 
         </button>
 
-
         <button
             class="filter"
             onclick="setFilter('movie',this)">
@@ -2051,7 +2073,6 @@ footer p{
             🎬 Movies
 
         </button>
-
 
     </div>
 
@@ -2064,47 +2085,32 @@ footer p{
 
 <main id="music">
 
+    <section class="music-section">
 
-<section class="music-section">
+        <div class="section-title">
 
+            <span>
+                DORAEMON MUSIC
+            </span>
 
-    <div class="section-title">
+            <h2>
+                Doraemon Music Collection 🎵
+            </h2>
 
-        <span>
+            <p>
+                Doraemon ke favourite Hindi songs,
+                themes aur special music collection.
+            </p>
 
-            DORAEMON MUSIC
-
-        </span>
-
-
-        <h2>
-
-            Doraemon Music Collection 🎵
-
-        </h2>
-
-
-        <p>
-
-            Doraemon ke favourite Hindi songs,
-            themes aur special music collection.
-
-        </p>
-
-    </div>
+        </div>
 
 
-    <!-- SONGS DIRECTLY HERE -->
+        <div
+            id="songGrid"
+            class="song-grid">
+        </div>
 
-    <div
-        id="songGrid"
-        class="song-grid">
-
-    </div>
-
-
-</section>
-
+    </section>
 
 </main>
 
@@ -2114,7 +2120,6 @@ footer p{
 ===================================================== -->
 
 <nav class="mobile-bottom-nav">
-
 
     <a
         href="index.html"
@@ -2180,7 +2185,6 @@ footer p{
 
     </a>
 
-
 </nav>
 
 
@@ -2191,23 +2195,15 @@ footer p{
 <footer>
 
     <div class="footer-logo">
-
         DORAEMON WORLD 💙
-
     </div>
 
-
     <p>
-
         Unofficial fan-made website.
-
     </p>
 
-
     <p>
-
         © 2026 Doraemon World
-
     </p>
 
 </footer>
@@ -2219,7 +2215,6 @@ footer p{
 
 <div class="music-player">
 
-
     <div class="player-info">
 
         <div
@@ -2229,7 +2224,6 @@ footer p{
             No Song Playing
 
         </div>
-
 
         <div
             id="playerArtist"
@@ -2244,7 +2238,6 @@ footer p{
 
     <div class="player-controls">
 
-
         <button
             class="player-btn"
             onclick="previousSong()">
@@ -2252,7 +2245,6 @@ footer p{
             ⏮
 
         </button>
-
 
         <button
             id="mainPlayBtn"
@@ -2263,7 +2255,6 @@ footer p{
 
         </button>
 
-
         <button
             class="player-btn"
             onclick="nextSong()">
@@ -2272,12 +2263,10 @@ footer p{
 
         </button>
 
-
     </div>
 
 
     <div class="player-progress">
-
 
         <span
             id="currentTime"
@@ -2287,7 +2276,6 @@ footer p{
 
         </span>
 
-
         <input
             id="progress"
             class="progress"
@@ -2295,7 +2283,6 @@ footer p{
             min="0"
             max="100"
             value="0">
-
 
         <span
             id="duration"
@@ -2305,16 +2292,12 @@ footer p{
 
         </span>
 
-
     </div>
 
 
     <span>
-
         🔊
-
     </span>
-
 
     <input
         id="volume"
@@ -2325,9 +2308,7 @@ footer p{
         step="0.01"
         value="1">
 
-
 </div>
-
 
 
 <script>
@@ -2340,120 +2321,65 @@ const songs = [
 
     {
         id:1,
-
         title:"Zindagi Sawar Du",
-
         artist:"Doraemon Hindi",
-
         type:"tv",
-
-        audio:
-            "assets/music/Zindagi-Sawar-Du-Doraemon.mp3",
-
-        cover:
-            "assets/images/zindagi-sawar-du.jpg"
+        audio:"assets/music/Zindagi-Sawar-Du-Doraemon.mp3",
+        cover:"assets/images/zindagi-sawar-du.jpg"
     },
-
 
     {
         id:2,
-
         title:"Aapne Dil Mein Dekho",
-
         artist:"Doraemon Hindi",
-
         type:"tv",
-
-        audio:
-            "assets/music/aapne-dil-mein-dekho.mp3",
-
-        cover:
-            "assets/images/aapne-dil-mein-dekho.jpg"
+        audio:"assets/music/aapne-dil-mein-dekho.mp3",
+        cover:"assets/images/aapne-dil-mein-dekho.jpg"
     },
-
 
     {
         id:3,
-
         title:"Jeene Ka Sahi Dhang",
-
         artist:"Doraemon Hindi",
-
         type:"tv",
-
-        audio:
-            "assets/music/jeene-ka-sahi-dhang.mp3",
-
-        cover:
-            "assets/images/music/jeene-ka-sahi-dhang.jpg"
+        audio:"assets/music/jeene-ka-sahi-dhang.mp3",
+        cover:"assets/images/music/jeene-ka-sahi-dhang.jpg"
     },
-
 
     {
         id:4,
-
         title:"Sabse Pehle Hai Pyaar",
-
         artist:"Doraemon Hindi",
-
         type:"tv",
-
-        audio:
-            "assets/music/sabse-pehle-hai-pyaar.mp3",
-
-        cover:
-            "assets/images/characters/sabse-pehle-hai-pyaar.jpg"
+        audio:"assets/music/sabse-pehle-hai-pyaar.mp3",
+        cover:"assets/images/characters/sabse-pehle-hai-pyaar.jpg"
     },
-
 
     {
         id:5,
-
         title:"Doraemon Instrumental",
-
         artist:"Doraemon Music",
-
         type:"tv",
-
-        audio:
-            "assets/music/doraemon-song.mp3",
-
-        cover:
-            "assets/images/music/doraemon-instrumental.jpg"
+        audio:"assets/music/doraemon-song.mp3",
+        cover:"assets/images/music/doraemon-instrumental.jpg"
     },
-
 
     {
         id:6,
-
         title:"Doraemon Japanese Song",
-
         artist:"Doraemon",
-
         type:"movie",
-
-        audio:
-            "assets/music/doraemon-japanese.mp3",
-
-        cover:
-            "assets/images/characters/doraemon-japanese.jpg"
+        audio:"assets/music/doraemon-japanese.mp3",
+        cover:"assets/images/characters/doraemon-japanese.jpg"
     },
-
 
     {
         id:7,
-
         title:"Paani Ki Boond",
-
         artist:"Doraemon Music",
-
         type:"movie",
-
-        audio:
-            "assets/music/paani-ki-boond.mp3",
-
-        cover:
-            "assets/images/paani-ki-boond.jpg"
+        audio:"assets/music/paani-ki-boond.mp3",
+        cover:"assets/images/paani-ki-boond.jpg"
     }
 
 ];
@@ -2508,17 +2434,13 @@ function renderSongs(){
         .toLowerCase()
         .trim();
 
-
     grid.innerHTML = "";
 
-
     songs.forEach(song => {
-
 
         const filterMatch =
             currentFilter === "all" ||
             song.type === currentFilter;
-
 
         const text =
             (
@@ -2527,10 +2449,8 @@ function renderSongs(){
                 song.artist
             ).toLowerCase();
 
-
         const searchMatch =
             text.includes(search);
-
 
         if(
             filterMatch &&
@@ -2540,32 +2460,25 @@ function renderSongs(){
             const card =
                 document.createElement("article");
 
-
             card.className =
                 "song-card";
 
-
             card.dataset.id =
                 song.id;
-
 
             card.innerHTML = `
 
                 <div class="song-cover">
 
                     <div class="number">
-
                         ${String(song.id).padStart(2,"0")}
-
                     </div>
-
 
                     <img
                         src="${song.cover}"
                         alt="${song.title}"
                         loading="lazy"
                         onerror="this.src='assets/images/characters/doraemon-music.jpg'">
-
 
                     <button
                         class="play-btn"
@@ -2581,18 +2494,12 @@ function renderSongs(){
                 <div class="song-info">
 
                     <h3>
-
                         ${song.title}
-
                     </h3>
 
-
                     <div class="artist">
-
                         🎤 ${song.artist}
-
                     </div>
-
 
                     <span class="type">
 
@@ -2605,19 +2512,14 @@ function renderSongs(){
                     </span>
 
                 </div>
-
             `;
 
-
             grid.appendChild(card);
-
         }
 
     });
 
-
     updatePlayingCard();
-
 }
 
 
@@ -2632,7 +2534,6 @@ function playSong(id){
             item => item.id === id
         );
 
-
     if(!song){
         return;
     }
@@ -2646,13 +2547,9 @@ function playSong(id){
     ){
 
         if(currentAudio.paused){
-
             currentAudio.play();
-
         }else{
-
             currentAudio.pause();
-
         }
 
         updatePlayButtons();
@@ -2676,10 +2573,8 @@ function playSong(id){
     currentAudio =
         new Audio(song.audio);
 
-
     currentAudio.volume =
         Number(volume.value);
-
 
     currentSongId =
         id;
@@ -2708,13 +2603,11 @@ function playSong(id){
     /* PLAY */
 
     currentAudio.play()
-
     .then(() => {
 
         updatePlayButtons();
 
     })
-
     .catch(error => {
 
         console.log(error);
@@ -2764,7 +2657,6 @@ function playSong(id){
 
 
     updatePlayingCard();
-
 }
 
 
@@ -2781,7 +2673,6 @@ function togglePlay(){
         return;
     }
 
-
     if(currentAudio.paused){
 
         currentAudio.play();
@@ -2792,9 +2683,7 @@ function togglePlay(){
 
     }
 
-
     updatePlayButtons();
-
 }
 
 
@@ -2811,28 +2700,22 @@ function nextSong(){
         return;
     }
 
-
     let index =
         songs.findIndex(
             song =>
             song.id === currentSongId
         );
 
-
     index++;
-
 
     if(index >= songs.length){
 
         index = 0;
-
     }
-
 
     playSong(
         songs[index].id
     );
-
 }
 
 
@@ -2849,29 +2732,23 @@ function previousSong(){
         return;
     }
 
-
     let index =
         songs.findIndex(
             song =>
             song.id === currentSongId
         );
 
-
     index--;
-
 
     if(index < 0){
 
         index =
             songs.length - 1;
-
     }
-
 
     playSong(
         songs[index].id
     );
-
 }
 
 
@@ -2885,7 +2762,6 @@ function updatePlayButtons(){
         document.querySelectorAll(
             ".play-btn"
         );
-
 
     buttons.forEach(button => {
 
@@ -2905,7 +2781,6 @@ function updatePlayButtons(){
                 `.song-card[data-id="${currentSongId}"]`
             );
 
-
         if(card){
 
             const button =
@@ -2913,16 +2788,12 @@ function updatePlayButtons(){
                     ".play-btn"
                 );
 
-
             if(button){
 
                 button.textContent =
                     "⏸";
-
             }
-
         }
-
 
         mainPlayBtn.textContent =
             "⏸";
@@ -2931,9 +2802,7 @@ function updatePlayButtons(){
 
         mainPlayBtn.textContent =
             "▶";
-
     }
-
 }
 
 
@@ -2959,18 +2828,14 @@ function updatePlayingCard(){
             `.song-card[data-id="${currentSongId}"]`
         );
 
-
     if(activeCard){
 
         activeCard.classList.add(
             "playing"
         );
-
     }
 
-
     updatePlayButtons();
-
 }
 
 
@@ -2981,11 +2846,8 @@ function updatePlayingCard(){
 function updateProgress(){
 
     if(!currentAudio){
-
         return;
-
     }
-
 
     const percent =
         (
@@ -2993,18 +2855,15 @@ function updateProgress(){
             currentAudio.duration
         ) * 100;
 
-
     progress.value =
         isNaN(percent)
         ? 0
         : percent;
 
-
     currentTime.textContent =
         formatTime(
             currentAudio.currentTime
         );
-
 }
 
 
@@ -3017,11 +2876,8 @@ progress.addEventListener(
     function(){
 
         if(!currentAudio){
-
             return;
-
         }
-
 
         if(
             !isNaN(
@@ -3034,7 +2890,6 @@ progress.addEventListener(
                     progress.value / 100
                 ) *
                 currentAudio.duration;
-
         }
 
     }
@@ -3053,7 +2908,6 @@ volume.addEventListener(
 
             currentAudio.volume =
                 Number(volume.value);
-
         }
 
     }
@@ -3072,28 +2926,23 @@ function formatTime(seconds){
     ){
 
         return "0:00";
-
     }
-
 
     const minutes =
         Math.floor(
             seconds / 60
         );
 
-
     const secs =
         Math.floor(
             seconds % 60
         );
-
 
     return (
         minutes +
         ":" +
         String(secs).padStart(2,"0")
     );
-
 }
 
 
@@ -3121,7 +2970,6 @@ function setFilter(
     currentFilter =
         type;
 
-
     document
     .querySelectorAll(".filter")
     .forEach(btn => {
@@ -3132,14 +2980,11 @@ function setFilter(
 
     });
 
-
     button.classList.add(
         "active"
     );
 
-
     renderSongs();
-
 }
 
 
@@ -3154,9 +2999,7 @@ function focusSearch(){
             "search"
         );
 
-
     search.focus();
-
 
     window.scrollTo({
 
@@ -3165,7 +3008,6 @@ function focusSearch(){
         behavior:"smooth"
 
     });
-
 }
 
 
@@ -3177,8 +3019,31 @@ function goHome(){
 
     window.location.href =
         "index.html";
-
 }
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+document
+.getElementById("mobileMenu")
+.addEventListener(
+    "click",
+    goHome
+);
+
+
+/* =========================================================
+   MOBILE SEARCH BUTTON
+========================================================= */
+
+document
+.querySelector(".mobile-search-btn")
+.addEventListener(
+    "click",
+    focusSearch
+);
 
 
 /* =========================================================
@@ -3188,7 +3053,6 @@ function goHome(){
 renderSongs();
 
 </script>
-
 
 </body>
 
