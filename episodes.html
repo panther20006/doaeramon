@@ -8,1245 +8,31 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Doraemon World - All Episodes</title>
+    <title>Doraemon World - Episodes</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Main CSS -->
 
-    <style>
 
-        /* =========================================================
-           DORAEMON WORLD
-           EPISODES PAGE
-        ========================================================= */
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2fbff;
-            color: #073d67;
-        }
-
-        /* =========================================================
-           TOP NAVBAR
-        ========================================================= */
-
-        .topbar {
-            width: 100%;
-            height: 70px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 5%;
-
-            background: #064d87;
-            color: white;
-
-            position: sticky;
-            top: 0;
-            z-index: 5000;
-
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-        }
-
-        .logo {
-            color: white;
-            text-decoration: none;
-
-            font-size: 20px;
-            font-weight: 900;
-
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        #nav {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        #nav a {
-            color: white;
-            text-decoration: none;
-
-            padding: 10px 12px;
-
-            border-radius: 20px;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            transition: 0.25s;
-        }
-
-        #nav a:hover,
-        #nav a.active {
-            background: #20a8f5;
-        }
-
-        .menu-btn {
-            display: none;
-
-            border: none;
-            background: transparent;
-            color: white;
-
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* =========================================================
-           EPISODES PAGE
-        ========================================================= */
-
-        .episodes-page {
-            width: 100%;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .episodes-hero {
-            min-height: 330px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 70px 20px;
-
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(32,168,245,0.35),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #064d87,
-                    #087dcc,
-                    #20a8f5
-                );
-
-            color: white;
-        }
-
-        .episodes-hero-content {
-            max-width: 850px;
-        }
-
-        .episodes-hero h1 {
-            margin: 0 0 15px;
-
-            font-size: clamp(40px, 7vw, 75px);
-
-            font-weight: 900;
-        }
-
-        .episodes-hero p {
-            margin: 0;
-
-            font-size: 16px;
-            line-height: 1.7;
-
-            opacity: 0.95;
-        }
-
-        /* =========================================================
-           STATS
-        ========================================================= */
-
-        .episode-stats {
-            width: min(1100px, 90%);
-
-            margin: -45px auto 45px;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-
-            position: relative;
-            z-index: 5;
-        }
-
-        .episode-stat {
-            padding: 25px;
-
-            text-align: center;
-
-            background: white;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 15px 40px rgba(0,70,120,0.12);
-        }
-
-        .episode-stat strong {
-            display: block;
-
-            color: #087dcc;
-
-            font-size: 30px;
-            font-weight: 900;
-        }
-
-        .episode-stat span {
-            display: block;
-
-            margin-top: 5px;
-
-            color: #7891a2;
-
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        /* =========================================================
-           CONTROLS
-        ========================================================= */
-
-        .episode-controls {
-            width: min(1150px, 90%);
-
-            margin: 0 auto 35px;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-
-            justify-content: center;
-        }
-
-        .episode-search {
-            flex: 1;
-            min-width: 250px;
-
-            padding: 15px 20px;
-
-            border: 2px solid #d7edf8;
-            border-radius: 30px;
-
-            outline: none;
-
-            background: white;
-
-            color: #073d67;
-
-            font-size: 14px;
-        }
-
-        .episode-search:focus {
-            border-color: #20a8f5;
-        }
-
-        .episode-year-select {
-            padding: 15px 20px;
-
-            border: 2px solid #d7edf8;
-            border-radius: 30px;
-
-            outline: none;
-
-            background: white;
-
-            color: #073d67;
-
-            font-weight: 700;
-
-            cursor: pointer;
-        }
-
-        /* =========================================================
-           FILTER BUTTONS
-        ========================================================= */
-
-        .episode-filters {
-            width: min(1150px, 90%);
-
-            margin: 0 auto 35px;
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .episode-filter {
-            border: none;
-
-            padding: 11px 18px;
-
-            border-radius: 25px;
-
-            background: white;
-
-            color: #267197;
-
-            font-size: 13px;
-            font-weight: 800;
-
-            cursor: pointer;
-
-            box-shadow: 0 5px 15px rgba(0,70,120,0.08);
-
-            transition: 0.25s;
-        }
-
-        .episode-filter:hover,
-        .episode-filter.active {
-            background: #079fe6;
-            color: white;
-        }
-
-        /* =========================================================
-           RESULTS
-        ========================================================= */
-
-        .episode-results {
-            width: min(1150px, 90%);
-
-            margin: 0 auto 25px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .episode-results h2 {
-            margin: 0;
-
-            font-size: 22px;
-
-            color: #073d67;
-        }
-
-        #resultCount {
-            color: #079fe6;
-            font-weight: 800;
-            font-size: 13px;
-        }
-
-        /* =========================================================
-           EPISODE GRID
-        ========================================================= */
-
-        .episode-grid {
-            width: min(1150px, 90%);
-
-            margin: 0 auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
-            gap: 22px;
-        }
-
-        /* =========================================================
-           EPISODE CARD
-        ========================================================= */
-
-        .episode-card {
-            overflow: hidden;
-
-            border-radius: 20px;
-
-            background: white;
-
-            box-shadow:
-                0 10px 30px rgba(0,70,120,0.10);
-
-            cursor: pointer;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .episode-card:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 20px 45px rgba(0,90,150,0.18);
-        }
-
-        /* =========================================================
-           EPISODE IMAGE
-        ========================================================= */
-
-        .episode-image {
-            height: 220px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #b8ebff,
-                    #edfaff
-                );
-        }
-
-        .episode-image::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    transparent 45%,
-                    rgba(0,0,0,0.25)
-                );
-
-            z-index: 2;
-
-            pointer-events: none;
-        }
-
-        .episode-cover-thumb {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            position: relative;
-
-            z-index: 1;
-
-            transition: transform 0.4s ease;
-        }
-
-        .episode-card:hover
-        .episode-cover-thumb {
-            transform: scale(1.05);
-        }
-
-        .episode-image-icon {
-            font-size: 70px;
-
-            position: relative;
-
-            z-index: 3;
-        }
-
-        .episode-number {
-            position: absolute;
-
-            top: 12px;
-            left: 12px;
-
-            z-index: 4;
-
-            padding: 7px 11px;
-
-            border-radius: 20px;
-
-            background: #079fe6;
-
-            color: white;
-
-            font-size: 11px;
-            font-weight: 900;
-        }
-
-        .episode-year-tag {
-            position: absolute;
-
-            top: 12px;
-            right: 12px;
-
-            z-index: 4;
-
-            padding: 7px 10px;
-
-            border-radius: 20px;
-
-            background: rgba(255,255,255,0.92);
-
-            color: #073d67;
-
-            font-size: 11px;
-            font-weight: 900;
-        }
-
-        /* =========================================================
-           EPISODE CONTENT
-        ========================================================= */
-
-        .episode-content {
-            padding: 18px;
-        }
-
-        .episode-content h3 {
-            margin: 0 0 8px;
-
-            color: #073d67;
-
-            font-size: 16px;
-            line-height: 1.4;
-        }
-
-        .episode-content p {
-            margin: 0 0 15px;
-
-            min-height: 35px;
-
-            color: #7b94a4;
-
-            font-size: 11px;
-            line-height: 1.5;
-        }
-
-        .episode-meta {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .episode-series {
-            padding: 6px 10px;
-
-            border-radius: 15px;
-
-            background: #eaf8ff;
-
-            color: #087dcc;
-
-            font-size: 10px;
-            font-weight: 900;
-        }
-
-        .episode-arrow {
-            color: #079fe6;
-
-            font-size: 22px;
-            font-weight: 900;
-        }
-
-        /* =========================================================
-           LOADING
-        ========================================================= */
-
-        #episodesLoading {
-            width: min(1150px, 90%);
-
-            margin: 50px auto;
-
-            text-align: center;
-
-            color: #079fe6;
-
-            font-weight: 800;
-        }
-
-        /* =========================================================
-           NO RESULTS
-        ========================================================= */
-
-        #noResults {
-            display: none;
-
-            width: min(700px, 90%);
-
-            margin: 50px auto;
-
-            padding: 50px 20px;
-
-            text-align: center;
-
-            background: white;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 10px 35px rgba(0,70,120,0.10);
-        }
-
-        #noResults h3 {
-            margin: 0 0 10px;
-
-            color: #073d67;
-        }
-
-        #noResults p {
-            color: #7891a2;
-        }
-
-        /* =========================================================
-           PAGINATION
-        ========================================================= */
-
-        #pagination {
-            width: min(1150px, 90%);
-
-            margin: 40px auto 60px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            flex-wrap: wrap;
-        }
-
-        #pagination button {
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: white;
-
-            color: #087dcc;
-
-            font-weight: 900;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 5px 15px rgba(0,70,120,0.08);
-        }
-
-        #pagination button.active,
-        #pagination button:hover {
-            background: #079fe6;
-            color: white;
-        }
-
-        /* =========================================================
-           EPISODE DETAIL / COVER PAGE
-        ========================================================= */
-
-        .episode-detail-page {
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 9999;
-
-            display: none;
-
-            overflow-y: auto;
-
-            padding: 50px 6%;
-
-            background:
-                radial-gradient(
-                    circle at top left,
-                    rgba(7,159,230,0.20),
-                    transparent 35%
-                ),
-                rgba(3,24,40,0.96);
-
-            backdrop-filter: blur(12px);
-        }
-
-        .episode-detail-page.show {
-            display: block;
-        }
-
-        /* =========================================================
-           CLOSE BUTTON
-        ========================================================= */
-
-        .episode-detail-close {
-            position: fixed;
-
-            top: 25px;
-            right: 30px;
-
-            width: 48px;
-            height: 48px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,0.96);
-
-            color: #073d67;
-
-            font-size: 22px;
-            font-weight: 900;
-
-            cursor: pointer;
-
-            z-index: 10001;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.25);
-
-            transition: 0.25s;
-        }
-
-        .episode-detail-close:hover {
-            transform: rotate(90deg) scale(1.08);
-
-            background: #079fe6;
-
-            color: white;
-        }
-
-        /* =========================================================
-           DETAIL CONTAINER
-        ========================================================= */
-
-        .episode-detail-container {
-            width: min(1150px, 100%);
-
-            min-height: 650px;
-
-            margin: 40px auto;
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(320px, 430px)
-                1fr;
-
-            gap: 45px;
-
-            align-items: center;
-
-            padding: 35px;
-
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.99),
-                    rgba(239,250,255,0.99)
-                );
-
-            box-shadow:
-                0 30px 80px rgba(0,0,0,0.35);
-        }
-
-        /* =========================================================
-           DETAIL COVER
-        ========================================================= */
-
-        .episode-detail-cover {
-            position: relative;
-
-            width: 100%;
-
-            min-height: 540px;
-
-            overflow: hidden;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #b8ebff,
-                    #edfaff
-                );
-
-            box-shadow:
-                0 20px 45px rgba(0,80,130,0.20);
-        }
-
-        .episode-detail-cover img {
-            width: 100%;
-
-            height: 100%;
-
-            min-height: 540px;
-
-            display: block;
-
-            object-fit: cover;
-        }
-
-        .episode-detail-cover-fallback {
-            display: none;
-
-            min-height: 540px;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 110px;
-        }
-
-        .episode-detail-badge {
-            position: absolute;
-
-            top: 18px;
-            left: 18px;
-
-            z-index: 5;
-
-            padding: 9px 14px;
-
-            border-radius: 30px;
-
-            background: #079fe6;
-
-            color: white;
-
-            font-size: 12px;
-            font-weight: 900;
-
-            letter-spacing: 1px;
-
-            box-shadow:
-                0 8px 20px rgba(0,80,130,0.25);
-        }
-
-        /* =========================================================
-           DETAIL INFO
-        ========================================================= */
-
-        .episode-detail-info {
-            padding: 10px 10px 10px 0;
-        }
-
-        .episode-detail-info h1 {
-            margin: 0 0 12px;
-
-            color: #073d67;
-
-            font-size: clamp(32px, 4vw, 55px);
-
-            line-height: 1.1;
-        }
-
-        .episode-detail-japanese {
-            margin: 0 0 22px;
-
-            color: #079fe6;
-
-            font-size: 16px;
-
-            font-weight: 700;
-
-            line-height: 1.6;
-        }
-
-        .episode-detail-meta {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-bottom: 25px;
-        }
-
-        .episode-detail-meta span {
-            padding: 9px 13px;
-
-            border-radius: 20px;
-
-            background: #eaf8ff;
-
-            color: #166084;
-
-            font-size: 12px;
-
-            font-weight: 800;
-        }
-
-        .episode-detail-description {
-            margin: 0 0 28px;
-
-            color: #617789;
-
-            font-size: 15px;
-
-            line-height: 1.9;
-        }
-
-        /* =========================================================
-           WATCH BUTTON
-        ========================================================= */
-
-        .episode-watch-btn {
-            border: none;
-
-            padding: 14px 24px;
-
-            border-radius: 30px;
-
-            background: #079fe6;
-
-            color: white;
-
-            font-size: 14px;
-
-            font-weight: 800;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 12px 25px rgba(7,159,230,0.25);
-
-            transition: 0.25s;
-        }
-
-        .episode-watch-btn:hover {
-            transform: translateY(-3px);
-
-            background: #078bd1;
-
-            box-shadow:
-                0 17px 30px rgba(7,159,230,0.32);
-        }
-
-        /* =========================================================
-           VIDEO
-        ========================================================= */
-
-        .episode-video-box {
-            display: none;
-
-            margin-top: 28px;
-
-            padding: 12px;
-
-            border-radius: 20px;
-
-            background: #061d2d;
-
-            box-shadow:
-                0 15px 40px rgba(0,0,0,0.25);
-        }
-
-        .episode-video {
-            display: block;
-
-            width: 100%;
-
-            max-height: 450px;
-
-            border-radius: 13px;
-
-            background: black;
-        }
-
-        /* =========================================================
-           MOBILE BOTTOM NAV
-        ========================================================= */
-
-        .mobile-bottom-nav {
-            display: none;
-        }
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 1000px) {
-
-            .episode-grid {
-                grid-template-columns:
-                    repeat(3, minmax(0, 1fr));
-            }
-
-            #nav a {
-                padding: 9px 8px;
-                font-size: 11px;
-            }
-
-        }
-
-        @media (max-width: 800px) {
-
-            /* NAV */
-
-            .topbar {
-                height: 60px;
-
-                padding: 0 18px;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            #nav {
-                display: none;
-
-                position: absolute;
-
-                top: 60px;
-                left: 0;
-                right: 0;
-
-                padding: 12px;
-
-                flex-direction: column;
-
-                background: #064d87;
-            }
-
-            #nav.show {
-                display: flex;
-            }
-
-            #nav a {
-                width: 100%;
-
-                text-align: center;
-
-                padding: 12px;
-            }
-
-            /* HERO */
-
-            .episodes-hero {
-                min-height: 280px;
-
-                padding: 55px 20px;
-            }
-
-            .episodes-hero h1 {
-                font-size: 48px;
-            }
-
-            /* STATS */
-
-            .episode-stats {
-                width: 92%;
-
-                grid-template-columns:
-                    repeat(3, 1fr);
-
-                gap: 10px;
-
-                margin-top: -30px;
-            }
-
-            .episode-stat {
-                padding: 18px 8px;
-            }
-
-            .episode-stat strong {
-                font-size: 22px;
-            }
-
-            .episode-stat span {
-                font-size: 10px;
-            }
-
-            /* GRID */
-
-            .episode-grid {
-                width: 92%;
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 15px;
-            }
-
-            .episode-image {
-                height: 190px;
-            }
-
-            /* DETAIL */
-
-            .episode-detail-page {
-                padding: 25px 4%;
-            }
-
-            .episode-detail-container {
-                grid-template-columns: 1fr;
-
-                gap: 25px;
-
-                padding: 20px;
-
-                margin: 25px auto;
-            }
-
-            .episode-detail-cover {
-                min-height: 380px;
-            }
-
-            .episode-detail-cover img {
-                min-height: 380px;
-            }
-
-            .episode-detail-cover-fallback {
-                min-height: 380px;
-            }
-
-            .episode-detail-info {
-                padding: 5px;
-            }
-
-            .episode-detail-info h1 {
-                font-size: 32px;
-            }
-
-            .episode-detail-close {
-                top: 12px;
-                right: 12px;
-
-                width: 42px;
-                height: 42px;
-
-                font-size: 18px;
-            }
-
-        }
-
-        @media (max-width: 500px) {
-
-            .episodes-hero h1 {
-                font-size: 40px;
-            }
-
-            .episodes-hero p {
-                font-size: 13px;
-            }
-
-            .episode-controls {
-                width: 92%;
-            }
-
-            .episode-search {
-                min-width: 100%;
-            }
-
-            .episode-year-select {
-                width: 100%;
-            }
-
-            .episode-results {
-                width: 92%;
-            }
-
-            .episode-results h2 {
-                font-size: 18px;
-            }
-
-            .episode-grid {
-                width: 92%;
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 12px;
-            }
-
-            .episode-image {
-                height: 155px;
-            }
-
-            .episode-content {
-                padding: 12px;
-            }
-
-            .episode-content h3 {
-                font-size: 13px;
-            }
-
-            .episode-content p {
-                font-size: 10px;
-            }
-
-            .episode-number,
-            .episode-year-tag {
-                font-size: 9px;
-
-                padding: 5px 7px;
-            }
-
-            .episode-detail-container {
-                border-radius: 22px;
-
-                padding: 15px;
-            }
-
-            .episode-detail-cover {
-                min-height: 330px;
-            }
-
-            .episode-detail-cover img {
-                min-height: 330px;
-            }
-
-            .episode-detail-cover-fallback {
-                min-height: 330px;
-            }
-
-            .episode-detail-description {
-                font-size: 14px;
-            }
-
-            .episode-watch-btn {
-                width: 100%;
-            }
-
-        }
-
-    </style>
+    <!-- Episodes CSS -->
+    <link rel="stylesheet" href="css/episodes.css">
+        <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
 
-<!-- =========================================================
-     TOP NAVBAR
-========================================================= -->
+
+<!-- =====================================================
+     DESKTOP TOP NAVBAR
+===================================================== -->
 
 <header class="topbar">
 
-    <a href="index.html"
-       class="logo">
+    <div class="logo">
         DORAEMON 🌐
-    </a>
+    </div>
 
-    <button id="menu"
-            class="menu-btn"
-            aria-label="Open Menu">
-        ☰
-    </button>
 
     <nav id="nav">
 
@@ -1258,8 +44,7 @@
             🎬 Movies
         </a>
 
-        <a href="episodes.html"
-           class="active">
+        <a href="episodes.html" class="active">
             📺 Episodes
         </a>
 
@@ -1292,1374 +77,1387 @@
 </header>
 
 
-<!-- =========================================================
-     MAIN EPISODES PAGE
-========================================================= -->
+
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
+
+<header class="mobile-header">
+
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Open menu">
+
+        ☰
+
+    </button>
+
+
+    <div class="mobile-logo">
+        DORAEMON 🔵
+    </div>
+
+
+    <button
+        class="mobile-search-btn"
+        id="mobileSearchBtn"
+        aria-label="Search">
+
+        🔍
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu-panel" id="mobileMenuPanel">
+
+    <a href="index.html">
+        🏠 Home
+    </a>
+
+    <a href="movies.html">
+        🎬 Movies
+    </a>
+
+    <a href="episodes.html" class="active">
+        📺 Episodes
+    </a>
+
+    <a href="characters.html">
+        👥 Characters
+    </a>
+
+    <a href="wallpapers.html">
+        🖼️ Wallpapers
+    </a>
+
+    <a href="music.html">
+        🎵 Music
+    </a>
+
+    <a href="gallery.html">
+        📸 Gallery
+    </a>
+
+    <a href="gadgets.html">
+        🪄 Gadgets
+    </a>
+
+    <a href="test.html">
+        📝 Test
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     EPISODES PAGE
+===================================================== -->
 
 <main class="episodes-page">
 
 
-    <!-- HERO -->
+    <!-- =================================================
+         PAGE HEADER
+    ================================================== -->
 
-    <section class="episodes-hero">
+    <section class="episodes-header">
 
-        <div class="episodes-hero-content">
-
-            <h1>
-                All Episodes
-            </h1>
-
-            <p>
-                Explore Doraemon episodes, adventures,
-                special stories and unforgettable moments.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- STATS -->
-
-    <section class="episode-stats">
-
-        <div class="episode-stat">
-
-            <strong id="totalEpisodes">
-                0
-            </strong>
-
-            <span>
-                Total Episodes
-            </span>
-
-        </div>
-
-
-        <div class="episode-stat">
-
-            <strong id="totalYears">
-                0
-            </strong>
-
-            <span>
-                Years
-            </span>
-
-        </div>
-
-
-        <div class="episode-stat">
-
-            <strong>
-                ∞
-            </strong>
-
-            <span>
-                Adventures
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- SEARCH + YEAR -->
-
-    <section class="episode-controls">
-
-        <input
-            type="text"
-            id="episodeSearch"
-            class="episode-search"
-            placeholder="🔍 Search episodes..."
-        >
-
-
-        <select
-            id="yearSelect"
-            class="episode-year-select">
-
-            <option value="all">
-                All Years
-            </option>
-
-        </select>
-
-    </section>
-
-
-    <!-- FILTERS -->
-
-    <section class="episode-filters">
-
-        <button
-            class="episode-filter active"
-            data-filter="all">
-
-            All
-
-        </button>
-
-        <button
-            class="episode-filter"
-            data-filter="classic">
-
-            ⭐ Classic
-
-        </button>
-
-        <button
-            class="episode-filter"
-            data-filter="new">
-
-            ✨ 2005+
-
-        </button>
-
-        <button
-            class="episode-filter"
-            data-filter="special">
-
-            🎉 Special
-
-        </button>
-
-    </section>
-
-
-    <!-- RESULT COUNT -->
-
-    <section class="episode-results">
-
-        <h2>
-            Episodes
-        </h2>
-
-        <span id="resultCount">
-            0 Episodes
+        <span>
+            DORAEMON WORLD
         </span>
 
-    </section>
-
-
-    <!-- LOADING -->
-
-    <div id="episodesLoading">
-
-        Loading episodes...
-
-    </div>
-
-
-    <!-- EPISODE GRID -->
-
-    <section
-        class="episode-grid"
-        id="episodeGrid">
-    </section>
-
-
-    <!-- NO RESULTS -->
-
-    <section id="noResults">
-
-        <h3>
-            😔 No Episodes Found
-        </h3>
+        <h1>
+            📺 Doraemon Episodes
+        </h1>
 
         <p>
-            Try another search or select a different year.
+            Explore the amazing world of Doraemon episodes,
+            adventures, friends, gadgets and unforgettable
+            moments with Nobita and everyone.
         </p>
 
     </section>
 
 
-    <!-- PAGINATION -->
 
-    <div id="pagination"></div>
+    <!-- =================================================
+         SEARCH + FILTER
+    ================================================== -->
+
+    <section class="episode-controls">
+
+
+        <div class="episode-search">
+
+            <input
+                type="text"
+                id="episodeSearch"
+                placeholder="Search episodes..."
+                autocomplete="off">
+
+        </div>
+
+
+        <select
+            class="episode-filter"
+            id="episodeFilter">
+
+            <option value="all">
+                All Episodes
+            </option>
+
+            <option value="classic">
+                Classic
+            </option>
+
+            <option value="new">
+                New Episodes
+            </option>
+
+            <option value="special">
+                Specials
+            </option>
+
+        </select>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         EPISODE GRID
+    ================================================== -->
+
+    <section class="episodes-grid" id="episodesGrid">
+
+
+
+        <!-- =============================================
+             EPISODE 01
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Nobita and Doraemon First Adventure"
+            data-category="classic">
+
+
+            <a href="episode-details/episode-01.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/episodes/covers/episode-01.jpg"
+                        alt="Doraemon Episode 1"
+                        loading="lazy">
+
+
+                    <div class="episode-number">
+                        EP 01
+                    </div>
+
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Nobita and Doraemon's First Adventure
+                    </h2>
+
+                    <p>
+                        Doraemon arrives from the future
+                        and begins his amazing journey with Nobita.
+                    </p>
+
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.2
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 02
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Nobita's Homework"
+            data-category="classic">
+
+            <a href="episode-02.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/episodes/covers/episode-02.jpg"
+                        alt="Doraemon Episode 2"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 02
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Nobita's Homework
+                    </h2>
+
+                    <p>
+                        Nobita tries to escape from his homework
+                        with the help of Doraemon's gadgets.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 03
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Anywhere Door"
+            data-category="classic">
+
+            <a href="episode-03.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-03.jpg"
+                        alt="Doraemon Episode 3"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 03
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        The Anywhere Door
+                    </h2>
+
+                    <p>
+                        Nobita discovers one of Doraemon's
+                        most famous gadgets.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 04
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Take-Copter Adventure"
+            data-category="classic">
+
+            <a href="episode-04.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-04.jpg"
+                        alt="Doraemon Episode 4"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 04
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Take-Copter Adventure
+                    </h2>
+
+                    <p>
+                        Nobita learns how to fly using
+                        Doraemon's Take-Copter.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.9
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 05
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Time Machine Adventure"
+            data-category="classic">
+
+            <a href="episode-05.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-05.jpg"
+                        alt="Doraemon Episode 5"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 05
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Time Machine Adventure
+                    </h2>
+
+                    <p>
+                        Nobita travels through time and
+                        gets into an unexpected adventure.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.1
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 06
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Memory Bread"
+            data-category="classic">
+
+            <a href="episode-06.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-06.jpg"
+                        alt="Doraemon Episode 6"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 06
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Memory Bread
+                    </h2>
+
+                    <p>
+                        Nobita uses Memory Bread to prepare
+                        for his school examination.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.3
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 07
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Small Light"
+            data-category="classic">
+
+            <a href="episode-07.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-07.jpg"
+                        alt="Doraemon Episode 7"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 07
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        The Small Light
+                    </h2>
+
+                    <p>
+                        Doraemon introduces Nobita to
+                        another amazing gadget.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.7
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 08
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Big Light"
+            data-category="classic">
+
+            <a href="episode-08.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-08.jpg"
+                        alt="Doraemon Episode 8"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 08
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        The Big Light
+                    </h2>
+
+                    <p>
+                        Nobita experiments with a gadget
+                        that can make objects bigger.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 09
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Time Furoshiki"
+            data-category="classic">
+
+            <a href="episode-09.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-09.jpg"
+                        alt="Doraemon Episode 9"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 09
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Time Furoshiki
+                    </h2>
+
+                    <p>
+                        A mysterious cloth gives Nobita
+                        the power to change an object's age.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.9
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 10
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Gian's Song"
+            data-category="classic">
+
+            <a href="episode-10.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-10.jpg"
+                        alt="Doraemon Episode 10"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 10
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Gian's Song
+                    </h2>
+
+                    <p>
+                        Gian decides to show everyone
+                        his amazing singing talent.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            1979
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 11
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Shizuka's Birthday"
+            data-category="new">
+
+            <a href="episode-11.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-11.jpg"
+                        alt="Doraemon Episode 11"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 11
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Shizuka's Birthday
+                    </h2>
+
+                    <p>
+                        Nobita and his friends plan
+                        something special for Shizuka.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            2005
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.1
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 12
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Nobita's New Friend"
+            data-category="new">
+
+            <a href="episode-12.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-12.jpg"
+                        alt="Doraemon Episode 12"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 12
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Nobita's New Friend
+                    </h2>
+
+                    <p>
+                        Nobita meets someone new and
+                        discovers an unexpected secret.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            2005
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 13
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Doraemon's Birthday"
+            data-category="special">
+
+            <a href="episode-13.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-13.jpg"
+                        alt="Doraemon Episode 13"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 13
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Doraemon's Birthday
+                    </h2>
+
+                    <p>
+                        Nobita prepares a special surprise
+                        for Doraemon's birthday.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            Special
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.5
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 14
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Nobita's Adventure"
+            data-category="new">
+
+            <a href="episode-14.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-14.jpg"
+                        alt="Doraemon Episode 14"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 14
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Nobita's Big Adventure
+                    </h2>
+
+                    <p>
+                        Nobita and Doraemon go on another
+                        exciting gadget-filled adventure.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            2006
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 15
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="The Future Museum"
+            data-category="special">
+
+            <a href="episode-15.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-15.jpg"
+                        alt="Doraemon Episode 15"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 15
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        The Future Museum
+                    </h2>
+
+                    <p>
+                        Doraemon and Nobita visit an amazing
+                        museum from the future.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            Special
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 9.2
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- =============================================
+             EPISODE 16
+        ============================================== -->
+
+        <article
+            class="episode-card"
+            data-title="Nobita and the Future"
+            data-category="new">
+
+            <a href="episode-16.html">
+
+                <div class="episode-cover">
+
+                    <img
+                        src="assets/images/episodes/episode-16.jpg"
+                        alt="Doraemon Episode 16"
+                        loading="lazy">
+
+                    <div class="episode-number">
+                        EP 16
+                    </div>
+
+                    <div class="episode-play">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h2>
+                        Nobita and the Future
+                    </h2>
+
+                    <p>
+                        A journey into the future changes
+                        Nobita's ordinary day.
+                    </p>
+
+                    <div class="episode-meta">
+
+                        <span class="episode-year">
+                            2006
+                        </span>
+
+                        <span class="episode-rating">
+                            ⭐ 8.9
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         NO RESULT
+    ================================================== -->
+
+    <div class="no-result" id="noResult">
+
+        😔
+
+        <br><br>
+
+        No episodes found.
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="episodes-footer">
+
+        <p>
+            💙 DORAEMON WORLD
+        </p>
+
+        <p>
+            Explore • Watch • Enjoy
+        </p>
+
+    </footer>
 
 
 </main>
 
 
-<!-- =========================================================
-     EPISODE DETAIL / COVER PAGE
-========================================================= -->
 
-<section
-    class="episode-detail-page"
-    id="episodeDetailPage">
-
-
-    <!-- CLOSE -->
-
-    <button
-        class="episode-detail-close"
-        id="episodeDetailClose"
-        aria-label="Close Episode">
-
-        ✕
-
-    </button>
-
-
-    <!-- DETAIL CONTAINER -->
-
-    <div class="episode-detail-container">
-
-
-        <!-- COVER -->
-
-        <div class="episode-detail-cover">
-
-            <span
-                class="episode-detail-badge"
-                id="detailEpisodeNumber">
-
-                EPISODE 01
-
-            </span>
-
-
-            <img
-                id="detailCoverImage"
-                src=""
-                alt="Doraemon Episode Cover">
-
-
-            <div
-                class="episode-detail-cover-fallback"
-                id="detailCoverFallback">
-
-                📺
-
-            </div>
-
-        </div>
-
-
-        <!-- INFO -->
-
-        <div class="episode-detail-info">
-
-
-            <h1 id="detailTitle">
-
-                Doraemon Episode
-
-            </h1>
-
-
-            <p
-                class="episode-detail-japanese"
-                id="detailJapanese">
-            </p>
-
-
-            <!-- META -->
-
-            <div class="episode-detail-meta">
-
-                <span id="detailDate">
-                    📅 Date
-                </span>
-
-                <span id="detailYear">
-                    📆 Year
-                </span>
-
-                <span id="detailSeries">
-                    ✨ Series
-                </span>
-
-            </div>
-
-
-            <!-- DESCRIPTION -->
-
-            <p
-                class="episode-detail-description"
-                id="detailDescription">
-
-            </p>
-
-
-            <!-- WATCH -->
-
-            <button
-                class="episode-watch-btn"
-                id="episodeWatchButton">
-
-                ▶ Watch Episode
-
-            </button>
-
-
-            <!-- VIDEO -->
-
-            <div
-                class="episode-video-box"
-                id="episodeVideoBox">
-
-                <video
-                    class="episode-video"
-                    id="episodeVideo"
-                    controls
-                    playsinline>
-                </video>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
+<!-- =====================================================
      MOBILE BOTTOM NAV
-========================================================= -->
+===================================================== -->
 
 <nav class="mobile-bottom-nav">
 
-    <a href="index.html">
-        🏠
-        <span>Home</span>
+    <a
+        href="index.html"
+        class="bottom-nav-item">
+
+        <span>🏠</span>
+
+        <small>
+            Home
+        </small>
+
     </a>
 
-    <a href="movies.html">
-        🎬
-        <span>Movies</span>
+
+    <a
+        href="movies.html"
+        class="bottom-nav-item">
+
+        <span>🎬</span>
+
+        <small>
+            Movies
+        </small>
+
     </a>
 
-    <a href="episodes.html"
-       class="active">
-        📺
-        <span>Episodes</span>
+
+    <a
+        href="episodes.html"
+        class="bottom-nav-item active">
+
+        <span>📺</span>
+
+        <small>
+            Episodes
+        </small>
+
     </a>
 
-    <a href="characters.html">
-        👥
-        <span>Characters</span>
+
+    <a
+        href="characters.html"
+        class="bottom-nav-item">
+
+        <span>👥</span>
+
+        <small>
+            Characters
+        </small>
+
     </a>
 
-    <a href="music.html">
-        🎵
-        <span>Music</span>
+
+    <a
+        href="music.html"
+        class="bottom-nav-item">
+
+        <span>🎵</span>
+
+        <small>
+            Music
+        </small>
+
     </a>
 
 </nav>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
-<footer>
-
-    <p>
-        © 2026 Doraemon World.
-        Fan-made website.
-    </p>
-
-</footer>
-
-
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script src="js/script.js"></script>
 
-<script src="js/episodes.js"></script>
-
-
-<!-- =========================================================
-     EPISODES PAGE JAVASCRIPT
-========================================================= -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================================
-       MENU
-    ===================================================== */
+    /* ================================================
+       MOBILE MENU
+    ================================================= */
 
-    const menu =
-        document.getElementById("menu");
+    const menuBtn =
+        document.getElementById("mobileMenuBtn");
 
-    const nav =
-        document.getElementById("nav");
+    const menuPanel =
+        document.getElementById("mobileMenuPanel");
 
 
-    if (menu && nav) {
+    if (menuBtn && menuPanel) {
 
-        menu.addEventListener("click", function () {
+        menuBtn.addEventListener("click", function () {
 
-            nav.classList.toggle("show");
+            menuPanel.classList.toggle("active");
 
         });
 
     }
 
 
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
 
-    const grid =
-        document.getElementById("episodeGrid");
+    /* ================================================
+       EPISODE SEARCH
+    ================================================= */
 
-    const loading =
-        document.getElementById("episodesLoading");
-
-    const noResults =
-        document.getElementById("noResults");
-
-    const search =
+    const searchInput =
         document.getElementById("episodeSearch");
 
-    const yearSelect =
-        document.getElementById("yearSelect");
+    const filter =
+        document.getElementById("episodeFilter");
 
-    const resultCount =
-        document.getElementById("resultCount");
+    const cards =
+        document.querySelectorAll(".episode-card");
 
-    const pagination =
-        document.getElementById("pagination");
-
-    const totalEpisodes =
-        document.getElementById("totalEpisodes");
-
-    const totalYears =
-        document.getElementById("totalYears");
+    const noResult =
+        document.getElementById("noResult");
 
 
-    /* =====================================================
-       FILTER DATA
-    ===================================================== */
+    function filterEpisodes() {
 
-    let activeFilter = "all";
+        const searchText =
+            searchInput.value
+            .toLowerCase()
+            .trim();
 
-    let currentPage = 1;
+        const category =
+            filter.value;
 
-    const perPage = 24;
-
-    let filteredEpisodes = [];
-
-
-    /* =====================================================
-       DETAIL ELEMENTS
-    ===================================================== */
-
-    const episodeDetailPage =
-        document.getElementById(
-            "episodeDetailPage"
-        );
-
-    const episodeDetailClose =
-        document.getElementById(
-            "episodeDetailClose"
-        );
-
-    const detailCoverImage =
-        document.getElementById(
-            "detailCoverImage"
-        );
-
-    const detailCoverFallback =
-        document.getElementById(
-            "detailCoverFallback"
-        );
-
-    const detailEpisodeNumber =
-        document.getElementById(
-            "detailEpisodeNumber"
-        );
-
-    const detailTitle =
-        document.getElementById(
-            "detailTitle"
-        );
-
-    const detailJapanese =
-        document.getElementById(
-            "detailJapanese"
-        );
-
-    const detailDate =
-        document.getElementById(
-            "detailDate"
-        );
-
-    const detailYear =
-        document.getElementById(
-            "detailYear"
-        );
-
-    const detailSeries =
-        document.getElementById(
-            "detailSeries"
-        );
-
-    const detailDescription =
-        document.getElementById(
-            "detailDescription"
-        );
-
-    const episodeWatchButton =
-        document.getElementById(
-            "episodeWatchButton"
-        );
-
-    const episodeVideoBox =
-        document.getElementById(
-            "episodeVideoBox"
-        );
-
-    const episodeVideo =
-        document.getElementById(
-            "episodeVideo"
-        );
+        let visibleCount = 0;
 
 
-    let selectedEpisode = null;
+        cards.forEach(function (card) {
 
-
-    /* =====================================================
-       CHECK EPISODES ARRAY
-    ===================================================== */
-
-    if (
-        typeof episodes === "undefined" ||
-        !Array.isArray(episodes)
-    ) {
-
-        loading.textContent =
-            "Episodes data not found.";
-
-        return;
-
-    }
-
-
-    /* =====================================================
-       INITIAL DATA
-    ===================================================== */
-
-    totalEpisodes.textContent =
-        episodes.length;
-
-
-    const years =
-        [...new Set(
-            episodes
-                .map(ep => ep.year)
-                .filter(Boolean)
-        )]
-        .sort((a, b) => b - a);
-
-
-    totalYears.textContent =
-        years.length;
-
-
-    /* =====================================================
-       YEAR LIST
-    ===================================================== */
-
-    years.forEach(year => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = year;
-
-        option.textContent = year;
-
-        yearSelect.appendChild(option);
-
-    });
-
-
-    /* =====================================================
-       ESCAPE HTML
-    ===================================================== */
-
-    function escapeHTML(value) {
-
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    /* =====================================================
-       APPLY FILTERS
-    ===================================================== */
-
-    function applyFilters() {
-
-        const searchValue =
-            search.value
-                .trim()
+            const title =
+                card.dataset.title
                 .toLowerCase();
 
+            const cardCategory =
+                card.dataset.category;
 
-        const selectedYear =
-            yearSelect.value;
 
+            const matchesSearch =
+                title.includes(searchText);
 
-        filteredEpisodes =
-            episodes.filter(episode => {
 
+            const matchesCategory =
+                category === "all" ||
+                cardCategory === category;
 
-                const matchesFilter =
-                    activeFilter === "all" ||
-                    episode.series === activeFilter;
 
+            if (
+                matchesSearch &&
+                matchesCategory
+            ) {
 
-                const matchesYear =
-                    selectedYear === "all" ||
-                    String(episode.year) ===
-                    String(selectedYear);
+                card.style.display = "block";
 
+                visibleCount++;
 
-                const searchableText = (
+            } else {
 
-                    (episode.title || "") +
-                    " " +
-                    (episode.japanese || "") +
-                    " " +
-                    (episode.description || "") +
-                    " " +
-                    (episode.year || "") +
-                    " " +
-                    (episode.no || "")
-
-                ).toLowerCase();
-
-
-                const matchesSearch =
-                    searchableText.includes(
-                        searchValue
-                    );
-
-
-                return (
-                    matchesFilter &&
-                    matchesYear &&
-                    matchesSearch
-                );
-
-            });
-
-
-        currentPage = 1;
-
-        renderEpisodes();
-
-    }
-
-
-    /* =====================================================
-       RENDER EPISODES
-    ===================================================== */
-
-    function renderEpisodes() {
-
-        grid.innerHTML = "";
-
-        const total =
-            filteredEpisodes.length;
-
-
-        resultCount.textContent =
-            `${total} Episode${total === 1 ? "" : "s"}`;
-
-
-        if (total === 0) {
-
-            noResults.style.display =
-                "block";
-
-            pagination.innerHTML =
-                "";
-
-            return;
-
-        }
-
-
-        noResults.style.display =
-            "none";
-
-
-        const start =
-            (currentPage - 1) * perPage;
-
-
-        const end =
-            start + perPage;
-
-
-        const pageEpisodes =
-            filteredEpisodes.slice(
-                start,
-                end
-            );
-
-
-        pageEpisodes.forEach(
-            episode => {
-
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-
-                card.className =
-                    "episode-card";
-
-
-                const number =
-                    episode.no ?? "—";
-
-
-                const title =
-                    episode.title ||
-                    "Untitled Episode";
-
-
-                const year =
-                    episode.year ||
-                    "—";
-
-
-                const japanese =
-                    episode.japanese ||
-                    "";
-
-
-                let icon = "📺";
-
-
-                if (
-                    episode.series ===
-                    "classic"
-                ) {
-
-                    icon = "⭐";
-
-                }
-
-
-                if (
-                    episode.series ===
-                    "new"
-                ) {
-
-                    icon = "✨";
-
-                }
-
-
-                if (
-                    episode.series ===
-                    "special"
-                ) {
-
-                    icon = "🎉";
-
-                }
-
-
-                let seriesName =
-                    "EPISODE";
-
-
-                if (
-                    episode.series ===
-                    "classic"
-                ) {
-
-                    seriesName =
-                        "CLASSIC";
-
-                }
-
-
-                else if (
-                    episode.series ===
-                    "new"
-                ) {
-
-                    seriesName =
-                        "2005+";
-
-                }
-
-
-                else if (
-                    episode.series ===
-                    "special"
-                ) {
-
-                    seriesName =
-                        "SPECIAL";
-
-                }
-
-
-                let coverHTML = "";
-
-
-                if (episode.cover) {
-
-                    coverHTML = `
-
-                        <img
-                            class="episode-cover-thumb"
-                            src="${escapeHTML(episode.cover)}"
-                            alt="${escapeHTML(title)} Cover"
-                            loading="lazy">
-
-                    `;
-
-                }
-
-                else {
-
-                    coverHTML = `
-
-                        <span
-                            class="episode-image-icon">
-
-                            ${icon}
-
-                        </span>
-
-                    `;
-
-                }
-
-
-                card.innerHTML = `
-
-                    <div class="episode-image">
-
-                        <span
-                            class="episode-number">
-
-                            EP
-                            ${escapeHTML(number)}
-
-                        </span>
-
-
-                        <span
-                            class="episode-year-tag">
-
-                            ${escapeHTML(year)}
-
-                        </span>
-
-
-                        ${coverHTML}
-
-                    </div>
-
-
-                    <div class="episode-content">
-
-                        <h3>
-                            ${escapeHTML(title)}
-                        </h3>
-
-
-                        <p>
-                            ${escapeHTML(japanese)}
-                        </p>
-
-
-                        <div class="episode-meta">
-
-                            <span
-                                class="episode-series">
-
-                                ${seriesName}
-
-                            </span>
-
-
-                            <span
-                                class="episode-arrow">
-
-                                →
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-
-                card.addEventListener(
-                    "click",
-                    function () {
-
-                        openEpisodeDetail(
-                            episode
-                        );
-
-                    }
-                );
-
-
-                grid.appendChild(card);
+                card.style.display = "none";
 
             }
-        );
-
-
-        renderPagination();
-
-    }
-
-
-    /* =====================================================
-       PAGINATION
-    ===================================================== */
-
-    function renderPagination() {
-
-        pagination.innerHTML = "";
-
-
-        const totalPages =
-            Math.ceil(
-                filteredEpisodes.length /
-                perPage
-            );
-
-
-        if (totalPages <= 1) {
-
-            return;
-
-        }
-
-
-        for (
-            let i = 1;
-            i <= totalPages;
-            i++
-        ) {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.textContent = i;
-
-
-            if (i === currentPage) {
-
-                button.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    currentPage = i;
-
-                    renderEpisodes();
-
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-
-                }
-            );
-
-
-            pagination.appendChild(
-                button
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       FILTER BUTTONS
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            ".episode-filter"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-
-                    document
-                        .querySelectorAll(
-                            ".episode-filter"
-                        )
-                        .forEach(btn => {
-
-                            btn.classList.remove(
-                                "active"
-                            );
-
-                        });
-
-
-                    this.classList.add(
-                        "active"
-                    );
-
-
-                    activeFilter =
-                        this.dataset.filter;
-
-
-                    applyFilters();
-
-                }
-            );
 
         });
 
 
-    /* =====================================================
-       SEARCH
-    ===================================================== */
+        if (noResult) {
 
-    search.addEventListener(
-        "input",
-        applyFilters
-    );
+            if (visibleCount === 0) {
 
+                noResult.style.display = "block";
 
-    /* =====================================================
-       YEAR
-    ===================================================== */
+            } else {
 
-    yearSelect.addEventListener(
-        "change",
-        applyFilters
-    );
-
-
-    /* =====================================================
-       OPEN DETAIL PAGE
-    ===================================================== */
-
-    function openEpisodeDetail(
-        episode
-    ) {
-
-        selectedEpisode =
-            episode;
-
-
-        detailCoverFallback.style.display =
-            "none";
-
-
-        detailCoverImage.style.display =
-            "block";
-
-
-        detailCoverImage.onerror =
-            function () {
-
-                detailCoverImage.style.display =
-                    "none";
-
-                detailCoverFallback.style.display =
-                    "flex";
-
-            };
-
-
-        if (episode.cover) {
-
-            detailCoverImage.src =
-                episode.cover;
-
-        }
-
-        else {
-
-            detailCoverImage.style.display =
-                "none";
-
-            detailCoverFallback.style.display =
-                "flex";
-
-        }
-
-
-        detailEpisodeNumber.textContent =
-
-            `EPISODE ${
-                String(
-                    episode.no ?? "01"
-                ).padStart(2, "0")
-            }`;
-
-
-        detailTitle.textContent =
-            episode.title ||
-            "Doraemon Episode";
-
-
-        detailJapanese.textContent =
-            episode.japanese ||
-            "";
-
-
-        detailDate.textContent =
-            `📅 ${
-                episode.date ||
-                "Unknown Date"
-            }`;
-
-
-        detailYear.textContent =
-            `📆 ${
-                episode.year ||
-                "Unknown"
-            }`;
-
-
-        let seriesText =
-            "EPISODE";
-
-
-        if (
-            episode.series ===
-            "classic"
-        ) {
-
-            seriesText =
-                "⭐ CLASSIC";
-
-        }
-
-        else if (
-            episode.series ===
-            "new"
-        ) {
-
-            seriesText =
-                "✨ 2005+";
-
-        }
-
-        else if (
-            episode.series ===
-            "special"
-        ) {
-
-            seriesText =
-                "🎉 SPECIAL";
-
-        }
-
-
-        detailSeries.textContent =
-            seriesText;
-
-
-        detailDescription.textContent =
-
-            episode.description ||
-
-            "Doraemon aur Nobita ki ek unforgettable adventure story.";
-
-
-        episodeVideoBox.style.display =
-            "none";
-
-
-        episodeVideo.pause();
-
-        episodeVideo.removeAttribute(
-            "src"
-        );
-
-        episodeVideo.load();
-
-
-        episodeDetailPage.classList.add(
-            "show"
-        );
-
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        episodeDetailPage.scrollTop =
-            0;
-
-    }
-
-
-    /* =====================================================
-       CLOSE DETAIL
-    ===================================================== */
-
-    function closeEpisodeDetail() {
-
-        episodeDetailPage.classList.remove(
-            "show"
-        );
-
-
-        document.body.style.overflow =
-            "";
-
-
-        episodeVideo.pause();
-
-
-        episodeVideo.removeAttribute(
-            "src"
-        );
-
-
-        episodeVideo.load();
-
-
-        selectedEpisode =
-            null;
-
-    }
-
-
-    episodeDetailClose.addEventListener(
-        "click",
-        closeEpisodeDetail
-    );
-
-
-    /* =====================================================
-       ESCAPE KEY
-    ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-
-                event.key === "Escape" &&
-
-                episodeDetailPage
-                    .classList
-                    .contains("show")
-
-            ) {
-
-                closeEpisodeDetail();
+                noResult.style.display = "none";
 
             }
 
         }
-    );
+
+    }
 
 
-    /* =====================================================
-       WATCH EPISODE
-    ===================================================== */
+    if (searchInput) {
 
-    episodeWatchButton.addEventListener(
-        "click",
-        function () {
+        searchInput.addEventListener(
+            "input",
+            filterEpisodes
+        );
 
-
-            if (
-                !selectedEpisode ||
-                !selectedEpisode.video
-            ) {
-
-                alert(
-                    "Is episode ka video abhi available nahi hai."
-                );
-
-                return;
-
-            }
+    }
 
 
-            episodeVideo.src =
-                selectedEpisode.video;
+    if (filter) {
 
+        filter.addEventListener(
+            "change",
+            filterEpisodes
+        );
 
-            episodeVideoBox.style.display =
-                "block";
-
-
-            episodeVideo.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-
-            episodeVideo
-                .play()
-                .catch(() => {});
-
-        }
-    );
-
-
-    /* =====================================================
-       PAGE LOAD
-    ===================================================== */
-
-    setTimeout(
-        function () {
-
-            loading.style.display =
-                "none";
-
-            applyFilters();
-
-        },
-        300
-    );
+    }
 
 
 });
