@@ -552,3 +552,325 @@ body {
     }
 
 }
+/* =========================================================
+   REEL VIDEO - INSTAGRAM STYLE
+========================================================= */
+
+.reel-video {
+    position: relative;
+
+    width: auto;
+    height: 100dvh;
+
+    max-width: 100vw;
+    max-height: 100dvh;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center center;
+
+    background: #000;
+
+    border: none;
+    outline: none;
+
+    margin: 0 auto;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .reel-video {
+
+        width: min(56.25dvh, 100vw);
+        height: 100dvh;
+
+        max-width: 100vw;
+        max-height: 100dvh;
+
+        object-fit: contain;
+
+        border-radius: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .reel-video {
+
+        width: 100vw;
+        height: 100dvh;
+
+        max-width: 100vw;
+        max-height: 100dvh;
+
+        object-fit: contain;
+        object-position: center center;
+
+        border-radius: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .reel-video {
+
+        width: 100vw;
+        height: 100dvh;
+
+        object-fit: contain;
+    }
+
+}
+/* =========================================================
+   INSTAGRAM STYLE REEL ACTIONS
+========================================================= */
+
+.reel-actions {
+    position: absolute;
+    right: 24px;
+    bottom: 105px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.reel-action {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 50%;
+
+    background: rgba(20, 30, 45, 0.58);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #ffffff;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 0 15px rgba(255,255,255,0.05);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.action-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.action-text {
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.reel-action:hover {
+    transform: scale(1.10);
+
+    background: rgba(8, 127, 192, 0.75);
+
+    box-shadow:
+        0 0 20px rgba(32,168,245,0.45),
+        0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+/* =========================================================
+   CLICK EFFECT
+========================================================= */
+
+.reel-action:active {
+    transform: scale(0.88);
+}
+
+
+/* =========================================================
+   SHARE BUTTON
+========================================================= */
+
+.share-btn {
+    appearance: none;
+    -webkit-appearance: none;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-btn {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .reel-actions {
+        right: 14px;
+        bottom: 90px;
+
+        gap: 16px;
+    }
+
+
+    .reel-action {
+        width: 56px;
+        height: 56px;
+
+        background: rgba(15, 25, 35, 0.62);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+
+    .action-icon {
+        width: 25px;
+        height: 25px;
+
+        font-size: 23px;
+    }
+
+
+    .action-text {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .reel-actions {
+        right: 10px;
+        bottom: 82px;
+
+        gap: 13px;
+    }
+
+
+    .reel-action {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .action-icon {
+        font-size: 21px;
+    }
+
+
+    .action-text {
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE
+========================================================= */
+
+@media (orientation: landscape) and (max-height: 600px) {
+
+    .reel-actions {
+        right: 18px;
+        bottom: 55px;
+
+        gap: 12px;
+    }
+
+
+    .reel-action {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .action-icon {
+        font-size: 21px;
+    }
+
+}

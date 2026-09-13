@@ -2,91 +2,114 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Doraemon Motivation Reels</title>
 
-    <link rel="stylesheet" href="css/motivation.css">
+    <link rel="stylesheet"
+          href="css/motivation.css">
+
 </head>
+
 
 <body>
 
-    <!-- =========================================
-         DORAEMON BACKGROUND DECORATION
-    ========================================== -->
 
-    <div class="doraemon-bg">
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
 
-        <div class="cloud cloud-1">☁️</div>
-        <div class="cloud cloud-2">☁️</div>
-        <div class="cloud cloud-3">☁️</div>
+    <header class="reels-header">
 
-        <div class="star star-1">✦</div>
-        <div class="star star-2">✦</div>
-        <div class="star star-3">✦</div>
-        <div class="star star-4">✦</div>
+        <a href="index.html"
+           class="home-btn">
+            ← Home
+        </a>
 
-        <div class="bg-text bg-text-1">
-            DORAEMON
-        </div>
+        <h1>
+            DORAEMON MOTIVATION
+        </h1>
 
-        <div class="bg-text bg-text-2">
-            MOTIVATION
-        </div>
+        <div class="header-space"></div>
 
-    </div>
+    </header>
 
 
-    <!-- =========================================
-         MAIN REELS
-    ========================================== -->
 
-    <main class="reels-container" id="reelsContainer">
+    <!-- =====================================================
+         REELS CONTAINER
+         Scroll / Swipe / Wheel
+    ====================================================== -->
+
+    <main id="reelsContainer"
+          class="reels-container">
 
 
-        <!-- =====================================
+
+        <!-- =================================================
              REEL 01
-        ====================================== -->
+        ================================================== -->
 
-        <section class="reel">
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="0">
 
-            <video
-                class="reel-video"
-                src="assets/videos/motivation-01.mp4"
-                playsinline
-                muted
-                loop
-                preload="metadata">
+            <video class="reel-video"
+                   src="assets/videos/motivation-01.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
             </video>
+
+
+            <div class="reel-gradient"></div>
+
+
+            <!-- INSTAGRAM STYLE ACTIONS -->
 
             <div class="reel-actions">
 
+
                 <!-- SHARE -->
 
-                <button
-                    class="action-btn share-btn"
-                    data-video="motivation-01.mp4"
-                    aria-label="Share Reel">
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
 
-                    <span>↗</span>
-                    <small>Share</small>
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
 
                 </button>
+
 
 
                 <!-- DOWNLOAD -->
 
-                <a
-                    class="action-btn download-btn"
-                    href="assets/videos/motivation-01.mp4"
-                    download="Doraemon-Motivation-01.mp4"
-                    aria-label="Download Reel">
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-01.mp4"
+                   download
+                   aria-label="Download Reel">
 
-                    <span>↓</span>
-                    <small>Download</small>
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
 
                 </a>
+
 
             </div>
 
@@ -94,44 +117,64 @@
 
 
 
-        <!-- =====================================
+        <!-- =================================================
              REEL 02
-        ====================================== -->
+        ================================================== -->
 
-        <section class="reel">
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="1">
 
-            <video
-                class="reel-video"
-                src="assets/videos/motivation-02.mp4"
-                playsinline
-                muted
-                loop
-                preload="metadata">
+            <video class="reel-video"
+                   src="assets/videos/motivation-02.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
             </video>
+
+
+            <div class="reel-gradient"></div>
+
 
             <div class="reel-actions">
 
-                <button
-                    class="action-btn share-btn"
-                    data-video="motivation-02.mp4"
-                    aria-label="Share Reel">
 
-                    <span>↗</span>
-                    <small>Share</small>
+                <!-- SHARE -->
+
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
 
                 </button>
 
 
-                <a
-                    class="action-btn download-btn"
-                    href="assets/videos/motivation-02.mp4"
-                    download="Doraemon-Motivation-02.mp4"
-                    aria-label="Download Reel">
 
-                    <span>↓</span>
-                    <small>Download</small>
+                <!-- DOWNLOAD -->
+
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-02.mp4"
+                   download
+                   aria-label="Download Reel">
+
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
 
                 </a>
+
 
             </div>
 
@@ -139,44 +182,64 @@
 
 
 
-        <!-- =====================================
+        <!-- =================================================
              REEL 03
-        ====================================== -->
+        ================================================== -->
 
-        <section class="reel">
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="2">
 
-            <video
-                class="reel-video"
-                src="assets/videos/motivation-03.mp4"
-                playsinline
-                muted
-                loop
-                preload="metadata">
+            <video class="reel-video"
+                   src="assets/videos/motivation-03.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
             </video>
+
+
+            <div class="reel-gradient"></div>
+
 
             <div class="reel-actions">
 
-                <button
-                    class="action-btn share-btn"
-                    data-video="motivation-03.mp4"
-                    aria-label="Share Reel">
 
-                    <span>↗</span>
-                    <small>Share</small>
+                <!-- SHARE -->
+
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
 
                 </button>
 
 
-                <a
-                    class="action-btn download-btn"
-                    href="assets/videos/motivation-03.mp4"
-                    download="Doraemon-Motivation-03.mp4"
-                    aria-label="Download Reel">
 
-                    <span>↓</span>
-                    <small>Download</small>
+                <!-- DOWNLOAD -->
+
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-03.mp4"
+                   download
+                   aria-label="Download Reel">
+
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
 
                 </a>
+
 
             </div>
 
@@ -184,44 +247,194 @@
 
 
 
-        <!-- =====================================
+        <!-- =================================================
              REEL 04
-        ====================================== -->
+        ================================================== -->
 
-        <section class="reel">
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="3">
 
-            <video
-                class="reel-video"
-                src="assets/videos/motivation-04.mp4"
-                playsinline
-                muted
-                loop
-                preload="metadata">
+            <video class="reel-video"
+                   src="assets/videos/motivation-04.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
             </video>
+
+
+            <div class="reel-gradient"></div>
+
 
             <div class="reel-actions">
 
-                <button
-                    class="action-btn share-btn"
-                    data-video="motivation-04.mp4"
-                    aria-label="Share Reel">
 
-                    <span>↗</span>
-                    <small>Share</small>
+                <!-- SHARE -->
+
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
 
                 </button>
 
 
-                <a
-                    class="action-btn download-btn"
-                    href="assets/videos/motivation-04.mp4"
-                    download="Doraemon-Motivation-04.mp4"
-                    aria-label="Download Reel">
 
-                    <span>↓</span>
-                    <small>Download</small>
+                <!-- DOWNLOAD -->
+
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-04.mp4"
+                   download
+                   aria-label="Download Reel">
+
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
 
                 </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REEL 05
+        ================================================== -->
+
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="4">
+
+            <video class="reel-video"
+                   src="assets/videos/motivation-05.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
+            </video>
+
+
+            <div class="reel-gradient"></div>
+
+
+            <div class="reel-actions">
+
+
+                <!-- SHARE -->
+
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
+
+                </button>
+
+
+
+                <!-- DOWNLOAD -->
+
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-05.mp4"
+                   download
+                   aria-label="Download Reel">
+
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REEL 06
+        ================================================== -->
+
+        <section class="reel"
+                 data-category="motivation"
+                 data-index="5">
+
+            <video class="reel-video"
+                   src="assets/videos/motivation-06.mp4"
+                   playsinline
+                   webkit-playsinline
+                   preload="metadata"
+                   loop>
+            </video>
+
+
+            <div class="reel-gradient"></div>
+
+
+            <div class="reel-actions">
+
+
+                <!-- SHARE -->
+
+                <button class="reel-action share-btn"
+                        type="button"
+                        aria-label="Share Reel">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-text">
+                        Share
+                    </span>
+
+                </button>
+
+
+
+                <!-- DOWNLOAD -->
+
+                <a class="reel-action download-btn"
+                   href="assets/videos/motivation-06.mp4"
+                   download
+                   aria-label="Download Reel">
+
+                    <span class="action-icon">
+                        ↓
+                    </span>
+
+                    <span class="action-text">
+                        Download
+                    </span>
+
+                </a>
+
 
             </div>
 
@@ -232,30 +445,38 @@
 
 
 
-    <!-- =========================================
-         DESKTOP UP / DOWN BUTTONS
-    ========================================== -->
+    <!-- =====================================================
+         PLAY / PAUSE INDICATOR
+    ====================================================== -->
 
-    <div class="desktop-navigation">
+    <div id="statusIcon"
+         class="status-icon">
 
-        
-
+        ▶
 
     </div>
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          SHARE MESSAGE
-    ========================================== -->
+    ====================================================== -->
 
-    <div id="shareMessage" class="share-message">
+    <div id="shareMessage"
+         class="share-message">
+
         Link copied!
+
     </div>
 
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="js/motivation.js"></script>
+
 
 </body>
 

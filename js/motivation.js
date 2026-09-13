@@ -1,284 +1,305 @@
 /* =========================================================
-   DORAEMON MOTIVATION REELS
-   COMPLETE JAVASCRIPT
+   DORAEMON WORLD
+   MOTIVATION / FUNNY REELS
+   JAVASCRIPT
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
-    const container = document.getElementById("reelsContainer");
+const reelsContainer =
+    document.getElementById("reelsContainer");
 
-    const reels = Array.from(
+const statusIcon =
+    document.getElementById("statusIcon");
+
+const shareMessage =
+    document.getElementById("shareMessage");
+
+const categoryButtons =
+    document.querySelectorAll(".category-btn");
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let reels = [];
+
+let currentReel = 0;
+
+let touchStartY = 0;
+
+let touchEndY = 0;
+
+let wheelLocked = false;
+
+let currentCategory = "motivation";
+
+
+/* =========================================================
+   GET REELS
+========================================================= */
+
+function getReels() {
+
+    return Array.from(
         document.querySelectorAll(".reel")
     );
 
-    const videos = Array.from(
-        document.querySelectorAll(".reel-video")
-    );
-
-    const prevButton = document.getElementById("prevReel");
-    const nextButton = document.getElementById("nextReel");
-
-    const shareButtons = Array.from(
-        document.querySelectorAll(".share-btn")
-    );
-
-    const shareMessage = document.getElementById("shareMessage");
+}
 
 
-    /* =====================================================
-       CURRENT REEL
-    ===================================================== */
+/* =========================================================
+   GET CURRENT REEL
+========================================================= */
 
-    let currentReel = 0;
+function getCurrentReel() {
+
+    return reels[currentReel] || null;
+
+}
 
 
-    /* =====================================================
-       GO TO REEL
-    ===================================================== */
+/* =========================================================
+   SHOW PLAY / PAUSE ICON
+========================================================= */
 
-    function goToReel(index) {
+function showStatus(icon) {
 
-        if (reels.length === 0) return;
+    if (!statusIcon) return;
 
-        // Keep index inside limits
-        index = Math.max(
-            0,
-            Math.min(index, reels.length - 1)
-        );
+    statusIcon.textContent = icon;
 
-        currentReel = index;
+    statusIcon.classList.remove("show");
 
-        reels[currentReel].scrollIntoView({
-            behavior: "smooth",
-            block: "center"
+    /*
+     * Force animation restart
+     */
+    void statusIcon.offsetWidth;
+
+    statusIcon.classList.add("show");
+
+}
+
+
+/* =========================================================
+   PLAY CURRENT VIDEO
+========================================================= */
+
+function playCurrentVideo() {
+
+    const current =
+        getCurrentReel();
+
+    if (!current) return;
+
+    const video =
+        current.querySelector(".reel-video");
+
+    if (!video) return;
+
+
+    /*
+     * Pause every other video
+     */
+
+    document
+        .querySelectorAll(".reel-video")
+        .forEach(otherVideo => {
+
+            if (otherVideo !== video) {
+
+                otherVideo.pause();
+
+            }
+
         });
+
+
+    /*
+     * Do NOT use muted.
+     *
+     * Browser autoplay policy can still block
+     * sound until user interacts with page.
+     */
+
+    video.muted = false;
+
+
+    const promise =
+        video.play();
+
+
+    if (promise !== undefined) {
+
+        promise.catch(() => {
+
+            /*
+             * Browser blocked autoplay.
+             * User can tap the video to start it.
+             */
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   PAUSE ALL VIDEOS
+========================================================= */
+
+function pauseAllVideos() {
+
+    document
+        .querySelectorAll(".reel-video")
+        .forEach(video => {
+
+            video.pause();
+
+        });
+
+}
+
+
+/* =========================================================
+   GO TO REEL
+========================================================= */
+
+function goToReel(index) {
+
+    if (!reels.length) return;
+
+
+    /*
+     * Keep index inside available reels
+     */
+
+    if (index < 0) {
+
+        index = 0;
+
+    }
+
+    if (index >= reels.length) {
+
+        index = reels.length - 1;
+
+    }
+
+
+    currentReel = index;
+
+
+    const reel =
+        reels[currentReel];
+
+
+    if (!reel) return;
+
+
+    /*
+     * Scroll to reel
+     */
+
+    reel.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+
+    /*
+     * Play after scroll
+     */
+
+    setTimeout(() => {
 
         playCurrentVideo();
-    }
+
+    }, 350);
+
+}
 
 
-    /* =====================================================
-       PLAY CURRENT VIDEO
-    ===================================================== */
+/* =========================================================
+   NEXT REEL
+========================================================= */
 
-    function playCurrentVideo() {
+function nextReel() {
 
-        videos.forEach((video, index) => {
+    if (currentReel < reels.length - 1) {
 
-            if (index === currentReel) {
-
-                video.play().catch(() => {
-                    // Browser may block autoplay
-                });
-
-            } else {
-
-                video.pause();
-
-            }
-
-        });
+        goToReel(currentReel + 1);
 
     }
 
-
-    /* =====================================================
-       DESKTOP UP BUTTON
-    ===================================================== */
-
-    if (prevButton) {
-
-        prevButton.addEventListener("click", () => {
-
-            goToReel(currentReel - 1);
-
-        });
-
-    }
+}
 
 
-    /* =====================================================
-       DESKTOP DOWN BUTTON
-    ===================================================== */
+/* =========================================================
+   PREVIOUS REEL
+========================================================= */
 
-    if (nextButton) {
+function previousReel() {
 
-        nextButton.addEventListener("click", () => {
+    if (currentReel > 0) {
 
-            goToReel(currentReel + 1);
-
-        });
+        goToReel(currentReel - 1);
 
     }
 
+}
 
-    /* =====================================================
-       KEYBOARD NAVIGATION
-       ↑ Previous
-       ↓ Next
-    ===================================================== */
 
-    document.addEventListener("keydown", (event) => {
+/* =========================================================
+   INTERSECTION OBSERVER
+   Detect which reel is currently visible
+========================================================= */
 
-        if (event.key === "ArrowUp") {
+const observer =
+    new IntersectionObserver(
 
-            event.preventDefault();
+        entries => {
 
-            goToReel(currentReel - 1);
+            entries.forEach(entry => {
 
-        }
+                if (
+                    entry.isIntersecting &&
+                    entry.intersectionRatio >= 0.65
+                ) {
 
-        if (event.key === "ArrowDown") {
+                    const index =
+                        reels.indexOf(entry.target);
 
-            event.preventDefault();
 
-            goToReel(currentReel + 1);
+                    if (index !== -1) {
 
-        }
+                        currentReel = index;
 
-    });
+                    }
 
 
-    /* =====================================================
-       CREATE PLAY / PAUSE CENTER ICON
-    ===================================================== */
+                    /*
+                     * Pause all other videos
+                     */
 
-    reels.forEach((reel, index) => {
+                    document
+                        .querySelectorAll(".reel-video")
+                        .forEach(video => {
 
-        const video = reel.querySelector(".reel-video");
+                            const parent =
+                                video.closest(".reel");
 
-        if (!video) return;
-
-
-        /* -----------------------------------------------
-           CENTER STATUS ICON
-        ------------------------------------------------ */
-
-        const statusIcon = document.createElement("div");
-
-        statusIcon.className = "video-status";
-
-        statusIcon.innerHTML = "▶";
-
-        reel.appendChild(statusIcon);
-
-
-        /* -----------------------------------------------
-           SHOW STATUS ICON
-        ------------------------------------------------ */
-
-        function showStatusIcon(icon) {
-
-            statusIcon.innerHTML = icon;
-
-            // Remove old animation
-            statusIcon.classList.remove("show");
-
-            // Force browser to restart animation
-            void statusIcon.offsetWidth;
-
-            // Show
-            statusIcon.classList.add("show");
-
-
-            // Hide after 1 second
-            setTimeout(() => {
-
-                statusIcon.classList.remove("show");
-
-            }, 1000);
-
-        }
-
-
-        /* -----------------------------------------------
-           VIDEO CLICK
-        ------------------------------------------------ */
-
-        video.addEventListener("click", () => {
-
-            /* =============================================
-               VIDEO IS PLAYING
-               → PAUSE
-            ============================================= */
-
-            if (!video.paused) {
-
-                video.pause();
-
-                showStatusIcon("Ⅱ");
-
-            }
-
-            /* =============================================
-               VIDEO IS PAUSED
-               → PLAY
-            ============================================= */
-
-            else {
-
-                video.play().catch(() => {});
-
-                showStatusIcon("▶");
-
-            }
-
-        });
-
-
-        /* -----------------------------------------------
-           Prevent right click menu on video
-        ------------------------------------------------ */
-
-        video.addEventListener("contextmenu", (event) => {
-
-            event.preventDefault();
-
-        });
-
-    });
-
-
-    /* =====================================================
-       INTERSECTION OBSERVER
-       Automatically play visible reel
-    ===================================================== */
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.65) {
-
-                        const reel = entry.target;
-
-                        const index = reels.indexOf(reel);
-
-                        if (index !== -1) {
-
-                            currentReel = index;
-
-                        }
-
-
-                        /* ---------------------------------
-                           Play visible video
-                        ---------------------------------- */
-
-                        videos.forEach((video, videoIndex) => {
-
-                            if (videoIndex === currentReel) {
-
-                                video.play().catch(() => {});
-
-                            } else {
+                            if (
+                                parent !== entry.target
+                            ) {
 
                                 video.pause();
 
@@ -286,318 +307,760 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         });
 
+
+                    /*
+                     * Current video
+                     */
+
+                    const video =
+                        entry.target
+                            .querySelector(".reel-video");
+
+
+                    if (video) {
+
+                        video.muted = false;
+
+                        const promise =
+                            video.play();
+
+
+                        if (
+                            promise !== undefined
+                        ) {
+
+                            promise.catch(() => {
+
+                                /*
+                                 * Autoplay with sound
+                                 * may be blocked.
+                                 */
+
+                            });
+
+                        }
+
                     }
 
-                });
+                }
 
-            },
-            {
-                threshold: [0.65, 0.8, 1]
+            });
+
+        },
+
+        {
+            threshold: [
+                0.65,
+                0.8,
+                0.95
+            ]
+
+        }
+
+    );
+
+
+/* =========================================================
+   OBSERVE REELS
+========================================================= */
+
+function observeReels() {
+
+    reels.forEach(reel => {
+
+        observer.observe(reel);
+
+    });
+
+}
+
+
+/* =========================================================
+   VIDEO CLICK
+   PLAY / PAUSE
+========================================================= */
+
+function setupVideoControls() {
+
+    reels.forEach(reel => {
+
+        const video =
+            reel.querySelector(".reel-video");
+
+
+        if (!video) return;
+
+
+        video.addEventListener(
+            "click",
+            function () {
+
+                /*
+                 * User interaction enables sound
+                 */
+
+                video.muted = false;
+
+
+                if (video.paused) {
+
+                    video.play()
+                        .then(() => {
+
+                            showStatus("▶");
+
+                        })
+                        .catch(() => {
+
+                            showStatus("▶");
+
+                        });
+
+                } else {
+
+                    video.pause();
+
+                    showStatus("Ⅱ");
+
+                }
+
             }
         );
 
 
-        reels.forEach((reel) => {
+        /*
+         * Prevent browser context menu
+         * on long press/right click
+         */
 
-            observer.observe(reel);
+        video.addEventListener(
+            "contextmenu",
+            function (event) {
 
-        });
+                event.preventDefault();
 
-    }
+            }
+        );
+
+    });
+
+}
 
 
-    /* =====================================================
-       SHARE REEL
-    ===================================================== */
+/* =========================================================
+   MOUSE WHEEL NAVIGATION
+   ⬆️⬇️ WORKS
+   BUT NO ARROW BUTTON IS DISPLAYED
+========================================================= */
 
-    shareButtons.forEach((button) => {
+reelsContainer.addEventListener(
+    "wheel",
+    function (event) {
 
-        button.addEventListener("click", async (event) => {
+        /*
+         * Prevent too-fast reel switching
+         */
+
+        if (wheelLocked) {
 
             event.preventDefault();
-            event.stopPropagation();
-
-
-            /* ---------------------------------------------
-               Get video name
-            ---------------------------------------------- */
-
-            const videoName = button.dataset.video || "";
-
-
-            /* ---------------------------------------------
-               Create video URL
-            ---------------------------------------------- */
-
-            const videoPath =
-                `assets/videos/${videoName}`;
-
-            const videoURL =
-                new URL(
-                    videoPath,
-                    window.location.href
-                ).href;
-
-
-            /* ---------------------------------------------
-               Native Share
-            ---------------------------------------------- */
-
-            if (navigator.share) {
-
-                try {
-
-                    await navigator.share({
-
-                        title: "Doraemon Motivation 💙",
-
-                        text: "Watch this Doraemon Motivation Reel 💙",
-
-                        url: videoURL
-
-                    });
-
-                    return;
-
-                } catch (error) {
-
-                    // User cancelled share
-                    if (error.name === "AbortError") {
-
-                        return;
-
-                    }
-
-                }
-
-            }
-
-
-            /* ---------------------------------------------
-               Clipboard fallback
-            ---------------------------------------------- */
-
-            try {
-
-                await navigator.clipboard.writeText(
-                    videoURL
-                );
-
-                showShareMessage("Link copied!");
-
-            } catch (error) {
-
-                /* -----------------------------------------
-                   Old browser fallback
-                ------------------------------------------ */
-
-                const tempInput =
-                    document.createElement("input");
-
-                tempInput.value = videoURL;
-
-                document.body.appendChild(tempInput);
-
-                tempInput.select();
-
-                try {
-
-                    document.execCommand("copy");
-
-                    showShareMessage("Link copied!");
-
-                } catch (copyError) {
-
-                    showShareMessage(
-                        "Copy failed!"
-                    );
-
-                }
-
-                document.body.removeChild(tempInput);
-
-            }
-
-        });
-
-    });
-
-
-    /* =====================================================
-       SHARE MESSAGE
-    ===================================================== */
-
-    function showShareMessage(message) {
-
-        if (!shareMessage) return;
-
-        shareMessage.textContent = message;
-
-        shareMessage.classList.add("show");
-
-
-        setTimeout(() => {
-
-            shareMessage.classList.remove("show");
-
-        }, 1800);
-
-    }
-
-
-    /* =====================================================
-       DOWNLOAD BUTTON
-    ===================================================== */
-
-    document
-        .querySelectorAll(".download-btn")
-        .forEach((button) => {
-
-            button.addEventListener("click", (event) => {
-
-                event.stopPropagation();
-
-            });
-
-        });
-
-
-    /* =====================================================
-       START FIRST REEL
-    ===================================================== */
-
-    if (videos.length > 0) {
-
-        currentReel = 0;
-
-        // Small delay helps browser initialize video
-        setTimeout(() => {
-
-            videos[0].play().catch(() => {});
-
-        }, 300);
-
-    }
-
-
-    /* =====================================================
-       TOUCH / SWIPE SUPPORT
-       Mobile:
-       Swipe Up   → Next Reel
-       Swipe Down → Previous Reel
-    ===================================================== */
-
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-
-    container.addEventListener("touchstart", (event) => {
-
-        if (!event.touches.length) return;
-
-        touchStartY =
-            event.touches[0].clientY;
-
-    }, {
-        passive: true
-    });
-
-
-    container.addEventListener("touchend", (event) => {
-
-        if (!event.changedTouches.length) return;
-
-        touchEndY =
-            event.changedTouches[0].clientY;
-
-        handleSwipe();
-
-    }, {
-        passive: true
-    });
-
-
-    function handleSwipe() {
-
-        const distance =
-            touchStartY - touchEndY;
-
-
-        // Ignore small movement
-        if (Math.abs(distance) < 50) {
 
             return;
 
         }
 
 
-        /* ---------------------------------------------
-           Swipe UP
-           → Next reel
-        ---------------------------------------------- */
+        if (Math.abs(event.deltaY) < 25) {
 
-        if (distance > 50) {
-
-            goToReel(currentReel + 1);
+            return;
 
         }
 
 
-        /* ---------------------------------------------
-           Swipe DOWN
-           → Previous reel
-        ---------------------------------------------- */
+        event.preventDefault();
 
-        else if (distance < -50) {
 
-            goToReel(currentReel - 1);
+        wheelLocked = true;
+
+
+        if (event.deltaY > 0) {
+
+            nextReel();
+
+        } else {
+
+            previousReel();
+
+        }
+
+
+        /*
+         * Small delay so one wheel gesture
+         * doesn't skip multiple reels.
+         */
+
+        setTimeout(() => {
+
+            wheelLocked = false;
+
+        }, 650);
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/* =========================================================
+   KEYBOARD NAVIGATION
+   ARROW KEYS WORK
+   BUTTONS ARE NOT VISIBLE
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        /*
+         * Arrow Down
+         */
+
+        if (
+            event.key === "ArrowDown" ||
+            event.key === "PageDown"
+        ) {
+
+            event.preventDefault();
+
+            nextReel();
+
+        }
+
+
+        /*
+         * Arrow Up
+         */
+
+        if (
+            event.key === "ArrowUp" ||
+            event.key === "PageUp"
+        ) {
+
+            event.preventDefault();
+
+            previousReel();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   TOUCH / SWIPE
+   MOBILE INSTAGRAM STYLE
+========================================================= */
+
+reelsContainer.addEventListener(
+    "touchstart",
+    function (event) {
+
+        if (!event.touches.length) return;
+
+        touchStartY =
+            event.touches[0].clientY;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+reelsContainer.addEventListener(
+    "touchend",
+    function (event) {
+
+        if (!event.changedTouches.length) return;
+
+        touchEndY =
+            event.changedTouches[0].clientY;
+
+
+        handleSwipe();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+/* =========================================================
+   HANDLE SWIPE
+========================================================= */
+
+function handleSwipe() {
+
+    const difference =
+        touchStartY - touchEndY;
+
+
+    /*
+     * Ignore very small movement
+     */
+
+    if (Math.abs(difference) < 60) {
+
+        return;
+
+    }
+
+
+    /*
+     * Swipe UP
+     * Next reel
+     */
+
+    if (difference > 0) {
+
+        nextReel();
+
+    }
+
+
+    /*
+     * Swipe DOWN
+     * Previous reel
+     */
+
+    else {
+
+        previousReel();
+
+    }
+
+}
+
+
+/* =========================================================
+   SHARE
+   INSTAGRAM-LIKE SHARE BEHAVIOUR
+========================================================= */
+
+function setupShareButtons() {
+
+    const shareButtons =
+        document.querySelectorAll(".share-btn");
+
+
+    shareButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+
+                const reel =
+                    button.closest(".reel");
+
+
+                if (!reel) return;
+
+
+                const video =
+                    reel.querySelector(".reel-video");
+
+
+                if (!video) return;
+
+
+                /*
+                 * Get video URL
+                 */
+
+                const videoURL =
+                    new URL(
+                        video.getAttribute("src"),
+                        window.location.href
+                    ).href;
+
+
+                const title =
+                    reel.querySelector(".reel-info h2")
+                    ?.textContent
+                    ?.trim()
+                    || "Doraemon Reel";
+
+
+                /*
+                 * Native Share
+                 * Works on supported mobile browsers.
+                 */
+
+                if (
+                    navigator.share &&
+                    window.isSecureContext
+                ) {
+
+                    try {
+
+                        await navigator.share({
+
+                            title:
+                                "Doraemon Reels",
+
+                            text:
+                                title,
+
+                            url:
+                                videoURL
+
+                        });
+
+                        return;
+
+                    }
+
+                    catch (error) {
+
+                        /*
+                         * User cancelled share.
+                         */
+
+                        if (
+                            error.name ===
+                            "AbortError"
+                        ) {
+
+                            return;
+
+                        }
+
+                    }
+
+                }
+
+
+                /*
+                 * Fallback:
+                 * Copy video URL
+                 */
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        videoURL
+                    );
+
+                    showShareMessage(
+                        "Reel link copied!"
+                    );
+
+                }
+
+                catch (error) {
+
+                    /*
+                     * Old browser fallback
+                     */
+
+                    const textArea =
+                        document.createElement(
+                            "textarea"
+                        );
+
+                    textArea.value =
+                        videoURL;
+
+                    document.body.appendChild(
+                        textArea
+                    );
+
+                    textArea.select();
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+                    textArea.remove();
+
+                    showShareMessage(
+                        "Reel link copied!"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTONS
+========================================================= */
+
+function setupDownloadButtons() {
+
+    const downloadButtons =
+        document.querySelectorAll(
+            ".download-btn"
+        );
+
+
+    downloadButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                /*
+                 * Browser will use the download
+                 * attribute from the HTML.
+                 */
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   SHARE MESSAGE
+========================================================= */
+
+function showShareMessage(message) {
+
+    if (!shareMessage) return;
+
+    shareMessage.textContent =
+        message;
+
+    shareMessage.classList.add(
+        "show"
+    );
+
+
+    setTimeout(() => {
+
+        shareMessage.classList.remove(
+            "show"
+        );
+
+    }, 1800);
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            const category =
+                button.dataset.category;
+
+
+            if (!category) return;
+
+
+            currentCategory =
+                category;
+
+
+            /*
+             * Active button
+             */
+
+            categoryButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            /*
+             * Find first reel of selected category
+             */
+
+            const firstReel =
+                reels.find(reel => {
+
+                    return (
+                        reel.dataset.category ===
+                        category
+                    );
+
+                });
+
+
+            if (firstReel) {
+
+                const index =
+                    reels.indexOf(
+                        firstReel
+                    );
+
+                goToReel(index);
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   BLOCK DOUBLE TAP SELECTION
+========================================================= */
+
+reelsContainer.addEventListener(
+    "dblclick",
+    function (event) {
+
+        if (
+            event.target.closest(
+                ".reel-action"
+            )
+        ) {
+
+            return;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function initializeReels() {
+
+    reels =
+        getReels();
+
+
+    if (!reels.length) {
+
+        return;
+
+    }
+
+
+    /*
+     * Observe all reels
+     */
+
+    observeReels();
+
+
+    /*
+     * Setup video controls
+     */
+
+    setupVideoControls();
+
+
+    /*
+     * Setup Share
+     */
+
+    setupShareButtons();
+
+
+    /*
+     * Setup Download
+     */
+
+    setupDownloadButtons();
+
+
+    /*
+     * Start from first reel
+     */
+
+    currentReel = 0;
+
+
+    /*
+     * Don't force sound autoplay aggressively.
+     * Browser may block it.
+     * First tap will enable sound.
+     */
+
+    const firstVideo =
+        reels[0]
+            .querySelector(".reel-video");
+
+
+    if (firstVideo) {
+
+        firstVideo.muted = false;
+
+        const promise =
+            firstVideo.play();
+
+
+        if (promise !== undefined) {
+
+            promise.catch(() => {
+
+                /*
+                 * Waiting for user interaction.
+                 */
+
+            });
 
         }
 
     }
 
-
-    /* =====================================================
-       MOUSE WHEEL DESKTOP
-       Scroll down → Next
-       Scroll up   → Previous
-    ===================================================== */
-
-    let wheelLocked = false;
-
-    container.addEventListener(
-        "wheel",
-        (event) => {
-
-            if (wheelLocked) return;
-
-            if (Math.abs(event.deltaY) < 20) return;
-
-            wheelLocked = true;
+}
 
 
-            if (event.deltaY > 0) {
+/* =========================================================
+   START
+========================================================= */
 
-                goToReel(currentReel + 1);
+if (
+    document.readyState ===
+    "loading"
+) {
 
-            } else {
-
-                goToReel(currentReel - 1);
-
-            }
-
-
-            setTimeout(() => {
-
-                wheelLocked = false;
-
-            }, 700);
-
-        },
-        {
-            passive: true
-        }
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeReels
     );
 
+} else {
 
-});
+    initializeReels();
+
+}
