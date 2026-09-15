@@ -477,7 +477,7 @@ const characters = [
         name: "Nobisuke's Father",
         japanese: "のび助の父",
         category: "family",
-        image: "assets/images/characters/nobisuke-father.png",
+        image: "assets/images/characters//nobisuke.png",
 
         dob: "Not specified",
         age: "Elder",
