@@ -10,19 +10,20 @@
 
     <title>Doraemon World - Episode 01</title>
 
-    <!-- COMMON WEBSITE CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/episode-details.css">
 
-    <link rel="stylesheet" href="../css/episodes.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-<body>
+<body class="episode-detail-body">
 
 
-<!-- =========================================================
-     DESKTOP TOP NAVBAR
-========================================================= -->
+<!-- =====================================================
+     DESKTOP NAVBAR
+===================================================== -->
 
 <header class="topbar">
 
@@ -32,266 +33,193 @@
 
     <nav id="nav">
 
-        <a href="../index.html">
-            🏠 Home
-        </a>
+        <a href="../index.html">🏠 Home</a>
 
-        <a href="../movies.html">
-            🎬 Movies
-        </a>
+        <a href="../movies.html">🎬 Movies</a>
 
-        <a href="../episodes.html"
-           class="active">
-            📺 Episodes
-        </a>
+        <a href="../episodes.html" class="active">📺 Episodes</a>
 
-        <a href="../characters.html">
-            👥 Characters
-        </a>
+        <a href="../characters.html">👥 Characters</a>
 
-        <a href="../wallpapers.html">
-            🖼️ Wallpapers
-        </a>
+        <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-        <a href="../music.html">
-            🎵 Music
-        </a>
+        <a href="../music.html">🎵 Music</a>
 
-        <a href="../gallery.html">
-            📸 Gallery
-        </a>
+        <a href="../gallery.html">🖼️ Gallery</a>
 
-        <a href="../gadgets.html">
-            🪄 Gadgets
-        </a>
+        <a href="../gadgets.html">🔧 Gadgets</a>
 
-        <a href="../test.html">
-            📝 Test
-        </a>
+        <a href="../test.html">📝 Test</a>
 
     </nav>
 
 </header>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      MOBILE HEADER
-========================================================= -->
+===================================================== -->
 
 <header class="mobile-header">
 
     <button class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            aria-label="Open Menu">
-
+            id="mobileMenuBtn">
         ☰
-
     </button>
-
 
     <div class="mobile-logo">
         DORAEMON 🔵
     </div>
 
-
-    <button class="mobile-search-btn"
-            id="mobileSearchBtn"
-            aria-label="Search">
-
+    <button class="mobile-search-btn">
         🔍
-
     </button>
 
 </header>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      MOBILE MENU
-========================================================= -->
+===================================================== -->
 
 <div class="mobile-menu-panel"
      id="mobileMenuPanel">
 
-    <a href="../index.html">
-        🏠 Home
-    </a>
+    <a href="../index.html">🏠 Home</a>
 
-    <a href="../movies.html">
-        🎬 Movies
-    </a>
+    <a href="../movies.html">🎬 Movies</a>
 
-    <a href="../episodes.html"
-       class="active">
-        📺 Episodes
-    </a>
+    <a href="../episodes.html">📺 Episodes</a>
 
-    <a href="../characters.html">
-        👥 Characters
-    </a>
+    <a href="../characters.html">👥 Characters</a>
 
-    <a href="../wallpapers.html">
-        🖼️ Wallpapers
-    </a>
+    <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-    <a href="../music.html">
-        🎵 Music
-    </a>
+    <a href="../music.html">🎵 Music</a>
 
-    <a href="../gallery.html">
-        📸 Gallery
-    </a>
+    <a href="../gallery.html">🖼️ Gallery</a>
 
-    <a href="../gadgets.html">
-        🪄 Gadgets
-    </a>
+    <a href="../gadgets.html">🔧 Gadgets</a>
 
-    <a href="../test.html">
-        📝 Test
-    </a>
+    <a href="../test.html">📝 Test</a>
 
 </div>
 
 
-
-<!-- =========================================================
-     EPISODE DETAIL PAGE
-========================================================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="episode-detail-page">
 
 
-    <!-- =====================================================
-         BREADCRUMB
-    ====================================================== -->
+    <!-- BREADCRUMB -->
 
     <div class="episode-breadcrumb">
 
-        <a href="../episodes.html">
-            📺 Episodes
-        </a>
+        <a href="../index.html">Home</a>
 
         <span>›</span>
 
-        <span>
-            Episode 01
-        </span>
+        <a href="../episodes.html">Episodes</a>
+
+        <span>›</span>
+
+        <span>Episode 01</span>
 
     </div>
 
 
+    <!-- =================================================
+         EPISODE HERO
+    ================================================= -->
 
-    <!-- =====================================================
-         COVER SECTION
-    ====================================================== -->
-
-    <section class="episode-cover-page">
-
-
-        <div class="episode-cover-page-image">
-
-            <img
-                src="../assets/images/episodes/episode-01.jpg"
-                alt="Doraemon Episode 01 Cover"
-            >
+    <section class="episode-hero">
 
 
-            <div class="episode-cover-overlay">
+        <!-- COVER -->
 
-                <span class="episode-cover-number">
-                    EPISODE 01
-                </span>
+        <div class="episode-cover">
 
-                <span class="episode-cover-play">
-                    ▶
-                </span>
+            <img src="../assets/episodes/covers/episode-01.jpg"
+                 alt="Doraemon Episode 01">
 
+            <div class="cover-gradient"></div>
+
+            <div class="episode-badge">
+                EPISODE 01
             </div>
+
+            <!-- PLAY COVER -->
+
+            <button class="cover-play-btn"
+                    id="coverPlayBtn"
+                    aria-label="Play Episode">
+
+                <span>▶</span>
+
+            </button>
 
         </div>
 
 
+        <!-- CONTENT -->
 
-        <div class="episode-cover-page-content">
+        <div class="episode-hero-content">
 
             <span class="episode-label">
-                DORAEMON WORLD
+                CLASSIC EPISODE
             </span>
 
-
             <h1>
-                Nobita and Doraemon's
-                First Adventure
+                Nobita and Doraemon's First Adventure
             </h1>
-
 
             <p class="episode-intro">
 
-                Welcome to Episode 01 of Doraemon World.
-                Join Nobita and Doraemon on their amazing
-                first adventure filled with friendship,
-                fun, gadgets and unforgettable moments.
+                Welcome to Episode 01 of Doraemon World!
+                Discover the beginning of Nobita and Doraemon's
+                amazing friendship, funny moments and futuristic
+                gadgets.
 
             </p>
 
 
             <!-- META -->
 
-            <div class="episode-detail-meta">
+            <div class="episode-meta">
 
-                <div class="detail-meta-item">
+                <div class="meta-box">
 
-                    <span class="meta-icon">
-                        📺
-                    </span>
+                    <span>📺</span>
 
                     <div>
-                        <small>
-                            Episode
-                        </small>
-
-                        <strong>
-                            01
-                        </strong>
+                        <small>Episode</small>
+                        <strong>01</strong>
                     </div>
 
                 </div>
 
 
-                <div class="detail-meta-item">
+                <div class="meta-box">
 
-                    <span class="meta-icon">
-                        📅
-                    </span>
+                    <span>📅</span>
 
                     <div>
-                        <small>
-                            Year
-                        </small>
-
-                        <strong>
-                            1979
-                        </strong>
+                        <small>Year</small>
+                        <strong>1979</strong>
                     </div>
 
                 </div>
 
 
-                <div class="detail-meta-item">
+                <div class="meta-box">
 
-                    <span class="meta-icon">
-                        ⭐
-                    </span>
+                    <span>⭐</span>
 
                     <div>
-                        <small>
-                            Rating
-                        </small>
-
-                        <strong>
-                            9.2 / 10
-                        </strong>
+                        <small>Rating</small>
+                        <strong>9.2</strong>
                     </div>
 
                 </div>
@@ -301,18 +229,19 @@
 
             <!-- BUTTONS -->
 
-            <div class="episode-cover-buttons">
+            <div class="hero-buttons">
 
-                <a href="#watch"
-                   class="episode-btn primary">
+                <button class="watch-btn"
+                        id="watchBtn">
 
-                    ▶ Watch Episode
+                    <span>▶</span>
+                    Watch Episode
 
-                </a>
+                </button>
 
 
                 <a href="../episodes.html"
-                   class="episode-btn secondary">
+                   class="back-btn">
 
                     ← All Episodes
 
@@ -325,67 +254,154 @@
     </section>
 
 
+    <!-- =================================================
+         QUICK INFO
+    ================================================= -->
 
-    <!-- =====================================================
-         EPISODE INFORMATION
-    ====================================================== -->
+    <section class="quick-info">
 
-    <section class="episode-information">
+        <div class="quick-info-title">
 
+            <span>💙</span>
 
-        <div class="episode-section-heading">
-
-            <span>
-                ABOUT THIS EPISODE
-            </span>
-
-            <h2>
-                📖 Episode Information
-            </h2>
+            <div>
+                <h2>Episode Overview</h2>
+                <p>A quick look at this Doraemon adventure</p>
+            </div>
 
         </div>
 
 
+        <div class="quick-grid">
 
-        <div class="episode-info-grid">
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    📚
+                </div>
+
+                <div>
+                    <small>Story</small>
+                    <strong>First Adventure</strong>
+                </div>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    👥
+                </div>
+
+                <div>
+                    <small>Characters</small>
+                    <strong>5 Main Characters</strong>
+                </div>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    🔧
+                </div>
+
+                <div>
+                    <small>Gadgets</small>
+                    <strong>4 Featured Gadgets</strong>
+                </div>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    🏷️
+                </div>
+
+                <div>
+                    <small>Category</small>
+                    <strong>Classic</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         INFORMATION
+    ================================================= -->
+
+    <section class="episode-information">
+
+        <div class="section-title">
+
+            <span>📖</span>
+
+            <div>
+                <h2>Episode Information</h2>
+
+                <p>
+                    Everything you need to know about Episode 01
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="info-grid">
 
 
             <!-- STORY -->
 
-            <article class="episode-info-card story-card">
+            <article class="info-card story-card">
 
-                <div class="info-card-icon">
-                    📖
+                <div class="info-card-top">
+
+                    <div class="info-icon">
+                        📚
+                    </div>
+
+                    <span>STORY</span>
+
                 </div>
 
                 <h3>
-                    Story
+                    Nobita's New Beginning
                 </h3>
 
                 <p>
 
-                    Nobita's everyday life is full of
-                    problems and adventures. Everything
-                    changes when Doraemon arrives from
-                    the future to help him.
-
-                    Together, Nobita and Doraemon begin
-                    an incredible journey filled with
-                    futuristic gadgets, funny situations
-                    and memorable adventures.
+                    Nobita's everyday life is full of problems.
+                    Things begin to change when Doraemon arrives
+                    from the future. With the help of amazing
+                    futuristic gadgets, Nobita starts experiencing
+                    exciting and funny adventures.
 
                 </p>
 
             </article>
 
 
-
             <!-- CHARACTERS -->
 
-            <article class="episode-info-card">
+            <article class="info-card">
 
-                <div class="info-card-icon">
-                    👥
+                <div class="info-card-top">
+
+                    <div class="info-icon">
+                        👥
+                    </div>
+
+                    <span>CHARACTERS</span>
+
                 </div>
 
                 <h3>
@@ -394,123 +410,104 @@
 
                 <div class="character-tags">
 
-                    <span>
-                        🔵 Doraemon
-                    </span>
+                    <span>🔵 Doraemon</span>
 
-                    <span>
-                        👦 Nobita
-                    </span>
+                    <span>👦 Nobita</span>
 
-                    <span>
-                        👧 Shizuka
-                    </span>
+                    <span>🌸 Shizuka</span>
 
-                    <span>
-                        💪 Gian
-                    </span>
+                    <span>💪 Gian</span>
 
-                    <span>
-                        😎 Suneo
-                    </span>
+                    <span>😎 Suneo</span>
 
                 </div>
 
             </article>
 
 
-
             <!-- GADGETS -->
 
-            <article class="episode-info-card">
+            <article class="info-card">
 
-                <div class="info-card-icon">
-                    🪄
+                <div class="info-card-top">
+
+                    <div class="info-icon">
+                        🔧
+                    </div>
+
+                    <span>GADGETS</span>
+
                 </div>
 
                 <h3>
                     Featured Gadgets
                 </h3>
 
-                <ul class="gadget-list">
+                <div class="gadget-items">
 
-                    <li>
-                        🚪 Anywhere Door
-                    </li>
+                    <div>
+                        🚪
+                        <span>Anywhere Door</span>
+                    </div>
 
-                    <li>
-                        🚁 Take-Copter
-                    </li>
+                    <div>
+                        🚁
+                        <span>Take-Copter</span>
+                    </div>
 
-                    <li>
-                        ⏰ Time Machine
-                    </li>
+                    <div>
+                        ⏰
+                        <span>Time Machine</span>
+                    </div>
 
-                    <li>
-                        🍞 Memory Bread
-                    </li>
+                    <div>
+                        🍞
+                        <span>Memory Bread</span>
+                    </div>
 
-                </ul>
+                </div>
 
             </article>
 
 
+            <!-- DETAILS -->
 
-            <!-- EPISODE DETAILS -->
+            <article class="info-card">
 
-            <article class="episode-info-card">
+                <div class="info-card-top">
 
-                <div class="info-card-icon">
-                    ℹ️
+                    <div class="info-icon">
+                        ℹ️
+                    </div>
+
+                    <span>DETAILS</span>
+
                 </div>
 
                 <h3>
                     Episode Details
                 </h3>
 
-                <div class="episode-detail-list">
+                <div class="detail-list">
 
                     <div>
-                        <span>
-                            Series
-                        </span>
-
-                        <strong>
-                            Doraemon
-                        </strong>
+                        <span>Series</span>
+                        <strong>Doraemon</strong>
                     </div>
 
-
                     <div>
-                        <span>
-                            Episode
-                        </span>
-
-                        <strong>
-                            01
-                        </strong>
+                        <span>Episode</span>
+                        <strong>01</strong>
                     </div>
 
-
                     <div>
-                        <span>
-                            Category
-                        </span>
-
-                        <strong>
-                            Classic
-                        </strong>
+                        <span>Category</span>
+                        <strong>Classic</strong>
                     </div>
 
-
                     <div>
-                        <span>
-                            Release
-                        </span>
-
-                        <strong>
-                            1979
-                        </strong>
+                        <span>Release</span>
+                        <strong>1979</strong>
                     </div>
 
                 </div>
@@ -522,122 +519,44 @@
     </section>
 
 
+    <!-- =================================================
+         ABOUT
+    ================================================= -->
 
-    <!-- =====================================================
-         WATCH SECTION
-    ====================================================== -->
+    <section class="about-episode">
 
-    <section class="episode-watch"
-             id="watch">
+        <div class="section-title">
 
+            <span>💙</span>
 
-        <div class="episode-section-heading">
-
-            <span>
-                WATCH NOW
-            </span>
-
-            <h2>
-                🎬 Watch Episode 01
-            </h2>
-
-            <p>
-                Enjoy this Doraemon adventure.
-            </p>
-
-        </div>
-
-
-
-        <div class="video-container">
-
-
-            <!--
-                VIDEO FILE PLACEHOLDER
-
-                Later you can add your video here.
-
-                Example:
-
-                <video controls>
-                    <source
-                        src="../assets/videos/episodes/episode-01.mp4"
-                        type="video/mp4">
-                </video>
-            -->
-
-
-            <div class="video-placeholder">
-
-                <div class="video-placeholder-icon">
-                    ▶
-                </div>
-
-                <h3>
-                    Episode Video
-                </h3>
+            <div>
+                <h2>About This Episode</h2>
 
                 <p>
-                    Your Episode 01 video will appear here.
+                    A special beginning to an unforgettable friendship
                 </p>
-
-                <span>
-                    🎥 Video Coming Soon
-                </span>
-
             </div>
 
         </div>
 
-    </section>
 
-
-
-    <!-- =====================================================
-         DESCRIPTION
-    ====================================================== -->
-
-    <section class="episode-description">
-
-
-        <div class="episode-section-heading">
-
-            <span>
-                EPISODE DESCRIPTION
-            </span>
-
-            <h2>
-                💙 About the Adventure
-            </h2>
-
-        </div>
-
-
-        <div class="description-box">
+        <div class="about-box">
 
             <p>
 
-                Doraemon is a robotic cat from the
-                22nd century who travels back in time
-                to help Nobita Nobi.
-
-                Nobita is a kind-hearted but unlucky
-                schoolboy who often finds himself in
-                difficult situations.
-
-                With Doraemon's amazing futuristic
-                gadgets, every ordinary day can quickly
-                turn into an extraordinary adventure.
+                Doraemon's arrival changes Nobita's ordinary life
+                forever. Coming from the future, Doraemon brings
+                incredible gadgets that help Nobita deal with his
+                everyday problems.
 
             </p>
 
-
             <p>
 
-                This episode introduces the wonderful
-                friendship between Nobita and Doraemon
-                and begins their unforgettable journey
-                together.
+                This episode introduces the special friendship
+                between Nobita and Doraemon and begins their
+                exciting journey filled with comedy, adventure
+                and unforgettable memories.
 
             </p>
 
@@ -646,235 +565,335 @@
     </section>
 
 
-
-    <!-- =====================================================
+    <!-- =================================================
          EPISODE NAVIGATION
-    ====================================================== -->
+    ================================================= -->
 
     <section class="episode-navigation">
 
-
         <a href="../episodes.html"
-           class="episode-navigation-btn all">
+           class="episode-nav-btn">
 
-            <span>
-                📺
-            </span>
+            <span>←</span>
 
             <div>
-
-                <small>
-                    BACK TO
-                </small>
-
-                <strong>
-                    All Episodes
-                </strong>
-
+                <small>Back to</small>
+                <strong>All Episodes</strong>
             </div>
 
         </a>
 
 
-
         <a href="episode-02.html"
-           class="episode-navigation-btn next">
+           class="episode-nav-btn next">
 
             <div>
-
-                <small>
-                    NEXT EPISODE
-                </small>
-
-                <strong>
-                    Episode 02
-                </strong>
-
+                <small>Next Episode</small>
+                <strong>Episode 02</strong>
             </div>
 
-            <span>
-                →
-            </span>
+            <span>→</span>
 
         </a>
 
     </section>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer class="episodes-footer">
-
-        <p>
-            💙 DORAEMON WORLD
-        </p>
-
-        <p>
-            Explore • Watch • Enjoy
-        </p>
-
-    </footer>
-
 
 </main>
 
 
+<!-- =====================================================
+     VIDEO MODAL
+===================================================== -->
 
-<!-- =========================================================
-     MOBILE BOTTOM NAVIGATION
-========================================================= -->
+<div class="video-modal"
+     id="videoModal">
 
-<nav class="mobile-bottom-nav">
-
-
-    <a href="../index.html"
-       class="bottom-nav-item">
-
-        <span>
-            🏠
-        </span>
-
-        <small>
-            Home
-        </small>
-
-    </a>
+    <div class="video-modal-box">
 
 
-    <a href="../movies.html"
-       class="bottom-nav-item">
+        <div class="video-modal-header">
 
-        <span>
-            🎬
-        </span>
+            <div>
 
-        <small>
-            Movies
-        </small>
+                <span>
+                    DORAEMON WORLD
+                </span>
 
-    </a>
+                <h3>
+                    Episode 01 — Nobita and Doraemon's First Adventure
+                </h3>
 
-
-    <a href="../episodes.html"
-       class="bottom-nav-item active">
-
-        <span>
-            📺
-        </span>
-
-        <small>
-            Episodes
-        </small>
-
-    </a>
+            </div>
 
 
-    <a href="../characters.html"
-       class="bottom-nav-item">
+            <button class="video-close"
+                    id="videoClose">
 
-        <span>
-            👥
-        </span>
+                ✕
 
-        <small>
-            Characters
-        </small>
+            </button>
 
-    </a>
+        </div>
 
 
-    <a href="../music.html"
-       class="bottom-nav-item">
+        <div class="video-player">
 
-        <span>
-            🎵
-        </span>
+            <video id="episodeVideo"
+                   controls
+                   playsinline
+                   preload="metadata"
+                   poster="../assets/episodes/covers/episode-01.jpg">
 
-        <small>
-            Music
-        </small>
+                <source src="../assets/episodes/episode-01.mp4"
+                        type="video/mp4">
 
-    </a>
+                Your browser does not support HTML5 video.
+
+            </video>
+
+        </div>
 
 
-</nav>
+        <div class="video-modal-footer">
+
+            <span>
+                🔵 Doraemon World
+            </span>
+
+            <span>
+                Episode 01
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="episodes-footer">
+
+    <div>
+
+        <strong>
+            DORAEMON 🌐
+        </strong>
+
+        <p>
+            Your Ultimate Doraemon Fan World
+        </p>
+
+    </div>
+
+    <p>
+        © 2026 Doraemon World. Made with 💙 for Doraemon fans.
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
 
 
 
-<!-- =========================================================
-     MOBILE MENU SCRIPT
-========================================================= -->
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
 
 
-        const menuBtn =
-            document.getElementById(
-                "mobileMenuBtn"
-            );
+    /* ==========================================
+       MOBILE MENU
+    ========================================== */
+
+    const menuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const menuPanel =
+        document.getElementById("mobileMenuPanel");
 
 
-        const menuPanel =
-            document.getElementById(
-                "mobileMenuPanel"
-            );
+    if (menuBtn && menuPanel) {
+
+        menuBtn.addEventListener("click", function (e) {
+
+            e.stopPropagation();
+
+            menuPanel.classList.toggle("show");
+
+        });
 
 
-        if (menuBtn && menuPanel) {
+        document.addEventListener("click", function (e) {
 
-            menuBtn.addEventListener(
-                "click",
-                function () {
+            if (
+                !menuPanel.contains(e.target) &&
+                !menuBtn.contains(e.target)
+            ) {
 
-                    menuPanel.classList.toggle(
-                        "active"
-                    );
+                menuPanel.classList.remove("show");
 
-                }
-            );
+            }
 
-        }
+        });
+
+    }
+
+
+    /* ==========================================
+       VIDEO MODAL
+    ========================================== */
+
+    const watchBtn =
+        document.getElementById("watchBtn");
+
+    const coverPlayBtn =
+        document.getElementById("coverPlayBtn");
+
+    const videoModal =
+        document.getElementById("videoModal");
+
+    const videoClose =
+        document.getElementById("videoClose");
+
+    const video =
+        document.getElementById("episodeVideo");
+
+
+    function openVideo() {
+
+        if (!videoModal || !video) return;
 
 
         /*
-        Close mobile menu
-        when clicking outside
+           Prevent page scrolling
         */
 
-        document.addEventListener(
-            "click",
-            function (event) {
+        document.body.classList.add("video-open");
 
-                if (
-                    menuPanel &&
-                    menuBtn &&
-                    !menuPanel.contains(event.target) &&
-                    !menuBtn.contains(event.target)
-                ) {
 
-                    menuPanel.classList.remove(
-                        "active"
-                    );
+        /*
+           Open popup
+        */
 
-                }
+        videoModal.classList.add("active");
 
-            }
-        );
 
+        /*
+           Start from beginning
+        */
+
+        video.currentTime = 0;
+
+
+        /*
+           Play video
+        */
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch(function () {
+
+                /*
+                   Browser may block autoplay in rare cases.
+                   Controls are still available.
+                */
+
+            });
+
+        }
 
     }
-);
+
+
+    function closeVideo() {
+
+        if (!videoModal || !video) return;
+
+
+        video.pause();
+
+        video.currentTime = 0;
+
+        videoModal.classList.remove("active");
+
+        document.body.classList.remove("video-open");
+
+    }
+
+
+    if (watchBtn) {
+
+        watchBtn.addEventListener("click", openVideo);
+
+    }
+
+
+    if (coverPlayBtn) {
+
+        coverPlayBtn.addEventListener("click", openVideo);
+
+    }
+
+
+    if (videoClose) {
+
+        videoClose.addEventListener("click", closeVideo);
+
+    }
+
+
+    /*
+       Click outside video
+    */
+
+    if (videoModal) {
+
+        videoModal.addEventListener("click", function (e) {
+
+            if (e.target === videoModal) {
+
+                closeVideo();
+
+            }
+
+        });
+
+    }
+
+
+    /*
+       ESC key
+    */
+
+    document.addEventListener("keydown", function (e) {
+
+        if (
+            e.key === "Escape" &&
+            videoModal.classList.contains("active")
+        ) {
+
+            closeVideo();
+
+        }
+
+    });
+
+});
 
 </script>
 
-
 </body>
-
 </html>
