@@ -1,14 +1,24 @@
 /* =========================================================
    DORAEMON WORLD
-   CHARACTERS SYSTEM
+   CHARACTER SYSTEM
+   UNIQUE CHARACTER DATABASE
+   MAIN + FAMILY + FRIENDS + SCHOOL + ROBOT + MOVIE + OTHERS
 ========================================================= */
 
 
 /* =========================================================
-   CHARACTER DATA
+   CHARACTER DATABASE
+   IMPORTANT:
+   - Every character appears only ONCE
+   - Main characters are NOT repeated in Movie category
+   - Movie category contains movie-exclusive characters
 ========================================================= */
 
 const characters = [
+
+    /* =====================================================
+       MAIN CHARACTERS
+    ===================================================== */
 
     {
         id: 1,
@@ -16,109 +26,104 @@ const characters = [
         japanese: "ドラえもん",
         category: "main",
         image: "assets/images/characters/Doremon.ch.png",
-
         dob: "September 3, 2112",
-        age: "Future Robot",
+        age: "Robot Cat",
         gender: "Male",
-        live: "22nd Century, Japan",
-        school: "Robot School",
-        occupation: "Helping Nobita",
-        family: "Sewashi Nobi is his descendant's family",
+        live: "Nobita's House",
+        school: "Robot Academy",
+        occupation: "Future Robot / Helper",
+        family: "Dorami",
         friends: "Nobita, Shizuka, Gian, Suneo",
-        personality: "Kind, caring, helpful and sometimes emotional",
-        firstAppearance: "December 1969 / January 1970 publications",
-
+        personality: "Kind, helpful, emotional and clever",
+        firstAppearance: "1969",
         description:
-            "Doraemon ek blue robotic cat hai jo 22nd century se Nobita ki help karne ke liye present time mein aata hai."
+            "Doraemon is a robotic cat from the 22nd century who travels back in time to help Nobita."
     },
 
     {
         id: 2,
         name: "Nobita Nobi",
-        japanese: "野比のび太",
+        japanese: "野比 のび太",
         category: "main",
         image: "assets/images/characters/nobita.png",
-
-        dob: "August 7, 1964",
-        age: "10 years",
+        dob: "August 7",
+        age: "10",
         gender: "Male",
         live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
+        school: "Nobita's School",
         occupation: "Student",
         family: "Tamako Nobi, Nobisuke Nobi",
         friends: "Doraemon, Shizuka, Gian, Suneo",
-        personality: "Lazy, kind-hearted, emotional and imaginative",
-        firstAppearance: "Doraemon manga",
-
+        personality: "Kind, lazy, emotional and imaginative",
+        firstAppearance: "1969",
         description:
-            "Nobita Doraemon ka sabse close human friend hai. Woh studies aur sports mein weak hai, lekin bahut kind-hearted hai."
+            "Nobita is Doraemon's best friend and the main human character of the series."
     },
 
     {
         id: 3,
         name: "Shizuka Minamoto",
-        japanese: "源静香",
-        category: "friends",
+        japanese: "源 静香",
+        category: "main",
         image: "assets/images/characters/shizuka.png",
-
-        dob: "May 8, 1964",
-        age: "10 years",
+        dob: "May 8",
+        age: "10",
         gender: "Female",
         live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
+        school: "Nobita's School",
         occupation: "Student",
-        family: "Shizuka's parents",
+        family: "Shizuka's Mother, Shizuka's Father",
         friends: "Nobita, Doraemon, Gian, Suneo",
         personality: "Kind, intelligent, polite and caring",
-        firstAppearance: "Doraemon manga",
-
+        firstAppearance: "1969",
         description:
-            "Shizuka Nobita ki close friend hai. Woh intelligent, kind aur studies mein achhi hai."
+            "Shizuka is Nobita's close friend and one of the central characters in Doraemon."
     },
 
     {
         id: 4,
         name: "Takeshi Goda",
-        japanese: "剛田武",
-        category: "friends",
+        japanese: "剛田 武",
+        category: "main",
         image: "assets/images/characters/gian.png",
-
-        dob: "June 15, 1964",
-        age: "10 years",
+        dob: "June 15",
+        age: "10",
         gender: "Male",
         live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
-        occupation: "Student",
-        family: "Gian's mother and Jaiko",
+        school: "Nobita's School",
+        occupation: "Student / Singer",
+        family: "Jaiko, Gian's Mother",
         friends: "Nobita, Suneo, Doraemon",
-        personality: "Strong, confident, aggressive but caring",
-        firstAppearance: "Doraemon manga",
-
+        personality: "Strong, loud, confident and sometimes caring",
+        firstAppearance: "1969",
         description:
-            "Gian group ka strong boy hai. Woh apni singing ke liye famous hai aur aksar Nobita ko trouble karta hai."
+            "Gian is Nobita's classmate. He is known for his strength and his love of singing."
     },
 
     {
         id: 5,
         name: "Suneo Honekawa",
-        japanese: "骨川スネ夫",
-        category: "friends",
+        japanese: "骨川 スネ夫",
+        category: "main",
         image: "assets/images/characters/suneo.png",
-
-        dob: "February 29, 1964",
-        age: "10 years",
+        dob: "February 29",
+        age: "10",
         gender: "Male",
         live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
+        school: "Nobita's School",
         occupation: "Student",
-        family: "Suneo's parents",
+        family: "Suneo's Mother, Suneo's Father",
         friends: "Gian, Nobita, Doraemon",
-        personality: "Smart, boastful, clever and sometimes selfish",
-        firstAppearance: "Doraemon manga",
-
+        personality: "Proud, clever, stylish and sometimes selfish",
+        firstAppearance: "1969",
         description:
-            "Suneo ek clever aur rich family se aane wala boy hai. Woh apni expensive things ke baare mein boast karta hai."
+            "Suneo is a wealthy classmate of Nobita who often shows off his possessions."
     },
+
+
+    /* =====================================================
+       ROBOT CHARACTERS
+    ===================================================== */
 
     {
         id: 6,
@@ -126,379 +131,630 @@ const characters = [
         japanese: "ドラミ",
         category: "robot",
         image: "assets/images/characters/dorami.png",
-
         dob: "December 2, 2114",
-        age: "Future Robot",
+        age: "Robot Cat",
         gender: "Female",
-        live: "22nd Century, Japan",
-        school: "Robot School",
-        occupation: "Helping Sewashi",
-        family: "Doraemon's sister",
-        friends: "Doraemon and Sewashi",
-        personality: "Smart, responsible, polite and caring",
-        firstAppearance: "Doraemon manga",
-
+        live: "22nd Century",
+        school: "Robot Academy",
+        occupation: "Future Robot",
+        family: "Doraemon",
+        friends: "Doraemon, Sewashi",
+        personality: "Smart, responsible and caring",
+        firstAppearance: "1973",
         description:
-            "Dorami Doraemon ki younger sister hai. Woh Doraemon se zyada responsible aur organized hai."
+            "Dorami is Doraemon's younger sister and is known for being responsible and capable."
     },
 
     {
         id: 7,
-        name: "Sewashi Nobi",
-        japanese: "セワシ",
-        category: "family",
-        image: "assets/images/characters/sewashi.png",
-
-        dob: "22nd Century",
-        age: "Child",
-        gender: "Male",
-        live: "Tokyo, 22nd Century",
-        school: "Future School",
-        occupation: "Student",
-        family: "Nobi family descendant",
-        friends: "Doraemon, Dorami",
-        personality: "Smart and responsible",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Sewashi future generation ka member hai aur Nobita ka descendant hai."
-    },
-
-    {
-        id: 8,
-        name: "Tamako Nobi",
-        japanese: "野比玉子",
-        category: "family",
-        image: "assets/images/characters/tamako.png",
-
-        dob: "Not officially specified",
-        age: "Adult",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Homemaker",
-        family: "Nobita's mother",
-        friends: "Nobi family",
-        personality: "Strict but caring",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Tamako Nobita ki mother hai. Woh Nobita ki studies ko lekar strict rehti hain."
-    },
-
-    {
-        id: 9,
-        name: "Nobisuke Nobi",
-        japanese: "野比のび助",
-        category: "family",
-        image: "assets/images/characters/nobisuke.png",
-
-        dob: "Not officially specified",
-        age: "Adult",
-        gender: "Male",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Office Worker",
-        family: "Nobita's father",
-        friends: "Nobi family",
-        personality: "Kind, relaxed and supportive",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Nobisuke Nobita ke father hain aur office mein kaam karte hain."
-    },
-
-    {
-        id: 10,
-        name: "Jaiko Goda",
-        japanese: "ジャイ子",
-        category: "family",
-        image: "assets/images/characters/jaiko.png",
-
-        dob: "Not officially specified",
-        age: "Young",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Elementary School",
-        occupation: "Student / Manga Artist",
-        family: "Gian's younger sister",
-        friends: "Gian and neighbourhood friends",
-        personality: "Creative, emotional and artistic",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Jaiko Gian ki younger sister hai aur manga drawing mein interested hai."
-    },
-
-    {
-        id: 11,
-        name: "Dekisugi Hidetoshi",
-        japanese: "出木杉英才",
-        category: "school",
-        image: "assets/images/characters/dekisugi.png",
-
-        dob: "Not officially specified",
-        age: "10 years",
-        gender: "Male",
-        live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
-        occupation: "Student",
-        family: "Dekisugi family",
-        friends: "Shizuka and classmates",
-        personality: "Intelligent, polite and hardworking",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Dekisugi class ka highly intelligent student hai. Woh studies aur sports dono mein achha hai."
-    },
-
-    {
-        id: 12,
-        name: "Nobita's Teacher",
-        japanese: "先生",
-        category: "school",
-        image: "assets/images/characters/teacher.png",
-
-        dob: "Not specified",
-        age: "Adult",
-        gender: "Male",
-        live: "Tokyo, Japan",
-        school: "Nobita's Elementary School",
-        occupation: "Teacher",
-        family: "Not specified",
-        friends: "School staff",
-        personality: "Strict but responsible",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Nobita ka teacher class mein discipline aur studies ko maintain karta hai."
-    },
-
-    {
-        id: 13,
-        name: "Mii-chan",
-        japanese: "ミイちゃん",
-        category: "minor",
-        image: "assets/images/characters/miichan.png",
-
-        dob: "Not specified",
-        age: "Not specified",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Pet Cat",
-        family: "Not specified",
-        friends: "Doraemon",
-        personality: "Cute and friendly",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Mii-chan ek cute cat character hai jo Doraemon ke saath kai stories mein nazar aati hai."
-    },
-
-    {
-        id: 14,
-        name: "Nobita's Grandmother",
-        japanese: "のび太のおばあちゃん",
-        category: "family",
-        image: "assets/images/characters/grandmother.png",
-
-        dob: "Not specified",
-        age: "Elder",
-        gender: "Female",
-        live: "Japan",
-        school: "Not applicable",
-        occupation: "Homemaker",
-        family: "Nobita's grandmother",
-        friends: "Nobi family",
-        personality: "Loving and gentle",
-        firstAppearance: "Doraemon stories",
-
-        description:
-            "Nobita ki grandmother uske childhood memories ka important part hain."
-    },
-
-    {
-        id: 15,
-        name: "Suneo's Mother",
-        japanese: "スネ夫の母",
-        category: "family",
-        image: "assets/images/characters/suneo-mother.png",
-
-        dob: "Not specified",
-        age: "Adult",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Homemaker",
-        family: "Suneo's mother",
-        friends: "Neighbourhood families",
-        personality: "Caring and fashionable",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Suneo ki mother apne son ko bahut pamper karti hain."
-    },
-
-    {
-        id: 16,
-        name: "Gian's Mother",
-        japanese: "ジャイアンの母",
-        category: "family",
-        image: "assets/images/characters/gian-mother.png",
-
-        dob: "Not specified",
-        age: "Adult",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Shop Owner",
-        family: "Gian and Jaiko",
-        friends: "Neighbourhood families",
-        personality: "Strict and hardworking",
-        firstAppearance: "Doraemon manga",
-
-        description:
-            "Gian ki mother strong personality wali hain aur Gian ko discipline mein rakhti hain."
-    },
-
-    {
-        id: 17,
-        name: "Nobita's Future Wife",
-        japanese: "源静香",
-        category: "movie",
-        image: "assets/images/characters/shizuka.png",
-
-        dob: "Future",
-        age: "Adult in future",
-        gender: "Female",
-        live: "Tokyo, Japan",
-        school: "Future",
-        occupation: "Adult",
-        family: "Future Nobi family",
-        friends: "Nobita and friends",
-        personality: "Kind and caring",
-        firstAppearance: "Future stories",
-
-        description:
-            "Future timeline mein Nobita aur Shizuka ki family life Doraemon story ka important part hai."
-    },
-
-    {
-        id: 18,
         name: "Mini-Dora",
         japanese: "ミニドラ",
         category: "robot",
         image: "assets/images/characters/minidora.png",
-
-        dob: "22nd Century",
-        age: "Future Robot",
-        gender: "Not specified",
+        dob: "Unknown",
+        age: "Robot",
+        gender: "Unknown",
         live: "22nd Century",
-        school: "Robot world",
-        occupation: "Robot assistant",
-        family: "Related to Doraemon robots",
-        friends: "Doraemon",
-        personality: "Cute, energetic and helpful",
-        firstAppearance: "Doraemon stories",
-
+        school: "Robot World",
+        occupation: "Mini Robot",
+        family: "Doraemon",
+        friends: "Doraemon and Dorami",
+        personality: "Cute, energetic and playful",
+        firstAppearance: "Manga / Anime",
         description:
-            "Mini-Dora chhote robotic characters hain jo Doraemon universe mein nazar aate hain."
+            "Mini-Dora are tiny robotic characters based on Doraemon that appear in different adventures."
     },
 
     {
-        id: 19,
-        name: "Hidetoshi's Father",
-        japanese: "出木杉の父",
-        category: "family",
-        image: "assets/images/characters/dekisugi-father.png",
+        id: 8,
+        name: "Sewashi Nobi",
+        japanese: "野比 セワシ",
+        category: "robot",
+        image: "assets/images/characters/sewashi.png",
+        dob: "Unknown",
+        age: "Child",
+        gender: "Male",
+        live: "22nd Century",
+        school: "Future School",
+        occupation: "Student",
+        family: "Nobi Family",
+        friends: "Doraemon",
+        personality: "Responsible, intelligent and friendly",
+        firstAppearance: "1969",
+        description:
+            "Sewashi is a boy from the future who sends Doraemon to help Nobita."
+    },
 
-        dob: "Not specified",
+
+    /* =====================================================
+       NOBITA FAMILY
+    ===================================================== */
+
+    {
+        id: 9,
+        name: "Tamako Nobi",
+        japanese: "野比 玉子",
+        category: "family",
+        image: "assets/images/characters/tamako.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Female",
+        live: "Tokyo, Japan",
+        school: "N/A",
+        occupation: "Housewife",
+        family: "Nobita, Nobisuke",
+        friends: "Neighbors",
+        personality: "Caring, strict and emotional",
+        firstAppearance: "1969",
+        description:
+            "Tamako Nobi is Nobita's mother and takes care of the Nobi household."
+    },
+
+    {
+        id: 10,
+        name: "Nobisuke Nobi",
+        japanese: "野比 のび助",
+        category: "family",
+        image: "assets/images/characters/nobisuke.png",
+        dob: "Unknown",
         age: "Adult",
         gender: "Male",
         live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Professional",
-        family: "Dekisugi family",
-        friends: "Family",
-        personality: "Calm and supportive",
-        firstAppearance: "Doraemon stories",
-
+        school: "N/A",
+        occupation: "Office Worker",
+        family: "Nobita, Tamako",
+        friends: "Office colleagues",
+        personality: "Kind, relaxed and hardworking",
+        firstAppearance: "1969",
         description:
-            "Dekisugi ke family members Doraemon stories mein occasionally appear hote hain."
+            "Nobisuke Nobi is Nobita's father and works as an office employee."
+    },
+
+    {
+        id: 11,
+        name: "Nobita's Grandmother",
+        japanese: "のび太の祖母",
+        category: "family",
+        image: "assets/images/characters/grandmother.png",
+        dob: "Unknown",
+        age: "Elderly",
+        gender: "Female",
+        live: "Japan",
+        school: "N/A",
+        occupation: "Homemaker",
+        family: "Nobita and Nobi Family",
+        friends: "Family",
+        personality: "Gentle, loving and caring",
+        firstAppearance: "Manga",
+        description:
+            "Nobita's grandmother is remembered for her warm relationship with Nobita."
+    },
+
+    {
+        id: 12,
+        name: "Jaiko Goda",
+        japanese: "剛田 ジャイ子",
+        category: "family",
+        image: "assets/images/characters/jaiko.png",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Female",
+        live: "Tokyo, Japan",
+        school: "School",
+        occupation: "Student / Manga Artist",
+        family: "Gian, Gian's Mother",
+        friends: "Nobita and classmates",
+        personality: "Creative, kind and determined",
+        firstAppearance: "1970",
+        description:
+            "Jaiko is Gian's younger sister and dreams of becoming a manga artist."
+    },
+
+    {
+        id: 13,
+        name: "Suneo's Mother",
+        japanese: "骨川 スネ夫の母",
+        category: "family",
+        image: "assets/images/characters/suneo-mother.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Female",
+        live: "Tokyo, Japan",
+        school: "N/A",
+        occupation: "Housewife",
+        family: "Suneo, Suneo's Father",
+        friends: "Neighbors",
+        personality: "Proud, fashionable and caring",
+        firstAppearance: "Manga",
+        description:
+            "Suneo's mother is known for her stylish appearance and wealthy lifestyle."
+    },
+
+    {
+        id: 14,
+        name: "Gian's Mother",
+        japanese: "剛田家の母",
+        category: "family",
+        image: "assets/images/characters/gian-mother.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Female",
+        live: "Tokyo, Japan",
+        school: "N/A",
+        occupation: "Shopkeeper",
+        family: "Gian, Jaiko",
+        friends: "Neighbors",
+        personality: "Strict, hardworking and caring",
+        firstAppearance: "Manga",
+        description:
+            "Gian's mother runs the family shop and is known for her strict personality."
+    },
+
+    {
+        id: 15,
+        name: "Suneo's Father",
+        japanese: "骨川 スネ夫の父",
+        category: "family",
+        image: "assets/images/characters/suneo-father.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Male",
+        live: "Tokyo, Japan",
+        school: "N/A",
+        occupation: "Businessman",
+        family: "Suneo, Suneo's Mother",
+        friends: "Business contacts",
+        personality: "Wealthy, busy and confident",
+        firstAppearance: "Manga",
+        description:
+            "Suneo's father is a successful businessman and member of Suneo's family."
+    },
+
+
+    /* =====================================================
+       FRIENDS
+    ===================================================== */
+
+    {
+        id: 16,
+        name: "Mii-chan",
+        japanese: "ミイちゃん",
+        category: "friends",
+        image: "assets/images/characters/miichan.png",
+        dob: "Unknown",
+        age: "Cat",
+        gender: "Female",
+        live: "Tokyo",
+        school: "N/A",
+        occupation: "Pet Cat",
+        family: "Unknown",
+        friends: "Doraemon",
+        personality: "Cute, calm and friendly",
+        firstAppearance: "Manga",
+        description:
+            "Mii-chan is a cat Doraemon is fond of and appears in several stories."
+    },
+
+
+    /* =====================================================
+       SCHOOL CHARACTERS
+    ===================================================== */
+
+    {
+        id: 17,
+        name: "Nobita's Teacher",
+        japanese: "先生",
+        category: "school",
+        image: "assets/images/characters/teacher.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Male",
+        live: "Tokyo, Japan",
+        school: "Nobita's School",
+        occupation: "Teacher",
+        family: "Unknown",
+        friends: "Other teachers",
+        personality: "Strict, serious and responsible",
+        firstAppearance: "Manga",
+        description:
+            "Nobita's teacher teaches his class and frequently scolds Nobita for being late or unprepared."
+    },
+
+    {
+        id: 18,
+        name: "Dekisugi Hidetoshi",
+        japanese: "出木杉 英才",
+        category: "school",
+        image: "assets/images/characters/dekisugi.png",
+        dob: "Unknown",
+        age: "10",
+        gender: "Male",
+        live: "Tokyo, Japan",
+        school: "Nobita's School",
+        occupation: "Student",
+        family: "Dekisugi Family",
+        friends: "Shizuka and classmates",
+        personality: "Intelligent, polite and hardworking",
+        firstAppearance: "1970",
+        description:
+            "Dekisugi is an exceptionally intelligent and talented student in Nobita's class."
+    },
+
+
+    /* =====================================================
+       OTHER CHARACTERS
+    ===================================================== */
+
+    {
+        id: 19,
+        name: "Kaminari-san",
+        japanese: "神成さん",
+        category: "minor",
+        image: "assets/images/characters/kaminari.png",
+        dob: "Unknown",
+        age: "Adult",
+        gender: "Male",
+        live: "Tokyo, Japan",
+        school: "N/A",
+        occupation: "Neighbor",
+        family: "Unknown",
+        friends: "Neighborhood residents",
+        personality: "Short-tempered but ordinary",
+        firstAppearance: "Manga",
+        description:
+            "Kaminari-san is a neighborhood character who appears in various Doraemon stories."
     },
 
     {
         id: 20,
-        name: "Nobita's Teacher's Wife",
-        japanese: "先生の妻",
+        name: "Haruo",
+        japanese: "はる夫",
         category: "minor",
-        image: "assets/images/characters/teacher-wife.png",
-
-        dob: "Not specified",
-        age: "Adult",
-        gender: "Female",
-        live: "Japan",
-        school: "Not applicable",
-        occupation: "Not specified",
-        family: "Teacher's family",
-        friends: "Not specified",
-        personality: "Not specified",
-        firstAppearance: "Doraemon stories",
-
+        image: "assets/images/characters/haruo.png",
+        dob: "Unknown",
+        age: "Child",
+        gender: "Male",
+        live: "Tokyo",
+        school: "Nobita's School",
+        occupation: "Student",
+        family: "Unknown",
+        friends: "Classmates",
+        personality: "Friendly and playful",
+        firstAppearance: "Manga",
         description:
-            "Teacher ke family members kuch Doraemon stories mein appear hote hain."
+            "Haruo is a supporting child who occasionally appears around Nobita's school and neighborhood."
     },
+
+
+    /* =====================================================
+       MOVIE-EXCLUSIVE CHARACTERS
+
+       IMPORTANT:
+       These are separate characters.
+       Doraemon / Nobita / Gian / Suneo / Shizuka
+       are NOT repeated here.
+    ===================================================== */
 
     {
         id: 21,
-        name: "Suneo's Father",
-        japanese: "スネ夫の父",
-        category: "family",
-        image: "assets/images/characters/suneo-father.png",
-
-        dob: "Not specified",
-        age: "Adult",
+        name: "Papi",
+        japanese: "パピ",
+        category: "movie",
+        image: "assets/images/characters/papi.png",
+        movieTitle: "Nobita's Little Space War",
+        dob: "Unknown",
+        age: "Child",
         gender: "Male",
-        live: "Tokyo, Japan",
-        school: "Not applicable",
-        occupation: "Businessman",
-        family: "Suneo's family",
-        friends: "Business associates",
-        personality: "Successful and family-oriented",
-        firstAppearance: "Doraemon manga",
-
+        live: "Planet Pirika",
+        school: "Pirika School",
+        occupation: "Prince",
+        family: "Pirika Royal Family",
+        friends: "Doraemon and Nobita",
+        personality: "Brave, kind and responsible",
+        firstAppearance: "Nobita's Little Space War",
         description:
-            "Suneo ke father ek successful businessman ke roop mein depict kiye jaate hain."
+            "Papi is a small space prince who becomes involved in an adventure with Doraemon and Nobita."
     },
 
     {
         id: 22,
-        name: "Nobisuke's Father",
-        japanese: "のび助の父",
-        category: "family",
-        image: "assets/images/characters//nobisuke.png",
-
-        dob: "Not specified",
-        age: "Elder",
-        gender: "Male",
-        live: "Japan",
-        school: "Not applicable",
-        occupation: "Retired",
-        family: "Nobi family",
-        friends: "Family",
-        personality: "Traditional and caring",
-        firstAppearance: "Doraemon stories",
-
+        name: "Riruru",
+        japanese: "リルル",
+        category: "movie",
+        image: "assets/images/characters/riruru.png",
+        movieTitle: "Nobita and the Steel Troops",
+        dob: "Unknown",
+        age: "Robot",
+        gender: "Female",
+        live: "Robot World",
+        school: "N/A",
+        occupation: "Robot",
+        family: "Robot World",
+        friends: "Nobita and Doraemon",
+        personality: "Calm, intelligent and caring",
+        firstAppearance: "Nobita and the Steel Troops",
         description:
-            "Nobi family ke older generation ke members kuch stories mein dikhai dete hain."
+            "Riruru is a major robot character from the Steel Troops movie adventure."
+    },
+
+    {
+        id: 23,
+        name: "Pippo",
+        japanese: "ピッポ",
+        category: "movie",
+        image: "assets/images/characters/pippo.png",
+        movieTitle: "Nobita and the New Steel Troops",
+        dob: "Unknown",
+        age: "Robot",
+        gender: "Male",
+        live: "Robot World",
+        school: "N/A",
+        occupation: "Robot",
+        family: "Robot World",
+        friends: "Nobita and Doraemon",
+        personality: "Brave, loyal and friendly",
+        firstAppearance: "Nobita and the New Steel Troops",
+        description:
+            "Pippo is a friendly robot character associated with the New Steel Troops movie."
+    },
+
+    {
+        id: 24,
+        name: "Kibo",
+        japanese: "キー坊",
+        category: "movie",
+        image: "assets/images/characters/kibo.png",
+        movieTitle: "Nobita and the Green Giant Legend",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Unknown",
+        live: "Green Planet",
+        school: "N/A",
+        occupation: "Plant Creature",
+        family: "Green Planet",
+        friends: "Nobita and Doraemon",
+        personality: "Cute, innocent and caring",
+        firstAppearance: "Nobita and the Green Giant Legend",
+        description:
+            "Kibo is a plant-like character who becomes an important friend during Nobita's adventure."
+    },
+
+    {
+        id: 25,
+        name: "Fuko",
+        japanese: "フー子",
+        category: "movie",
+        image: "assets/images/characters/fuko.png",
+        movieTitle: "Nobita and the Windmasters",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Unknown",
+        live: "Wind Village",
+        school: "N/A",
+        occupation: "Wind Creature",
+        family: "Unknown",
+        friends: "Nobita and Doraemon",
+        personality: "Gentle, loyal and brave",
+        firstAppearance: "Nobita and the Windmasters",
+        description:
+            "Fuko is a special character connected with the wind and Nobita's movie adventure."
+    },
+
+    {
+        id: 26,
+        name: "Kukuru",
+        japanese: "ククル",
+        category: "movie",
+        image: "assets/images/characters/kukuru.png",
+        movieTitle: "New Great Adventure into the Underworld",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Male",
+        live: "Magic World",
+        school: "Magic School",
+        occupation: "Adventurer",
+        family: "Magic World Family",
+        friends: "Nobita and Doraemon",
+        personality: "Brave, curious and friendly",
+        firstAppearance: "New Great Adventure into the Underworld",
+        description:
+            "Kukuru is a young character who joins Nobita and Doraemon during their magical adventure."
+    },
+
+    {
+        id: 27,
+        name: "Sofia",
+        japanese: "ソフィア",
+        category: "movie",
+        image: "assets/images/characters/sofia.png",
+        movieTitle: "Nobita's Great Battle of the Mermaid King",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Female",
+        live: "Underwater Kingdom",
+        school: "Royal School",
+        occupation: "Princess",
+        family: "Underwater Royal Family",
+        friends: "Nobita and Doraemon",
+        personality: "Brave, kind and intelligent",
+        firstAppearance: "Nobita's Great Battle of the Mermaid King",
+        description:
+            "Sofia is an important character from Doraemon's underwater kingdom adventure."
+    },
+
+    {
+        id: 28,
+        name: "Peko",
+        japanese: "ペコ",
+        category: "movie",
+        image: "assets/images/characters/peko.png",
+        movieTitle: "New Nobita's Great Demon",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Male",
+        live: "Dog Kingdom",
+        school: "N/A",
+        occupation: "Prince / Adventurer",
+        family: "Dog Kingdom Royal Family",
+        friends: "Nobita and Doraemon",
+        personality: "Brave, loyal and kind",
+        firstAppearance: "New Nobita's Great Demon",
+        description:
+            "Peko is a major character from the Great Demon movie adventure."
+    },
+
+    {
+        id: 29,
+        name: "Chammy",
+        japanese: "チャミー",
+        category: "movie",
+        image: "assets/images/characters/chammy.png",
+        movieTitle: "Nobita's Little Space War",
+        dob: "Unknown",
+        age: "Unknown",
+        gender: "Female",
+        live: "Planet Pirika",
+        school: "N/A",
+        occupation: "Space Companion",
+        family: "Unknown",
+        friends: "Papi, Doraemon and Nobita",
+        personality: "Cute, helpful and friendly",
+        firstAppearance: "Nobita's Little Space War",
+        description:
+            "Chammy is a small companion connected with the Little Space War adventure."
+    },
+
+    {
+        id: 30,
+        name: "Roppuru",
+        japanese: "ロップル",
+        category: "movie",
+        image: "assets/images/characters/roppuru.png",
+        movieTitle: "Nobita's Space Heroes",
+        dob: "Unknown",
+        age: "Young",
+        gender: "Male",
+        live: "Space World",
+        school: "N/A",
+        occupation: "Space Adventurer",
+        family: "Unknown",
+        friends: "Doraemon and Nobita",
+        personality: "Brave, energetic and friendly",
+        firstAppearance: "Doraemon Movie Adventure",
+        description:
+            "Roppuru is a supporting space-adventure character included in the movie collection."
+    },
+
+    {
+        id: 31,
+        name: "Demaon",
+        japanese: "デマオン",
+        category: "movie",
+        image: "assets/images/characters/demaon.png",
+        movieTitle: "New Great Adventure into the Underworld",
+        dob: "Unknown",
+        age: "Unknown",
+        gender: "Male",
+        live: "Magic World",
+        school: "N/A",
+        occupation: "Demon Leader",
+        family: "Unknown",
+        friends: "Demon Army",
+        personality: "Powerful, threatening and ambitious",
+        firstAppearance: "New Great Adventure into the Underworld",
+        description:
+            "Demaon is a major antagonist connected with the magical world adventure."
+    },
+
+    {
+        id: 32,
+        name: "Gigazombie",
+        japanese: "ギガゾンビ",
+        category: "movie",
+        image: "assets/images/characters/gigazombie.png",
+        movieTitle: "Nobita and the Birth of Japan",
+        dob: "Unknown",
+        age: "Unknown",
+        gender: "Male",
+        live: "Ancient Japan",
+        school: "N/A",
+        occupation: "Antagonist",
+        family: "Unknown",
+        friends: "Followers",
+        personality: "Ambitious, powerful and mysterious",
+        firstAppearance: "Nobita and the Birth of Japan",
+        description:
+            "Gigazombie is a major antagonist associated with the Birth of Japan movie adventure."
     }
 
 ];
 
 
 /* =========================================================
-   ELEMENTS
+   REMOVE ACCIDENTAL DUPLICATES
+   ---------------------------------------------------------
+   This protects the page even if the database accidentally
+   contains the same character twice.
+========================================================= */
+
+function normalizeCharacterName(name) {
+
+    return String(name)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+
+}
+
+
+const uniqueCharacters = [];
+
+const seenCharacters = new Set();
+
+
+characters.forEach(character => {
+
+    const key = normalizeCharacterName(character.name);
+
+    if (!seenCharacters.has(key)) {
+
+        seenCharacters.add(key);
+
+        uniqueCharacters.push(character);
+
+    }
+
+});
+
+
+/*
+   Use only the cleaned unique database from this point.
+*/
+const characterDatabase = uniqueCharacters;
+
+
+/* =========================================================
+   DOM ELEMENTS
 ========================================================= */
 
 const characterGrid =
@@ -521,10 +777,82 @@ const noCharacters =
 
 
 /* =========================================================
-   CURRENT FILTER
+   CURRENT CATEGORY
 ========================================================= */
 
 let currentCategory = "all";
+
+
+/* =========================================================
+   CATEGORY NAMES
+========================================================= */
+
+const categoryNames = {
+
+    all: "All Characters",
+
+    main: "Main Characters",
+
+    family: "Family Characters",
+
+    friends: "Friends",
+
+    school: "School Characters",
+
+    robot: "Robot Characters",
+
+    movie: "Movie Characters",
+
+    minor: "Other Characters"
+
+};
+
+
+/* =========================================================
+   ESCAPE HTML
+   Prevents broken HTML if character data contains
+   special characters.
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   SEARCH TEXT
+========================================================= */
+
+function getSearchText(character) {
+
+    return [
+
+        character.name,
+
+        character.japanese,
+
+        character.description,
+
+        character.occupation,
+
+        character.personality,
+
+        character.movieTitle || "",
+
+        character.firstAppearance
+
+    ]
+        .join(" ")
+        .toLowerCase();
+
+}
 
 
 /* =========================================================
@@ -533,80 +861,114 @@ let currentCategory = "all";
 
 function renderCharacters() {
 
-    const searchText =
-        characterSearch.value
-            .toLowerCase()
-            .trim();
+    const searchText = characterSearch
+        ? characterSearch.value.trim().toLowerCase()
+        : "";
+
 
     const filteredCharacters =
-        characters.filter(character => {
+        characterDatabase.filter(character => {
 
-            const matchesCategory =
+            const categoryMatch =
                 currentCategory === "all" ||
                 character.category === currentCategory;
 
-            const matchesSearch =
-                character.name
-                    .toLowerCase()
-                    .includes(searchText) ||
 
-                character.description
-                    .toLowerCase()
-                    .includes(searchText) ||
-
-                character.occupation
-                    .toLowerCase()
+            const searchMatch =
+                getSearchText(character)
                     .includes(searchText);
 
-            return matchesCategory && matchesSearch;
+
+            return categoryMatch && searchMatch;
+
         });
 
+
+    /* =====================================================
+       UPDATE COUNT
+    ===================================================== */
+
+    if (characterCount) {
+
+        characterCount.textContent =
+            filteredCharacters.length;
+
+    }
+
+
+    /* =====================================================
+       UPDATE HEADING
+    ===================================================== */
+
+    if (charactersHeading) {
+
+        charactersHeading.textContent =
+            categoryNames[currentCategory];
+
+    }
+
+
+    /* =====================================================
+       UPDATE DESCRIPTION
+    ===================================================== */
+
+    if (charactersDescription) {
+
+        charactersDescription.textContent =
+            searchText
+                ? `Search results for "${characterSearch.value}"`
+                : "Doraemon ke saare unique characters ek hi jagah.";
+
+    }
+
+
+    /* =====================================================
+       CLEAR GRID
+    ===================================================== */
+
+    if (!characterGrid) return;
 
     characterGrid.innerHTML = "";
 
 
-    characterCount.textContent =
-        filteredCharacters.length;
-
-
-    if (currentCategory === "all") {
-
-        charactersHeading.textContent =
-            "All Characters";
-
-        charactersDescription.textContent =
-            "Doraemon ke saare characters ek hi jagah.";
-
-    } else {
-
-        charactersHeading.textContent =
-            currentCategory.charAt(0).toUpperCase() +
-            currentCategory.slice(1) +
-            " Characters";
-
-        charactersDescription.textContent =
-            "Selected category ke characters.";
-    }
-
+    /* =====================================================
+       NO RESULT
+    ===================================================== */
 
     if (filteredCharacters.length === 0) {
 
-        noCharacters.hidden = false;
+        if (noCharacters) {
+
+            noCharacters.hidden = false;
+
+        }
 
         return;
 
-    } else {
-
-        noCharacters.hidden = true;
     }
 
 
-    filteredCharacters.forEach(character => {
+    if (noCharacters) {
+
+        noCharacters.hidden = true;
+
+    }
+
+
+    /* =====================================================
+       CREATE CARDS
+    ===================================================== */
+
+    filteredCharacters.forEach((character, index) => {
 
         const card =
             document.createElement("article");
 
-        card.className = "character-card";
+        card.className =
+            "character-card";
+
+        card.style.animationDelay =
+            `${index * 0.04}s`;
 
 
         card.innerHTML = `
@@ -614,10 +976,14 @@ function renderCharacters() {
             <div class="character-image">
 
                 <img
-                    src="${character.image}"
-                    alt="${character.name}"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-size:70px&quot;>👤</span>';"
+                    src="${escapeHTML(character.image)}"
+                    alt="${escapeHTML(character.name)}"
+                    loading="lazy"
                 >
+
+                <div class="image-fallback" hidden>
+                    👤
+                </div>
 
             </div>
 
@@ -625,15 +991,15 @@ function renderCharacters() {
             <div class="character-info">
 
                 <span class="character-category">
-                    ${character.category}
+                    ${escapeHTML(character.category)}
                 </span>
 
                 <h3>
-                    ${character.name}
+                    ${escapeHTML(character.name)}
                 </h3>
 
                 <p>
-                    ${character.description}
+                    ${escapeHTML(character.description)}
                 </p>
 
                 <div class="view-details">
@@ -641,14 +1007,53 @@ function renderCharacters() {
                 </div>
 
             </div>
+
         `;
 
 
-        card.addEventListener("click", () => {
+        /* =================================================
+           IMAGE FALLBACK
+        ================================================= */
 
-            openCharacterModal(character);
+        const image =
+            card.querySelector("img");
 
-        });
+        const fallback =
+            card.querySelector(".image-fallback");
+
+
+        if (image) {
+
+            image.addEventListener(
+                "error",
+                () => {
+
+                    image.style.display = "none";
+
+                    if (fallback) {
+
+                        fallback.hidden = false;
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           CARD CLICK
+        ================================================= */
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                openCharacterModal(character);
+
+            }
+        );
 
 
         characterGrid.appendChild(card);
@@ -663,30 +1068,35 @@ function renderCharacters() {
 ========================================================= */
 
 const filterButtons =
-    document.querySelectorAll(".character-filter");
+    document.querySelectorAll(
+        ".character-filter"
+    );
 
 
 filterButtons.forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+        "click",
+        () => {
 
-        filterButtons.forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
-
-
-        button.classList.add("active");
+            currentCategory =
+                button.dataset.category;
 
 
-        currentCategory =
-            button.dataset.category;
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
 
 
-        renderCharacters();
+            button.classList.add("active");
 
-    });
+
+            renderCharacters();
+
+        }
+    );
 
 });
 
@@ -706,234 +1116,290 @@ if (characterSearch) {
 
 
 /* =========================================================
-   CREATE MODAL
-========================================================= */
-
-const modal =
-    document.createElement("div");
-
-modal.className =
-    "character-modal";
-
-
-modal.innerHTML = `
-
-    <div class="character-modal-box">
-
-        <button
-            class="modal-close"
-            id="modalClose">
-            ×
-        </button>
-
-
-        <div class="modal-top">
-
-            <div class="modal-image">
-
-                <img
-                    id="modalCharacterImage"
-                    src=""
-                    alt="Character">
-
-            </div>
-
-
-            <div class="modal-main-info">
-
-                <span
-                    class="modal-category"
-                    id="modalCategory">
-                </span>
-
-
-                <h2
-                    id="modalCharacterName">
-                </h2>
-
-
-                <div
-                    class="japanese-name"
-                    id="modalJapaneseName">
-                </div>
-
-
-                <p
-                    class="modal-description"
-                    id="modalDescription">
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="details-section">
-
-            <h3>
-                📋 Character Information
-            </h3>
-
-
-            <div
-                class="details-grid"
-                id="detailsGrid">
-            </div>
-
-        </div>
-
-    </div>
-
-`;
-
-
-document.body.appendChild(modal);
-
-
-/* =========================================================
-   MODAL ELEMENTS
-========================================================= */
-
-const modalClose =
-    document.getElementById("modalClose");
-
-const modalImage =
-    document.getElementById("modalCharacterImage");
-
-const modalName =
-    document.getElementById("modalCharacterName");
-
-const modalJapanese =
-    document.getElementById("modalJapaneseName");
-
-const modalCategory =
-    document.getElementById("modalCategory");
-
-const modalDescription =
-    document.getElementById("modalDescription");
-
-const detailsGrid =
-    document.getElementById("detailsGrid");
-
-
-/* =========================================================
-   OPEN MODAL
+   CHARACTER MODAL
 ========================================================= */
 
 function openCharacterModal(character) {
 
-    modalImage.src =
-        character.image;
-
-    modalImage.alt =
-        character.name;
+    closeCharacterModal();
 
 
-    modalName.textContent =
-        character.name;
+    const modal =
+        document.createElement("div");
+
+    modal.className =
+        "character-modal show";
 
 
-    modalJapanese.textContent =
-        character.japanese;
+    const movieDetails =
+        character.movieTitle
+            ? createDetail(
+                "🎬 Movie",
+                character.movieTitle
+            )
+            : "";
 
 
-    modalCategory.textContent =
-        character.category;
+    modal.innerHTML = `
+
+        <div class="character-modal-box">
+
+            <button
+                class="modal-close"
+                aria-label="Close">
+                ×
+            </button>
 
 
-    modalDescription.textContent =
-        character.description;
+            <div class="modal-top">
+
+                <div class="modal-image">
+
+                    <img
+                        src="${escapeHTML(character.image)}"
+                        alt="${escapeHTML(character.name)}"
+                    >
+
+                    <div
+                        class="modal-image-fallback"
+                        hidden>
+                        👤
+                    </div>
+
+                </div>
 
 
-    detailsGrid.innerHTML = `
+                <div class="modal-main-info">
 
-        <div class="detail-item">
-            <span class="detail-label">🎂 Date of Birth</span>
-            <span class="detail-value">
-                ${character.dob}
-            </span>
-        </div>
+                    <span class="modal-category">
+                        ${escapeHTML(character.category)}
+                    </span>
 
 
-        <div class="detail-item">
-            <span class="detail-label">🎈 Age</span>
-            <span class="detail-value">
-                ${character.age}
-            </span>
-        </div>
+                    <h2>
+                        ${escapeHTML(character.name)}
+                    </h2>
 
 
-        <div class="detail-item">
-            <span class="detail-label">👤 Gender</span>
-            <span class="detail-value">
-                ${character.gender}
-            </span>
-        </div>
+                    <div class="japanese-name">
+                        ${escapeHTML(character.japanese)}
+                    </div>
 
 
-        <div class="detail-item">
-            <span class="detail-label">🏠 Lives In</span>
-            <span class="detail-value">
-                ${character.live}
-            </span>
-        </div>
+                    <p class="modal-description">
+                        ${escapeHTML(character.description)}
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <div class="detail-item">
-            <span class="detail-label">🏫 School</span>
-            <span class="detail-value">
-                ${character.school}
-            </span>
-        </div>
+            <div class="details-section">
+
+                <h3>
+                    Character Details
+                </h3>
 
 
-        <div class="detail-item">
-            <span class="detail-label">💼 Occupation</span>
-            <span class="detail-value">
-                ${character.occupation}
-            </span>
-        </div>
+                <div class="details-grid">
 
+                    ${createDetail(
+                        "🎂 Date of Birth",
+                        character.dob
+                    )}
 
-        <div class="detail-item">
-            <span class="detail-label">👨‍👩‍👧 Family</span>
-            <span class="detail-value">
-                ${character.family}
-            </span>
-        </div>
+                    ${createDetail(
+                        "🎈 Age",
+                        character.age
+                    )}
 
+                    ${createDetail(
+                        "⚧ Gender",
+                        character.gender
+                    )}
 
-        <div class="detail-item">
-            <span class="detail-label">👥 Friends</span>
-            <span class="detail-value">
-                ${character.friends}
-            </span>
-        </div>
+                    ${createDetail(
+                        "📍 Lives In",
+                        character.live
+                    )}
 
+                    ${createDetail(
+                        "🏫 School",
+                        character.school
+                    )}
 
-        <div class="detail-item">
-            <span class="detail-label">⭐ Personality</span>
-            <span class="detail-value">
-                ${character.personality}
-            </span>
-        </div>
+                    ${createDetail(
+                        "💼 Occupation",
+                        character.occupation
+                    )}
 
+                    ${createDetail(
+                        "👨‍👩‍👧 Family",
+                        character.family
+                    )}
 
-        <div class="detail-item">
-            <span class="detail-label">📺 First Appearance</span>
-            <span class="detail-value">
-                ${character.firstAppearance}
-            </span>
+                    ${createDetail(
+                        "👥 Friends",
+                        character.friends
+                    )}
+
+                    ${createDetail(
+                        "💫 Personality",
+                        character.personality
+                    )}
+
+                    ${createDetail(
+                        "📖 First Appearance",
+                        character.firstAppearance
+                    )}
+
+                    ${movieDetails}
+
+                </div>
+
+            </div>
+
         </div>
 
     `;
 
 
-    modal.classList.add("show");
+    document.body.appendChild(modal);
+
+
+    /* =====================================================
+       MODAL IMAGE FALLBACK
+    ===================================================== */
+
+    const modalImage =
+        modal.querySelector(
+            ".modal-image img"
+        );
+
+    const modalFallback =
+        modal.querySelector(
+            ".modal-image-fallback"
+        );
+
+
+    if (modalImage) {
+
+        modalImage.addEventListener(
+            "error",
+            () => {
+
+                modalImage.style.display =
+                    "none";
+
+                if (modalFallback) {
+
+                    modalFallback.hidden =
+                        false;
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CLOSE BUTTON
+    ===================================================== */
+
+    const closeButton =
+        modal.querySelector(
+            ".modal-close"
+        );
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closeCharacterModal
+        );
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND CLICK
+    ===================================================== */
+
+    modal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === modal
+            ) {
+
+                closeCharacterModal();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        modalEscapeHandler
+    );
 
 
     document.body.style.overflow =
         "hidden";
+
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+function createDetail(label, value) {
+
+    return `
+
+        <div class="detail-item">
+
+            <span class="detail-label">
+                ${escapeHTML(label)}
+            </span>
+
+            <span class="detail-value">
+                ${escapeHTML(
+                    value || "Not available"
+                )}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ESCAPE HANDLER
+========================================================= */
+
+function modalEscapeHandler(event) {
+
+    if (event.key === "Escape") {
+
+        closeCharacterModal();
+
+    }
+
 }
 
 
@@ -943,54 +1409,28 @@ function openCharacterModal(character) {
 
 function closeCharacterModal() {
 
-    modal.classList.remove("show");
+    const existingModal =
+        document.querySelector(
+            ".character-modal"
+        );
 
-    document.body.style.overflow =
-        "";
+
+    if (existingModal) {
+
+        existingModal.remove();
+
+    }
+
+
+    document.removeEventListener(
+        "keydown",
+        modalEscapeHandler
+    );
+
+
+    document.body.style.overflow = "";
 
 }
-
-
-modalClose.addEventListener(
-    "click",
-    closeCharacterModal
-);
-
-
-/* =========================================================
-   CLOSE BY BACKGROUND CLICK
-========================================================= */
-
-modal.addEventListener("click", event => {
-
-    if (event.target === modal) {
-
-        closeCharacterModal();
-
-    }
-
-});
-
-
-/* =========================================================
-   ESC KEY
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape" &&
-            modal.classList.contains("show")
-        ) {
-
-            closeCharacterModal();
-
-        }
-
-    }
-);
 
 
 /* =========================================================
@@ -998,17 +1438,26 @@ document.addEventListener(
 ========================================================= */
 
 const mobileMenu =
-    document.getElementById("mobileMenu");
+    document.getElementById(
+        "mobileMenu"
+    );
 
 const mobileMenuPanel =
-    document.getElementById("mobileMenuPanel");
+    document.getElementById(
+        "mobileMenuPanel"
+    );
 
 
-if (mobileMenu && mobileMenuPanel) {
+if (
+    mobileMenu &&
+    mobileMenuPanel
+) {
 
     mobileMenu.addEventListener(
         "click",
-        () => {
+        event => {
+
+            event.stopPropagation();
 
             mobileMenuPanel.classList.toggle(
                 "show"
@@ -1016,6 +1465,26 @@ if (mobileMenu && mobileMenuPanel) {
 
         }
     );
+
+
+    /* Close menu when link clicked */
+
+    mobileMenuPanel
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mobileMenuPanel.classList.remove(
+                        "show"
+                    );
+
+                }
+            );
+
+        });
 
 }
 
@@ -1025,7 +1494,9 @@ if (mobileMenu && mobileMenuPanel) {
 ========================================================= */
 
 const mobileSearch =
-    document.getElementById("mobileSearch");
+    document.getElementById(
+        "mobileSearch"
+    );
 
 
 if (mobileSearch) {
@@ -1034,12 +1505,27 @@ if (mobileSearch) {
         "click",
         () => {
 
-            characterSearch.focus();
+            if (characterSearch) {
 
-            window.scrollTo({
-                top: 120,
-                behavior: "smooth"
-            });
+                window.scrollTo({
+
+                    top: 100,
+
+                    behavior: "smooth"
+
+                });
+
+
+                setTimeout(
+                    () => {
+
+                        characterSearch.focus();
+
+                    },
+                    350
+                );
+
+            }
 
         }
     );
@@ -1048,7 +1534,42 @@ if (mobileSearch) {
 
 
 /* =========================================================
-   START
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        if (
+            mobileMenuPanel &&
+            mobileMenu &&
+            !mobileMenuPanel.contains(event.target) &&
+            !mobileMenu.contains(event.target)
+        ) {
+
+            mobileMenuPanel.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL RENDER
 ========================================================= */
 
 renderCharacters();
+
+
+/* =========================================================
+   DEBUG / CHECK
+   Console me unique character count dikhega.
+========================================================= */
+
+console.log(
+    `Doraemon World: ${characterDatabase.length} unique characters loaded.`
+);

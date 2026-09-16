@@ -1,7 +1,7 @@
 /* =========================================================
    DORAEMON WORLD
    CHARACTERS PAGE
-   DESKTOP + MOBILE
+   DESKTOP + TABLET + MOBILE
    FLOATING MOBILE BOTTOM NAV
 ========================================================= */
 
@@ -51,16 +51,13 @@ a {
 .topbar {
     width: 100%;
     min-height: 64px;
-
     padding: 8px 4%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     position: sticky;
     top: 0;
-
     z-index: 1000;
 
     background: rgba(4, 76, 132, 0.97);
@@ -69,9 +66,8 @@ a {
     -webkit-backdrop-filter: blur(15px);
 
     box-shadow:
-        0 5px 25px rgba(255, 255, 255, 0.15);
+        0 5px 25px rgba(0, 0, 0, 0.10);
 }
-
 
 
 /* =========================================================
@@ -80,12 +76,10 @@ a {
 
 .logo {
     color: white;
-
     text-decoration: none;
 
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 900;
-
     letter-spacing: 1px;
 
     white-space: nowrap;
@@ -112,7 +106,6 @@ a {
 
     display: flex;
     align-items: center;
-
     justify-content: flex-end;
 
     gap: 4px;
@@ -125,10 +118,10 @@ a {
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 
-    padding: 10px 12px;
+    padding: 10px 11px;
 
     border-radius: 10px;
 
@@ -141,7 +134,6 @@ a {
 
 .desktop-nav a:hover {
     background: #20a8f5;
-
     transform: translateY(-2px);
 }
 
@@ -216,7 +208,6 @@ a {
     border-radius: 30px;
 
     background: white;
-
     color: #1596e8;
 
     font-size: 13px;
@@ -230,7 +221,6 @@ a {
 
 .hero h1 {
     font-size: clamp(42px, 6vw, 76px);
-
     line-height: 1;
 
     color: #16212b;
@@ -238,7 +228,6 @@ a {
 
 .hero h1 strong {
     display: block;
-
     color: #1596e8;
 }
 
@@ -246,7 +235,6 @@ a {
     margin-top: 20px;
 
     font-size: 17px;
-
     line-height: 1.7;
 
     color: #52606d;
@@ -265,7 +253,6 @@ a {
     margin-top: 25px;
 
     background: #1596e8;
-
     color: white;
 
     padding: 14px 24px;
@@ -302,7 +289,6 @@ a {
 
 .hero-art img {
     width: 100%;
-
     max-width: 330px;
     max-height: 330px;
 
@@ -331,7 +317,6 @@ a {
 
 .controls-section {
     width: 90%;
-
     max-width: 1250px;
 
     margin: 35px auto 15px;
@@ -344,7 +329,6 @@ a {
 
 .search-box {
     width: 100%;
-
     max-width: 600px;
 
     height: 54px;
@@ -359,7 +343,6 @@ a {
     border-radius: 16px;
 
     display: flex;
-
     align-items: center;
 
     gap: 12px;
@@ -368,6 +351,15 @@ a {
 
     box-shadow:
         0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.25s ease;
+}
+
+.search-box:focus-within {
+    border-color: #20a8f5;
+
+    box-shadow:
+        0 5px 25px rgba(21, 150, 232, 0.12);
 }
 
 .search-box span {
@@ -378,7 +370,6 @@ a {
     width: 100%;
 
     border: 0;
-
     outline: 0;
 
     font-size: 16px;
@@ -456,7 +447,6 @@ a {
 
 .characters-section {
     width: 90%;
-
     max-width: 1250px;
 
     margin: 35px auto 70px;
@@ -471,7 +461,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
@@ -483,7 +472,6 @@ a {
     color: #1596e8;
 
     font-size: 12px;
-
     font-weight: 900;
 
     letter-spacing: 1.5px;
@@ -616,7 +604,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 18px;
@@ -626,7 +613,6 @@ a {
 
 .character-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
@@ -653,7 +639,6 @@ a {
     display: inline-block;
 
     font-size: 11px;
-
     font-weight: 800;
 
     color: #1596e8;
@@ -739,7 +724,6 @@ a {
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -753,7 +737,6 @@ a {
 
 .character-modal-box {
     width: 100%;
-
     max-width: 1000px;
 
     max-height: 90vh;
@@ -798,11 +781,9 @@ a {
     position: absolute;
 
     right: 18px;
-
     top: 18px;
 
     width: 42px;
-
     height: 42px;
 
     border: 0;
@@ -865,13 +846,11 @@ a {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
 
 .modal-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
@@ -898,7 +877,6 @@ a {
     border-radius: 20px;
 
     font-size: 11px;
-
     font-weight: 900;
 
     text-transform: uppercase;
@@ -965,6 +943,14 @@ a {
     border-radius: 14px;
 
     padding: 15px;
+
+    transition: 0.2s ease;
+}
+
+.detail-item:hover {
+    border-color: #b9e2f4;
+
+    transform: translateY(-2px);
 }
 
 .detail-label {
@@ -973,7 +959,6 @@ a {
     color: #7a8993;
 
     font-size: 12px;
-
     font-weight: 700;
 
     margin-bottom: 5px;
@@ -983,7 +968,6 @@ a {
     color: #1c2a33;
 
     font-size: 15px;
-
     font-weight: 800;
 
     line-height: 1.5;
@@ -991,8 +975,42 @@ a {
 
 
 /* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border-top:
+        1px solid #deeff7;
+}
+
+.footer-logo {
+    color: #087dcc;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin-top: 8px;
+
+    color: #71808b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
    MOBILE BOTTOM NAV
-   DESKTOP = HIDDEN
+   DESKTOP HIDDEN
 ========================================================= */
 
 .mobile-bottom-nav {
@@ -1005,6 +1023,11 @@ a {
 ========================================================= */
 
 @media (max-width: 1200px) {
+
+    .topbar {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 
     .desktop-nav {
         gap: 2px;
@@ -1030,15 +1053,19 @@ a {
 
 @media (max-width: 900px) {
 
+    .logo {
+        font-size: 18px;
+    }
+
     .desktop-nav {
-        gap: 2px;
+        gap: 1px;
     }
 
     .desktop-nav a {
         padding:
             8px 6px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .character-grid {
@@ -1049,6 +1076,11 @@ a {
     .characters-section {
         width: 92%;
     }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 
@@ -1057,10 +1089,6 @@ a {
 ========================================================= */
 
 @media (max-width: 700px) {
-
-    /* =====================================================
-       BODY
-    ===================================================== */
 
     body {
         padding-bottom: 90px;
@@ -1081,7 +1109,6 @@ a {
     ===================================================== */
 
     .mobile-header {
-
         position: sticky;
 
         top: 0;
@@ -1109,6 +1136,7 @@ a {
             rgba(0, 100, 170, 0.08);
 
         backdrop-filter: blur(15px);
+
         -webkit-backdrop-filter: blur(15px);
     }
 
@@ -1121,7 +1149,6 @@ a {
     .mobile-search-btn {
 
         width: 42px;
-
         height: 42px;
 
         border: none;
@@ -1155,7 +1182,7 @@ a {
 
         color: #087dcc;
 
-        font-size: 20px;
+        font-size: 18px;
 
         font-weight: 900;
 
@@ -1180,7 +1207,6 @@ a {
         top: 64px;
 
         left: 12px;
-
         right: 12px;
 
         z-index: 4500;
@@ -1247,11 +1273,15 @@ a {
         min-height: auto;
 
         padding:
-            50px 20px 40px;
+            48px 20px 40px;
 
         flex-direction: column;
 
         text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero-badge {
@@ -1260,6 +1290,8 @@ a {
 
         padding:
             7px 12px;
+
+        margin-bottom: 15px;
     }
 
     .hero h1 {
@@ -1274,6 +1306,8 @@ a {
         font-size: 14px;
 
         line-height: 1.6;
+
+        margin-top: 16px;
     }
 
     .hero-button {
@@ -1282,6 +1316,8 @@ a {
             12px 20px;
 
         font-size: 13px;
+
+        margin-top: 20px;
     }
 
     .hero-art {
@@ -1577,6 +1613,22 @@ a {
 
 
     /* =====================================================
+       MODAL CLOSE
+    ===================================================== */
+
+    .modal-close {
+
+        width: 38px;
+        height: 38px;
+
+        right: 12px;
+        top: 12px;
+
+        font-size: 20px;
+    }
+
+
+    /* =====================================================
        DETAILS
     ===================================================== */
 
@@ -1637,7 +1689,6 @@ a {
 
     /* =====================================================
        FLOATING BOTTOM NAV
-       SAME AS WALLPAPER PAGE
     ===================================================== */
 
     .mobile-bottom-nav {
@@ -1645,7 +1696,6 @@ a {
         position: fixed;
 
         left: 10px;
-
         right: 10px;
 
         bottom: 10px;
@@ -1803,8 +1853,7 @@ a {
     ===================================================== */
 
     .mobile-logo {
-
-        font-size: 17px;
+        font-size: 16px;
     }
 
 
@@ -1813,8 +1862,15 @@ a {
     ===================================================== */
 
     .hero h1 {
-
         font-size: 36px;
+    }
+
+    .hero-art {
+        width: 190px;
+    }
+
+    .hero-art img {
+        max-height: 190px;
     }
 
 
@@ -1896,7 +1952,6 @@ a {
     .mobile-bottom-nav {
 
         left: 8px;
-
         right: 8px;
 
         bottom: 8px;
@@ -1937,7 +1992,6 @@ a {
     .mobile-bottom-nav {
 
         left: 5px;
-
         right: 5px;
 
         bottom: 6px;
@@ -1961,6 +2015,16 @@ a {
     .hero h1 {
 
         font-size: 32px;
+    }
+
+    .hero-art {
+
+        width: 170px;
+    }
+
+    .hero-art img {
+
+        max-height: 170px;
     }
 }
 
@@ -1986,23 +2050,31 @@ input:focus-visible {
 ========================================================= */
 
 .character-modal-box::-webkit-scrollbar {
-
     width: 7px;
 }
 
 .character-modal-box::-webkit-scrollbar-track {
-
     background: #f1f8fb;
 }
 
 .character-modal-box::-webkit-scrollbar-thumb {
-
     background: #b8ddec;
-
     border-radius: 20px;
 }
 
 .character-modal-box::-webkit-scrollbar-thumb:hover {
-
     background: #1596e8;
+}
+
+
+/* =========================================================
+   HORIZONTAL SCROLLBAR
+========================================================= */
+
+.filter-wrapper {
+    scrollbar-width: none;
+}
+
+.filter-wrapper::-webkit-scrollbar {
+    display: none;
 }
