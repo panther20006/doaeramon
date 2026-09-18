@@ -1,1 +1,2 @@
-assets/episodes/compressed/*.mp4 filter=lfs diff=lfs merge=lfs -text
+assets/episodes/episode-*.mp4 filter=lfs diff=lfs merge=lfs -text
+assets/videos/motivation-*.mp4 filter=lfs diff=lfs merge=lfs -text
