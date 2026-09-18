@@ -10,11 +10,8 @@
 
     <title>Doraemon World - Episode 10</title>
 
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/episode-details.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/episode-details.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -24,9 +21,9 @@
 <body class="episode-detail-body">
 
 
-<!-- =========================================================
-     DESKTOP TOP NAVBAR
-========================================================= -->
+<!-- =====================================================
+     DESKTOP NAVBAR
+===================================================== -->
 
 <header class="topbar">
 
@@ -34,72 +31,42 @@
         DORAEMON 🌐
     </div>
 
-    <button class="menu-btn"
-            id="menu">
-        ☰
-    </button>
-
     <nav id="nav">
 
-        <a href="../index.html">
-            Home
-        </a>
+        <a href="../index.html">🏠 Home</a>
 
-        <a href="../movies.html">
-            <span class="nav-icon">🎬</span>
-            Movies
-        </a>
+        <a href="../movies.html">🎬 Movies</a>
 
-        <a href="../episodes.html"
-           class="active">
-            <span class="nav-icon">📺</span>
-            Episodes
-        </a>
+        <a href="../episodes.html" class="active">📺 Episodes</a>
 
-        <a href="../characters.html">
-            <span class="nav-icon">👥</span>
-            Characters
-        </a>
+        <a href="../characters.html">👥 Characters</a>
 
-        <a href="../wallpapers.html">
-            <span class="nav-icon">🖼️</span>
-            Wallpapers
-        </a>
+        <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-        <a href="../music.html">
-            <span class="nav-icon">🎵</span>
-            Music
-        </a>
+        <a href="../music.html">🎵 Music</a>
 
-        <a href="../gallery.html">
-            <span class="nav-icon">📸</span>
-            Gallery
-        </a>
+        <a href="../gallery.html">🖼️ Gallery</a>
 
-        <a href="../gadgets.html">
-            <span class="nav-icon">🔧</span>
-            Gadgets
-        </a>
+        <a href="../gadgets.html">🔧 Gadgets</a>
 
-        <a href="../test.html">
-            <span class="nav-icon">📝</span>
-            Test
-        </a>
+        <a href="../test.html">📝 Test</a>
 
     </nav>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE HEADER
-========================================================= -->
+===================================================== -->
 
 <header class="mobile-header">
 
     <button class="mobile-menu-btn"
             id="mobileMenuBtn">
+
         ☰
+
     </button>
 
     <div class="mobile-logo">
@@ -113,65 +80,50 @@
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE MENU
-========================================================= -->
+===================================================== -->
 
 <div class="mobile-menu-panel"
      id="mobileMenuPanel">
 
-    <a href="../index.html">
-        🏠 Home
-    </a>
+    <a href="../index.html">🏠 Home</a>
 
-    <a href="../movies.html">
-        🎬 Movies
-    </a>
+    <a href="../movies.html">🎬 Movies</a>
 
-    <a href="../episodes.html"
-       class="active">
-        📺 Episodes
-    </a>
+    <a href="../episodes.html">📺 Episodes</a>
 
-    <a href="../characters.html">
-        👥 Characters
-    </a>
+    <a href="../characters.html">👥 Characters</a>
 
-    <a href="../wallpapers.html">
-        🖼️ Wallpapers
-    </a>
+    <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-    <a href="../music.html">
-        🎵 Music
-    </a>
+    <a href="../music.html">🎵 Music</a>
 
-    <a href="../gallery.html">
-        📸 Gallery
-    </a>
+    <a href="../gallery.html">🖼️ Gallery</a>
 
-    <a href="../gadgets.html">
-        🔧 Gadgets
-    </a>
+    <a href="../gadgets.html">🔧 Gadgets</a>
 
-    <a href="../test.html">
-        📝 Test
-    </a>
+    <a href="../test.html">📝 Test</a>
 
 </div>
 
 
-<!-- =========================================================
-     MAIN EPISODE PAGE
-========================================================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="episode-detail-page">
 
 
-    <!-- =====================================================
-         BREADCRUMB
-    ====================================================== -->
+    <!-- BREADCRUMB -->
 
     <div class="episode-breadcrumb">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <span>›</span>
 
         <a href="../episodes.html">
             Episodes
@@ -186,18 +138,19 @@
     </div>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- =================================================
+         EPISODE HERO
+    ================================================= -->
 
     <section class="episode-hero">
 
 
         <!-- COVER -->
+
         <div class="episode-cover">
 
             <img src="../assets/episodes/covers/episode-10.jpg"
-                 alt="Doraemon Episode 10 - Nobita and Non-chan">
+                 alt="Doraemon Episode 10">
 
             <div class="cover-gradient"></div>
 
@@ -205,74 +158,77 @@
                 EPISODE 10
             </div>
 
-            <button class="cover-play-btn"
-                    id="coverPlayBtn">
+            <!-- PLAY COVER -->
 
-                <i class="fa-solid fa-play"></i>
+            <button class="cover-play-btn"
+                    id="coverPlayBtn"
+                    aria-label="Play Episode">
+
+                <span>▶</span>
 
             </button>
 
         </div>
 
 
-        <!-- HERO CONTENT -->
+        <!-- CONTENT -->
+
         <div class="episode-hero-content">
 
-            <div class="episode-label">
+            <span class="episode-label">
                 CLASSIC EPISODE
-            </div>
+            </span>
 
             <h1>
-                Nobita and Non-chan
+                Doraemon Episode 10
             </h1>
 
             <p class="episode-intro">
+
                 Welcome to Episode 10 of Doraemon World!
-                Nobita meets Non-chan, a sweet and memorable
-                character from his childhood. With Doraemon
-                by his side, Nobita finds himself caught in
-                an emotional and unforgettable adventure.
+                Join Nobita and Doraemon in another exciting
+                adventure filled with friendship, fun and
+                amazing futuristic gadgets.
+
             </p>
 
 
             <!-- META -->
+
             <div class="episode-meta">
 
                 <div class="meta-box">
 
-                    <span>
-                        Episode
-                    </span>
+                    <span>📺</span>
 
-                    <strong>
-                        10
-                    </strong>
-
-                </div>
-
-
-                <div class="meta-box">
-
-                    <span>
-                        Year
-                    </span>
-
-                    <strong>
-                        1979
-                    </strong>
+                    <div>
+                        <small>Episode</small>
+                        <strong>10</strong>
+                    </div>
 
                 </div>
 
 
                 <div class="meta-box">
 
-                    <span>
-                        Rating
-                    </span>
+                    <span>📅</span>
 
-                    <strong>
-                        9.0 ⭐
-                    </strong>
+                    <div>
+                        <small>Year</small>
+                        <strong>2005</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="meta-box">
+
+                    <span>⭐</span>
+
+                    <div>
+                        <small>Rating</small>
+                        <strong>9.1</strong>
+                    </div>
 
                 </div>
 
@@ -280,13 +236,13 @@
 
 
             <!-- BUTTONS -->
+
             <div class="hero-buttons">
 
                 <button class="watch-btn"
                         id="watchBtn">
 
-                    <i class="fa-solid fa-play"></i>
-
+                    <span>▶</span>
                     Watch Episode
 
                 </button>
@@ -295,9 +251,7 @@
                 <a href="../episodes.html"
                    class="back-btn">
 
-                    <i class="fa-solid fa-arrow-left"></i>
-
-                    All Episodes
+                    ← All Episodes
 
                 </a>
 
@@ -308,15 +262,29 @@
     </section>
 
 
-    <!-- =====================================================
-         QUICK INFORMATION
-    ====================================================== -->
+    <!-- =================================================
+         QUICK INFO
+    ================================================= -->
 
     <section class="quick-info">
 
-        <h2 class="quick-info-title">
-            Quick Information
-        </h2>
+        <div class="quick-info-title">
+
+            <span>💙</span>
+
+            <div>
+
+                <h2>
+                    Episode Overview
+                </h2>
+
+                <p>
+                    A quick look at this Doraemon adventure
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="quick-grid">
@@ -325,17 +293,15 @@
             <div class="quick-card">
 
                 <div class="quick-icon">
-                    📖
+                    📚
                 </div>
 
                 <div>
 
-                    <span>
-                        Story
-                    </span>
+                    <small>Story</small>
 
                     <strong>
-                        Nobita and Non-chan
+                        Doraemon Adventure
                     </strong>
 
                 </div>
@@ -351,9 +317,7 @@
 
                 <div>
 
-                    <span>
-                        Characters
-                    </span>
+                    <small>Characters</small>
 
                     <strong>
                         5 Main Characters
@@ -367,14 +331,12 @@
             <div class="quick-card">
 
                 <div class="quick-icon">
-                    🎒
+                    🔧
                 </div>
 
                 <div>
 
-                    <span>
-                        Gadgets
-                    </span>
+                    <small>Gadgets</small>
 
                     <strong>
                         Doraemon's Gadgets
@@ -388,14 +350,12 @@
             <div class="quick-card">
 
                 <div class="quick-icon">
-                    ⭐
+                    🏷️
                 </div>
 
                 <div>
 
-                    <span>
-                        Category
-                    </span>
+                    <small>Category</small>
 
                     <strong>
                         Classic
@@ -410,146 +370,200 @@
     </section>
 
 
-    <!-- =====================================================
-         EPISODE INFORMATION
-    ====================================================== -->
+    <!-- =================================================
+         INFORMATION
+    ================================================= -->
 
     <section class="episode-information">
 
-        <h2 class="section-title">
-            Episode Information
-        </h2>
+        <div class="section-title">
+
+            <span>📖</span>
+
+            <div>
+
+                <h2>
+                    Episode Information
+                </h2>
+
+                <p>
+                    Everything you need to know about Episode 10
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="info-grid">
 
 
             <!-- STORY -->
-            <div class="info-card story-card">
 
-                <div class="info-card-title">
+            <article class="info-card story-card">
 
-                    <span class="info-card-icon">
-                        📖
+                <div class="info-card-top">
+
+                    <div class="info-icon">
+                        📚
+                    </div>
+
+                    <span>
+                        STORY
                     </span>
-
-                    <h3>
-                        Nobita and Non-chan
-                    </h3>
 
                 </div>
 
-                <p>
-                    Nobita's life takes an interesting turn
-                    when Non-chan becomes part of his
-                    adventure. Their connection brings back
-                    memories and creates an emotional story
-                    for Nobita.
-                </p>
+                <h3>
+                    Another Doraemon Adventure
+                </h3>
 
                 <p>
-                    With Doraemon's help, Nobita tries to
-                    understand the situation and make things
-                    right. Along the way, their adventure
-                    becomes both funny and heartwarming.
+
+                    Nobita finds himself in another
+                    unexpected situation and turns to
+                    Doraemon for help.
+
+                    <br><br>
+
+                    With the help of Doraemon's futuristic
+                    gadgets, Nobita gets involved in a
+                    funny and exciting adventure.
+
+                    <br><br>
+
+                    What starts as a simple idea soon
+                    becomes a memorable adventure for
+                    Nobita and his friends.
+
                 </p>
 
-            </div>
+            </article>
 
 
             <!-- CHARACTERS -->
-            <div class="info-card">
 
-                <div class="info-card-title">
+            <article class="info-card">
 
-                    <span class="info-card-icon">
+                <div class="info-card-top">
+
+                    <div class="info-icon">
                         👥
-                    </span>
+                    </div>
 
-                    <h3>
-                        Characters
-                    </h3>
+                    <span>
+                        CHARACTERS
+                    </span>
 
                 </div>
 
+                <h3>
+                    Main Characters
+                </h3>
 
                 <div class="character-tags">
 
-                    <span>Doraemon</span>
+                    <span>🔵 Doraemon</span>
 
-                    <span>Nobita</span>
+                    <span>👦 Nobita</span>
 
-                    <span>Shizuka</span>
+                    <span>🌸 Shizuka</span>
 
-                    <span>Gian</span>
+                    <span>💪 Gian</span>
 
-                    <span>Suneo</span>
-
-                    <span>Non-chan</span>
+                    <span>😎 Suneo</span>
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- GADGETS -->
-            <div class="info-card">
 
-                <div class="info-card-title">
+            <article class="info-card">
 
-                    <span class="info-card-icon">
-                        🎒
+                <div class="info-card-top">
+
+                    <div class="info-icon">
+                        🔧
+                    </div>
+
+                    <span>
+                        GADGETS
                     </span>
-
-                    <h3>
-                        Gadgets
-                    </h3>
 
                 </div>
 
+                <h3>
+                    Featured Gadgets
+                </h3>
 
                 <div class="gadget-items">
 
                     <div>
-                        <i class="fa-solid fa-circle"></i>
-                        4D Pocket
+
+                        👜
+
+                        <span>
+                            4D Pocket
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle"></i>
-                        Anywhere Door
+
+                        🚪
+
+                        <span>
+                            Anywhere Door
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle"></i>
-                        Take-Copter
+
+                        🚁
+
+                        <span>
+                            Take-Copter
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle"></i>
-                        Future Gadgets
+
+                        🔧
+
+                        <span>
+                            Future Gadgets
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- DETAILS -->
-            <div class="info-card">
 
-                <div class="info-card-title">
+            <article class="info-card">
 
-                    <span class="info-card-icon">
+                <div class="info-card-top">
+
+                    <div class="info-icon">
                         ℹ️
-                    </span>
+                    </div>
 
-                    <h3>
-                        Details
-                    </h3>
+                    <span>
+                        DETAILS
+                    </span>
 
                 </div>
 
+                <h3>
+                    Episode Details
+                </h3>
 
                 <div class="detail-list">
 
@@ -565,7 +579,6 @@
 
                     </div>
 
-
                     <div>
 
                         <span>
@@ -578,7 +591,6 @@
 
                     </div>
 
-
                     <div>
 
                         <span>
@@ -586,11 +598,10 @@
                         </span>
 
                         <strong>
-                            Nobita and Non-chan
+                            Doraemon Episode 10
                         </strong>
 
                     </div>
-
 
                     <div>
 
@@ -599,11 +610,10 @@
                         </span>
 
                         <strong>
-                            のび太とノンちゃん
+                            ドラえもん
                         </strong>
 
                     </div>
-
 
                     <div>
 
@@ -617,7 +627,6 @@
 
                     </div>
 
-
                     <div>
 
                         <span>
@@ -625,52 +634,74 @@
                         </span>
 
                         <strong>
-                            1979
+                            2005
                         </strong>
 
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
-         ABOUT EPISODE
-    ====================================================== -->
+    <!-- =================================================
+         ABOUT
+    ================================================= -->
 
     <section class="about-episode">
 
-        <h2 class="section-title">
-            About This Episode
-        </h2>
+        <div class="section-title">
+
+            <span>💙</span>
+
+            <div>
+
+                <h2>
+                    About This Episode
+                </h2>
+
+                <p>
+                    Another fun-filled adventure with Nobita and Doraemon
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="about-box">
 
             <p>
-                Episode 10 introduces Nobita's connection
-                with Non-chan and brings a softer, more
-                emotional side to his everyday adventures.
+
+                In this exciting adventure, Nobita once
+                again finds himself facing an unexpected
+                problem.
+
+                Doraemon is always ready to help Nobita
+                with one of his amazing futuristic gadgets.
+
             </p>
 
-            <p>
-                Doraemon stays beside Nobita as he tries
-                to understand Non-chan and deal with the
-                unexpected situation. Their journey mixes
-                friendship, memories and classic Doraemon
-                comedy.
-            </p>
 
             <p>
-                This episode is another memorable adventure
-                where Nobita learns about friendship and
-                the importance of caring for people close
-                to him.
+
+                As Nobita tries to solve his problem,
+                things become more complicated and
+                eventually turn into a funny adventure.
+
+            </p>
+
+
+            <p>
+
+                The episode combines comedy, friendship
+                and Doraemon's amazing gadgets to create
+                another memorable adventure.
+
             </p>
 
         </div>
@@ -678,17 +709,18 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =================================================
          EPISODE NAVIGATION
-    ====================================================== -->
+    ================================================= -->
 
-    <<section class="episode-navigation">
-
+    <section class="episode-navigation">
 
         <a href="episode-09.html"
            class="episode-nav-btn">
 
-            <i class="fa-solid fa-arrow-left"></i>
+            <span>
+                ←
+            </span>
 
             <div>
 
@@ -705,25 +737,24 @@
         </a>
 
 
-        
-
-
-        <a href="episode-11.html"
-           class="episode-nav-btn">
+        <a href="../episodes.html"
+           class="episode-nav-btn next">
 
             <div>
 
                 <small>
-                    Next Episode
+                    Back to Episodes
                 </small>
 
                 <strong>
-                    Episode 11
+                    All Episodes
                 </strong>
 
             </div>
 
-            <i class="fa-solid fa-arrow-right"></i>
+            <span>
+                → 
+            </span>
 
         </a>
 
@@ -732,27 +763,35 @@
 </main>
 
 
-<!-- =========================================================
+<!-- =====================================================
      VIDEO MODAL
-========================================================= -->
+===================================================== -->
 
 <div class="video-modal"
      id="videoModal">
-
 
     <div class="video-modal-box">
 
 
         <div class="video-modal-header">
 
-            <h3>
-                Episode 10 - Nobita and Non-chan
-            </h3>
+            <div>
+
+                <span>
+                    DORAEMON WORLD
+                </span>
+
+                <h3>
+                    Episode 10 — Doraemon Episode 10
+                </h3>
+
+            </div>
+
 
             <button class="video-close"
                     id="videoClose">
 
-                <i class="fa-solid fa-xmark"></i>
+                ✕
 
             </button>
 
@@ -767,10 +806,11 @@
                    preload="metadata"
                    poster="../assets/episodes/covers/episode-10.jpg">
 
-                <source src="../assets/episodes/compressed/episode-10.mp4"
-                        type="video/mp4">
+                <source
+                    src="../assets/episodes/compressed/episode-10.mp4"
+                    type="video/mp4">
 
-                Your browser does not support the video element.
+                Your browser does not support HTML5 video.
 
             </video>
 
@@ -780,7 +820,7 @@
         <div class="video-modal-footer">
 
             <span>
-                🎬 Doraemon World
+                🔵 Doraemon World
             </span>
 
             <span>
@@ -794,9 +834,9 @@
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer class="episodes-footer">
 
@@ -810,52 +850,54 @@
             Your Ultimate Doraemon Fan World
         </p>
 
-        <small>
-            © 2026 Doraemon World.
-            Made with 💙 for Doraemon fans.
-        </small>
-
     </div>
+
+    <p>
+        © 2026 Doraemon World. Made with 💙 for Doraemon fans.
+    </p>
 
 </footer>
 
 
-<!-- =========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
-    /* =====================================================
-       MOBILE MENU
-    ====================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-    const mobileMenuBtn =
+
+    /* ==========================================
+       MOBILE MENU
+    ========================================== */
+
+    const menuBtn =
         document.getElementById("mobileMenuBtn");
 
-    const mobileMenuPanel =
+    const menuPanel =
         document.getElementById("mobileMenuPanel");
 
 
-    if (mobileMenuBtn && mobileMenuPanel) {
+    if (menuBtn && menuPanel) {
 
-        mobileMenuBtn.addEventListener("click", function (event) {
+        menuBtn.addEventListener("click", function (e) {
 
-            event.stopPropagation();
+            e.stopPropagation();
 
-            mobileMenuPanel.classList.toggle("show");
+            menuPanel.classList.toggle("show");
 
         });
 
 
-        document.addEventListener("click", function (event) {
+        document.addEventListener("click", function (e) {
 
             if (
-                !mobileMenuPanel.contains(event.target) &&
-                !mobileMenuBtn.contains(event.target)
+                !menuPanel.contains(e.target) &&
+                !menuBtn.contains(e.target)
             ) {
 
-                mobileMenuPanel.classList.remove("show");
+                menuPanel.classList.remove("show");
 
             }
 
@@ -864,15 +906,9 @@
     }
 
 
-    /* =====================================================
+    /* ==========================================
        VIDEO MODAL
-    ====================================================== */
-
-    const videoModal =
-        document.getElementById("videoModal");
-
-    const episodeVideo =
-        document.getElementById("episodeVideo");
+    ========================================== */
 
     const watchBtn =
         document.getElementById("watchBtn");
@@ -880,30 +916,64 @@
     const coverPlayBtn =
         document.getElementById("coverPlayBtn");
 
+    const videoModal =
+        document.getElementById("videoModal");
+
     const videoClose =
         document.getElementById("videoClose");
+
+    const video =
+        document.getElementById("episodeVideo");
 
 
     function openVideo() {
 
-        videoModal.classList.add("show");
+        if (!videoModal || !video) return;
+
 
         document.body.classList.add("video-open");
 
-        episodeVideo.currentTime = 0;
 
-        episodeVideo.play().catch(function () {});
+        videoModal.classList.add("active");
+
+
+        video.currentTime = 0;
+
+
+        video.load();
+
+
+        const playPromise =
+            video.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch(function () {
+
+                /*
+                   Browser may block autoplay.
+                   Controls are still available.
+                */
+
+            });
+
+        }
 
     }
 
 
     function closeVideo() {
 
-        videoModal.classList.remove("show");
+        if (!videoModal || !video) return;
+
+
+        video.pause();
+
+        video.currentTime = 0;
+
+        videoModal.classList.remove("active");
 
         document.body.classList.remove("video-open");
-
-        episodeVideo.pause();
 
     }
 
@@ -938,13 +1008,15 @@
     }
 
 
+    /* Click outside video */
+
     if (videoModal) {
 
         videoModal.addEventListener(
             "click",
-            function (event) {
+            function (e) {
 
-                if (event.target === videoModal) {
+                if (e.target === videoModal) {
 
                     closeVideo();
 
@@ -956,13 +1028,15 @@
     }
 
 
+    /* ESC key */
+
     document.addEventListener(
         "keydown",
-        function (event) {
+        function (e) {
 
             if (
-                event.key === "Escape" &&
-                videoModal.classList.contains("show")
+                e.key === "Escape" &&
+                videoModal.classList.contains("active")
             ) {
 
                 closeVideo();
@@ -971,6 +1045,8 @@
 
         }
     );
+
+});
 
 </script>
 
