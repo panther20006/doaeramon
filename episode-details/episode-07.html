@@ -94,7 +94,8 @@
 <header class="mobile-header">
 
     <button class="mobile-menu-btn"
-            id="mobileMenuBtn">
+            id="mobileMenuBtn"
+            aria-label="Open menu">
         ☰
     </button>
 
@@ -102,7 +103,8 @@
         DORAEMON 🔵
     </div>
 
-    <button class="mobile-search-btn">
+    <button class="mobile-search-btn"
+            aria-label="Search">
         🔍
     </button>
 
@@ -198,7 +200,9 @@
             </div>
 
             <button class="cover-play-btn"
-                    id="coverPlayBtn">
+                    id="coverPlayBtn"
+                    type="button"
+                    aria-label="Play Episode 07">
 
                 <i class="fa-solid fa-play"></i>
 
@@ -278,7 +282,8 @@
             <div class="hero-buttons">
 
                 <button class="watch-btn"
-                        id="watchBtn">
+                        id="watchBtn"
+                        type="button">
 
                     <i class="fa-solid fa-play"></i>
 
@@ -303,8 +308,9 @@
     </section>
 
 
-
-    <!-- QUICK INFO -->
+    <!-- =====================================================
+         QUICK INFO
+    ====================================================== -->
 
     <section class="quick-info">
 
@@ -404,8 +410,9 @@
     </section>
 
 
-
-    <!-- EPISODE INFORMATION -->
+    <!-- =====================================================
+         EPISODE INFORMATION
+    ====================================================== -->
 
     <section class="episode-information">
 
@@ -457,7 +464,6 @@
             </div>
 
 
-
             <!-- CHARACTERS -->
 
             <div class="info-card characters">
@@ -502,7 +508,6 @@
             </div>
 
 
-
             <!-- GADGETS -->
 
             <div class="info-card gadgets">
@@ -545,7 +550,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- DETAILS -->
@@ -640,8 +644,9 @@
     </section>
 
 
-
-    <!-- ABOUT EPISODE -->
+    <!-- =====================================================
+         ABOUT EPISODE
+    ====================================================== -->
 
     <section class="about-episode">
 
@@ -681,8 +686,9 @@
     </section>
 
 
-
-    <!-- EPISODE NAVIGATION -->
+    <!-- =====================================================
+         EPISODE NAVIGATION
+    ====================================================== -->
 
     <section class="episode-navigation">
 
@@ -731,14 +737,13 @@
 </main>
 
 
-
 <!-- =========================================================
      VIDEO MODAL
 ========================================================= -->
 
 <div class="video-modal"
-     id="videoModal">
-
+     id="videoModal"
+     aria-hidden="true">
 
     <div class="video-modal-box">
 
@@ -759,7 +764,9 @@
 
 
             <button class="video-close"
-                    id="videoClose">
+                    id="videoClose"
+                    type="button"
+                    aria-label="Close video">
 
                 <i class="fa-solid fa-xmark"></i>
 
@@ -770,13 +777,19 @@
 
         <div class="video-player">
 
+            <!--
+                IMPORTANT:
+                Episode 07 uses the replaced browser-compatible
+                compressed MP4 file.
+            -->
+
             <video id="episodeVideo"
                    controls
                    playsinline
                    preload="metadata"
                    poster="../assets/episodes/covers/episode-07.jpg">
 
-                <source src="../assets/episodes/compressed/episode-07-new.mp4"
+                <source src="../assets/episodes/compressed/episode-07.mp4"
                         type="video/mp4">
 
                 Your browser does not support HTML5 video.
@@ -797,7 +810,6 @@
     </div>
 
 </div>
-
 
 
 <!-- =========================================================
@@ -822,7 +834,6 @@
 </footer>
 
 
-
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
@@ -840,28 +851,31 @@
         document.getElementById("mobileMenuPanel");
 
 
-    mobileMenuBtn.addEventListener("click", function (event) {
+    if (mobileMenuBtn && mobileMenuPanel) {
 
-        event.stopPropagation();
+        mobileMenuBtn.addEventListener("click", function (event) {
 
-        mobileMenuPanel.classList.toggle("show");
+            event.stopPropagation();
 
-    });
+            mobileMenuPanel.classList.toggle("show");
+
+        });
 
 
-    document.addEventListener("click", function (event) {
+        document.addEventListener("click", function (event) {
 
-        if (
-            !mobileMenuPanel.contains(event.target) &&
-            !mobileMenuBtn.contains(event.target)
-        ) {
+            if (
+                !mobileMenuPanel.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)
+            ) {
 
-            mobileMenuPanel.classList.remove("show");
+                mobileMenuPanel.classList.remove("show");
 
-        }
+            }
 
-    });
+        });
 
+    }
 
 
     /* =====================================================
@@ -888,11 +902,25 @@
 
         videoModal.classList.add("show");
 
+        videoModal.setAttribute("aria-hidden", "false");
+
         document.body.classList.add("video-open");
 
         episodeVideo.currentTime = 0;
 
-        episodeVideo.play().catch(function () {});
+        episodeVideo.load();
+
+        const playPromise = episodeVideo.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch(function () {
+
+                // Browser may require manual play.
+
+            });
+
+        }
 
     }
 
@@ -901,43 +929,63 @@
 
         videoModal.classList.remove("show");
 
+        videoModal.setAttribute("aria-hidden", "true");
+
         document.body.classList.remove("video-open");
 
         episodeVideo.pause();
 
+        episodeVideo.currentTime = 0;
+
     }
 
 
-    watchBtn.addEventListener(
-        "click",
-        openVideo
-    );
+    if (watchBtn) {
+
+        watchBtn.addEventListener(
+            "click",
+            openVideo
+        );
+
+    }
 
 
-    coverPlayBtn.addEventListener(
-        "click",
-        openVideo
-    );
+    if (coverPlayBtn) {
+
+        coverPlayBtn.addEventListener(
+            "click",
+            openVideo
+        );
+
+    }
 
 
-    videoClose.addEventListener(
-        "click",
-        closeVideo
-    );
+    if (videoClose) {
+
+        videoClose.addEventListener(
+            "click",
+            closeVideo
+        );
+
+    }
 
 
-    videoModal.addEventListener(
-        "click",
-        function (event) {
+    if (videoModal) {
 
-            if (event.target === videoModal) {
+        videoModal.addEventListener(
+            "click",
+            function (event) {
 
-                closeVideo();
+                if (event.target === videoModal) {
+
+                    closeVideo();
+
+                }
 
             }
+        );
 
-        }
-    );
+    }
 
 
     document.addEventListener(
