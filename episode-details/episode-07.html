@@ -10,24 +10,20 @@
 
     <title>Doraemon World - Episode 07</title>
 
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/episode-details.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/episode-details.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body class="episode-detail-body">
 
 
-<!-- =========================================================
+<!-- =====================================================
      DESKTOP NAVBAR
-========================================================= -->
+===================================================== -->
 
 <header class="topbar">
 
@@ -37,129 +33,86 @@
 
     <nav id="nav">
 
-        <a href="../index.html">
-            <span class="nav-icon">🏠</span>
-            Home
-        </a>
+        <a href="../index.html">🏠 Home</a>
 
-        <a href="../movies.html">
-            <span class="nav-icon">🎬</span>
-            Movies
-        </a>
+        <a href="../movies.html">🎬 Movies</a>
 
-        <a href="../episodes.html" class="active">
-            <span class="nav-icon">📺</span>
-            Episodes
-        </a>
+        <a href="../episodes.html" class="active">📺 Episodes</a>
 
-        <a href="../characters.html">
-            <span class="nav-icon">👥</span>
-            Characters
-        </a>
+        <a href="../characters.html">👥 Characters</a>
 
-        <a href="../wallpapers.html">
-            <span class="nav-icon">🖼️</span>
-            Wallpapers
-        </a>
+        <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-        <a href="../music.html">
-            <span class="nav-icon">🎵</span>
-            Music
-        </a>
+        <a href="../music.html">🎵 Music</a>
 
-        <a href="../gallery.html">
-            <span class="nav-icon">📸</span>
-            Gallery
-        </a>
+        <a href="../gallery.html">🖼️ Gallery</a>
 
-        <a href="../gadgets.html">
-            <span class="nav-icon">🔧</span>
-            Gadgets
-        </a>
+        <a href="../gadgets.html">🔧 Gadgets</a>
 
-        <a href="../test.html">
-            <span class="nav-icon">📝</span>
-            Test
-        </a>
+        <a href="../test.html">📝 Test</a>
 
     </nav>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE HEADER
-========================================================= -->
+===================================================== -->
 
 <header class="mobile-header">
 
     <button class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            aria-label="Open menu">
+            id="mobileMenuBtn">
+
         ☰
+
     </button>
 
     <div class="mobile-logo">
         DORAEMON 🔵
     </div>
 
-    <button class="mobile-search-btn"
-            aria-label="Search">
+    <button class="mobile-search-btn">
+
         🔍
+
     </button>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE MENU
-========================================================= -->
+===================================================== -->
 
 <div class="mobile-menu-panel"
      id="mobileMenuPanel">
 
-    <a href="../index.html">
-        🏠 Home
-    </a>
+    <a href="../index.html">🏠 Home</a>
 
-    <a href="../movies.html">
-        🎬 Movies
-    </a>
+    <a href="../movies.html">🎬 Movies</a>
 
-    <a href="../episodes.html">
-        📺 Episodes
-    </a>
+    <a href="../episodes.html">📺 Episodes</a>
 
-    <a href="../characters.html">
-        👥 Characters
-    </a>
+    <a href="../characters.html">👥 Characters</a>
 
-    <a href="../wallpapers.html">
-        🖼️ Wallpapers
-    </a>
+    <a href="../wallpapers.html">🖼️ Wallpapers</a>
 
-    <a href="../music.html">
-        🎵 Music
-    </a>
+    <a href="../music.html">🎵 Music</a>
 
-    <a href="../gallery.html">
-        📸 Gallery
-    </a>
+    <a href="../gallery.html">🖼️ Gallery</a>
 
-    <a href="../gadgets.html">
-        🔧 Gadgets
-    </a>
+    <a href="../gadgets.html">🔧 Gadgets</a>
 
-    <a href="../test.html">
-        📝 Test
-    </a>
+    <a href="../test.html">📝 Test</a>
 
 </div>
 
 
-<!-- =========================================================
-     MAIN EPISODE PAGE
-========================================================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="episode-detail-page">
 
@@ -167,6 +120,12 @@
     <!-- BREADCRUMB -->
 
     <div class="episode-breadcrumb">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <span>›</span>
 
         <a href="../episodes.html">
             Episodes
@@ -181,7 +140,9 @@
     </div>
 
 
-    <!-- HERO -->
+    <!-- =================================================
+         EPISODE HERO
+    ================================================= -->
 
     <section class="episode-hero">
 
@@ -191,7 +152,7 @@
         <div class="episode-cover">
 
             <img src="../assets/episodes/covers/episode-07.jpg"
-                 alt="The Premiere Seal - Pakado Nobita Ko">
+                 alt="Doraemon Episode 07">
 
             <div class="cover-gradient"></div>
 
@@ -199,36 +160,39 @@
                 EPISODE 07
             </div>
 
+
+            <!-- PLAY COVER -->
+
             <button class="cover-play-btn"
                     id="coverPlayBtn"
-                    type="button"
-                    aria-label="Play Episode 07">
+                    aria-label="Play Episode">
 
-                <i class="fa-solid fa-play"></i>
+                <span>▶</span>
 
             </button>
 
         </div>
 
 
-        <!-- HERO CONTENT -->
+        <!-- CONTENT -->
 
         <div class="episode-hero-content">
 
-            <div class="episode-label">
+            <span class="episode-label">
                 CLASSIC EPISODE
-            </div>
+            </span>
 
             <h1>
-                The Premiere Seal - Pakado Nobita Ko
+                Doraemon Episode 07
             </h1>
 
             <p class="episode-intro">
+
                 Welcome to Episode 07 of Doraemon World!
-                A new adventure begins when Nobita gets caught
-                in an unexpected situation. With Doraemon by his
-                side, Nobita must find a way to solve the problem
-                before everything gets even more complicated.
+                Join Nobita and Doraemon in another exciting
+                adventure filled with friendship, comedy and
+                amazing futuristic gadgets.
+
             </p>
 
 
@@ -238,39 +202,45 @@
 
                 <div class="meta-box">
 
-                    <span>
-                        Episode
-                    </span>
+                    <span>📺</span>
 
-                    <strong>
-                        07
-                    </strong>
+                    <div>
 
-                </div>
+                        <small>Episode</small>
 
+                        <strong>07</strong>
 
-                <div class="meta-box">
-
-                    <span>
-                        Year
-                    </span>
-
-                    <strong>
-                        1979
-                    </strong>
+                    </div>
 
                 </div>
 
 
                 <div class="meta-box">
 
-                    <span>
-                        Rating
-                    </span>
+                    <span>📅</span>
 
-                    <strong>
-                        9.0 ⭐
-                    </strong>
+                    <div>
+
+                        <small>Year</small>
+
+                        <strong>2005</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="meta-box">
+
+                    <span>⭐</span>
+
+                    <div>
+
+                        <small>Rating</small>
+
+                        <strong>9.2</strong>
+
+                    </div>
 
                 </div>
 
@@ -282,10 +252,9 @@
             <div class="hero-buttons">
 
                 <button class="watch-btn"
-                        id="watchBtn"
-                        type="button">
+                        id="watchBtn">
 
-                    <i class="fa-solid fa-play"></i>
+                    <span>▶</span>
 
                     Watch Episode
 
@@ -295,9 +264,7 @@
                 <a href="../episodes.html"
                    class="back-btn">
 
-                    <i class="fa-solid fa-arrow-left"></i>
-
-                    All Episodes
+                    ← All Episodes
 
                 </a>
 
@@ -308,14 +275,28 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =================================================
          QUICK INFO
-    ====================================================== -->
+    ================================================= -->
 
     <section class="quick-info">
 
         <div class="quick-info-title">
-            Quick Information
+
+            <span>💙</span>
+
+            <div>
+
+                <h2>
+                    Episode Overview
+                </h2>
+
+                <p>
+                    A quick look at this Doraemon adventure
+                </p>
+
+            </div>
+
         </div>
 
 
@@ -325,17 +306,15 @@
             <div class="quick-card">
 
                 <div class="quick-icon">
-                    📖
+                    📚
                 </div>
 
                 <div>
 
-                    <span>
-                        Story
-                    </span>
+                    <small>Story</small>
 
                     <strong>
-                        Pakado Nobita Ko Adventure
+                        Doraemon Adventure
                     </strong>
 
                 </div>
@@ -351,9 +330,7 @@
 
                 <div>
 
-                    <span>
-                        Characters
-                    </span>
+                    <small>Characters</small>
 
                     <strong>
                         5 Main Characters
@@ -372,9 +349,7 @@
 
                 <div>
 
-                    <span>
-                        Gadgets
-                    </span>
+                    <small>Gadgets</small>
 
                     <strong>
                         Doraemon's Gadgets
@@ -388,14 +363,12 @@
             <div class="quick-card">
 
                 <div class="quick-icon">
-                    📺
+                    🏷️
                 </div>
 
                 <div>
 
-                    <span>
-                        Category
-                    </span>
+                    <small>Category</small>
 
                     <strong>
                         Classic
@@ -410,15 +383,29 @@
     </section>
 
 
-    <!-- =====================================================
-         EPISODE INFORMATION
-    ====================================================== -->
+    <!-- =================================================
+         INFORMATION
+    ================================================= -->
 
     <section class="episode-information">
 
-        <h2 class="section-title">
-            Episode Information
-        </h2>
+        <div class="section-title">
+
+            <span>📖</span>
+
+            <div>
+
+                <h2>
+                    Episode Information
+                </h2>
+
+                <p>
+                    Everything you need to know about Episode 07
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="info-grid">
@@ -426,148 +413,171 @@
 
             <!-- STORY -->
 
-            <div class="info-card story-card">
+            <article class="info-card story-card">
 
-                <div class="info-card-header">
+                <div class="info-card-top">
 
-                    <span class="info-card-icon">
-                        📖
+                    <div class="info-icon">
+                        📚
+                    </div>
+
+                    <span>
+                        STORY
                     </span>
-
-                    <h3>
-                        Pakado Nobita Ko Adventure
-                    </h3>
 
                 </div>
 
+                <h3>
+                    Doraemon's New Adventure
+                </h3>
 
                 <p>
-                    Nobita finds himself in a troublesome
-                    situation and needs Doraemon's help.
-                    What starts as a simple problem quickly
-                    turns into an exciting adventure.
+
+                    Nobita finds himself in another unusual
+                    situation when a new problem appears in
+                    his everyday life.
+
+                    <br><br>
+
+                    With Doraemon by his side, Nobita looks
+                    for a way to solve the problem using
+                    one of Doraemon's amazing futuristic
+                    gadgets.
+
+                    <br><br>
+
+                    What starts as a simple idea soon turns
+                    into an exciting adventure for Nobita
+                    and his friends.
+
                 </p>
 
-                <p>
-                    Doraemon uses his amazing futuristic
-                    gadgets to help Nobita. However, things
-                    don't always go according to plan, leading
-                    to funny and unexpected moments.
-                </p>
-
-                <p>
-                    Nobita must finally take responsibility
-                    and find a clever way to solve the
-                    situation with the help of his friends.
-                </p>
-
-            </div>
+            </article>
 
 
             <!-- CHARACTERS -->
 
-            <div class="info-card characters">
+            <article class="info-card">
 
-                <div class="info-card-header">
+                <div class="info-card-top">
 
-                    <span class="info-card-icon">
+                    <div class="info-icon">
                         👥
-                    </span>
+                    </div>
 
-                    <h3>
-                        Characters
-                    </h3>
+                    <span>
+                        CHARACTERS
+                    </span>
 
                 </div>
 
+                <h3>
+                    Main Characters
+                </h3>
 
                 <div class="character-tags">
 
-                    <span>
-                        Doraemon
-                    </span>
+                    <span>🔵 Doraemon</span>
 
-                    <span>
-                        Nobita
-                    </span>
+                    <span>👦 Nobita</span>
 
-                    <span>
-                        Shizuka
-                    </span>
+                    <span>🌸 Shizuka</span>
 
-                    <span>
-                        Gian
-                    </span>
+                    <span>💪 Gian</span>
 
-                    <span>
-                        Suneo
-                    </span>
+                    <span>😎 Suneo</span>
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- GADGETS -->
 
-            <div class="info-card gadgets">
+            <article class="info-card">
 
-                <div class="info-card-header">
+                <div class="info-card-top">
 
-                    <span class="info-card-icon">
+                    <div class="info-icon">
                         🔧
-                    </span>
+                    </div>
 
-                    <h3>
-                        Gadgets
-                    </h3>
+                    <span>
+                        GADGETS
+                    </span>
 
                 </div>
 
+                <h3>
+                    Featured Gadgets
+                </h3>
 
                 <div class="gadget-items">
 
                     <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        4D Pocket
+
+                        👜
+
+                        <span>
+                            4D Pocket
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Anywhere Door
+
+                        🚪
+
+                        <span>
+                            Anywhere Door
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Take-Copter
+
+                        🚁
+
+                        <span>
+                            Take-Copter
+                        </span>
+
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Future Gadgets
+
+                        🔧
+
+                        <span>
+                            Future Gadgets
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- DETAILS -->
 
-            <div class="info-card details">
+            <article class="info-card">
 
-                <div class="info-card-header">
+                <div class="info-card-top">
 
-                    <span class="info-card-icon">
+                    <div class="info-icon">
                         ℹ️
-                    </span>
+                    </div>
 
-                    <h3>
-                        Details
-                    </h3>
+                    <span>
+                        DETAILS
+                    </span>
 
                 </div>
 
+                <h3>
+                    Episode Details
+                </h3>
 
                 <div class="detail-list">
 
@@ -604,7 +614,20 @@
                         </span>
 
                         <strong>
-                            The Premiere Seal - Pakado Nobita Ko
+                            Doraemon Episode 07
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Japanese
+                        </span>
+
+                        <strong>
+                            ドラえもん
                         </strong>
 
                     </div>
@@ -630,55 +653,76 @@
                         </span>
 
                         <strong>
-                            1979
+                            2005
                         </strong>
 
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
-         ABOUT EPISODE
-    ====================================================== -->
+    <!-- =================================================
+         ABOUT
+    ================================================= -->
 
     <section class="about-episode">
 
-        <h2 class="section-title">
-            About This Episode
-        </h2>
+        <div class="section-title">
+
+            <span>💙</span>
+
+            <div>
+
+                <h2>
+                    About This Episode
+                </h2>
+
+                <p>
+                    Another exciting Doraemon adventure
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="about-box">
 
             <p>
-                The Premiere Seal - Pakado Nobita Ko brings
-                another fun Doraemon adventure featuring
-                Nobita and his friends. Nobita once again
-                finds himself facing a problem that requires
-                Doraemon's help.
+
+                Episode 07 brings another fun-filled adventure
+                featuring Nobita, Doraemon and their friends.
+
+                Nobita once again finds himself facing an
+                unexpected problem and turns to Doraemon
+                for help.
+
             </p>
 
 
             <p>
-                With futuristic gadgets from the 22nd century,
-                Doraemon tries to help Nobita overcome the
-                situation. As usual, the gadgets create
-                unexpected and funny moments.
+
+                With Doraemon's futuristic gadgets,
+                the situation becomes more exciting and
+                unpredictable.
+
+                What follows is a memorable adventure
+                filled with comedy and friendship.
+
             </p>
 
 
             <p>
-                The adventure combines comedy, friendship
-                and classic Doraemon-style fun, making it
-                another memorable journey for Nobita and
-                his friends.
+
+                Enjoy Episode 07 and continue exploring
+                the wonderful world of Doraemon.
+
             </p>
 
         </div>
@@ -686,16 +730,19 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =================================================
          EPISODE NAVIGATION
-    ====================================================== -->
+    ================================================= -->
 
     <section class="episode-navigation">
+
 
         <a href="episode-06.html"
            class="episode-nav-btn">
 
-            <i class="fa-solid fa-arrow-left"></i>
+            <span>
+                ←
+            </span>
 
             <div>
 
@@ -713,7 +760,7 @@
 
 
         <a href="episode-08.html"
-           class="episode-nav-btn">
+           class="episode-nav-btn next">
 
             <div>
 
@@ -727,23 +774,23 @@
 
             </div>
 
-            <i class="fa-solid fa-arrow-right"></i>
+            <span>
+                →
+            </span>
 
         </a>
 
     </section>
 
-
 </main>
 
 
-<!-- =========================================================
+<!-- =====================================================
      VIDEO MODAL
-========================================================= -->
+===================================================== -->
 
 <div class="video-modal"
-     id="videoModal"
-     aria-hidden="true">
+     id="videoModal">
 
     <div class="video-modal-box">
 
@@ -757,18 +804,16 @@
                 </span>
 
                 <h3>
-                    Episode 07
+                    Episode 07 — Doraemon Adventure
                 </h3>
 
             </div>
 
 
             <button class="video-close"
-                    id="videoClose"
-                    type="button"
-                    aria-label="Close video">
+                    id="videoClose">
 
-                <i class="fa-solid fa-xmark"></i>
+                ✕
 
             </button>
 
@@ -777,20 +822,15 @@
 
         <div class="video-player">
 
-            <!--
-                IMPORTANT:
-                Episode 07 uses the replaced browser-compatible
-                compressed MP4 file.
-            -->
-
             <video id="episodeVideo"
                    controls
                    playsinline
                    preload="metadata"
                    poster="../assets/episodes/covers/episode-07.jpg">
 
-                <source src="../assets/episodes/compressed/episode-07-browser.mp4"
-                        type="video/mp4">
+                <source
+                    src="../assets/episodes/compressed/episode-07.mp4"
+                    type="video/mp4">
 
                 Your browser does not support HTML5 video.
 
@@ -802,7 +842,11 @@
         <div class="video-modal-footer">
 
             <span>
-                The Premiere Seal - Pakado Nobita Ko
+                🔵 Doraemon World
+            </span>
+
+            <span>
+                Episode 07
             </span>
 
         </div>
@@ -812,64 +856,70 @@
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer class="episodes-footer">
 
-    <div class="footer-logo">
-        DORAEMON 🌐
+    <div>
+
+        <strong>
+            DORAEMON 🌐
+        </strong>
+
+        <p>
+            Your Ultimate Doraemon Fan World
+        </p>
+
     </div>
 
     <p>
-        Your Ultimate Doraemon Fan World
+        © 2026 Doraemon World. Made with 💙 for Doraemon fans.
     </p>
-
-    <small>
-        © 2026 Doraemon World.
-        Made with 💙 for Doraemon fans.
-    </small>
 
 </footer>
 
 
-<!-- =========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-    const mobileMenuBtn =
+
+    /* ==========================================
+       MOBILE MENU
+    ========================================== */
+
+    const menuBtn =
         document.getElementById("mobileMenuBtn");
 
-    const mobileMenuPanel =
+    const menuPanel =
         document.getElementById("mobileMenuPanel");
 
 
-    if (mobileMenuBtn && mobileMenuPanel) {
+    if (menuBtn && menuPanel) {
 
-        mobileMenuBtn.addEventListener("click", function (event) {
+        menuBtn.addEventListener("click", function (e) {
 
-            event.stopPropagation();
+            e.stopPropagation();
 
-            mobileMenuPanel.classList.toggle("show");
+            menuPanel.classList.toggle("show");
 
         });
 
 
-        document.addEventListener("click", function (event) {
+        document.addEventListener("click", function (e) {
 
             if (
-                !mobileMenuPanel.contains(event.target) &&
-                !mobileMenuBtn.contains(event.target)
+                !menuPanel.contains(e.target) &&
+                !menuBtn.contains(e.target)
             ) {
 
-                mobileMenuPanel.classList.remove("show");
+                menuPanel.classList.remove("show");
 
             }
 
@@ -878,12 +928,9 @@
     }
 
 
-    /* =====================================================
+    /* ==========================================
        VIDEO MODAL
-    ===================================================== */
-
-    const videoModal =
-        document.getElementById("videoModal");
+    ========================================== */
 
     const watchBtn =
         document.getElementById("watchBtn");
@@ -891,32 +938,46 @@
     const coverPlayBtn =
         document.getElementById("coverPlayBtn");
 
+    const videoModal =
+        document.getElementById("videoModal");
+
     const videoClose =
         document.getElementById("videoClose");
 
-    const episodeVideo =
+    const video =
         document.getElementById("episodeVideo");
 
 
     function openVideo() {
 
-        videoModal.classList.add("show");
+        if (!videoModal || !video) return;
 
-        videoModal.setAttribute("aria-hidden", "false");
 
         document.body.classList.add("video-open");
 
-        episodeVideo.currentTime = 0;
+        videoModal.classList.add("active");
 
-        episodeVideo.load();
 
-        const playPromise = episodeVideo.play();
+        video.currentTime = 0;
+
+        video.load();
+
+
+        /*
+         * Play after user click.
+         */
+
+        const playPromise =
+            video.play();
+
 
         if (playPromise !== undefined) {
 
             playPromise.catch(function () {
 
-                // Browser may require manual play.
+                console.log(
+                    "Autoplay blocked. Use video controls to play."
+                );
 
             });
 
@@ -927,15 +988,16 @@
 
     function closeVideo() {
 
-        videoModal.classList.remove("show");
+        if (!videoModal || !video) return;
 
-        videoModal.setAttribute("aria-hidden", "true");
+
+        video.pause();
+
+        video.currentTime = 0;
+
+        videoModal.classList.remove("active");
 
         document.body.classList.remove("video-open");
-
-        episodeVideo.pause();
-
-        episodeVideo.currentTime = 0;
 
     }
 
@@ -970,13 +1032,17 @@
     }
 
 
+    /* ==========================================
+       CLICK OUTSIDE VIDEO
+    ========================================== */
+
     if (videoModal) {
 
         videoModal.addEventListener(
             "click",
-            function (event) {
+            function (e) {
 
-                if (event.target === videoModal) {
+                if (e.target === videoModal) {
 
                     closeVideo();
 
@@ -988,11 +1054,19 @@
     }
 
 
+    /* ==========================================
+       ESC KEY
+    ========================================== */
+
     document.addEventListener(
         "keydown",
-        function (event) {
+        function (e) {
 
-            if (event.key === "Escape") {
+            if (
+                e.key === "Escape" &&
+                videoModal &&
+                videoModal.classList.contains("active")
+            ) {
 
                 closeVideo();
 
@@ -1000,6 +1074,8 @@
 
         }
     );
+
+});
 
 </script>
 
