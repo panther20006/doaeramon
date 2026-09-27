@@ -1,482 +1,201 @@
 /* =========================================================
    DORAEMON WORLD
-   SECRET / PRIVATE PAGE JAVASCRIPT
+   SECRET PAGE JAVASCRIPT
 ========================================================= */
 
 
 /* =========================================================
-   PASSWORD
+   FINAL PASSWORD CHECK
 ========================================================= */
 
-const CORRECT_PASSWORD = "2352006";
+if (
+    sessionStorage.getItem("secretUnlocked") !== "true"
+) {
 
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
-const lockScreen = document.getElementById("lockScreen");
-
-const privatePage = document.getElementById("privatePage");
-
-const passwordInput = document.getElementById("passwordInput");
-
-const unlockBtn = document.getElementById("unlockBtn");
-
-const errorMessage = document.getElementById("errorMessage");
-
-const lockBtn = document.getElementById("lockBtn");
-
-
-/* =========================================================
-   UNLOCK PAGE
-========================================================= */
-
-function unlockPage() {
-
-    const enteredPassword = passwordInput.value.trim();
-
-
-    if (enteredPassword === CORRECT_PASSWORD) {
-
-        lockScreen.classList.add("hidden");
-
-        privatePage.classList.remove("hidden");
-
-        errorMessage.textContent = "";
-
-        passwordInput.value = "";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    } else {
-
-        errorMessage.textContent =
-            "Wrong password. Please try again. 💙";
-
-        passwordInput.value = "";
-
-        passwordInput.focus();
-
-        /* Shake effect */
-
-        const card = document.querySelector(".lock-card");
-
-        card.animate(
-            [
-                {
-                    transform: "translateX(0)"
-                },
-                {
-                    transform: "translateX(-8px)"
-                },
-                {
-                    transform: "translateX(8px)"
-                },
-                {
-                    transform: "translateX(-5px)"
-                },
-                {
-                    transform: "translateX(5px)"
-                },
-                {
-                    transform: "translateX(0)"
-                }
-            ],
-            {
-                duration: 350
-            }
-        );
-
-    }
+    window.location.replace("secret-login.html");
 
 }
 
 
 /* =========================================================
-   UNLOCK BUTTON
+   EMAILJS
 ========================================================= */
 
-unlockBtn.addEventListener(
-    "click",
-    unlockPage
-);
+/*
+    Replace these three values with your EmailJS details.
+
+    YOUR_PUBLIC_KEY
+    YOUR_SERVICE_ID
+    YOUR_TEMPLATE_ID
+*/
+
+emailjs.init({
+    publicKey: "YOUR_PUBLIC_KEY"
+});
+
+
+const EMAIL_SERVICE_ID =
+    "service_ojhk09k";
+
+const EMAIL_TEMPLATE_ID =
+    "template_n3gwhmm";
 
 
 /* =========================================================
-   ENTER KEY
-========================================================= */
-
-passwordInput.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (event.key === "Enter") {
-
-            unlockPage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   LOCK AGAIN
-========================================================= */
-
-lockBtn.addEventListener(
-    "click",
-    function () {
-
-        privatePage.classList.add("hidden");
-
-        lockScreen.classList.remove("hidden");
-
-        passwordInput.value = "";
-
-        errorMessage.textContent = "";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        setTimeout(
-            function () {
-
-                passwordInput.focus();
-
-            },
-            200
-        );
-
-    }
-);
-
-
-/* =========================================================
-   PHOTO GALLERY
-========================================================= */
-
-const photoCards =
-    document.querySelectorAll(".photo-card");
-
-const imageViewer =
-    document.getElementById("imageViewer");
-
-const viewerImage =
-    document.getElementById("viewerImage");
-
-const closeViewer =
-    document.getElementById("closeViewer");
-
-const previousImage =
-    document.getElementById("previousImage");
-
-const nextImage =
-    document.getElementById("nextImage");
-
-
-/* =========================================================
-   CREATE IMAGE LIST
-========================================================= */
-
-const images = [];
-
-photoCards.forEach(
-    function (card) {
-
-        const image =
-            card.querySelector("img");
-
-        if (image) {
-
-            images.push(image.src);
-
-        }
-
-    }
-);
-
-
-/* Current image */
-
-let currentImageIndex = 0;
-
-
-/* =========================================================
-   OPEN IMAGE
-========================================================= */
-
-function openImage(index) {
-
-    if (!images.length) {
-        return;
-    }
-
-    currentImageIndex = index;
-
-    viewerImage.src =
-        images[currentImageIndex];
-
-    imageViewer.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-/* =========================================================
-   CLOSE IMAGE
-========================================================= */
-
-function closeImage() {
-
-    imageViewer.classList.remove("active");
-
-    viewerImage.src = "";
-
-    document.body.style.overflow = "";
-
-}
-
-
-/* =========================================================
-   NEXT IMAGE
-========================================================= */
-
-function showNextImage() {
-
-    if (!images.length) {
-        return;
-    }
-
-    currentImageIndex++;
-
-    if (currentImageIndex >= images.length) {
-
-        currentImageIndex = 0;
-
-    }
-
-    viewerImage.src =
-        images[currentImageIndex];
-
-}
-
-
-/* =========================================================
-   PREVIOUS IMAGE
-========================================================= */
-
-function showPreviousImage() {
-
-    if (!images.length) {
-        return;
-    }
-
-    currentImageIndex--;
-
-    if (currentImageIndex < 0) {
-
-        currentImageIndex =
-            images.length - 1;
-
-    }
-
-    viewerImage.src =
-        images[currentImageIndex];
-
-}
-
-
-/* =========================================================
-   PHOTO CLICK
-========================================================= */
-
-photoCards.forEach(
-    function (card, index) {
-
-        card.addEventListener(
-            "click",
-            function () {
-
-                openImage(index);
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
-
-closeViewer.addEventListener(
-    "click",
-    closeImage
-);
-
-
-/* =========================================================
-   NEXT BUTTON
-========================================================= */
-
-nextImage.addEventListener(
-    "click",
-    function (event) {
-
-        event.stopPropagation();
-
-        showNextImage();
-
-    }
-);
-
-
-/* =========================================================
-   PREVIOUS BUTTON
-========================================================= */
-
-previousImage.addEventListener(
-    "click",
-    function (event) {
-
-        event.stopPropagation();
-
-        showPreviousImage();
-
-    }
-);
-
-
-/* =========================================================
-   CLICK OUTSIDE IMAGE
-========================================================= */
-
-imageViewer.addEventListener(
-    "click",
-    function (event) {
-
-        if (event.target === imageViewer) {
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   KEYBOARD CONTROLS
+   DOM
 ========================================================= */
 
 document.addEventListener(
-    "keydown",
-    function (event) {
+    "DOMContentLoaded",
+    function () {
 
-        if (!imageViewer.classList.contains("active")) {
-            return;
+
+        /* =============================================
+           LOCK
+        ============================================= */
+
+        const lockButton =
+            document.getElementById("lockButton");
+
+
+        if (lockButton) {
+
+            lockButton.addEventListener(
+                "click",
+                function () {
+
+                    sessionStorage.removeItem(
+                        "secretUnlocked"
+                    );
+
+                    sessionStorage.removeItem(
+                        "secretStep1"
+                    );
+
+                    window.location.href =
+                        "secret-login.html";
+
+                }
+            );
+
         }
 
 
-        /* ESC */
+        /* =============================================
+           YES / NO
+        ============================================= */
 
-        if (event.key === "Escape") {
+        const yesButton =
+            document.getElementById("yesButton");
 
-            closeImage();
+        const noButton =
+            document.getElementById("noButton");
+
+        const answerMessage =
+            document.getElementById("answerMessage");
+
+
+        /* =============================================
+           SEND EMAIL
+        ============================================= */
+
+        function sendAnswer(answer) {
+
+            yesButton.disabled = true;
+            noButton.disabled = true;
+
+
+       
+
+
+            const templateParams = {
+
+                name: "Mausam",
+
+                answer: answer,
+
+                message:
+                    "Mausam answered: " +
+                    answer,
+
+                time:
+                    new Date().toLocaleString()
+
+            };
+
+
+            emailjs.send(
+
+                EMAIL_SERVICE_ID,
+
+                EMAIL_TEMPLATE_ID,
+
+                templateParams
+
+            )
+            
+                
+            .catch(
+                function (error) {
+
+                    console.error(
+                        "EmailJS Error:",
+                        error
+                    );
+
+
+                    /*
+                       Button selected but email failed.
+                       We enable buttons again so the user
+                       can try once more.
+                    */
+
+                    yesButton.disabled = false;
+                    noButton.disabled = false;
+
+
+                   
+
+                }
+            );
 
         }
 
 
-        /* RIGHT ARROW */
+        /* =============================================
+           YES
+        ============================================= */
 
-        if (event.key === "ArrowRight") {
+        if (yesButton) {
 
-            showNextImage();
+            yesButton.addEventListener(
+                "click",
+                function () {
+
+                    sendAnswer("YES 💙");
+
+                }
+            );
 
         }
 
 
-        /* LEFT ARROW */
+        /* =============================================
+           NO
+        ============================================= */
 
-        if (event.key === "ArrowLeft") {
+        if (noButton) {
 
-            showPreviousImage();
+            noButton.addEventListener(
+                "click",
+                function () {
+
+                    sendAnswer("NO 🌸");
+
+                }
+            );
 
         }
 
     }
 );
-
-
-/* =========================================================
-   TOUCH / SWIPE SUPPORT
-========================================================= */
-
-let touchStartX = 0;
-
-let touchEndX = 0;
-
-
-imageViewer.addEventListener(
-    "touchstart",
-    function (event) {
-
-        touchStartX =
-            event.changedTouches[0].screenX;
-
-    },
-    {
-        passive: true
-    }
-);
-
-
-imageViewer.addEventListener(
-    "touchend",
-    function (event) {
-
-        touchEndX =
-            event.changedTouches[0].screenX;
-
-        handleSwipe();
-
-    },
-    {
-        passive: true
-    }
-);
-
-
-function handleSwipe() {
-
-    const difference =
-        touchStartX - touchEndX;
-
-
-    /* Swipe left */
-
-    if (difference > 50) {
-
-        showNextImage();
-
-    }
-
-
-    /* Swipe right */
-
-    if (difference < -50) {
-
-        showPreviousImage();
-
-    }
-
-}

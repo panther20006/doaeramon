@@ -2968,3 +2968,273 @@ footer p {
     }
 
 } 
+/* =========================================================
+   MAUSAM'S HIDDEN CORNER
+========================================================= */
+
+.hidden-corner-section {
+    padding: 70px 20px;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(32, 168, 245, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 145, 190, 0.08),
+            transparent 30%
+        ),
+        #f8fcff;
+}
+
+.hidden-corner-card {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    min-height: 280px;
+    margin: auto;
+    padding: 45px 55px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    border-radius: 28px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f2faff 55%,
+            #fff5fa
+        );
+    border: 1px solid rgba(32, 168, 245, 0.13);
+    box-shadow:
+        0 25px 70px rgba(8, 100, 150, 0.10);
+    transition: 0.35s ease;
+}
+
+.hidden-corner-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 32px 80px rgba(8, 100, 150, 0.15);
+}
+
+.hidden-corner-glow {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -80px;
+    top: -90px;
+    border-radius: 50%;
+    background: rgba(32, 168, 245, 0.08);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.hidden-corner-icon {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    width: 125px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background:
+        linear-gradient(
+            135deg,
+            #e8f8ff,
+            #fff0f7
+        );
+    font-size: 58px;
+    box-shadow:
+        0 15px 40px rgba(32, 168, 245, 0.12);
+    animation: hiddenCornerFloat 3s ease-in-out infinite;
+}
+
+@keyframes hiddenCornerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+.hidden-corner-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.hidden-corner-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #20a8f5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.hidden-corner-content h2 {
+    margin-bottom: 12px;
+    color: #07558d;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.hidden-corner-content p {
+    max-width: 650px;
+    margin-bottom: 23px;
+    color: #647b89;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hidden-corner-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            #087dcc,
+            #20a8f5
+        );
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow:
+        0 10px 25px rgba(8, 125, 204, 0.20);
+    transition: 0.25s ease;
+}
+
+.hidden-corner-button span {
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+.hidden-corner-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 15px 30px rgba(8, 125, 204, 0.28);
+}
+
+.hidden-corner-button:hover span {
+    transform: translateX(4px);
+}
+
+.hidden-corner-decoration {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.decoration-one {
+    top: 25px;
+    right: 210px;
+    font-size: 20px;
+    animation: hiddenDecoration 4s ease-in-out infinite;
+}
+
+.decoration-two {
+    right: 55px;
+    bottom: 35px;
+    font-size: 27px;
+    animation: hiddenDecoration 4s ease-in-out infinite 1s;
+}
+
+.decoration-three {
+    left: 38%;
+    bottom: 22px;
+    font-size: 19px;
+    animation: hiddenDecoration 4s ease-in-out infinite 2s;
+}
+
+@keyframes hiddenDecoration {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(6deg);
+    }
+
+}
+
+
+/* =========================================================
+   HIDDEN CORNER MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hidden-corner-section {
+        padding: 45px 15px 80px;
+    }
+
+    .hidden-corner-card {
+        min-height: auto;
+        padding: 35px 22px;
+        flex-direction: column;
+        gap: 22px;
+        text-align: center;
+        border-radius: 23px;
+    }
+
+    .hidden-corner-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 42px;
+    }
+
+    .hidden-corner-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .hidden-corner-content h2 {
+        font-size: 25px;
+    }
+
+    .hidden-corner-content p {
+        font-size: 13px;
+        line-height: 1.75;
+        margin-bottom: 20px;
+    }
+
+    .hidden-corner-button {
+        padding: 11px 17px;
+        font-size: 11px;
+    }
+
+    .decoration-one {
+        top: 18px;
+        right: 25px;
+        font-size: 16px;
+    }
+
+    .decoration-two {
+        right: 20px;
+        bottom: 20px;
+        font-size: 21px;
+    }
+
+    .decoration-three {
+        left: 20px;
+        bottom: 20px;
+        font-size: 16px;
+    }
+
+}
