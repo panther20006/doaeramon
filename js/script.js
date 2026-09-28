@@ -70,26 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // NO RANDOM
     // =================================================
 
-    const doraemonImages = [
-
-        "./assets/images/doraemon/doraemon-01.png",
-
-        "./assets/images/doraemon/doraemon-02.png",
-
-        "./assets/images/doraemon/doraemon-03.png",
-
-        "./assets/images/doraemon/doraemon-04.png",
-
-        "./assets/images/doraemon/doraemon-05.png",
-
-        "./assets/images/doraemon/doraemon-06.png",
-
-        "./assets/images/doraemon/doraemon-07.png",
-
-        "./assets/images/doraemon/doraemon-08.png"
-
-    ];
-
+    
+    
 
     // =================================================
     // EFFECT SETTINGS
