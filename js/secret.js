@@ -32,12 +32,12 @@ if (
 */
 
 emailjs.init({
-    publicKey: "ItndrW1BubVRc_n0A"
+    publicKey: "jpJhoKy2LTqinM6ui"
 });
 
 
 const EMAIL_SERVICE_ID =
-    "service_ojhk09k";
+    "service_27ulio7";
 
 
 const EMAIL_TEMPLATE_ID =
@@ -125,8 +125,7 @@ document.addEventListener(
 
             if (answerMessage) {
 
-                answerMessage.textContent =
-                    "Sending your answer... 💙";
+                
 
             }
 
@@ -188,8 +187,7 @@ document.addEventListener(
 
                     if (answerMessage) {
 
-                        answerMessage.textContent =
-                            "Your answer has been sent successfully 💙";
+                        
 
                     }
 
@@ -227,8 +225,7 @@ document.addEventListener(
 
                     if (answerMessage) {
 
-                        answerMessage.textContent =
-                            "Something went wrong while sending your answer. Please try again.";
+                        
 
                     }
 
