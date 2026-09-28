@@ -1,6 +1,7 @@
 /* =========================================================
    DORAEMON WORLD
    SECRET PAGE JAVASCRIPT
+   YES / NO EMAIL SYSTEM
 ========================================================= */
 
 
@@ -18,31 +19,33 @@ if (
 
 
 /* =========================================================
-   EMAILJS
+   EMAILJS CONFIGURATION
 ========================================================= */
 
 /*
-    Replace these three values with your EmailJS details.
+   IMPORTANT:
+   Replace these 3 values with your actual EmailJS details.
 
-    YOUR_PUBLIC_KEY
-    YOUR_SERVICE_ID
-    YOUR_TEMPLATE_ID
+   1. Public Key
+   2. Service ID
+   3. Template ID
 */
 
 emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY"
+    publicKey: "ItndrW1BubVRc_n0A"
 });
 
 
 const EMAIL_SERVICE_ID =
     "service_ojhk09k";
 
+
 const EMAIL_TEMPLATE_ID =
     "template_n3gwhmm";
 
 
 /* =========================================================
-   DOM
+   DOM READY
 ========================================================= */
 
 document.addEventListener(
@@ -50,9 +53,9 @@ document.addEventListener(
     function () {
 
 
-        /* =============================================
-           LOCK
-        ============================================= */
+        /* =================================================
+           LOCK BUTTON
+        ================================================= */
 
         const lockButton =
             document.getElementById("lockButton");
@@ -81,32 +84,56 @@ document.addEventListener(
         }
 
 
-        /* =============================================
-           YES / NO
-        ============================================= */
+        /* =================================================
+           YES / NO BUTTONS
+        ================================================= */
 
         const yesButton =
             document.getElementById("yesButton");
 
+
         const noButton =
             document.getElementById("noButton");
+
 
         const answerMessage =
             document.getElementById("answerMessage");
 
 
-        /* =============================================
-           SEND EMAIL
-        ============================================= */
+        /* =================================================
+           SEND ANSWER EMAIL
+        ================================================= */
 
         function sendAnswer(answer) {
 
-            yesButton.disabled = true;
-            noButton.disabled = true;
+            /*
+               Prevent double clicking
+            */
+
+            if (yesButton) {
+                yesButton.disabled = true;
+            }
+
+            if (noButton) {
+                noButton.disabled = true;
+            }
 
 
-       
+            /*
+               Show sending message
+            */
 
+            if (answerMessage) {
+
+                answerMessage.textContent =
+                    "Sending your answer... 💙";
+
+            }
+
+
+            /* =============================================
+               EMAIL TEMPLATE DATA
+            ============================================= */
 
             const templateParams = {
 
@@ -124,6 +151,16 @@ document.addEventListener(
             };
 
 
+            console.log(
+                "Sending EmailJS data:",
+                templateParams
+            );
+
+
+            /* =============================================
+               EMAILJS SEND
+            ============================================= */
+
             emailjs.send(
 
                 EMAIL_SERVICE_ID,
@@ -133,9 +170,49 @@ document.addEventListener(
                 templateParams
 
             )
-            
-                
+
+            .then(
+
+                function (response) {
+
+                    console.log(
+                        "Email sent successfully!",
+                        response.status,
+                        response.text
+                    );
+
+
+                    /*
+                       Show success message
+                    */
+
+                    if (answerMessage) {
+
+                        answerMessage.textContent =
+                            "Your answer has been sent successfully 💙";
+
+                    }
+
+
+                    /*
+                       Keep buttons disabled
+                       so answer cannot be submitted twice.
+                    */
+
+                    if (yesButton) {
+                        yesButton.disabled = true;
+                    }
+
+                    if (noButton) {
+                        noButton.disabled = true;
+                    }
+
+                }
+
+            )
+
             .catch(
+
                 function (error) {
 
                     console.error(
@@ -145,26 +222,40 @@ document.addEventListener(
 
 
                     /*
-                       Button selected but email failed.
-                       We enable buttons again so the user
-                       can try once more.
+                       Show error message
                     */
 
-                    yesButton.disabled = false;
-                    noButton.disabled = false;
+                    if (answerMessage) {
+
+                        answerMessage.textContent =
+                            "Something went wrong while sending your answer. Please try again.";
+
+                    }
 
 
-                   
+                    /*
+                       Enable buttons again
+                       so user can retry.
+                    */
+
+                    if (yesButton) {
+                        yesButton.disabled = false;
+                    }
+
+                    if (noButton) {
+                        noButton.disabled = false;
+                    }
 
                 }
+
             );
 
         }
 
 
-        /* =============================================
-           YES
-        ============================================= */
+        /* =================================================
+           YES BUTTON
+        ================================================= */
 
         if (yesButton) {
 
@@ -172,7 +263,9 @@ document.addEventListener(
                 "click",
                 function () {
 
-                    sendAnswer("YES 💙");
+                    sendAnswer(
+                        "YES 💙"
+                    );
 
                 }
             );
@@ -180,9 +273,9 @@ document.addEventListener(
         }
 
 
-        /* =============================================
-           NO
-        ============================================= */
+        /* =================================================
+           NO BUTTON
+        ================================================= */
 
         if (noButton) {
 
@@ -190,12 +283,15 @@ document.addEventListener(
                 "click",
                 function () {
 
-                    sendAnswer("NO 🌸");
+                    sendAnswer(
+                        "NO 🌸"
+                    );
 
                 }
             );
 
         }
+
 
     }
 );
