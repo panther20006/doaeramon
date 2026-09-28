@@ -1379,6 +1379,152 @@ footer p{
     }
 
 }
+/* =========================================================
+   PERFECT SCORE PASSWORD
+========================================================= */
+
+.password-reward{
+    display:none;
+
+    margin-top:25px;
+
+    padding:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f8ff,
+            #f8fdff
+        );
+
+    border:2px solid #20a8f5;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,120,190,.12);
+
+    animation:rewardShow .5s ease;
+}
+
+.password-reward.show{
+    display:block;
+}
+
+.reward-icon{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.password-reward h3{
+    color:#087dcc;
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.password-reward p{
+    color:#60798a;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.password-copy-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    max-width:420px;
+
+    margin:auto;
+}
+
+.password-value{
+    flex:1;
+
+    padding:13px 15px;
+
+    background:white;
+
+    border:1px solid #b9dfee;
+
+    border-radius:10px;
+
+    color:#17354d;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    user-select:none;
+}
+
+.copy-password{
+    border:0;
+
+    padding:13px 17px;
+
+    border-radius:10px;
+
+    background:#078bd6;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.copy-password:hover{
+    background:#066fae;
+    transform:translateY(-2px);
+}
+
+.copy-password.copied{
+    background:#159447;
+}
+
+@keyframes rewardShow{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .password-reward{
+        padding:20px 15px;
+    }
+
+    .password-copy-box{
+        flex-direction:column;
+    }
+
+    .password-value{
+        width:100%;
+        text-align:center;
+    }
+
+    .copy-password{
+        width:100%;
+    }
+
+}
 
 </style>
 
@@ -2594,6 +2740,46 @@ footer p{
 
     </div>
 
+
+    <!-- PERFECT SCORE PASSWORD -->
+
+    <div
+        class="password-reward"
+        id="passwordReward">
+
+        <div class="reward-icon">
+            🔐
+        </div>
+
+        <h3>
+            Perfect Score! 🎉
+        </h3>
+
+        <p>
+            20 / 20 correct! Aapne secret challenge unlock kar liya.
+            Neeche diya gaya first password copy karke use karein.
+        </p>
+
+        <div class="password-copy-box">
+
+            <div
+                class="password-value"
+                id="firstPassword">
+                doaremon123
+            </div>
+
+            <button
+                type="button"
+                class="copy-password"
+                id="copyPasswordBtn"
+                onclick="copyFirstPassword()">
+                📋 Copy
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
 
 
@@ -2790,6 +2976,24 @@ function submitTest(){
     .classList.add("show");
 
 
+   /* =====================================================
+   PERFECT SCORE → SHOW FIRST PASSWORD
+===================================================== */
+
+const passwordReward =
+    document.getElementById("passwordReward");
+
+if(score === 20){
+
+    passwordReward.classList.add("show");
+
+}else{
+
+    passwordReward.classList.remove("show");
+
+}
+
+
     document
     .getElementById("result")
     .scrollIntoView({
@@ -2799,6 +3003,70 @@ function submitTest(){
         block:"center"
 
     });
+
+}
+
+
+/* =========================================================
+   COPY FIRST PASSWORD
+========================================================= */
+
+function copyFirstPassword(){
+
+    const password =
+        document
+        .getElementById("firstPassword")
+        .textContent
+        .trim();
+
+    const button =
+        document
+        .getElementById("copyPasswordBtn");
+
+
+    navigator.clipboard.writeText(password)
+        .then(function(){
+
+            button.textContent = "✅ Copied";
+            button.classList.add("copied");
+
+            setTimeout(function(){
+
+                button.textContent = "📋 Copy";
+                button.classList.remove("copied");
+
+            },2000);
+
+        })
+        .catch(function(){
+
+            /* Fallback for browsers where Clipboard API is blocked */
+
+            const temp =
+                document.createElement("textarea");
+
+            temp.value = password;
+            temp.style.position = "fixed";
+            temp.style.opacity = "0";
+
+            document.body.appendChild(temp);
+
+            temp.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(temp);
+
+            button.textContent = "✅ Copied";
+            button.classList.add("copied");
+
+            setTimeout(function(){
+
+                button.textContent = "📋 Copy";
+                button.classList.remove("copied");
+
+            },2000);
+
+        });
 
 }
 
