@@ -1,30 +1,15 @@
-// =====================================================
-// DORAEMON WORLD
-// COMPLETE JAVASCRIPT
-// DESKTOP + TABLET + MOBILE
-//
-// DORAEMON START EFFECT
-// 8 IMAGES - LINE BY LINE
-// ONE CLICK ONLY PER SESSION
-// AUDIO = 7 SECONDS
-//
-// IMPORTANT FIX:
-// sessionStorage is used so that after
-// Index → Movies → Episodes → Home
-// Doraemon audio/effect does NOT play again.
-// =====================================================
+
+ // =====================================================
+ // DORAEMON WORLD - MAIN JAVASCRIPT
+ // DESKTOP + TABLET + MOBILE
+ // NO STARTUP ANIMATION OR AUDIO
+ // =====================================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =================================================
     // ELEMENTS
-    // =================================================
-
-    const menuButton =
-        document.getElementById("menu");
-
-    const navigation =
-        document.getElementById("nav");
+    const menuButton = document.getElementById("menu");
+    const navigation = document.getElementById("nav");
 
     const mobileMenuButton =
         document.querySelector(".mobile-menu-btn");
@@ -32,22 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuPanel =
         document.querySelector(".mobile-menu-panel");
 
-    const buttons =
-        document.querySelectorAll(".btn");
-
-    const featureCards =
-        document.querySelectorAll(".feature-card");
-
-    const gadgetCards =
-        document.querySelectorAll(".gadget-card");
-
-    const favoriteCards =
-        document.querySelectorAll(".favorite-card");
+    const buttons = document.querySelectorAll(".btn");
 
     const copyright =
         document.querySelector(".copyright");
 
 
+   HEAD
     // =================================================
     // DORAEMON EFFECT ELEMENTS
     // =================================================
@@ -152,1214 +128,309 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =================================================
+
+    // ============================================
+    // 683c542 (update home page)
     // DESKTOP / TABLET MENU
-    // =================================================
+    // ============================================
 
     if (menuButton && navigation) {
 
-        menuButton.addEventListener(
-            "click",
-            (event) => {
+        menuButton.addEventListener("click", (event) => {
+            event.stopPropagation();
 
-                event.stopPropagation();
+            const isOpen =
+                navigation.classList.toggle("show");
 
-                navigation.classList.toggle(
-                    "show"
-                );
-
-            }
-        );
-
-
-        const navLinks =
-            navigation.querySelectorAll("a");
-
-
-        navLinks.forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navigation.classList.remove(
-                        "show"
-                    );
-
-                }
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
             );
-
         });
 
+        navigation.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navigation.classList.remove("show");
+                menuButton.setAttribute("aria-expanded", "false");
+            });
+        });
     }
 
 
-    // =================================================
+    // ============================================
     // MOBILE MENU
-    // =================================================
+    // ============================================
 
-    if (
-        mobileMenuButton &&
-        mobileMenuPanel
-    ) {
+    if (mobileMenuButton && mobileMenuPanel) {
 
-        mobileMenuButton.addEventListener(
-            "click",
-            (event) => {
+        mobileMenuButton.addEventListener("click", (event) => {
+            event.stopPropagation();
 
-                event.stopPropagation();
+            const isOpen =
+                mobileMenuPanel.classList.toggle("show");
 
-                mobileMenuPanel.classList.toggle(
-                    "show"
-                );
-
-            }
-        );
-
-
-        const mobileLinks =
-            mobileMenuPanel.querySelectorAll("a");
-
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    mobileMenuPanel.classList.remove(
-                        "show"
-                    );
-
-                }
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
             );
-
         });
 
+        mobileMenuPanel.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenuPanel.classList.remove("show");
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            });
+        });
     }
 
 
-    // =================================================
-    // CLOSE MENUS OUTSIDE
-    // =================================================
+    // ============================================
+    // CLOSE MENUS ON OUTSIDE CLICK
+    // ============================================
 
-    document.addEventListener(
-        "click",
-        (event) => {
+    document.addEventListener("click", (event) => {
 
-            // -----------------------------------------
-            // DESKTOP MENU
-            // -----------------------------------------
-
-            if (
-                navigation &&
-                menuButton &&
-                !navigation.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-
-                navigation.classList.remove(
-                    "show"
-                );
-
-            }
-
-
-            // -----------------------------------------
-            // MOBILE MENU
-            // -----------------------------------------
-
-            if (
-                mobileMenuPanel &&
-                mobileMenuButton &&
-                !mobileMenuPanel.contains(event.target) &&
-                !mobileMenuButton.contains(event.target)
-            ) {
-
-                mobileMenuPanel.classList.remove(
-                    "show"
-                );
-
-            }
-
+        if (
+            navigation &&
+            menuButton &&
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            navigation.classList.remove("show");
+            menuButton.setAttribute("aria-expanded", "false");
         }
-    );
 
-
-    // =================================================
-    // ESC KEY
-    // =================================================
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (event.key === "Escape") {
-
-                if (navigation) {
-
-                    navigation.classList.remove(
-                        "show"
-                    );
-
-                }
-
-
-                if (mobileMenuPanel) {
-
-                    mobileMenuPanel.classList.remove(
-                        "show"
-                    );
-
-                }
-
-            }
-
+        if (
+            mobileMenuPanel &&
+            mobileMenuButton &&
+            !mobileMenuPanel.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            mobileMenuPanel.classList.remove("show");
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
         }
-    );
+    });
 
 
-    // =================================================
+    // ============================================
+    // ESCAPE KEY - CLOSE MENU
+    // ============================================
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key !== "Escape") return;
+
+        if (navigation) {
+            navigation.classList.remove("show");
+        }
+
+        if (mobileMenuPanel) {
+            mobileMenuPanel.classList.remove("show");
+        }
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        if (mobileMenuButton) {
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    });
+
+
+    // ============================================
     // BUTTON CLICK EFFECT
-    // =================================================
+    // ============================================
 
     buttons.forEach(button => {
 
-        button.addEventListener(
-            "click",
-            () => {
+        button.addEventListener("click", () => {
 
-                button.style.transform =
-                    "scale(0.97)";
+            button.style.transform = "scale(0.97)";
 
-
-                setTimeout(() => {
-
-                    button.style.transform = "";
-
-                }, 120);
-
-            }
-        );
-
+            setTimeout(() => {
+                button.style.transform = "";
+            }, 120);
+        });
     });
 
 
-    // =================================================
-    // FEATURE CARD
-    // =================================================
+    // ============================================
+    // CARD HOVER EFFECTS
+    // ============================================
 
-    featureCards.forEach(card => {
+    [
+        ".feature-card",
+        ".gadget-card",
+        ".favorite-card"
+    ].forEach(selector => {
 
-        card.addEventListener(
-            "mouseenter",
-            () => {
+        document.querySelectorAll(selector).forEach(card => {
 
+            card.addEventListener("mouseenter", () => {
                 card.style.zIndex = "5";
+            });
 
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
+            card.addEventListener("mouseleave", () => {
                 card.style.zIndex = "";
-
-            }
-        );
-
+            });
+        });
     });
 
 
-    // =================================================
-    // GADGET CARD
-    // =================================================
-
-    gadgetCards.forEach(card => {
-
-        card.addEventListener(
-            "mouseenter",
-            () => {
-
-                card.style.zIndex = "5";
-
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.style.zIndex = "";
-
-            }
-        );
-
-    });
-
-
-    // =================================================
-    // FAVORITE CARD
-    // =================================================
-
-    favoriteCards.forEach(card => {
-
-        card.addEventListener(
-            "mouseenter",
-            () => {
-
-                card.style.zIndex = "5";
-
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.style.zIndex = "";
-
-            }
-        );
-
-    });
-
-
-    // =================================================
-    // IMAGE ERROR CHECK
-    // =================================================
-
-    if (doraemonStartImage) {
-
-        doraemonStartImage.addEventListener(
-            "error",
-            () => {
-
-                console.error(
-                    "Doraemon start image could not be loaded:",
-                    doraemonStartImage.src
-                );
-
-            }
-        );
-
-    }
-
-
-    // =================================================
-    // SET DORAEMON IMAGE
-    // =================================================
-
-    function setDoraemonImage(index) {
-
-        if (!doraemonStartImage) {
-
-            return;
-
-        }
-
-
-        if (
-            index < 0 ||
-            index >= doraemonImages.length
-        ) {
-
-            return;
-
-        }
-
-
-        imageIndex = index;
-
-
-        doraemonStartImage.src =
-            doraemonImages[index];
-
-
-        console.log(
-            `Doraemon Image ${index + 1}/8`
-        );
-
-    }
-
-
-    // =================================================
-    // STOP IMAGE TIMER
-    // =================================================
-
-    function stopImageTimer() {
-
-        if (imageTimer !== null) {
-
-            clearInterval(imageTimer);
-
-            imageTimer = null;
-
-        }
-
-    }
-
-
-    // =================================================
-    // STOP FALLBACK TIMER
-    // =================================================
-
-    function stopFallbackTimer() {
-
-        if (fallbackTimer !== null) {
-
-            clearTimeout(fallbackTimer);
-
-            fallbackTimer = null;
-
-        }
-
-    }
-
-
-    // =================================================
-    // STOP DORAEMON EFFECT
-    // =================================================
-
-    function stopDoraemonEffect() {
-
-        console.log(
-            "Doraemon effect finished 💙"
-        );
-
-
-        // ---------------------------------------------
-        // STOP IMAGE TIMER
-        // ---------------------------------------------
-
-        stopImageTimer();
-
-
-        // ---------------------------------------------
-        // STOP FALLBACK TIMER
-        // ---------------------------------------------
-
-        stopFallbackTimer();
-
-
-        // ---------------------------------------------
-        // HIDE EFFECT
-        // ---------------------------------------------
-
-        if (doraemonEffect) {
-
-            doraemonEffect.classList.remove(
-                "show"
-            );
-
-        }
-
-
-        // ---------------------------------------------
-        // STOP AUDIO
-        // ---------------------------------------------
-
-        if (doraemonAudio) {
-
-            doraemonAudio.pause();
-
-            try {
-
-                doraemonAudio.currentTime = 0;
-
-            }
-            catch (error) {
-
-                console.log(
-                    "Audio reset error"
-                );
-
-            }
-
-        }
-
-
-        audioStarted = false;
-
-        /*
-            IMPORTANT:
-
-            Yaha effectPlayed ko false NAHI karna.
-
-            Agar yaha:
-
-                effectPlayed = false;
-
-            likh diya to page reload/navigation ke
-            baad effect dobara play ho sakta hai.
-
-            sessionStorage state maintain karega.
-        */
-
-    }
-
-
-    // =================================================
-    // START IMAGE ANIMATION
-    //
-    // 7 SECOND AUDIO
-    // 8 IMAGES
-    //
-    // 7000 / 8 = 875ms
-    //
-    // 01 = 0ms
-    // 02 = 875ms
-    // 03 = 1750ms
-    // 04 = 2625ms
-    // 05 = 3500ms
-    // 06 = 4375ms
-    // 07 = 5250ms
-    // 08 = 6125ms
-    //
-    // IMAGE 08 REMAINS UNTIL AUDIO ENDS
-    // =================================================
-
-    function startImageAnimation() {
-
-        // ---------------------------------------------
-        // STOP OLD TIMER
-        // ---------------------------------------------
-
-        stopImageTimer();
-
-
-        // ---------------------------------------------
-        // START FROM IMAGE 01
-        // ---------------------------------------------
-
-        imageIndex = 0;
-
-        setDoraemonImage(0);
-
-
-        // ---------------------------------------------
-        // CHANGE EVERY 875ms
-        // ---------------------------------------------
-
-        imageTimer = setInterval(
-            () => {
-
-                // -------------------------------------
-                // NEXT IMAGE
-                // -------------------------------------
-
-                if (
-                    imageIndex <
-                    doraemonImages.length - 1
-                ) {
-
-                    imageIndex++;
-
-                    setDoraemonImage(
-                        imageIndex
-                    );
-
-                }
-
-                else {
-
-                    /*
-                        Image 08 par ruk jao.
-
-                        Image 01 par wapas nahi jayega.
-                    */
-
-                    stopImageTimer();
-
-                }
-
-            },
-            875
-        );
-
-    }
-
-
-    // =================================================
-    // START DORAEMON EFFECT
-    // =================================================
-
-    function playDoraemonEffect() {
-
-        // =================================================
-        // ONLY FIRST CLICK PER SESSION
-        // =================================================
-
-        if (effectPlayed) {
-
-            console.log(
-                "Doraemon effect already played in this session."
-            );
-
-            return;
-
-        }
-
-
-        // =================================================
-        // REQUIRED ELEMENT CHECK
-        // =================================================
-
-        if (!doraemonEffect) {
-
-            console.error(
-                "ERROR: #doraemon-effect not found."
-            );
-
-            return;
-
-        }
-
-
-        if (!doraemonStartImage) {
-
-            console.error(
-                "ERROR: #doraemon-start-image not found."
-            );
-
-            return;
-
-        }
-
-
-        if (!doraemonAudio) {
-
-            console.error(
-                "ERROR: #doraemon-audio not found."
-            );
-
-            return;
-
-        }
-
-
-        // =================================================
-        // MARK AS PLAYED
-        //
-        // VERY IMPORTANT
-        // =================================================
-
-        effectPlayed = true;
-
-
-        /*
-            Browser/page navigation ke baad bhi
-            ye value true rahegi.
-        */
-
-        sessionStorage.setItem(
-            "doraemonEffectPlayed",
-            "true"
-        );
-
-
-        console.log(
-            "Doraemon effect started 💙"
-        );
-
-
-        // =================================================
-        // STOP OLD TIMERS
-        // =================================================
-
-        stopImageTimer();
-
-        stopFallbackTimer();
-
-
-        // =================================================
-        // RESET AUDIO
-        // =================================================
-
-        doraemonAudio.pause();
-
-        try {
-
-            doraemonAudio.currentTime = 0;
-
-        }
-        catch (error) {
-
-            console.log(
-                "Audio currentTime reset error."
-            );
-
-        }
-
-
-        // =================================================
-        // SHOW EFFECT FIRST
-        // =================================================
-
-        doraemonEffect.classList.remove(
-            "show"
-        );
-
-
-        // Force browser reflow
-
-        void doraemonEffect.offsetWidth;
-
-
-        // Show effect
-
-        doraemonEffect.classList.add(
-            "show"
-        );
-
-
-        // =================================================
-        // FIRST IMAGE
-        // =================================================
-
-        setDoraemonImage(0);
-
-
-        // =================================================
-        // START 8 IMAGE ANIMATION
-        // =================================================
-
-        startImageAnimation();
-
-
-        // =================================================
-        // AUDIO ENDED
-        // =================================================
-
-        doraemonAudio.onended = () => {
-
-            console.log(
-                "Doraemon audio ended 🔊"
-            );
-
-
-            stopDoraemonEffect();
-
-        };
-
-
-        // =================================================
-        // AUDIO ERROR
-        // =================================================
-
-        doraemonAudio.onerror = () => {
-
-            console.error(
-                "Doraemon audio could not be loaded."
-            );
-
-
-            /*
-                Audio error hone par bhi
-                7 second fallback animation chalegi.
-            */
-
-        };
-
-
-        // =================================================
-        // PLAY AUDIO
-        // =================================================
-
-        try {
-
-            const playPromise =
-                doraemonAudio.play();
-
-
-            if (
-                playPromise !== undefined
-            ) {
-
-                playPromise
-                    .then(() => {
-
-                        audioStarted = true;
-
-
-                        console.log(
-                            "Doraemon audio started 🔊"
-                        );
-
-                    })
-                    .catch(error => {
-
-                        console.error(
-                            "Doraemon audio blocked:",
-                            error
-                        );
-
-                    });
-
-            }
-
-        }
-        catch (error) {
-
-            console.error(
-                "Doraemon audio play error:",
-                error
-            );
-
-        }
-
-
-        // =================================================
-        // 7 SECOND FALLBACK
-        // =================================================
-
-        fallbackTimer =
-            setTimeout(
-                () => {
-
-                    stopDoraemonEffect();
-
-                },
-                7000
-            );
-
-    }
-
-
-    // =================================================
-    // FIRST CLICK ONLY
-    //
-    // Audio browser autoplay restriction se bachne ke
-    // liye playDoraemonEffect() direct click ke andar
-    // call ho raha hai.
-    // =================================================
-
-    document.addEventListener(
-        "click",
-        (event) => {
-
-            // =================================================
-            // ALREADY PLAYED
-            // =================================================
-
-            if (effectPlayed) {
-
-                return;
-
-            }
-
-
-            // =================================================
-            // IGNORE DESKTOP MENU
-            // =================================================
-
-            if (
-                event.target.closest(
-                    "#menu, #nav"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            // =================================================
-            // IGNORE MOBILE MENU
-            // =================================================
-
-            if (
-                event.target.closest(
-                    ".mobile-menu-btn, .mobile-menu-panel"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            // =================================================
-            // IGNORE BUTTON
-            // =================================================
-
-            if (
-                event.target.closest(
-                    "button"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            // =================================================
-            // IGNORE AUDIO
-            // =================================================
-
-            if (
-                event.target.closest(
-                    "audio"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            // =================================================
-            // START
-            // =================================================
-
-            playDoraemonEffect();
-
-        }
-    );
-
-
-    // =================================================
-    // EFFECT CLICK
-    //
-    // Effect ke andar click karne par
-    // second click trigger nahi hoga.
-    // =================================================
-
-    if (doraemonEffect) {
-
-        doraemonEffect.addEventListener(
-            "click",
-            (event) => {
-
-                event.stopPropagation();
-
-            }
-        );
-
-    }
-
-
-    // =================================================
-    // CURRENT YEAR
-    // =================================================
+    // ============================================
+    // COPYRIGHT YEAR
+    // ============================================
 
     if (copyright) {
-
         copyright.textContent =
             `© ${new Date().getFullYear()} Doraemon World`;
-
     }
 
 
-    // =================================================
+    // ============================================
     // ALL NAVIGATION LINKS
-    // =================================================
+    // ============================================
 
-    const allNavLinks =
-        document.querySelectorAll(
-            "#nav a, .mobile-menu-panel a, .bottom-nav-item"
-        );
-
-
-    // =================================================
-    // ACTIVE NAVIGATION
-    // =================================================
+    const allNavLinks = document.querySelectorAll(
+        "#nav a, .mobile-menu-panel a, .bottom-nav-item"
+    );
 
     allNavLinks.forEach(link => {
 
-        link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener("click", () => {
 
-                allNavLinks.forEach(item => {
+            allNavLinks.forEach(item => {
+                item.classList.remove("active");
+            });
 
-                    item.classList.remove(
-                        "active"
-                    );
-
-                });
-
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
+            link.classList.add("active");
+        });
     });
 
 
-    // =================================================
-    // ACTIVE PAGE DETECTION
-    // =================================================
+    // ============================================
+    // CURRENT PAGE DETECTION
+    // ============================================
 
-    let currentPage =
-        window.location.pathname
+    let currentPage = window.location.pathname
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+    if (!currentPage) {
+        currentPage = "index.html";
+    }
+
+    allNavLinks.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        const cleanHref = href
+            .split("#")[0]
+            .split("?")[0]
             .split("/")
             .pop()
             .toLowerCase();
 
-
-    // GitHub Pages / empty path
-
-    if (!currentPage) {
-
-        currentPage = "index.html";
-
-    }
-
-
-    allNavLinks.forEach(link => {
-
-        const href =
-            link.getAttribute("href");
-
-
-        if (!href) {
-
-            return;
-
+        if (cleanHref && cleanHref === currentPage) {
+            link.classList.add("active");
         }
-
-
-        const cleanHref =
-            href
-                .split("#")[0]
-                .split("?")[0]
-                .split("/")
-                .pop()
-                .toLowerCase();
-
-
-        if (
-            cleanHref &&
-            cleanHref === currentPage
-        ) {
-
-            link.classList.add(
-                "active"
-            );
-
-        }
-
     });
 
 
-    // =================================================
+    // ============================================
     // SMOOTH SCROLL
-    // =================================================
+    // ============================================
 
-    const scrollLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
+        link.addEventListener("click", (event) => {
 
-    scrollLinks.forEach(link => {
+            const targetId = link.getAttribute("href");
 
-        link.addEventListener(
-            "click",
-            (event) => {
+            if (!targetId || targetId === "#") return;
 
-                const targetId =
-                    link.getAttribute("href");
+            const target =
+                document.getElementById(targetId.slice(1));
 
+            if (target) {
+                event.preventDefault();
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-
-                    return;
-
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-
-                if (target) {
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView({
-
-                        behavior: "smooth",
-
-                        block: "start"
-
-                    });
-
-                }
-
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             }
-        );
-
+        });
     });
 
 
-    // =================================================
-    // MOBILE BOTTOM NAV
-    // =================================================
+    // ============================================
+    // MOBILE BOTTOM NAVIGATION
+    // ============================================
 
     const bottomNavItems =
-        document.querySelectorAll(
-            ".bottom-nav-item"
-        );
-
+        document.querySelectorAll(".bottom-nav-item");
 
     bottomNavItems.forEach(item => {
 
-        item.addEventListener(
-            "click",
-            () => {
+        item.addEventListener("click", () => {
 
-                bottomNavItems.forEach(nav => {
+            bottomNavItems.forEach(nav => {
+                nav.classList.remove("active");
+            });
 
-                    nav.classList.remove(
-                        "active"
-                    );
-
-                });
-
-
-                item.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
+            item.classList.add("active");
+        });
     });
 
 
-    // =================================================
-    // MOBILE MOVIE HORIZONTAL SCROLL
-    // =================================================
+    // ============================================
+    // MOBILE HORIZONTAL SCROLL
+    // ============================================
 
-    const movieRows =
-        document.querySelectorAll(
-            ".mobile-movie-row"
-        );
+    [
+        ".mobile-movie-row",
+        ".mobile-gadget-row"
+    ].forEach(selector => {
 
+        document.querySelectorAll(selector).forEach(row => {
 
-    movieRows.forEach(row => {
-
-        row.addEventListener(
-            "wheel",
-            (event) => {
+            row.addEventListener("wheel", (event) => {
 
                 if (
-                    window.innerWidth <= 700
+                    window.innerWidth <= 700 &&
+                    Math.abs(event.deltaY) > Math.abs(event.deltaX)
                 ) {
-
-                    if (
-                        Math.abs(event.deltaY) >
-                        Math.abs(event.deltaX)
-                    ) {
-
-                        event.preventDefault();
-
-
-                        row.scrollLeft +=
-                            event.deltaY;
-
-                    }
-
+                    event.preventDefault();
+                    row.scrollLeft += event.deltaY;
                 }
 
-            },
-            {
-                passive: false
-            }
-        );
-
+            }, { passive: false });
+        });
     });
 
 
-    // =================================================
-    // MOBILE GADGET HORIZONTAL SCROLL
-    // =================================================
+    // ============================================
+    // WEBSITE LOADED
+    // ============================================
 
-    const gadgetRows =
-        document.querySelectorAll(
-            ".mobile-gadget-row"
-        );
-
-
-    gadgetRows.forEach(row => {
-
-        row.addEventListener(
-            "wheel",
-            (event) => {
-
-                if (
-                    window.innerWidth <= 700
-                ) {
-
-                    if (
-                        Math.abs(event.deltaY) >
-                        Math.abs(event.deltaX)
-                    ) {
-
-                        event.preventDefault();
-
-
-                        row.scrollLeft +=
-                            event.deltaY;
-
-                    }
-
-                }
-
-            },
-            {
-                passive: false
-            }
-        );
-
-    });
-
-
-    // =================================================
-    // PAGE LOADED
-    // =================================================
-
-    document.body.classList.add(
-        "page-loaded"
-    );
-
-
-    // =================================================
-    // CONSOLE
-    // =================================================
+    document.body.classList.add("page-loaded");
 
     console.log(
-        "Doraemon World loaded successfully! 💙"
-    );
-
-    console.log(
-        "Doraemon effect: ONE CLICK ONLY PER SESSION"
-    );
-
-    console.log(
-        "Images: 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08"
-    );
-
-    console.log(
-        "Effect state:",
-        effectPlayed
-            ? "ALREADY PLAYED"
-            : "READY TO PLAY"
+        "Doraemon World loaded successfully!"
     );
 
 });

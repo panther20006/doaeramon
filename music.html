@@ -1,3059 +1,1109 @@
+
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doraemon World - Music</title>
-
 <style>
-
-/* =========================================================
-   DORAEMON WORLD
-   MUSIC PAGE
-   COMPLETE HTML + CSS + JS
-========================================================= */
-
-/* =========================================================
-   RESET.  hello 
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f2fbff;
-    color:#172033;
-    padding-bottom:0;
-}
-
-
-/* =========================================================
-   DESKTOP TOP NAVIGATION
-   SAME AS HOME PAGE
-========================================================= */
-
-.topbar{
-    width:100%;
-    min-height:64px;
-
-    padding:8px 4%;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    position:sticky;
-    top:0;
-
-    z-index:1000;
-
-    background:rgba(4,76,132,.97);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    box-shadow:
-        0 5px 25px rgba(0,60,100,.15);
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo{
-    color:white !important;
-
-    font-size:23px;
-    font-weight:900;
-
-    letter-spacing:1px;
-
-    white-space:nowrap;
-
-    display:flex;
-    align-items:center;
-
-    flex-shrink:0;
-
-    text-decoration:none;
-
-    transition:.25s ease;
-
-    margin-right:20px;
-}
-
-.logo:hover{
-    transform:scale(1.03);
-}
-
-
-/* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
-
-#nav{
-    margin-left:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-
-    gap:4px;
-
-    flex-shrink:0;
-}
-
-#nav a{
-    color:white !important;
-
-    font-size:14px;
-    font-weight:700;
-
-    padding:10px 12px;
-
-    border-radius:10px;
-
-    white-space:nowrap;
-
-    text-decoration:none;
-
-    transition:.25s ease;
-}
-
-#nav a:hover{
-    background:#20a8f5;
-
-    color:white !important;
-
-    transform:translateY(-2px);
-}
-
-#nav a.active{
-    background:#20a8f5;
-
-    color:white !important;
-
-    box-shadow:
-        0 0 15px rgba(32,168,245,.45);
-}
-
-
-/* =========================================================
-   MENU BUTTON
-========================================================= */
-
-.menu-btn{
-    display:none;
-}
-
-
-/* =========================================================
-   MOBILE HEADER
-========================================================= */
-
-.mobile-header{
-    display:none;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:500px;
-
-    padding:65px 8% 55px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0,170,255,.30),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(0,120,255,.22),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #078be0 0%,
-            #20b8f4 48%,
-            #a5e9ff 100%
-        );
-
-    border-radius:0 0 28px 28px;
-}
-
-
-/* =========================================================
-   HERO MUSIC ICONS
-========================================================= */
-
-.hero::before{
-    content:"♪  ♫  ♪  ♬  ♪  ♫";
-
-    position:absolute;
-
-    left:4%;
-    top:25px;
-
-    font-size:50px;
-
-    letter-spacing:30px;
-
-    color:rgba(255,255,255,.16);
-
-    white-space:nowrap;
-
-    transform:rotate(-5deg);
-}
-
-.hero::after{
-    content:"♫  ♪  ♬  ♪  ♫";
-
-    position:absolute;
-
-    right:3%;
-    bottom:30px;
-
-    font-size:55px;
-
-    letter-spacing:35px;
-
-    color:rgba(255,255,255,.14);
-
-    white-space:nowrap;
-
-    transform:rotate(4deg);
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content{
-    width:53%;
-
-    position:relative;
-
-    z-index:5;
-}
-
-
-/* =========================================================
-   BADGE
-========================================================= */
-
-.badge{
-    display:inline-flex;
-
-    align-items:center;
-
-    padding:9px 17px;
-
-    background:white;
-
-    border-radius:50px;
-
-    color:#0785d1;
-
-    font-size:11px;
-
-    font-weight:900;
-
-    letter-spacing:.7px;
-
-    margin-bottom:20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,70,150,.15);
-}
-
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.hero h1{
-    color:white;
-
-    font-size:clamp(45px,6vw,78px);
-
-    line-height:.98;
-
-    font-weight:900;
-
-    letter-spacing:-2px;
-
-    margin-bottom:22px;
-}
-
-.hero h1 strong{
-    display:block;
-
-    color:#fff3a8;
-}
-
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
-.hero p{
-    max-width:610px;
-
-    color:white;
-
-    line-height:1.7;
-
-    font-size:16px;
-
-    margin-bottom:27px;
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-.hero-buttons{
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-.hero-btn{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:13px 22px;
-
-    border-radius:13px;
-
-    background:#086eea;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    box-shadow:
-        0 10px 25px rgba(0,60,180,.25);
-
-    transition:.25s ease;
-}
-
-.hero-btn:hover{
-    background:#0759bd;
-
-    transform:translateY(-3px);
-}
-
-.hero-btn.secondary{
-    background:rgba(255,255,255,.12);
-
-    border:
-        1px solid rgba(255,255,255,.55);
-}
-
-.hero-btn.secondary:hover{
-    background:white;
-
-    color:#078bd6;
-}
-
-
-/* =========================================================
-   DORAEMON HERO IMAGE
-========================================================= */
-
-.hero-art{
-    width:43%;
-
-    min-height:420px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-
-    z-index:5;
-}
-
-.hero-art::before{
-    content:"";
-
-    position:absolute;
-
-    width:390px;
-    height:390px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.18);
-
-    filter:blur(5px);
-
-    z-index:-1;
-}
-
-.hero-art img{
-    width:min(440px,100%);
-
-    max-height:440px;
-
-    object-fit:contain;
-
-    display:block;
-
-    filter:
-        drop-shadow(
-            0 25px 25px
-            rgba(0,60,120,.25)
-        );
-
-    animation:
-        doraemonFloat 4s ease-in-out infinite;
-}
-
-@keyframes doraemonFloat{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-
-
-/* =========================================================
-   CONTROLS
-========================================================= */
-
-.controls{
-    width:88%;
-
-    max-width:1300px;
-
-    margin:35px auto 10px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search{
-    flex:1;
-
-    min-width:250px;
-
-    height:48px;
-
-    padding:0 17px;
-
-    border:
-        1px solid #d5eaf5;
-
-    border-radius:14px;
-
-    outline:none;
-
-    background:white;
-
-    font-size:14px;
-
-    box-shadow:
-        0 5px 20px rgba(0,100,160,.06);
-}
-
-.search:focus{
-    border-color:#078bd6;
-
-    box-shadow:
-        0 0 0 4px
-        rgba(7,139,214,.10);
-}
-
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-.filters{
-    display:flex;
-
-    gap:7px;
-
-    flex-wrap:wrap;
-}
-
-.filter{
-    border:
-        1px solid #d5eaf5;
-
-    background:white;
-
-    color:#53687a;
-
-    padding:10px 14px;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    transition:.25s;
-}
-
-.filter:hover,
-.filter.active{
-    background:#078bd6;
-
-    color:white;
-
-    border-color:#078bd6;
-}
-
-
-/* =========================================================
-   MUSIC SECTION
-========================================================= */
-
-.music-section{
-    width:88%;
-
-    max-width:1400px;
-
-    margin:50px auto 90px;
-}
-
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
-
-.section-title{
-    margin-bottom:25px;
-}
-
-.section-title span{
-    color:#078bd6;
-
-    font-size:11px;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-}
-
-.section-title h2{
-    color:#172d43;
-
-    font-size:32px;
-
-    margin-top:7px;
-}
-
-.section-title p{
-    color:#718393;
-
-    font-size:14px;
-
-    margin-top:7px;
-}
-
-
-/* =========================================================
-   SONG GRID
-========================================================= */
-
-.song-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:20px;
-}
-
-
-/* =========================================================
-   SONG CARD
-========================================================= */
-
-.song-card{
-    background:white;
-
-    border:
-        1px solid #e0eff6;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 8px 25px rgba(0,100,160,.07);
-
-    transition:.3s;
-}
-
-.song-card:hover{
-    transform:translateY(-6px);
-
-    border-color:#8bd6f6;
-
-    box-shadow:
-        0 18px 40px rgba(0,120,190,.15);
-}
-
-
-/* =========================================================
-   SONG COVER
-========================================================= */
-
-.song-cover{
-    height:205px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #dff7ff,
-            #b8e9ff
-        );
-}
-
-.song-cover img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.35s ease;
-}
-
-.song-card:hover .song-cover img{
-    transform:scale(1.06);
-}
-
-
-/* =========================================================
-   NUMBER
-========================================================= */
-
-.number{
-    position:absolute;
-
-    top:12px;
-    left:12px;
-
-    width:35px;
-    height:35px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:10px;
-
-    background:rgba(255,255,255,.92);
-
-    color:#087dcc;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    z-index:3;
-
-    box-shadow:
-        0 4px 12px rgba(0,60,120,.10);
-}
-
-
-/* =========================================================
-   COVER OVERLAY
-========================================================= */
-
-.song-cover::after{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:80px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(0,60,100,.30)
-        );
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   PLAY BUTTON
-========================================================= */
-
-.play-btn{
-    position:absolute;
-
-    right:12px;
-    bottom:12px;
-
-    width:46px;
-    height:46px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#078bd6;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 22px rgba(0,100,180,.30);
-
-    z-index:5;
-
-    transition:.2s;
-}
-
-.play-btn:hover{
-    transform:scale(1.08);
-
-    background:#066fae;
-}
-
-
-/* =========================================================
-   PLAYING CARD
-========================================================= */
-
-.song-card.playing{
-    border-color:#078bd6;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(7,139,214,.12),
-
-        0 18px 40px
-        rgba(0,120,190,.16);
-}
-
-.song-card.playing .song-cover img{
-    transform:scale(1.05);
-}
-
-
-/* =========================================================
-   SONG INFO
-========================================================= */
-
-.song-info{
-    padding:15px;
-}
-
-.song-info h3{
-    color:#20384e;
-
-    font-size:15px;
-
-    line-height:1.4;
-
-    margin-bottom:7px;
-}
-
-.artist{
-    color:#718393;
-
-    font-size:12px;
-
-    line-height:1.5;
-}
-
-.type{
-    display:inline-block;
-
-    margin-top:10px;
-
-    padding:5px 9px;
-
-    border-radius:7px;
-
-    background:#eaf8ff;
-
-    color:#0785d1;
-
-    font-size:9px;
-
-    font-weight:900;
-}
-
-
-/* =========================================================
-   MUSIC PLAYER
-========================================================= */
-
-.music-player{
-    position:fixed;
-
-    left:50%;
-    bottom:18px;
-
-    transform:translateX(-50%);
-
-    width:min(900px,92%);
-
-    min-height:76px;
-
-    padding:12px 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    background:rgba(4,76,132,.97);
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    border-radius:20px;
-
-    box-shadow:
-        0 15px 45px rgba(0,60,110,.30);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    z-index:3000;
-}
-
-
-/* =========================================================
-   PLAYER INFO
-========================================================= */
-
-.player-info{
-    min-width:150px;
-
-    max-width:210px;
-
-    overflow:hidden;
-}
-
-.player-title{
-    color:white;
-
-    font-size:13px;
-
-    font-weight:900;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-}
-
-.player-artist{
-    color:#bde8ff;
-
-    font-size:10px;
-
-    margin-top:4px;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-}
-
-
-/* =========================================================
-   PLAYER CONTROLS
-========================================================= */
-
-.player-controls{
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-}
-
-.player-btn{
-    width:36px;
-    height:36px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#e9f7ff;
-
-    color:#087dcc;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    transition:.2s;
-}
-
-.player-btn:hover{
-    background:#20a8f5;
-
-    color:white;
-
-    transform:scale(1.05);
-}
-
-.player-btn.main{
-    width:44px;
-    height:44px;
-
-    background:#20a8f5;
-
-    color:white;
-
-    font-size:17px;
-}
-
-
-/* =========================================================
-   PLAYER PROGRESS
-========================================================= */
-
-.player-progress{
-    flex:1;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    min-width:120px;
-}
-
-.time{
-    color:#d8f2ff;
-
-    font-size:9px;
-
-    white-space:nowrap;
-
-    min-width:30px;
-
-    text-align:center;
-}
-
-.progress{
-    width:100%;
-
-    height:5px;
-
-    border-radius:10px;
-
-    appearance:none;
-    -webkit-appearance:none;
-
-    background:#b9dceb;
-
-    cursor:pointer;
-
-    outline:none;
-}
-
-.progress::-webkit-slider-thumb{
-    appearance:none;
-    -webkit-appearance:none;
-
-    width:13px;
-    height:13px;
-
-    border-radius:50%;
-
-    background:#20a8f5;
-
-    cursor:pointer;
-}
-
-.progress::-moz-range-thumb{
-    width:13px;
-    height:13px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#20a8f5;
-
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   VOLUME
-========================================================= */
-
-.volume{
-    width:80px;
-
-    height:5px;
-
-    appearance:none;
-    -webkit-appearance:none;
-
-    background:#b9dceb;
-
-    border-radius:10px;
-
-    cursor:pointer;
-}
-
-.volume::-webkit-slider-thumb{
-    appearance:none;
-    -webkit-appearance:none;
-
-    width:12px;
-    height:12px;
-
-    border-radius:50%;
-
-    background:#20a8f5;
-}
-
-.volume::-moz-range-thumb{
-    width:12px;
-    height:12px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#20a8f5;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    padding:45px 20px;
-
-    text-align:center;
-
-    background:white;
-
-    border-top:
-        1px solid #deeff7;
-}
-
-.footer-logo{
-    color:#087dcc;
-
-    font-size:21px;
-
-    font-weight:900;
-
-    margin-bottom:10px;
-}
-
-footer p{
-    color:#7a8c9b;
-
-    font-size:13px;
-
-    margin-top:7px;
-}
-
-
-/* =========================================================
-   MOBILE BOTTOM NAV
-========================================================= */
-
-.mobile-bottom-nav{
-    display:none;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:1200px){
-
-    .topbar{
-        padding-left:3%;
-        padding-right:3%;
-    }
-
-    #nav{
-        gap:2px;
-    }
-
-    #nav a{
-        padding:9px 8px;
-        font-size:13px;
-    }
-}
-
-
-@media(max-width:1100px){
-
-    .song-grid{
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-    .hero{
-        padding-left:6%;
-        padding-right:6%;
-    }
-}
-
-
-/* =========================================================
-   DESKTOP ONLY
-========================================================= */
-
-@media(min-width:701px){
-
-    .topbar{
-        display:flex;
-
-        align-items:center;
-
-        justify-content:space-between;
-
-        padding-left:4%;
-        padding-right:3%;
-    }
-
-    .logo{
-        margin-right:20px;
-    }
-
-    #nav{
-        margin-left:auto;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:flex-end;
-
-        gap:4px;
-    }
-
-    .mobile-header,
-    .mobile-bottom-nav{
-        display:none !important;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:700px){
-
-    body{
-        padding-bottom:190px;
-    }
-
-
-    /* DESKTOP NAV HIDE */
-
-    .topbar{
-        display:none !important;
-    }
-
-
-    /* =====================================================
-       MOBILE HEADER
-    ===================================================== */
-
-    .mobile-header{
-        display:flex !important;
-
-        position:sticky;
-
-        top:0;
-
-        z-index:10000;
-
-        width:100%;
-
-        height:62px;
-
-        padding:8px 15px;
-
-        align-items:center;
-
-        justify-content:space-between;
-
-        background:white;
-
-        box-shadow:
-            0 5px 20px
-            rgba(0,60,100,.08);
-    }
-
-
-    /* MOBILE MENU BUTTON */
-
-    .mobile-menu-btn{
-        width:42px;
-        height:42px;
-
-        border:none;
-
-        border-radius:12px;
-
-        background:#e7f7ff;
-
-        color:#087fc0;
-
-        font-size:20px;
-
-        cursor:pointer;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-        transition:.2s ease;
-    }
-
-    .mobile-menu-btn:active{
-        transform:scale(.92);
-    }
-
-
-    /* MOBILE LOGO */
-
-    .mobile-logo{
-        color:#073b70 !important;
-
-        font-size:20px;
-
-        font-weight:900;
-
-        letter-spacing:1px;
-
-        text-decoration:none;
-
-        display:flex;
-
-        align-items:center;
-
-        gap:3px;
-    }
-
-    .mobile-logo span{
-        font-size:16px;
-    }
-
-
-    /* MOBILE SEARCH */
-
-    .mobile-search-btn{
-        width:42px;
-        height:42px;
-
-        border:none;
-
-        border-radius:12px;
-
-        background:#e7f7ff;
-
-        color:#087fc0;
-
-        font-size:20px;
-
-        cursor:pointer;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-        transition:.2s ease;
-    }
-
-    .mobile-search-btn:active{
-        transform:scale(.92);
-    }
-
-
-    /* =====================================================
-       HERO MOBILE
-    ===================================================== */
-
-    .hero{
-
-        min-height:auto;
-
-        padding:
-            40px 20px 25px;
-
-        flex-direction:column;
-
-        text-align:center;
-
-        border-radius:0 0 20px 20px;
-    }
-
-    .hero-content{
-        width:100%;
-
-        order:1;
-    }
-
-    .badge{
-
-        font-size:9px;
-
-        padding:8px 13px;
-
-        margin-bottom:16px;
-    }
-
-    .hero h1{
-
-        font-size:42px;
-
-        letter-spacing:-1px;
-
-        line-height:1;
-    }
-
-    .hero p{
-
-        font-size:13px;
-
-        margin:15px auto 20px;
-
-        max-width:500px;
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
-    }
-
-    .hero-btn{
-
-        padding:11px 17px;
-
-        font-size:12px;
-    }
-
-
-    /* =====================================================
-       HERO IMAGE MOBILE
-    ===================================================== */
-
-    .hero-art{
-
-        width:100%;
-
-        min-height:280px;
-
-        order:2;
-
-        margin-top:5px;
-    }
-
-    .hero-art::before{
-
-        width:270px;
-
-        height:270px;
-    }
-
-    .hero-art img{
-
-        width:280px;
-
-        max-height:300px;
-    }
-
-
-    /* =====================================================
-       SEARCH MOBILE
-    ===================================================== */
-
-    .controls{
-
-        width:92%;
-
-        display:block;
-
-        margin-top:24px;
-    }
-
-    .search{
-
-        width:100%;
-
-        margin-bottom:12px;
-    }
-
-    .filters{
-
-        overflow-x:auto;
-
-        flex-wrap:nowrap;
-
-        scrollbar-width:none;
-    }
-
-    .filters::-webkit-scrollbar{
-        display:none;
-    }
-
-    .filter{
-
-        flex:0 0 auto;
-
-        white-space:nowrap;
-    }
-
-
-    /* =====================================================
-       MUSIC MOBILE
-    ===================================================== */
-
-    .music-section{
-
-        width:92%;
-
-        margin:
-            35px auto 70px;
-    }
-
-    .section-title h2{
-
-        font-size:25px;
-    }
-
-    .section-title p{
-
-        font-size:12px;
-
-        line-height:1.6;
-    }
-
-    .song-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:12px;
-    }
-
-    .song-card{
-
-        border-radius:15px;
-    }
-
-    .song-card:hover{
-
-        transform:none;
-    }
-
-    .song-cover{
-
-        height:145px;
-    }
-
-    .song-info{
-
-        padding:11px;
-    }
-
-    .song-info h3{
-
-        font-size:12px;
-    }
-
-    .artist{
-
-        font-size:10px;
-    }
-
-    .type{
-
-        font-size:8px;
-
-        padding:4px 7px;
-    }
-
-    .number{
-
-        width:30px;
-        height:30px;
-
-        top:8px;
-        left:8px;
-    }
-
-    .play-btn{
-
-        width:40px;
-        height:40px;
-
-        right:8px;
-        bottom:8px;
-    }
-
-
-    /* =====================================================
-       MUSIC PLAYER MOBILE
-    ===================================================== */
-
-    .music-player{
-
-        width:94%;
-
-        bottom:100px;
-
-        min-height:65px;
-
-        padding:9px 10px;
-
-        gap:8px;
-
-        border-radius:16px;
-
-        flex-wrap:wrap;
-    }
-
-    .player-info{
-
-        min-width:90px;
-
-        max-width:115px;
-    }
-
-    .player-title{
-
-        font-size:10px;
-    }
-
-    .player-artist{
-
-        font-size:8px;
-    }
-
-    .player-controls{
-
-        gap:3px;
-    }
-
-    .player-btn{
-
-        width:30px;
-        height:30px;
-
-        font-size:11px;
-    }
-
-    .player-btn.main{
-
-        width:36px;
-        height:36px;
-
-        font-size:14px;
-    }
-
-    .player-progress{
-
-        order:5;
-
-        flex-basis:100%;
-
-        width:100%;
-    }
-
-    .volume{
-
-        display:none;
-    }
-
-
-    /* =====================================================
-       MOBILE BOTTOM NAV
-    ===================================================== */
-
-    .mobile-bottom-nav{
-
-        position:fixed;
-
-        left:12px;
-        right:12px;
-
-        bottom:10px;
-
-        height:65px;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:space-around;
-
-        padding:7px 4px;
-
-        background:
-            rgba(255,255,255,.98);
-
-        border:
-            1px solid #d8efff;
-
-        border-radius:22px;
-
-        box-shadow:
-            0 8px 30px
-            rgba(0,80,140,.18);
-
-        backdrop-filter:blur(14px);
-
-        -webkit-backdrop-filter:blur(14px);
-
-        z-index:5000;
-    }
-
-    .bottom-nav-item{
-
-        flex:1;
-
-        max-width:90px;
-
-        height:54px;
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        justify-content:center;
-
-        gap:3px;
-
-        text-decoration:none;
-
-        color:#718393;
-
-        border-radius:16px;
-
-        transition:
-            background .2s ease,
-            color .2s ease,
-            transform .2s ease;
-    }
-
-    .bottom-nav-item span{
-
-        line-height:1;
-
-        font-size:21px;
-    }
-
-    .bottom-nav-item small{
-
-        font-size:10px;
-
-        line-height:1;
-
-        font-weight:700;
-    }
-
-    .bottom-nav-item.active{
-
-        color:#087dcc;
-
-        background:#e9f7ff;
-
-        box-shadow:
-            inset 0 0 0 1px
-            rgba(8,125,204,.05);
-    }
-
-    .bottom-nav-item:hover{
-
-        color:#087dcc;
-
-        background:#f0faff;
-
-        transform:translateY(-1px);
-    }
-
-    .bottom-nav-item:active{
-
-        transform:scale(.94);
-    }
-
-
-    /* HIDE FOOTER ON MOBILE */
-
-    footer{
-        display:none;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media(max-width:400px){
-
-    .mobile-logo{
-        font-size:16px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .hero-art{
-        min-height:240px;
-    }
-
-    .hero-art img{
-        width:240px;
-        max-height:260px;
-    }
-
-    .song-grid{
-        gap:9px;
-    }
-
-    .song-cover{
-        height:125px;
-    }
-
-    .song-info{
-        padding:9px;
-    }
-
-    .mobile-bottom-nav{
-
-        left:8px;
-        right:8px;
-
-        height:65px;
-
-        bottom:8px;
-    }
-
-    .bottom-nav-item{
-        height:58px;
-    }
-
-    .bottom-nav-item span{
-        font-size:21px;
-    }
-
-    .bottom-nav-item small{
-        font-size:9px;
-    }
-
-    .music-player{
-        bottom:92px;
-    }
-}
-
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *{
-        animation:none !important;
-
-        transition:none !important;
-    }
+:root {
+  --blue: #078bd6;
+  --dark: #044c84;
+  --light: #f2fbff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: #172033;
+}
+a { text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+/* DESKTOP HEADER */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 8px 4%;
+  background: rgba(4,76,132,.97);
+}
+.logo {
+  color: white;
+  font-size: 23px;
+  font-weight: 900;
+}
+#nav { display: flex; align-items: center; gap: 4px; }
+#nav a {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+#nav a:hover, #nav a.active { background: #20a8f5; }
+.mobile-header, .mobile-bottom-nav { display: none; }
+.mobile-menu-panel[hidden] { display: none !important; }
+.mobile-menu-panel { display: none; }
+
+/* HERO */
+.hero {
+  min-height: 500px;
+  padding: 65px 8% 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    135deg, #078be0, #20b8f4 48%, #a5e9ff
+  );
+  border-radius: 0 0 28px 28px;
+}
+.hero-content { width: 53%; }
+.badge {
+  display: inline-block;
+  padding: 9px 17px;
+  margin-bottom: 20px;
+  background: white;
+  color: var(--blue);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 900;
+}
+.hero h1 {
+  color: white;
+  font-size: clamp(45px,6vw,78px);
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+.hero h1 strong { display: block; color: #fff3a8; }
+.hero p {
+  max-width: 610px;
+  color: white;
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 27px;
+}
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-btn {
+  display: inline-flex;
+  padding: 13px 22px;
+  border-radius: 13px;
+  background: #086eea;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+}
+.hero-btn.secondary {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.55);
+}
+.hero-art {
+  width: 43%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-art img {
+  width: min(440px,100%);
+  max-height: 440px;
+  object-fit: contain;
+}
+
+/* SEARCH AND FILTERS */
+.controls {
+  width: 88%;
+  max-width: 1300px;
+  margin: 35px auto 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.search {
+  flex: 1;
+  min-width: 250px;
+  height: 48px;
+  padding: 0 17px;
+  background: white;
+  border: 1px solid #d5eaf5;
+  border-radius: 14px;
+  outline: none;
+  font-size: 14px;
+}
+.search:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(7,139,214,.1);
+}
+.filters { display: flex; gap: 7px; flex-wrap: wrap; }
+.filter {
+  border: 1px solid #d5eaf5;
+  background: white;
+  color: #53687a;
+  padding: 10px 14px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.filter:hover, .filter.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+/* SONG GRID */
+.music-section {
+  width: 88%;
+  max-width: 1400px;
+  margin: 50px auto 90px;
+}
+.section-title { margin-bottom: 25px; }
+.section-title span {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.section-title h2 {
+  color: #172d43;
+  font-size: 32px;
+  margin-top: 7px;
+}
+.section-title p {
+  color: #718393;
+  font-size: 14px;
+  margin-top: 7px;
+}
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+}
+.song-card {
+  background: white;
+  border: 1px solid #e0eff6;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,100,160,.07);
+}
+.song-card.playing {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(7,139,214,.12);
+}
+.song-cover {
+  height: 205px;
+  position: relative;
+  background: linear-gradient(135deg,#dff7ff,#b8e9ff);
+}
+.song-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: white;
+  color: #087dcc;
+  font-size: 10px;
+  font-weight: 900;
+}
+.play-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 16px;
+}
+.song-info { padding: 15px; }
+.song-info h3 {
+  color: #20384e;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+.artist { color: #718393; font-size: 12px; }
+.type {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 9px;
+  background: #eaf8ff;
+  color: var(--blue);
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 900;
+}
+.empty {
+  grid-column: 1/-1;
+  padding: 25px;
+  text-align: center;
+  color: #718393;
+  background: white;
+  border-radius: 14px;
+}
+
+/* MUSIC PLAYER */
+.music-player {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: min(900px,92%);
+  min-height: 76px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #044c84;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0,60,110,.3);
+}
+.player-info {
+  min-width: 150px;
+  max-width: 210px;
+  overflow: hidden;
+}
+.player-title {
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player-artist {
+  color: #bde8ff;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.player-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #e9f7ff;
+  color: #087dcc;
+}
+.player-btn.main {
+  width: 44px;
+  height: 44px;
+  background: #20a8f5;
+  color: white;
+}
+.player-progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+}
+.time {
+  color: #d8f2ff;
+  font-size: 9px;
+  min-width: 30px;
+  text-align: center;
+}
+.progress { width: 100%; accent-color: #20a8f5; }
+.volume { width: 80px; accent-color: #20a8f5; }
+.player-error {
+  position: fixed;
+  bottom: 106px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3100;
+  padding: 8px 13px;
+  max-width: 92%;
+  border-radius: 10px;
+  background: #fff4f0;
+  color: #9d3719;
+  font-size: 12px;
+}
+.player-error[hidden] { display: none; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: white;
+  padding: 45px 20px;
+}
+.footer-logo {
+  color: #087dcc;
+  font-size: 21px;
+  font-weight: 900;
+}
+footer p {
+  color: #7a8c9b;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+@media(max-width:1100px) {
+  .song-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  #nav a { font-size: 12px; padding: 9px 7px; }
+}
+
+/* MOBILE */
+@media(max-width:700px) {
+  body { padding-bottom: 190px; }
+  .topbar { display: none; }
+
+  .mobile-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    height: 62px;
+    padding: 8px 15px;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,60,100,.08);
+  }
+  .mobile-menu-btn, .mobile-search-btn {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 12px;
+    background: #e7f7ff;
+    color: #087fc0;
+    font-size: 20px;
+  }
+  .mobile-logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: #073b70;
+  }
+
+  /* FIXED MOBILE MENU */
+  .mobile-menu-panel:not([hidden]) {
+    display: block;
+    position: fixed;
+    top: 66px;
+    left: 12px;
+    right: 12px;
+    z-index: 11000;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 12px;
+    background: white;
+    border: 1px solid #d8efff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.18);
+  }
+  .mobile-menu-panel a {
+    display: block;
+    padding: 13px;
+    border-radius: 9px;
+    color: #174364;
+    font-weight: 700;
+  }
+  .mobile-menu-panel a:hover,
+  .mobile-menu-panel a[aria-current="page"] {
+    background: #e7f5ff;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 40px 20px 25px;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+  }
+  .hero-content, .hero-art { width: 100%; }
+  .hero h1 { font-size: 42px; }
+  .hero p { font-size: 13px; margin: 15px auto 20px; }
+  .hero-buttons { justify-content: center; }
+  .hero-art { min-height: 280px; margin-top: 5px; }
+  .hero-art img { width: 280px; max-height: 300px; }
+
+  .controls { width: 92%; display: block; margin-top: 24px; }
+  .search { width: 100%; margin-bottom: 12px; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; }
+  .filter { white-space: nowrap; flex: 0 0 auto; }
+  .music-section { width: 92%; margin: 35px auto 70px; }
+  .section-title h2 { font-size: 25px; }
+  .section-title p { font-size: 12px; }
+  .song-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  .song-card { border-radius: 15px; }
+  .song-cover { height: 145px; }
+  .song-info { padding: 11px; }
+  .song-info h3 { font-size: 12px; }
+  .artist { font-size: 10px; }
+  .type { font-size: 8px; }
+  .play-btn { width: 40px; height: 40px; right: 8px; bottom: 8px; }
+
+  .music-player {
+    width: 94%;
+    bottom: 100px;
+    min-height: 65px;
+    padding: 9px 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+  .player-info { min-width: 90px; max-width: 115px; }
+  .player-title { font-size: 10px; }
+  .player-artist { font-size: 8px; }
+  .player-btn { width: 30px; height: 30px; }
+  .player-btn.main { width: 36px; height: 36px; }
+  .player-progress { order: 5; flex-basis: 100%; width: 100%; }
+  .volume { display: none; }
+  .player-error { bottom: 192px; }
+
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    z-index: 5000;
+    height: 65px;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    border: 1px solid #d8efff;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px rgba(0,80,140,.18);
+  }
+  .bottom-nav-item {
+    flex: 1;
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #718393;
+    border-radius: 16px;
+  }
+  .bottom-nav-item span { font-size: 21px; }
+  .bottom-nav-item small { font-size: 10px; font-weight: 700; }
+  .bottom-nav-item.active {
+    color: #087dcc;
+    background: #e9f7ff;
+  }
+  footer { display: none; }
+}
+@media(max-width:400px) {
+  .mobile-logo { font-size: 16px; }
+  .hero h1 { font-size: 36px; }
+  .hero-art { min-height: 240px; }
+  .hero-art img { width: 240px; }
+  .song-cover { height: 125px; }
+  .song-grid { gap: 9px; }
+  .music-player { bottom: 92px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+  }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     DESKTOP NAVIGATION
-===================================================== -->
-
+<!-- DESKTOP HEADER -->
 <header class="topbar">
-
-    <a href="index.html"
-       class="logo">
-        DORAEMON 🌐
-    </a>
-
-    <nav id="nav">
-
-        <a href="index.html">
-            🏠 Home
-        </a>
-
-        <a href="movies.html">
-            🎬 Movies
-        </a>
-
-        <a href="episodes.html">
-            📺 Episodes
-        </a>
-
-        <a href="characters.html">
-            👥 Characters
-        </a>
-
-        <a href="wallpapers.html">
-            🖼️ Wallpapers
-        </a>
-
-        <a href="music.html"
-           class="active">
-            🎵 Music
-        </a>
-
-        <a href="gallery.html">
-            📸 Gallery
-        </a>
-
-        <a href="gadgets.html">
-            🪄 Gadgets
-        </a>
-
-        <a href="test.html">
-            📝 Test
-        </a>
-
-    </nav>
-
+  <a href="index.html" class="logo">DORAEMON 🌐</a>
+  <nav id="nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="movies.html">🎬 Movies</a>
+    <a href="episodes.html">📺 Episodes</a>
+    <a href="characters.html">👥 Characters</a>
+    <a href="wallpapers.html">🖼️ Wallpapers</a>
+    <a href="music.html" class="active">🎵 Music</a>
+    <a href="gallery.html">📸 Gallery</a>
+    <a href="gadgets.html">🪄 Gadgets</a>
+    <a href="test.html">📝 Test</a>
+  </nav>
 </header>
 
-
-<!-- =====================================================
-     MOBILE HEADER
-===================================================== -->
-
+<!-- MOBILE HEADER -->
 <header class="mobile-header">
+  <button
+    id="mobileMenu"
+    class="mobile-menu-btn"
+    type="button"
+    aria-label="Open menu"
+    aria-controls="mobileMenuPanel"
+    aria-expanded="false">☰</button>
 
-    <button
-        id="mobileMenu"
-        class="mobile-menu-btn"
-        aria-label="Open Menu">
+  <a href="index.html" class="mobile-logo">
+    DORAEMON 🌐
+  </a>
 
-        ☰
-
-    </button>
-
-    <a
-        href="index.html"
-        class="mobile-logo">
-
-        DORAEMON
-
-        <span>🌐</span>
-
-    </a>
-
-    <button
-        class="mobile-search-btn"
-        aria-label="Search">
-
-        🔍
-
-    </button>
-
+  <button
+    id="mobileSearch"
+    class="mobile-search-btn"
+    type="button"
+    aria-label="Search songs">🔍</button>
 </header>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="badge">
-            🎵 DORAEMON WORLD
-        </div>
-
-        <h1>
-
-            Doraemon
-
-            <strong>
-                Music Collection
-            </strong>
-
-        </h1>
-
-        <p>
-
-            Doraemon ke saare yaadgaar songs,
-            themes aur background music ek hi
-            jagah suno. Apne favourite tracks
-            enjoy karo aur Doraemon ki magical
-            world mein kho jao!
-
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#music"
-               class="hero-btn">
-
-                ▶ Listen Now
-
-            </a>
-
-            <a href="#music"
-               class="hero-btn secondary">
-
-                🎧 All Songs
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- HERO IMAGE -->
-
-    <div class="hero-art">
-
-        <img
-            src="assets/images/characters/doraemon-music.png"
-            alt="Doraemon Music">
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SEARCH + FILTER
-===================================================== -->
-
-<div class="controls">
-
-    <input
-        id="search"
-        class="search"
-        type="search"
-        placeholder="🔍 Hindi song search karo...">
-
-    <div class="filters">
-
-        <button
-            class="filter active"
-            onclick="setFilter('all',this)">
-
-            All
-
-        </button>
-
-        <button
-            class="filter"
-            onclick="setFilter('tv',this)">
-
-            📺 TV
-
-        </button>
-
-        <button
-            class="filter"
-            onclick="setFilter('movie',this)">
-
-            🎬 Movies
-
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MUSIC COLLECTION
-===================================================== -->
-
-<main id="music">
-
-    <section class="music-section">
-
-        <div class="section-title">
-
-            <span>
-                DORAEMON MUSIC
-            </span>
-
-            <h2>
-                Doraemon Music Collection 🎵
-            </h2>
-
-            <p>
-                Doraemon ke favourite Hindi songs,
-                themes aur special music collection.
-            </p>
-
-        </div>
-
-
-        <div
-            id="songGrid"
-            class="song-grid">
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =====================================================
-     MOBILE BOTTOM NAVIGATION
-===================================================== -->
-
-<nav class="mobile-bottom-nav">
-
-    <a
-        href="index.html"
-        class="bottom-nav-item">
-
-        <span>🏠</span>
-
-        <small>
-            Home
-        </small>
-
-    </a>
-
-
-    <a
-        href="movies.html"
-        class="bottom-nav-item">
-
-        <span>🎬</span>
-
-        <small>
-            Movies
-        </small>
-
-    </a>
-
-
-    <a
-        href="episodes.html"
-        class="bottom-nav-item">
-
-        <span>📺</span>
-
-        <small>
-            Episodes
-        </small>
-
-    </a>
-
-
-    <a
-        href="characters.html"
-        class="bottom-nav-item">
-
-        <span>👥</span>
-
-        <small>
-            Characters
-        </small>
-
-    </a>
-
-
-    <a
-        href="music.html"
-        class="bottom-nav-item active">
-
-        <span>🎵</span>
-
-        <small>
-            Music
-        </small>
-
-    </a>
-
+<!-- MOBILE NAVIGATION -->
+<nav
+  id="mobileMenuPanel"
+  class="mobile-menu-panel"
+  aria-label="Mobile navigation"
+  hidden>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="movies.html">🎬 Movies</a>
+  <a href="episodes.html">📺 Episodes</a>
+  <a href="characters.html">👥 Characters</a>
+  <a href="wallpapers.html">🖼️ Wallpapers</a>
+  <a href="music.html" aria-current="page">🎵 Music</a>
+  <a href="gallery.html">📸 Gallery</a>
+  <a href="gadgets.html">🪄 Gadgets</a>
+  <a href="test.html">📝 Test</a>
+  <a href="motivation.html">💙 Motivation</a>
 </nav>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">🎵 DORAEMON WORLD</div>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="footer-logo">
-        DORAEMON WORLD 💙
-    </div>
+    <h1>Doraemon <strong>Music Collection</strong></h1>
 
     <p>
-        Unofficial fan-made website.
+      Doraemon ke saare yaadgaar songs,
+      themes aur background music ek hi jagah suno.
+      Apne favourite tracks enjoy karo aur Doraemon
+      ki magical world mein kho jao!
     </p>
 
-    <p>
-        © 2026 Doraemon World
-    </p>
-
-</footer>
-
-
-<!-- =====================================================
-     MUSIC PLAYER
-===================================================== -->
-
-<div class="music-player">
-
-    <div class="player-info">
-
-        <div
-            id="playerTitle"
-            class="player-title">
-
-            No Song Playing
-
-        </div>
-
-        <div
-            id="playerArtist"
-            class="player-artist">
-
-            Select a song
-
-        </div>
-
+    <div class="hero-buttons">
+      <a href="#music" class="hero-btn">▶ Listen Now</a>
+      <a href="#music" class="hero-btn secondary">🎧 All Songs</a>
     </div>
+  </div>
 
+  <div class="hero-art">
+    <img
+      src="assets/images/characters/doraemon-music.png"
+      alt="Doraemon Music">
+  </div>
+</section>
 
-    <div class="player-controls">
+<!-- SONG SEARCH AND FILTER -->
+<div class="controls" id="musicSearchArea">
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="🔍 Hindi song search karo..."
+    aria-label="Search songs">
 
-        <button
-            class="player-btn"
-            onclick="previousSong()">
-
-            ⏮
-
-        </button>
-
-        <button
-            id="mainPlayBtn"
-            class="player-btn main"
-            onclick="togglePlay()">
-
-            ▶
-
-        </button>
-
-        <button
-            class="player-btn"
-            onclick="nextSong()">
-
-            ⏭
-
-        </button>
-
-    </div>
-
-
-    <div class="player-progress">
-
-        <span
-            id="currentTime"
-            class="time">
-
-            0:00
-
-        </span>
-
-        <input
-            id="progress"
-            class="progress"
-            type="range"
-            min="0"
-            max="100"
-            value="0">
-
-        <span
-            id="duration"
-            class="time">
-
-            0:00
-
-        </span>
-
-    </div>
-
-
-    <span>
-        🔊
-    </span>
-
-    <input
-        id="volume"
-        class="volume"
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value="1">
-
+  <div class="filters">
+    <button class="filter active" type="button" data-filter="all">
+      All
+    </button>
+    <button class="filter" type="button" data-filter="tv">
+      📺 TV
+    </button>
+    <button class="filter" type="button" data-filter="movie">
+      🎬 Movies
+    </button>
+  </div>
 </div>
 
+<main id="music">
+  <section class="music-section">
+    <div class="section-title">
+      <span>DORAEMON MUSIC</span>
+      <h2>Doraemon Music Collection 🎵</h2>
+      <p>
+        Doraemon ke favourite Hindi songs,
+        themes aur special music collection.
+      </p>
+    </div>
+
+    <div id="songGrid" class="song-grid"></div>
+  </section>
+</main>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav">
+  <a href="index.html" class="bottom-nav-item">
+    <span>🏠</span><small>Home</small>
+  </a>
+  <a href="movies.html" class="bottom-nav-item">
+    <span>🎬</span><small>Movies</small>
+  </a>
+  <a href="episodes.html" class="bottom-nav-item">
+    <span>📺</span><small>Episodes</small>
+  </a>
+  <a href="characters.html" class="bottom-nav-item">
+    <span>👥</span><small>Characters</small>
+  </a>
+  <a href="music.html" class="bottom-nav-item active">
+    <span>🎵</span><small>Music</small>
+  </a>
+</nav>
+
+<footer>
+  <div class="footer-logo">DORAEMON WORLD 💙</div>
+  <p>Unofficial fan-made website.</p>
+  <p>© 2026 Doraemon World</p>
+</footer>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+  <div class="player-info">
+    <div id="playerTitle" class="player-title">No Song Playing</div>
+    <div id="playerArtist" class="player-artist">Select a song</div>
+  </div>
+
+  <div class="player-controls">
+    <button id="previousBtn" class="player-btn" type="button">⏮</button>
+    <button id="mainPlayBtn" class="player-btn main" type="button">▶</button>
+    <button id="nextBtn" class="player-btn" type="button">⏭</button>
+  </div>
+
+  <div class="player-progress">
+    <span id="currentTime" class="time">0:00</span>
+    <input
+      id="progress"
+      class="progress"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      aria-label="Song progress">
+    <span id="duration" class="time">0:00</span>
+  </div>
+
+  <span style="color:white">🔊</span>
+  <input
+    id="volume"
+    class="volume"
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    value="1"
+    aria-label="Volume">
+</div>
+
+<p id="playerError" class="player-error" role="status" hidden></p>
 
 <script>
-
-/* =========================================================
-   SONG DATABASE
-========================================================= */
+// ================================================
+// DORAEMON MUSIC DATABASE
+// ================================================
 
 const songs = [
-
-    {
-        id:1,
-        title:"Zindagi Sawar Du",
-        artist:"Doraemon Hindi",
-        type:"tv",
-        audio:"assets/music/Zindagi-Sawar-Du-Doraemon.mp3",
-        cover:"assets/music/zindagi-sawar-du.jpg"
-    },
-
-    {
-        id:2,
-        title:"Aapne Dil Mein Dekho",
-        artist:"Doraemon Hindi",
-        type:"tv",
-        audio:"assets/music/aapne-dil-mein-dekho.mp3",
-        cover:"assets/music/aapne-dil-mein-dekho.jpg"
-    },
-
-    {
-        id:3,
-        title:"Jeene Ka Sahi Dhang",
-        artist:"Doraemon Hindi",
-        type:"tv",
-        audio:"assets/music/jeene-ka-sahi-dhang.mp3",
-        cover:"assets/music/jeene-ka-sahi-dhang.jpg"
-    },
-
-    {
-        id:4,
-        title:"Sabse Pehle Hai Pyaar",
-        artist:"Doraemon Hindi",
-        type:"tv",
-        audio:"assets/music/sabse-pehle-hai-pyaar.mp3",
-        cover:"assets/music/sabse-pehle-hai-pyaar.jpg"
-    },
-
-    {
-        id:5,
-        title:"Doraemon Instrumental",
-        artist:"Doraemon Music",
-        type:"tv",
-        audio:"assets/music/doraemon-song.mp3",
-        cover:"assets/music/doraemon-instrumental.jpg"
-    },
-
-    {
-        id:6,
-        title:"Doraemon Japanese Song",
-        artist:"Doraemon",
-        type:"movie",
-        audio:"assets/music/doraemon-japanese.mp3",
-        cover:"assets/music/doraemon-japanese.jpg"
-    },
-
-    {
-        id:7,
-        title:"Paani Ki Boond",
-        artist:"Doraemon Music",
-        type:"movie",
-        audio:"assets/music/paani-ki-boond.mp3",
-        cover:"assets/music/paani-ki-boond.jpg"
-    }
-
+  {
+    id: 1,
+    title: "Zindagi Sawar Du",
+    artist: "Doraemon Hindi",
+    type: "tv",
+    audio: "assets/music/Zindagi-Sawar-Du-Doraemon.mp3",
+    cover: "assets/music/zindagi-sawar-du.jpg"
+  },
+  {
+    id: 2,
+    title: "Aapne Dil Mein Dekho",
+    artist: "Doraemon Hindi",
+    type: "tv",
+    audio: "assets/music/aapne-dil-mein-dekho.mp3",
+    cover: "assets/music/aapne-dil-mein-dekho.jpg"
+  },
+  {
+    id: 3,
+    title: "Jeene Ka Sahi Dhang",
+    artist: "Doraemon Hindi",
+    type: "tv",
+    audio: "assets/music/jeene-ka-sahi-dhang.mp3",
+    cover: "assets/music/jeene-ka-sahi-dhang.jpg"
+  },
+  {
+    id: 4,
+    title: "Sabse Pehle Hai Pyaar",
+    artist: "Doraemon Hindi",
+    type: "tv",
+    audio: "assets/music/sabse-pehle-hai-pyaar.mp3",
+    cover: "assets/music/sabse-pehle-hai-pyaar.jpg"
+  },
+  {
+    id: 5,
+    title: "Doraemon Instrumental",
+    artist: "Doraemon Music",
+    type: "tv",
+    audio: "assets/music/doraemon-song.mp3",
+    cover: "assets/music/doraemon-instrumental.jpg"
+  },
+  {
+    id: 6,
+    title: "Doraemon Japanese Song",
+    artist: "Doraemon",
+    type: "movie",
+    audio: "assets/music/doraemon-japanese.mp3",
+    cover: "assets/music/doraemon-japanese.jpg"
+  },
+  {
+    id: 7,
+    title: "Paani Ki Boond",
+    artist: "Doraemon Music",
+    type: "movie",
+    audio: "assets/music/paani-ki-boond.mp3",
+    cover: "assets/music/paani-ki-boond.jpg"
+  },
+  {
+    id: 8,
+    title: "har kisi me hai ",
+    artist: "Doraemon Music",
+    type: "movie",
+    audio: "assets/music/har kisi me hai nobita.mp3",
+    cover: "assets/music/har kisi me hai nobita.jpg"
+  }
 ];
 
+const $ = id => document.getElementById(id);
+const grid = $("songGrid");
+const audio = new Audio();
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+let activeId = null;
+let activeFilter = "all";
 
-const grid =
-    document.getElementById("songGrid");
+// ================================================
+// MOBILE MENU FIX
+// ================================================
 
-const playerTitle =
-    document.getElementById("playerTitle");
+const menuButton = $("mobileMenu");
+const menuPanel = $("mobileMenuPanel");
 
-const playerArtist =
-    document.getElementById("playerArtist");
+function closeMenu() {
+  menuPanel.hidden = true;
+  menuButton.setAttribute("aria-expanded", "false");
+}
 
-const mainPlayBtn =
-    document.getElementById("mainPlayBtn");
+menuButton.addEventListener("click", event => {
+  event.stopPropagation();
 
-const progress =
-    document.getElementById("progress");
+  menuPanel.hidden = !menuPanel.hidden;
 
-const volume =
-    document.getElementById("volume");
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(!menuPanel.hidden)
+  );
+});
 
-const currentTime =
-    document.getElementById("currentTime");
+menuPanel.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
 
-const duration =
-    document.getElementById("duration");
+document.addEventListener("click", event => {
+  if (
+    !menuPanel.hidden &&
+    !menuPanel.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+    closeMenu();
+  }
+});
 
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeMenu();
+});
 
-let currentFilter = "all";
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 700) closeMenu();
+});
 
-let currentAudio = null;
+// ================================================
+// MOBILE SEARCH
+// ================================================
 
-let currentSongId = null;
+$("mobileSearch").addEventListener("click", () => {
+  const field = $("search");
 
+  field.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
-/* =========================================================
-   RENDER SONGS
-========================================================= */
+  field.focus({ preventScroll: true });
+});
 
-function renderSongs(){
+// ================================================
+// RENDER SONGS
+// ================================================
 
-    const search =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
+function renderSongs() {
+  const query = $("search").value.toLowerCase().trim();
 
-    grid.innerHTML = "";
+  const filtered = songs.filter(song =>
+    (activeFilter === "all" || song.type === activeFilter) &&
+    `${song.title} ${song.artist}`.toLowerCase().includes(query)
+  );
 
-    songs.forEach(song => {
+  grid.replaceChildren();
 
-        const filterMatch =
-            currentFilter === "all" ||
-            song.type === currentFilter;
+  if (!filtered.length) {
+    grid.innerHTML =
+      '<p class="empty">No matching songs found.</p>';
+    return;
+  }
 
-        const text =
-            (
-                song.title +
-                " " +
-                song.artist
-            ).toLowerCase();
+  filtered.forEach(song => {
+    const card = document.createElement("article");
 
-        const searchMatch =
-            text.includes(search);
+    card.className = "song-card";
+    card.dataset.id = String(song.id);
 
-        if(
-            filterMatch &&
-            searchMatch
-        ){
+    card.innerHTML = `
+      <div class="song-cover">
+        <span class="number">
+          ${String(song.id).padStart(2, "0")}
+        </span>
 
-            const card =
-                document.createElement("article");
+        <img src="${song.cover}"
+             alt="${song.title}"
+             loading="lazy">
 
-            card.className =
-                "song-card";
+        <button class="play-btn" type="button">
+          ▶
+        </button>
+      </div>
 
-            card.dataset.id =
-                song.id;
+      <div class="song-info">
+        <h3>${song.title}</h3>
+        <div class="artist">🎤 ${song.artist}</div>
+        <span class="type">
+          ${song.type === "movie" ? "Movie Music" : "Hindi TV"}
+        </span>
+      </div>
+    `;
 
-            card.innerHTML = `
+    card.querySelector("img").addEventListener(
+      "error",
+      event => {
+        event.target.onerror = null;
+        event.target.src =
+          "assets/images/characters/doraemon-music.png";
+      },
+      { once: true }
+    );
 
-                <div class="song-cover">
+    card.querySelector(".play-btn")
+      .addEventListener("click", () => playSong(song.id));
 
-                    <div class="number">
-                        ${String(song.id).padStart(2,"0")}
-                    </div>
+    grid.appendChild(card);
+  });
 
-                    <img
-                        src="${song.cover}"
-                        alt="${song.title}"
-                        loading="lazy"
-                        onerror="this.src='assets/images/characters/doraemon-music.jpg'">
+  updateButtons();
+}
 
-                    <button
-                        class="play-btn"
-                        onclick="playSong(${song.id})">
+// ================================================
+// PLAYER BUTTON STATES
+// ================================================
 
-                        ▶
+function updateButtons() {
+  const playing = !!activeId && !audio.paused;
 
-                    </button>
+  $("mainPlayBtn").textContent = playing ? "⏸" : "▶";
 
-                </div>
+  grid.querySelectorAll(".song-card").forEach(card => {
+    const active = Number(card.dataset.id) === activeId;
 
+    card.classList.toggle("playing", active);
 
-                <div class="song-info">
+    card.querySelector(".play-btn").textContent =
+      playing && active ? "⏸" : "▶";
+  });
+}
 
-                    <h3>
-                        ${song.title}
-                    </h3>
+function clearError() {
+  $("playerError").hidden = true;
+  $("playerError").textContent = "";
+}
 
-                    <div class="artist">
-                        🎤 ${song.artist}
-                    </div>
+function showError(message) {
+  $("playerError").textContent = message;
+  $("playerError").hidden = false;
+}
 
-                    <span class="type">
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds)) return "0:00";
 
-                        ${
-                            song.type === "movie"
-                            ? "Movie Music"
-                            : "Hindi TV"
-                        }
+  const minutes = Math.floor(seconds / 60);
+  const secs = String(Math.floor(seconds % 60)).padStart(2, "0");
 
-                    </span>
+  return `${minutes}:${secs}`;
+}
 
-                </div>
-            `;
+// ================================================
+// PLAY / PAUSE
+// ================================================
 
-            grid.appendChild(card);
-        }
+async function playCurrent() {
+  clearError();
 
+  try {
+    await audio.play();
+  } catch (error) {
+    showError(
+      "Music file nahi mili ya browser ne playback block kiya. " +
+      "assets/music path check karo."
+    );
+  }
+
+  updateButtons();
+}
+
+function playSong(id) {
+  const song = songs.find(item => item.id === id);
+  if (!song) return;
+
+  if (activeId === id) {
+    if (audio.paused) {
+      playCurrent();
+    } else {
+      audio.pause();
+    }
+    return;
+  }
+
+  audio.pause();
+  activeId = id;
+
+  audio.src = song.audio;
+  audio.volume = Number($("volume").value);
+
+  $("playerTitle").textContent = song.title;
+  $("playerArtist").textContent = song.artist;
+  $("currentTime").textContent = "0:00";
+  $("duration").textContent = "0:00";
+  $("progress").value = 0;
+
+  updateButtons();
+  playCurrent();
+}
+
+// ================================================
+// NEXT / PREVIOUS SONG
+// ================================================
+
+function moveSong(direction) {
+  let position = songs.findIndex(
+    song => song.id === activeId
+  );
+
+  if (position < 0) {
+    position = direction > 0 ? -1 : 0;
+  }
+
+  position = (position + direction + songs.length) % songs.length;
+  playSong(songs[position].id);
+}
+
+$("mainPlayBtn").addEventListener("click", () => {
+  if (activeId === null) {
+    playSong(songs[0].id);
+  } else if (audio.paused) {
+    playCurrent();
+  } else {
+    audio.pause();
+  }
+});
+
+$("previousBtn").addEventListener("click", () => moveSong(-1));
+$("nextBtn").addEventListener("click", () => moveSong(1));
+
+// ================================================
+// AUDIO EVENTS
+// ================================================
+
+audio.addEventListener("play", updateButtons);
+audio.addEventListener("pause", updateButtons);
+audio.addEventListener("ended", () => moveSong(1));
+
+audio.addEventListener("loadedmetadata", () => {
+  $("duration").textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  $("currentTime").textContent = formatTime(audio.currentTime);
+
+  $("progress").value =
+    Number.isFinite(audio.duration) && audio.duration > 0
+      ? (audio.currentTime / audio.duration) * 100
+      : 0;
+});
+
+audio.addEventListener("error", () => {
+  if (activeId !== null) {
+    showError(
+      "Audio file nahi mili. GitHub mein assets/music folder check karo."
+    );
+  }
+});
+
+// ================================================
+// PROGRESS & VOLUME
+// ================================================
+
+$("progress").addEventListener("input", event => {
+  if (Number.isFinite(audio.duration) && audio.duration > 0) {
+    audio.currentTime =
+      audio.duration * Number(event.target.value) / 100;
+  }
+});
+
+$("volume").addEventListener("input", event => {
+  audio.volume = Number(event.target.value);
+});
+
+// ================================================
+// SONG SEARCH AND FILTERS
+// ================================================
+
+$("search").addEventListener("input", renderSongs);
+
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+
+    document.querySelectorAll(".filter").forEach(item => {
+      item.classList.toggle("active", item === button);
     });
-
-    updatePlayingCard();
-}
-
-
-/* =========================================================
-   PLAY SONG
-========================================================= */
-
-function playSong(id){
-
-    const song =
-        songs.find(
-            item => item.id === id
-        );
-
-    if(!song){
-        return;
-    }
-
-
-    /* SAME SONG */
-
-    if(
-        currentSongId === id &&
-        currentAudio
-    ){
-
-        if(currentAudio.paused){
-            currentAudio.play();
-        }else{
-            currentAudio.pause();
-        }
-
-        updatePlayButtons();
-
-        return;
-    }
-
-
-    /* STOP OLD AUDIO */
-
-    if(currentAudio){
-
-        currentAudio.pause();
-
-        currentAudio.currentTime = 0;
-    }
-
-
-    /* CREATE AUDIO */
-
-    currentAudio =
-        new Audio(song.audio);
-
-    currentAudio.volume =
-        Number(volume.value);
-
-    currentSongId =
-        id;
-
-
-    /* RESET */
-
-    progress.value = 0;
-
-    currentTime.textContent =
-        "0:00";
-
-    duration.textContent =
-        "0:00";
-
-
-    /* PLAYER INFO */
-
-    playerTitle.textContent =
-        song.title;
-
-    playerArtist.textContent =
-        song.artist;
-
-
-    /* PLAY */
-
-    currentAudio.play()
-    .then(() => {
-
-        updatePlayButtons();
-
-    })
-    .catch(error => {
-
-        console.log(error);
-
-        alert(
-            "Music file nahi mili!\n\n" +
-            "Check karo:\n" +
-            song.audio
-        );
-
-    });
-
-
-    /* TIME UPDATE */
-
-    currentAudio.addEventListener(
-        "timeupdate",
-        updateProgress
-    );
-
-
-    /* LOADED */
-
-    currentAudio.addEventListener(
-        "loadedmetadata",
-        function(){
-
-            duration.textContent =
-                formatTime(
-                    currentAudio.duration
-                );
-
-        }
-    );
-
-
-    /* MUSIC END */
-
-    currentAudio.addEventListener(
-        "ended",
-        function(){
-
-            nextSong();
-
-        }
-    );
-
-
-    updatePlayingCard();
-}
-
-
-/* =========================================================
-   TOGGLE PLAY
-========================================================= */
-
-function togglePlay(){
-
-    if(!currentAudio){
-
-        playSong(songs[0].id);
-
-        return;
-    }
-
-    if(currentAudio.paused){
-
-        currentAudio.play();
-
-    }else{
-
-        currentAudio.pause();
-
-    }
-
-    updatePlayButtons();
-}
-
-
-/* =========================================================
-   NEXT SONG
-========================================================= */
-
-function nextSong(){
-
-    if(!currentSongId){
-
-        playSong(songs[0].id);
-
-        return;
-    }
-
-    let index =
-        songs.findIndex(
-            song =>
-            song.id === currentSongId
-        );
-
-    index++;
-
-    if(index >= songs.length){
-
-        index = 0;
-    }
-
-    playSong(
-        songs[index].id
-    );
-}
-
-
-/* =========================================================
-   PREVIOUS SONG
-========================================================= */
-
-function previousSong(){
-
-    if(!currentSongId){
-
-        playSong(songs[0].id);
-
-        return;
-    }
-
-    let index =
-        songs.findIndex(
-            song =>
-            song.id === currentSongId
-        );
-
-    index--;
-
-    if(index < 0){
-
-        index =
-            songs.length - 1;
-    }
-
-    playSong(
-        songs[index].id
-    );
-}
-
-
-/* =========================================================
-   UPDATE PLAY BUTTONS
-========================================================= */
-
-function updatePlayButtons(){
-
-    const buttons =
-        document.querySelectorAll(
-            ".play-btn"
-        );
-
-    buttons.forEach(button => {
-
-        button.textContent =
-            "▶";
-
-    });
-
-
-    if(
-        currentAudio &&
-        !currentAudio.paused
-    ){
-
-        const card =
-            document.querySelector(
-                `.song-card[data-id="${currentSongId}"]`
-            );
-
-        if(card){
-
-            const button =
-                card.querySelector(
-                    ".play-btn"
-                );
-
-            if(button){
-
-                button.textContent =
-                    "⏸";
-            }
-        }
-
-        mainPlayBtn.textContent =
-            "⏸";
-
-    }else{
-
-        mainPlayBtn.textContent =
-            "▶";
-    }
-}
-
-
-/* =========================================================
-   PLAYING CARD
-========================================================= */
-
-function updatePlayingCard(){
-
-    document
-    .querySelectorAll(".song-card")
-    .forEach(card => {
-
-        card.classList.remove(
-            "playing"
-        );
-
-    });
-
-
-    const activeCard =
-        document.querySelector(
-            `.song-card[data-id="${currentSongId}"]`
-        );
-
-    if(activeCard){
-
-        activeCard.classList.add(
-            "playing"
-        );
-    }
-
-    updatePlayButtons();
-}
-
-
-/* =========================================================
-   PROGRESS
-========================================================= */
-
-function updateProgress(){
-
-    if(!currentAudio){
-        return;
-    }
-
-    const percent =
-        (
-            currentAudio.currentTime /
-            currentAudio.duration
-        ) * 100;
-
-    progress.value =
-        isNaN(percent)
-        ? 0
-        : percent;
-
-    currentTime.textContent =
-        formatTime(
-            currentAudio.currentTime
-        );
-}
-
-
-/* =========================================================
-   SEEK
-========================================================= */
-
-progress.addEventListener(
-    "input",
-    function(){
-
-        if(!currentAudio){
-            return;
-        }
-
-        if(
-            !isNaN(
-                currentAudio.duration
-            )
-        ){
-
-            currentAudio.currentTime =
-                (
-                    progress.value / 100
-                ) *
-                currentAudio.duration;
-        }
-
-    }
-);
-
-
-/* =========================================================
-   VOLUME
-========================================================= */
-
-volume.addEventListener(
-    "input",
-    function(){
-
-        if(currentAudio){
-
-            currentAudio.volume =
-                Number(volume.value);
-        }
-
-    }
-);
-
-
-/* =========================================================
-   FORMAT TIME
-========================================================= */
-
-function formatTime(seconds){
-
-    if(
-        !seconds ||
-        isNaN(seconds)
-    ){
-
-        return "0:00";
-    }
-
-    const minutes =
-        Math.floor(
-            seconds / 60
-        );
-
-    const secs =
-        Math.floor(
-            seconds % 60
-        );
-
-    return (
-        minutes +
-        ":" +
-        String(secs).padStart(2,"0")
-    );
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-document
-.getElementById("search")
-.addEventListener(
-    "input",
-    renderSongs
-);
-
-
-/* =========================================================
-   FILTER
-========================================================= */
-
-function setFilter(
-    type,
-    button
-){
-
-    currentFilter =
-        type;
-
-    document
-    .querySelectorAll(".filter")
-    .forEach(btn => {
-
-        btn.classList.remove(
-            "active"
-        );
-
-    });
-
-    button.classList.add(
-        "active"
-    );
 
     renderSongs();
-}
+  });
+});
 
-
-/* =========================================================
-   MOBILE SEARCH
-========================================================= */
-
-function focusSearch(){
-
-    const search =
-        document.getElementById(
-            "search"
-        );
-
-    search.focus();
-
-    window.scrollTo({
-
-        top:500,
-
-        behavior:"smooth"
-
-    });
-}
-
-
-/* =========================================================
-   MOBILE HOME
-========================================================= */
-
-function goHome(){
-
-    window.location.href =
-        "index.html";
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-document
-.getElementById("mobileMenu")
-.addEventListener(
-    "click",
-    goHome
-);
-
-
-/* =========================================================
-   MOBILE SEARCH BUTTON
-========================================================= */
-
-document
-.querySelector(".mobile-search-btn")
-.addEventListener(
-    "click",
-    focusSearch
-);
-
-
-/* =========================================================
-   INITIAL
-========================================================= */
-
+// INITIAL LOAD
 renderSongs();
-
 </script>
 
 </body>
-
 </html>
