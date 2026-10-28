@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const copyright =
         document.querySelector(".copyright");
 
-
-   HEAD
     // =================================================
     // DORAEMON EFFECT ELEMENTS
     // =================================================
@@ -101,30 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // PRELOAD ALL 8 IMAGES
     // =================================================
 
-    doraemonImages.forEach((src, index) => {
 
-        const img = new Image();
-
-        img.onload = () => {
-
-            console.log(
-                `Doraemon image ${index + 1} loaded`
-            );
-
-        };
-
-        img.onerror = () => {
-
-            console.error(
-                `Doraemon image ${index + 1} NOT FOUND:`,
-                src
-            );
-
-        };
-
-        img.src = src;
-
-    });
 
 
     // =================================================

@@ -1,0 +1,43 @@
+/* Shared Home-style navigation; unique IDs isolate it from page styles. */
+.dw-ui, .dw-ui * {box-sizing:border-box;font-family:Arial,sans-serif;line-height:1.4;letter-spacing:normal;text-transform:none;}
+.dw-ui a {text-decoration:none;}
+.dw-ui button {cursor:pointer;}
+.dw-ui [hidden],.dw-ui[hidden] {display:none!important;}
+#dw-site-header {position:sticky;top:0;z-index:20000;display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%;height:auto;min-height:72px;padding:12px 24px;background:#fff;box-shadow:0 5px 20px #003c6414;}
+#dw-site-header .dw-brand {display:flex;align-items:center;gap:3px;flex-shrink:0;color:#073b70;font-size:20px;font-weight:900;letter-spacing:1px;white-space:nowrap;}
+#dw-site-header .dw-brand span {font-size:16px;}
+#dw-site-header button {display:flex;align-items:center;justify-content:center;flex-shrink:0;width:42px;height:42px;padding:0;border:0;border-radius:12px;background:#e7f7ff;color:#087fc0;font-size:20px;}
+#dw-site-header #dw-menu-button {display:none;}
+#dw-site-header .dw-desktop-links {display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+#dw-site-header .dw-desktop-links a {color:#073b70;font-size:13px;font-weight:700;padding:8px;border-radius:10px;}
+#dw-site-header .dw-desktop-links a[aria-current],#dw-site-header .dw-desktop-links a:hover {background:#e9f8ff;color:#0797dd;}
+#dw-site-menu {position:fixed;top:72px;left:10px;right:10px;z-index:20001;display:flex;flex-direction:column;padding:12px;margin:0;border:0;border-radius:16px;background:rgba(6,77,135,.98);box-shadow:0 15px 40px #0004;max-height:calc(100dvh - 160px);overflow-y:auto;}
+#dw-site-menu a {display:block;padding:13px 15px;margin:0 0 5px;border-radius:10px;background:transparent;color:#fff;font-size:14px;font-weight:700;}
+#dw-site-menu a:hover,#dw-site-menu a:focus-visible,#dw-site-menu a[aria-current] {background:#20a8f5;color:#fff;}
+#dw-site-bottom {display:none;}
+#dw-site-search {position:fixed;top:78px;left:10px;right:10px;max-width:560px;margin:auto;z-index:20002;padding:12px;background:white;border:1px solid #b9e4ff;border-radius:15px;box-shadow:0 10px 30px #0046822e;color:#174364;}
+#dw-site-search form {display:flex;gap:8px;align-items:center;margin:0;padding:5px 10px;background:#f0f9ff;border:1.5px solid #89cfff;border-radius:10px;}
+#dw-site-search input {flex:1;min-width:0;width:100%;padding:10px 4px;margin:0;border:0;outline:0;background:transparent;color:#123955;font-size:16px;}
+#dw-site-search button {width:32px;height:32px;flex-shrink:0;padding:0;border:0;border-radius:8px;background:#dcedfa;color:#174364;font-size:18px;}
+#dw-site-search .dw-results {max-height:45dvh;overflow-y:auto;}
+#dw-site-search .dw-results a {display:block;padding:12px;border-radius:8px;color:#174364;font-size:14px;}
+#dw-site-search .dw-results a:hover {background:#eaf6ff;}
+#dw-site-search p {margin:4px 0 0;padding:5px 10px;color:#69849c;font-size:12px;}
+.dw-ui a:focus-visible,.dw-ui button:focus-visible {outline:3px solid #ffd400;outline-offset:2px;}
+body.dw-navigation-ready:has(.reels-container) .reels-container {height:calc(100dvh - 72px);}
+@media(max-width:700px){
+ body.dw-navigation-ready {padding-top:0!important;padding-bottom:calc(90px + env(safe-area-inset-bottom))!important;}
+ #dw-site-header {height:62px;min-height:62px;padding:8px 15px;gap:8px;}
+ #dw-site-header #dw-menu-button {display:flex;}
+ #dw-site-header .dw-desktop-links {display:none;}
+ #dw-site-menu {top:72px;}
+ #dw-site-search {top:67px;}
+ #dw-site-bottom {display:flex;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));height:65px;z-index:20000;align-items:center;justify-content:space-around;padding:5px;margin:0;background:rgba(255,255,255,.96);border:1px solid #c9eafa;border-radius:20px;box-shadow:0 10px 35px #003c642e;backdrop-filter:blur(15px);}
+ #dw-site-bottom a {width:20%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0;margin:0;color:#78909c;border-radius:14px;background:transparent;}
+ #dw-site-bottom a span {font-size:20px;line-height:1;}
+ #dw-site-bottom a small {font-size:9px;font-weight:700;}
+ #dw-site-bottom a[aria-current] {background:#e9f8ff;color:#0797dd;}
+ body.dw-navigation-ready:has(.music-player) {padding-bottom:210px!important;}
+ body.dw-navigation-ready .music-player {bottom:calc(90px + env(safe-area-inset-bottom));}
+ body.dw-navigation-ready:has(.reels-container) .reels-container,body.dw-navigation-ready .reel {height:calc(100dvh - 147px);min-height:calc(100dvh - 147px);}
+}

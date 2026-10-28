@@ -25,13 +25,16 @@ window.addEventListener("DOMContentLoaded", () => {
   btn.classList.add("doraemon-voice-control");
 
   const avatar = btn.querySelector("img");
-  if (avatar) {
+ if (avatar) {
     avatar.addEventListener("error", () => {
-      if (!avatar.src.endsWith("/doraemon.png")) {
-        avatar.src = "assets/images/characters/voice.png";
-      }
+        if (!avatar.src.endsWith("/doraemon.png")) {
+            avatar.src = "assets/images/characters/doraemon.png";
+        } else {
+            avatar.hidden = true;
+            btn.textContent = "🎙️";
+        }
     });
-  }
+}
 
   // BUTTON DESIGN AND 3 BORDER COLORS
   const style = document.createElement("style");

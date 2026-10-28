@@ -1312,3 +1312,21 @@ input:focus-visible {
 
     display: none;
 }
+/* Match Home mobile menu colours */
+@media (max-width: 700px) {
+    .mobile-menu-panel {
+        background: rgba(6, 77, 135, 0.98);
+        border-color: transparent;
+    }
+
+    .mobile-menu-panel a {
+        color: white;
+    }
+
+    .mobile-menu-panel a:hover,
+    .mobile-menu-panel a:active,
+    .mobile-menu-panel a.active {
+        background: #20a8f5;
+        color: white;
+    }
+}

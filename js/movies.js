@@ -902,7 +902,7 @@ function setupMobileMenu() {
         "click",
         function () {
 
-            mobileMenuPanel.classList.toggle("active");
+            mobileMenuPanel.classList.toggle("show");
 
         }
     );
@@ -922,7 +922,7 @@ function setupMobileMenu() {
             "click",
             function () {
 
-                mobileMenuPanel.classList.remove("active");
+                mobileMenuPanel.classList.remove("show");
 
             }
         );
@@ -1028,7 +1028,8 @@ document.addEventListener(
            Mobile menu
         */
 
-        setupMobileMenu();
+        // Mobile menu is handled by js/script.js.
+        // setupMobileMenu();setupMobileMenu();
 
 
         /*
