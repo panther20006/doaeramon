@@ -2906,7 +2906,26 @@ setInterval(function(){
    SUBMIT TEST
 ========================================================= */
 
-function submitTest(){
+let testSubmitted = false;
+
+function submitTest() {
+    if (testSubmitted) return;
+    testSubmitted = true;
+
+    clearInterval(timerInterval);
+
+    document.querySelectorAll('input[type="radio"]').forEach(function(input) {
+        input.disabled = true;
+    });
+
+    document.getElementById("studentName").disabled = true;
+
+    const submitButton = document.querySelector(".submit");
+
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Test Submitted ✓";
+    }
 
     let score = 0;
 

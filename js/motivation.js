@@ -518,43 +518,41 @@ reelsContainer.addEventListener(
    BUTTONS ARE NOT VISIBLE
 ========================================================= */
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+/* KEYBOARD NAVIGATION */
 
-        /*
-         * Arrow Down
-         */
+document.addEventListener("keydown", function (event) {
+    const target = event.target;
+    const search = document.getElementById("dw-site-search");
+    const menu = document.getElementById("dw-site-menu");
 
-        if (
-            event.key === "ArrowDown" ||
-            event.key === "PageDown"
-        ) {
+    // Search ya menu khula ho to reel change mat karo.
+    if (search && !search.hidden) return;
+    if (menu && !menu.hidden) return;
 
-            event.preventDefault();
-
-            nextReel();
-
-        }
-
-
-        /*
-         * Arrow Up
-         */
-
-        if (
-            event.key === "ArrowUp" ||
-            event.key === "PageUp"
-        ) {
-
-            event.preventDefault();
-
-            previousReel();
-
-        }
-
+    // Typing ke waqt arrow keys normal kaam karein.
+    if (
+        target instanceof Element &&
+        (
+            target.closest("input, textarea, select") ||
+            target.isContentEditable
+        )
+    ) {
+        return;
     }
-);
+
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+    if (event.key === "ArrowDown" || event.key === "PageDown") {
+        event.preventDefault();
+        nextReel();
+    } else if (
+        event.key === "ArrowUp" ||
+        event.key === "PageUp"
+    ) {
+        event.preventDefault();
+        previousReel();
+    }
+});
 
 
 /* =========================================================
