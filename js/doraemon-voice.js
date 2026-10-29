@@ -1,575 +1,675 @@
+/* Doraemon World — Gemini Text and Voice Chat */
 
-// DORAEMON VOICE ASSISTANT — CLEAN VERSION
-window.addEventListener("DOMContentLoaded", () => {
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  const synth = window.speechSynthesis;
-  const isMusicPage = location.pathname.endsWith("/music.html");
-  const pendingKey = "doraemonMusicPending";
+(() => {
+    "use strict";
 
-  let btn = document.getElementById("doraemonVoiceBtn");
+    // Paste your Cloudflare Worker URL here.
+    const API_URL = "https://doraemon-ai.hackerblackpanther2000.workers.dev";
 
-  // Create button on other pages automatically
-  if (!btn) {
-    btn = document.createElement("button");
-    btn.id = "doraemonVoiceBtn";
-    btn.type = "button";
-    btn.setAttribute("aria-label", "Talk to Doraemon");
-    btn.innerHTML = `
-      <img src="assets/images/characters/voice.png"
-           alt="Doraemon">
-    `;
-    document.body.appendChild(btn);
-  }
+    const scriptRoot = new URL("../", document.currentScript.src);
 
-  btn.classList.add("doraemon-voice-control");
+    function init() {
+        const page = location.pathname.split("/").pop();
 
-  const avatar = btn.querySelector("img");
- if (avatar) {
-    avatar.addEventListener("error", () => {
-        if (!avatar.src.endsWith("/doraemon.png")) {
-            avatar.src = "assets/images/characters/doraemon.png";
+        if (page && page !== "index.html") return;
+        if (document.getElementById("dw-ai-panel")) return;
+
+        const synth = window.speechSynthesis;
+        const Recognition =
+            window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        let history = [];
+        let busy = false;
+        let listening = false;
+        let recognition = null;
+        let requestController = null;
+        let speechVersion = 0;
+        let lastReply = "";
+
+        document.getElementById("doraemonVoiceStyles")?.remove();
+        document.getElementById("doraemonVoiceStatus")?.remove();
+
+        const previousButton = document.getElementById("doraemonVoiceBtn");
+        const button = document.createElement("button");
+
+        button.id = "doraemonVoiceBtn";
+        button.type = "button";
+        button.setAttribute("aria-label", "Open Doraemon Buddy");
+        button.setAttribute("aria-controls", "dw-ai-panel");
+        button.setAttribute("aria-expanded", "false");
+
+        const avatar = document.createElement("img");
+        avatar.src = new URL(
+            "assets/images/characters/doraemon.png",
+            scriptRoot
+        ).href;
+        avatar.alt = "";
+
+        avatar.onerror = () => {
+            avatar.remove();
+            button.textContent = "🤖";
+        };
+
+        button.append(avatar);
+
+        if (previousButton) {
+            previousButton.replaceWith(button);
         } else {
-            avatar.hidden = true;
-            btn.textContent = "🎙️";
+            document.body.append(button);
         }
-    });
-}
 
-  // BUTTON DESIGN AND 3 BORDER COLORS
-  const style = document.createElement("style");
-  style.id = "doraemonVoiceStyles";
+        const style = document.createElement("style");
 
-  style.textContent = `
-    #doraemonVoiceBtn.doraemon-voice-control {
-      position: fixed;
-      right: 16px;
-      bottom: 96px;
-      width: 72px;
-      height: 72px;
-      padding: 3px;
-      display: grid;
-      place-items: center;
-      border: 4px solid #168bff;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      z-index: 12000;
-      box-sizing: border-box;
-      box-shadow: 0 0 15px #168bff66;
-      transition: border-color .2s, box-shadow .2s;
+        style.textContent = `
+            #doraemonVoiceBtn {
+                position:fixed!important;
+                right:18px!important;
+                bottom:24px!important;
+                width:66px!important;
+                height:66px!important;
+                padding:5px!important;
+                display:grid!important;
+                place-items:center;
+                border:3px solid #0b9ce8!important;
+                border-radius:50%!important;
+                background:white!important;
+                box-shadow:0 8px 28px #087dcc55;
+                cursor:pointer;
+                z-index:22000!important;
+                font-size:30px;
+                animation:dw-ai-float 3s ease-in-out infinite;
+            }
+
+            #doraemonVoiceBtn img {
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                border-radius:50%;
+            }
+
+            #doraemonVoiceBtn[aria-expanded="true"] {
+                animation:none;
+            }
+
+            @keyframes dw-ai-float {
+                0%,100% {transform:translateY(0)}
+                50% {transform:translateY(-7px)}
+            }
+
+            #dw-ai-panel,
+            #dw-ai-panel * {
+                box-sizing:border-box;
+            }
+
+            #dw-ai-panel[hidden] {
+                display:none!important;
+            }
+
+            #dw-ai-panel {
+                position:fixed;
+                right:18px;
+                bottom:102px;
+                z-index:22001;
+                width:min(380px,calc(100vw - 24px));
+                height:530px;
+                max-height:calc(100dvh - 125px);
+                display:flex;
+                flex-direction:column;
+                overflow:hidden;
+                background:#f4faff;
+                border:1px solid #b6dfff;
+                border-radius:22px;
+                box-shadow:0 18px 65px #06486c40;
+                color:#123b59;
+                font:14px/1.5 Arial,sans-serif;
+                text-align:left;
+            }
+
+            #dw-ai-panel button,
+            #dw-ai-panel input,
+            #dw-ai-panel select {
+                font:inherit;
+            }
+
+            #dw-ai-panel button {
+                cursor:pointer;
+            }
+
+            #dw-ai-panel button:disabled {
+                opacity:.5;
+                cursor:not-allowed;
+            }
+
+            #dw-ai-panel .dw-ai-header {
+                padding:14px;
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                gap:10px;
+                background:#087dcc;
+                color:white;
+            }
+
+            #dw-ai-panel .dw-ai-header strong {
+                display:block;
+                font-size:17px;
+            }
+
+            #dw-ai-panel .dw-ai-header small {
+                font-size:11px;
+            }
+
+            #dw-ai-panel .dw-ai-header button {
+                border:0;
+                border-radius:9px;
+                padding:7px 10px;
+                background:#ffffff25;
+                color:white;
+            }
+
+            #dw-ai-panel .dw-ai-tools {
+                display:flex;
+                align-items:center;
+                flex-wrap:wrap;
+                gap:8px;
+                padding:10px;
+                border-bottom:1px solid #d5e8f6;
+            }
+
+            #dw-ai-panel .dw-ai-tools button,
+            #dw-ai-panel select {
+                padding:5px 7px;
+                border:1px solid #bcdcf3;
+                border-radius:8px;
+                background:white;
+                color:#124f79;
+            }
+
+            #dw-ai-panel label {
+                display:flex;
+                align-items:center;
+                gap:4px;
+                font-size:12px;
+            }
+
+            #dw-ai-panel input[type="checkbox"] {
+                width:auto;
+                margin:0;
+            }
+
+            #dw-ai-log {
+                flex:1;
+                min-height:0;
+                overflow-y:auto;
+                padding:14px;
+                display:flex;
+                flex-direction:column;
+                gap:11px;
+                overscroll-behavior:contain;
+            }
+
+            #dw-ai-log .dw-ai-message {
+                max-width:90%;
+                padding:10px 12px;
+                border-radius:14px;
+                background:white;
+                border:1px solid #d8eaf7;
+                white-space:pre-wrap;
+                overflow-wrap:anywhere;
+                flex-shrink:0;
+            }
+
+            #dw-ai-log .dw-ai-user {
+                align-self:flex-end;
+                background:#087dcc;
+                color:white;
+                border-color:#087dcc;
+            }
+
+            #dw-ai-status {
+                min-height:25px;
+                margin:0;
+                padding:3px 12px;
+                color:#53728a;
+                font-size:12px;
+            }
+
+            #dw-ai-form {
+                display:flex;
+                gap:7px;
+                padding:10px;
+                margin:0;
+                background:white;
+                border-top:1px solid #d5e8f6;
+            }
+
+            #dw-ai-input {
+                flex:1;
+                min-width:0;
+                width:0;
+                padding:11px;
+                border:1px solid #bcdcf3;
+                border-radius:11px;
+                background:#f5faff;
+                color:#123b59;
+            }
+
+            #dw-ai-form button {
+                padding:8px 11px;
+                border:0;
+                border-radius:11px;
+                background:#087dcc;
+                color:white;
+            }
+
+            #dw-ai-mic[aria-pressed="true"] {
+                background:#d34242;
+            }
+
+            #dw-ai-panel :focus-visible {
+                outline:3px solid #ffcb38;
+                outline-offset:2px;
+            }
+
+            @media(max-width:700px) {
+                #doraemonVoiceBtn {
+                    right:15px!important;
+                    bottom:calc(95px + env(safe-area-inset-bottom))!important;
+                    width:58px!important;
+                    height:58px!important;
+                }
+
+                #dw-ai-panel {
+                    right:12px;
+                    bottom:calc(164px + env(safe-area-inset-bottom));
+                    max-height:calc(100dvh - 180px);
+                }
+            }
+
+            @media(prefers-reduced-motion:reduce) {
+                #doraemonVoiceBtn {animation:none}
+            }
+        `;
+
+        document.head.append(style);
+
+        const panel = document.createElement("section");
+        panel.id = "dw-ai-panel";
+        panel.hidden = true;
+        panel.setAttribute("aria-label", "Doraemon Buddy chat");
+
+        panel.innerHTML = `
+            <div class="dw-ai-header">
+                <div>
+                    <strong>💙 Doraemon Buddy</strong>
+                    <small>Fan AI • Gemini • Browser voice</small>
+                </div>
+                <button id="dw-ai-close" type="button"
+                        aria-label="Close chat">✕</button>
+            </div>
+
+            <div class="dw-ai-tools">
+                <select id="dw-ai-language" aria-label="Voice language">
+                    <option value="hi-IN">Hindi</option>
+                    <option value="en-IN">English</option>
+                    <option value="gu-IN">Gujarati</option>
+                </select>
+
+                <label>
+                    <input id="dw-ai-voice" type="checkbox" checked>
+                    Voice
+                </label>
+
+                <button id="dw-ai-replay" type="button">🔊 Replay</button>
+                <button id="dw-ai-stop" type="button">Stop</button>
+                <button id="dw-ai-clear" type="button">Clear</button>
+            </div>
+
+            <div id="dw-ai-log" role="log"
+                 aria-label="Chat messages" aria-live="polite"></div>
+
+            <p id="dw-ai-status" role="status"></p>
+
+            <form id="dw-ai-form">
+                <input id="dw-ai-input"
+                       type="text"
+                       maxlength="1500"
+                       placeholder="Kuch bhi poochho..."
+                       aria-label="Your message"
+                       autocomplete="off">
+
+                <button id="dw-ai-mic" type="button"
+                        aria-label="Start microphone"
+                        aria-pressed="false">🎤</button>
+
+                <button id="dw-ai-send" type="submit"
+                        aria-label="Send message">➤</button>
+            </form>
+        `;
+
+        document.body.append(panel);
+
+        const get = id => document.getElementById(id);
+        const log = get("dw-ai-log");
+        const status = get("dw-ai-status");
+        const input = get("dw-ai-input");
+        const mic = get("dw-ai-mic");
+        const send = get("dw-ai-send");
+        const language = get("dw-ai-language");
+        const voiceEnabled = get("dw-ai-voice");
+
+        function addMessage(text, role = "model") {
+            const message = document.createElement("div");
+            message.className = "dw-ai-message";
+
+            if (role === "user") {
+                message.classList.add("dw-ai-user");
+            }
+
+            // Never insert AI replies as HTML.
+            message.textContent = text;
+            log.append(message);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function stopSpeech() {
+            speechVersion++;
+            if (synth) synth.cancel();
+        }
+
+        function stopMic() {
+            const current = recognition;
+            recognition = null;
+            listening = false;
+            mic.setAttribute("aria-pressed", "false");
+
+            if (current) {
+                try {
+                    current.abort();
+                } catch {}
+            }
+        }
+
+        function speak(text) {
+            stopSpeech();
+
+            if (!voiceEnabled.checked) return;
+
+            if (!synth || !window.SpeechSynthesisUtterance) {
+                status.textContent = "Is browser mein voice playback available nahi.";
+                return;
+            }
+
+            const version = speechVersion;
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            utterance.lang = language.value;
+            utterance.rate = 1;
+            utterance.pitch = 1.25;
+            utterance.volume = 1;
+
+            const prefix = language.value.split("-")[0];
+            const voice = synth.getVoices().find(item =>
+                item.lang.toLowerCase().startsWith(prefix)
+            );
+
+            if (voice) utterance.voice = voice;
+
+            status.textContent = "🔊 Jawab suno...";
+
+            utterance.onend = () => {
+                if (version === speechVersion) {
+                    status.textContent = "";
+                }
+            };
+
+            utterance.onerror = () => {
+                if (version === speechVersion) {
+                    status.textContent = "Voice nahi chali. Replay dabao.";
+                }
+            };
+
+            synth.speak(utterance);
+        }
+
+        function setBusy(value) {
+            busy = value;
+            send.disabled = value;
+            mic.disabled = value || !Recognition;
+            get("dw-ai-clear").disabled = value;
+        }
+
+        function closeChat() {
+            panel.hidden = true;
+            button.setAttribute("aria-expanded", "false");
+            stopMic();
+            stopSpeech();
+            requestController?.abort();
+            button.focus();
+        }
+
+        button.addEventListener("click", () => {
+            if (!panel.hidden) {
+                closeChat();
+                return;
+            }
+
+            panel.hidden = false;
+            button.setAttribute("aria-expanded", "true");
+            status.textContent = "";
+
+            // Avoid forcing the phone keyboard open.
+            if (window.matchMedia("(pointer:fine)").matches) {
+                input.focus();
+            }
+        });
+
+        get("dw-ai-close").addEventListener("click", closeChat);
+
+        panel.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                event.stopPropagation();
+                closeChat();
+            }
+        });
+
+        async function submitMessage(event) {
+            event.preventDefault();
+
+            const message = input.value.trim();
+            if (!message || busy) return;
+
+            if (API_URL.includes("YOUR-WORKER")) {
+                status.textContent = "Pehle code mein Worker URL daalo.";
+                return;
+            }
+
+            stopMic();
+            stopSpeech();
+            setBusy(true);
+            status.textContent = "💭 Jawab aa raha hai...";
+            addMessage(message, "user");
+            input.value = "";
+
+            const controller = new AbortController();
+            requestController = controller;
+
+            let timedOut = false;
+
+            const timer = setTimeout(() => {
+                timedOut = true;
+                controller.abort();
+            }, 30000);
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    signal: controller.signal,
+                    body: JSON.stringify({
+                        message,
+                        history: history.slice(-10)
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || "Reply nahi mila.");
+                }
+
+                if (typeof data.reply !== "string" || !data.reply.trim()) {
+                    throw new Error("Khali reply mila. Dobara try karo.");
+                }
+
+                history.push(
+                    { role: "user", text: message },
+                    { role: "model", text: data.reply }
+                );
+
+                history = history.slice(-10);
+                lastReply = data.reply;
+                addMessage(data.reply);
+                status.textContent = "";
+
+                if (!panel.hidden) speak(data.reply);
+
+            } catch (error) {
+                const messageText = error.name === "AbortError"
+                    ? timedOut
+                        ? "Reply mein zyada time laga. Dobara bhejo."
+                        : "Request cancel hui."
+                    : error.message || "Connection problem. Dobara try karo.";
+
+                addMessage(messageText);
+                status.textContent = messageText;
+
+                // Preserve the failed question for retry.
+                if (!input.value) input.value = message;
+
+            } finally {
+                clearTimeout(timer);
+                requestController = null;
+                setBusy(false);
+            }
+        }
+
+        get("dw-ai-form").addEventListener("submit", submitMessage);
+
+        mic.disabled = !Recognition;
+
+        mic.addEventListener("click", () => {
+            if (busy || !Recognition) return;
+
+            if (listening) {
+                stopMic();
+                status.textContent = "";
+                return;
+            }
+
+            stopSpeech();
+
+            const current = new Recognition();
+            recognition = current;
+
+            current.lang = language.value;
+            current.continuous = false;
+            current.interimResults = false;
+
+            current.onresult = event => {
+                if (recognition !== current) return;
+
+                input.value = event.results[0][0].transcript.slice(0, 1500);
+                status.textContent = "Text check karke ➤ dabao.";
+            };
+
+            current.onerror = event => {
+                if (recognition !== current) return;
+
+                status.textContent = event.error === "not-allowed"
+                    ? "Browser mein microphone permission Allow karo."
+                    : "Awaaz nahi mili. Dobara try karo ya type karo.";
+            };
+
+            current.onend = () => {
+                if (recognition !== current) return;
+
+                recognition = null;
+                listening = false;
+                mic.setAttribute("aria-pressed", "false");
+
+                if (status.textContent === "🎤 Sun raha hoon...") {
+                    status.textContent = "Dobara mic dabao ya type karo.";
+                }
+            };
+
+            try {
+                listening = true;
+                mic.setAttribute("aria-pressed", "true");
+                status.textContent = "🎤 Sun raha hoon...";
+                current.start();
+            } catch {
+                stopMic();
+                status.textContent = "Mic start nahi hua. Dobara try karo.";
+            }
+        });
+
+        get("dw-ai-stop").addEventListener("click", () => {
+            stopMic();
+            stopSpeech();
+            requestController?.abort();
+            status.textContent = "Stopped.";
+        });
+
+        get("dw-ai-replay").addEventListener("click", () => {
+            if (lastReply && !busy) speak(lastReply);
+        });
+
+        voiceEnabled.addEventListener("change", () => {
+            if (!voiceEnabled.checked) {
+                stopSpeech();
+                status.textContent = "";
+            }
+        });
+
+        language.addEventListener("change", () => {
+            stopMic();
+            stopSpeech();
+            status.textContent = "";
+        });
+
+        get("dw-ai-clear").addEventListener("click", () => {
+            if (busy) return;
+
+            stopMic();
+            stopSpeech();
+            history = [];
+            lastReply = "";
+            log.replaceChildren();
+            input.value = "";
+            status.textContent = "";
+            welcome();
+        });
+
+        function welcome() {
+            addMessage(
+                "हेलो दोस्त! 💙 मैं Doraemon Buddy हूँ। " +
+                "अपना सवाल लिखो या माइक दबाकर बोलो।"
+            );
+        }
+
+        window.addEventListener("pagehide", () => {
+            stopMic();
+            stopSpeech();
+            requestController?.abort();
+        });
+
+        welcome();
     }
 
-    #doraemonVoiceBtn.doraemon-voice-control img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-      display: block;
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+        init();
     }
-
-    /* YELLOW — LISTENING */
-    #doraemonVoiceBtn.doraemon-voice-control.listening {
-      border-color: #ffd400;
-      box-shadow: 0 0 12px #ffd400,
-                  0 0 25px #ffd40080;
-    }
-
-    /* GREEN — SPEAKING */
-    #doraemonVoiceBtn.doraemon-voice-control.speaking {
-      border-color: #22c55e;
-      box-shadow: 0 0 12px #22c55e,
-                  0 0 25px #22c55e80;
-    }
-
-    #doraemonVoiceStatus {
-      position: fixed;
-      right: 12px;
-      bottom: 176px;
-      z-index: 12001;
-      max-width: 240px;
-      padding: 9px 13px;
-      border-radius: 12px;
-      background: white;
-      color: #07568e;
-      font: 13px Arial, sans-serif;
-      box-shadow: 0 5px 20px #0002;
-      display: none;
-    }
-
-    @media (min-width: 701px) {
-      #doraemonVoiceBtn.doraemon-voice-control {
-        bottom: 20px;
-      }
-      #doraemonVoiceStatus {
-        bottom: 100px;
-      }
-    }
-
-    body:has(.music-player)
-    #doraemonVoiceBtn.doraemon-voice-control {
-      bottom: 115px;
-    }
-
-    body:has(.music-player) #doraemonVoiceStatus {
-      bottom: 195px;
-    }
-
-    @media (max-width: 700px) {
-      body:has(.music-player)
-      #doraemonVoiceBtn.doraemon-voice-control {
-        bottom: 205px;
-      }
-
-      body:has(.music-player) #doraemonVoiceStatus {
-        bottom: 285px;
-      }
-    }
-  `;
-
-  document.head.appendChild(style);
-
-  // STATUS MESSAGE
-  const status = document.createElement("div");
-  status.id = "doraemonVoiceStatus";
-  status.setAttribute("role", "status");
-  document.body.appendChild(status);
-
-  const show = text => {
-    status.textContent = text;
-    status.style.display = text ? "block" : "none";
-  };
-
-  // Hindi and English text matching
-  const normalize = value =>
-    String(value).toLowerCase().normalize("NFKC")
-      .replace(/[^\p{L}\p{M}\p{N}\s]/gu, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-
-  const has = (text, words) =>
-    words.some(word => text.includes(normalize(word)));
-
-  // WEBSITE PAGES
-  const routes = [
-    ["episodes.html",
-      ["episode", "episodes", "एपिसोड", "कार्टून"]],
-
-    ["movies.html",
-      ["movie", "movies", "मूवी", "फिल्म"]],
-
-    ["wallpapers.html",
-      ["wallpaper", "wallpapers", "वॉलपेपर"]],
-
-    ["gallery.html",
-      ["gallery", "गैलरी", "फोटो"]],
-
-    ["gadgets.html",
-      ["gadget", "gadgets", "गैजेट"]],
-
-    ["test.html",
-      ["test", "quiz", "टेस्ट", "क्विज"]],
-
-    ["characters.html",
-      ["character", "characters", "कैरेक्टर", "किरदार"]],
-
-    ["motivation.html",
-      ["motivation", "मोटिवेशन"]],
-
-    ["music.html",
-      ["music", "म्यूजिक", "संगीत", "गाने"]],
-
-    ["index.html",
-      ["home", "होम"]]
-  ];
-
-  // SONGS FROM YOUR MUSIC.HTML
-  const songNames = [
-    ["Zindagi Sawar Du",
-      ["zindagi", "sawar", "जिंदगी", "ज़िंदगी", "सवार"]],
-
-    ["Aapne Dil Mein Dekho",
-      ["apne dil", "aapne dil", "अपने दिल", "आपने दिल"]],
-
-    ["Jeene Ka Sahi Dhang",
-      ["jeene", "sahi dhang", "जीने", "सही ढंग"]],
-
-    ["Sabse Pehle Hai Pyaar",
-      ["sabse pehle", "pyaar", "सबसे पहले", "प्यार"]],
-
-    ["Doraemon Instrumental",
-      ["instrumental", "इंस्ट्रूमेंटल"]],
-
-    ["Doraemon Japanese Song",
-      ["japanese", "जापानी"]],
-
-    ["Paani Ki Boond",
-      ["paani", "pani", "पानी", "बूंद"]],
-
-    ["har kisi me hai",
-      ["har kisi", "हर किसी"]]
-  ];
-
-  // EXISTING MUSIC PLAYER CONNECTION
-  function musicControl(action) {
-    const player = window.doraemonMusicControl;
-
-    if (!player) {
-      show("Music player bridge missing. music.html check karo.");
-      return;
-    }
-
-    if (action.type === "title") {
-      player.playTitle(action.title);
-    } else if (action.type === "first") {
-      player.first();
-    } else if (action.type === "pause") {
-      player.pause();
-    } else if (action.type === "resume") {
-      player.resume();
-    } else if (action.type === "next") {
-      player.next();
-    } else if (action.type === "previous") {
-      player.previous();
-    } else if (action.type === "up") {
-      player.volume(0.2);
-    } else if (action.type === "down") {
-      player.volume(-0.2);
-    }
-  }
-
-  // Complete song command after opening music.html
-  if (isMusicPage) {
-    const raw = sessionStorage.getItem(pendingKey);
-
-    if (raw) {
-      sessionStorage.removeItem(pendingKey);
-
-      try {
-        musicControl(JSON.parse(raw));
-      } catch (error) {
-        console.warn("Music command error:", error);
-      }
-    }
-  }
-
-  // VOICE STATE
-  let mode = "idle";
-  let heardResult = false;
-  let recognizer = null;
-  let speechToken = 0;
-
-  function setMode(next, message = "") {
-    mode = next;
-
-    btn.classList.toggle(
-      "listening", next === "listening"
-    );
-
-    btn.classList.toggle(
-      "speaking", next === "speaking"
-    );
-
-    btn.setAttribute(
-      "aria-pressed", String(next !== "idle")
-    );
-
-    show(message);
-  }
-
-  // STOP EVERYTHING — BLUE BORDER
-  function stopAll(message = "") {
-    speechToken++;
-
-    if (recognizer) {
-      try {
-        recognizer.abort();
-      } catch (error) {}
-    }
-
-    if (synth) synth.cancel();
-
-    setMode("idle", message);
-  }
-
-  // SPEAK — GREEN BORDER
-  function speak(text, after = null) {
-    const currentToken = ++speechToken;
-
-    if (!synth || !window.SpeechSynthesisUtterance) {
-      setMode("idle", "Voice playback supported nahi hai.");
-      if (after) after();
-      return;
-    }
-
-    setMode("speaking", "🟢 Doraemon bol raha hai...");
-    synth.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-
-    utterance.lang = "hi-IN";
-    utterance.pitch = 1.5;
-    utterance.rate = 1.05;
-    utterance.volume = 1;
-
-    const voice = synth.getVoices().find(
-      v => v.lang.toLowerCase().startsWith("hi")
-    );
-
-    if (voice) utterance.voice = voice;
-
-    let completed = false;
-
-    const finish = () => {
-      if (completed || currentToken !== speechToken) return;
-
-      completed = true;
-      clearTimeout(fallback);
-
-      
-
-      if (after) after();
-    };
-
-    // Safety timeout if browser does not fire onend
-    const fallback = setTimeout(finish, 12000);
-
-    utterance.onend = finish;
-    utterance.onerror = finish;
-
-    synth.speak(utterance);
-  }
-
-  // OPEN WEBSITE PAGE
-  function openPage(file, message, action = null) {
-    const currentFile =
-      location.pathname.split("/").pop() || "index.html";
-
-    if (currentFile === file) {
-      if (action) {
-        speak(message, () => musicControl(action));
-      } else {
-        speak("यह पेज पहले से खुला है मेरे दोस्त!");
-      }
-      return;
-    }
-
-    speak(message, () => {
-      if (action) {
-        sessionStorage.setItem(
-          pendingKey,
-          JSON.stringify(action)
-        );
-      }
-
-      location.href = file;
-    });
-  }
-
-  function playAction(action, message = "ठीक है दोस्त!") {
-    openPage("music.html", message, action);
-  }
-
-  // UNDERSTAND VOICE COMMANDS
-  function understand(spoken) {
-    const text = normalize(spoken);
-
-    console.log("Doraemon heard:", spoken);
-
-    const foundSong = songNames.find(
-      item => has(text, item[1])
-    );
-
-    // PLAY SONG BY NAME
-    if (foundSong) {
-      playAction(
-        { type: "title", title: foundSong[0] },
-        "यह गाना चलाते हैं!"
-      );
-      return;
-    }
-
-    const musicWords = [
-      "music", "म्यूजिक", "song", "सॉन्ग",
-      "गाना", "गाने", "gaana", "gana",
-      "संगीत", "volume", "वॉल्यूम", "आवाज"
-    ];
-
-    const musicContext =
-      isMusicPage || has(text, musicWords);
-
-    // MUSIC CONTROLS
-    if (musicContext && has(text, ["next", "अगला", "अगली"])) {
-      playAction({ type: "next" }, "अगला गाना!");
-      return;
-    }
-
-    if (musicContext && has(text, ["previous", "पिछला", "पिछली"])) {
-      playAction({ type: "previous" }, "पिछला गाना!");
-      return;
-    }
-
-    if (musicContext && has(text,
-      ["pause", "पॉज", "बंद", "रोक", "stop"])) {
-      playAction({ type: "pause" }, "गाना रोक रहा हूँ!");
-      return;
-    }
-
-    if (
-      musicContext &&
-      has(text, ["volume", "वॉल्यूम", "आवाज"]) &&
-      has(text, ["बढ़ाओ", "तेज", "तेज़", "up", "increase"])
-    ) {
-      playAction({ type: "up" }, "आवाज बढ़ा रहा हूँ!");
-      return;
-    }
-
-    if (
-      musicContext &&
-      has(text, ["volume", "वॉल्यूम", "आवाज"]) &&
-      has(text, ["कम", "down", "धीमा"])
-    ) {
-      playAction({ type: "down" }, "आवाज कम कर रहा हूँ!");
-      return;
-    }
-
-    if (
-      musicContext &&
-      has(text, ["resume", "चालू", "continue", "फिर से", "play"])
-    ) {
-      playAction({ type: "resume" }, "गाना चालू करते हैं!");
-      return;
-    }
-
-    // GENERAL SONG REQUEST
-    if (has(text, musicWords)) {
-      if (has(text, ["खोल", "open", "दिखाओ"])) {
-        openPage("music.html", "म्यूजिक पेज खोल रहा हूँ!");
-      } else if (has(text,
-        ["ये गाना", "ye song", "ये सॉन्ग", "ye gana"])) {
-        speak(
-          "कौन सा गाना सुनना है? अगली बार उसका नाम बोलना!"
-        );
-      } else {
-        playAction(
-          { type: "first" },
-          "डोरेमोन का गाना बजाते हैं!"
-        );
-      }
-      return;
-    }
-
-    // PAGE NAVIGATION
-    const route = routes.find(
-      item => has(text, item[1])
-    );
-
-    if (route) {
-      openPage(route[0], "पेज खोल रहा हूँ ");
-      return;
-    }
-
-    // SIMPLE CONVERSATION
-    if (has(text, ["कैसे हो", "kaise ho", "how are you"])) {
-      speak("मैं बढ़िया हूँ मेरे दोस्त! तुम कैसे हो?");
-      return;
-    }
-
-    if (has(text, ["hello", "hi", "हेलो", "नमस्ते"])) {
-      speak("हेलो मेरे दोस्त! क्या करना है?");
-      return;
-    }
-
-    if (has(text, ["scroll down", "नीचे जाओ"])) {
-      window.scrollBy({
-        top: window.innerHeight * 0.8,
-        behavior: "smooth"
-      });
-      speak("नीचे चलो!");
-      return;
-    }
-
-    if (has(text, ["scroll up", "ऊपर जाओ"])) {
-      window.scrollBy({
-        top: -window.innerHeight * 0.8,
-        behavior: "smooth"
-      });
-      speak("ऊपर चलो!");
-      return;
-    }
-
-    speak(
-      "माफ करना दोस्त! समझ नहीं आया, एक बार फिर बोलना!"
-    );
-  }
-
-  // CHECK MICROPHONE SUPPORT
-  if (!SpeechRecognition) {
-    btn.addEventListener("click", () => {
-      show(
-        "Voice recognition available nahi. Chrome ya Edge use karo."
-      );
-    });
-    return;
-  }
-
-  recognizer = new SpeechRecognition();
-
-  recognizer.lang = "hi-IN";
-  recognizer.continuous = false;
-  recognizer.interimResults = false;
-
-  // CLICK — YELLOW BORDER + LISTENING
-  btn.addEventListener("click", () => {
-    if (mode !== "idle") {
-      stopAll("💙 Voice assistant band hai.");
-      return;
-    }
-
-    heardResult = false;
-
-    setMode("listening", "Sun raha hoon, bolo...");
-
-    try {
-      recognizer.start();
-    } catch (error) {
-      console.warn(error);
-      setMode("idle", "Mic start nahi hua. Dobara try karo.");
-    }
-  });
-
-  // PROCESS SPEECH
-  recognizer.onresult = event => {
-    if (mode !== "listening") return;
-
-    heardResult = true;
-
-    const spoken = event.results[0][0].transcript;
-
-    try {
-      recognizer.stop();
-    } catch (error) {}
-
-    understand(spoken);
-  };
-
-  // NO AUTOMATIC LISTENING LOOP
-  recognizer.onend = () => {
-    if (mode === "listening" && !heardResult) {
-      setMode(
-        "idle",
-        
-      );
-    }
-  };
-
-  recognizer.onerror = event => {
-    if (mode !== "listening") return;
-
-    const message = event.error === "not-allowed"
-      ? "Browser mein microphone Allow karo."
-      : `Mic error: ${event.error}. Dobara try karo.`;
-
-    setMode("idle", message);
-  };
-});
+})();
